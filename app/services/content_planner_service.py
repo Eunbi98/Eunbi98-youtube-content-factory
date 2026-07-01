@@ -1,14 +1,14 @@
 import json
 import re
-from pathlib import Path
 
 from app.services.ollama_service import OllamaService
+from app.services.prompt_manager import PromptManager
 
 
 class ContentPlannerService:
     def __init__(self):
         self.llm = OllamaService()
-        self.prompt_path = Path("prompts/content_planner_prompt.txt")
+        self.prompt_manager = PromptManager()
 
     def plan(self, article) -> dict:
         content = article.cleaned_content or article.content
@@ -16,7 +16,7 @@ class ContentPlannerService:
         if not content:
             return self._empty_result()
 
-        prompt_template = self.prompt_path.read_text(encoding="utf-8")
+        prompt_template = self.prompt_manager.load("content_planner_prompt.txt")
 
         prompt = (
             prompt_template

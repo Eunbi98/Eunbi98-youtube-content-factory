@@ -301,3 +301,32 @@
 2026-07-01 21:51:13,821 | INFO | Content Planner 평가 시작 : NASA’s Chandra Reveals ‘Red, White, Blue’ Universe for US 250th
 2026-07-01 21:51:48,822 | INFO | Content Planner 평가 시작 : NASA Awards More Moon Base Science, Previews New Opportunities
 2026-07-01 21:52:19,080 | INFO | Content Planner 평가 시작 : NASA’s Newest Wind Tunnel Builds on Legacy of Innovation
+2026-07-01 22:02:07,288 | INFO | ========== Pipeline 시작 ==========
+2026-07-01 22:02:07,805 | INFO | 수집 기사 수 : 10
+2026-07-01 22:02:07,806 | INFO | 신규 저장 기사 수 : 0
+2026-07-01 22:02:07,807 | INFO | 처리 대상 기사 수 : 10
+2026-07-01 22:02:07,807 | INFO | 본문 추출 생략 : NASA’s Chandra Reveals ‘Red, White, Blue’ Universe for US 250th
+2026-07-01 22:02:07,808 | INFO | 본문 정제 생략 : NASA’s Chandra Reveals ‘Red, White, Blue’ Universe for US 250th
+2026-07-01 22:02:07,842 | INFO | 본문 추출 생략 : A Day of Flight Testing at NASA Armstrong
+2026-07-01 22:02:07,847 | INFO | 본문 정제 생략 : A Day of Flight Testing at NASA Armstrong
+2026-07-01 22:02:07,857 | INFO | 본문 추출 생략 : La NASA adjudica nuevas misiones científicas para Base Lunar y adelanta nuevas oportunidades
+2026-07-01 22:02:07,861 | INFO | 본문 정제 생략 : La NASA adjudica nuevas misiones científicas para Base Lunar y adelanta nuevas oportunidades
+2026-07-01 22:02:07,868 | INFO | 본문 추출 생략 : NextSTEP-3 B: Moon Base Demonstrations
+2026-07-01 22:02:07,871 | INFO | 본문 정제 생략 : NextSTEP-3 B: Moon Base Demonstrations
+2026-07-01 22:02:07,878 | INFO | 본문 추출 생략 : NASA Awards More Moon Base Science, Previews New Opportunities
+2026-07-01 22:02:07,883 | INFO | 본문 정제 생략 : NASA Awards More Moon Base Science, Previews New Opportunities
+2026-07-01 22:02:07,887 | INFO | 본문 추출 생략 : Starry Chandelier Cluster
+2026-07-01 22:02:07,893 | INFO | 본문 정제 생략 : Starry Chandelier Cluster
+2026-07-01 22:02:07,902 | INFO | 본문 추출 생략 : Ames Science Stars of the Month July 2026
+2026-07-01 22:02:07,917 | INFO | 본문 정제 생략 : Ames Science Stars of the Month July 2026
+2026-07-01 22:02:07,929 | INFO | 본문 추출 생략 : Northwest Earth and Space Science Pathways Project Celebrates Student Innovation Through ROADS from Earth to Venus National Challenge
+2026-07-01 22:02:07,931 | INFO | 본문 정제 생략 : Northwest Earth and Space Science Pathways Project Celebrates Student Innovation Through ROADS from Earth to Venus National Challenge
+2026-07-01 22:02:07,941 | INFO | 본문 추출 생략 : NASA, SBA Announce New Initiative to Scale American Space Economy
+2026-07-01 22:02:07,966 | INFO | 본문 정제 생략 : NASA, SBA Announce New Initiative to Scale American Space Economy
+2026-07-01 22:02:07,976 | INFO | 본문 추출 생략 : NASA’s Newest Wind Tunnel Builds on Legacy of Innovation
+2026-07-01 22:02:07,981 | INFO | 본문 정제 생략 : NASA’s Newest Wind Tunnel Builds on Legacy of Innovation
+2026-07-01 22:02:07,986 | INFO | 후보 기사 수 : 5
+2026-07-01 22:02:08,050 | INFO | Content Planner 평가 시작 : NASA’s Chandra Reveals ‘Red, White, Blue’ Universe for US 250th
+2026-07-01 22:02:43,304 | INFO | Content Planner 평가 시작 : NASA Awards More Moon Base Science, Previews New Opportunities
+2026-07-01 22:03:14,797 | INFO | Content Planner 평가 시작 : NASA’s Newest Wind Tunnel Builds on Legacy of Innovation
+2026-07-01 22:03:44,698 | INFO | ========== Pipeline 종료 ==========
