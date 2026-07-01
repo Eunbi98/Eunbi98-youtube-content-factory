@@ -77,29 +77,71 @@ class PipelineService:
             print(article.source)
             print(article.link)
 
-        selected_article = candidates[0]
+        producer_targets = candidates[:3]
+        produced_articles = []
 
-        print("\n🏆 AI Producer 평가 대상\n")
-        print(selected_article.title)
+        print("\n🤖 AI Producer 평가 시작\n")
 
-        self.logger.info(f"AI Producer 평가 시작 : {selected_article.title}")
-        producer_result = self.producer.produce(selected_article)
+        for index, article in enumerate(producer_targets, start=1):
+            print("=" * 80)
+            print(f"{index}. AI 평가 대상")
+            print(article.title)
 
-        selected_article.score = int(producer_result.get("score", 0))
-        selected_article.summary = producer_result.get("summary", "")
-        selected_article.script = producer_result.get("script", "")
-        selected_article.thumbnail = producer_result.get("thumbnail_text", "")
+            self.logger.info(f"AI Producer 평가 시작 : {article.title}")
+            producer_result = self.producer.produce(article)
 
-        if selected_article.script:
-            selected_article.status = "PRODUCER_DONE"
+            article.score = int(producer_result.get("score", 0))
 
-        print("\nAI Producer 결과")
+            summary = producer_result.get("summary", "")
+            script = producer_result.get("script", "")
+            thumbnail_text = producer_result.get("thumbnail_text", "")
+
+            if isinstance(summary, list):
+                summary = " ".join(str(item) for item in summary)
+
+            if isinstance(script, list):
+                script = "\n".join(str(item) for item in script)
+
+            if isinstance(thumbnail_text, list):
+                thumbnail_text = " ".join(str(item) for item in thumbnail_text)
+
+            article.summary = str(summary)
+            article.script = str(script)
+            article.thumbnail = str(thumbnail_text)
+
+            if article.script:
+                article.status = "PRODUCER_DONE"
+
+            produced_articles.append({
+                "article": article,
+                "producer_result": producer_result
+            })
+
+            print("\nAI Producer 결과")
+            print(f"점수: {article.score}")
+            print(f"카테고리: {producer_result.get('category', '')}")
+            print(f"이유: {producer_result.get('reason', '')}")
+            print(f"훅: {producer_result.get('hook', '')}")
+            print(f"제목: {producer_result.get('youtube_title', '')}")
+            print(f"썸네일: {producer_result.get('thumbnail_text', '')}")
+
+            self.repository.update_article(article)
+
+        produced_articles.sort(
+            key=lambda item: item["article"].score,
+            reverse=True
+        )
+
+        selected_item = produced_articles[0]
+        selected_article = selected_item["article"]
+        selected_result = selected_item["producer_result"]
+
+        print("\n🏆 최종 선택 기사\n")
         print(f"점수: {selected_article.score}")
-        print(f"카테고리: {producer_result.get('category', '')}")
-        print(f"이유: {producer_result.get('reason', '')}")
-        print(f"훅: {producer_result.get('hook', '')}")
-        print(f"제목: {producer_result.get('youtube_title', '')}")
-        print(f"썸네일: {producer_result.get('thumbnail_text', '')}")
+        print(selected_article.title)
+        print(selected_article.source)
+        print(selected_article.link)
+        print(f"선택 이유: {selected_result.get('reason', '')}")
 
         json_path = self.json_export.export_article(selected_article)
         print("\nJSON 생성")
@@ -109,7 +151,9 @@ class PipelineService:
         print("\n대표 이미지")
         print(image_path)
 
+        selected_article.status = "SELECTED"
         self.repository.update_article(selected_article)
+
         self.repository.close()
 
         self.logger.info("========== Pipeline 종료 ==========")
