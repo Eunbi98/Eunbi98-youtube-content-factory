@@ -1,0 +1,849 @@
+﻿
+
+
+==================== main.py ====================
+
+from app.services.pipeline_service import PipelineService
+
+
+def main():
+    pipeline = PipelineService()
+    pipeline.run()
+
+
+if __name__ == "__main__":
+    main()
+
+
+==================== config/settings.py ====================
+
+from pathlib import Path
+
+
+BASE_DIR = Path(__file__).resolve().parent.parent
+
+OUTPUT_DIR = BASE_DIR / "output"
+PROMPT_DIR = BASE_DIR / "prompts"
+SOURCE_DIR = BASE_DIR / "sources"
+
+IMAGE_DIR = OUTPUT_DIR / "images"
+AUDIO_DIR = OUTPUT_DIR / "audio"
+VIDEO_DIR = OUTPUT_DIR / "video"
+SUBTITLE_DIR = OUTPUT_DIR / "subtitles"
+
+SOURCE_FILE = SOURCE_DIR / "interesting_sources.json"
+
+MAX_CONTENT_LENGTH = 2500
+
+CANDIDATE_LIMIT = 5
+AI_TARGET_COUNT = 3
+PROCESS_LIMIT = 10
+
+CHANNEL_NAME = "?멸퀎???좉린???댁빞湲?
+LANGUAGE = "ko"
+
+OLLAMA_MODEL = "gemma2:2b"
+
+
+==================== app/services/pipeline_service.py ====================
+
+from app.database.repository import ArticleRepository
+from app.services.candidate_filter import CandidateFilter
+from app.services.collector_service import CollectorService
+from app.services.content_cleaner import ContentCleaner
+from app.services.content_planner_service import ContentPlannerService
+from app.services.content_service import ContentService
+from app.services.image_service import ImageService
+from app.services.json_export_service import JsonExportService
+from app.utils.logger import get_logger
+
+
+class PipelineService:
+    def __init__(self):
+        self.logger = get_logger(__name__)
+
+        self.collector = CollectorService()
+        self.repository = ArticleRepository()
+
+        self.content = ContentService()
+        self.cleaner = ContentCleaner()
+        self.candidate_filter = CandidateFilter()
+        self.content_planner = ContentPlannerService()
+
+        self.json_export = JsonExportService()
+        self.image = ImageService()
+
+    def run(self):
+        self.logger.info("========== Pipeline ?쒖옉 ==========")
+
+        collected_articles = self.collector.collect_all()
+        self.logger.info(f"?섏쭛 湲곗궗 ??: {len(collected_articles)}")
+
+        saved_count = 0
+
+        for article in collected_articles:
+            if self.repository.save(article):
+                saved_count += 1
+
+        self.logger.info(f"?좉퇋 ???湲곗궗 ??: {saved_count}")
+
+        articles = self.repository.get_unprocessed(limit=10)
+        self.logger.info(f"泥섎━ ???湲곗궗 ??: {len(articles)}")
+
+        if not articles:
+            self.logger.info("泥섎━??湲곗궗媛 ?놁뒿?덈떎.")
+            self.repository.close()
+            return
+
+        for article in articles:
+            if not article.content:
+                self.logger.info(f"蹂몃Ц 異붿텧 : {article.title}")
+                article.content = self.content.extract_content(article.link)
+                article.status = "CONTENT_DONE"
+            else:
+                self.logger.info(f"蹂몃Ц 異붿텧 ?앸왂 : {article.title}")
+
+            if article.content and not article.cleaned_content:
+                self.logger.info(f"蹂몃Ц ?뺤젣 : {article.title}")
+                article.cleaned_content = self.cleaner.clean(article.content)
+                article.status = "CLEANED"
+            else:
+                self.logger.info(f"蹂몃Ц ?뺤젣 ?앸왂 : {article.title}")
+
+            self.repository.update_article(article)
+
+        candidates = self.candidate_filter.filter(articles, limit=5)
+        self.logger.info(f"?꾨낫 湲곗궗 ??: {len(candidates)}")
+
+        print("\n?렗 肄섑뀗痢??꾨낫 湲곗궗\n")
+
+        for index, article in enumerate(candidates, start=1):
+            print("=" * 80)
+            print(f"{index}. ?꾨낫 ?먯닔 [{article.score}??")
+            print(article.title)
+            print(article.source)
+            print(article.link)
+
+        planner_targets = candidates[:3]
+        planned_articles = []
+
+        print("\n?쨼 Content Planner ?됯? ?쒖옉\n")
+
+        for index, article in enumerate(planner_targets, start=1):
+            print("=" * 80)
+            print(f"{index}. 湲고쉷 ???)
+            print(article.title)
+
+            self.logger.info(f"Content Planner ?됯? ?쒖옉 : {article.title}")
+            plan_result = self.content_planner.plan(article)
+
+            article.score = int(plan_result.get("score", 0))
+            article.summary = self._to_text(plan_result.get("summary", ""))
+            article.script = self._to_text(plan_result.get("script", ""))
+            article.thumbnail = self._to_text(plan_result.get("thumbnail_text", ""))
+            article.hashtags = plan_result.get("hashtags", [])
+
+            if article.script:
+                article.status = "PLANNED"
+
+            planned_articles.append({
+                "article": article,
+                "plan_result": plan_result
+            })
+
+            print("\nContent Planner 寃곌낵")
+            print(f"?먯닔: {article.score}")
+            print(f"移댄뀒怨좊━: {plan_result.get('category', '')}")
+            print(f"媛먯젙: {plan_result.get('emotion', '')}")
+            print(f"?댁쑀: {plan_result.get('reason', '')}")
+            print(f"?듭떖 二쇱젣: {plan_result.get('core_topic', '')}")
+            print(f"?? {plan_result.get('hook', '')}")
+            print(f"?쒕ぉ: {plan_result.get('youtube_title', '')}")
+            print(f"?몃꽕?? {plan_result.get('thumbnail_text', '')}")
+
+            self.repository.update_article(article)
+
+        planned_articles.sort(
+            key=lambda item: item["article"].score,
+            reverse=True
+        )
+
+        selected_item = planned_articles[0]
+        selected_article = selected_item["article"]
+        selected_result = selected_item["plan_result"]
+
+        print("\n?룇 理쒖쥌 ?좏깮 肄섑뀗痢?n")
+        print(f"?먯닔: {selected_article.score}")
+        print(selected_article.title)
+        print(selected_article.source)
+        print(selected_article.link)
+        print(f"?좏깮 ?댁쑀: {selected_result.get('reason', '')}")
+
+        json_path = self.json_export.export_article(selected_article)
+        print("\nJSON ?앹꽦")
+        print(json_path)
+
+        image_path = self.image.download_image(selected_article)
+        print("\n????대?吏")
+        print(image_path)
+
+        selected_article.status = "SELECTED"
+        self.repository.update_article(selected_article)
+
+        self.repository.close()
+
+        self.logger.info("========== Pipeline 醫낅즺 ==========")
+
+    def _to_text(self, value):
+        if isinstance(value, list):
+            return "\n".join(str(item) for item in value)
+
+        return str(value)
+
+
+==================== app/services/collector_service.py ====================
+
+from app.collectors.bbc import BBCCollector
+from app.collectors.techcrunch import TechCrunchCollector
+from app.services.source_manager import SourceManager
+from app.collectors.nasa import NASACollector
+
+class CollectorService:
+
+    def __init__(self):
+
+        self.source_manager = SourceManager()
+
+        available_collectors = {
+            "BBCCollector": BBCCollector,
+            "TechCrunchCollector": TechCrunchCollector,
+            "NASACollector": NASACollector,
+        }
+
+        self.collectors = []
+
+        for source in self.source_manager.load_sources():
+
+            if not source.get("enabled", True):
+                continue
+
+            collector_name = source.get("collector")
+
+            collector_class = available_collectors.get(collector_name)
+
+            if collector_class:
+                self.collectors.append(collector_class())
+
+    def collect_all(self):
+
+        articles = []
+
+        for collector in self.collectors:
+
+            try:
+                articles.extend(collector.collect())
+
+            except Exception as e:
+                print(f"{collector.__class__.__name__} ?ㅽ뙣 : {e}")
+
+        return articles
+
+
+==================== app/services/content_planner_service.py ====================
+
+import json
+import re
+
+from app.services.ollama_service import OllamaService
+from app.services.prompt_manager import PromptManager
+from config.settings import MAX_CONTENT_LENGTH
+
+
+class ContentPlannerService:
+    def __init__(self):
+        self.llm = OllamaService()
+        self.prompt_manager = PromptManager()
+
+    def plan(self, article) -> dict:
+        content = article.cleaned_content or article.content
+
+        if not content:
+            return self._empty_result()
+
+        prompt_template = self.prompt_manager.load(
+            "content_planner_prompt.txt"
+        )
+
+        prompt = (
+            prompt_template
+            .replace("{title}", article.title)
+            .replace("{source}", article.source)
+            .replace("{content}", content[:MAX_CONTENT_LENGTH])
+        )
+
+        response = self.llm.generate(prompt)
+        json_text = self._extract_json(response)
+
+        try:
+            return json.loads(json_text)
+        except json.JSONDecodeError:
+            return self._fallback_result(response)
+
+    def _extract_json(self, response: str) -> str:
+        match = re.search(r"```json\s*(.*?)\s*```", response, re.DOTALL)
+
+        if match:
+            return match.group(1).strip()
+
+        match = re.search(r"```\s*(.*?)\s*```", response, re.DOTALL)
+
+        if match:
+            return match.group(1).strip()
+
+        start = response.find("{")
+        end = response.rfind("}")
+
+        if start != -1 and end != -1:
+            return response[start:end + 1].strip()
+
+        return response.strip()
+
+    def _empty_result(self) -> dict:
+        return {
+            "score": 0,
+            "category": "other",
+            "emotion": "",
+            "reason": "",
+            "core_topic": "",
+            "hook": "",
+            "story_flow": [],
+            "summary": "",
+            "script": "",
+            "youtube_title": "",
+            "thumbnail_text": "",
+            "hashtags": []
+        }
+
+    def _fallback_result(self, response: str) -> dict:
+        return {
+            "score": 0,
+            "category": "other",
+            "emotion": "",
+            "reason": "AI ?묐떟??JSON?쇰줈 蹂?섑븯吏 紐삵뻽?듬땲??",
+            "core_topic": "",
+            "hook": "",
+            "story_flow": [],
+            "summary": response,
+            "script": response,
+            "youtube_title": "",
+            "thumbnail_text": "",
+            "hashtags": []
+        }
+
+
+==================== app/services/audio_service.py ====================
+
+import asyncio
+from pathlib import Path
+
+import edge_tts
+
+
+class AudioService:
+
+    def __init__(self):
+
+        self.output_dir = Path("output/audio")
+        self.output_dir.mkdir(parents=True, exist_ok=True)
+
+        # ?쒓뎅???ъ꽦 ?뚯꽦
+        self.voice = "ko-KR-SunHiNeural"
+
+    async def _create_audio(self, text: str, output_path: str):
+
+        communicate = edge_tts.Communicate(
+            text=text,
+            voice=self.voice,
+            rate="+0%"
+        )
+
+        await communicate.save(output_path)
+
+    def create_audio(self, article):
+
+        text = article.script
+
+        if not text:
+            return None
+
+        filename = "news.mp3"
+
+        output_path = self.output_dir / filename
+
+        asyncio.run(
+            self._create_audio(
+                text,
+                str(output_path)
+            )
+        )
+
+        return str(output_path)
+
+
+==================== app/services/subtitle_service.py ====================
+
+from pathlib import Path
+
+
+class SubtitleService:
+
+    def __init__(self):
+        self.output_dir = Path("output/subtitles")
+        self.output_dir.mkdir(parents=True, exist_ok=True)
+
+    def create_srt(self, article) -> str | None:
+        if not article.script:
+            return None
+
+        lines = self._split_script(article.script)
+
+        if not lines:
+            return None
+
+        filename = "news.srt"
+        output_path = self.output_dir / filename
+
+        with open(output_path, "w", encoding="utf-8") as f:
+            for index, line in enumerate(lines, start=1):
+                start_seconds = (index - 1) * 4
+                end_seconds = index * 4
+
+                f.write(f"{index}\n")
+                f.write(
+                    f"{self._format_time(start_seconds)} --> "
+                    f"{self._format_time(end_seconds)}\n"
+                )
+                f.write(f"{line}\n\n")
+
+        return str(output_path)
+
+    def _split_script(self, script: str) -> list[str]:
+        lines = []
+
+        for line in script.splitlines():
+            line = line.strip()
+
+            if not line:
+                continue
+
+            if line.startswith("-"):
+                line = line[1:].strip()
+
+            lines.append(line)
+
+        return lines
+
+    def _format_time(self, seconds: int) -> str:
+        hours = seconds // 3600
+        minutes = (seconds % 3600) // 60
+        secs = seconds % 60
+
+        return f"{hours:02}:{minutes:02}:{secs:02},000"
+
+
+==================== app/services/video_service.py ====================
+
+from pathlib import Path
+
+from moviepy import (
+    AudioFileClip,
+    ColorClip,
+    CompositeVideoClip,
+    ImageClip,
+    TextClip
+)
+
+
+class VideoService:
+
+    def __init__(self):
+        self.output_dir = Path("output/video")
+        self.output_dir.mkdir(parents=True, exist_ok=True)
+
+        self.width = 1080
+        self.height = 1920
+
+    def create_video(self, article, image_path: str, audio_path: str) -> str | None:
+        if not audio_path:
+            return None
+
+        output_path = self.output_dir / "news.mp4"
+
+        audio = AudioFileClip(audio_path)
+        duration = audio.duration
+
+        background = ColorClip(
+            size=(self.width, self.height),
+            color=(18, 18, 18),
+            duration=duration
+        )
+
+        clips = [background]
+
+        if image_path:
+            image = (
+                ImageClip(image_path)
+                .with_duration(duration)
+                .resized(width=900)
+                .with_position(("center", 420))
+            )
+
+            clips.append(image)
+
+        title = TextClip(
+            text=article.title,
+            font_size=58,
+            color="white",
+            size=(960, None),
+            method="caption"
+        ).with_duration(duration).with_position(("center", 120))
+
+        source = TextClip(
+            text=f"Source: {article.source}",
+            font_size=36,
+            color="white",
+            size=(900, None),
+            method="caption"
+        ).with_duration(duration).with_position(("center", 1660))
+
+        clips.append(title)
+        clips.append(source)
+
+        video = CompositeVideoClip(
+            clips,
+            size=(self.width, self.height)
+        ).with_audio(audio)
+
+        video.write_videofile(
+            str(output_path),
+            fps=30,
+            codec="libx264",
+            audio_codec="aac"
+        )
+
+        audio.close()
+        video.close()
+
+        return str(output_path)
+
+
+==================== app/services/image_service.py ====================
+
+from pathlib import Path
+
+import requests
+from bs4 import BeautifulSoup
+
+
+class ImageService:
+
+    def __init__(self):
+
+        self.output_dir = Path("output/images")
+        self.output_dir.mkdir(parents=True, exist_ok=True)
+
+    def download_image(self, article):
+
+        if not article.link:
+            return None
+
+        try:
+
+            response = requests.get(
+                article.link,
+                timeout=10,
+                headers={
+                    "User-Agent":
+                    "Mozilla/5.0"
+                }
+            )
+
+            soup = BeautifulSoup(response.text, "html.parser")
+
+            meta = soup.find(
+                "meta",
+                property="og:image"
+            )
+
+            if meta is None:
+                return None
+
+            image_url = meta.get("content")
+
+            if not image_url:
+                return None
+
+            image = requests.get(
+                image_url,
+                timeout=10
+            )
+
+            image.raise_for_status()
+
+            output_path = self.output_dir / "news.jpg"
+
+            with open(output_path, "wb") as f:
+                f.write(image.content)
+
+            return str(output_path)
+
+        except Exception as e:
+
+            print("?대?吏 ?ㅼ슫濡쒕뱶 ?ㅽ뙣")
+            print(e)
+
+            return None
+
+
+==================== app/services/json_export_service.py ====================
+
+import json
+from pathlib import Path
+from datetime import datetime
+
+
+class JsonExportService:
+    def __init__(self):
+        self.output_dir = Path("output")
+        self.output_dir.mkdir(exist_ok=True)
+
+    def export_article(self, article) -> str:
+        data = {
+            "title": article.title,
+            "source": article.source,
+            "link": article.link,
+            "score": article.score,
+            "summary": article.summary,
+            "script": article.script,
+            "thumbnail": article.thumbnail,
+            "hashtags": article.hashtags,
+            "created_at": datetime.now().isoformat()
+        }
+
+        filename = self._make_filename(article.title)
+        file_path = self.output_dir / filename
+
+        with open(file_path, "w", encoding="utf-8") as f:
+            json.dump(data, f, ensure_ascii=False, indent=2)
+
+        return str(file_path)
+
+    def _make_filename(self, title: str) -> str:
+        safe_title = "".join(
+            char for char in title[:40]
+            if char.isalnum() or char in (" ", "_", "-")
+        ).strip()
+
+        safe_title = safe_title.replace(" ", "_")
+
+        if not safe_title:
+            safe_title = "news_item"
+
+        return f"{safe_title}.json"
+
+
+==================== app/database/repository.py ====================
+
+import sqlite3
+from pathlib import Path
+from datetime import datetime
+
+from app.models.article import Article
+
+
+class ArticleRepository:
+
+    def __init__(self):
+
+        Path("data").mkdir(exist_ok=True)
+
+        self.conn = sqlite3.connect("data/articles.db")
+        self.cursor = self.conn.cursor()
+
+        self.create_table()
+
+    def create_table(self):
+
+        self.cursor.execute("""
+        CREATE TABLE IF NOT EXISTS articles (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+
+            title TEXT,
+            link TEXT UNIQUE,
+            source TEXT,
+            published TEXT,
+
+            content TEXT,
+            cleaned_content TEXT,
+
+            score INTEGER DEFAULT 0,
+
+            summary TEXT,
+            script TEXT,
+            thumbnail TEXT,
+
+            status TEXT DEFAULT 'COLLECTED',
+
+            created_at TEXT,
+            updated_at TEXT
+        )
+        """)
+
+        self.conn.commit()
+
+    def save(self, article: Article):
+
+        try:
+            now = datetime.now().isoformat()
+
+            self.cursor.execute("""
+            INSERT INTO articles (
+                title, link, source, published,
+                content, cleaned_content,
+                score,
+                summary, script, thumbnail,
+                status,
+                created_at, updated_at
+            )
+            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+            """, (
+                article.title,
+                article.link,
+                article.source,
+                article.published,
+                article.content,
+                article.cleaned_content,
+                article.score,
+                article.summary,
+                article.script,
+                article.thumbnail,
+                article.status,
+                now,
+                now
+            ))
+
+            self.conn.commit()
+            return True
+
+        except sqlite3.IntegrityError:
+            return False
+
+    def update_article(self, article: Article):
+
+        self.cursor.execute("""
+        UPDATE articles
+        SET
+            content = ?,
+            cleaned_content = ?,
+            score = ?,
+            summary = ?,
+            script = ?,
+            thumbnail = ?,
+            status = ?,
+            updated_at = ?
+        WHERE link = ?
+        """, (
+            article.content,
+            article.cleaned_content,
+            article.score,
+            article.summary,
+            article.script,
+            article.thumbnail,
+            article.status,
+            datetime.now().isoformat(),
+            article.link
+        ))
+
+        self.conn.commit()
+
+    def get_unprocessed(self, limit=10):
+
+        self.cursor.execute("""
+        SELECT title, link, source, published,
+               content, cleaned_content,
+               score, summary, script, thumbnail,
+               status
+        FROM articles
+        WHERE status != 'DONE'
+        LIMIT ?
+        """, (limit,))
+
+        rows = self.cursor.fetchall()
+
+        articles = []
+
+        for row in rows:
+
+            articles.append(Article(
+                title=row[0],
+                link=row[1],
+                source=row[2],
+                published=row[3],
+                content=row[4],
+                cleaned_content=row[5],
+                score=row[6],
+                summary=row[7],
+                script=row[8],
+                thumbnail=row[9],
+                status=row[10]
+            ))
+
+        return articles
+
+    def close(self):
+        self.conn.close()
+
+
+==================== app/models/article.py ====================
+
+from dataclasses import dataclass, field
+from typing import List
+
+
+@dataclass
+class Article:
+    title: str
+    link: str
+    source: str
+    published: str
+
+    # 蹂몃Ц
+    content: str = ""
+
+    # ?꾩쿂由щ맂 蹂몃Ц
+    cleaned_content: str = ""
+
+    # ??궧 ?먯닔
+    score: int = 0
+
+    # AI 寃곌낵臾?
+    summary: str = ""
+    script: str = ""
+    thumbnail: str = ""
+
+    hashtags: List[str] = field(default_factory=list)
+
+    # 泥섎━ ?곹깭
+    status: str = "COLLECTED"
+
+
+==================== requirements.txt ====================
+
+httpx
+feedparser
+python-dotenv
+newspaper3k
+lxml_html_clean
+edge-tts
+moviepy
+pillow
