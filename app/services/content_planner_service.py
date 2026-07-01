@@ -3,6 +3,7 @@ import re
 
 from app.services.ollama_service import OllamaService
 from app.services.prompt_manager import PromptManager
+from config.settings import MAX_CONTENT_LENGTH
 
 
 class ContentPlannerService:
@@ -16,13 +17,15 @@ class ContentPlannerService:
         if not content:
             return self._empty_result()
 
-        prompt_template = self.prompt_manager.load("content_planner_prompt.txt")
+        prompt_template = self.prompt_manager.load(
+            "content_planner_prompt.txt"
+        )
 
         prompt = (
             prompt_template
             .replace("{title}", article.title)
             .replace("{source}", article.source)
-            .replace("{content}", content[:2500])
+            .replace("{content}", content[:MAX_CONTENT_LENGTH])
         )
 
         response = self.llm.generate(prompt)
