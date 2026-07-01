@@ -1,20 +1,15 @@
 from app.database.repository import ArticleRepository
-from app.services.audio_service import AudioService
 from app.services.collector_service import CollectorService
 from app.services.content_cleaner import ContentCleaner
 from app.services.content_service import ContentService
 from app.services.image_service import ImageService
 from app.services.json_export_service import JsonExportService
+from app.services.producer_service import ProducerService
 from app.services.ranking_service import RankingService
-from app.services.script_service import ScriptService
-from app.services.subtitle_service import SubtitleService
-from app.services.summary_service import SummaryService
-from app.services.video_service import VideoService
 from app.utils.logger import get_logger
 
 
 class PipelineService:
-
     def __init__(self):
         self.logger = get_logger(__name__)
 
@@ -24,15 +19,13 @@ class PipelineService:
 
         self.content = ContentService()
         self.cleaner = ContentCleaner()
-
-        self.summary = SummaryService()
-        self.script = ScriptService()
+        self.producer = ProducerService()
 
         self.json_export = JsonExportService()
         self.image = ImageService()
-        self.audio = AudioService()
-        self.subtitle = SubtitleService()
-        self.video = VideoService()
+
+        # 개발 중 임시 비활성화
+        self.enable_media_generation = False
 
     def run(self):
         self.logger.info("========== Pipeline 시작 ==========")
@@ -58,11 +51,11 @@ class PipelineService:
 
         ranked_articles = self.ranking.rank(articles)
 
-        print("\n🔥 오늘의 TOP 1 뉴스 영상 생성\n")
+        print("\n🎬 AI Producer 영상 후보 평가\n")
 
         for index, article in enumerate(ranked_articles[:1], start=1):
             print("=" * 80)
-            print(f"{index}. [{article.score}점]")
+            print(f"{index}. 기존 점수 [{article.score}점]")
             print(article.title)
             print(article.source)
             print(article.link)
@@ -81,23 +74,24 @@ class PipelineService:
             else:
                 self.logger.info("본문 정제 생략")
 
-            if article.cleaned_content and not article.summary:
-                self.logger.info(f"요약 생성 : {article.title}")
-                article.summary = self.summary.summarize(article)
+            self.logger.info(f"AI Producer 평가 시작 : {article.title}")
+            producer_result = self.producer.produce(article)
 
-                if article.summary:
-                    article.status = "SUMMARY_DONE"
-            else:
-                self.logger.info("요약 생성 생략")
+            article.score = int(producer_result.get("score", 0))
+            article.summary = producer_result.get("summary", "")
+            article.script = producer_result.get("script", "")
+            article.thumbnail = producer_result.get("thumbnail_text", "")
 
-            if article.summary and not article.script:
-                self.logger.info(f"대본 생성 : {article.title}")
-                article.script = self.script.create_script(article)
+            if article.script:
+                article.status = "PRODUCER_DONE"
 
-                if article.script:
-                    article.status = "SCRIPT_DONE"
-            else:
-                self.logger.info("대본 생성 생략")
+            print("\nAI Producer 결과")
+            print(f"점수: {article.score}")
+            print(f"카테고리: {producer_result.get('category', '')}")
+            print(f"이유: {producer_result.get('reason', '')}")
+            print(f"훅: {producer_result.get('hook', '')}")
+            print(f"제목: {producer_result.get('youtube_title', '')}")
+            print(f"썸네일: {producer_result.get('thumbnail_text', '')}")
 
             json_path = self.json_export.export_article(article)
             print("\nJSON 생성")
@@ -107,24 +101,11 @@ class PipelineService:
             print("\n대표 이미지")
             print(image_path)
 
-            audio_path = self.audio.create_audio(article)
-            print("\nMP3 생성")
-            print(audio_path)
+            if self.enable_media_generation:
+                # 나중에 영상 생성 테스트를 다시 켤 때 이 안에
+                # AudioService, SubtitleService, VideoService를 연결합니다.
+                pass
 
-            subtitle_path = self.subtitle.create_srt(article)
-            print("\nSRT 생성")
-            print(subtitle_path)
-
-            video_path = self.video.create_video(
-                article=article,
-                image_path=image_path,
-                audio_path=audio_path
-            )
-
-            print("\nMP4 생성")
-            print(video_path)
-
-            article.status = "VIDEO_DONE"
             self.repository.update_article(article)
 
             print("\n요약")

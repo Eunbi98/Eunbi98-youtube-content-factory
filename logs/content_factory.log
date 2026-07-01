@@ -154,3 +154,40 @@
 2026-07-01 20:45:05,756 | INFO | 요약 생성 생략
 2026-07-01 20:45:05,756 | INFO | 대본 생성 생략
 2026-07-01 20:50:04,423 | INFO | ========== Pipeline 종료 ==========
+2026-07-01 21:01:30,426 | INFO | ========== Pipeline 시작 ==========
+2026-07-01 21:01:31,624 | INFO | 수집 기사 수 : 65
+2026-07-01 21:01:31,632 | INFO | 신규 저장 기사 수 : 1
+2026-07-01 21:01:31,633 | INFO | 처리 대상 기사 수 : 10
+2026-07-01 21:01:31,636 | INFO | 본문 추출 생략
+2026-07-01 21:01:31,636 | INFO | 본문 정제 생략
+2026-07-01 21:01:31,637 | INFO | AI Producer 평가 시작 : Woman raped by Superdry co-founder tells BBC she was working for him at the time
+2026-07-01 21:03:38,298 | INFO | ========== Pipeline 시작 ==========
+2026-07-01 21:03:39,461 | INFO | 수집 기사 수 : 65
+2026-07-01 21:03:39,484 | INFO | 신규 저장 기사 수 : 1
+2026-07-01 21:03:39,489 | INFO | 처리 대상 기사 수 : 10
+2026-07-01 21:03:39,493 | INFO | 본문 추출 생략
+2026-07-01 21:03:39,493 | INFO | 본문 정제 생략
+2026-07-01 21:03:39,493 | INFO | AI Producer 평가 시작 : Woman raped by Superdry co-founder tells BBC she was working for him at the time
+2026-07-01 21:12:42,045 | INFO | ========== Pipeline 시작 ==========
+2026-07-01 21:12:42,655 | INFO | 수집 기사 수 : 10
+2026-07-01 21:12:42,720 | INFO | 신규 저장 기사 수 : 10
+2026-07-01 21:12:42,721 | INFO | 처리 대상 기사 수 : 10
+2026-07-01 21:12:42,722 | INFO | 본문 추출 : NASA’s Chandra Reveals ‘Red, White, Blue’ Universe for US 250th
+2026-07-01 21:12:43,495 | INFO | 본문 정제 : NASA’s Chandra Reveals ‘Red, White, Blue’ Universe for US 250th
+2026-07-01 21:12:43,496 | INFO | AI Producer 평가 시작 : NASA’s Chandra Reveals ‘Red, White, Blue’ Universe for US 250th
+2026-07-01 21:16:59,924 | INFO | ========== Pipeline 시작 ==========
+2026-07-01 21:17:00,494 | INFO | 수집 기사 수 : 10
+2026-07-01 21:17:00,497 | INFO | 신규 저장 기사 수 : 0
+2026-07-01 21:17:00,498 | INFO | 처리 대상 기사 수 : 10
+2026-07-01 21:17:00,500 | INFO | 본문 추출 : NASA’s Chandra Reveals ‘Red, White, Blue’ Universe for US 250th
+2026-07-01 21:17:01,113 | INFO | 본문 정제 : NASA’s Chandra Reveals ‘Red, White, Blue’ Universe for US 250th
+2026-07-01 21:17:01,114 | INFO | AI Producer 평가 시작 : NASA’s Chandra Reveals ‘Red, White, Blue’ Universe for US 250th
+2026-07-01 21:17:19,707 | INFO | ========== Pipeline 종료 ==========
+2026-07-01 21:19:08,728 | INFO | ========== Pipeline 시작 ==========
+2026-07-01 21:19:09,280 | INFO | 수집 기사 수 : 10
+2026-07-01 21:19:09,281 | INFO | 신규 저장 기사 수 : 0
+2026-07-01 21:19:09,282 | INFO | 처리 대상 기사 수 : 10
+2026-07-01 21:19:09,283 | INFO | 본문 추출 생략
+2026-07-01 21:19:09,284 | INFO | 본문 정제 생략
+2026-07-01 21:19:09,284 | INFO | AI Producer 평가 시작 : NASA’s Chandra Reveals ‘Red, White, Blue’ Universe for US 250th
+2026-07-01 21:19:31,479 | INFO | ========== Pipeline 종료 ==========

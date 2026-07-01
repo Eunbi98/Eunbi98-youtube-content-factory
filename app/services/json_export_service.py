@@ -4,7 +4,6 @@ from datetime import datetime
 
 
 class JsonExportService:
-
     def __init__(self):
         self.output_dir = Path("output")
         self.output_dir.mkdir(exist_ok=True)

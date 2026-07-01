@@ -1,28 +1,48 @@
 1
 00:00:00,000 --> 00:00:04,000
-**[Scene opens with news footage of a woman in a taxi, then cuts to a still image of the Superdrug logo]**
+```json
 
 2
 00:00:04,000 --> 00:00:08,000
-수퍼드리 창립자, 제임스 홀더의 여성 직원 위기 사건이 논란!
+{
 
 3
 00:00:08,000 --> 00:00:12,000
-제임스 홀더가 여성을 위피하고 여성이 직장 생활 시작 전에 그에게 연락한 내용이 발표됐다.
+"score": 80,
 
 4
 00:00:12,000 --> 00:00:16,000
-**[Scene shifts to a person reading an article on their phone]**
+"category": "other",
 
 5
 00:00:16,000 --> 00:00:20,000
-그는 여성의 집사를 보며 여성의 타xis에서 일을 하는 것을 보고 그녀에게 가서 집에 들어가게 됨.
+"reason": "The story involves shocking crimes and details about workplace misconduct, which makes it intriguing and potentially very impactful in a short video format.",
 
 6
 00:00:20,000 --> 00:00:24,000
-왜 이런 이야기는 중요한 건지? **[Close-up shot of the woman's face with a worried expression]**
+"summary": "A woman bravely shares her harrowing experiences after being raped by the disgraced founder of Superdry. The video explores the dynamic between her at work with the accused man, highlighting the sense of fear and control he exerted over his employees. It touches on crucial themes like power dynamics, workplace culture, and the courage to come forward.",
 
 7
 00:00:24,000 --> 00:00:28,000
-수퍼드리 창립자와 여성 간의 관계, 과거부터 현재까지의 사건들이 드러났다!
+"script": "🔥 사라진 회사의 설립자로부터 폭력적인 경험을 털어놓은 여성! 😱 Gemma는 폭력적 행위에 직면했지만 회사에서 계속 일해야만 한다. 그녀가 이를 통해 배우게 된 것들과 이야기를 들려주세요!",
+
+8
+00:00:28,000 --> 00:00:32,000
+"youtube_title": "💖 'Superdry' 설립자로부터 잔인한 사건! 🔥 Gemma의 힘든 선택",
+
+9
+00:00:32,000 --> 00:00:36,000
+"thumbnail_text": "Gemma의 심각한 경험에 직면. 신기하고 뜨거운 이야기를 담은 YouTube Shorts!",
+
+10
+00:00:36,000 --> 00:00:40,000
+"hook": "수상한 가짜 사업가, 이번에는 그녀를 위한 무서운 이야기! 👀"
+
+11
+00:00:40,000 --> 00:00:44,000
+}
+
+12
+00:00:44,000 --> 00:00:48,000
+```
 

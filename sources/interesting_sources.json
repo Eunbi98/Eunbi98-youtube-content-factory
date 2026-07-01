@@ -1,17 +1,17 @@
 [
   {
     "collector": "BBCCollector",
-    "enabled": true,
+    "enabled": false,
     "priority": 10
   },
   {
     "collector": "TechCrunchCollector",
-    "enabled": true,
+    "enabled": false,
     "priority": 9
   },
   {
-  "collector": "NASACollector",
-  "enabled": true,
-  "priority": 10
-}
+    "collector": "NASACollector",
+    "enabled": true,
+    "priority": 10
+  }
 ]
