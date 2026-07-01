@@ -22,19 +22,21 @@ class RankingService:
         title = article.title.lower()
 
         for keyword, point in self.KEYWORDS.items():
+
             if keyword.lower() in title:
                 score += point
+
+        article.score = score
 
         return score
 
     def rank(self, articles):
 
-        ranked = []
-
         for article in articles:
-            score = self.calculate_score(article)
-            ranked.append((score, article))
+            self.calculate_score(article)
 
-        ranked.sort(key=lambda x: x[0], reverse=True)
-
-        return ranked
+        return sorted(
+            articles,
+            key=lambda article: article.score,
+            reverse=True
+        )
