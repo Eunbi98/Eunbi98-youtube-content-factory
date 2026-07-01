@@ -2,11 +2,12 @@ from app.database.repository import ArticleRepository
 from app.services.collector_service import CollectorService
 from app.services.content_cleaner import ContentCleaner
 from app.services.content_service import ContentService
+from app.services.json_export_service import JsonExportService
 from app.services.ranking_service import RankingService
 from app.services.summary_service import SummaryService
 from app.services.script_service import ScriptService
 from app.utils.logger import get_logger
-
+from app.services.audio_service import AudioService
 
 class PipelineService:
 
@@ -20,6 +21,8 @@ class PipelineService:
         self.cleaner = ContentCleaner()
         self.summary = SummaryService()
         self.script = ScriptService()
+        self.json_export = JsonExportService()
+        self.audio = AudioService()
 
     def run(self):
         self.logger.info("========== Pipeline 시작 ==========")
@@ -45,7 +48,7 @@ class PipelineService:
 
         ranked_articles = self.ranking.rank(articles)
 
-        print("\n🔥 오늘의 TOP 1 뉴스 대본\n")
+        print("\n🔥 오늘의 TOP 1 뉴스 JSON 생성\n")
 
         for index, article in enumerate(ranked_articles[:1], start=1):
             print("=" * 80)
@@ -86,6 +89,13 @@ class PipelineService:
             else:
                 self.logger.info(f"대본 생성 생략 : {article.title}")
 
+            json_path = self.json_export.export_article(article)
+            audio_path = self.audio.create_audio(article)
+
+            print("\nMP3 생성:")
+            print(audio_path)
+            
+            article.status = "JSON_DONE"
             self.repository.update_article(article)
 
             print("\n요약:")
@@ -93,6 +103,9 @@ class PipelineService:
 
             print("\n30초 쇼츠 대본:")
             print(article.script)
+
+            print("\nJSON 저장 위치:")
+            print(json_path)
 
         self.repository.close()
 

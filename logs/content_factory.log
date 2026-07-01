@@ -91,3 +91,30 @@
 2026-07-01 19:40:06,199 | INFO | 요약 생성 생략 : Woman raped by Superdry co-founder tells BBC she was working for him at the time
 2026-07-01 19:40:06,200 | INFO | 대본 생성 시작 : Woman raped by Superdry co-founder tells BBC she was working for him at the time
 2026-07-01 19:40:25,281 | INFO | ========== Pipeline 종료 ==========
+2026-07-01 19:44:03,147 | INFO | ========== Pipeline 시작 ==========
+2026-07-01 19:44:03,560 | INFO | 수집 기사 수 : 56
+2026-07-01 19:44:03,561 | INFO | 신규 저장 기사 수 : 0
+2026-07-01 19:44:03,562 | INFO | 처리 대상 기사 수 : 10
+2026-07-01 19:44:03,565 | INFO | 본문 추출 생략 : Woman raped by Superdry co-founder tells BBC she was working for him at the time
+2026-07-01 19:44:03,565 | INFO | 본문 정제 생략 : Woman raped by Superdry co-founder tells BBC she was working for him at the time
+2026-07-01 19:44:03,565 | INFO | 요약 생성 생략 : Woman raped by Superdry co-founder tells BBC she was working for him at the time
+2026-07-01 19:44:03,565 | INFO | 대본 생성 생략 : Woman raped by Superdry co-founder tells BBC she was working for him at the time
+2026-07-01 19:44:03,585 | INFO | ========== Pipeline 종료 ==========
+2026-07-01 19:51:47,545 | INFO | ========== Pipeline 시작 ==========
+2026-07-01 19:51:48,304 | INFO | 수집 기사 수 : 56
+2026-07-01 19:51:48,330 | INFO | 신규 저장 기사 수 : 3
+2026-07-01 19:51:48,332 | INFO | 처리 대상 기사 수 : 10
+2026-07-01 19:51:48,334 | INFO | 본문 추출 생략 : Woman raped by Superdry co-founder tells BBC she was working for him at the time
+2026-07-01 19:51:48,338 | INFO | 본문 정제 생략 : Woman raped by Superdry co-founder tells BBC she was working for him at the time
+2026-07-01 19:51:48,340 | INFO | 요약 생성 생략 : Woman raped by Superdry co-founder tells BBC she was working for him at the time
+2026-07-01 19:51:48,340 | INFO | 대본 생성 생략 : Woman raped by Superdry co-founder tells BBC she was working for him at the time
+2026-07-01 19:51:48,427 | INFO | ========== Pipeline 종료 ==========
+2026-07-01 19:56:52,994 | INFO | ========== Pipeline 시작 ==========
+2026-07-01 19:56:53,417 | INFO | 수집 기사 수 : 56
+2026-07-01 19:56:53,421 | INFO | 신규 저장 기사 수 : 0
+2026-07-01 19:56:53,423 | INFO | 처리 대상 기사 수 : 10
+2026-07-01 19:56:53,430 | INFO | 본문 추출 생략 : Woman raped by Superdry co-founder tells BBC she was working for him at the time
+2026-07-01 19:56:53,431 | INFO | 본문 정제 생략 : Woman raped by Superdry co-founder tells BBC she was working for him at the time
+2026-07-01 19:56:53,431 | INFO | 요약 생성 생략 : Woman raped by Superdry co-founder tells BBC she was working for him at the time
+2026-07-01 19:56:53,432 | INFO | 대본 생성 생략 : Woman raped by Superdry co-founder tells BBC she was working for him at the time
+2026-07-01 19:56:55,499 | INFO | ========== Pipeline 종료 ==========
