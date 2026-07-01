@@ -40,3 +40,54 @@
 2026-07-01 19:19:08,358 | INFO | 본문 추출 생략 : Why Gen Z are planning for life without a state pension
 2026-07-01 19:19:08,358 | INFO | 본문 정제 생략 : Why Gen Z are planning for life without a state pension
 2026-07-01 19:19:08,366 | INFO | ========== Pipeline 종료 ==========
+2026-07-01 19:22:17,221 | INFO | ========== Pipeline 시작 ==========
+2026-07-01 19:22:17,940 | INFO | 수집 기사 수 : 57
+2026-07-01 19:22:17,964 | INFO | 신규 저장 기사 수 : 2
+2026-07-01 19:22:17,965 | INFO | 처리 대상 기사 수 : 10
+2026-07-01 19:22:17,969 | INFO | 본문 추출 생략 : Woman raped by Superdry co-founder tells BBC she was working for him at the time
+2026-07-01 19:22:17,969 | INFO | 본문 정제 생략 : Woman raped by Superdry co-founder tells BBC she was working for him at the time
+2026-07-01 19:22:17,970 | INFO | 요약 생성 시작 : Woman raped by Superdry co-founder tells BBC she was working for him at the time
+2026-07-01 19:22:20,286 | INFO | 본문 추출 생략 : Nowak case officers face gross misconduct investigation
+2026-07-01 19:22:20,288 | INFO | 본문 정제 생략 : Nowak case officers face gross misconduct investigation
+2026-07-01 19:22:20,289 | INFO | 요약 생성 시작 : Nowak case officers face gross misconduct investigation
+2026-07-01 19:22:22,385 | INFO | 본문 추출 생략 : Burnham's chancellor will have to find extra £4.7bn for defence, says minister
+2026-07-01 19:22:22,385 | INFO | 본문 정제 생략 : Burnham's chancellor will have to find extra £4.7bn for defence, says minister
+2026-07-01 19:22:22,387 | INFO | 요약 생성 시작 : Burnham's chancellor will have to find extra £4.7bn for defence, says minister
+2026-07-01 19:22:24,471 | INFO | ========== Pipeline 종료 ==========
+2026-07-01 19:29:48,792 | INFO | ========== Pipeline 시작 ==========
+2026-07-01 19:29:49,398 | INFO | 수집 기사 수 : 57
+2026-07-01 19:29:49,406 | INFO | 신규 저장 기사 수 : 1
+2026-07-01 19:29:49,408 | INFO | 처리 대상 기사 수 : 10
+2026-07-01 19:29:49,411 | INFO | 본문 추출 생략 : Woman raped by Superdry co-founder tells BBC she was working for him at the time
+2026-07-01 19:29:49,411 | INFO | 본문 정제 생략 : Woman raped by Superdry co-founder tells BBC she was working for him at the time
+2026-07-01 19:29:49,411 | INFO | 요약 생성 시작 : Woman raped by Superdry co-founder tells BBC she was working for him at the time
+2026-07-01 19:30:27,559 | INFO | 본문 추출 생략 : Nowak case officers face gross misconduct investigation
+2026-07-01 19:30:27,559 | INFO | 본문 정제 생략 : Nowak case officers face gross misconduct investigation
+2026-07-01 19:30:27,559 | INFO | 요약 생성 시작 : Nowak case officers face gross misconduct investigation
+2026-07-01 19:30:44,815 | INFO | 본문 추출 생략 : Burnham's chancellor will have to find extra £4.7bn for defence, says minister
+2026-07-01 19:30:44,816 | INFO | 본문 정제 생략 : Burnham's chancellor will have to find extra £4.7bn for defence, says minister
+2026-07-01 19:30:44,818 | INFO | 요약 생성 시작 : Burnham's chancellor will have to find extra £4.7bn for defence, says minister
+2026-07-01 19:31:15,898 | INFO | ========== Pipeline 종료 ==========
+2026-07-01 19:33:58,669 | INFO | ========== Pipeline 시작 ==========
+2026-07-01 19:33:59,071 | INFO | 수집 기사 수 : 56
+2026-07-01 19:33:59,073 | INFO | 신규 저장 기사 수 : 0
+2026-07-01 19:33:59,075 | INFO | 처리 대상 기사 수 : 10
+2026-07-01 19:33:59,076 | INFO | 본문 추출 생략 : Woman raped by Superdry co-founder tells BBC she was working for him at the time
+2026-07-01 19:33:59,077 | INFO | 본문 정제 생략 : Woman raped by Superdry co-founder tells BBC she was working for him at the time
+2026-07-01 19:33:59,077 | INFO | 요약 생성 생략 : Woman raped by Superdry co-founder tells BBC she was working for him at the time
+2026-07-01 19:33:59,093 | INFO | 본문 추출 생략 : Nowak case officers face gross misconduct investigation
+2026-07-01 19:33:59,093 | INFO | 본문 정제 생략 : Nowak case officers face gross misconduct investigation
+2026-07-01 19:33:59,093 | INFO | 요약 생성 생략 : Nowak case officers face gross misconduct investigation
+2026-07-01 19:33:59,102 | INFO | 본문 추출 생략 : Burnham's chancellor will have to find extra £4.7bn for defence, says minister
+2026-07-01 19:33:59,102 | INFO | 본문 정제 생략 : Burnham's chancellor will have to find extra £4.7bn for defence, says minister
+2026-07-01 19:33:59,102 | INFO | 요약 생성 생략 : Burnham's chancellor will have to find extra £4.7bn for defence, says minister
+2026-07-01 19:33:59,113 | INFO | ========== Pipeline 종료 ==========
+2026-07-01 19:40:05,744 | INFO | ========== Pipeline 시작 ==========
+2026-07-01 19:40:06,159 | INFO | 수집 기사 수 : 56
+2026-07-01 19:40:06,162 | INFO | 신규 저장 기사 수 : 0
+2026-07-01 19:40:06,165 | INFO | 처리 대상 기사 수 : 10
+2026-07-01 19:40:06,198 | INFO | 본문 추출 생략 : Woman raped by Superdry co-founder tells BBC she was working for him at the time
+2026-07-01 19:40:06,199 | INFO | 본문 정제 생략 : Woman raped by Superdry co-founder tells BBC she was working for him at the time
+2026-07-01 19:40:06,199 | INFO | 요약 생성 생략 : Woman raped by Superdry co-founder tells BBC she was working for him at the time
+2026-07-01 19:40:06,200 | INFO | 대본 생성 시작 : Woman raped by Superdry co-founder tells BBC she was working for him at the time
+2026-07-01 19:40:25,281 | INFO | ========== Pipeline 종료 ==========
