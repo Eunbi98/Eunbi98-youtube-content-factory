@@ -1,30 +1,17 @@
 [
   {
-    "name": "NASA",
-    "category": "space",
-    "type": "rss",
-    "url": "https://www.nasa.gov/rss/dyn/breaking_news.rss",
+    "collector": "BBCCollector",
+    "enabled": true,
     "priority": 10
   },
   {
-    "name": "Live Science",
-    "category": "science",
-    "type": "rss",
-    "url": "https://www.livescience.com/feeds/all",
+    "collector": "TechCrunchCollector",
+    "enabled": true,
     "priority": 9
   },
   {
-    "name": "ScienceDaily",
-    "category": "science",
-    "type": "rss",
-    "url": "https://www.sciencedaily.com/rss/all.xml",
-    "priority": 8
-  },
-  {
-    "name": "Smithsonian Magazine",
-    "category": "history",
-    "type": "rss",
-    "url": "https://www.smithsonianmag.com/rss/latest_articles/",
-    "priority": 8
-  }
+  "collector": "NASACollector",
+  "enabled": true,
+  "priority": 10
+}
 ]
