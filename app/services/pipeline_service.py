@@ -2,10 +2,10 @@ from app.database.repository import ArticleRepository
 from app.services.candidate_filter import CandidateFilter
 from app.services.collector_service import CollectorService
 from app.services.content_cleaner import ContentCleaner
+from app.services.content_planner_service import ContentPlannerService
 from app.services.content_service import ContentService
 from app.services.image_service import ImageService
 from app.services.json_export_service import JsonExportService
-from app.services.producer_service import ProducerService
 from app.utils.logger import get_logger
 
 
@@ -19,12 +19,10 @@ class PipelineService:
         self.content = ContentService()
         self.cleaner = ContentCleaner()
         self.candidate_filter = CandidateFilter()
-        self.producer = ProducerService()
+        self.content_planner = ContentPlannerService()
 
         self.json_export = JsonExportService()
         self.image = ImageService()
-
-        self.enable_media_generation = False
 
     def run(self):
         self.logger.info("========== Pipeline 시작 ==========")
@@ -68,7 +66,7 @@ class PipelineService:
         candidates = self.candidate_filter.filter(articles, limit=5)
         self.logger.info(f"후보 기사 수 : {len(candidates)}")
 
-        print("\n🎬 AI Producer 후보 기사\n")
+        print("\n🎬 콘텐츠 후보 기사\n")
 
         for index, article in enumerate(candidates, start=1):
             print("=" * 80)
@@ -77,66 +75,55 @@ class PipelineService:
             print(article.source)
             print(article.link)
 
-        producer_targets = candidates[:3]
-        produced_articles = []
+        planner_targets = candidates[:3]
+        planned_articles = []
 
-        print("\n🤖 AI Producer 평가 시작\n")
+        print("\n🤖 Content Planner 평가 시작\n")
 
-        for index, article in enumerate(producer_targets, start=1):
+        for index, article in enumerate(planner_targets, start=1):
             print("=" * 80)
-            print(f"{index}. AI 평가 대상")
+            print(f"{index}. 기획 대상")
             print(article.title)
 
-            self.logger.info(f"AI Producer 평가 시작 : {article.title}")
-            producer_result = self.producer.produce(article)
+            self.logger.info(f"Content Planner 평가 시작 : {article.title}")
+            plan_result = self.content_planner.plan(article)
 
-            article.score = int(producer_result.get("score", 0))
-
-            summary = producer_result.get("summary", "")
-            script = producer_result.get("script", "")
-            thumbnail_text = producer_result.get("thumbnail_text", "")
-
-            if isinstance(summary, list):
-                summary = " ".join(str(item) for item in summary)
-
-            if isinstance(script, list):
-                script = "\n".join(str(item) for item in script)
-
-            if isinstance(thumbnail_text, list):
-                thumbnail_text = " ".join(str(item) for item in thumbnail_text)
-
-            article.summary = str(summary)
-            article.script = str(script)
-            article.thumbnail = str(thumbnail_text)
+            article.score = int(plan_result.get("score", 0))
+            article.summary = self._to_text(plan_result.get("summary", ""))
+            article.script = self._to_text(plan_result.get("script", ""))
+            article.thumbnail = self._to_text(plan_result.get("thumbnail_text", ""))
+            article.hashtags = plan_result.get("hashtags", [])
 
             if article.script:
-                article.status = "PRODUCER_DONE"
+                article.status = "PLANNED"
 
-            produced_articles.append({
+            planned_articles.append({
                 "article": article,
-                "producer_result": producer_result
+                "plan_result": plan_result
             })
 
-            print("\nAI Producer 결과")
+            print("\nContent Planner 결과")
             print(f"점수: {article.score}")
-            print(f"카테고리: {producer_result.get('category', '')}")
-            print(f"이유: {producer_result.get('reason', '')}")
-            print(f"훅: {producer_result.get('hook', '')}")
-            print(f"제목: {producer_result.get('youtube_title', '')}")
-            print(f"썸네일: {producer_result.get('thumbnail_text', '')}")
+            print(f"카테고리: {plan_result.get('category', '')}")
+            print(f"감정: {plan_result.get('emotion', '')}")
+            print(f"이유: {plan_result.get('reason', '')}")
+            print(f"핵심 주제: {plan_result.get('core_topic', '')}")
+            print(f"훅: {plan_result.get('hook', '')}")
+            print(f"제목: {plan_result.get('youtube_title', '')}")
+            print(f"썸네일: {plan_result.get('thumbnail_text', '')}")
 
             self.repository.update_article(article)
 
-        produced_articles.sort(
+        planned_articles.sort(
             key=lambda item: item["article"].score,
             reverse=True
         )
 
-        selected_item = produced_articles[0]
+        selected_item = planned_articles[0]
         selected_article = selected_item["article"]
-        selected_result = selected_item["producer_result"]
+        selected_result = selected_item["plan_result"]
 
-        print("\n🏆 최종 선택 기사\n")
+        print("\n🏆 최종 선택 콘텐츠\n")
         print(f"점수: {selected_article.score}")
         print(selected_article.title)
         print(selected_article.source)
@@ -157,3 +144,9 @@ class PipelineService:
         self.repository.close()
 
         self.logger.info("========== Pipeline 종료 ==========")
+
+    def _to_text(self, value):
+        if isinstance(value, list):
+            return "\n".join(str(item) for item in value)
+
+        return str(value)
