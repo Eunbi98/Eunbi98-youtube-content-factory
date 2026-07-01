@@ -18,3 +18,25 @@
 2026-07-01 15:32:16,736 | INFO | 수집 기사 수 : 58
 2026-07-01 15:32:16,750 | INFO | 신규 저장 기사 : 1
 2026-07-01 15:32:17,891 | INFO | ========== Pipeline 종료 ==========
+2026-07-01 19:13:50,292 | INFO | ========== Pipeline 시작 ==========
+2026-07-01 19:13:51,079 | INFO | 수집 기사 수 : 57
+2026-07-01 19:15:07,880 | INFO | ========== Pipeline 시작 ==========
+2026-07-01 19:15:08,662 | INFO | 수집 기사 수 : 57
+2026-07-01 19:15:08,871 | INFO | 신규 저장 기사 수 : 53
+2026-07-01 19:15:08,872 | INFO | 처리 대상 기사 수 : 10
+2026-07-01 19:15:12,105 | INFO | ========== Pipeline 종료 ==========
+2026-07-01 19:19:07,881 | INFO | ========== Pipeline 시작 ==========
+2026-07-01 19:19:08,284 | INFO | 수집 기사 수 : 57
+2026-07-01 19:19:08,286 | INFO | 신규 저장 기사 수 : 0
+2026-07-01 19:19:08,287 | INFO | 처리 대상 기사 수 : 10
+2026-07-01 19:19:08,301 | INFO | 본문 추출 생략 : Woman raped by Superdry co-founder tells BBC she was working for him at the time
+2026-07-01 19:19:08,302 | INFO | 본문 정제 생략 : Woman raped by Superdry co-founder tells BBC she was working for him at the time
+2026-07-01 19:19:08,322 | INFO | 본문 추출 생략 : Nowak case officers face gross misconduct investigation
+2026-07-01 19:19:08,323 | INFO | 본문 정제 생략 : Nowak case officers face gross misconduct investigation
+2026-07-01 19:19:08,337 | INFO | 본문 추출 생략 : Burnham's chancellor will have to find extra £4.7bn for defence, says minister
+2026-07-01 19:19:08,337 | INFO | 본문 정제 생략 : Burnham's chancellor will have to find extra £4.7bn for defence, says minister
+2026-07-01 19:19:08,345 | INFO | 본문 추출 생략 : Chris Mason: Starmer's defence plan leaves crunching trade‑offs for Burnham to confront
+2026-07-01 19:19:08,345 | INFO | 본문 정제 생략 : Chris Mason: Starmer's defence plan leaves crunching trade‑offs for Burnham to confront
+2026-07-01 19:19:08,358 | INFO | 본문 추출 생략 : Why Gen Z are planning for life without a state pension
+2026-07-01 19:19:08,358 | INFO | 본문 정제 생략 : Why Gen Z are planning for life without a state pension
+2026-07-01 19:19:08,366 | INFO | ========== Pipeline 종료 ==========

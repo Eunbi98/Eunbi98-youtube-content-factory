@@ -2,9 +2,7 @@ from app.services.pipeline_service import PipelineService
 
 
 def main():
-
     pipeline = PipelineService()
-
     pipeline.run()
 
 
