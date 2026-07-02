@@ -425,3 +425,23 @@
 2026-07-02 21:55:15,597 | INFO | Content Planner 평가 시작: NASA’s Chandra Reveals ‘Red, White, Blue’ Universe for US 250th
 2026-07-02 21:55:52,180 | INFO | Content Planner 평가 시작: Caltech Welcomes Astrophysicist Ray Jayawardhana as New President
 2026-07-02 21:56:28,621 | INFO | ========== Pipeline 완료 ==========
+2026-07-02 22:00:21,363 | INFO | ========== Pipeline 시작 ==========
+2026-07-02 22:00:21,868 | INFO | NASACollector 수집 완료: 10건
+2026-07-02 22:00:21,869 | INFO | 수집 기사 수: 10
+2026-07-02 22:00:21,869 | INFO | 신규 저장 기사 수: 0
+2026-07-02 22:00:21,870 | INFO | 처리 대상 기사 수: 8
+2026-07-02 22:00:21,892 | INFO | 후보 기사 수: 5
+2026-07-02 22:00:21,893 | INFO | Content Planner 평가 시작: NASA’s Chandra Reveals ‘Red, White, Blue’ Universe for US 250th
+2026-07-02 22:00:50,219 | INFO | Content Planner 평가 시작: Caltech Welcomes Astrophysicist Ray Jayawardhana as New President
+2026-07-02 22:01:24,623 | INFO | Content Planner 평가 시작: NASA’s Chandra Examines Milky Way at Arms’ Length
+2026-07-02 22:04:14,159 | INFO | ========== Pipeline 완료 ==========
+2026-07-02 22:05:23,134 | INFO | ========== Pipeline 시작 ==========
+2026-07-02 22:05:23,607 | INFO | NASACollector 수집 완료: 10건
+2026-07-02 22:05:23,608 | INFO | 수집 기사 수: 10
+2026-07-02 22:05:23,609 | INFO | 신규 저장 기사 수: 0
+2026-07-02 22:05:23,609 | INFO | 처리 대상 기사 수: 7
+2026-07-02 22:05:23,621 | INFO | 후보 기사 수: 5
+2026-07-02 22:05:23,627 | INFO | Content Planner 평가 시작: Caltech Welcomes Astrophysicist Ray Jayawardhana as New President
+2026-07-02 22:06:03,456 | INFO | Content Planner 평가 시작: NASA’s Chandra Examines Milky Way at Arms’ Length
+2026-07-02 22:06:46,476 | INFO | Content Planner 평가 시작: NASA Seeks Volunteers for New Yearlong Simulated Moon, Mars Mission
+2026-07-02 22:10:17,714 | INFO | ========== Pipeline 완료 ==========
