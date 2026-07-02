@@ -7,6 +7,7 @@ DATA_DIR = BASE_DIR / "data"
 OUTPUT_DIR = BASE_DIR / "output"
 PROMPT_DIR = BASE_DIR / "prompts"
 SOURCE_DIR = BASE_DIR / "sources"
+TEMPLATE_DIR = BASE_DIR / "templates"
 
 IMAGE_DIR = OUTPUT_DIR / "images"
 AUDIO_DIR = OUTPUT_DIR / "audio"
@@ -43,30 +44,10 @@ VIDEO_WIDTH = 1080
 VIDEO_HEIGHT = 1920
 VIDEO_FPS = 30
 
-VIDEO_TEMPLATE = "shorts_news"
-
-VIDEO_BACKGROUND_COLOR = (10, 10, 14)
-
-VIDEO_TITLE_MAX_LENGTH = 34
-VIDEO_CAPTION_MAX_LENGTH = 42
-
-VIDEO_TITLE_FONT_SIZE = 76
-VIDEO_CAPTION_FONT_SIZE = 58
-VIDEO_SOURCE_FONT_SIZE = 30
-
-VIDEO_TITLE_COLOR = "white"
-VIDEO_CAPTION_COLOR = "white"
-
-VIDEO_TITLE_TOP = 90
-VIDEO_IMAGE_TOP = 390
-VIDEO_IMAGE_HEIGHT = 980
-VIDEO_CAPTION_TOP = 1430
-VIDEO_SOURCE_TOP = 1810
-
-VIDEO_CAPTION_SECONDS = 4
-
+VIDEO_TEMPLATE_NAME = "news_dark"
 VIDEO_FILENAME_PREFIX = "shorts"
 VIDEO_REMOVE_TEMP_FILES = True
+
 
 def ensure_directories():
     for path in [
@@ -78,5 +59,6 @@ def ensure_directories():
         SUBTITLE_DIR,
         PROMPT_DIR,
         SOURCE_DIR,
+        TEMPLATE_DIR,
     ]:
         path.mkdir(parents=True, exist_ok=True)

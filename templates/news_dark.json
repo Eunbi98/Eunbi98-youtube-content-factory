@@ -1,0 +1,41 @@
+{
+  "name": "news_dark",
+  "background": {
+    "color": [10, 10, 14]
+  },
+  "title": {
+    "top": 90,
+    "width": 980,
+    "height": 260,
+    "font_size": 76,
+    "color": "white",
+    "stroke_color": "black",
+    "stroke_width": 5,
+    "max_length": 34
+  },
+  "image": {
+    "top": 390,
+    "width": 1080,
+    "height": 980
+  },
+  "caption": {
+    "top": 1430,
+    "width": 980,
+    "height": 260,
+    "font_size": 58,
+    "color": "white",
+    "stroke_color": "black",
+    "stroke_width": 4,
+    "max_length": 42,
+    "seconds": 4
+  },
+  "source": {
+    "top": 1810,
+    "width": 900,
+    "height": 80,
+    "font_size": 30,
+    "color": "white",
+    "stroke_color": "black",
+    "stroke_width": 2
+  }
+}

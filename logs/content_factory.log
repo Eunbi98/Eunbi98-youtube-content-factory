@@ -445,3 +445,13 @@
 2026-07-02 22:06:03,456 | INFO | Content Planner 평가 시작: NASA’s Chandra Examines Milky Way at Arms’ Length
 2026-07-02 22:06:46,476 | INFO | Content Planner 평가 시작: NASA Seeks Volunteers for New Yearlong Simulated Moon, Mars Mission
 2026-07-02 22:10:17,714 | INFO | ========== Pipeline 완료 ==========
+2026-07-02 22:15:39,390 | INFO | ========== Pipeline 시작 ==========
+2026-07-02 22:15:39,834 | INFO | NASACollector 수집 완료: 10건
+2026-07-02 22:15:39,834 | INFO | 수집 기사 수: 10
+2026-07-02 22:15:39,834 | INFO | 신규 저장 기사 수: 0
+2026-07-02 22:15:39,835 | INFO | 처리 대상 기사 수: 6
+2026-07-02 22:15:39,854 | INFO | 후보 기사 수: 5
+2026-07-02 22:15:39,863 | INFO | Content Planner 평가 시작: NASA’s Chandra Examines Milky Way at Arms’ Length
+2026-07-02 22:16:20,779 | INFO | Content Planner 평가 시작: NASA Seeks Volunteers for New Yearlong Simulated Moon, Mars Mission
+2026-07-02 22:17:07,755 | INFO | Content Planner 평가 시작: LINK Spacecraft Set for Mission to Boost NASA’s Swift Observatory
+2026-07-02 22:21:17,272 | INFO | ========== Pipeline 완료 ==========
