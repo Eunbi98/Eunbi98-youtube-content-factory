@@ -57,8 +57,8 @@ class ShortsEngine:
             ]
 
             if image_path:
-                clips.append(
-                    self._image_clip(
+                clips.extend(
+                    self._image_scene_clips(
                         image_path=image_path,
                         duration=duration
                     )
@@ -123,6 +123,64 @@ class ShortsEngine:
             duration=duration
         )
 
+    def _image_scene_clips(self, image_path: str, duration: float):
+        config = self.template["image"]
+
+        scene_seconds = 4
+        clips = []
+        start_time = 0
+
+        while start_time < duration:
+            clip_duration = min(scene_seconds, duration - start_time)
+
+            image_clip = self._image_clip(
+                image_path=image_path,
+                duration=clip_duration,
+                scene_index=len(clips)
+            ).with_start(start_time)
+
+            clips.append(image_clip)
+            start_time += scene_seconds
+
+        return clips
+
+    def _image_clip(
+        self,
+        image_path: str,
+        duration: float,
+        scene_index: int = 0
+    ):
+        config = self.template["image"]
+
+        image = ImageClip(image_path)
+
+        target_width = config.get("width", self.width)
+        target_height = config.get("height", 980)
+
+        target_ratio = target_width / target_height
+        image_ratio = image.w / image.h
+
+        if image_ratio > target_ratio:
+            image = image.resized(height=target_height)
+        else:
+            image = image.resized(width=target_width)
+
+        zoom_start = config.get("zoom_start", 1.0)
+        zoom_end = config.get("zoom_end", 1.08)
+
+        if scene_index % 2 == 1:
+            zoom_start, zoom_end = zoom_end, zoom_start
+
+        image = image.resized(
+            lambda t: zoom_start + ((zoom_end - zoom_start) * (t / duration))
+        )
+
+        return (
+            image
+            .with_duration(duration)
+            .with_position(("center", config.get("top", 390)))
+        )
+
     def _title_clip(self, article, duration: float):
         config = self.template["title"]
 
@@ -144,28 +202,6 @@ class ShortsEngine:
                 duration=duration,
             )
             .with_position(("center", config.get("top", 90)))
-        )
-
-    def _image_clip(self, image_path: str, duration: float):
-        config = self.template["image"]
-
-        image = ImageClip(image_path)
-
-        target_width = config.get("width", self.width)
-        target_height = config.get("height", 980)
-
-        target_ratio = target_width / target_height
-        image_ratio = image.w / image.h
-
-        if image_ratio > target_ratio:
-            image = image.resized(height=target_height)
-        else:
-            image = image.resized(width=target_width)
-
-        return (
-            image
-            .with_duration(duration)
-            .with_position(("center", config.get("top", 390)))
         )
 
     def _caption_clips(self, article, duration: float):

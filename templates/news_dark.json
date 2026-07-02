@@ -16,7 +16,10 @@
   "image": {
     "top": 390,
     "width": 1080,
-    "height": 980
+    "height": 980,
+    "effect": "zoom_in",
+    "zoom_start": 1.0,
+    "zoom_end": 1.08
   },
   "caption": {
     "top": 1430,

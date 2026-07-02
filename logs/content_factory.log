@@ -455,3 +455,13 @@
 2026-07-02 22:16:20,779 | INFO | Content Planner 평가 시작: NASA Seeks Volunteers for New Yearlong Simulated Moon, Mars Mission
 2026-07-02 22:17:07,755 | INFO | Content Planner 평가 시작: LINK Spacecraft Set for Mission to Boost NASA’s Swift Observatory
 2026-07-02 22:21:17,272 | INFO | ========== Pipeline 완료 ==========
+2026-07-02 22:23:16,377 | INFO | ========== Pipeline 시작 ==========
+2026-07-02 22:23:16,830 | INFO | NASACollector 수집 완료: 10건
+2026-07-02 22:23:16,830 | INFO | 수집 기사 수: 10
+2026-07-02 22:23:16,830 | INFO | 신규 저장 기사 수: 0
+2026-07-02 22:23:16,831 | INFO | 처리 대상 기사 수: 5
+2026-07-02 22:23:16,857 | INFO | 후보 기사 수: 5
+2026-07-02 22:23:16,859 | INFO | Content Planner 평가 시작: NASA Seeks Volunteers for New Yearlong Simulated Moon, Mars Mission
+2026-07-02 22:24:20,868 | INFO | Content Planner 평가 시작: LINK Spacecraft Set for Mission to Boost NASA’s Swift Observatory
+2026-07-02 22:25:02,353 | INFO | Content Planner 평가 시작: Curiosity Blog, Sols 4934-4940: In the Land of the Polygons
+2026-07-02 22:34:30,598 | INFO | ========== Pipeline 완료 ==========
