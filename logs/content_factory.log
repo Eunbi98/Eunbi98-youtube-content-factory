@@ -465,3 +465,33 @@
 2026-07-02 22:24:20,868 | INFO | Content Planner 평가 시작: LINK Spacecraft Set for Mission to Boost NASA’s Swift Observatory
 2026-07-02 22:25:02,353 | INFO | Content Planner 평가 시작: Curiosity Blog, Sols 4934-4940: In the Land of the Polygons
 2026-07-02 22:34:30,598 | INFO | ========== Pipeline 완료 ==========
+2026-07-02 22:45:50,661 | INFO | ========== Pipeline 시작 ==========
+2026-07-02 22:45:51,626 | INFO | NASACollector 수집 완료: 10건
+2026-07-02 22:45:51,626 | INFO | 수집 기사 수: 10
+2026-07-02 22:45:51,653 | INFO | 신규 저장 기사 수: 10
+2026-07-02 22:45:51,654 | INFO | 처리 대상 기사 수: 10
+2026-07-02 22:45:51,657 | INFO | 본문 추출: A Day of Flight Testing at NASA Armstrong
+2026-07-02 22:45:52,472 | INFO | 본문 정제: A Day of Flight Testing at NASA Armstrong
+2026-07-02 22:45:52,480 | INFO | 본문 추출: NASA’s Chandra Reveals ‘Red, White, Blue’ Universe for US 250th
+2026-07-02 22:45:53,048 | INFO | 본문 정제: NASA’s Chandra Reveals ‘Red, White, Blue’ Universe for US 250th
+2026-07-02 22:45:53,051 | INFO | 본문 추출: NASA’s TESS Mission Finds Planetary System in New Way
+2026-07-02 22:45:53,523 | INFO | 본문 정제: NASA’s TESS Mission Finds Planetary System in New Way
+2026-07-02 22:45:53,527 | INFO | 본문 추출: Caltech Welcomes Astrophysicist Ray Jayawardhana as New President
+2026-07-02 22:45:54,031 | INFO | 본문 정제: Caltech Welcomes Astrophysicist Ray Jayawardhana as New President
+2026-07-02 22:45:54,035 | INFO | 본문 추출: Curiosity Blog, Sols 4934-4940: In the Land of the Polygons
+2026-07-02 22:45:54,521 | INFO | 본문 정제: Curiosity Blog, Sols 4934-4940: In the Land of the Polygons
+2026-07-02 22:45:54,535 | INFO | 본문 추출: NASA’s Webb Studies How Planet Survived Death of its Star
+2026-07-02 22:45:55,039 | INFO | 본문 정제: NASA’s Webb Studies How Planet Survived Death of its Star
+2026-07-02 22:45:55,042 | INFO | 본문 추출: LINK Spacecraft Set for Mission to Boost NASA’s Swift Observatory
+2026-07-02 22:45:55,468 | INFO | 본문 정제: LINK Spacecraft Set for Mission to Boost NASA’s Swift Observatory
+2026-07-02 22:45:55,481 | INFO | 본문 추출: NASA Seeks Volunteers for New Yearlong Simulated Moon, Mars Mission
+2026-07-02 22:45:55,905 | INFO | 본문 정제: NASA Seeks Volunteers for New Yearlong Simulated Moon, Mars Mission
+2026-07-02 22:45:55,909 | INFO | 본문 추출: NASA’s Chandra Examines Milky Way at Arms’ Length
+2026-07-02 22:45:56,892 | INFO | 본문 정제: NASA’s Chandra Examines Milky Way at Arms’ Length
+2026-07-02 22:45:56,897 | INFO | 본문 추출: What’s Up: July 2026 Skywatching Tips from NASA
+2026-07-02 22:45:57,306 | INFO | 본문 정제: What’s Up: July 2026 Skywatching Tips from NASA
+2026-07-02 22:45:57,322 | INFO | 후보 기사 수: 5
+2026-07-02 22:45:57,323 | INFO | Content Planner 평가 시작: NASA’s Webb Studies How Planet Survived Death of its Star
+2026-07-02 22:47:16,130 | INFO | Content Planner 평가 시작: NASA’s Chandra Reveals ‘Red, White, Blue’ Universe for US 250th
+2026-07-02 22:48:37,836 | INFO | Content Planner 평가 시작: NASA’s TESS Mission Finds Planetary System in New Way
+2026-07-02 22:52:04,885 | INFO | ========== Pipeline 완료 ==========

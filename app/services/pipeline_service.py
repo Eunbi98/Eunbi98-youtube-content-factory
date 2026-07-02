@@ -151,6 +151,7 @@ class PipelineService:
                     plan_result.get("thumbnail_text", "")
                 )
                 article.hashtags = plan_result.get("hashtags", [])
+                article.scenes = plan_result.get("scenes", [])
 
                 if article.script:
                     article.status = "PLANNED"
@@ -173,6 +174,7 @@ class PipelineService:
                 print(f"훅: {plan_result.get('hook', '')}")
                 print(f"제목: {plan_result.get('youtube_title', '')}")
                 print(f"썸네일: {plan_result.get('thumbnail_text', '')}")
+                print(f"장면 수: {len(article.scenes)}")
 
             except Exception as e:
                 self.logger.error(f"AI 기획 실패: {article.title} / {e}")

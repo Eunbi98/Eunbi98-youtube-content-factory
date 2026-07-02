@@ -4,15 +4,40 @@
   "link": "https://science.nasa.gov/missions/webb/nasas-webb-studies-how-planet-survived-death-of-its-star/",
   "published": "Wed, 01 Jul 2026 15:00:00 +0000",
   "score": 80,
-  "summary": "NASA의 James Webb Space Telescope가 지구에서 매우 먼 곳에 있는 별 주변 행성을 실시간으로 관찰했다. 이를 통해 과학자들은, 별이 죽은 후에도 지구와 비슷한 크기의 행성이 존재하는 것을 발견할 수 있었다.",
-  "script": "스릴러 같은 이야기를 시작하기 위한 초반\n문제 제시: 우리는 이 세상에서 사라진 별과 빛나는 행성을 알아내야 한다.\n정답, Webb ST와 그렇게 뜀. 지구와 비슷한 크기의 행성이 존재하는 것을 발견할 수 있었다.\n우주 과학에서 흥미로운 개념: 별은 죽을 때까지 기질적으로 우리보다 훨씬 큰 힘을 가진 존재.",
-  "thumbnail": "별 사라지는 모습과 그 주변의 작은 별.",
+  "summary": "NASA의 James Webb Space Telescope를 통해 밝혀진 이번 연구로 우리 주변의 과학적 현실에 놀라게 만드는 이야기가 시작됩니다.",
+  "script": "왜 별이 사라지는 게 어떻게 될까?\n영구적인 시간 속에서, 지상의 행성들이 밤하늘을 배경으로 존재하는 모습.\n지구와 같은 행성들은 항해가 끝나고 떠난 후에, 거대한 별과 어깨를 함께 나누는 이 순간입니다.",
+  "thumbnail": "별 죽음, 지구에서 볼 수 있는 일",
   "hashtags": [
-    "#NASA",
-    "# WebbST",
-    "#외계인",
-    "#과학"
+    "#해외뉴스",
+    "#쇼츠",
+    "#Astrophysicists"
+  ],
+  "scenes": [
+    {
+      "order": 1,
+      "text": "왜 별이 사라지는 게 어떻게 될까?",
+      "image_keyword": "science",
+      "duration": 4
+    },
+    {
+      "order": 2,
+      "text": "영구적인 시간 속에서, 지상의 행성들이 밤하늘을 배경으로 존재하는 모습.",
+      "image_keyword": "planets",
+      "duration": 3
+    },
+    {
+      "order": 3,
+      "text": "지구와 같은 행성들은 항해가 끝나고 떠난 후에, 거대한 별과 어깨를 함께 나누는 이 순간입니다.",
+      "image_keyword": "star",
+      "duration": 4
+    },
+    {
+      "order": 4,
+      "text": "왜 별이 사라진다고 생각하는 이유?",
+      "image_keyword": "astrophysics",
+      "duration": 3
+    }
   ],
   "status": "SELECTED",
-  "created_at": "2026-07-02T21:56:27.113276"
+  "created_at": "2026-07-02T22:49:42.927762"
 }

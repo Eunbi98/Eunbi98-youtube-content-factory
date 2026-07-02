@@ -20,6 +20,7 @@ class JsonExportService:
             "script": article.script,
             "thumbnail": article.thumbnail,
             "hashtags": article.hashtags,
+            "scenes": article.scenes,
             "status": article.status,
             "created_at": datetime.now().isoformat()
         }

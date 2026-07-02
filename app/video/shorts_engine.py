@@ -1,7 +1,9 @@
 from datetime import datetime
 from pathlib import Path
 import os
+import re
 import shutil
+import textwrap
 
 from moviepy import (
     AudioFileClip,
@@ -124,23 +126,25 @@ class ShortsEngine:
         )
 
     def _image_scene_clips(self, image_path: str, duration: float):
-        config = self.template["image"]
-
-        scene_seconds = 4
+        scene_durations = self._get_scene_durations(duration)
         clips = []
         start_time = 0
 
-        while start_time < duration:
-            clip_duration = min(scene_seconds, duration - start_time)
+        for index, scene_duration in enumerate(scene_durations):
+            if start_time >= duration:
+                break
 
-            image_clip = self._image_clip(
-                image_path=image_path,
-                duration=clip_duration,
-                scene_index=len(clips)
-            ).with_start(start_time)
+            clip = (
+                self._image_clip(
+                    image_path=image_path,
+                    duration=scene_duration,
+                    scene_index=index
+                )
+                .with_start(start_time)
+            )
 
-            clips.append(image_clip)
-            start_time += scene_seconds
+            clips.append(clip)
+            start_time += scene_duration
 
         return clips
 
@@ -185,10 +189,12 @@ class ShortsEngine:
         config = self.template["title"]
 
         text = article.thumbnail or article.title
+        text = self._clean_display_text(text)
         text = self._shorten_text(
             text=text,
             max_length=config.get("max_length", 34)
         )
+        text = self._wrap_korean_text(text, line_length=12, max_lines=2)
 
         return (
             self._text_clip(
@@ -207,36 +213,45 @@ class ShortsEngine:
     def _caption_clips(self, article, duration: float):
         config = self.template["caption"]
 
-        lines = self._split_script(article.script or article.summary)
+        scene_texts = self._get_scene_texts(article)
+        scene_durations = self._get_scene_durations(duration)
 
-        if not lines:
+        if not scene_texts:
             return []
 
         clips = []
-        segment_duration = config.get("seconds", 4)
         start_time = 0
 
-        for line in lines:
+        for index, text in enumerate(scene_texts):
             if start_time >= duration:
                 break
 
-            text = self._shorten_text(
-                text=line,
-                max_length=config.get("max_length", 42)
+            scene_duration = (
+                scene_durations[index]
+                if index < len(scene_durations)
+                else config.get("seconds", 4)
             )
 
-            clip_duration = min(
-                segment_duration,
-                duration - start_time
+            clip_duration = min(scene_duration, duration - start_time)
+
+            safe_text = self._clean_display_text(text)
+            safe_text = self._shorten_text(
+                text=safe_text,
+                max_length=config.get("max_length", 42)
+            )
+            safe_text = self._wrap_korean_text(
+                safe_text,
+                line_length=14,
+                max_lines=3
             )
 
             clip = (
                 self._text_clip(
-                    text=text,
+                    text=safe_text,
                     font_size=config.get("font_size", 58),
                     color=config.get("color", "white"),
                     box_width=config.get("width", 980),
-                    box_height=config.get("height", 260),
+                    box_height=config.get("height", 300),
                     stroke_width=config.get("stroke_width", 4),
                     stroke_color=config.get("stroke_color", "black"),
                     duration=clip_duration,
@@ -246,7 +261,7 @@ class ShortsEngine:
             )
 
             clips.append(clip)
-            start_time += segment_duration
+            start_time += clip_duration
 
         return clips
 
@@ -254,6 +269,7 @@ class ShortsEngine:
         config = self.template["source"]
 
         text = f"출처: {article.source}"
+        text = self._clean_display_text(text)
 
         return (
             self._text_clip(
@@ -268,6 +284,32 @@ class ShortsEngine:
             )
             .with_position(("center", config.get("top", 1810)))
         )
+
+    def _get_scene_texts(self, article) -> list[str]:
+        texts = []
+
+        if article.scenes:
+            for scene in article.scenes:
+                text = str(scene.get("text", "")).strip()
+                text = self._clean_display_text(text)
+
+                if text:
+                    texts.append(text)
+
+        if texts:
+            return texts
+
+        return [
+            self._clean_display_text(line)
+            for line in self._split_script(article.script or article.summary)
+            if self._clean_display_text(line)
+        ]
+
+    def _get_scene_durations(self, total_duration: float) -> list[float]:
+        caption_config = self.template.get("caption", {})
+        default_seconds = caption_config.get("seconds", 4)
+
+        return [default_seconds] * int((total_duration // default_seconds) + 1)
 
     def _text_clip(
         self,
@@ -300,9 +342,11 @@ class ShortsEngine:
         if not script:
             return []
 
+        cleaned_script = self._clean_display_text(script)
+
         lines = []
 
-        for raw_line in script.splitlines():
+        for raw_line in cleaned_script.splitlines():
             line = raw_line.strip()
 
             if not line:
@@ -319,9 +363,63 @@ class ShortsEngine:
 
         return [
             sentence.strip()
-            for sentence in script.replace("?", "?.").replace("!", "!.").split(".")
+            for sentence in cleaned_script.replace("?", "?.").replace("!", "!.").split(".")
             if sentence.strip()
         ]
+
+    def _clean_display_text(self, text: str) -> str:
+        if not text:
+            return ""
+
+        text = str(text)
+
+        banned_patterns = [
+            r"\(.*?음악.*?\)",
+            r"\(.*?BGM.*?\)",
+            r"\(.*?효과음.*?\)",
+            r"\(.*?자막.*?\)",
+            r"\(.*?화면.*?\)",
+            r"\(.*?전환.*?\)",
+            r"\(.*?이미지.*?\)",
+            r"\(.*?클립.*?\)",
+            r"\(.*?컷.*?\)",
+            r"음악\s*삽입[!！]?",
+            r"BGM\s*삽입[!！]?",
+            r"효과음\s*삽입[!！]?",
+            r"자막\s*표시[!！]?",
+            r"화면\s*전환[!！]?",
+        ]
+
+        for pattern in banned_patterns:
+            text = re.sub(pattern, "", text, flags=re.IGNORECASE)
+
+        allowed_pattern = r"[^가-힣a-zA-Z0-9\s.,?!%:;·~\-\'\"()]"
+        text = re.sub(allowed_pattern, "", text)
+
+        text = re.sub(r"\s+", " ", text)
+        text = text.strip()
+
+        return text
+
+    def _wrap_korean_text(
+        self,
+        text: str,
+        line_length: int,
+        max_lines: int
+    ) -> str:
+        if not text:
+            return ""
+
+        wrapped = textwrap.wrap(
+            text,
+            width=line_length,
+            break_long_words=False,
+            replace_whitespace=False
+        )
+
+        wrapped = wrapped[:max_lines]
+
+        return "\n".join(wrapped)
 
     def _shorten_text(self, text: str, max_length: int) -> str:
         if not text:

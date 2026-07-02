@@ -50,7 +50,6 @@ class ContentPlannerService:
             return ""
 
         response = response.strip()
-
         response = response.replace("```json", "")
         response = response.replace("```", "")
 
@@ -64,11 +63,8 @@ class ContentPlannerService:
 
     def _repair_json(self, text: str) -> str:
         text = text.strip()
-
         text = re.sub(r",\s*}", "}", text)
         text = re.sub(r",\s*]", "]", text)
-
-        text = text.replace("\n", " ")
         text = text.replace("\t", " ")
 
         return text
@@ -88,21 +84,84 @@ class ContentPlannerService:
             default.get("thumbnail_text", "")
         )
 
-        hashtags = default.get("hashtags", [])
+        default["hashtags"] = self._normalize_hashtags(
+            default.get("hashtags", [])
+        )
 
+        default["scenes"] = self._normalize_scenes(
+            default.get("scenes", []),
+            default["script"]
+        )
+
+        return default
+
+    def _normalize_hashtags(self, hashtags):
         if isinstance(hashtags, str):
-            hashtags = [
+            return [
                 tag.strip()
                 for tag in hashtags.split()
                 if tag.strip()
             ]
 
-        if not isinstance(hashtags, list):
-            hashtags = []
+        if isinstance(hashtags, list):
+            return [
+                str(tag).strip()
+                for tag in hashtags
+                if str(tag).strip()
+            ]
 
-        default["hashtags"] = hashtags
+        return []
 
-        return default
+    def _normalize_scenes(self, scenes, script: str):
+        normalized = []
+
+        if isinstance(scenes, list):
+            for index, scene in enumerate(scenes, start=1):
+                if not isinstance(scene, dict):
+                    continue
+
+                text = str(scene.get("text", "")).strip()
+                keyword = str(scene.get("image_keyword", "")).strip()
+
+                try:
+                    duration = int(scene.get("duration", 4))
+                except ValueError:
+                    duration = 4
+
+                if duration < 3:
+                    duration = 3
+
+                if duration > 5:
+                    duration = 5
+
+                if text:
+                    normalized.append({
+                        "order": index,
+                        "text": text,
+                        "image_keyword": keyword,
+                        "duration": duration
+                    })
+
+        if normalized:
+            return normalized
+
+        lines = [
+            line.strip()
+            for line in script.splitlines()
+            if line.strip()
+        ]
+
+        fallback_scenes = []
+
+        for index, line in enumerate(lines[:5], start=1):
+            fallback_scenes.append({
+                "order": index,
+                "text": line,
+                "image_keyword": "",
+                "duration": 4
+            })
+
+        return fallback_scenes
 
     def _to_text(self, value):
         if isinstance(value, list):
@@ -121,6 +180,7 @@ class ContentPlannerService:
             "story_flow": [],
             "summary": "",
             "script": "",
+            "scenes": [],
             "youtube_title": "",
             "thumbnail_text": "",
             "hashtags": []
@@ -139,6 +199,7 @@ class ContentPlannerService:
             "story_flow": [],
             "summary": clean_response[:500],
             "script": clean_response[:1200],
+            "scenes": self._normalize_scenes([], clean_response[:1200]),
             "youtube_title": "",
             "thumbnail_text": "",
             "hashtags": ["#해외뉴스", "#쇼츠"]

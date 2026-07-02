@@ -1,3 +1,4 @@
+import json
 import sqlite3
 from datetime import datetime
 
@@ -13,6 +14,7 @@ class ArticleRepository:
         self.cursor = self.conn.cursor()
 
         self.create_table()
+        self.migrate_table()
 
     def create_table(self):
         self.cursor.execute("""
@@ -33,6 +35,9 @@ class ArticleRepository:
             script TEXT,
             thumbnail TEXT,
 
+            hashtags_json TEXT,
+            scenes_json TEXT,
+
             status TEXT DEFAULT 'COLLECTED',
 
             created_at TEXT,
@@ -41,6 +46,27 @@ class ArticleRepository:
         """)
 
         self.conn.commit()
+
+    def migrate_table(self):
+        existing_columns = self._get_columns()
+
+        if "hashtags_json" not in existing_columns:
+            self.cursor.execute(
+                "ALTER TABLE articles ADD COLUMN hashtags_json TEXT"
+            )
+
+        if "scenes_json" not in existing_columns:
+            self.cursor.execute(
+                "ALTER TABLE articles ADD COLUMN scenes_json TEXT"
+            )
+
+        self.conn.commit()
+
+    def _get_columns(self):
+        self.cursor.execute("PRAGMA table_info(articles)")
+        rows = self.cursor.fetchall()
+
+        return [row[1] for row in rows]
 
     def save(self, article: Article):
         try:
@@ -52,10 +78,11 @@ class ArticleRepository:
                 content, cleaned_content,
                 score,
                 summary, script, thumbnail,
+                hashtags_json, scenes_json,
                 status,
                 created_at, updated_at
             )
-            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
             """, (
                 article.title,
                 article.link,
@@ -67,6 +94,8 @@ class ArticleRepository:
                 article.summary,
                 article.script,
                 article.thumbnail,
+                json.dumps(article.hashtags, ensure_ascii=False),
+                json.dumps(article.scenes, ensure_ascii=False),
                 article.status,
                 now,
                 now
@@ -88,6 +117,8 @@ class ArticleRepository:
             summary = ?,
             script = ?,
             thumbnail = ?,
+            hashtags_json = ?,
+            scenes_json = ?,
             status = ?,
             updated_at = ?
         WHERE link = ?
@@ -98,6 +129,8 @@ class ArticleRepository:
             article.summary,
             article.script,
             article.thumbnail,
+            json.dumps(article.hashtags, ensure_ascii=False),
+            json.dumps(article.scenes, ensure_ascii=False),
             article.status,
             datetime.now().isoformat(),
             article.link
@@ -110,6 +143,7 @@ class ArticleRepository:
         SELECT title, link, source, published,
                content, cleaned_content,
                score, summary, script, thumbnail,
+               hashtags_json, scenes_json,
                status
         FROM articles
         WHERE status NOT IN ('DONE', 'FAILED')
@@ -132,10 +166,21 @@ class ArticleRepository:
                 summary=row[7] or "",
                 script=row[8] or "",
                 thumbnail=row[9] or "",
-                status=row[10] or "COLLECTED"
+                hashtags=self._json_loads(row[10], []),
+                scenes=self._json_loads(row[11], []),
+                status=row[12] or "COLLECTED"
             ))
 
         return articles
+
+    def _json_loads(self, value, default):
+        if not value:
+            return default
+
+        try:
+            return json.loads(value)
+        except json.JSONDecodeError:
+            return default
 
     def close(self):
         self.conn.close()
