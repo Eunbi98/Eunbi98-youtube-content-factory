@@ -1,4 +1,5 @@
 from app.database.repository import ArticleRepository
+from app.services.audio_service import AudioService
 from app.services.candidate_filter import CandidateFilter
 from app.services.collector_service import CollectorService
 from app.services.content_cleaner import ContentCleaner
@@ -6,7 +7,18 @@ from app.services.content_planner_service import ContentPlannerService
 from app.services.content_service import ContentService
 from app.services.image_service import ImageService
 from app.services.json_export_service import JsonExportService
+from app.services.subtitle_service import SubtitleService
+from app.services.video_service import VideoService
 from app.utils.logger import get_logger
+from config.settings import (
+    AI_TARGET_COUNT,
+    CANDIDATE_LIMIT,
+    ENABLE_AUDIO,
+    ENABLE_IMAGE_DOWNLOAD,
+    ENABLE_SUBTITLE,
+    ENABLE_VIDEO,
+    PROCESS_LIMIT,
+)
 
 
 class PipelineService:
@@ -23,12 +35,47 @@ class PipelineService:
 
         self.json_export = JsonExportService()
         self.image = ImageService()
+        self.audio = AudioService()
+        self.subtitle = SubtitleService()
+        self.video = VideoService()
 
     def run(self):
         self.logger.info("========== Pipeline 시작 ==========")
 
+        try:
+            self._collect_articles()
+            articles = self._prepare_articles()
+
+            if not articles:
+                self.logger.info("처리할 기사가 없습니다.")
+                return
+
+            candidates = self._select_candidates(articles)
+
+            if not candidates:
+                self.logger.info("후보 기사가 없습니다.")
+                return
+
+            planned_articles = self._plan_contents(candidates)
+
+            if not planned_articles:
+                self.logger.info("AI 기획 결과가 없습니다.")
+                return
+
+            selected_article = self._select_best_article(planned_articles)
+            self._create_outputs(selected_article)
+
+            selected_article.status = "DONE"
+            self.repository.update_article(selected_article)
+
+            self.logger.info("========== Pipeline 완료 ==========")
+
+        finally:
+            self.repository.close()
+
+    def _collect_articles(self):
         collected_articles = self.collector.collect_all()
-        self.logger.info(f"수집 기사 수 : {len(collected_articles)}")
+        self.logger.info(f"수집 기사 수: {len(collected_articles)}")
 
         saved_count = 0
 
@@ -36,84 +83,105 @@ class PipelineService:
             if self.repository.save(article):
                 saved_count += 1
 
-        self.logger.info(f"신규 저장 기사 수 : {saved_count}")
+        self.logger.info(f"신규 저장 기사 수: {saved_count}")
 
-        articles = self.repository.get_unprocessed(limit=10)
-        self.logger.info(f"처리 대상 기사 수 : {len(articles)}")
-
-        if not articles:
-            self.logger.info("처리할 기사가 없습니다.")
-            self.repository.close()
-            return
+    def _prepare_articles(self):
+        articles = self.repository.get_unprocessed(limit=PROCESS_LIMIT)
+        self.logger.info(f"처리 대상 기사 수: {len(articles)}")
 
         for article in articles:
-            if not article.content:
-                self.logger.info(f"본문 추출 : {article.title}")
-                article.content = self.content.extract_content(article.link)
-                article.status = "CONTENT_DONE"
-            else:
-                self.logger.info(f"본문 추출 생략 : {article.title}")
+            try:
+                if not article.content:
+                    self.logger.info(f"본문 추출: {article.title}")
+                    article.content = self.content.extract_content(article.link)
+                    article.status = "CONTENT_DONE"
 
-            if article.content and not article.cleaned_content:
-                self.logger.info(f"본문 정제 : {article.title}")
-                article.cleaned_content = self.cleaner.clean(article.content)
-                article.status = "CLEANED"
-            else:
-                self.logger.info(f"본문 정제 생략 : {article.title}")
+                if article.content and not article.cleaned_content:
+                    self.logger.info(f"본문 정제: {article.title}")
+                    article.cleaned_content = self.cleaner.clean(article.content)
+                    article.status = "CLEANED"
 
-            self.repository.update_article(article)
+                self.repository.update_article(article)
 
-        candidates = self.candidate_filter.filter(articles, limit=5)
-        self.logger.info(f"후보 기사 수 : {len(candidates)}")
+            except Exception as e:
+                self.logger.error(f"본문 처리 실패: {article.title} / {e}")
+                article.status = "FAILED"
+                self.repository.update_article(article)
 
-        print("\n🎬 콘텐츠 후보 기사\n")
+        return articles
+
+    def _select_candidates(self, articles):
+        candidates = self.candidate_filter.filter(
+            articles,
+            limit=CANDIDATE_LIMIT
+        )
+
+        self.logger.info(f"후보 기사 수: {len(candidates)}")
+
+        print("\n콘텐츠 후보 기사\n")
 
         for index, article in enumerate(candidates, start=1):
             print("=" * 80)
-            print(f"{index}. 후보 점수 [{article.score}점]")
+            print(f"{index}. 후보 점수 [{article.score}]")
             print(article.title)
             print(article.source)
             print(article.link)
 
-        planner_targets = candidates[:3]
+        return candidates
+
+    def _plan_contents(self, candidates):
+        planner_targets = candidates[:AI_TARGET_COUNT]
         planned_articles = []
 
-        print("\n🤖 Content Planner 평가 시작\n")
+        print("\nContent Planner 평가 시작\n")
 
         for index, article in enumerate(planner_targets, start=1):
-            print("=" * 80)
-            print(f"{index}. 기획 대상")
-            print(article.title)
+            try:
+                print("=" * 80)
+                print(f"{index}. 기획 대상")
+                print(article.title)
 
-            self.logger.info(f"Content Planner 평가 시작 : {article.title}")
-            plan_result = self.content_planner.plan(article)
+                self.logger.info(f"Content Planner 평가 시작: {article.title}")
+                plan_result = self.content_planner.plan(article)
 
-            article.score = int(plan_result.get("score", 0))
-            article.summary = self._to_text(plan_result.get("summary", ""))
-            article.script = self._to_text(plan_result.get("script", ""))
-            article.thumbnail = self._to_text(plan_result.get("thumbnail_text", ""))
-            article.hashtags = plan_result.get("hashtags", [])
+                article.score = int(plan_result.get("score", 0))
+                article.summary = self._to_text(plan_result.get("summary", ""))
+                article.script = self._to_text(plan_result.get("script", ""))
+                article.thumbnail = self._to_text(
+                    plan_result.get("thumbnail_text", "")
+                )
+                article.hashtags = plan_result.get("hashtags", [])
 
-            if article.script:
-                article.status = "PLANNED"
+                if article.script:
+                    article.status = "PLANNED"
+                else:
+                    article.status = "FAILED"
 
-            planned_articles.append({
-                "article": article,
-                "plan_result": plan_result
-            })
+                self.repository.update_article(article)
 
-            print("\nContent Planner 결과")
-            print(f"점수: {article.score}")
-            print(f"카테고리: {plan_result.get('category', '')}")
-            print(f"감정: {plan_result.get('emotion', '')}")
-            print(f"이유: {plan_result.get('reason', '')}")
-            print(f"핵심 주제: {plan_result.get('core_topic', '')}")
-            print(f"훅: {plan_result.get('hook', '')}")
-            print(f"제목: {plan_result.get('youtube_title', '')}")
-            print(f"썸네일: {plan_result.get('thumbnail_text', '')}")
+                planned_articles.append({
+                    "article": article,
+                    "plan_result": plan_result
+                })
 
-            self.repository.update_article(article)
+                print("\nContent Planner 결과")
+                print(f"점수: {article.score}")
+                print(f"카테고리: {plan_result.get('category', '')}")
+                print(f"감정: {plan_result.get('emotion', '')}")
+                print(f"이유: {plan_result.get('reason', '')}")
+                print(f"핵심 주제: {plan_result.get('core_topic', '')}")
+                print(f"훅: {plan_result.get('hook', '')}")
+                print(f"제목: {plan_result.get('youtube_title', '')}")
+                print(f"썸네일: {plan_result.get('thumbnail_text', '')}")
 
+            except Exception as e:
+                self.logger.error(f"AI 기획 실패: {article.title} / {e}")
+                article.status = "FAILED"
+                self.repository.update_article(article)
+
+        return planned_articles
+
+    def _select_best_article(self, planned_articles):
         planned_articles.sort(
             key=lambda item: item["article"].score,
             reverse=True
@@ -123,27 +191,51 @@ class PipelineService:
         selected_article = selected_item["article"]
         selected_result = selected_item["plan_result"]
 
-        print("\n🏆 최종 선택 콘텐츠\n")
+        print("\n최종 선택 콘텐츠\n")
         print(f"점수: {selected_article.score}")
         print(selected_article.title)
         print(selected_article.source)
         print(selected_article.link)
         print(f"선택 이유: {selected_result.get('reason', '')}")
 
-        json_path = self.json_export.export_article(selected_article)
-        print("\nJSON 생성")
-        print(json_path)
-
-        image_path = self.image.download_image(selected_article)
-        print("\n대표 이미지")
-        print(image_path)
-
         selected_article.status = "SELECTED"
         self.repository.update_article(selected_article)
 
-        self.repository.close()
+        return selected_article
 
-        self.logger.info("========== Pipeline 종료 ==========")
+    def _create_outputs(self, article):
+        json_path = self.json_export.export_article(article)
+        print("\nJSON 생성")
+        print(json_path)
+
+        image_path = None
+        audio_path = None
+        subtitle_path = None
+        video_path = None
+
+        if ENABLE_IMAGE_DOWNLOAD:
+            image_path = self.image.download_image(article)
+            print("\n이미지 저장")
+            print(image_path)
+
+        if ENABLE_AUDIO:
+            audio_path = self.audio.create_audio(article)
+            print("\n음성 생성")
+            print(audio_path)
+
+        if ENABLE_SUBTITLE:
+            subtitle_path = self.subtitle.create_srt(article)
+            print("\n자막 생성")
+            print(subtitle_path)
+
+        if ENABLE_VIDEO:
+            video_path = self.video.create_video(
+                article=article,
+                image_path=image_path,
+                audio_path=audio_path
+            )
+            print("\n영상 생성")
+            print(video_path)
 
     def _to_text(self, value):
         if isinstance(value, list):

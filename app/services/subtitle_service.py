@@ -1,10 +1,9 @@
-from pathlib import Path
+from config.settings import DEFAULT_SUBTITLE_FILENAME, SUBTITLE_DIR
 
 
 class SubtitleService:
-
     def __init__(self):
-        self.output_dir = Path("output/subtitles")
+        self.output_dir = SUBTITLE_DIR
         self.output_dir.mkdir(parents=True, exist_ok=True)
 
     def create_srt(self, article) -> str | None:
@@ -16,8 +15,7 @@ class SubtitleService:
         if not lines:
             return None
 
-        filename = "news.srt"
-        output_path = self.output_dir / filename
+        output_path = self.output_dir / DEFAULT_SUBTITLE_FILENAME
 
         with open(output_path, "w", encoding="utf-8") as f:
             for index, line in enumerate(lines, start=1):

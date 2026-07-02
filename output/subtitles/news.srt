@@ -1,48 +1,16 @@
 1
 00:00:00,000 --> 00:00:04,000
-```json
+이제 진짜 믿기지 않는 이야기를 들어보세요!
 
 2
 00:00:04,000 --> 00:00:08,000
-{
+왜 이러한 별들이 우주를 변화시켰을까요?
 
 3
 00:00:08,000 --> 00:00:12,000
-"score": 80,
+우리 주변의 행성과 별은 아무도 알아봤는가?
 
 4
 00:00:12,000 --> 00:00:16,000
-"category": "other",
-
-5
-00:00:16,000 --> 00:00:20,000
-"reason": "The story involves shocking crimes and details about workplace misconduct, which makes it intriguing and potentially very impactful in a short video format.",
-
-6
-00:00:20,000 --> 00:00:24,000
-"summary": "A woman bravely shares her harrowing experiences after being raped by the disgraced founder of Superdry. The video explores the dynamic between her at work with the accused man, highlighting the sense of fear and control he exerted over his employees. It touches on crucial themes like power dynamics, workplace culture, and the courage to come forward.",
-
-7
-00:00:24,000 --> 00:00:28,000
-"script": "🔥 사라진 회사의 설립자로부터 폭력적인 경험을 털어놓은 여성! 😱 Gemma는 폭력적 행위에 직면했지만 회사에서 계속 일해야만 한다. 그녀가 이를 통해 배우게 된 것들과 이야기를 들려주세요!",
-
-8
-00:00:28,000 --> 00:00:32,000
-"youtube_title": "💖 'Superdry' 설립자로부터 잔인한 사건! 🔥 Gemma의 힘든 선택",
-
-9
-00:00:32,000 --> 00:00:36,000
-"thumbnail_text": "Gemma의 심각한 경험에 직면. 신기하고 뜨거운 이야기를 담은 YouTube Shorts!",
-
-10
-00:00:36,000 --> 00:00:40,000
-"hook": "수상한 가짜 사업가, 이번에는 그녀를 위한 무서운 이야기! 👀"
-
-11
-00:00:40,000 --> 00:00:44,000
-}
-
-12
-00:00:44,000 --> 00:00:48,000
-```
+James Webb Space Telescope에 의해 새로운 정보를 얻었어요!
 

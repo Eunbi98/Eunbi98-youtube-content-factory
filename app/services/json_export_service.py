@@ -1,23 +1,26 @@
 import json
-from pathlib import Path
 from datetime import datetime
+
+from config.settings import OUTPUT_DIR
 
 
 class JsonExportService:
     def __init__(self):
-        self.output_dir = Path("output")
-        self.output_dir.mkdir(exist_ok=True)
+        self.output_dir = OUTPUT_DIR
+        self.output_dir.mkdir(parents=True, exist_ok=True)
 
     def export_article(self, article) -> str:
         data = {
             "title": article.title,
             "source": article.source,
             "link": article.link,
+            "published": article.published,
             "score": article.score,
             "summary": article.summary,
             "script": article.script,
             "thumbnail": article.thumbnail,
             "hashtags": article.hashtags,
+            "status": article.status,
             "created_at": datetime.now().isoformat()
         }
 

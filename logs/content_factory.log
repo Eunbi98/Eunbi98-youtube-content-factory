@@ -359,3 +359,29 @@
 2026-07-01 22:13:50,751 | INFO | Content Planner 평가 시작 : NASA Awards More Moon Base Science, Previews New Opportunities
 2026-07-01 22:14:20,920 | INFO | Content Planner 평가 시작 : NASA’s Newest Wind Tunnel Builds on Legacy of Innovation
 2026-07-01 22:14:55,987 | INFO | ========== Pipeline 종료 ==========
+2026-07-02 21:40:01,052 | INFO | ========== Pipeline 시작 ==========
+2026-07-02 21:40:01,793 | INFO | NASACollector 수집 완료: 10건
+2026-07-02 21:40:01,794 | INFO | 수집 기사 수: 10
+2026-07-02 21:40:01,843 | INFO | 신규 저장 기사 수: 7
+2026-07-02 21:40:01,844 | INFO | 처리 대상 기사 수: 10
+2026-07-02 21:40:01,845 | INFO | 본문 추출: Caltech Welcomes Astrophysicist Ray Jayawardhana as New President
+2026-07-02 21:40:02,511 | INFO | 본문 정제: Caltech Welcomes Astrophysicist Ray Jayawardhana as New President
+2026-07-02 21:40:02,516 | INFO | 본문 추출: Curiosity Blog, Sols 4934-4940: In the Land of the Polygons
+2026-07-02 21:40:03,455 | INFO | 본문 정제: Curiosity Blog, Sols 4934-4940: In the Land of the Polygons
+2026-07-02 21:40:03,473 | INFO | 본문 추출: NASA’s Webb Studies How Planet Survived Death of its Star
+2026-07-02 21:40:04,392 | INFO | 본문 정제: NASA’s Webb Studies How Planet Survived Death of its Star
+2026-07-02 21:40:04,409 | INFO | 본문 추출: LINK Spacecraft Set for Mission to Boost NASA’s Swift Observatory
+2026-07-02 21:40:05,085 | INFO | 본문 정제: LINK Spacecraft Set for Mission to Boost NASA’s Swift Observatory
+2026-07-02 21:40:05,090 | INFO | 본문 추출: NASA Seeks Volunteers for New Yearlong Simulated Moon, Mars Mission
+2026-07-02 21:40:05,689 | INFO | 본문 정제: NASA Seeks Volunteers for New Yearlong Simulated Moon, Mars Mission
+2026-07-02 21:40:05,697 | INFO | 본문 추출: NASA’s Chandra Examines Milky Way at Arms’ Length
+2026-07-02 21:40:06,377 | INFO | 본문 정제: NASA’s Chandra Examines Milky Way at Arms’ Length
+2026-07-02 21:40:06,394 | INFO | 본문 추출: What’s Up: July 2026 Skywatching Tips from NASA
+2026-07-02 21:40:07,073 | INFO | 본문 정제: What’s Up: July 2026 Skywatching Tips from NASA
+2026-07-02 21:40:07,078 | INFO | 본문 추출: NASA’s TESS Mission Finds Planetary System in New Way
+2026-07-02 21:40:07,742 | INFO | 본문 정제: NASA’s TESS Mission Finds Planetary System in New Way
+2026-07-02 21:40:07,775 | INFO | 후보 기사 수: 5
+2026-07-02 21:40:07,781 | INFO | Content Planner 평가 시작: NASA’s Webb Studies How Planet Survived Death of its Star
+2026-07-02 21:40:46,902 | INFO | Content Planner 평가 시작: NASA’s TESS Mission Finds Planetary System in New Way
+2026-07-02 21:41:21,678 | INFO | Content Planner 평가 시작: Caltech Welcomes Astrophysicist Ray Jayawardhana as New President
+2026-07-02 21:43:22,506 | INFO | ========== Pipeline 완료 ==========
