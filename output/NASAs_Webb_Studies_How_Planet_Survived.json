@@ -3,18 +3,16 @@
   "source": "NASA",
   "link": "https://science.nasa.gov/missions/webb/nasas-webb-studies-how-planet-survived-death-of-its-star/",
   "published": "Wed, 01 Jul 2026 15:00:00 +0000",
-  "score": 70,
-  "summary": "This article discusses the discovery of an exoplanet WD 1856 b, which defies scientific expectations by surviving despite being in a close orbit to its white dwarf host star. This unique planet's survival and its relationship to stars like our Sun sheds light on the future of planets after the death of their sun.",
-  "script": "이제 진짜 믿기지 않는 이야기를 들어보세요!\n왜 이러한 별들이 우주를 변화시켰을까요?\n우리 주변의 행성과 별은 아무도 알아봤는가? \nJames Webb Space Telescope에 의해 새로운 정보를 얻었어요!",
-  "thumbnail": "물질이 있는 지구?",
+  "score": 80,
+  "summary": "NASA의 James Webb Space Telescope가 지구에서 매우 먼 곳에 있는 별 주변 행성을 실시간으로 관찰했다. 이를 통해 과학자들은, 별이 죽은 후에도 지구와 비슷한 크기의 행성이 존재하는 것을 발견할 수 있었다.",
+  "script": "스릴러 같은 이야기를 시작하기 위한 초반\n문제 제시: 우리는 이 세상에서 사라진 별과 빛나는 행성을 알아내야 한다.\n정답, Webb ST와 그렇게 뜀. 지구와 비슷한 크기의 행성이 존재하는 것을 발견할 수 있었다.\n우주 과학에서 흥미로운 개념: 별은 죽을 때까지 기질적으로 우리보다 훨씬 큰 힘을 가진 존재.",
+  "thumbnail": "별 사라지는 모습과 그 주변의 작은 별.",
   "hashtags": [
-    "exoplanet",
-    "nasa",
-    "space",
-    "telescope",
-    "science",
-    "universe"
+    "#NASA",
+    "# WebbST",
+    "#외계인",
+    "#과학"
   ],
   "status": "SELECTED",
-  "created_at": "2026-07-02T21:41:52.632477"
+  "created_at": "2026-07-02T21:56:27.113276"
 }

@@ -8,9 +8,17 @@ from moviepy import (
 
 from config.settings import (
     DEFAULT_VIDEO_FILENAME,
+    VIDEO_BACKGROUND_COLOR,
+    VIDEO_CAPTION_COLOR,
+    VIDEO_CAPTION_FONT_SIZE,
+    VIDEO_CAPTION_MAX_LENGTH,
     VIDEO_DIR,
     VIDEO_FPS,
     VIDEO_HEIGHT,
+    VIDEO_SOURCE_FONT_SIZE,
+    VIDEO_TITLE_COLOR,
+    VIDEO_TITLE_FONT_SIZE,
+    VIDEO_TITLE_MAX_LENGTH,
     VIDEO_WIDTH,
 )
 
@@ -36,57 +44,39 @@ class VideoService:
             audio = AudioFileClip(audio_path)
             duration = audio.duration
 
+            clips = []
+
             background = ColorClip(
                 size=(self.width, self.height),
-                color=(15, 15, 15),
+                color=VIDEO_BACKGROUND_COLOR,
                 duration=duration
             )
-
-            clips = [background]
+            clips.append(background)
 
             if image_path:
-                image = (
-                    ImageClip(image_path)
-                    .with_duration(duration)
-                    .resized(width=1080)
-                    .with_position(("center", 360))
+                main_image = self._create_main_image_clip(
+                    image_path=image_path,
+                    duration=duration
                 )
+                clips.append(main_image)
 
-                clips.append(image)
+            title_clip = self._create_title_clip(
+                article=article,
+                duration=duration
+            )
+            clips.append(title_clip)
 
-            title_text = self._shorten_text(article.title, 54)
-            script_text = self._shorten_text(article.script, 130)
+            caption_clip = self._create_caption_clip(
+                article=article,
+                duration=duration
+            )
+            clips.append(caption_clip)
 
-            title = TextClip(
-                text=title_text,
-                font_size=54,
-                color="white",
-                size=(960, 220),
-                method="caption",
-                text_align="center"
-            ).with_duration(duration).with_position(("center", 80))
-
-            script = TextClip(
-                text=script_text,
-                font_size=48,
-                color="white",
-                size=(960, 420),
-                method="caption",
-                text_align="center"
-            ).with_duration(duration).with_position(("center", 1250))
-
-            source = TextClip(
-                text=f"Source: {article.source}",
-                font_size=30,
-                color="white",
-                size=(900, 80),
-                method="caption",
-                text_align="center"
-            ).with_duration(duration).with_position(("center", 1780))
-
-            clips.append(title)
-            clips.append(script)
-            clips.append(source)
+            source_clip = self._create_source_clip(
+                article=article,
+                duration=duration
+            )
+            clips.append(source_clip)
 
             video = CompositeVideoClip(
                 clips,
@@ -109,11 +99,92 @@ class VideoService:
             if audio:
                 audio.close()
 
+    def _create_main_image_clip(self, image_path: str, duration: float):
+        image = ImageClip(image_path)
+
+        image_ratio = image.w / image.h
+        target_ratio = self.width / 1100
+
+        if image_ratio > target_ratio:
+            image = image.resized(height=1100)
+        else:
+            image = image.resized(width=self.width)
+
+        image = (
+            image
+            .with_duration(duration)
+            .with_position(("center", 420))
+        )
+
+        return image
+
+    def _create_title_clip(self, article, duration: float):
+        title_text = article.thumbnail or article.title
+        title_text = self._shorten_text(
+            title_text,
+            VIDEO_TITLE_MAX_LENGTH
+        )
+
+        return (
+            TextClip(
+                text=title_text,
+                font_size=VIDEO_TITLE_FONT_SIZE,
+                color=VIDEO_TITLE_COLOR,
+                size=(980, 260),
+                method="caption",
+                text_align="center",
+                stroke_color="black",
+                stroke_width=4,
+            )
+            .with_duration(duration)
+            .with_position(("center", 110))
+        )
+
+    def _create_caption_clip(self, article, duration: float):
+        caption_text = article.script or article.summary
+        caption_text = self._shorten_text(
+            caption_text,
+            VIDEO_CAPTION_MAX_LENGTH
+        )
+
+        return (
+            TextClip(
+                text=caption_text,
+                font_size=VIDEO_CAPTION_FONT_SIZE,
+                color=VIDEO_CAPTION_COLOR,
+                size=(980, 320),
+                method="caption",
+                text_align="center",
+                stroke_color="black",
+                stroke_width=3,
+            )
+            .with_duration(duration)
+            .with_position(("center", 1520))
+        )
+
+    def _create_source_clip(self, article, duration: float):
+        source_text = f"출처: {article.source}"
+
+        return (
+            TextClip(
+                text=source_text,
+                font_size=VIDEO_SOURCE_FONT_SIZE,
+                color="white",
+                size=(900, 80),
+                method="caption",
+                text_align="center",
+                stroke_color="black",
+                stroke_width=2,
+            )
+            .with_duration(duration)
+            .with_position(("center", 1810))
+        )
+
     def _shorten_text(self, text: str, max_length: int) -> str:
         if not text:
             return ""
 
-        text = " ".join(text.split())
+        text = " ".join(str(text).split())
 
         if len(text) <= max_length:
             return text
