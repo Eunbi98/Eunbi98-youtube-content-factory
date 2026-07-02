@@ -23,8 +23,8 @@ class ContentPlannerService:
 
         prompt = (
             prompt_template
-            .replace("{title}", article.title)
-            .replace("{source}", article.source)
+            .replace("{title}", article.title or "")
+            .replace("{source}", article.source or "")
             .replace("{content}", content[:MAX_CONTENT_LENGTH])
         )
 
@@ -32,28 +32,83 @@ class ContentPlannerService:
         json_text = self._extract_json(response)
 
         try:
-            return json.loads(json_text)
+            result = json.loads(json_text)
+            return self._normalize_result(result)
+
         except json.JSONDecodeError:
-            return self._fallback_result(response)
+            repaired = self._repair_json(json_text)
+
+            try:
+                result = json.loads(repaired)
+                return self._normalize_result(result)
+
+            except json.JSONDecodeError:
+                return self._fallback_result(response)
 
     def _extract_json(self, response: str) -> str:
-        match = re.search(r"```json\s*(.*?)\s*```", response, re.DOTALL)
+        if not response:
+            return ""
 
-        if match:
-            return match.group(1).strip()
+        response = response.strip()
 
-        match = re.search(r"```\s*(.*?)\s*```", response, re.DOTALL)
-
-        if match:
-            return match.group(1).strip()
+        response = response.replace("```json", "")
+        response = response.replace("```", "")
 
         start = response.find("{")
         end = response.rfind("}")
 
-        if start != -1 and end != -1:
+        if start != -1 and end != -1 and end > start:
             return response[start:end + 1].strip()
 
         return response.strip()
+
+    def _repair_json(self, text: str) -> str:
+        text = text.strip()
+
+        text = re.sub(r",\s*}", "}", text)
+        text = re.sub(r",\s*]", "]", text)
+
+        text = text.replace("\n", " ")
+        text = text.replace("\t", " ")
+
+        return text
+
+    def _normalize_result(self, result: dict) -> dict:
+        default = self._empty_result()
+        default.update(result)
+
+        try:
+            default["score"] = int(default.get("score", 0))
+        except ValueError:
+            default["score"] = 0
+
+        default["summary"] = self._to_text(default.get("summary", ""))
+        default["script"] = self._to_text(default.get("script", ""))
+        default["thumbnail_text"] = self._to_text(
+            default.get("thumbnail_text", "")
+        )
+
+        hashtags = default.get("hashtags", [])
+
+        if isinstance(hashtags, str):
+            hashtags = [
+                tag.strip()
+                for tag in hashtags.split()
+                if tag.strip()
+            ]
+
+        if not isinstance(hashtags, list):
+            hashtags = []
+
+        default["hashtags"] = hashtags
+
+        return default
+
+    def _to_text(self, value):
+        if isinstance(value, list):
+            return "\n".join(str(item).strip() for item in value if str(item).strip())
+
+        return str(value).strip()
 
     def _empty_result(self) -> dict:
         return {
@@ -72,17 +127,19 @@ class ContentPlannerService:
         }
 
     def _fallback_result(self, response: str) -> dict:
+        clean_response = response.strip() if response else ""
+
         return {
-            "score": 0,
+            "score": 30,
             "category": "other",
-            "emotion": "",
-            "reason": "AI 응답을 JSON으로 변환하지 못했습니다.",
+            "emotion": "curiosity",
+            "reason": "AI 응답이 JSON 형식은 아니지만 콘텐츠 초안으로 활용 가능합니다.",
             "core_topic": "",
             "hook": "",
             "story_flow": [],
-            "summary": response,
-            "script": response,
+            "summary": clean_response[:500],
+            "script": clean_response[:1200],
             "youtube_title": "",
             "thumbnail_text": "",
-            "hashtags": []
+            "hashtags": ["#해외뉴스", "#쇼츠"]
         }

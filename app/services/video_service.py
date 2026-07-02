@@ -38,7 +38,7 @@ class VideoService:
 
             background = ColorClip(
                 size=(self.width, self.height),
-                color=(18, 18, 18),
+                color=(15, 15, 15),
                 duration=duration
             )
 
@@ -48,28 +48,44 @@ class VideoService:
                 image = (
                     ImageClip(image_path)
                     .with_duration(duration)
-                    .resized(width=900)
-                    .with_position(("center", 420))
+                    .resized(width=1080)
+                    .with_position(("center", 360))
                 )
+
                 clips.append(image)
 
+            title_text = self._shorten_text(article.title, 54)
+            script_text = self._shorten_text(article.script, 130)
+
             title = TextClip(
-                text=article.title,
-                font_size=58,
+                text=title_text,
+                font_size=54,
                 color="white",
-                size=(960, None),
-                method="caption"
-            ).with_duration(duration).with_position(("center", 120))
+                size=(960, 220),
+                method="caption",
+                text_align="center"
+            ).with_duration(duration).with_position(("center", 80))
+
+            script = TextClip(
+                text=script_text,
+                font_size=48,
+                color="white",
+                size=(960, 420),
+                method="caption",
+                text_align="center"
+            ).with_duration(duration).with_position(("center", 1250))
 
             source = TextClip(
                 text=f"Source: {article.source}",
-                font_size=36,
+                font_size=30,
                 color="white",
-                size=(900, None),
-                method="caption"
-            ).with_duration(duration).with_position(("center", 1660))
+                size=(900, 80),
+                method="caption",
+                text_align="center"
+            ).with_duration(duration).with_position(("center", 1780))
 
             clips.append(title)
+            clips.append(script)
             clips.append(source)
 
             video = CompositeVideoClip(
@@ -92,3 +108,14 @@ class VideoService:
 
             if audio:
                 audio.close()
+
+    def _shorten_text(self, text: str, max_length: int) -> str:
+        if not text:
+            return ""
+
+        text = " ".join(text.split())
+
+        if len(text) <= max_length:
+            return text
+
+        return text[:max_length].rstrip() + "..."
