@@ -10,6 +10,7 @@ SOURCE_DIR = BASE_DIR / "sources"
 TEMPLATE_DIR = BASE_DIR / "templates"
 
 IMAGE_DIR = OUTPUT_DIR / "images"
+SCENE_IMAGE_DIR = IMAGE_DIR / "scenes"
 AUDIO_DIR = OUTPUT_DIR / "audio"
 VIDEO_DIR = OUTPUT_DIR / "video"
 SUBTITLE_DIR = OUTPUT_DIR / "subtitles"
@@ -32,6 +33,9 @@ ENABLE_AUDIO = True
 ENABLE_SUBTITLE = True
 ENABLE_VIDEO = True
 ENABLE_IMAGE_DOWNLOAD = True
+ENABLE_SCENE_IMAGES = True
+
+SCENE_IMAGE_LIMIT = 5
 
 DEFAULT_AUDIO_FILENAME = "news.mp3"
 DEFAULT_SUBTITLE_FILENAME = "news.srt"
@@ -54,6 +58,7 @@ def ensure_directories():
         DATA_DIR,
         OUTPUT_DIR,
         IMAGE_DIR,
+        SCENE_IMAGE_DIR,
         AUDIO_DIR,
         VIDEO_DIR,
         SUBTITLE_DIR,

@@ -40,6 +40,7 @@ class ShortsEngine:
         self,
         article,
         image_path: str | None,
+        image_paths: list[str] | None,
         audio_path: str | None
     ) -> str | None:
         if not audio_path:
@@ -58,10 +59,15 @@ class ShortsEngine:
                 self._background_clip(duration)
             ]
 
-            if image_path:
+            scene_image_paths = self._resolve_scene_images(
+                image_path=image_path,
+                image_paths=image_paths or []
+            )
+
+            if scene_image_paths:
                 clips.extend(
                     self._image_scene_clips(
-                        image_path=image_path,
+                        image_paths=scene_image_paths,
                         duration=duration
                     )
                 )
@@ -115,6 +121,25 @@ class ShortsEngine:
             if audio:
                 audio.close()
 
+    def _resolve_scene_images(
+        self,
+        image_path: str | None,
+        image_paths: list[str]
+    ) -> list[str]:
+        valid_paths = []
+
+        for path in image_paths:
+            if path and Path(path).exists():
+                valid_paths.append(path)
+
+        if valid_paths:
+            return valid_paths
+
+        if image_path and Path(image_path).exists():
+            return [image_path]
+
+        return []
+
     def _background_clip(self, duration: float):
         bg = self.template.get("background", {})
         color = tuple(bg.get("color", [10, 10, 14]))
@@ -125,7 +150,7 @@ class ShortsEngine:
             duration=duration
         )
 
-    def _image_scene_clips(self, image_path: str, duration: float):
+    def _image_scene_clips(self, image_paths: list[str], duration: float):
         scene_durations = self._get_scene_durations(duration)
         clips = []
         start_time = 0
@@ -133,6 +158,8 @@ class ShortsEngine:
         for index, scene_duration in enumerate(scene_durations):
             if start_time >= duration:
                 break
+
+            image_path = image_paths[index % len(image_paths)]
 
             clip = (
                 self._image_clip(
@@ -251,7 +278,7 @@ class ShortsEngine:
                     font_size=config.get("font_size", 58),
                     color=config.get("color", "white"),
                     box_width=config.get("width", 980),
-                    box_height=config.get("height", 300),
+                    box_height=300,
                     stroke_width=config.get("stroke_width", 4),
                     stroke_color=config.get("stroke_color", "black"),
                     duration=clip_duration,

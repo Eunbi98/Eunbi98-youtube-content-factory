@@ -10,8 +10,9 @@ class VideoService:
     def create_video(
         self,
         article,
-        image_path: str | None,
-        audio_path: str | None
+        image_path: str | None = None,
+        audio_path: str | None = None,
+        image_paths: list[str] | None = None,
     ) -> str | None:
         template = self.template_loader.load(VIDEO_TEMPLATE_NAME)
 
@@ -20,5 +21,6 @@ class VideoService:
         return engine.render(
             article=article,
             image_path=image_path,
+            image_paths=image_paths or [],
             audio_path=audio_path
         )

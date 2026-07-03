@@ -6,3 +6,5 @@ lxml_html_clean
 edge-tts
 moviepy
 pillow
+requests
+beautifulsoup4

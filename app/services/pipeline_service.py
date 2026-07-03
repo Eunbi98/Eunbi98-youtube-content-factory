@@ -7,6 +7,7 @@ from app.services.content_planner_service import ContentPlannerService
 from app.services.content_service import ContentService
 from app.services.image_service import ImageService
 from app.services.json_export_service import JsonExportService
+from app.services.scene_image_service import SceneImageService
 from app.services.subtitle_service import SubtitleService
 from app.services.video_service import VideoService
 from app.utils.logger import get_logger
@@ -15,6 +16,7 @@ from config.settings import (
     CANDIDATE_LIMIT,
     ENABLE_AUDIO,
     ENABLE_IMAGE_DOWNLOAD,
+    ENABLE_SCENE_IMAGES,
     ENABLE_SUBTITLE,
     ENABLE_VIDEO,
     PROCESS_LIMIT,
@@ -35,6 +37,7 @@ class PipelineService:
 
         self.json_export = JsonExportService()
         self.image = ImageService()
+        self.scene_image = SceneImageService()
         self.audio = AudioService()
         self.subtitle = SubtitleService()
         self.video = VideoService()
@@ -211,14 +214,22 @@ class PipelineService:
         print(json_path)
 
         image_path = None
+        image_paths = []
         audio_path = None
-        subtitle_path = None
-        video_path = None
 
         if ENABLE_IMAGE_DOWNLOAD:
             image_path = self.image.download_image(article)
-            print("\n이미지 저장")
+            print("\n대표 이미지 저장")
             print(image_path)
+
+        if ENABLE_SCENE_IMAGES:
+            image_paths = self.scene_image.download_scene_images(
+                article=article,
+                fallback_image_path=image_path
+            )
+            print("\n장면 이미지 저장")
+            for path in image_paths:
+                print(path)
 
         if ENABLE_AUDIO:
             audio_path = self.audio.create_audio(article)
@@ -234,6 +245,7 @@ class PipelineService:
             video_path = self.video.create_video(
                 article=article,
                 image_path=image_path,
+                image_paths=image_paths,
                 audio_path=audio_path
             )
             print("\n영상 생성")

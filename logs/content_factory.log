@@ -495,3 +495,33 @@
 2026-07-02 22:47:16,130 | INFO | Content Planner 평가 시작: NASA’s Chandra Reveals ‘Red, White, Blue’ Universe for US 250th
 2026-07-02 22:48:37,836 | INFO | Content Planner 평가 시작: NASA’s TESS Mission Finds Planetary System in New Way
 2026-07-02 22:52:04,885 | INFO | ========== Pipeline 완료 ==========
+2026-07-03 20:38:38,218 | INFO | ========== Pipeline 시작 ==========
+2026-07-03 20:38:38,885 | INFO | NASACollector 수집 완료: 10건
+2026-07-03 20:38:38,886 | INFO | 수집 기사 수: 10
+2026-07-03 20:38:38,943 | INFO | 신규 저장 기사 수: 10
+2026-07-03 20:38:38,944 | INFO | 처리 대상 기사 수: 10
+2026-07-03 20:38:38,944 | INFO | 본문 추출: Caltech Welcomes Astrophysicist Ray Jayawardhana as New President
+2026-07-03 20:38:39,563 | INFO | 본문 정제: Caltech Welcomes Astrophysicist Ray Jayawardhana as New President
+2026-07-03 20:38:39,570 | INFO | 본문 추출: Curiosity Blog, Sols 4934-4940: In the Land of the Polygons
+2026-07-03 20:38:40,300 | INFO | 본문 정제: Curiosity Blog, Sols 4934-4940: In the Land of the Polygons
+2026-07-03 20:38:40,322 | INFO | 본문 추출: NASA’s Webb Studies How Planet Survived Death of its Star
+2026-07-03 20:38:40,944 | INFO | 본문 정제: NASA’s Webb Studies How Planet Survived Death of its Star
+2026-07-03 20:38:40,951 | INFO | 본문 추출: LINK Spacecraft Set for Mission to Boost NASA’s Swift Observatory
+2026-07-03 20:38:41,495 | INFO | 본문 정제: LINK Spacecraft Set for Mission to Boost NASA’s Swift Observatory
+2026-07-03 20:38:41,510 | INFO | 본문 추출: NASA Seeks Volunteers for New Yearlong Simulated Moon, Mars Mission
+2026-07-03 20:38:42,095 | INFO | 본문 정제: NASA Seeks Volunteers for New Yearlong Simulated Moon, Mars Mission
+2026-07-03 20:38:42,112 | INFO | 본문 추출: NASA’s Chandra Examines Milky Way at Arms’ Length
+2026-07-03 20:38:42,761 | INFO | 본문 정제: NASA’s Chandra Examines Milky Way at Arms’ Length
+2026-07-03 20:38:42,777 | INFO | 본문 추출: What’s Up: July 2026 Skywatching Tips from NASA
+2026-07-03 20:38:43,397 | INFO | 본문 정제: What’s Up: July 2026 Skywatching Tips from NASA
+2026-07-03 20:38:43,402 | INFO | 본문 추출: NASA’s Webb Reveals Stars Sparking to Life in Cosmic Celebration
+2026-07-03 20:38:44,212 | INFO | 본문 정제: NASA’s Webb Reveals Stars Sparking to Life in Cosmic Celebration
+2026-07-03 20:38:44,226 | INFO | 본문 추출: Good Morning, Earth!
+2026-07-03 20:38:44,816 | INFO | 본문 정제: Good Morning, Earth!
+2026-07-03 20:38:44,821 | INFO | 본문 추출: NASA’s Artemis II Breaks Agency Streaming Record
+2026-07-03 20:38:45,398 | INFO | 본문 정제: NASA’s Artemis II Breaks Agency Streaming Record
+2026-07-03 20:38:45,415 | INFO | 후보 기사 수: 5
+2026-07-03 20:38:45,435 | INFO | Content Planner 평가 시작: NASA’s Webb Studies How Planet Survived Death of its Star
+2026-07-03 20:39:36,673 | INFO | Content Planner 평가 시작: NASA’s Webb Reveals Stars Sparking to Life in Cosmic Celebration
+2026-07-03 20:40:23,095 | INFO | Content Planner 평가 시작: Caltech Welcomes Astrophysicist Ray Jayawardhana as New President
+2026-07-03 20:45:11,968 | INFO | ========== Pipeline 완료 ==========
