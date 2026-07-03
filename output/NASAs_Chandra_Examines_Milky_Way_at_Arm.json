@@ -3,18 +3,52 @@
   "source": "NASA",
   "link": "https://science.nasa.gov/missions/chandra/nasas-chandra-examines-milky-way-at-arms-length/",
   "published": "Wed, 01 Jul 2026 20:17:20 +0000",
-  "score": 80,
-  "summary": "이 기사에서는, NASA의 Chandra X-ray Observatory를 사용하여 Milky Way 은하수의 외곽 spiral arm이 더 넓게 나타나는 것을 발견했습니다. 이 새로운 결과는 우리 우주 구조에 대한 이해를 변화시킬 수 있습니다.",
-  "script": "안녕하세요, 지구를 관측하는 것은 어려운 일입니다!\n하지만 과학자들은 암흑 세계 속에서 밝은 빛을 발견했습니다.\n이번에 과학자들이 우리 우주의 spiral arm의 크기를 정확히 이해할 수 있게 도와주는 새로운 연구가 시작되었네요.\n우리 중심부 근처에서 발생하는 핵심적 변화는 무엇일까요?\n세계적인 미디어를 통해 과학자들의 업적으로 진행되고 있는 이야기를 알아보세요!",
-  "thumbnail": "우주에서 새로운 아이디어를 찾는 과학자들.",
+  "score": 30,
+  "summary": "",
+  "script": "과학자들이 하늘에서 이상한 신호를 포착했습니다.\n먼 우주에서 뜻밖의 단서가 포착됐습니다.\n과학자들은 이 신호의 의미를\n추적하고 있습니다.\n다음 관측이 해석을 바꿀 수 있습니다.\n다음 관측이 이 질문의 방향을 바꿀지도 모릅니다.",
+  "thumbnail": "우주에서 발견된 이상한 신호",
   "hashtags": [
     "#해외뉴스",
-    "#쇼츠",
-    "#과학",
-    "#미래",
-    "#지구",
-    "#문화"
+    "#쇼츠"
+  ],
+  "scenes": [
+    {
+      "order": 1,
+      "text": "과학자들이 하늘에서 이상한 신호를 포착했습니다.",
+      "image_keyword": "",
+      "duration": 4
+    },
+    {
+      "order": 2,
+      "text": "먼 우주에서 뜻밖의 단서가 포착됐습니다.",
+      "image_keyword": "",
+      "duration": 4
+    },
+    {
+      "order": 3,
+      "text": "과학자들은 이 신호의 의미를",
+      "image_keyword": "",
+      "duration": 4
+    },
+    {
+      "order": 4,
+      "text": "추적하고 있습니다.",
+      "image_keyword": "",
+      "duration": 4
+    },
+    {
+      "order": 5,
+      "text": "다음 관측이 해석을 바꿀 수 있습니다.",
+      "image_keyword": "",
+      "duration": 4
+    },
+    {
+      "order": 6,
+      "text": "다음 관측이 이 질문의 방향을 바꿀지도 모릅니다.",
+      "image_keyword": "",
+      "duration": 4
+    }
   ],
   "status": "SELECTED",
-  "created_at": "2026-07-02T22:17:52.619225"
+  "created_at": "2026-07-03T22:25:11.796049"
 }

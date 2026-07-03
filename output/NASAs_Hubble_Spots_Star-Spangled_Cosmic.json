@@ -1,0 +1,54 @@
+{
+  "title": "NASA’s Hubble Spots Star-Spangled Cosmic Scene",
+  "source": "NASA",
+  "link": "https://science.nasa.gov/missions/hubble/nasas-hubble-spots-star-spangled-cosmic-scene/",
+  "published": "Fri, 03 Jul 2026 12:42:03 +0000",
+  "score": 30,
+  "summary": "",
+  "script": "과학자들이 하늘에서 이상한 신호를 포착했습니다.\n먼 우주에서 뜻밖의 단서가 포착됐습니다.\n과학자들은 이 신호의 의미를\n추적하고 있습니다.\n다음 관측이 해석을 바꿀 수 있습니다.\n다음 관측이 이 질문의 방향을 바꿀지도 모릅니다.",
+  "thumbnail": "우주에서 발견된 이상한 신호",
+  "hashtags": [
+    "#해외뉴스",
+    "#쇼츠"
+  ],
+  "scenes": [
+    {
+      "order": 1,
+      "text": "과학자들이 하늘에서 이상한 신호를 포착했습니다.",
+      "image_keyword": "",
+      "duration": 4
+    },
+    {
+      "order": 2,
+      "text": "먼 우주에서 뜻밖의 단서가 포착됐습니다.",
+      "image_keyword": "",
+      "duration": 4
+    },
+    {
+      "order": 3,
+      "text": "과학자들은 이 신호의 의미를",
+      "image_keyword": "",
+      "duration": 4
+    },
+    {
+      "order": 4,
+      "text": "추적하고 있습니다.",
+      "image_keyword": "",
+      "duration": 4
+    },
+    {
+      "order": 5,
+      "text": "다음 관측이 해석을 바꿀 수 있습니다.",
+      "image_keyword": "",
+      "duration": 4
+    },
+    {
+      "order": 6,
+      "text": "다음 관측이 이 질문의 방향을 바꿀지도 모릅니다.",
+      "image_keyword": "",
+      "duration": 4
+    }
+  ],
+  "status": "SELECTED",
+  "created_at": "2026-07-03T22:42:13.149347"
+}

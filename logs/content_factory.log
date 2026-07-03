@@ -525,3 +525,55 @@
 2026-07-03 20:39:36,673 | INFO | Content Planner 평가 시작: NASA’s Webb Reveals Stars Sparking to Life in Cosmic Celebration
 2026-07-03 20:40:23,095 | INFO | Content Planner 평가 시작: Caltech Welcomes Astrophysicist Ray Jayawardhana as New President
 2026-07-03 20:45:11,968 | INFO | ========== Pipeline 완료 ==========
+2026-07-03 21:41:02,211 | INFO | ========== Pipeline 시작 ==========
+2026-07-03 21:41:02,663 | INFO | NASACollector 수집 완료: 10건
+2026-07-03 21:41:02,664 | INFO | 수집 기사 수: 10
+2026-07-03 21:41:02,664 | INFO | 신규 저장 기사 수: 0
+2026-07-03 21:41:02,665 | INFO | 처리 대상 기사 수: 9
+2026-07-03 21:41:02,694 | INFO | 후보 기사 수: 5
+2026-07-03 21:41:02,695 | INFO | Content Planner 평가 시작: NASA’s Webb Reveals Stars Sparking to Life in Cosmic Celebration
+2026-07-03 21:41:06,836 | INFO | Content Planner 평가 시작: Caltech Welcomes Astrophysicist Ray Jayawardhana as New President
+2026-07-03 21:41:10,892 | INFO | Content Planner 평가 시작: NASA’s Chandra Examines Milky Way at Arms’ Length
+2026-07-03 21:43:38,880 | INFO | ========== Pipeline 완료 ==========
+2026-07-03 22:00:48,139 | INFO | ========== Pipeline 시작 ==========
+2026-07-03 22:00:48,576 | INFO | NASACollector 수집 완료: 10건
+2026-07-03 22:00:48,576 | INFO | 수집 기사 수: 10
+2026-07-03 22:00:48,577 | INFO | 신규 저장 기사 수: 0
+2026-07-03 22:00:48,577 | INFO | 처리 대상 기사 수: 8
+2026-07-03 22:00:48,593 | INFO | 후보 기사 수: 5
+2026-07-03 22:00:48,594 | INFO | Content Planner 평가 시작: Caltech Welcomes Astrophysicist Ray Jayawardhana as New President
+2026-07-03 22:00:52,741 | INFO | Content Planner 평가 시작: NASA’s Chandra Examines Milky Way at Arms’ Length
+2026-07-03 22:00:56,835 | INFO | Content Planner 평가 시작: NASA Seeks Volunteers for New Yearlong Simulated Moon, Mars Mission
+2026-07-03 22:04:39,570 | INFO | ========== Pipeline 완료 ==========
+2026-07-03 22:24:58,972 | INFO | ========== Pipeline 시작 ==========
+2026-07-03 22:24:59,435 | INFO | NASACollector 수집 완료: 10건
+2026-07-03 22:24:59,436 | INFO | 수집 기사 수: 10
+2026-07-03 22:24:59,438 | INFO | 신규 저장 기사 수: 0
+2026-07-03 22:24:59,438 | INFO | 처리 대상 기사 수: 7
+2026-07-03 22:24:59,456 | INFO | 후보 기사 수: 5
+2026-07-03 22:24:59,458 | INFO | Content Planner 평가 시작: NASA’s Chandra Examines Milky Way at Arms’ Length
+2026-07-03 22:25:03,600 | INFO | Content Planner 평가 시작: NASA Seeks Volunteers for New Yearlong Simulated Moon, Mars Mission
+2026-07-03 22:25:07,686 | INFO | Content Planner 평가 시작: LINK Spacecraft Set for Mission to Boost NASA’s Swift Observatory
+2026-07-03 22:27:25,185 | INFO | ========== Pipeline 완료 ==========
+2026-07-03 22:41:59,933 | INFO | ========== Pipeline 시작 ==========
+2026-07-03 22:42:00,415 | INFO | NASACollector 수집 완료: 10건
+2026-07-03 22:42:00,415 | INFO | 수집 기사 수: 10
+2026-07-03 22:42:00,418 | INFO | 신규 저장 기사 수: 1
+2026-07-03 22:42:00,419 | INFO | 처리 대상 기사 수: 7
+2026-07-03 22:42:00,419 | INFO | 본문 추출: NASA’s Hubble Spots Star-Spangled Cosmic Scene
+2026-07-03 22:42:00,769 | INFO | 본문 정제: NASA’s Hubble Spots Star-Spangled Cosmic Scene
+2026-07-03 22:42:00,782 | INFO | 후보 기사 수: 5
+2026-07-03 22:42:00,784 | INFO | Content Planner 평가 시작: NASA’s Hubble Spots Star-Spangled Cosmic Scene
+2026-07-03 22:42:04,928 | INFO | Content Planner 평가 시작: NASA Seeks Volunteers for New Yearlong Simulated Moon, Mars Mission
+2026-07-03 22:42:09,043 | INFO | Content Planner 평가 시작: LINK Spacecraft Set for Mission to Boost NASA’s Swift Observatory
+2026-07-03 22:44:32,782 | INFO | ========== Pipeline 완료 ==========
+2026-07-03 22:55:11,148 | INFO | ========== Pipeline 시작 ==========
+2026-07-03 22:55:11,587 | INFO | NASACollector 수집 완료: 10건
+2026-07-03 22:55:11,587 | INFO | 수집 기사 수: 10
+2026-07-03 22:55:11,588 | INFO | 신규 저장 기사 수: 0
+2026-07-03 22:55:11,588 | INFO | 처리 대상 기사 수: 6
+2026-07-03 22:55:11,600 | INFO | 후보 기사 수: 5
+2026-07-03 22:55:11,601 | INFO | Content Planner 평가 시작: NASA Seeks Volunteers for New Yearlong Simulated Moon, Mars Mission
+2026-07-03 22:55:15,730 | INFO | Content Planner 평가 시작: LINK Spacecraft Set for Mission to Boost NASA’s Swift Observatory
+2026-07-03 22:55:19,794 | INFO | Content Planner 평가 시작: NASA’s Artemis II Breaks Agency Streaming Record
+2026-07-03 22:58:26,619 | INFO | ========== Pipeline 완료 ==========

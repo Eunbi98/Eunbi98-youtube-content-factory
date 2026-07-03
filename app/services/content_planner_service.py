@@ -1,8 +1,8 @@
 import json
 import logging
 import re
-from typing import Any
 
+from app.research import ResearchContextBuilder
 from app.services.prompt_manager import PromptManager
 from app.story import KoreanLanguageGuard, ScriptQAEngine, StoryDirector
 from config.settings import MAX_CONTENT_LENGTH
@@ -20,6 +20,7 @@ class ContentPlannerService:
 
         self.llm = llm
         self.prompt_manager = prompt_manager or PromptManager()
+        self.research_builder = ResearchContextBuilder()
         self.story_director = StoryDirector()
         self.script_qa = ScriptQAEngine()
         self.language_guard = KoreanLanguageGuard()
@@ -30,7 +31,8 @@ class ContentPlannerService:
         if not content:
             return self._empty_result()
 
-        story_plan = self.create_story_plan(article, content)
+        research_context = self.create_research_context(article, content)
+        story_plan = self.create_story_plan(article, content, research_context)
         prompt_template = self.prompt_manager.load("content_planner_prompt.txt")
         prompt = (
             prompt_template
@@ -38,24 +40,65 @@ class ContentPlannerService:
             .replace("{source}", article.source or "")
             .replace("{content}", content[:MAX_CONTENT_LENGTH])
         )
-        prompt = self._append_story_engine_prompt(prompt, story_plan)
+        prompt = self._append_planning_context(
+            prompt=prompt,
+            story_plan=story_plan,
+            research_context=research_context,
+        )
 
         response = self.llm.generate(prompt)
         json_text = self._extract_json(response)
 
         try:
             result = json.loads(json_text)
-            return self._normalize_result(result, article, story_plan)
+            return self._normalize_result(
+                result,
+                article=article,
+                story_plan=story_plan,
+                research_context=research_context,
+            )
         except json.JSONDecodeError:
             repaired = self._repair_json(json_text)
 
             try:
                 result = json.loads(repaired)
-                return self._normalize_result(result, article, story_plan)
+                return self._normalize_result(
+                    result,
+                    article=article,
+                    story_plan=story_plan,
+                    research_context=research_context,
+                )
             except json.JSONDecodeError:
-                return self._fallback_result(response, article, story_plan)
+                return self._fallback_result(
+                    response,
+                    article=article,
+                    story_plan=story_plan,
+                    research_context=research_context,
+                )
 
-    def create_story_plan(self, article, content: str | None = None) -> dict:
+    def create_research_context(self, article, content: str | None = None) -> dict:
+        source_text = (
+            content
+            or article.summary
+            or article.cleaned_content
+            or article.content
+            or ""
+        )
+        context = self.research_builder.build(
+            title=article.title or "",
+            summary=source_text[:1500],
+            source=article.source or "",
+            url=getattr(article, "link", "") or "",
+        )
+        logger.info("Research Engine connected: topic=%s", context.get("topic", ""))
+        return context
+
+    def create_story_plan(
+        self,
+        article,
+        content: str | None = None,
+        research_context: dict | None = None,
+    ) -> dict:
         source_text = (
             content
             or article.summary
@@ -64,9 +107,19 @@ class ContentPlannerService:
             or ""
         )
 
+        research_summary = ""
+
+        if research_context:
+            research_summary = "\n".join([
+                str(research_context.get("topic", "")),
+                str(research_context.get("core_question", "")),
+                *[str(item) for item in research_context.get("story_clues", [])],
+                str(research_context.get("possible_resolution", "")),
+            ])
+
         story_plan = self.story_director.create_story(
             title=article.title or "",
-            summary=source_text[:1500],
+            summary=f"{source_text[:1000]}\n{research_summary}",
             source=article.source or "",
             url=getattr(article, "link", "") or "",
         )
@@ -80,10 +133,18 @@ class ContentPlannerService:
 
         return story_plan
 
-    def build_story_script(self, base_text: str, story_plan: dict) -> str:
+    def build_story_script(
+        self,
+        base_text: str,
+        story_plan: dict,
+        research_context: dict | None = None,
+    ) -> str:
         hook = self._clean_script_line(str(story_plan.get("hook", "")))
         ending = self._clean_script_line(str(story_plan.get("ending", "")))
-        middle_lines = self._extract_subtitle_lines(base_text)
+        middle_lines = self._research_script_lines(research_context)
+
+        if not middle_lines:
+            middle_lines = self._extract_subtitle_lines(base_text)
 
         script_lines = []
 
@@ -112,8 +173,14 @@ class ContentPlannerService:
         result: dict,
         article,
         story_plan: dict,
+        research_context: dict | None = None,
     ) -> dict:
-        return self._normalize_result(result, article, story_plan)
+        return self._normalize_result(
+            result,
+            article=article,
+            story_plan=story_plan,
+            research_context=research_context,
+        )
 
     def _extract_json(self, response: str) -> str:
         if not response:
@@ -144,6 +211,7 @@ class ContentPlannerService:
         result: dict,
         article=None,
         story_plan: dict | None = None,
+        research_context: dict | None = None,
     ) -> dict:
         default = self._empty_result()
         default.update(result)
@@ -159,11 +227,15 @@ class ContentPlannerService:
             default.get("thumbnail_text", "")
         )
 
+        if research_context:
+            default["research_context"] = research_context
+
         if story_plan:
             default = self._apply_story_engine(
                 result=default,
                 article=article,
                 story_plan=story_plan,
+                research_context=research_context,
             )
 
         default["hashtags"] = self._normalize_hashtags(
@@ -176,15 +248,35 @@ class ContentPlannerService:
 
         return default
 
-    def _append_story_engine_prompt(self, prompt: str, story_plan: dict) -> str:
+    def _append_planning_context(
+        self,
+        prompt: str,
+        story_plan: dict,
+        research_context: dict,
+    ) -> str:
         story_structure = story_plan.get("story_structure", [])
         structure_text = " -> ".join(
             str(item.get("section", ""))
             for item in story_structure
             if isinstance(item, dict)
         )
+        source_plan_text = "\n".join(
+            f"- {item.get('source_type', '')}: {item.get('purpose', '')}"
+            for item in research_context.get("source_plan", [])
+            if isinstance(item, dict)
+        )
 
         return f"""{prompt}
+
+Research Engine v1 context:
+- topic: {research_context.get("topic", "")}
+- core_question: {research_context.get("core_question", "")}
+- background_points: {research_context.get("background_points", [])}
+- related_angles: {research_context.get("related_angles", [])}
+- story_clues: {research_context.get("story_clues", [])}
+- possible_resolution: {research_context.get("possible_resolution", "")}
+- source_plan:
+{source_plan_text}
 
 Story Engine v1 plan:
 - category: {story_plan.get("category", "")}
@@ -193,13 +285,22 @@ Story Engine v1 plan:
 - structure: {structure_text}
 - ending: {story_plan.get("ending", "")}
 
+Required Shorts story flow:
+1. Hook
+2. 사건 제시
+3. 왜 이상한지
+4. 배경 또는 관련 사례
+5. 현재까지 밝혀진 것
+6. 남은 의문
+7. 여운 있는 결말
+
 Korean output rules:
 - All summary, script, scenes.text, youtube title, and thumbnail text must be Korean.
 - Translate and rewrite English source text into natural Korean.
 - Do not output full English sentences.
 - Koreanize proper nouns where possible, such as NASA -> 나사 and James Webb Space Telescope -> 제임스 웹 우주망원경.
 - The first script sentence must be exactly the hook.
-- The middle must follow setup, tension, reveal.
+- The script must use the Research Engine context to add background, related cases, known facts, and remaining questions.
 - The last script sentence must be exactly the ending.
 - Write short Korean subtitle lines around 18-25 characters.
 - Do not include stage directions such as 음악 삽입, 장면 전환, BGM, 효과음, 자막 표시, 화면 지시, 이미지 지시, 컷.
@@ -210,6 +311,7 @@ Korean output rules:
         result: dict,
         article,
         story_plan: dict,
+        research_context: dict | None = None,
     ) -> dict:
         source_text = ""
 
@@ -234,11 +336,19 @@ Korean output rules:
         )
         result["hook"] = story_plan.get("hook", result.get("hook", ""))
         result["story_flow"] = [
-            item.get("section", "")
-            for item in story_plan.get("story_structure", [])
-            if isinstance(item, dict) and item.get("section")
+            "hook",
+            "incident",
+            "strangeness",
+            "background",
+            "known_so_far",
+            "remaining_question",
+            "ending",
         ]
-        result["script"] = self.build_story_script(base_text, story_plan)
+        result["script"] = self.build_story_script(
+            base_text=base_text,
+            story_plan=story_plan,
+            research_context=research_context,
+        )
         result["scenes"] = self.language_guard.sync_scenes_to_script(
             script=result["script"],
             previous_scenes=result.get("scenes", []),
@@ -246,11 +356,53 @@ Korean output rules:
 
         return result
 
+    def _research_script_lines(self, research_context: dict | None) -> list[str]:
+        if not research_context:
+            return []
+
+        lines = []
+        clues = [
+            str(item)
+            for item in research_context.get("story_clues", [])
+            if str(item).strip()
+        ]
+        background = [
+            str(item)
+            for item in research_context.get("background_points", [])
+            if str(item).strip()
+        ]
+        related = [
+            str(item)
+            for item in research_context.get("related_angles", [])
+            if str(item).strip()
+        ]
+        resolution = str(research_context.get("possible_resolution", "")).strip()
+
+        if clues:
+            lines.append(clues[0])
+
+        if len(clues) > 1:
+            lines.append(clues[1])
+
+        if background:
+            lines.append(background[0])
+
+        if related:
+            lines.append(related[0])
+
+        if resolution:
+            lines.append(resolution)
+
+        if len(clues) > 2:
+            lines.append(clues[2])
+
+        return lines
+
     def _select_middle_story_lines(self, lines: list[str]) -> list[str]:
         fallback_lines = [
-            "상황은 조용히 시작됐습니다.",
-            "하지만 곧 의문이 커졌습니다.",
-            "핵심 단서가 드러났습니다.",
+            "사건은 작은 단서에서 시작됐습니다.",
+            "하지만 그 의미는 바로 설명되지 않았습니다.",
+            "현재까지 확인된 사실과 남은 질문이 함께 있습니다.",
         ]
         selected = [
             line
@@ -268,8 +420,8 @@ Korean output rules:
         ):
             selected.append(lines[len(selected)])
 
-        while len(selected) < 3:
-            selected.append(fallback_lines[len(selected)])
+        while len(selected) < 5:
+            selected.append(fallback_lines[len(selected) % len(fallback_lines)])
 
         return selected
 
@@ -357,6 +509,7 @@ Korean output rules:
             "core_topic": "",
             "hook": "",
             "story_flow": [],
+            "research_context": {},
             "summary": "",
             "script": "",
             "scenes": [],
@@ -370,6 +523,7 @@ Korean output rules:
         response: str,
         article=None,
         story_plan: dict | None = None,
+        research_context: dict | None = None,
     ) -> dict:
         clean_response = response.strip() if response else ""
 
@@ -381,6 +535,7 @@ Korean output rules:
             "core_topic": "",
             "hook": "",
             "story_flow": [],
+            "research_context": research_context or {},
             "summary": clean_response[:500],
             "script": clean_response[:1200],
             "scenes": self._normalize_scenes([], clean_response[:1200]),
@@ -394,6 +549,7 @@ Korean output rules:
                 result=fallback,
                 article=article,
                 story_plan=story_plan,
+                research_context=research_context,
             )
             fallback["scenes"] = self._normalize_scenes(
                 fallback["scenes"],
