@@ -4,14 +4,15 @@
     "color": [10, 10, 14]
   },
   "title": {
-    "top": 90,
+    "top": 80,
     "width": 980,
-    "height": 260,
-    "font_size": 76,
-    "color": "white",
+    "height": 280,
+    "font_size": 88,
+    "color": "#FFD166",
     "stroke_color": "black",
-    "stroke_width": 5,
-    "max_length": 34
+    "stroke_width": 6,
+    "max_length": 32,
+    "line_length": 11
   },
   "image": {
     "top": 390,
@@ -22,15 +23,25 @@
     "zoom_end": 1.08
   },
   "caption": {
-    "top": 1430,
+    "top": 1390,
     "width": 980,
-    "height": 260,
-    "font_size": 58,
+    "height": 320,
+    "font_size": 52,
     "color": "white",
     "stroke_color": "black",
-    "stroke_width": 4,
-    "max_length": 42,
-    "seconds": 4
+    "stroke_width": 3,
+    "max_length": 56,
+    "line_length": 28,
+    "seconds": 4,
+    "min_seconds": 1.5,
+    "caption_background_enabled": false,
+    "background_color": [0, 0, 0],
+    "background_opacity": 0.68,
+    "background_padding_x": 56,
+    "background_padding_y": 24,
+    "background_radius": 28,
+    "background_min_width_ratio": 0.55,
+    "background_max_width_ratio": 0.88
   },
   "source": {
     "top": 1810,

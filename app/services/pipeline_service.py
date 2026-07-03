@@ -5,6 +5,7 @@ from app.services.collector_service import CollectorService
 from app.services.content_cleaner import ContentCleaner
 from app.services.content_planner_service import ContentPlannerService
 from app.services.content_service import ContentService
+from app.services.final_output_guard import FinalOutputGuard
 from app.services.image_service import ImageService
 from app.services.json_export_service import JsonExportService
 from app.services.scene_image_service import SceneImageService
@@ -34,6 +35,7 @@ class PipelineService:
         self.cleaner = ContentCleaner()
         self.candidate_filter = CandidateFilter()
         self.content_planner = ContentPlannerService()
+        self.final_output_guard = FinalOutputGuard()
 
         self.json_export = JsonExportService()
         self.image = ImageService()
@@ -209,6 +211,14 @@ class PipelineService:
         return selected_article
 
     def _create_outputs(self, article):
+        diagnostics = self.final_output_guard.enforce_article(article)
+        print("\nFinal Output Guard")
+        print(f"final_title: {diagnostics['final_title']}")
+        print(f"final_script_preview: {diagnostics['final_script_preview']}")
+        print(f"final_tts_preview: {diagnostics['final_tts_preview']}")
+        print(f"korean_ratio: {diagnostics['korean_ratio']:.2f}")
+        print(f"english_ratio: {diagnostics['english_ratio']:.2f}")
+
         json_path = self.json_export.export_article(article)
         print("\nJSON 생성")
         print(json_path)
