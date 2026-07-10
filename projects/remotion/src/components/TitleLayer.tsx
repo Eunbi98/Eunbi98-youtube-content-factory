@@ -1,4 +1,10 @@
 import React from 'react';
+import {
+	interpolate,
+	spring,
+	useCurrentFrame,
+	useVideoConfig,
+} from 'remotion';
 
 import {ep005Theme} from '../theme/ep005Theme';
 
@@ -10,6 +16,42 @@ type TitleLayerProps = {
 export const TitleLayer: React.FC<
 	TitleLayerProps
 > = ({title, color}) => {
+	const frame = useCurrentFrame();
+	const {fps} = useVideoConfig();
+
+	const entrance = spring({
+		frame,
+		fps,
+		config: {
+			damping: 18,
+			stiffness: 180,
+			mass: 0.8,
+		},
+		durationInFrames: 18,
+	});
+
+	const opacity = interpolate(
+		frame,
+		[0, 7],
+		[0, 1],
+		{
+			extrapolateLeft: 'clamp',
+			extrapolateRight: 'clamp',
+		},
+	);
+
+	const scale = interpolate(
+		entrance,
+		[0, 1],
+		[0.92, 1],
+	);
+
+	const translateY = interpolate(
+		entrance,
+		[0, 1],
+		[26, 0],
+	);
+
 	return (
 		<div
 			style={{
@@ -57,6 +99,19 @@ export const TitleLayer: React.FC<
 				whiteSpace: 'pre-wrap',
 				wordBreak: 'keep-all',
 
+				opacity,
+
+				transform: [
+					`translateY(${translateY}px)`,
+					`scale(${scale})`,
+				].join(' '),
+
+				transformOrigin:
+					'center top',
+
+				willChange:
+					'transform, opacity',
+
 				zIndex: 30,
 				pointerEvents: 'none',
 			}}
@@ -64,4 +119,4 @@ export const TitleLayer: React.FC<
 			{title}
 		</div>
 	);
-};  
+};
