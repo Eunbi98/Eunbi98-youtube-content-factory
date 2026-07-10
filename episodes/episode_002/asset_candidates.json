@@ -1,0 +1,1381 @@
+{
+  "episode": "002",
+  "episode_id": "episode_002",
+  "source_priority": [
+    "NASA",
+    "NOAA",
+    "Wikimedia Commons",
+    "ESA",
+    "Pexels",
+    "Pixabay"
+  ],
+  "trust_score_criteria": {
+    "NASA": 5,
+    "NOAA": 5,
+    "ESA": 5,
+    "Wikimedia Commons": 4,
+    "Pexels": 3,
+    "Pixabay": 3
+  },
+  "download_policy": "candidates_only_no_download",
+  "scene_01": [
+    {
+      "title": "NASA image search: deep ocean mariana trench underwater submarine",
+      "source": "NASA",
+      "url": "https://images.nasa.gov/search-results?q=deep+ocean+mariana+trench+underwater+submarine&media_type=image",
+      "license": "NASA public domain or official media usage terms; verify per asset.",
+      "media_type": "image",
+      "keywords": [
+        "deep ocean",
+        "mariana trench",
+        "underwater",
+        "submarine"
+      ],
+      "trust_score": 5
+    },
+    {
+      "title": "NASA video search: deep ocean mariana trench underwater submarine",
+      "source": "NASA",
+      "url": "https://images.nasa.gov/search-results?q=deep+ocean+mariana+trench+underwater+submarine&media_type=video",
+      "license": "NASA public domain or official media usage terms; verify per asset.",
+      "media_type": "video",
+      "keywords": [
+        "deep ocean",
+        "mariana trench",
+        "underwater",
+        "submarine"
+      ],
+      "trust_score": 5
+    },
+    {
+      "title": "NOAA image search: deep ocean mariana trench underwater submarine",
+      "source": "NOAA",
+      "url": "https://www.noaa.gov/search?query=deep+ocean+mariana+trench+underwater+submarine+image",
+      "license": "NOAA public domain or official media usage terms; verify per asset.",
+      "media_type": "image",
+      "keywords": [
+        "deep ocean",
+        "mariana trench",
+        "underwater",
+        "submarine"
+      ],
+      "trust_score": 5
+    },
+    {
+      "title": "NOAA video search: deep ocean mariana trench underwater submarine",
+      "source": "NOAA",
+      "url": "https://www.noaa.gov/search?query=deep+ocean+mariana+trench+underwater+submarine+video",
+      "license": "NOAA public domain or official media usage terms; verify per asset.",
+      "media_type": "video",
+      "keywords": [
+        "deep ocean",
+        "mariana trench",
+        "underwater",
+        "submarine"
+      ],
+      "trust_score": 5
+    },
+    {
+      "title": "Wikimedia Commons image search: deep ocean mariana trench underwater submarine",
+      "source": "Wikimedia Commons",
+      "url": "https://commons.wikimedia.org/w/index.php?search=deep+ocean+mariana+trench+underwater+submarine+filetype%3Aimage",
+      "license": "Creative Commons/Public Domain varies by file; verify per asset.",
+      "media_type": "image",
+      "keywords": [
+        "deep ocean",
+        "mariana trench",
+        "underwater",
+        "submarine"
+      ],
+      "trust_score": 4
+    },
+    {
+      "title": "Wikimedia Commons video search: deep ocean mariana trench underwater submarine",
+      "source": "Wikimedia Commons",
+      "url": "https://commons.wikimedia.org/w/index.php?search=deep+ocean+mariana+trench+underwater+submarine+filetype%3Avideo",
+      "license": "Creative Commons/Public Domain varies by file; verify per asset.",
+      "media_type": "video",
+      "keywords": [
+        "deep ocean",
+        "mariana trench",
+        "underwater",
+        "submarine"
+      ],
+      "trust_score": 4
+    },
+    {
+      "title": "ESA image search: deep ocean mariana trench underwater submarine",
+      "source": "ESA",
+      "url": "https://www.esa.int/esasearch?q=deep+ocean+mariana+trench+underwater+submarine+image",
+      "license": "ESA official media usage terms; verify per asset.",
+      "media_type": "image",
+      "keywords": [
+        "deep ocean",
+        "mariana trench",
+        "underwater",
+        "submarine"
+      ],
+      "trust_score": 5
+    },
+    {
+      "title": "ESA video search: deep ocean mariana trench underwater submarine",
+      "source": "ESA",
+      "url": "https://www.esa.int/esasearch?q=deep+ocean+mariana+trench+underwater+submarine+video",
+      "license": "ESA official media usage terms; verify per asset.",
+      "media_type": "video",
+      "keywords": [
+        "deep ocean",
+        "mariana trench",
+        "underwater",
+        "submarine"
+      ],
+      "trust_score": 5
+    },
+    {
+      "title": "Pexels image search: deep ocean mariana trench underwater submarine",
+      "source": "Pexels",
+      "url": "https://www.pexels.com/search/deep%20ocean%20mariana%20trench%20underwater%20submarine%20image/",
+      "license": "Pexels License; verify per asset.",
+      "media_type": "image",
+      "keywords": [
+        "deep ocean",
+        "mariana trench",
+        "underwater",
+        "submarine"
+      ],
+      "trust_score": 3
+    },
+    {
+      "title": "Pexels video search: deep ocean mariana trench underwater submarine",
+      "source": "Pexels",
+      "url": "https://www.pexels.com/search/deep%20ocean%20mariana%20trench%20underwater%20submarine%20video/",
+      "license": "Pexels License; verify per asset.",
+      "media_type": "video",
+      "keywords": [
+        "deep ocean",
+        "mariana trench",
+        "underwater",
+        "submarine"
+      ],
+      "trust_score": 3
+    },
+    {
+      "title": "Pixabay image search: deep ocean mariana trench underwater submarine",
+      "source": "Pixabay",
+      "url": "https://pixabay.com/images/search/deep%20ocean%20mariana%20trench%20underwater%20submarine/",
+      "license": "Pixabay Content License; verify per asset.",
+      "media_type": "image",
+      "keywords": [
+        "deep ocean",
+        "mariana trench",
+        "underwater",
+        "submarine"
+      ],
+      "trust_score": 3
+    },
+    {
+      "title": "Pixabay video search: deep ocean mariana trench underwater submarine",
+      "source": "Pixabay",
+      "url": "https://pixabay.com/videos/search/deep%20ocean%20mariana%20trench%20underwater%20submarine/",
+      "license": "Pixabay Content License; verify per asset.",
+      "media_type": "video",
+      "keywords": [
+        "deep ocean",
+        "mariana trench",
+        "underwater",
+        "submarine"
+      ],
+      "trust_score": 3
+    }
+  ],
+  "scene_02": [
+    {
+      "title": "NASA image search: deep ocean mariana trench underwater submarine",
+      "source": "NASA",
+      "url": "https://images.nasa.gov/search-results?q=deep+ocean+mariana+trench+underwater+submarine&media_type=image",
+      "license": "NASA public domain or official media usage terms; verify per asset.",
+      "media_type": "image",
+      "keywords": [
+        "deep ocean",
+        "mariana trench",
+        "underwater",
+        "submarine"
+      ],
+      "trust_score": 5
+    },
+    {
+      "title": "NASA video search: deep ocean mariana trench underwater submarine",
+      "source": "NASA",
+      "url": "https://images.nasa.gov/search-results?q=deep+ocean+mariana+trench+underwater+submarine&media_type=video",
+      "license": "NASA public domain or official media usage terms; verify per asset.",
+      "media_type": "video",
+      "keywords": [
+        "deep ocean",
+        "mariana trench",
+        "underwater",
+        "submarine"
+      ],
+      "trust_score": 5
+    },
+    {
+      "title": "NOAA image search: deep ocean mariana trench underwater submarine",
+      "source": "NOAA",
+      "url": "https://www.noaa.gov/search?query=deep+ocean+mariana+trench+underwater+submarine+image",
+      "license": "NOAA public domain or official media usage terms; verify per asset.",
+      "media_type": "image",
+      "keywords": [
+        "deep ocean",
+        "mariana trench",
+        "underwater",
+        "submarine"
+      ],
+      "trust_score": 5
+    },
+    {
+      "title": "NOAA video search: deep ocean mariana trench underwater submarine",
+      "source": "NOAA",
+      "url": "https://www.noaa.gov/search?query=deep+ocean+mariana+trench+underwater+submarine+video",
+      "license": "NOAA public domain or official media usage terms; verify per asset.",
+      "media_type": "video",
+      "keywords": [
+        "deep ocean",
+        "mariana trench",
+        "underwater",
+        "submarine"
+      ],
+      "trust_score": 5
+    },
+    {
+      "title": "Wikimedia Commons image search: deep ocean mariana trench underwater submarine",
+      "source": "Wikimedia Commons",
+      "url": "https://commons.wikimedia.org/w/index.php?search=deep+ocean+mariana+trench+underwater+submarine+filetype%3Aimage",
+      "license": "Creative Commons/Public Domain varies by file; verify per asset.",
+      "media_type": "image",
+      "keywords": [
+        "deep ocean",
+        "mariana trench",
+        "underwater",
+        "submarine"
+      ],
+      "trust_score": 4
+    },
+    {
+      "title": "Wikimedia Commons video search: deep ocean mariana trench underwater submarine",
+      "source": "Wikimedia Commons",
+      "url": "https://commons.wikimedia.org/w/index.php?search=deep+ocean+mariana+trench+underwater+submarine+filetype%3Avideo",
+      "license": "Creative Commons/Public Domain varies by file; verify per asset.",
+      "media_type": "video",
+      "keywords": [
+        "deep ocean",
+        "mariana trench",
+        "underwater",
+        "submarine"
+      ],
+      "trust_score": 4
+    },
+    {
+      "title": "ESA image search: deep ocean mariana trench underwater submarine",
+      "source": "ESA",
+      "url": "https://www.esa.int/esasearch?q=deep+ocean+mariana+trench+underwater+submarine+image",
+      "license": "ESA official media usage terms; verify per asset.",
+      "media_type": "image",
+      "keywords": [
+        "deep ocean",
+        "mariana trench",
+        "underwater",
+        "submarine"
+      ],
+      "trust_score": 5
+    },
+    {
+      "title": "ESA video search: deep ocean mariana trench underwater submarine",
+      "source": "ESA",
+      "url": "https://www.esa.int/esasearch?q=deep+ocean+mariana+trench+underwater+submarine+video",
+      "license": "ESA official media usage terms; verify per asset.",
+      "media_type": "video",
+      "keywords": [
+        "deep ocean",
+        "mariana trench",
+        "underwater",
+        "submarine"
+      ],
+      "trust_score": 5
+    },
+    {
+      "title": "Pexels image search: deep ocean mariana trench underwater submarine",
+      "source": "Pexels",
+      "url": "https://www.pexels.com/search/deep%20ocean%20mariana%20trench%20underwater%20submarine%20image/",
+      "license": "Pexels License; verify per asset.",
+      "media_type": "image",
+      "keywords": [
+        "deep ocean",
+        "mariana trench",
+        "underwater",
+        "submarine"
+      ],
+      "trust_score": 3
+    },
+    {
+      "title": "Pexels video search: deep ocean mariana trench underwater submarine",
+      "source": "Pexels",
+      "url": "https://www.pexels.com/search/deep%20ocean%20mariana%20trench%20underwater%20submarine%20video/",
+      "license": "Pexels License; verify per asset.",
+      "media_type": "video",
+      "keywords": [
+        "deep ocean",
+        "mariana trench",
+        "underwater",
+        "submarine"
+      ],
+      "trust_score": 3
+    },
+    {
+      "title": "Pixabay image search: deep ocean mariana trench underwater submarine",
+      "source": "Pixabay",
+      "url": "https://pixabay.com/images/search/deep%20ocean%20mariana%20trench%20underwater%20submarine/",
+      "license": "Pixabay Content License; verify per asset.",
+      "media_type": "image",
+      "keywords": [
+        "deep ocean",
+        "mariana trench",
+        "underwater",
+        "submarine"
+      ],
+      "trust_score": 3
+    },
+    {
+      "title": "Pixabay video search: deep ocean mariana trench underwater submarine",
+      "source": "Pixabay",
+      "url": "https://pixabay.com/videos/search/deep%20ocean%20mariana%20trench%20underwater%20submarine/",
+      "license": "Pixabay Content License; verify per asset.",
+      "media_type": "video",
+      "keywords": [
+        "deep ocean",
+        "mariana trench",
+        "underwater",
+        "submarine"
+      ],
+      "trust_score": 3
+    }
+  ],
+  "scene_03": [
+    {
+      "title": "NASA image search: deep ocean mariana trench underwater submarine",
+      "source": "NASA",
+      "url": "https://images.nasa.gov/search-results?q=deep+ocean+mariana+trench+underwater+submarine&media_type=image",
+      "license": "NASA public domain or official media usage terms; verify per asset.",
+      "media_type": "image",
+      "keywords": [
+        "deep ocean",
+        "mariana trench",
+        "underwater",
+        "submarine"
+      ],
+      "trust_score": 5
+    },
+    {
+      "title": "NASA video search: deep ocean mariana trench underwater submarine",
+      "source": "NASA",
+      "url": "https://images.nasa.gov/search-results?q=deep+ocean+mariana+trench+underwater+submarine&media_type=video",
+      "license": "NASA public domain or official media usage terms; verify per asset.",
+      "media_type": "video",
+      "keywords": [
+        "deep ocean",
+        "mariana trench",
+        "underwater",
+        "submarine"
+      ],
+      "trust_score": 5
+    },
+    {
+      "title": "NOAA image search: deep ocean mariana trench underwater submarine",
+      "source": "NOAA",
+      "url": "https://www.noaa.gov/search?query=deep+ocean+mariana+trench+underwater+submarine+image",
+      "license": "NOAA public domain or official media usage terms; verify per asset.",
+      "media_type": "image",
+      "keywords": [
+        "deep ocean",
+        "mariana trench",
+        "underwater",
+        "submarine"
+      ],
+      "trust_score": 5
+    },
+    {
+      "title": "NOAA video search: deep ocean mariana trench underwater submarine",
+      "source": "NOAA",
+      "url": "https://www.noaa.gov/search?query=deep+ocean+mariana+trench+underwater+submarine+video",
+      "license": "NOAA public domain or official media usage terms; verify per asset.",
+      "media_type": "video",
+      "keywords": [
+        "deep ocean",
+        "mariana trench",
+        "underwater",
+        "submarine"
+      ],
+      "trust_score": 5
+    },
+    {
+      "title": "Wikimedia Commons image search: deep ocean mariana trench underwater submarine",
+      "source": "Wikimedia Commons",
+      "url": "https://commons.wikimedia.org/w/index.php?search=deep+ocean+mariana+trench+underwater+submarine+filetype%3Aimage",
+      "license": "Creative Commons/Public Domain varies by file; verify per asset.",
+      "media_type": "image",
+      "keywords": [
+        "deep ocean",
+        "mariana trench",
+        "underwater",
+        "submarine"
+      ],
+      "trust_score": 4
+    },
+    {
+      "title": "Wikimedia Commons video search: deep ocean mariana trench underwater submarine",
+      "source": "Wikimedia Commons",
+      "url": "https://commons.wikimedia.org/w/index.php?search=deep+ocean+mariana+trench+underwater+submarine+filetype%3Avideo",
+      "license": "Creative Commons/Public Domain varies by file; verify per asset.",
+      "media_type": "video",
+      "keywords": [
+        "deep ocean",
+        "mariana trench",
+        "underwater",
+        "submarine"
+      ],
+      "trust_score": 4
+    },
+    {
+      "title": "ESA image search: deep ocean mariana trench underwater submarine",
+      "source": "ESA",
+      "url": "https://www.esa.int/esasearch?q=deep+ocean+mariana+trench+underwater+submarine+image",
+      "license": "ESA official media usage terms; verify per asset.",
+      "media_type": "image",
+      "keywords": [
+        "deep ocean",
+        "mariana trench",
+        "underwater",
+        "submarine"
+      ],
+      "trust_score": 5
+    },
+    {
+      "title": "ESA video search: deep ocean mariana trench underwater submarine",
+      "source": "ESA",
+      "url": "https://www.esa.int/esasearch?q=deep+ocean+mariana+trench+underwater+submarine+video",
+      "license": "ESA official media usage terms; verify per asset.",
+      "media_type": "video",
+      "keywords": [
+        "deep ocean",
+        "mariana trench",
+        "underwater",
+        "submarine"
+      ],
+      "trust_score": 5
+    },
+    {
+      "title": "Pexels image search: deep ocean mariana trench underwater submarine",
+      "source": "Pexels",
+      "url": "https://www.pexels.com/search/deep%20ocean%20mariana%20trench%20underwater%20submarine%20image/",
+      "license": "Pexels License; verify per asset.",
+      "media_type": "image",
+      "keywords": [
+        "deep ocean",
+        "mariana trench",
+        "underwater",
+        "submarine"
+      ],
+      "trust_score": 3
+    },
+    {
+      "title": "Pexels video search: deep ocean mariana trench underwater submarine",
+      "source": "Pexels",
+      "url": "https://www.pexels.com/search/deep%20ocean%20mariana%20trench%20underwater%20submarine%20video/",
+      "license": "Pexels License; verify per asset.",
+      "media_type": "video",
+      "keywords": [
+        "deep ocean",
+        "mariana trench",
+        "underwater",
+        "submarine"
+      ],
+      "trust_score": 3
+    },
+    {
+      "title": "Pixabay image search: deep ocean mariana trench underwater submarine",
+      "source": "Pixabay",
+      "url": "https://pixabay.com/images/search/deep%20ocean%20mariana%20trench%20underwater%20submarine/",
+      "license": "Pixabay Content License; verify per asset.",
+      "media_type": "image",
+      "keywords": [
+        "deep ocean",
+        "mariana trench",
+        "underwater",
+        "submarine"
+      ],
+      "trust_score": 3
+    },
+    {
+      "title": "Pixabay video search: deep ocean mariana trench underwater submarine",
+      "source": "Pixabay",
+      "url": "https://pixabay.com/videos/search/deep%20ocean%20mariana%20trench%20underwater%20submarine/",
+      "license": "Pixabay Content License; verify per asset.",
+      "media_type": "video",
+      "keywords": [
+        "deep ocean",
+        "mariana trench",
+        "underwater",
+        "submarine"
+      ],
+      "trust_score": 3
+    }
+  ],
+  "scene_04": [
+    {
+      "title": "NASA image search: deep ocean mariana trench underwater submarine",
+      "source": "NASA",
+      "url": "https://images.nasa.gov/search-results?q=deep+ocean+mariana+trench+underwater+submarine&media_type=image",
+      "license": "NASA public domain or official media usage terms; verify per asset.",
+      "media_type": "image",
+      "keywords": [
+        "deep ocean",
+        "mariana trench",
+        "underwater",
+        "submarine"
+      ],
+      "trust_score": 5
+    },
+    {
+      "title": "NASA video search: deep ocean mariana trench underwater submarine",
+      "source": "NASA",
+      "url": "https://images.nasa.gov/search-results?q=deep+ocean+mariana+trench+underwater+submarine&media_type=video",
+      "license": "NASA public domain or official media usage terms; verify per asset.",
+      "media_type": "video",
+      "keywords": [
+        "deep ocean",
+        "mariana trench",
+        "underwater",
+        "submarine"
+      ],
+      "trust_score": 5
+    },
+    {
+      "title": "NOAA image search: deep ocean mariana trench underwater submarine",
+      "source": "NOAA",
+      "url": "https://www.noaa.gov/search?query=deep+ocean+mariana+trench+underwater+submarine+image",
+      "license": "NOAA public domain or official media usage terms; verify per asset.",
+      "media_type": "image",
+      "keywords": [
+        "deep ocean",
+        "mariana trench",
+        "underwater",
+        "submarine"
+      ],
+      "trust_score": 5
+    },
+    {
+      "title": "NOAA video search: deep ocean mariana trench underwater submarine",
+      "source": "NOAA",
+      "url": "https://www.noaa.gov/search?query=deep+ocean+mariana+trench+underwater+submarine+video",
+      "license": "NOAA public domain or official media usage terms; verify per asset.",
+      "media_type": "video",
+      "keywords": [
+        "deep ocean",
+        "mariana trench",
+        "underwater",
+        "submarine"
+      ],
+      "trust_score": 5
+    },
+    {
+      "title": "Wikimedia Commons image search: deep ocean mariana trench underwater submarine",
+      "source": "Wikimedia Commons",
+      "url": "https://commons.wikimedia.org/w/index.php?search=deep+ocean+mariana+trench+underwater+submarine+filetype%3Aimage",
+      "license": "Creative Commons/Public Domain varies by file; verify per asset.",
+      "media_type": "image",
+      "keywords": [
+        "deep ocean",
+        "mariana trench",
+        "underwater",
+        "submarine"
+      ],
+      "trust_score": 4
+    },
+    {
+      "title": "Wikimedia Commons video search: deep ocean mariana trench underwater submarine",
+      "source": "Wikimedia Commons",
+      "url": "https://commons.wikimedia.org/w/index.php?search=deep+ocean+mariana+trench+underwater+submarine+filetype%3Avideo",
+      "license": "Creative Commons/Public Domain varies by file; verify per asset.",
+      "media_type": "video",
+      "keywords": [
+        "deep ocean",
+        "mariana trench",
+        "underwater",
+        "submarine"
+      ],
+      "trust_score": 4
+    },
+    {
+      "title": "ESA image search: deep ocean mariana trench underwater submarine",
+      "source": "ESA",
+      "url": "https://www.esa.int/esasearch?q=deep+ocean+mariana+trench+underwater+submarine+image",
+      "license": "ESA official media usage terms; verify per asset.",
+      "media_type": "image",
+      "keywords": [
+        "deep ocean",
+        "mariana trench",
+        "underwater",
+        "submarine"
+      ],
+      "trust_score": 5
+    },
+    {
+      "title": "ESA video search: deep ocean mariana trench underwater submarine",
+      "source": "ESA",
+      "url": "https://www.esa.int/esasearch?q=deep+ocean+mariana+trench+underwater+submarine+video",
+      "license": "ESA official media usage terms; verify per asset.",
+      "media_type": "video",
+      "keywords": [
+        "deep ocean",
+        "mariana trench",
+        "underwater",
+        "submarine"
+      ],
+      "trust_score": 5
+    },
+    {
+      "title": "Pexels image search: deep ocean mariana trench underwater submarine",
+      "source": "Pexels",
+      "url": "https://www.pexels.com/search/deep%20ocean%20mariana%20trench%20underwater%20submarine%20image/",
+      "license": "Pexels License; verify per asset.",
+      "media_type": "image",
+      "keywords": [
+        "deep ocean",
+        "mariana trench",
+        "underwater",
+        "submarine"
+      ],
+      "trust_score": 3
+    },
+    {
+      "title": "Pexels video search: deep ocean mariana trench underwater submarine",
+      "source": "Pexels",
+      "url": "https://www.pexels.com/search/deep%20ocean%20mariana%20trench%20underwater%20submarine%20video/",
+      "license": "Pexels License; verify per asset.",
+      "media_type": "video",
+      "keywords": [
+        "deep ocean",
+        "mariana trench",
+        "underwater",
+        "submarine"
+      ],
+      "trust_score": 3
+    },
+    {
+      "title": "Pixabay image search: deep ocean mariana trench underwater submarine",
+      "source": "Pixabay",
+      "url": "https://pixabay.com/images/search/deep%20ocean%20mariana%20trench%20underwater%20submarine/",
+      "license": "Pixabay Content License; verify per asset.",
+      "media_type": "image",
+      "keywords": [
+        "deep ocean",
+        "mariana trench",
+        "underwater",
+        "submarine"
+      ],
+      "trust_score": 3
+    },
+    {
+      "title": "Pixabay video search: deep ocean mariana trench underwater submarine",
+      "source": "Pixabay",
+      "url": "https://pixabay.com/videos/search/deep%20ocean%20mariana%20trench%20underwater%20submarine/",
+      "license": "Pixabay Content License; verify per asset.",
+      "media_type": "video",
+      "keywords": [
+        "deep ocean",
+        "mariana trench",
+        "underwater",
+        "submarine"
+      ],
+      "trust_score": 3
+    }
+  ],
+  "scene_05": [
+    {
+      "title": "NASA image search: deep ocean mariana trench underwater submarine",
+      "source": "NASA",
+      "url": "https://images.nasa.gov/search-results?q=deep+ocean+mariana+trench+underwater+submarine&media_type=image",
+      "license": "NASA public domain or official media usage terms; verify per asset.",
+      "media_type": "image",
+      "keywords": [
+        "deep ocean",
+        "mariana trench",
+        "underwater",
+        "submarine"
+      ],
+      "trust_score": 5
+    },
+    {
+      "title": "NASA video search: deep ocean mariana trench underwater submarine",
+      "source": "NASA",
+      "url": "https://images.nasa.gov/search-results?q=deep+ocean+mariana+trench+underwater+submarine&media_type=video",
+      "license": "NASA public domain or official media usage terms; verify per asset.",
+      "media_type": "video",
+      "keywords": [
+        "deep ocean",
+        "mariana trench",
+        "underwater",
+        "submarine"
+      ],
+      "trust_score": 5
+    },
+    {
+      "title": "NOAA image search: deep ocean mariana trench underwater submarine",
+      "source": "NOAA",
+      "url": "https://www.noaa.gov/search?query=deep+ocean+mariana+trench+underwater+submarine+image",
+      "license": "NOAA public domain or official media usage terms; verify per asset.",
+      "media_type": "image",
+      "keywords": [
+        "deep ocean",
+        "mariana trench",
+        "underwater",
+        "submarine"
+      ],
+      "trust_score": 5
+    },
+    {
+      "title": "NOAA video search: deep ocean mariana trench underwater submarine",
+      "source": "NOAA",
+      "url": "https://www.noaa.gov/search?query=deep+ocean+mariana+trench+underwater+submarine+video",
+      "license": "NOAA public domain or official media usage terms; verify per asset.",
+      "media_type": "video",
+      "keywords": [
+        "deep ocean",
+        "mariana trench",
+        "underwater",
+        "submarine"
+      ],
+      "trust_score": 5
+    },
+    {
+      "title": "Wikimedia Commons image search: deep ocean mariana trench underwater submarine",
+      "source": "Wikimedia Commons",
+      "url": "https://commons.wikimedia.org/w/index.php?search=deep+ocean+mariana+trench+underwater+submarine+filetype%3Aimage",
+      "license": "Creative Commons/Public Domain varies by file; verify per asset.",
+      "media_type": "image",
+      "keywords": [
+        "deep ocean",
+        "mariana trench",
+        "underwater",
+        "submarine"
+      ],
+      "trust_score": 4
+    },
+    {
+      "title": "Wikimedia Commons video search: deep ocean mariana trench underwater submarine",
+      "source": "Wikimedia Commons",
+      "url": "https://commons.wikimedia.org/w/index.php?search=deep+ocean+mariana+trench+underwater+submarine+filetype%3Avideo",
+      "license": "Creative Commons/Public Domain varies by file; verify per asset.",
+      "media_type": "video",
+      "keywords": [
+        "deep ocean",
+        "mariana trench",
+        "underwater",
+        "submarine"
+      ],
+      "trust_score": 4
+    },
+    {
+      "title": "ESA image search: deep ocean mariana trench underwater submarine",
+      "source": "ESA",
+      "url": "https://www.esa.int/esasearch?q=deep+ocean+mariana+trench+underwater+submarine+image",
+      "license": "ESA official media usage terms; verify per asset.",
+      "media_type": "image",
+      "keywords": [
+        "deep ocean",
+        "mariana trench",
+        "underwater",
+        "submarine"
+      ],
+      "trust_score": 5
+    },
+    {
+      "title": "ESA video search: deep ocean mariana trench underwater submarine",
+      "source": "ESA",
+      "url": "https://www.esa.int/esasearch?q=deep+ocean+mariana+trench+underwater+submarine+video",
+      "license": "ESA official media usage terms; verify per asset.",
+      "media_type": "video",
+      "keywords": [
+        "deep ocean",
+        "mariana trench",
+        "underwater",
+        "submarine"
+      ],
+      "trust_score": 5
+    },
+    {
+      "title": "Pexels image search: deep ocean mariana trench underwater submarine",
+      "source": "Pexels",
+      "url": "https://www.pexels.com/search/deep%20ocean%20mariana%20trench%20underwater%20submarine%20image/",
+      "license": "Pexels License; verify per asset.",
+      "media_type": "image",
+      "keywords": [
+        "deep ocean",
+        "mariana trench",
+        "underwater",
+        "submarine"
+      ],
+      "trust_score": 3
+    },
+    {
+      "title": "Pexels video search: deep ocean mariana trench underwater submarine",
+      "source": "Pexels",
+      "url": "https://www.pexels.com/search/deep%20ocean%20mariana%20trench%20underwater%20submarine%20video/",
+      "license": "Pexels License; verify per asset.",
+      "media_type": "video",
+      "keywords": [
+        "deep ocean",
+        "mariana trench",
+        "underwater",
+        "submarine"
+      ],
+      "trust_score": 3
+    },
+    {
+      "title": "Pixabay image search: deep ocean mariana trench underwater submarine",
+      "source": "Pixabay",
+      "url": "https://pixabay.com/images/search/deep%20ocean%20mariana%20trench%20underwater%20submarine/",
+      "license": "Pixabay Content License; verify per asset.",
+      "media_type": "image",
+      "keywords": [
+        "deep ocean",
+        "mariana trench",
+        "underwater",
+        "submarine"
+      ],
+      "trust_score": 3
+    },
+    {
+      "title": "Pixabay video search: deep ocean mariana trench underwater submarine",
+      "source": "Pixabay",
+      "url": "https://pixabay.com/videos/search/deep%20ocean%20mariana%20trench%20underwater%20submarine/",
+      "license": "Pixabay Content License; verify per asset.",
+      "media_type": "video",
+      "keywords": [
+        "deep ocean",
+        "mariana trench",
+        "underwater",
+        "submarine"
+      ],
+      "trust_score": 3
+    }
+  ],
+  "scene_06": [
+    {
+      "title": "NASA image search: deep ocean mariana trench underwater submarine",
+      "source": "NASA",
+      "url": "https://images.nasa.gov/search-results?q=deep+ocean+mariana+trench+underwater+submarine&media_type=image",
+      "license": "NASA public domain or official media usage terms; verify per asset.",
+      "media_type": "image",
+      "keywords": [
+        "deep ocean",
+        "mariana trench",
+        "underwater",
+        "submarine"
+      ],
+      "trust_score": 5
+    },
+    {
+      "title": "NASA video search: deep ocean mariana trench underwater submarine",
+      "source": "NASA",
+      "url": "https://images.nasa.gov/search-results?q=deep+ocean+mariana+trench+underwater+submarine&media_type=video",
+      "license": "NASA public domain or official media usage terms; verify per asset.",
+      "media_type": "video",
+      "keywords": [
+        "deep ocean",
+        "mariana trench",
+        "underwater",
+        "submarine"
+      ],
+      "trust_score": 5
+    },
+    {
+      "title": "NOAA image search: deep ocean mariana trench underwater submarine",
+      "source": "NOAA",
+      "url": "https://www.noaa.gov/search?query=deep+ocean+mariana+trench+underwater+submarine+image",
+      "license": "NOAA public domain or official media usage terms; verify per asset.",
+      "media_type": "image",
+      "keywords": [
+        "deep ocean",
+        "mariana trench",
+        "underwater",
+        "submarine"
+      ],
+      "trust_score": 5
+    },
+    {
+      "title": "NOAA video search: deep ocean mariana trench underwater submarine",
+      "source": "NOAA",
+      "url": "https://www.noaa.gov/search?query=deep+ocean+mariana+trench+underwater+submarine+video",
+      "license": "NOAA public domain or official media usage terms; verify per asset.",
+      "media_type": "video",
+      "keywords": [
+        "deep ocean",
+        "mariana trench",
+        "underwater",
+        "submarine"
+      ],
+      "trust_score": 5
+    },
+    {
+      "title": "Wikimedia Commons image search: deep ocean mariana trench underwater submarine",
+      "source": "Wikimedia Commons",
+      "url": "https://commons.wikimedia.org/w/index.php?search=deep+ocean+mariana+trench+underwater+submarine+filetype%3Aimage",
+      "license": "Creative Commons/Public Domain varies by file; verify per asset.",
+      "media_type": "image",
+      "keywords": [
+        "deep ocean",
+        "mariana trench",
+        "underwater",
+        "submarine"
+      ],
+      "trust_score": 4
+    },
+    {
+      "title": "Wikimedia Commons video search: deep ocean mariana trench underwater submarine",
+      "source": "Wikimedia Commons",
+      "url": "https://commons.wikimedia.org/w/index.php?search=deep+ocean+mariana+trench+underwater+submarine+filetype%3Avideo",
+      "license": "Creative Commons/Public Domain varies by file; verify per asset.",
+      "media_type": "video",
+      "keywords": [
+        "deep ocean",
+        "mariana trench",
+        "underwater",
+        "submarine"
+      ],
+      "trust_score": 4
+    },
+    {
+      "title": "ESA image search: deep ocean mariana trench underwater submarine",
+      "source": "ESA",
+      "url": "https://www.esa.int/esasearch?q=deep+ocean+mariana+trench+underwater+submarine+image",
+      "license": "ESA official media usage terms; verify per asset.",
+      "media_type": "image",
+      "keywords": [
+        "deep ocean",
+        "mariana trench",
+        "underwater",
+        "submarine"
+      ],
+      "trust_score": 5
+    },
+    {
+      "title": "ESA video search: deep ocean mariana trench underwater submarine",
+      "source": "ESA",
+      "url": "https://www.esa.int/esasearch?q=deep+ocean+mariana+trench+underwater+submarine+video",
+      "license": "ESA official media usage terms; verify per asset.",
+      "media_type": "video",
+      "keywords": [
+        "deep ocean",
+        "mariana trench",
+        "underwater",
+        "submarine"
+      ],
+      "trust_score": 5
+    },
+    {
+      "title": "Pexels image search: deep ocean mariana trench underwater submarine",
+      "source": "Pexels",
+      "url": "https://www.pexels.com/search/deep%20ocean%20mariana%20trench%20underwater%20submarine%20image/",
+      "license": "Pexels License; verify per asset.",
+      "media_type": "image",
+      "keywords": [
+        "deep ocean",
+        "mariana trench",
+        "underwater",
+        "submarine"
+      ],
+      "trust_score": 3
+    },
+    {
+      "title": "Pexels video search: deep ocean mariana trench underwater submarine",
+      "source": "Pexels",
+      "url": "https://www.pexels.com/search/deep%20ocean%20mariana%20trench%20underwater%20submarine%20video/",
+      "license": "Pexels License; verify per asset.",
+      "media_type": "video",
+      "keywords": [
+        "deep ocean",
+        "mariana trench",
+        "underwater",
+        "submarine"
+      ],
+      "trust_score": 3
+    },
+    {
+      "title": "Pixabay image search: deep ocean mariana trench underwater submarine",
+      "source": "Pixabay",
+      "url": "https://pixabay.com/images/search/deep%20ocean%20mariana%20trench%20underwater%20submarine/",
+      "license": "Pixabay Content License; verify per asset.",
+      "media_type": "image",
+      "keywords": [
+        "deep ocean",
+        "mariana trench",
+        "underwater",
+        "submarine"
+      ],
+      "trust_score": 3
+    },
+    {
+      "title": "Pixabay video search: deep ocean mariana trench underwater submarine",
+      "source": "Pixabay",
+      "url": "https://pixabay.com/videos/search/deep%20ocean%20mariana%20trench%20underwater%20submarine/",
+      "license": "Pixabay Content License; verify per asset.",
+      "media_type": "video",
+      "keywords": [
+        "deep ocean",
+        "mariana trench",
+        "underwater",
+        "submarine"
+      ],
+      "trust_score": 3
+    }
+  ],
+  "scene_07": [
+    {
+      "title": "NASA image search: deep ocean mariana trench underwater submarine",
+      "source": "NASA",
+      "url": "https://images.nasa.gov/search-results?q=deep+ocean+mariana+trench+underwater+submarine&media_type=image",
+      "license": "NASA public domain or official media usage terms; verify per asset.",
+      "media_type": "image",
+      "keywords": [
+        "deep ocean",
+        "mariana trench",
+        "underwater",
+        "submarine"
+      ],
+      "trust_score": 5
+    },
+    {
+      "title": "NASA video search: deep ocean mariana trench underwater submarine",
+      "source": "NASA",
+      "url": "https://images.nasa.gov/search-results?q=deep+ocean+mariana+trench+underwater+submarine&media_type=video",
+      "license": "NASA public domain or official media usage terms; verify per asset.",
+      "media_type": "video",
+      "keywords": [
+        "deep ocean",
+        "mariana trench",
+        "underwater",
+        "submarine"
+      ],
+      "trust_score": 5
+    },
+    {
+      "title": "NOAA image search: deep ocean mariana trench underwater submarine",
+      "source": "NOAA",
+      "url": "https://www.noaa.gov/search?query=deep+ocean+mariana+trench+underwater+submarine+image",
+      "license": "NOAA public domain or official media usage terms; verify per asset.",
+      "media_type": "image",
+      "keywords": [
+        "deep ocean",
+        "mariana trench",
+        "underwater",
+        "submarine"
+      ],
+      "trust_score": 5
+    },
+    {
+      "title": "NOAA video search: deep ocean mariana trench underwater submarine",
+      "source": "NOAA",
+      "url": "https://www.noaa.gov/search?query=deep+ocean+mariana+trench+underwater+submarine+video",
+      "license": "NOAA public domain or official media usage terms; verify per asset.",
+      "media_type": "video",
+      "keywords": [
+        "deep ocean",
+        "mariana trench",
+        "underwater",
+        "submarine"
+      ],
+      "trust_score": 5
+    },
+    {
+      "title": "Wikimedia Commons image search: deep ocean mariana trench underwater submarine",
+      "source": "Wikimedia Commons",
+      "url": "https://commons.wikimedia.org/w/index.php?search=deep+ocean+mariana+trench+underwater+submarine+filetype%3Aimage",
+      "license": "Creative Commons/Public Domain varies by file; verify per asset.",
+      "media_type": "image",
+      "keywords": [
+        "deep ocean",
+        "mariana trench",
+        "underwater",
+        "submarine"
+      ],
+      "trust_score": 4
+    },
+    {
+      "title": "Wikimedia Commons video search: deep ocean mariana trench underwater submarine",
+      "source": "Wikimedia Commons",
+      "url": "https://commons.wikimedia.org/w/index.php?search=deep+ocean+mariana+trench+underwater+submarine+filetype%3Avideo",
+      "license": "Creative Commons/Public Domain varies by file; verify per asset.",
+      "media_type": "video",
+      "keywords": [
+        "deep ocean",
+        "mariana trench",
+        "underwater",
+        "submarine"
+      ],
+      "trust_score": 4
+    },
+    {
+      "title": "ESA image search: deep ocean mariana trench underwater submarine",
+      "source": "ESA",
+      "url": "https://www.esa.int/esasearch?q=deep+ocean+mariana+trench+underwater+submarine+image",
+      "license": "ESA official media usage terms; verify per asset.",
+      "media_type": "image",
+      "keywords": [
+        "deep ocean",
+        "mariana trench",
+        "underwater",
+        "submarine"
+      ],
+      "trust_score": 5
+    },
+    {
+      "title": "ESA video search: deep ocean mariana trench underwater submarine",
+      "source": "ESA",
+      "url": "https://www.esa.int/esasearch?q=deep+ocean+mariana+trench+underwater+submarine+video",
+      "license": "ESA official media usage terms; verify per asset.",
+      "media_type": "video",
+      "keywords": [
+        "deep ocean",
+        "mariana trench",
+        "underwater",
+        "submarine"
+      ],
+      "trust_score": 5
+    },
+    {
+      "title": "Pexels image search: deep ocean mariana trench underwater submarine",
+      "source": "Pexels",
+      "url": "https://www.pexels.com/search/deep%20ocean%20mariana%20trench%20underwater%20submarine%20image/",
+      "license": "Pexels License; verify per asset.",
+      "media_type": "image",
+      "keywords": [
+        "deep ocean",
+        "mariana trench",
+        "underwater",
+        "submarine"
+      ],
+      "trust_score": 3
+    },
+    {
+      "title": "Pexels video search: deep ocean mariana trench underwater submarine",
+      "source": "Pexels",
+      "url": "https://www.pexels.com/search/deep%20ocean%20mariana%20trench%20underwater%20submarine%20video/",
+      "license": "Pexels License; verify per asset.",
+      "media_type": "video",
+      "keywords": [
+        "deep ocean",
+        "mariana trench",
+        "underwater",
+        "submarine"
+      ],
+      "trust_score": 3
+    },
+    {
+      "title": "Pixabay image search: deep ocean mariana trench underwater submarine",
+      "source": "Pixabay",
+      "url": "https://pixabay.com/images/search/deep%20ocean%20mariana%20trench%20underwater%20submarine/",
+      "license": "Pixabay Content License; verify per asset.",
+      "media_type": "image",
+      "keywords": [
+        "deep ocean",
+        "mariana trench",
+        "underwater",
+        "submarine"
+      ],
+      "trust_score": 3
+    },
+    {
+      "title": "Pixabay video search: deep ocean mariana trench underwater submarine",
+      "source": "Pixabay",
+      "url": "https://pixabay.com/videos/search/deep%20ocean%20mariana%20trench%20underwater%20submarine/",
+      "license": "Pixabay Content License; verify per asset.",
+      "media_type": "video",
+      "keywords": [
+        "deep ocean",
+        "mariana trench",
+        "underwater",
+        "submarine"
+      ],
+      "trust_score": 3
+    }
+  ],
+  "scene_08": [
+    {
+      "title": "NASA image search: deep ocean mariana trench underwater submarine",
+      "source": "NASA",
+      "url": "https://images.nasa.gov/search-results?q=deep+ocean+mariana+trench+underwater+submarine&media_type=image",
+      "license": "NASA public domain or official media usage terms; verify per asset.",
+      "media_type": "image",
+      "keywords": [
+        "deep ocean",
+        "mariana trench",
+        "underwater",
+        "submarine"
+      ],
+      "trust_score": 5
+    },
+    {
+      "title": "NASA video search: deep ocean mariana trench underwater submarine",
+      "source": "NASA",
+      "url": "https://images.nasa.gov/search-results?q=deep+ocean+mariana+trench+underwater+submarine&media_type=video",
+      "license": "NASA public domain or official media usage terms; verify per asset.",
+      "media_type": "video",
+      "keywords": [
+        "deep ocean",
+        "mariana trench",
+        "underwater",
+        "submarine"
+      ],
+      "trust_score": 5
+    },
+    {
+      "title": "NOAA image search: deep ocean mariana trench underwater submarine",
+      "source": "NOAA",
+      "url": "https://www.noaa.gov/search?query=deep+ocean+mariana+trench+underwater+submarine+image",
+      "license": "NOAA public domain or official media usage terms; verify per asset.",
+      "media_type": "image",
+      "keywords": [
+        "deep ocean",
+        "mariana trench",
+        "underwater",
+        "submarine"
+      ],
+      "trust_score": 5
+    },
+    {
+      "title": "NOAA video search: deep ocean mariana trench underwater submarine",
+      "source": "NOAA",
+      "url": "https://www.noaa.gov/search?query=deep+ocean+mariana+trench+underwater+submarine+video",
+      "license": "NOAA public domain or official media usage terms; verify per asset.",
+      "media_type": "video",
+      "keywords": [
+        "deep ocean",
+        "mariana trench",
+        "underwater",
+        "submarine"
+      ],
+      "trust_score": 5
+    },
+    {
+      "title": "Wikimedia Commons image search: deep ocean mariana trench underwater submarine",
+      "source": "Wikimedia Commons",
+      "url": "https://commons.wikimedia.org/w/index.php?search=deep+ocean+mariana+trench+underwater+submarine+filetype%3Aimage",
+      "license": "Creative Commons/Public Domain varies by file; verify per asset.",
+      "media_type": "image",
+      "keywords": [
+        "deep ocean",
+        "mariana trench",
+        "underwater",
+        "submarine"
+      ],
+      "trust_score": 4
+    },
+    {
+      "title": "Wikimedia Commons video search: deep ocean mariana trench underwater submarine",
+      "source": "Wikimedia Commons",
+      "url": "https://commons.wikimedia.org/w/index.php?search=deep+ocean+mariana+trench+underwater+submarine+filetype%3Avideo",
+      "license": "Creative Commons/Public Domain varies by file; verify per asset.",
+      "media_type": "video",
+      "keywords": [
+        "deep ocean",
+        "mariana trench",
+        "underwater",
+        "submarine"
+      ],
+      "trust_score": 4
+    },
+    {
+      "title": "ESA image search: deep ocean mariana trench underwater submarine",
+      "source": "ESA",
+      "url": "https://www.esa.int/esasearch?q=deep+ocean+mariana+trench+underwater+submarine+image",
+      "license": "ESA official media usage terms; verify per asset.",
+      "media_type": "image",
+      "keywords": [
+        "deep ocean",
+        "mariana trench",
+        "underwater",
+        "submarine"
+      ],
+      "trust_score": 5
+    },
+    {
+      "title": "ESA video search: deep ocean mariana trench underwater submarine",
+      "source": "ESA",
+      "url": "https://www.esa.int/esasearch?q=deep+ocean+mariana+trench+underwater+submarine+video",
+      "license": "ESA official media usage terms; verify per asset.",
+      "media_type": "video",
+      "keywords": [
+        "deep ocean",
+        "mariana trench",
+        "underwater",
+        "submarine"
+      ],
+      "trust_score": 5
+    },
+    {
+      "title": "Pexels image search: deep ocean mariana trench underwater submarine",
+      "source": "Pexels",
+      "url": "https://www.pexels.com/search/deep%20ocean%20mariana%20trench%20underwater%20submarine%20image/",
+      "license": "Pexels License; verify per asset.",
+      "media_type": "image",
+      "keywords": [
+        "deep ocean",
+        "mariana trench",
+        "underwater",
+        "submarine"
+      ],
+      "trust_score": 3
+    },
+    {
+      "title": "Pexels video search: deep ocean mariana trench underwater submarine",
+      "source": "Pexels",
+      "url": "https://www.pexels.com/search/deep%20ocean%20mariana%20trench%20underwater%20submarine%20video/",
+      "license": "Pexels License; verify per asset.",
+      "media_type": "video",
+      "keywords": [
+        "deep ocean",
+        "mariana trench",
+        "underwater",
+        "submarine"
+      ],
+      "trust_score": 3
+    },
+    {
+      "title": "Pixabay image search: deep ocean mariana trench underwater submarine",
+      "source": "Pixabay",
+      "url": "https://pixabay.com/images/search/deep%20ocean%20mariana%20trench%20underwater%20submarine/",
+      "license": "Pixabay Content License; verify per asset.",
+      "media_type": "image",
+      "keywords": [
+        "deep ocean",
+        "mariana trench",
+        "underwater",
+        "submarine"
+      ],
+      "trust_score": 3
+    },
+    {
+      "title": "Pixabay video search: deep ocean mariana trench underwater submarine",
+      "source": "Pixabay",
+      "url": "https://pixabay.com/videos/search/deep%20ocean%20mariana%20trench%20underwater%20submarine/",
+      "license": "Pixabay Content License; verify per asset.",
+      "media_type": "video",
+      "keywords": [
+        "deep ocean",
+        "mariana trench",
+        "underwater",
+        "submarine"
+      ],
+      "trust_score": 3
+    }
+  ]
+}

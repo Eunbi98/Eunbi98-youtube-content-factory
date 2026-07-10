@@ -1,0 +1,19 @@
+{
+  "scene": "scene_03",
+  "title": "NOAA Mariana Trench Marine National Monument image",
+  "source": "NOAA",
+  "original_url": "https://www.noaa.gov/search?query=deep+ocean+mariana+trench+underwater+submarine+image",
+  "download_url": "https://www.fisheries.noaa.gov/s3//styles/media_750_x500/s3/2021-02/750x500-rov-deep-discoverer-chamorro-seamount-NOAA-OER.jpg?itok=6ZBiyqPw",
+  "license": "NOAA public domain or official media usage terms; verify per asset.",
+  "media_type": "image",
+  "keywords": [
+    "deep ocean",
+    "mariana trench",
+    "underwater",
+    "submarine"
+  ],
+  "trust_score": 5,
+  "local_path": "C:\\Users\\qkrdm\\OneDrive\\바탕 화면\\youtube-content-factory\\episodes\\episode_002\\assets\\images\\scene_03_NOAA_image_NOAA_Mariana_Trench_Marine_National_Monument_image.jpg",
+  "bytes": 27240,
+  "content_type": "image/jpeg"
+}

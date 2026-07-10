@@ -1,0 +1,29 @@
+# Environment
+.env
+
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# Node / Remotion
+node_modules/
+projects/remotion/node_modules/
+
+# Remotion caches
+.render_deps/
+.render_runtime_deps/
+
+# Generated media
+output/audio/
+output/video/
+output/images/
+
+# Temporary/generated files
+*.mp4
+*.mp3
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/

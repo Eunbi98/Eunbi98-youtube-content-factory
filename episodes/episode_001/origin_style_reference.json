@@ -1,0 +1,1831 @@
+{
+  "reference_name": "ORIGIN_EPISODE_001_MASTER_REFERENCE",
+  "source_xml": "episode001.xml",
+  "extraction_version": 1,
+  "sequence": {
+    "name": "jsc2022m000172_Earth_in_4K_Expedition_65_Edition~large",
+    "uuid": "448cb5b0-ffde-4731-a47c-b91c378fccf7",
+    "width": 1080,
+    "height": 1920,
+    "fps": 30,
+    "ntsc": false,
+    "duration_frames": 675,
+    "duration_seconds": 22.5,
+    "duration_timecode": "00:00:22:15",
+    "codec": "Apple ProRes 422",
+    "pixel_aspect_ratio": "square",
+    "field_dominance": "lower"
+  },
+  "summary_statistics": {
+    "video_cut_count": 9,
+    "graphic_text_count": 9,
+    "transition_count": 8,
+    "overlay_count": 1,
+    "source_filenames": [
+      "NHQ202409230016~large.jpg",
+      "NHQ202504200012~large.jpg",
+      "S99-11112~large.jpg",
+      "iss006e45265~orig.jpg",
+      "jcs2023m000031_Space to Ground_481_230714~orig.mp4",
+      "jsc2022m000172_Earth_in_4K_Expedition_65_Edition~large.mp4"
+    ],
+    "scale_range": {
+      "min": 131.0,
+      "max": 279.0,
+      "median": 195.5
+    },
+    "rotation_values": [
+      0.0,
+      180.0
+    ],
+    "common_transition_duration_frames": 30,
+    "common_transition_duration_seconds": 1.0,
+    "caption_duration_range_seconds": {
+      "min": 1.533,
+      "max": 3.0,
+      "median": 2.667
+    },
+    "caption_line_count_range": {
+      "min": 1,
+      "max": 3
+    }
+  },
+  "video_cuts": [
+    {
+      "clip_id": "clipitem-1",
+      "track_index": 1,
+      "track_clip_index": 1,
+      "name": "jsc2022m000172_Earth_in_4K_Expedition_65_Edition~large.mp4",
+      "media_kind": "video",
+      "filename": "jsc2022m000172_Earth_in_4K_Expedition_65_Edition~large.mp4",
+      "pathurl": "file://localhost/C%3a/Users/qkrdm/Downloads/jsc2022m000172_Earth_in_4K_Expedition_65_Edition~large.mp4",
+      "source_in_frame": 19387,
+      "source_out_frame": 19507,
+      "source_duration_frames": 120,
+      "raw_start_frame": 0,
+      "raw_end_frame": -1,
+      "start_frame": 0,
+      "end_frame": 120,
+      "duration_frames": 120,
+      "start_seconds": 0.0,
+      "end_seconds": 4.0,
+      "duration_seconds": 4.0,
+      "start_timecode": "00:00:00:00",
+      "end_timecode": "00:00:04:00",
+      "boundary_inference": {
+        "start": "clip.start",
+        "end": "next_transition.end"
+      },
+      "transform": {
+        "scale": 194.0,
+        "position": {
+          "horiz": 0.391965,
+          "vert": -0.0106139,
+          "unit": "premiere_normalized_center_offset"
+        },
+        "rotation": 0.0,
+        "anchor_point": {
+          "horiz": 0.0,
+          "vert": 0.0,
+          "unit": "premiere_normalized_anchor_offset"
+        },
+        "opacity": null
+      }
+    },
+    {
+      "clip_id": "clipitem-2",
+      "track_index": 1,
+      "track_clip_index": 2,
+      "name": "jcs2023m000031_Space to Ground_481_230714~orig.mp4",
+      "media_kind": "video",
+      "filename": "jcs2023m000031_Space to Ground_481_230714~orig.mp4",
+      "pathurl": "file://localhost/C%3a/Users/qkrdm/Downloads/jcs2023m000031_Space%20to%20Ground_481_230714~orig.mp4",
+      "source_in_frame": 3510,
+      "source_out_frame": 3585,
+      "source_duration_frames": 75,
+      "raw_start_frame": 166,
+      "raw_end_frame": -1,
+      "start_frame": 166,
+      "end_frame": 241,
+      "duration_frames": 75,
+      "start_seconds": 5.533,
+      "end_seconds": 8.033,
+      "duration_seconds": 2.5,
+      "start_timecode": "00:00:05:16",
+      "end_timecode": "00:00:08:01",
+      "boundary_inference": {
+        "start": "clip.start",
+        "end": "next_transition.end"
+      },
+      "transform": {
+        "scale": 273.0,
+        "position": {
+          "horiz": 0.0578125,
+          "vert": 0.0,
+          "unit": "premiere_normalized_center_offset"
+        },
+        "rotation": 0.0,
+        "anchor_point": {
+          "horiz": 0.0,
+          "vert": 0.0,
+          "unit": "premiere_normalized_anchor_offset"
+        },
+        "opacity": null
+      }
+    },
+    {
+      "clip_id": "clipitem-3",
+      "track_index": 1,
+      "track_clip_index": 3,
+      "name": "jcs2023m000031_Space to Ground_481_230714~orig.mp4",
+      "media_kind": "video",
+      "filename": "jcs2023m000031_Space to Ground_481_230714~orig.mp4",
+      "pathurl": "file://localhost/C%3a/Users/qkrdm/Downloads/jcs2023m000031_Space%20to%20Ground_481_230714~orig.mp4",
+      "source_in_frame": 520,
+      "source_out_frame": 608,
+      "source_duration_frames": 88,
+      "raw_start_frame": -1,
+      "raw_end_frame": -1,
+      "start_frame": 211,
+      "end_frame": 299,
+      "duration_frames": 88,
+      "start_seconds": 7.033,
+      "end_seconds": 9.967,
+      "duration_seconds": 2.933,
+      "start_timecode": "00:00:07:01",
+      "end_timecode": "00:00:09:29",
+      "boundary_inference": {
+        "start": "previous_transition.start",
+        "end": "next_transition.end"
+      },
+      "transform": {
+        "scale": 279.0,
+        "position": {
+          "horiz": 0.0,
+          "vert": 0.0,
+          "unit": "premiere_normalized_center_offset"
+        },
+        "rotation": 180.0,
+        "anchor_point": {
+          "horiz": 0.0,
+          "vert": 0.0,
+          "unit": "premiere_normalized_anchor_offset"
+        },
+        "opacity": null
+      }
+    },
+    {
+      "clip_id": "clipitem-4",
+      "track_index": 1,
+      "track_clip_index": 4,
+      "name": "iss006e45265~orig.jpg",
+      "media_kind": "image",
+      "filename": "iss006e45265~orig.jpg",
+      "pathurl": "file://localhost/C%3a/Users/qkrdm/OneDrive/%eb%b0%94%ed%83%95%20%ed%99%94%eb%a9%b4/youtube-content-factory/output/images/iss006e45265~orig.jpg",
+      "source_in_frame": 107877,
+      "source_out_frame": 107932,
+      "source_duration_frames": 55,
+      "raw_start_frame": -1,
+      "raw_end_frame": 325,
+      "start_frame": 269,
+      "end_frame": 325,
+      "duration_frames": 56,
+      "start_seconds": 8.967,
+      "end_seconds": 10.833,
+      "duration_seconds": 1.867,
+      "start_timecode": "00:00:08:29",
+      "end_timecode": "00:00:10:25",
+      "boundary_inference": {
+        "start": "previous_transition.start",
+        "end": "clip.end"
+      },
+      "transform": {
+        "scale": 192.0,
+        "position": {
+          "horiz": 0.0,
+          "vert": 0.0,
+          "unit": "premiere_normalized_center_offset"
+        },
+        "rotation": 180.0,
+        "anchor_point": {
+          "horiz": 0.0,
+          "vert": 0.0,
+          "unit": "premiere_normalized_anchor_offset"
+        },
+        "opacity": null
+      }
+    },
+    {
+      "clip_id": "clipitem-5",
+      "track_index": 1,
+      "track_clip_index": 5,
+      "name": "S99-11112~large.jpg",
+      "media_kind": "image",
+      "filename": "S99-11112~large.jpg",
+      "pathurl": "file://localhost/C%3a/Users/qkrdm/OneDrive/%eb%b0%94%ed%83%95%20%ed%99%94%eb%a9%b4/youtube-content-factory/output/images/S99-11112~large.jpg",
+      "source_in_frame": 107885,
+      "source_out_frame": 107950,
+      "source_duration_frames": 65,
+      "raw_start_frame": 325,
+      "raw_end_frame": -1,
+      "start_frame": 325,
+      "end_frame": 390,
+      "duration_frames": 65,
+      "start_seconds": 10.833,
+      "end_seconds": 13.0,
+      "duration_seconds": 2.167,
+      "start_timecode": "00:00:10:25",
+      "end_timecode": "00:00:13:00",
+      "boundary_inference": {
+        "start": "clip.start",
+        "end": "next_transition.end"
+      },
+      "transform": {
+        "scale": null,
+        "position": null,
+        "rotation": null,
+        "anchor_point": null,
+        "opacity": null
+      }
+    },
+    {
+      "clip_id": "clipitem-6",
+      "track_index": 1,
+      "track_clip_index": 6,
+      "name": "jcs2023m000031_Space to Ground_481_230714~orig.mp4",
+      "media_kind": "video",
+      "filename": "jcs2023m000031_Space to Ground_481_230714~orig.mp4",
+      "pathurl": "",
+      "source_in_frame": 2461,
+      "source_out_frame": 2595,
+      "source_duration_frames": 134,
+      "raw_start_frame": -1,
+      "raw_end_frame": 495,
+      "start_frame": 360,
+      "end_frame": 495,
+      "duration_frames": 135,
+      "start_seconds": 12.0,
+      "end_seconds": 16.5,
+      "duration_seconds": 4.5,
+      "start_timecode": "00:00:12:00",
+      "end_timecode": "00:00:16:15",
+      "boundary_inference": {
+        "start": "previous_transition.start",
+        "end": "clip.end"
+      },
+      "transform": {
+        "scale": 266.0,
+        "position": {
+          "horiz": -0.138281,
+          "vert": 0.0,
+          "unit": "premiere_normalized_center_offset"
+        },
+        "rotation": 0.0,
+        "anchor_point": {
+          "horiz": 0.0,
+          "vert": 0.0,
+          "unit": "premiere_normalized_anchor_offset"
+        },
+        "opacity": null
+      }
+    },
+    {
+      "clip_id": "clipitem-7",
+      "track_index": 1,
+      "track_clip_index": 7,
+      "name": "NHQ202504200012~large.jpg",
+      "media_kind": "image",
+      "filename": "NHQ202504200012~large.jpg",
+      "pathurl": "file://localhost/C%3a/Users/qkrdm/OneDrive/%eb%b0%94%ed%83%95%20%ed%99%94%eb%a9%b4/youtube-content-factory/output/images/NHQ202504200012~large.jpg",
+      "source_in_frame": 107902,
+      "source_out_frame": 107959,
+      "source_duration_frames": 57,
+      "raw_start_frame": 495,
+      "raw_end_frame": 553,
+      "start_frame": 495,
+      "end_frame": 553,
+      "duration_frames": 58,
+      "start_seconds": 16.5,
+      "end_seconds": 18.433,
+      "duration_seconds": 1.933,
+      "start_timecode": "00:00:16:15",
+      "end_timecode": "00:00:18:13",
+      "boundary_inference": {
+        "start": "clip.start",
+        "end": "clip.end"
+      },
+      "transform": {
+        "scale": 197.0,
+        "position": {
+          "horiz": 0.0,
+          "vert": 0.237091,
+          "unit": "premiere_normalized_center_offset"
+        },
+        "rotation": 0.0,
+        "anchor_point": {
+          "horiz": 0.0,
+          "vert": 0.0,
+          "unit": "premiere_normalized_anchor_offset"
+        },
+        "opacity": null
+      }
+    },
+    {
+      "clip_id": "clipitem-8",
+      "track_index": 1,
+      "track_clip_index": 8,
+      "name": "NHQ202409230016~large.jpg",
+      "media_kind": "image",
+      "filename": "NHQ202409230016~large.jpg",
+      "pathurl": "file://localhost/C%3a/Users/qkrdm/OneDrive/%eb%b0%94%ed%83%95%20%ed%99%94%eb%a9%b4/youtube-content-factory/output/images/NHQ202409230016~large.jpg",
+      "source_in_frame": 107886,
+      "source_out_frame": 107936,
+      "source_duration_frames": 50,
+      "raw_start_frame": 553,
+      "raw_end_frame": -1,
+      "start_frame": 553,
+      "end_frame": 603,
+      "duration_frames": 50,
+      "start_seconds": 18.433,
+      "end_seconds": 20.1,
+      "duration_seconds": 1.667,
+      "start_timecode": "00:00:18:13",
+      "end_timecode": "00:00:20:03",
+      "boundary_inference": {
+        "start": "clip.start",
+        "end": "next_transition.end"
+      },
+      "transform": {
+        "scale": 131.0,
+        "position": {
+          "horiz": 0.0,
+          "vert": 0.141146,
+          "unit": "premiere_normalized_center_offset"
+        },
+        "rotation": 0.0,
+        "anchor_point": {
+          "horiz": 0.0,
+          "vert": 0.0,
+          "unit": "premiere_normalized_anchor_offset"
+        },
+        "opacity": null
+      }
+    },
+    {
+      "clip_id": "clipitem-9",
+      "track_index": 1,
+      "track_clip_index": 9,
+      "name": "jsc2022m000172_Earth_in_4K_Expedition_65_Edition~large.mp4",
+      "media_kind": "video",
+      "filename": "jsc2022m000172_Earth_in_4K_Expedition_65_Edition~large.mp4",
+      "pathurl": "",
+      "source_in_frame": 32943,
+      "source_out_frame": 33044,
+      "source_duration_frames": 101,
+      "raw_start_frame": -1,
+      "raw_end_frame": -1,
+      "start_frame": 573,
+      "end_frame": 675,
+      "duration_frames": 102,
+      "start_seconds": 19.1,
+      "end_seconds": 22.5,
+      "duration_seconds": 3.4,
+      "start_timecode": "00:00:19:03",
+      "end_timecode": "00:00:22:15",
+      "boundary_inference": {
+        "start": "previous_transition.start",
+        "end": "next_transition.end"
+      },
+      "transform": {
+        "scale": 194.0,
+        "position": {
+          "horiz": 0.0,
+          "vert": 0.0,
+          "unit": "premiere_normalized_center_offset"
+        },
+        "rotation": 0.0,
+        "anchor_point": {
+          "horiz": 0.0,
+          "vert": 0.0,
+          "unit": "premiere_normalized_anchor_offset"
+        },
+        "opacity": null
+      }
+    }
+  ],
+  "transitions": [
+    {
+      "id": "track_1_transition_1",
+      "track_index": 1,
+      "start_frame": 90,
+      "end_frame": 120,
+      "start_seconds": 3.0,
+      "end_seconds": 4.0,
+      "start_timecode": "00:00:03:00",
+      "end_timecode": "00:00:04:00",
+      "duration_frames": 30,
+      "duration_seconds": 1.0,
+      "type": "Cross Dissolve",
+      "effect_id": "Cross Dissolve",
+      "alignment": "end-black",
+      "cut_point_ticks": "254016000000"
+    },
+    {
+      "id": "track_1_transition_2",
+      "track_index": 1,
+      "start_frame": 211,
+      "end_frame": 241,
+      "start_seconds": 7.033,
+      "end_seconds": 8.033,
+      "start_timecode": "00:00:07:01",
+      "end_timecode": "00:00:08:01",
+      "duration_frames": 30,
+      "duration_seconds": 1.0,
+      "type": "Cross Dissolve",
+      "effect_id": "Cross Dissolve",
+      "alignment": "center",
+      "cut_point_ticks": "127008000000"
+    },
+    {
+      "id": "track_1_transition_3",
+      "track_index": 1,
+      "start_frame": 269,
+      "end_frame": 299,
+      "start_seconds": 8.967,
+      "end_seconds": 9.967,
+      "start_timecode": "00:00:08:29",
+      "end_timecode": "00:00:09:29",
+      "duration_frames": 30,
+      "duration_seconds": 1.0,
+      "type": "Cross Dissolve",
+      "effect_id": "Cross Dissolve",
+      "alignment": "center",
+      "cut_point_ticks": "127008000000"
+    },
+    {
+      "id": "track_1_transition_4",
+      "track_index": 1,
+      "start_frame": 360,
+      "end_frame": 390,
+      "start_seconds": 12.0,
+      "end_seconds": 13.0,
+      "start_timecode": "00:00:12:00",
+      "end_timecode": "00:00:13:00",
+      "duration_frames": 30,
+      "duration_seconds": 1.0,
+      "type": "Cross Dissolve",
+      "effect_id": "Cross Dissolve",
+      "alignment": "center",
+      "cut_point_ticks": "8467200000"
+    },
+    {
+      "id": "track_1_transition_5",
+      "track_index": 1,
+      "start_frame": 573,
+      "end_frame": 603,
+      "start_seconds": 19.1,
+      "end_seconds": 20.1,
+      "start_timecode": "00:00:19:03",
+      "end_timecode": "00:00:20:03",
+      "duration_frames": 30,
+      "duration_seconds": 1.0,
+      "type": "Cross Dissolve",
+      "effect_id": "Cross Dissolve",
+      "alignment": "center",
+      "cut_point_ticks": "127008000000"
+    },
+    {
+      "id": "track_1_transition_6",
+      "track_index": 1,
+      "start_frame": 645,
+      "end_frame": 675,
+      "start_seconds": 21.5,
+      "end_seconds": 22.5,
+      "start_timecode": "00:00:21:15",
+      "end_timecode": "00:00:22:15",
+      "duration_frames": 30,
+      "duration_seconds": 1.0,
+      "type": "Cross Dissolve",
+      "effect_id": "Cross Dissolve",
+      "alignment": "end-black",
+      "cut_point_ticks": "254016000000"
+    },
+    {
+      "id": "track_2_transition_1",
+      "track_index": 2,
+      "start_frame": 645,
+      "end_frame": 675,
+      "start_seconds": 21.5,
+      "end_seconds": 22.5,
+      "start_timecode": "00:00:21:15",
+      "end_timecode": "00:00:22:15",
+      "duration_frames": 30,
+      "duration_seconds": 1.0,
+      "type": "Cross Dissolve",
+      "effect_id": "Cross Dissolve",
+      "alignment": "end-black",
+      "cut_point_ticks": "254016000000"
+    },
+    {
+      "id": "track_3_transition_1",
+      "track_index": 3,
+      "start_frame": 60,
+      "end_frame": 90,
+      "start_seconds": 2.0,
+      "end_seconds": 3.0,
+      "start_timecode": "00:00:02:00",
+      "end_timecode": "00:00:03:00",
+      "duration_frames": 30,
+      "duration_seconds": 1.0,
+      "type": "Cross Dissolve",
+      "effect_id": "Cross Dissolve",
+      "alignment": "end-black",
+      "cut_point_ticks": "254016000000"
+    }
+  ],
+  "graphic_texts": [
+    {
+      "graphic_id": "clipitem-10_graphic_1",
+      "clip_id": "clipitem-10",
+      "track_index": 2,
+      "role": "caption",
+      "text": "가장 먼저 망가지는 건\n근육일까요?",
+      "lines": [
+        "가장 먼저 망가지는 건",
+        "근육일까요?"
+      ],
+      "line_breaks": 1,
+      "start_frame": 60,
+      "end_frame": 120,
+      "start_seconds": 2.0,
+      "end_seconds": 4.0,
+      "duration_seconds": 2.0,
+      "start_timecode": "00:00:02:00",
+      "end_timecode": "00:00:04:00",
+      "font_candidates_extracted": [
+        "NotoSerifKR-Medium"
+      ],
+      "text_style_estimate": {
+        "font_family": "NotoSerifKR-Medium",
+        "font_weight": "medium",
+        "fill_color_estimate": "#FFFFFF",
+        "stroke_or_shadow_estimate": "black outline/drop shadow for legibility",
+        "alignment_estimate": "center",
+        "position": {
+          "x": 0.0621185302734375,
+          "y": 0.6715850830078125,
+          "unit": "normalized_sequence_position",
+          "x_pixels_estimate": 67.09,
+          "y_pixels_estimate": 1289.44
+        },
+        "scale_x": 100.0,
+        "scale_y": 100.0
+      }
+    },
+    {
+      "graphic_id": "clipitem-11_graphic_1",
+      "clip_id": "clipitem-11",
+      "track_index": 2,
+      "role": "caption",
+      "text": "아닙니다.",
+      "lines": [
+        "아닙니다."
+      ],
+      "line_breaks": 0,
+      "start_frame": 120,
+      "end_frame": 166,
+      "start_seconds": 4.0,
+      "end_seconds": 5.533,
+      "duration_seconds": 1.533,
+      "start_timecode": "00:00:04:00",
+      "end_timecode": "00:00:05:16",
+      "font_candidates_extracted": [
+        "NotoSerifKR-Medium"
+      ],
+      "text_style_estimate": {
+        "font_family": "NotoSerifKR-Medium",
+        "font_weight": "medium",
+        "fill_color_estimate": "#FFFFFF",
+        "stroke_or_shadow_estimate": "black outline/drop shadow for legibility",
+        "alignment_estimate": "center",
+        "position": {
+          "x": 0.0621185302734375,
+          "y": 0.5006866455078125,
+          "unit": "normalized_sequence_position",
+          "x_pixels_estimate": 67.09,
+          "y_pixels_estimate": 961.32
+        },
+        "scale_x": 100.0,
+        "scale_y": 100.0
+      }
+    },
+    {
+      "graphic_id": "clipitem-12_graphic_1",
+      "clip_id": "clipitem-12",
+      "track_index": 2,
+      "role": "caption",
+      "text": "가장 먼저 문제가 \n생길 수 있는 곳은 눈입니다.",
+      "lines": [
+        "가장 먼저 문제가 ",
+        "생길 수 있는 곳은 눈입니다."
+      ],
+      "line_breaks": 1,
+      "start_frame": 166,
+      "end_frame": 245,
+      "start_seconds": 5.533,
+      "end_seconds": 8.167,
+      "duration_seconds": 2.633,
+      "start_timecode": "00:00:05:16",
+      "end_timecode": "00:00:08:05",
+      "font_candidates_extracted": [
+        "NotoSerifKR-Medium"
+      ],
+      "text_style_estimate": {
+        "font_family": "NotoSerifKR-Medium",
+        "font_weight": "medium",
+        "fill_color_estimate": "#FFFFFF",
+        "stroke_or_shadow_estimate": "black outline/drop shadow for legibility",
+        "alignment_estimate": "center",
+        "position": {
+          "x": 0.0621185302734375,
+          "y": 0.6715850830078125,
+          "unit": "normalized_sequence_position",
+          "x_pixels_estimate": 67.09,
+          "y_pixels_estimate": 1289.44
+        },
+        "scale_x": 100.0,
+        "scale_y": 100.0
+      }
+    },
+    {
+      "graphic_id": "clipitem-13_graphic_1",
+      "clip_id": "clipitem-13",
+      "track_index": 2,
+      "role": "caption",
+      "text": "우주는 중력이 거의 없어서 몸속의 체액이 머리로 몰립니다.",
+      "lines": [
+        "우주는 중력이 거의 없어서 몸속의 체액이 머리로 몰립니다."
+      ],
+      "line_breaks": 0,
+      "start_frame": 245,
+      "end_frame": 325,
+      "start_seconds": 8.167,
+      "end_seconds": 10.833,
+      "duration_seconds": 2.667,
+      "start_timecode": "00:00:08:05",
+      "end_timecode": "00:00:10:25",
+      "font_candidates_extracted": [
+        "NotoSerifKR-Medium"
+      ],
+      "text_style_estimate": {
+        "font_family": "NotoSerifKR-Medium",
+        "font_weight": "medium",
+        "fill_color_estimate": "#FFFFFF",
+        "stroke_or_shadow_estimate": "black outline/drop shadow for legibility",
+        "alignment_estimate": "center",
+        "position": {
+          "x": 0.0621185302734375,
+          "y": 0.6715850830078125,
+          "unit": "normalized_sequence_position",
+          "x_pixels_estimate": 67.09,
+          "y_pixels_estimate": 1289.44
+        },
+        "scale_x": 100.0,
+        "scale_y": 100.0
+      }
+    },
+    {
+      "graphic_id": "clipitem-14_graphic_1",
+      "clip_id": "clipitem-14",
+      "track_index": 2,
+      "role": "caption",
+      "text": "더 놀라운 건 뼈가\n매달 1~1.5%씩 \n줄어든다는 겁니다.",
+      "lines": [
+        "더 놀라운 건 뼈가",
+        "매달 1~1.5%씩 ",
+        "줄어든다는 겁니다."
+      ],
+      "line_breaks": 2,
+      "start_frame": 325,
+      "end_frame": 405,
+      "start_seconds": 10.833,
+      "end_seconds": 13.5,
+      "duration_seconds": 2.667,
+      "start_timecode": "00:00:10:25",
+      "end_timecode": "00:00:13:15",
+      "font_candidates_extracted": [
+        "NotoSerifKR-Medium"
+      ],
+      "text_style_estimate": {
+        "font_family": "NotoSerifKR-Medium",
+        "font_weight": "medium",
+        "fill_color_estimate": "#FFFFFF",
+        "stroke_or_shadow_estimate": "black outline/drop shadow for legibility",
+        "alignment_estimate": "center",
+        "position": {
+          "x": 0.0621185302734375,
+          "y": 0.6715850830078125,
+          "unit": "normalized_sequence_position",
+          "x_pixels_estimate": 67.09,
+          "y_pixels_estimate": 1289.44
+        },
+        "scale_x": 100.0,
+        "scale_y": 100.0
+      }
+    },
+    {
+      "graphic_id": "clipitem-15_graphic_1",
+      "clip_id": "clipitem-15",
+      "track_index": 2,
+      "role": "caption",
+      "text": "그래서 우주비행사들은\n매일 2시간 가까이 운동합니다.",
+      "lines": [
+        "그래서 우주비행사들은",
+        "매일 2시간 가까이 운동합니다."
+      ],
+      "line_breaks": 1,
+      "start_frame": 405,
+      "end_frame": 495,
+      "start_seconds": 13.5,
+      "end_seconds": 16.5,
+      "duration_seconds": 3.0,
+      "start_timecode": "00:00:13:15",
+      "end_timecode": "00:00:16:15",
+      "font_candidates_extracted": [
+        "NotoSerifKR-Medium"
+      ],
+      "text_style_estimate": {
+        "font_family": "NotoSerifKR-Medium",
+        "font_weight": "medium",
+        "fill_color_estimate": "#FFFFFF",
+        "stroke_or_shadow_estimate": "black outline/drop shadow for legibility",
+        "alignment_estimate": "center",
+        "position": {
+          "x": 0.0621185302734375,
+          "y": 0.6715850830078125,
+          "unit": "normalized_sequence_position",
+          "x_pixels_estimate": 67.09,
+          "y_pixels_estimate": 1289.44
+        },
+        "scale_x": 100.0,
+        "scale_y": 100.0
+      }
+    },
+    {
+      "graphic_id": "clipitem-16_graphic_1",
+      "clip_id": "clipitem-16",
+      "track_index": 2,
+      "role": "caption",
+      "text": "그런데도 지구로 돌아오면\n걷는 것부터 \n다시 적응해야 합니다.",
+      "lines": [
+        "그런데도 지구로 돌아오면",
+        "걷는 것부터 ",
+        "다시 적응해야 합니다."
+      ],
+      "line_breaks": 2,
+      "start_frame": 495,
+      "end_frame": 585,
+      "start_seconds": 16.5,
+      "end_seconds": 19.5,
+      "duration_seconds": 3.0,
+      "start_timecode": "00:00:16:15",
+      "end_timecode": "00:00:19:15",
+      "font_candidates_extracted": [
+        "NotoSerifKR-Medium"
+      ],
+      "text_style_estimate": {
+        "font_family": "NotoSerifKR-Medium",
+        "font_weight": "medium",
+        "fill_color_estimate": "#FFFFFF",
+        "stroke_or_shadow_estimate": "black outline/drop shadow for legibility",
+        "alignment_estimate": "center",
+        "position": {
+          "x": 0.0621185302734375,
+          "y": 0.6715850830078125,
+          "unit": "normalized_sequence_position",
+          "x_pixels_estimate": 67.09,
+          "y_pixels_estimate": 1289.44
+        },
+        "scale_x": 100.0,
+        "scale_y": 100.0
+      }
+    },
+    {
+      "graphic_id": "clipitem-17_graphic_1",
+      "clip_id": "clipitem-17",
+      "track_index": 2,
+      "role": "caption",
+      "text": "그렇다면 화성에서는 \n어떻게 될까요?",
+      "lines": [
+        "그렇다면 화성에서는 ",
+        "어떻게 될까요?"
+      ],
+      "line_breaks": 1,
+      "start_frame": 585,
+      "end_frame": 675,
+      "start_seconds": 19.5,
+      "end_seconds": 22.5,
+      "duration_seconds": 3.0,
+      "start_timecode": "00:00:19:15",
+      "end_timecode": "00:00:22:15",
+      "font_candidates_extracted": [
+        "NotoSerifKR-Medium"
+      ],
+      "text_style_estimate": {
+        "font_family": "NotoSerifKR-Medium",
+        "font_weight": "medium",
+        "fill_color_estimate": "#FFFFFF",
+        "stroke_or_shadow_estimate": "black outline/drop shadow for legibility",
+        "alignment_estimate": "center",
+        "position": {
+          "x": 0.0621185302734375,
+          "y": 0.6715850830078125,
+          "unit": "normalized_sequence_position",
+          "x_pixels_estimate": 67.09,
+          "y_pixels_estimate": 1289.44
+        },
+        "scale_x": 100.0,
+        "scale_y": 100.0
+      }
+    },
+    {
+      "graphic_id": "clipitem-18_graphic_1",
+      "clip_id": "clipitem-18",
+      "track_index": 3,
+      "role": "hook_title",
+      "text": "사람이 382일동안\n우주에 있으면?",
+      "lines": [
+        "사람이 382일동안",
+        "우주에 있으면?"
+      ],
+      "line_breaks": 1,
+      "start_frame": 0,
+      "end_frame": 90,
+      "start_seconds": 0.0,
+      "end_seconds": 3.0,
+      "duration_seconds": 3.0,
+      "start_timecode": "00:00:00:00",
+      "end_timecode": "00:00:03:00",
+      "font_candidates_extracted": [
+        "NotoSansKR-Bold"
+      ],
+      "text_style_estimate": {
+        "font_family": "NotoSansKR-Bold",
+        "font_weight": "bold",
+        "fill_color_estimate": "#FFFFFF",
+        "stroke_or_shadow_estimate": "black outline/drop shadow for legibility",
+        "alignment_estimate": "center",
+        "position": {
+          "x": 0.06851851940155029,
+          "y": 0.5,
+          "unit": "normalized_sequence_position",
+          "x_pixels_estimate": 74.0,
+          "y_pixels_estimate": 960.0
+        },
+        "scale_x": 100.0,
+        "scale_y": 100.0
+      }
+    }
+  ],
+  "overlays": [
+    {
+      "clip_id": "clipitem-19",
+      "track_index": 4,
+      "track_clip_index": 1,
+      "name": "숏폼-가이드라인.png",
+      "media_kind": "image",
+      "filename": "숏폼-가이드라인.png",
+      "pathurl": "file://localhost/C%3a/Users/qkrdm/Downloads/%ec%88%8f%ed%8f%bc-%ea%b0%80%ec%9d%b4%eb%93%9c%eb%9d%bc%ec%9d%b8.png",
+      "source_in_frame": 107888,
+      "source_out_frame": 108040,
+      "source_duration_frames": 152,
+      "raw_start_frame": 0,
+      "raw_end_frame": 154,
+      "start_frame": 0,
+      "end_frame": 154,
+      "duration_frames": 154,
+      "start_seconds": 0.0,
+      "end_seconds": 5.133,
+      "duration_seconds": 5.133,
+      "start_timecode": "00:00:00:00",
+      "end_timecode": "00:00:05:04",
+      "boundary_inference": {
+        "start": "clip.start",
+        "end": "clip.end"
+      },
+      "transform": {
+        "scale": 140.0,
+        "position": {
+          "horiz": 0.0,
+          "vert": 0.0,
+          "unit": "premiere_normalized_center_offset"
+        },
+        "rotation": 0.0,
+        "anchor_point": {
+          "horiz": 0.0,
+          "vert": 0.0,
+          "unit": "premiere_normalized_anchor_offset"
+        },
+        "opacity": 38.0
+      }
+    }
+  ],
+  "tracks": [
+    {
+      "track_index": 1,
+      "clip_count": 9,
+      "transition_count": 6,
+      "clips": [
+        {
+          "clip_id": "clipitem-1",
+          "track_index": 1,
+          "track_clip_index": 1,
+          "name": "jsc2022m000172_Earth_in_4K_Expedition_65_Edition~large.mp4",
+          "media_kind": "video",
+          "filename": "jsc2022m000172_Earth_in_4K_Expedition_65_Edition~large.mp4",
+          "pathurl": "file://localhost/C%3a/Users/qkrdm/Downloads/jsc2022m000172_Earth_in_4K_Expedition_65_Edition~large.mp4",
+          "source_in_frame": 19387,
+          "source_out_frame": 19507,
+          "source_duration_frames": 120,
+          "raw_start_frame": 0,
+          "raw_end_frame": -1,
+          "start_frame": 0,
+          "end_frame": 120,
+          "duration_frames": 120,
+          "start_seconds": 0.0,
+          "end_seconds": 4.0,
+          "duration_seconds": 4.0,
+          "start_timecode": "00:00:00:00",
+          "end_timecode": "00:00:04:00",
+          "boundary_inference": {
+            "start": "clip.start",
+            "end": "next_transition.end"
+          },
+          "transform": {
+            "scale": 194.0,
+            "position": {
+              "horiz": 0.391965,
+              "vert": -0.0106139,
+              "unit": "premiere_normalized_center_offset"
+            },
+            "rotation": 0.0,
+            "anchor_point": {
+              "horiz": 0.0,
+              "vert": 0.0,
+              "unit": "premiere_normalized_anchor_offset"
+            },
+            "opacity": null
+          }
+        },
+        {
+          "clip_id": "clipitem-2",
+          "track_index": 1,
+          "track_clip_index": 2,
+          "name": "jcs2023m000031_Space to Ground_481_230714~orig.mp4",
+          "media_kind": "video",
+          "filename": "jcs2023m000031_Space to Ground_481_230714~orig.mp4",
+          "pathurl": "file://localhost/C%3a/Users/qkrdm/Downloads/jcs2023m000031_Space%20to%20Ground_481_230714~orig.mp4",
+          "source_in_frame": 3510,
+          "source_out_frame": 3585,
+          "source_duration_frames": 75,
+          "raw_start_frame": 166,
+          "raw_end_frame": -1,
+          "start_frame": 166,
+          "end_frame": 241,
+          "duration_frames": 75,
+          "start_seconds": 5.533,
+          "end_seconds": 8.033,
+          "duration_seconds": 2.5,
+          "start_timecode": "00:00:05:16",
+          "end_timecode": "00:00:08:01",
+          "boundary_inference": {
+            "start": "clip.start",
+            "end": "next_transition.end"
+          },
+          "transform": {
+            "scale": 273.0,
+            "position": {
+              "horiz": 0.0578125,
+              "vert": 0.0,
+              "unit": "premiere_normalized_center_offset"
+            },
+            "rotation": 0.0,
+            "anchor_point": {
+              "horiz": 0.0,
+              "vert": 0.0,
+              "unit": "premiere_normalized_anchor_offset"
+            },
+            "opacity": null
+          }
+        },
+        {
+          "clip_id": "clipitem-3",
+          "track_index": 1,
+          "track_clip_index": 3,
+          "name": "jcs2023m000031_Space to Ground_481_230714~orig.mp4",
+          "media_kind": "video",
+          "filename": "jcs2023m000031_Space to Ground_481_230714~orig.mp4",
+          "pathurl": "file://localhost/C%3a/Users/qkrdm/Downloads/jcs2023m000031_Space%20to%20Ground_481_230714~orig.mp4",
+          "source_in_frame": 520,
+          "source_out_frame": 608,
+          "source_duration_frames": 88,
+          "raw_start_frame": -1,
+          "raw_end_frame": -1,
+          "start_frame": 211,
+          "end_frame": 299,
+          "duration_frames": 88,
+          "start_seconds": 7.033,
+          "end_seconds": 9.967,
+          "duration_seconds": 2.933,
+          "start_timecode": "00:00:07:01",
+          "end_timecode": "00:00:09:29",
+          "boundary_inference": {
+            "start": "previous_transition.start",
+            "end": "next_transition.end"
+          },
+          "transform": {
+            "scale": 279.0,
+            "position": {
+              "horiz": 0.0,
+              "vert": 0.0,
+              "unit": "premiere_normalized_center_offset"
+            },
+            "rotation": 180.0,
+            "anchor_point": {
+              "horiz": 0.0,
+              "vert": 0.0,
+              "unit": "premiere_normalized_anchor_offset"
+            },
+            "opacity": null
+          }
+        },
+        {
+          "clip_id": "clipitem-4",
+          "track_index": 1,
+          "track_clip_index": 4,
+          "name": "iss006e45265~orig.jpg",
+          "media_kind": "image",
+          "filename": "iss006e45265~orig.jpg",
+          "pathurl": "file://localhost/C%3a/Users/qkrdm/OneDrive/%eb%b0%94%ed%83%95%20%ed%99%94%eb%a9%b4/youtube-content-factory/output/images/iss006e45265~orig.jpg",
+          "source_in_frame": 107877,
+          "source_out_frame": 107932,
+          "source_duration_frames": 55,
+          "raw_start_frame": -1,
+          "raw_end_frame": 325,
+          "start_frame": 269,
+          "end_frame": 325,
+          "duration_frames": 56,
+          "start_seconds": 8.967,
+          "end_seconds": 10.833,
+          "duration_seconds": 1.867,
+          "start_timecode": "00:00:08:29",
+          "end_timecode": "00:00:10:25",
+          "boundary_inference": {
+            "start": "previous_transition.start",
+            "end": "clip.end"
+          },
+          "transform": {
+            "scale": 192.0,
+            "position": {
+              "horiz": 0.0,
+              "vert": 0.0,
+              "unit": "premiere_normalized_center_offset"
+            },
+            "rotation": 180.0,
+            "anchor_point": {
+              "horiz": 0.0,
+              "vert": 0.0,
+              "unit": "premiere_normalized_anchor_offset"
+            },
+            "opacity": null
+          }
+        },
+        {
+          "clip_id": "clipitem-5",
+          "track_index": 1,
+          "track_clip_index": 5,
+          "name": "S99-11112~large.jpg",
+          "media_kind": "image",
+          "filename": "S99-11112~large.jpg",
+          "pathurl": "file://localhost/C%3a/Users/qkrdm/OneDrive/%eb%b0%94%ed%83%95%20%ed%99%94%eb%a9%b4/youtube-content-factory/output/images/S99-11112~large.jpg",
+          "source_in_frame": 107885,
+          "source_out_frame": 107950,
+          "source_duration_frames": 65,
+          "raw_start_frame": 325,
+          "raw_end_frame": -1,
+          "start_frame": 325,
+          "end_frame": 390,
+          "duration_frames": 65,
+          "start_seconds": 10.833,
+          "end_seconds": 13.0,
+          "duration_seconds": 2.167,
+          "start_timecode": "00:00:10:25",
+          "end_timecode": "00:00:13:00",
+          "boundary_inference": {
+            "start": "clip.start",
+            "end": "next_transition.end"
+          },
+          "transform": {
+            "scale": null,
+            "position": null,
+            "rotation": null,
+            "anchor_point": null,
+            "opacity": null
+          }
+        },
+        {
+          "clip_id": "clipitem-6",
+          "track_index": 1,
+          "track_clip_index": 6,
+          "name": "jcs2023m000031_Space to Ground_481_230714~orig.mp4",
+          "media_kind": "video",
+          "filename": "jcs2023m000031_Space to Ground_481_230714~orig.mp4",
+          "pathurl": "",
+          "source_in_frame": 2461,
+          "source_out_frame": 2595,
+          "source_duration_frames": 134,
+          "raw_start_frame": -1,
+          "raw_end_frame": 495,
+          "start_frame": 360,
+          "end_frame": 495,
+          "duration_frames": 135,
+          "start_seconds": 12.0,
+          "end_seconds": 16.5,
+          "duration_seconds": 4.5,
+          "start_timecode": "00:00:12:00",
+          "end_timecode": "00:00:16:15",
+          "boundary_inference": {
+            "start": "previous_transition.start",
+            "end": "clip.end"
+          },
+          "transform": {
+            "scale": 266.0,
+            "position": {
+              "horiz": -0.138281,
+              "vert": 0.0,
+              "unit": "premiere_normalized_center_offset"
+            },
+            "rotation": 0.0,
+            "anchor_point": {
+              "horiz": 0.0,
+              "vert": 0.0,
+              "unit": "premiere_normalized_anchor_offset"
+            },
+            "opacity": null
+          }
+        },
+        {
+          "clip_id": "clipitem-7",
+          "track_index": 1,
+          "track_clip_index": 7,
+          "name": "NHQ202504200012~large.jpg",
+          "media_kind": "image",
+          "filename": "NHQ202504200012~large.jpg",
+          "pathurl": "file://localhost/C%3a/Users/qkrdm/OneDrive/%eb%b0%94%ed%83%95%20%ed%99%94%eb%a9%b4/youtube-content-factory/output/images/NHQ202504200012~large.jpg",
+          "source_in_frame": 107902,
+          "source_out_frame": 107959,
+          "source_duration_frames": 57,
+          "raw_start_frame": 495,
+          "raw_end_frame": 553,
+          "start_frame": 495,
+          "end_frame": 553,
+          "duration_frames": 58,
+          "start_seconds": 16.5,
+          "end_seconds": 18.433,
+          "duration_seconds": 1.933,
+          "start_timecode": "00:00:16:15",
+          "end_timecode": "00:00:18:13",
+          "boundary_inference": {
+            "start": "clip.start",
+            "end": "clip.end"
+          },
+          "transform": {
+            "scale": 197.0,
+            "position": {
+              "horiz": 0.0,
+              "vert": 0.237091,
+              "unit": "premiere_normalized_center_offset"
+            },
+            "rotation": 0.0,
+            "anchor_point": {
+              "horiz": 0.0,
+              "vert": 0.0,
+              "unit": "premiere_normalized_anchor_offset"
+            },
+            "opacity": null
+          }
+        },
+        {
+          "clip_id": "clipitem-8",
+          "track_index": 1,
+          "track_clip_index": 8,
+          "name": "NHQ202409230016~large.jpg",
+          "media_kind": "image",
+          "filename": "NHQ202409230016~large.jpg",
+          "pathurl": "file://localhost/C%3a/Users/qkrdm/OneDrive/%eb%b0%94%ed%83%95%20%ed%99%94%eb%a9%b4/youtube-content-factory/output/images/NHQ202409230016~large.jpg",
+          "source_in_frame": 107886,
+          "source_out_frame": 107936,
+          "source_duration_frames": 50,
+          "raw_start_frame": 553,
+          "raw_end_frame": -1,
+          "start_frame": 553,
+          "end_frame": 603,
+          "duration_frames": 50,
+          "start_seconds": 18.433,
+          "end_seconds": 20.1,
+          "duration_seconds": 1.667,
+          "start_timecode": "00:00:18:13",
+          "end_timecode": "00:00:20:03",
+          "boundary_inference": {
+            "start": "clip.start",
+            "end": "next_transition.end"
+          },
+          "transform": {
+            "scale": 131.0,
+            "position": {
+              "horiz": 0.0,
+              "vert": 0.141146,
+              "unit": "premiere_normalized_center_offset"
+            },
+            "rotation": 0.0,
+            "anchor_point": {
+              "horiz": 0.0,
+              "vert": 0.0,
+              "unit": "premiere_normalized_anchor_offset"
+            },
+            "opacity": null
+          }
+        },
+        {
+          "clip_id": "clipitem-9",
+          "track_index": 1,
+          "track_clip_index": 9,
+          "name": "jsc2022m000172_Earth_in_4K_Expedition_65_Edition~large.mp4",
+          "media_kind": "video",
+          "filename": "jsc2022m000172_Earth_in_4K_Expedition_65_Edition~large.mp4",
+          "pathurl": "",
+          "source_in_frame": 32943,
+          "source_out_frame": 33044,
+          "source_duration_frames": 101,
+          "raw_start_frame": -1,
+          "raw_end_frame": -1,
+          "start_frame": 573,
+          "end_frame": 675,
+          "duration_frames": 102,
+          "start_seconds": 19.1,
+          "end_seconds": 22.5,
+          "duration_seconds": 3.4,
+          "start_timecode": "00:00:19:03",
+          "end_timecode": "00:00:22:15",
+          "boundary_inference": {
+            "start": "previous_transition.start",
+            "end": "next_transition.end"
+          },
+          "transform": {
+            "scale": 194.0,
+            "position": {
+              "horiz": 0.0,
+              "vert": 0.0,
+              "unit": "premiere_normalized_center_offset"
+            },
+            "rotation": 0.0,
+            "anchor_point": {
+              "horiz": 0.0,
+              "vert": 0.0,
+              "unit": "premiere_normalized_anchor_offset"
+            },
+            "opacity": null
+          }
+        }
+      ],
+      "transitions": [
+        {
+          "id": "track_1_transition_1",
+          "track_index": 1,
+          "start_frame": 90,
+          "end_frame": 120,
+          "start_seconds": 3.0,
+          "end_seconds": 4.0,
+          "start_timecode": "00:00:03:00",
+          "end_timecode": "00:00:04:00",
+          "duration_frames": 30,
+          "duration_seconds": 1.0,
+          "type": "Cross Dissolve",
+          "effect_id": "Cross Dissolve",
+          "alignment": "end-black",
+          "cut_point_ticks": "254016000000"
+        },
+        {
+          "id": "track_1_transition_2",
+          "track_index": 1,
+          "start_frame": 211,
+          "end_frame": 241,
+          "start_seconds": 7.033,
+          "end_seconds": 8.033,
+          "start_timecode": "00:00:07:01",
+          "end_timecode": "00:00:08:01",
+          "duration_frames": 30,
+          "duration_seconds": 1.0,
+          "type": "Cross Dissolve",
+          "effect_id": "Cross Dissolve",
+          "alignment": "center",
+          "cut_point_ticks": "127008000000"
+        },
+        {
+          "id": "track_1_transition_3",
+          "track_index": 1,
+          "start_frame": 269,
+          "end_frame": 299,
+          "start_seconds": 8.967,
+          "end_seconds": 9.967,
+          "start_timecode": "00:00:08:29",
+          "end_timecode": "00:00:09:29",
+          "duration_frames": 30,
+          "duration_seconds": 1.0,
+          "type": "Cross Dissolve",
+          "effect_id": "Cross Dissolve",
+          "alignment": "center",
+          "cut_point_ticks": "127008000000"
+        },
+        {
+          "id": "track_1_transition_4",
+          "track_index": 1,
+          "start_frame": 360,
+          "end_frame": 390,
+          "start_seconds": 12.0,
+          "end_seconds": 13.0,
+          "start_timecode": "00:00:12:00",
+          "end_timecode": "00:00:13:00",
+          "duration_frames": 30,
+          "duration_seconds": 1.0,
+          "type": "Cross Dissolve",
+          "effect_id": "Cross Dissolve",
+          "alignment": "center",
+          "cut_point_ticks": "8467200000"
+        },
+        {
+          "id": "track_1_transition_5",
+          "track_index": 1,
+          "start_frame": 573,
+          "end_frame": 603,
+          "start_seconds": 19.1,
+          "end_seconds": 20.1,
+          "start_timecode": "00:00:19:03",
+          "end_timecode": "00:00:20:03",
+          "duration_frames": 30,
+          "duration_seconds": 1.0,
+          "type": "Cross Dissolve",
+          "effect_id": "Cross Dissolve",
+          "alignment": "center",
+          "cut_point_ticks": "127008000000"
+        },
+        {
+          "id": "track_1_transition_6",
+          "track_index": 1,
+          "start_frame": 645,
+          "end_frame": 675,
+          "start_seconds": 21.5,
+          "end_seconds": 22.5,
+          "start_timecode": "00:00:21:15",
+          "end_timecode": "00:00:22:15",
+          "duration_frames": 30,
+          "duration_seconds": 1.0,
+          "type": "Cross Dissolve",
+          "effect_id": "Cross Dissolve",
+          "alignment": "end-black",
+          "cut_point_ticks": "254016000000"
+        }
+      ]
+    },
+    {
+      "track_index": 2,
+      "clip_count": 8,
+      "transition_count": 1,
+      "clips": [
+        {
+          "clip_id": "clipitem-10",
+          "track_index": 2,
+          "track_clip_index": 1,
+          "name": "그래픽",
+          "media_kind": "unknown",
+          "filename": "그래픽",
+          "pathurl": "",
+          "source_in_frame": 108000,
+          "source_out_frame": 108060,
+          "source_duration_frames": 60,
+          "raw_start_frame": 60,
+          "raw_end_frame": 120,
+          "start_frame": 60,
+          "end_frame": 120,
+          "duration_frames": 60,
+          "start_seconds": 2.0,
+          "end_seconds": 4.0,
+          "duration_seconds": 2.0,
+          "start_timecode": "00:00:02:00",
+          "end_timecode": "00:00:04:00",
+          "boundary_inference": {
+            "start": "clip.start",
+            "end": "clip.end"
+          },
+          "transform": {
+            "scale": null,
+            "position": null,
+            "rotation": null,
+            "anchor_point": null,
+            "opacity": null
+          }
+        },
+        {
+          "clip_id": "clipitem-11",
+          "track_index": 2,
+          "track_clip_index": 2,
+          "name": "그래픽",
+          "media_kind": "unknown",
+          "filename": "그래픽",
+          "pathurl": "",
+          "source_in_frame": 107988,
+          "source_out_frame": 108034,
+          "source_duration_frames": 46,
+          "raw_start_frame": 120,
+          "raw_end_frame": 166,
+          "start_frame": 120,
+          "end_frame": 166,
+          "duration_frames": 46,
+          "start_seconds": 4.0,
+          "end_seconds": 5.533,
+          "duration_seconds": 1.533,
+          "start_timecode": "00:00:04:00",
+          "end_timecode": "00:00:05:16",
+          "boundary_inference": {
+            "start": "clip.start",
+            "end": "clip.end"
+          },
+          "transform": {
+            "scale": null,
+            "position": null,
+            "rotation": null,
+            "anchor_point": null,
+            "opacity": null
+          }
+        },
+        {
+          "clip_id": "clipitem-12",
+          "track_index": 2,
+          "track_clip_index": 3,
+          "name": "그래픽",
+          "media_kind": "unknown",
+          "filename": "그래픽",
+          "pathurl": "",
+          "source_in_frame": 108000,
+          "source_out_frame": 108079,
+          "source_duration_frames": 79,
+          "raw_start_frame": 166,
+          "raw_end_frame": 245,
+          "start_frame": 166,
+          "end_frame": 245,
+          "duration_frames": 79,
+          "start_seconds": 5.533,
+          "end_seconds": 8.167,
+          "duration_seconds": 2.633,
+          "start_timecode": "00:00:05:16",
+          "end_timecode": "00:00:08:05",
+          "boundary_inference": {
+            "start": "clip.start",
+            "end": "clip.end"
+          },
+          "transform": {
+            "scale": null,
+            "position": null,
+            "rotation": null,
+            "anchor_point": null,
+            "opacity": null
+          }
+        },
+        {
+          "clip_id": "clipitem-13",
+          "track_index": 2,
+          "track_clip_index": 4,
+          "name": "그래픽",
+          "media_kind": "unknown",
+          "filename": "그래픽",
+          "pathurl": "",
+          "source_in_frame": 108000,
+          "source_out_frame": 108080,
+          "source_duration_frames": 80,
+          "raw_start_frame": 245,
+          "raw_end_frame": 325,
+          "start_frame": 245,
+          "end_frame": 325,
+          "duration_frames": 80,
+          "start_seconds": 8.167,
+          "end_seconds": 10.833,
+          "duration_seconds": 2.667,
+          "start_timecode": "00:00:08:05",
+          "end_timecode": "00:00:10:25",
+          "boundary_inference": {
+            "start": "clip.start",
+            "end": "clip.end"
+          },
+          "transform": {
+            "scale": null,
+            "position": null,
+            "rotation": null,
+            "anchor_point": null,
+            "opacity": null
+          }
+        },
+        {
+          "clip_id": "clipitem-14",
+          "track_index": 2,
+          "track_clip_index": 5,
+          "name": "그래픽",
+          "media_kind": "unknown",
+          "filename": "그래픽",
+          "pathurl": "",
+          "source_in_frame": 108000,
+          "source_out_frame": 108080,
+          "source_duration_frames": 80,
+          "raw_start_frame": 325,
+          "raw_end_frame": 405,
+          "start_frame": 325,
+          "end_frame": 405,
+          "duration_frames": 80,
+          "start_seconds": 10.833,
+          "end_seconds": 13.5,
+          "duration_seconds": 2.667,
+          "start_timecode": "00:00:10:25",
+          "end_timecode": "00:00:13:15",
+          "boundary_inference": {
+            "start": "clip.start",
+            "end": "clip.end"
+          },
+          "transform": {
+            "scale": null,
+            "position": null,
+            "rotation": null,
+            "anchor_point": null,
+            "opacity": null
+          }
+        },
+        {
+          "clip_id": "clipitem-15",
+          "track_index": 2,
+          "track_clip_index": 6,
+          "name": "그래픽",
+          "media_kind": "unknown",
+          "filename": "그래픽",
+          "pathurl": "",
+          "source_in_frame": 108000,
+          "source_out_frame": 108090,
+          "source_duration_frames": 90,
+          "raw_start_frame": 405,
+          "raw_end_frame": 495,
+          "start_frame": 405,
+          "end_frame": 495,
+          "duration_frames": 90,
+          "start_seconds": 13.5,
+          "end_seconds": 16.5,
+          "duration_seconds": 3.0,
+          "start_timecode": "00:00:13:15",
+          "end_timecode": "00:00:16:15",
+          "boundary_inference": {
+            "start": "clip.start",
+            "end": "clip.end"
+          },
+          "transform": {
+            "scale": null,
+            "position": null,
+            "rotation": null,
+            "anchor_point": null,
+            "opacity": null
+          }
+        },
+        {
+          "clip_id": "clipitem-16",
+          "track_index": 2,
+          "track_clip_index": 7,
+          "name": "그래픽",
+          "media_kind": "unknown",
+          "filename": "그래픽",
+          "pathurl": "",
+          "source_in_frame": 108000,
+          "source_out_frame": 108090,
+          "source_duration_frames": 90,
+          "raw_start_frame": 495,
+          "raw_end_frame": 585,
+          "start_frame": 495,
+          "end_frame": 585,
+          "duration_frames": 90,
+          "start_seconds": 16.5,
+          "end_seconds": 19.5,
+          "duration_seconds": 3.0,
+          "start_timecode": "00:00:16:15",
+          "end_timecode": "00:00:19:15",
+          "boundary_inference": {
+            "start": "clip.start",
+            "end": "clip.end"
+          },
+          "transform": {
+            "scale": null,
+            "position": null,
+            "rotation": null,
+            "anchor_point": null,
+            "opacity": null
+          }
+        },
+        {
+          "clip_id": "clipitem-17",
+          "track_index": 2,
+          "track_clip_index": 8,
+          "name": "그래픽",
+          "media_kind": "unknown",
+          "filename": "그래픽",
+          "pathurl": "",
+          "source_in_frame": 108000,
+          "source_out_frame": 108090,
+          "source_duration_frames": 90,
+          "raw_start_frame": 585,
+          "raw_end_frame": -1,
+          "start_frame": 585,
+          "end_frame": 675,
+          "duration_frames": 90,
+          "start_seconds": 19.5,
+          "end_seconds": 22.5,
+          "duration_seconds": 3.0,
+          "start_timecode": "00:00:19:15",
+          "end_timecode": "00:00:22:15",
+          "boundary_inference": {
+            "start": "clip.start",
+            "end": "next_transition.end"
+          },
+          "transform": {
+            "scale": null,
+            "position": null,
+            "rotation": null,
+            "anchor_point": null,
+            "opacity": null
+          }
+        }
+      ],
+      "transitions": [
+        {
+          "id": "track_2_transition_1",
+          "track_index": 2,
+          "start_frame": 645,
+          "end_frame": 675,
+          "start_seconds": 21.5,
+          "end_seconds": 22.5,
+          "start_timecode": "00:00:21:15",
+          "end_timecode": "00:00:22:15",
+          "duration_frames": 30,
+          "duration_seconds": 1.0,
+          "type": "Cross Dissolve",
+          "effect_id": "Cross Dissolve",
+          "alignment": "end-black",
+          "cut_point_ticks": "254016000000"
+        }
+      ]
+    },
+    {
+      "track_index": 3,
+      "clip_count": 1,
+      "transition_count": 1,
+      "clips": [
+        {
+          "clip_id": "clipitem-18",
+          "track_index": 3,
+          "track_clip_index": 1,
+          "name": "그래픽",
+          "media_kind": "unknown",
+          "filename": "그래픽",
+          "pathurl": "",
+          "source_in_frame": 108000,
+          "source_out_frame": 108090,
+          "source_duration_frames": 90,
+          "raw_start_frame": 0,
+          "raw_end_frame": -1,
+          "start_frame": 0,
+          "end_frame": 90,
+          "duration_frames": 90,
+          "start_seconds": 0.0,
+          "end_seconds": 3.0,
+          "duration_seconds": 3.0,
+          "start_timecode": "00:00:00:00",
+          "end_timecode": "00:00:03:00",
+          "boundary_inference": {
+            "start": "clip.start",
+            "end": "next_transition.end"
+          },
+          "transform": {
+            "scale": null,
+            "position": null,
+            "rotation": null,
+            "anchor_point": null,
+            "opacity": null
+          }
+        }
+      ],
+      "transitions": [
+        {
+          "id": "track_3_transition_1",
+          "track_index": 3,
+          "start_frame": 60,
+          "end_frame": 90,
+          "start_seconds": 2.0,
+          "end_seconds": 3.0,
+          "start_timecode": "00:00:02:00",
+          "end_timecode": "00:00:03:00",
+          "duration_frames": 30,
+          "duration_seconds": 1.0,
+          "type": "Cross Dissolve",
+          "effect_id": "Cross Dissolve",
+          "alignment": "end-black",
+          "cut_point_ticks": "254016000000"
+        }
+      ]
+    },
+    {
+      "track_index": 4,
+      "clip_count": 1,
+      "transition_count": 0,
+      "clips": [
+        {
+          "clip_id": "clipitem-19",
+          "track_index": 4,
+          "track_clip_index": 1,
+          "name": "숏폼-가이드라인.png",
+          "media_kind": "image",
+          "filename": "숏폼-가이드라인.png",
+          "pathurl": "file://localhost/C%3a/Users/qkrdm/Downloads/%ec%88%8f%ed%8f%bc-%ea%b0%80%ec%9d%b4%eb%93%9c%eb%9d%bc%ec%9d%b8.png",
+          "source_in_frame": 107888,
+          "source_out_frame": 108040,
+          "source_duration_frames": 152,
+          "raw_start_frame": 0,
+          "raw_end_frame": 154,
+          "start_frame": 0,
+          "end_frame": 154,
+          "duration_frames": 154,
+          "start_seconds": 0.0,
+          "end_seconds": 5.133,
+          "duration_seconds": 5.133,
+          "start_timecode": "00:00:00:00",
+          "end_timecode": "00:00:05:04",
+          "boundary_inference": {
+            "start": "clip.start",
+            "end": "clip.end"
+          },
+          "transform": {
+            "scale": 140.0,
+            "position": {
+              "horiz": 0.0,
+              "vert": 0.0,
+              "unit": "premiere_normalized_center_offset"
+            },
+            "rotation": 0.0,
+            "anchor_point": {
+              "horiz": 0.0,
+              "vert": 0.0,
+              "unit": "premiere_normalized_anchor_offset"
+            },
+            "opacity": 38.0
+          }
+        }
+      ],
+      "transitions": []
+    }
+  ],
+  "repeatable_editing_rules": {
+    "sequence_format": "vertical shorts 1080x1920 at 30fps",
+    "timeline_duration_seconds": 22.5,
+    "visual_cutting": [
+      "Use NASA/space real footage or official stills as the base visual layer.",
+      "Keep source visuals full-screen vertical; crop/scale aggressively rather than showing empty side bars.",
+      "Use Cross Dissolve between major visual changes, commonly 30 frames / 1.0 second.",
+      "Allow transition overlap; XML start/end values of -1 should be resolved from neighboring transition boundaries.",
+      "Mix video footage and still images; rotate selected clips 180 degrees when the source framing needs inversion."
+    ],
+    "caption_system": [
+      "Hook title appears first as a large centered upper/mid graphic for about 3 seconds.",
+      "Main captions sit in the lower safe area around normalized y=0.67.",
+      "Caption blocks are short, usually 1-3 lines, with deliberate semantic line breaks.",
+      "Body caption font repeatedly resolves to NotoSerifKR-Medium; hook title resolves to NotoSansKR-Bold.",
+      "Use high contrast white Korean text with dark outline/shadow over moving space imagery."
+    ],
+    "numeric_guidance": [
+      "Keep numeric units intact in captions, e.g. 382? and 1~1.5%.",
+      "Do not split important numeric expressions across lines unless already grouped with the phrase they explain."
+    ],
+    "reusable_timing_pattern": [
+      "Open with title/hook from 0s to 3s.",
+      "Move into misconception/reversal captions around 2s-8s.",
+      "Use 2.0-3.0 second caption blocks for punchy beats, and 2.7-3.0 second blocks for explanation beats.",
+      "End with a question caption held through the final fade/cross dissolve."
+    ]
+  },
+  "extraction_notes": [
+    "This file is xmeml version 4 exported from a Premiere/Final Cut style timeline.",
+    "Clip start/end values of -1 were resolved using adjacent transition start/end frames or source in/out duration.",
+    "Graphic text is stored as GraphicAndType effect names; style values are partly Premiere binary payloads, so font candidates are extracted and color/stroke are estimated.",
+    "Track 1 is treated as the main visual cut layer; tracks 2 and 3 are treated as captions/title graphics; track 4 is treated as a guide overlay."
+  ]
+}

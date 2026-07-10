@@ -1,0 +1,193 @@
+[
+  {
+    "scene": 1,
+    "narration": "사람이 382일 동안 우주에 있으면?",
+    "media_type": "official_image",
+    "preferred_source": "NASA",
+    "source_confidence": 5,
+    "reason": "Scott Kelly, Frank Rubio, NASA 기록 관련 장면은 NASA 공식 이미지나 영상이 가장 신뢰도 높다.",
+    "search_queries": [
+      "NASA Scott Kelly official image",
+      "NASA Frank Rubio official image",
+      "NASA astronaut record holders ISS image"
+    ],
+    "fallback_media_type": "ai_image",
+    "visual_note": "공식 우주비행사 사진 또는 ISS 이미지를 사용하고 숫자는 후반 편집에서 오버레이한다.",
+    "copyright_note": "공식 공개 자료 우선, 사용 조건 확인 필요"
+  },
+  {
+    "scene": 2,
+    "narration": "가장 먼저 망가지는 건\n근육일까요?",
+    "media_type": "animation",
+    "preferred_source": "Generated",
+    "source_confidence": 2,
+    "reason": "체액 이동, 시야 변화, 골밀도 변화는 실제 촬영보다 도식화가 이해를 돕는다.",
+    "search_queries": [
+      "microgravity fluid shift animation",
+      "spaceflight vision change animation",
+      "bone density loss microgravity infographic"
+    ],
+    "fallback_media_type": "ai_image",
+    "visual_note": "NASA verified facts를 바탕으로 단순한 화살표, 눈 아이콘, 골밀도 그래프를 만든다.",
+    "copyright_note": "공식 공개 자료 우선, 사용 조건 확인 필요"
+  },
+  {
+    "scene": 3,
+    "narration": "아닙니다.",
+    "media_type": "ai_image",
+    "preferred_source": "Generated",
+    "source_confidence": 2,
+    "reason": "짧은 감정 전환 문장이라 실제 자료보다 상징적 이미지가 리듬을 만든다.",
+    "search_queries": [
+      "cinematic astronaut emotional space image reference",
+      "human body earth gravity symbolic image"
+    ],
+    "fallback_media_type": "ai_image",
+    "visual_note": "과장된 공포 이미지 대신 차분한 우주 실루엣으로 감정 전환만 만든다.",
+    "copyright_note": "공식 공개 자료 우선, 사용 조건 확인 필요"
+  },
+  {
+    "scene": 4,
+    "narration": "먼저 문제가 생길 수 있는 곳은\n눈입니다.",
+    "media_type": "animation",
+    "preferred_source": "Generated",
+    "source_confidence": 2,
+    "reason": "체액 이동, 시야 변화, 골밀도 변화는 실제 촬영보다 도식화가 이해를 돕는다.",
+    "search_queries": [
+      "microgravity fluid shift animation",
+      "spaceflight vision change animation",
+      "bone density loss microgravity infographic"
+    ],
+    "fallback_media_type": "ai_image",
+    "visual_note": "NASA verified facts를 바탕으로 단순한 화살표, 눈 아이콘, 골밀도 그래프를 만든다.",
+    "copyright_note": "공식 공개 자료 우선, 사용 조건 확인 필요"
+  },
+  {
+    "scene": 5,
+    "narration": "우주에서는 중력이 거의 없어서\n몸속의 체액이 머리 쪽으로 몰립니다.",
+    "media_type": "animation",
+    "preferred_source": "Generated",
+    "source_confidence": 2,
+    "reason": "체액 이동, 시야 변화, 골밀도 변화는 실제 촬영보다 도식화가 이해를 돕는다.",
+    "search_queries": [
+      "microgravity fluid shift animation",
+      "spaceflight vision change animation",
+      "bone density loss microgravity infographic"
+    ],
+    "fallback_media_type": "ai_image",
+    "visual_note": "NASA verified facts를 바탕으로 단순한 화살표, 눈 아이콘, 골밀도 그래프를 만든다.",
+    "copyright_note": "공식 공개 자료 우선, 사용 조건 확인 필요"
+  },
+  {
+    "scene": 6,
+    "narration": "그래서 눈이 평소와 다르게\n보이기 시작할 수 있습니다.",
+    "media_type": "animation",
+    "preferred_source": "Generated",
+    "source_confidence": 2,
+    "reason": "체액 이동, 시야 변화, 골밀도 변화는 실제 촬영보다 도식화가 이해를 돕는다.",
+    "search_queries": [
+      "microgravity fluid shift animation",
+      "spaceflight vision change animation",
+      "bone density loss microgravity infographic"
+    ],
+    "fallback_media_type": "ai_image",
+    "visual_note": "NASA verified facts를 바탕으로 단순한 화살표, 눈 아이콘, 골밀도 그래프를 만든다.",
+    "copyright_note": "공식 공개 자료 우선, 사용 조건 확인 필요"
+  },
+  {
+    "scene": 7,
+    "narration": "더 놀라운 건 뼈가\n매달 1~1.5%씩 줄어든다는 겁니다.",
+    "media_type": "infographic",
+    "preferred_source": "Generated",
+    "source_confidence": 2,
+    "reason": "체액 이동, 시야 변화, 골밀도 변화는 실제 촬영보다 도식화가 이해를 돕는다.",
+    "search_queries": [
+      "microgravity fluid shift animation",
+      "spaceflight vision change animation",
+      "bone density loss microgravity infographic"
+    ],
+    "fallback_media_type": "ai_image",
+    "visual_note": "NASA verified facts를 바탕으로 단순한 화살표, 눈 아이콘, 골밀도 그래프를 만든다.",
+    "copyright_note": "공식 공개 자료 우선, 사용 조건 확인 필요"
+  },
+  {
+    "scene": 8,
+    "narration": "그래서 우주비행사들은\n매일 2시간 가까이 운동합니다.",
+    "media_type": "real_video",
+    "preferred_source": "NASA",
+    "source_confidence": 5,
+    "reason": "ISS, 우주비행사, 운동, 귀환 장면은 실제 NASA/ESA 영상 자료가 있을 가능성이 높다.",
+    "search_queries": [
+      "NASA astronaut exercise ISS video",
+      "NASA astronaut return to Earth rehabilitation video",
+      "ESA astronaut exercise International Space Station video"
+    ],
+    "fallback_media_type": "ai_image",
+    "visual_note": "실제 ISS 운동 장면, 귀환 직후 보행 보조, 재활 장면을 우선 탐색한다.",
+    "copyright_note": "공식 공개 자료 우선, 사용 조건 확인 필요"
+  },
+  {
+    "scene": 9,
+    "narration": "운동은 선택이 아니라\n몸을 버티게 하는 루틴입니다.",
+    "media_type": "real_video",
+    "preferred_source": "NASA",
+    "source_confidence": 5,
+    "reason": "ISS, 우주비행사, 운동, 귀환 장면은 실제 NASA/ESA 영상 자료가 있을 가능성이 높다.",
+    "search_queries": [
+      "NASA astronaut exercise ISS video",
+      "NASA astronaut return to Earth rehabilitation video",
+      "ESA astronaut exercise International Space Station video"
+    ],
+    "fallback_media_type": "ai_image",
+    "visual_note": "실제 ISS 운동 장면, 귀환 직후 보행 보조, 재활 장면을 우선 탐색한다.",
+    "copyright_note": "공식 공개 자료 우선, 사용 조건 확인 필요"
+  },
+  {
+    "scene": 10,
+    "narration": "그런데도 지구로 돌아오면\n걷는 것부터 다시 적응해야 합니다.",
+    "media_type": "real_video",
+    "preferred_source": "NASA",
+    "source_confidence": 5,
+    "reason": "ISS, 우주비행사, 운동, 귀환 장면은 실제 NASA/ESA 영상 자료가 있을 가능성이 높다.",
+    "search_queries": [
+      "NASA astronaut exercise ISS video",
+      "NASA astronaut return to Earth rehabilitation video",
+      "ESA astronaut exercise International Space Station video"
+    ],
+    "fallback_media_type": "ai_image",
+    "visual_note": "실제 ISS 운동 장면, 귀환 직후 보행 보조, 재활 장면을 우선 탐색한다.",
+    "copyright_note": "공식 공개 자료 우선, 사용 조건 확인 필요"
+  },
+  {
+    "scene": 11,
+    "narration": "인간의 몸은\n지구에 맞춰져 있기 때문입니다.",
+    "media_type": "real_video",
+    "preferred_source": "NASA",
+    "source_confidence": 5,
+    "reason": "ISS, 우주비행사, 운동, 귀환 장면은 실제 NASA/ESA 영상 자료가 있을 가능성이 높다.",
+    "search_queries": [
+      "NASA astronaut exercise ISS video",
+      "NASA astronaut return to Earth rehabilitation video",
+      "ESA astronaut exercise International Space Station video"
+    ],
+    "fallback_media_type": "ai_image",
+    "visual_note": "실제 ISS 운동 장면, 귀환 직후 보행 보조, 재활 장면을 우선 탐색한다.",
+    "copyright_note": "공식 공개 자료 우선, 사용 조건 확인 필요"
+  },
+  {
+    "scene": 12,
+    "narration": "그렇다면\n화성에서는 어떻게 될까요?",
+    "media_type": "official_image",
+    "preferred_source": "NASA",
+    "source_confidence": 5,
+    "reason": "화성 엔딩은 NASA/ESA 공식 화성 이미지가 존재할 가능성이 높아 AI 이미지보다 공식 이미지를 우선한다.",
+    "search_queries": [
+      "NASA Mars official image",
+      "NASA Mars surface image public domain",
+      "ESA Mars Express official image"
+    ],
+    "fallback_media_type": "ai_image",
+    "visual_note": "화성 표면 또는 지구-화성 대비 이미지를 사용하고 질문형 엔딩 분위기만 살린다.",
+    "copyright_note": "공식 공개 자료 우선, 사용 조건 확인 필요"
+  }
+]

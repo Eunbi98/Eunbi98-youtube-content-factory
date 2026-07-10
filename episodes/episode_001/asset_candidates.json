@@ -1,0 +1,2061 @@
+{
+  "episode": "001",
+  "episode_id": "episode_001",
+  "source_priority": [
+    "NASA",
+    "NOAA",
+    "Wikimedia Commons",
+    "ESA",
+    "Pexels",
+    "Pixabay"
+  ],
+  "trust_score_criteria": {
+    "NASA": 5,
+    "NOAA": 5,
+    "ESA": 5,
+    "Wikimedia Commons": 4,
+    "Pexels": 3,
+    "Pixabay": 3
+  },
+  "download_policy": "candidates_only_no_download",
+  "scene_01": [
+    {
+      "title": "NASA image search: space astronaut international space station microgravity",
+      "source": "NASA",
+      "url": "https://images.nasa.gov/search-results?q=space+astronaut+international+space+station+microgravity&media_type=image",
+      "license": "NASA public domain or official media usage terms; verify per asset.",
+      "media_type": "image",
+      "keywords": [
+        "space",
+        "astronaut",
+        "international space station",
+        "microgravity"
+      ],
+      "trust_score": 5
+    },
+    {
+      "title": "NASA video search: space astronaut international space station microgravity",
+      "source": "NASA",
+      "url": "https://images.nasa.gov/search-results?q=space+astronaut+international+space+station+microgravity&media_type=video",
+      "license": "NASA public domain or official media usage terms; verify per asset.",
+      "media_type": "video",
+      "keywords": [
+        "space",
+        "astronaut",
+        "international space station",
+        "microgravity"
+      ],
+      "trust_score": 5
+    },
+    {
+      "title": "NOAA image search: space astronaut international space station microgravity",
+      "source": "NOAA",
+      "url": "https://www.noaa.gov/search?query=space+astronaut+international+space+station+microgravity+image",
+      "license": "NOAA public domain or official media usage terms; verify per asset.",
+      "media_type": "image",
+      "keywords": [
+        "space",
+        "astronaut",
+        "international space station",
+        "microgravity"
+      ],
+      "trust_score": 5
+    },
+    {
+      "title": "NOAA video search: space astronaut international space station microgravity",
+      "source": "NOAA",
+      "url": "https://www.noaa.gov/search?query=space+astronaut+international+space+station+microgravity+video",
+      "license": "NOAA public domain or official media usage terms; verify per asset.",
+      "media_type": "video",
+      "keywords": [
+        "space",
+        "astronaut",
+        "international space station",
+        "microgravity"
+      ],
+      "trust_score": 5
+    },
+    {
+      "title": "Wikimedia Commons image search: space astronaut international space station microgravity",
+      "source": "Wikimedia Commons",
+      "url": "https://commons.wikimedia.org/w/index.php?search=space+astronaut+international+space+station+microgravity+filetype%3Aimage",
+      "license": "Creative Commons/Public Domain varies by file; verify per asset.",
+      "media_type": "image",
+      "keywords": [
+        "space",
+        "astronaut",
+        "international space station",
+        "microgravity"
+      ],
+      "trust_score": 4
+    },
+    {
+      "title": "Wikimedia Commons video search: space astronaut international space station microgravity",
+      "source": "Wikimedia Commons",
+      "url": "https://commons.wikimedia.org/w/index.php?search=space+astronaut+international+space+station+microgravity+filetype%3Avideo",
+      "license": "Creative Commons/Public Domain varies by file; verify per asset.",
+      "media_type": "video",
+      "keywords": [
+        "space",
+        "astronaut",
+        "international space station",
+        "microgravity"
+      ],
+      "trust_score": 4
+    },
+    {
+      "title": "ESA image search: space astronaut international space station microgravity",
+      "source": "ESA",
+      "url": "https://www.esa.int/esasearch?q=space+astronaut+international+space+station+microgravity+image",
+      "license": "ESA official media usage terms; verify per asset.",
+      "media_type": "image",
+      "keywords": [
+        "space",
+        "astronaut",
+        "international space station",
+        "microgravity"
+      ],
+      "trust_score": 5
+    },
+    {
+      "title": "ESA video search: space astronaut international space station microgravity",
+      "source": "ESA",
+      "url": "https://www.esa.int/esasearch?q=space+astronaut+international+space+station+microgravity+video",
+      "license": "ESA official media usage terms; verify per asset.",
+      "media_type": "video",
+      "keywords": [
+        "space",
+        "astronaut",
+        "international space station",
+        "microgravity"
+      ],
+      "trust_score": 5
+    },
+    {
+      "title": "Pexels image search: space astronaut international space station microgravity",
+      "source": "Pexels",
+      "url": "https://www.pexels.com/search/space%20astronaut%20international%20space%20station%20microgravity%20image/",
+      "license": "Pexels License; verify per asset.",
+      "media_type": "image",
+      "keywords": [
+        "space",
+        "astronaut",
+        "international space station",
+        "microgravity"
+      ],
+      "trust_score": 3
+    },
+    {
+      "title": "Pexels video search: space astronaut international space station microgravity",
+      "source": "Pexels",
+      "url": "https://www.pexels.com/search/space%20astronaut%20international%20space%20station%20microgravity%20video/",
+      "license": "Pexels License; verify per asset.",
+      "media_type": "video",
+      "keywords": [
+        "space",
+        "astronaut",
+        "international space station",
+        "microgravity"
+      ],
+      "trust_score": 3
+    },
+    {
+      "title": "Pixabay image search: space astronaut international space station microgravity",
+      "source": "Pixabay",
+      "url": "https://pixabay.com/images/search/space%20astronaut%20international%20space%20station%20microgravity/",
+      "license": "Pixabay Content License; verify per asset.",
+      "media_type": "image",
+      "keywords": [
+        "space",
+        "astronaut",
+        "international space station",
+        "microgravity"
+      ],
+      "trust_score": 3
+    },
+    {
+      "title": "Pixabay video search: space astronaut international space station microgravity",
+      "source": "Pixabay",
+      "url": "https://pixabay.com/videos/search/space%20astronaut%20international%20space%20station%20microgravity/",
+      "license": "Pixabay Content License; verify per asset.",
+      "media_type": "video",
+      "keywords": [
+        "space",
+        "astronaut",
+        "international space station",
+        "microgravity"
+      ],
+      "trust_score": 3
+    }
+  ],
+  "scene_02": [
+    {
+      "title": "NASA image search: space astronaut international space station microgravity",
+      "source": "NASA",
+      "url": "https://images.nasa.gov/search-results?q=space+astronaut+international+space+station+microgravity&media_type=image",
+      "license": "NASA public domain or official media usage terms; verify per asset.",
+      "media_type": "image",
+      "keywords": [
+        "space",
+        "astronaut",
+        "international space station",
+        "microgravity"
+      ],
+      "trust_score": 5
+    },
+    {
+      "title": "NASA video search: space astronaut international space station microgravity",
+      "source": "NASA",
+      "url": "https://images.nasa.gov/search-results?q=space+astronaut+international+space+station+microgravity&media_type=video",
+      "license": "NASA public domain or official media usage terms; verify per asset.",
+      "media_type": "video",
+      "keywords": [
+        "space",
+        "astronaut",
+        "international space station",
+        "microgravity"
+      ],
+      "trust_score": 5
+    },
+    {
+      "title": "NOAA image search: space astronaut international space station microgravity",
+      "source": "NOAA",
+      "url": "https://www.noaa.gov/search?query=space+astronaut+international+space+station+microgravity+image",
+      "license": "NOAA public domain or official media usage terms; verify per asset.",
+      "media_type": "image",
+      "keywords": [
+        "space",
+        "astronaut",
+        "international space station",
+        "microgravity"
+      ],
+      "trust_score": 5
+    },
+    {
+      "title": "NOAA video search: space astronaut international space station microgravity",
+      "source": "NOAA",
+      "url": "https://www.noaa.gov/search?query=space+astronaut+international+space+station+microgravity+video",
+      "license": "NOAA public domain or official media usage terms; verify per asset.",
+      "media_type": "video",
+      "keywords": [
+        "space",
+        "astronaut",
+        "international space station",
+        "microgravity"
+      ],
+      "trust_score": 5
+    },
+    {
+      "title": "Wikimedia Commons image search: space astronaut international space station microgravity",
+      "source": "Wikimedia Commons",
+      "url": "https://commons.wikimedia.org/w/index.php?search=space+astronaut+international+space+station+microgravity+filetype%3Aimage",
+      "license": "Creative Commons/Public Domain varies by file; verify per asset.",
+      "media_type": "image",
+      "keywords": [
+        "space",
+        "astronaut",
+        "international space station",
+        "microgravity"
+      ],
+      "trust_score": 4
+    },
+    {
+      "title": "Wikimedia Commons video search: space astronaut international space station microgravity",
+      "source": "Wikimedia Commons",
+      "url": "https://commons.wikimedia.org/w/index.php?search=space+astronaut+international+space+station+microgravity+filetype%3Avideo",
+      "license": "Creative Commons/Public Domain varies by file; verify per asset.",
+      "media_type": "video",
+      "keywords": [
+        "space",
+        "astronaut",
+        "international space station",
+        "microgravity"
+      ],
+      "trust_score": 4
+    },
+    {
+      "title": "ESA image search: space astronaut international space station microgravity",
+      "source": "ESA",
+      "url": "https://www.esa.int/esasearch?q=space+astronaut+international+space+station+microgravity+image",
+      "license": "ESA official media usage terms; verify per asset.",
+      "media_type": "image",
+      "keywords": [
+        "space",
+        "astronaut",
+        "international space station",
+        "microgravity"
+      ],
+      "trust_score": 5
+    },
+    {
+      "title": "ESA video search: space astronaut international space station microgravity",
+      "source": "ESA",
+      "url": "https://www.esa.int/esasearch?q=space+astronaut+international+space+station+microgravity+video",
+      "license": "ESA official media usage terms; verify per asset.",
+      "media_type": "video",
+      "keywords": [
+        "space",
+        "astronaut",
+        "international space station",
+        "microgravity"
+      ],
+      "trust_score": 5
+    },
+    {
+      "title": "Pexels image search: space astronaut international space station microgravity",
+      "source": "Pexels",
+      "url": "https://www.pexels.com/search/space%20astronaut%20international%20space%20station%20microgravity%20image/",
+      "license": "Pexels License; verify per asset.",
+      "media_type": "image",
+      "keywords": [
+        "space",
+        "astronaut",
+        "international space station",
+        "microgravity"
+      ],
+      "trust_score": 3
+    },
+    {
+      "title": "Pexels video search: space astronaut international space station microgravity",
+      "source": "Pexels",
+      "url": "https://www.pexels.com/search/space%20astronaut%20international%20space%20station%20microgravity%20video/",
+      "license": "Pexels License; verify per asset.",
+      "media_type": "video",
+      "keywords": [
+        "space",
+        "astronaut",
+        "international space station",
+        "microgravity"
+      ],
+      "trust_score": 3
+    },
+    {
+      "title": "Pixabay image search: space astronaut international space station microgravity",
+      "source": "Pixabay",
+      "url": "https://pixabay.com/images/search/space%20astronaut%20international%20space%20station%20microgravity/",
+      "license": "Pixabay Content License; verify per asset.",
+      "media_type": "image",
+      "keywords": [
+        "space",
+        "astronaut",
+        "international space station",
+        "microgravity"
+      ],
+      "trust_score": 3
+    },
+    {
+      "title": "Pixabay video search: space astronaut international space station microgravity",
+      "source": "Pixabay",
+      "url": "https://pixabay.com/videos/search/space%20astronaut%20international%20space%20station%20microgravity/",
+      "license": "Pixabay Content License; verify per asset.",
+      "media_type": "video",
+      "keywords": [
+        "space",
+        "astronaut",
+        "international space station",
+        "microgravity"
+      ],
+      "trust_score": 3
+    }
+  ],
+  "scene_03": [
+    {
+      "title": "NASA image search: space astronaut international space station microgravity",
+      "source": "NASA",
+      "url": "https://images.nasa.gov/search-results?q=space+astronaut+international+space+station+microgravity&media_type=image",
+      "license": "NASA public domain or official media usage terms; verify per asset.",
+      "media_type": "image",
+      "keywords": [
+        "space",
+        "astronaut",
+        "international space station",
+        "microgravity"
+      ],
+      "trust_score": 5
+    },
+    {
+      "title": "NASA video search: space astronaut international space station microgravity",
+      "source": "NASA",
+      "url": "https://images.nasa.gov/search-results?q=space+astronaut+international+space+station+microgravity&media_type=video",
+      "license": "NASA public domain or official media usage terms; verify per asset.",
+      "media_type": "video",
+      "keywords": [
+        "space",
+        "astronaut",
+        "international space station",
+        "microgravity"
+      ],
+      "trust_score": 5
+    },
+    {
+      "title": "NOAA image search: space astronaut international space station microgravity",
+      "source": "NOAA",
+      "url": "https://www.noaa.gov/search?query=space+astronaut+international+space+station+microgravity+image",
+      "license": "NOAA public domain or official media usage terms; verify per asset.",
+      "media_type": "image",
+      "keywords": [
+        "space",
+        "astronaut",
+        "international space station",
+        "microgravity"
+      ],
+      "trust_score": 5
+    },
+    {
+      "title": "NOAA video search: space astronaut international space station microgravity",
+      "source": "NOAA",
+      "url": "https://www.noaa.gov/search?query=space+astronaut+international+space+station+microgravity+video",
+      "license": "NOAA public domain or official media usage terms; verify per asset.",
+      "media_type": "video",
+      "keywords": [
+        "space",
+        "astronaut",
+        "international space station",
+        "microgravity"
+      ],
+      "trust_score": 5
+    },
+    {
+      "title": "Wikimedia Commons image search: space astronaut international space station microgravity",
+      "source": "Wikimedia Commons",
+      "url": "https://commons.wikimedia.org/w/index.php?search=space+astronaut+international+space+station+microgravity+filetype%3Aimage",
+      "license": "Creative Commons/Public Domain varies by file; verify per asset.",
+      "media_type": "image",
+      "keywords": [
+        "space",
+        "astronaut",
+        "international space station",
+        "microgravity"
+      ],
+      "trust_score": 4
+    },
+    {
+      "title": "Wikimedia Commons video search: space astronaut international space station microgravity",
+      "source": "Wikimedia Commons",
+      "url": "https://commons.wikimedia.org/w/index.php?search=space+astronaut+international+space+station+microgravity+filetype%3Avideo",
+      "license": "Creative Commons/Public Domain varies by file; verify per asset.",
+      "media_type": "video",
+      "keywords": [
+        "space",
+        "astronaut",
+        "international space station",
+        "microgravity"
+      ],
+      "trust_score": 4
+    },
+    {
+      "title": "ESA image search: space astronaut international space station microgravity",
+      "source": "ESA",
+      "url": "https://www.esa.int/esasearch?q=space+astronaut+international+space+station+microgravity+image",
+      "license": "ESA official media usage terms; verify per asset.",
+      "media_type": "image",
+      "keywords": [
+        "space",
+        "astronaut",
+        "international space station",
+        "microgravity"
+      ],
+      "trust_score": 5
+    },
+    {
+      "title": "ESA video search: space astronaut international space station microgravity",
+      "source": "ESA",
+      "url": "https://www.esa.int/esasearch?q=space+astronaut+international+space+station+microgravity+video",
+      "license": "ESA official media usage terms; verify per asset.",
+      "media_type": "video",
+      "keywords": [
+        "space",
+        "astronaut",
+        "international space station",
+        "microgravity"
+      ],
+      "trust_score": 5
+    },
+    {
+      "title": "Pexels image search: space astronaut international space station microgravity",
+      "source": "Pexels",
+      "url": "https://www.pexels.com/search/space%20astronaut%20international%20space%20station%20microgravity%20image/",
+      "license": "Pexels License; verify per asset.",
+      "media_type": "image",
+      "keywords": [
+        "space",
+        "astronaut",
+        "international space station",
+        "microgravity"
+      ],
+      "trust_score": 3
+    },
+    {
+      "title": "Pexels video search: space astronaut international space station microgravity",
+      "source": "Pexels",
+      "url": "https://www.pexels.com/search/space%20astronaut%20international%20space%20station%20microgravity%20video/",
+      "license": "Pexels License; verify per asset.",
+      "media_type": "video",
+      "keywords": [
+        "space",
+        "astronaut",
+        "international space station",
+        "microgravity"
+      ],
+      "trust_score": 3
+    },
+    {
+      "title": "Pixabay image search: space astronaut international space station microgravity",
+      "source": "Pixabay",
+      "url": "https://pixabay.com/images/search/space%20astronaut%20international%20space%20station%20microgravity/",
+      "license": "Pixabay Content License; verify per asset.",
+      "media_type": "image",
+      "keywords": [
+        "space",
+        "astronaut",
+        "international space station",
+        "microgravity"
+      ],
+      "trust_score": 3
+    },
+    {
+      "title": "Pixabay video search: space astronaut international space station microgravity",
+      "source": "Pixabay",
+      "url": "https://pixabay.com/videos/search/space%20astronaut%20international%20space%20station%20microgravity/",
+      "license": "Pixabay Content License; verify per asset.",
+      "media_type": "video",
+      "keywords": [
+        "space",
+        "astronaut",
+        "international space station",
+        "microgravity"
+      ],
+      "trust_score": 3
+    }
+  ],
+  "scene_04": [
+    {
+      "title": "NASA image search: space astronaut international space station microgravity",
+      "source": "NASA",
+      "url": "https://images.nasa.gov/search-results?q=space+astronaut+international+space+station+microgravity&media_type=image",
+      "license": "NASA public domain or official media usage terms; verify per asset.",
+      "media_type": "image",
+      "keywords": [
+        "space",
+        "astronaut",
+        "international space station",
+        "microgravity"
+      ],
+      "trust_score": 5
+    },
+    {
+      "title": "NASA video search: space astronaut international space station microgravity",
+      "source": "NASA",
+      "url": "https://images.nasa.gov/search-results?q=space+astronaut+international+space+station+microgravity&media_type=video",
+      "license": "NASA public domain or official media usage terms; verify per asset.",
+      "media_type": "video",
+      "keywords": [
+        "space",
+        "astronaut",
+        "international space station",
+        "microgravity"
+      ],
+      "trust_score": 5
+    },
+    {
+      "title": "NOAA image search: space astronaut international space station microgravity",
+      "source": "NOAA",
+      "url": "https://www.noaa.gov/search?query=space+astronaut+international+space+station+microgravity+image",
+      "license": "NOAA public domain or official media usage terms; verify per asset.",
+      "media_type": "image",
+      "keywords": [
+        "space",
+        "astronaut",
+        "international space station",
+        "microgravity"
+      ],
+      "trust_score": 5
+    },
+    {
+      "title": "NOAA video search: space astronaut international space station microgravity",
+      "source": "NOAA",
+      "url": "https://www.noaa.gov/search?query=space+astronaut+international+space+station+microgravity+video",
+      "license": "NOAA public domain or official media usage terms; verify per asset.",
+      "media_type": "video",
+      "keywords": [
+        "space",
+        "astronaut",
+        "international space station",
+        "microgravity"
+      ],
+      "trust_score": 5
+    },
+    {
+      "title": "Wikimedia Commons image search: space astronaut international space station microgravity",
+      "source": "Wikimedia Commons",
+      "url": "https://commons.wikimedia.org/w/index.php?search=space+astronaut+international+space+station+microgravity+filetype%3Aimage",
+      "license": "Creative Commons/Public Domain varies by file; verify per asset.",
+      "media_type": "image",
+      "keywords": [
+        "space",
+        "astronaut",
+        "international space station",
+        "microgravity"
+      ],
+      "trust_score": 4
+    },
+    {
+      "title": "Wikimedia Commons video search: space astronaut international space station microgravity",
+      "source": "Wikimedia Commons",
+      "url": "https://commons.wikimedia.org/w/index.php?search=space+astronaut+international+space+station+microgravity+filetype%3Avideo",
+      "license": "Creative Commons/Public Domain varies by file; verify per asset.",
+      "media_type": "video",
+      "keywords": [
+        "space",
+        "astronaut",
+        "international space station",
+        "microgravity"
+      ],
+      "trust_score": 4
+    },
+    {
+      "title": "ESA image search: space astronaut international space station microgravity",
+      "source": "ESA",
+      "url": "https://www.esa.int/esasearch?q=space+astronaut+international+space+station+microgravity+image",
+      "license": "ESA official media usage terms; verify per asset.",
+      "media_type": "image",
+      "keywords": [
+        "space",
+        "astronaut",
+        "international space station",
+        "microgravity"
+      ],
+      "trust_score": 5
+    },
+    {
+      "title": "ESA video search: space astronaut international space station microgravity",
+      "source": "ESA",
+      "url": "https://www.esa.int/esasearch?q=space+astronaut+international+space+station+microgravity+video",
+      "license": "ESA official media usage terms; verify per asset.",
+      "media_type": "video",
+      "keywords": [
+        "space",
+        "astronaut",
+        "international space station",
+        "microgravity"
+      ],
+      "trust_score": 5
+    },
+    {
+      "title": "Pexels image search: space astronaut international space station microgravity",
+      "source": "Pexels",
+      "url": "https://www.pexels.com/search/space%20astronaut%20international%20space%20station%20microgravity%20image/",
+      "license": "Pexels License; verify per asset.",
+      "media_type": "image",
+      "keywords": [
+        "space",
+        "astronaut",
+        "international space station",
+        "microgravity"
+      ],
+      "trust_score": 3
+    },
+    {
+      "title": "Pexels video search: space astronaut international space station microgravity",
+      "source": "Pexels",
+      "url": "https://www.pexels.com/search/space%20astronaut%20international%20space%20station%20microgravity%20video/",
+      "license": "Pexels License; verify per asset.",
+      "media_type": "video",
+      "keywords": [
+        "space",
+        "astronaut",
+        "international space station",
+        "microgravity"
+      ],
+      "trust_score": 3
+    },
+    {
+      "title": "Pixabay image search: space astronaut international space station microgravity",
+      "source": "Pixabay",
+      "url": "https://pixabay.com/images/search/space%20astronaut%20international%20space%20station%20microgravity/",
+      "license": "Pixabay Content License; verify per asset.",
+      "media_type": "image",
+      "keywords": [
+        "space",
+        "astronaut",
+        "international space station",
+        "microgravity"
+      ],
+      "trust_score": 3
+    },
+    {
+      "title": "Pixabay video search: space astronaut international space station microgravity",
+      "source": "Pixabay",
+      "url": "https://pixabay.com/videos/search/space%20astronaut%20international%20space%20station%20microgravity/",
+      "license": "Pixabay Content License; verify per asset.",
+      "media_type": "video",
+      "keywords": [
+        "space",
+        "astronaut",
+        "international space station",
+        "microgravity"
+      ],
+      "trust_score": 3
+    }
+  ],
+  "scene_05": [
+    {
+      "title": "NASA image search: space astronaut international space station microgravity",
+      "source": "NASA",
+      "url": "https://images.nasa.gov/search-results?q=space+astronaut+international+space+station+microgravity&media_type=image",
+      "license": "NASA public domain or official media usage terms; verify per asset.",
+      "media_type": "image",
+      "keywords": [
+        "space",
+        "astronaut",
+        "international space station",
+        "microgravity"
+      ],
+      "trust_score": 5
+    },
+    {
+      "title": "NASA video search: space astronaut international space station microgravity",
+      "source": "NASA",
+      "url": "https://images.nasa.gov/search-results?q=space+astronaut+international+space+station+microgravity&media_type=video",
+      "license": "NASA public domain or official media usage terms; verify per asset.",
+      "media_type": "video",
+      "keywords": [
+        "space",
+        "astronaut",
+        "international space station",
+        "microgravity"
+      ],
+      "trust_score": 5
+    },
+    {
+      "title": "NOAA image search: space astronaut international space station microgravity",
+      "source": "NOAA",
+      "url": "https://www.noaa.gov/search?query=space+astronaut+international+space+station+microgravity+image",
+      "license": "NOAA public domain or official media usage terms; verify per asset.",
+      "media_type": "image",
+      "keywords": [
+        "space",
+        "astronaut",
+        "international space station",
+        "microgravity"
+      ],
+      "trust_score": 5
+    },
+    {
+      "title": "NOAA video search: space astronaut international space station microgravity",
+      "source": "NOAA",
+      "url": "https://www.noaa.gov/search?query=space+astronaut+international+space+station+microgravity+video",
+      "license": "NOAA public domain or official media usage terms; verify per asset.",
+      "media_type": "video",
+      "keywords": [
+        "space",
+        "astronaut",
+        "international space station",
+        "microgravity"
+      ],
+      "trust_score": 5
+    },
+    {
+      "title": "Wikimedia Commons image search: space astronaut international space station microgravity",
+      "source": "Wikimedia Commons",
+      "url": "https://commons.wikimedia.org/w/index.php?search=space+astronaut+international+space+station+microgravity+filetype%3Aimage",
+      "license": "Creative Commons/Public Domain varies by file; verify per asset.",
+      "media_type": "image",
+      "keywords": [
+        "space",
+        "astronaut",
+        "international space station",
+        "microgravity"
+      ],
+      "trust_score": 4
+    },
+    {
+      "title": "Wikimedia Commons video search: space astronaut international space station microgravity",
+      "source": "Wikimedia Commons",
+      "url": "https://commons.wikimedia.org/w/index.php?search=space+astronaut+international+space+station+microgravity+filetype%3Avideo",
+      "license": "Creative Commons/Public Domain varies by file; verify per asset.",
+      "media_type": "video",
+      "keywords": [
+        "space",
+        "astronaut",
+        "international space station",
+        "microgravity"
+      ],
+      "trust_score": 4
+    },
+    {
+      "title": "ESA image search: space astronaut international space station microgravity",
+      "source": "ESA",
+      "url": "https://www.esa.int/esasearch?q=space+astronaut+international+space+station+microgravity+image",
+      "license": "ESA official media usage terms; verify per asset.",
+      "media_type": "image",
+      "keywords": [
+        "space",
+        "astronaut",
+        "international space station",
+        "microgravity"
+      ],
+      "trust_score": 5
+    },
+    {
+      "title": "ESA video search: space astronaut international space station microgravity",
+      "source": "ESA",
+      "url": "https://www.esa.int/esasearch?q=space+astronaut+international+space+station+microgravity+video",
+      "license": "ESA official media usage terms; verify per asset.",
+      "media_type": "video",
+      "keywords": [
+        "space",
+        "astronaut",
+        "international space station",
+        "microgravity"
+      ],
+      "trust_score": 5
+    },
+    {
+      "title": "Pexels image search: space astronaut international space station microgravity",
+      "source": "Pexels",
+      "url": "https://www.pexels.com/search/space%20astronaut%20international%20space%20station%20microgravity%20image/",
+      "license": "Pexels License; verify per asset.",
+      "media_type": "image",
+      "keywords": [
+        "space",
+        "astronaut",
+        "international space station",
+        "microgravity"
+      ],
+      "trust_score": 3
+    },
+    {
+      "title": "Pexels video search: space astronaut international space station microgravity",
+      "source": "Pexels",
+      "url": "https://www.pexels.com/search/space%20astronaut%20international%20space%20station%20microgravity%20video/",
+      "license": "Pexels License; verify per asset.",
+      "media_type": "video",
+      "keywords": [
+        "space",
+        "astronaut",
+        "international space station",
+        "microgravity"
+      ],
+      "trust_score": 3
+    },
+    {
+      "title": "Pixabay image search: space astronaut international space station microgravity",
+      "source": "Pixabay",
+      "url": "https://pixabay.com/images/search/space%20astronaut%20international%20space%20station%20microgravity/",
+      "license": "Pixabay Content License; verify per asset.",
+      "media_type": "image",
+      "keywords": [
+        "space",
+        "astronaut",
+        "international space station",
+        "microgravity"
+      ],
+      "trust_score": 3
+    },
+    {
+      "title": "Pixabay video search: space astronaut international space station microgravity",
+      "source": "Pixabay",
+      "url": "https://pixabay.com/videos/search/space%20astronaut%20international%20space%20station%20microgravity/",
+      "license": "Pixabay Content License; verify per asset.",
+      "media_type": "video",
+      "keywords": [
+        "space",
+        "astronaut",
+        "international space station",
+        "microgravity"
+      ],
+      "trust_score": 3
+    }
+  ],
+  "scene_06": [
+    {
+      "title": "NASA image search: space astronaut international space station microgravity",
+      "source": "NASA",
+      "url": "https://images.nasa.gov/search-results?q=space+astronaut+international+space+station+microgravity&media_type=image",
+      "license": "NASA public domain or official media usage terms; verify per asset.",
+      "media_type": "image",
+      "keywords": [
+        "space",
+        "astronaut",
+        "international space station",
+        "microgravity"
+      ],
+      "trust_score": 5
+    },
+    {
+      "title": "NASA video search: space astronaut international space station microgravity",
+      "source": "NASA",
+      "url": "https://images.nasa.gov/search-results?q=space+astronaut+international+space+station+microgravity&media_type=video",
+      "license": "NASA public domain or official media usage terms; verify per asset.",
+      "media_type": "video",
+      "keywords": [
+        "space",
+        "astronaut",
+        "international space station",
+        "microgravity"
+      ],
+      "trust_score": 5
+    },
+    {
+      "title": "NOAA image search: space astronaut international space station microgravity",
+      "source": "NOAA",
+      "url": "https://www.noaa.gov/search?query=space+astronaut+international+space+station+microgravity+image",
+      "license": "NOAA public domain or official media usage terms; verify per asset.",
+      "media_type": "image",
+      "keywords": [
+        "space",
+        "astronaut",
+        "international space station",
+        "microgravity"
+      ],
+      "trust_score": 5
+    },
+    {
+      "title": "NOAA video search: space astronaut international space station microgravity",
+      "source": "NOAA",
+      "url": "https://www.noaa.gov/search?query=space+astronaut+international+space+station+microgravity+video",
+      "license": "NOAA public domain or official media usage terms; verify per asset.",
+      "media_type": "video",
+      "keywords": [
+        "space",
+        "astronaut",
+        "international space station",
+        "microgravity"
+      ],
+      "trust_score": 5
+    },
+    {
+      "title": "Wikimedia Commons image search: space astronaut international space station microgravity",
+      "source": "Wikimedia Commons",
+      "url": "https://commons.wikimedia.org/w/index.php?search=space+astronaut+international+space+station+microgravity+filetype%3Aimage",
+      "license": "Creative Commons/Public Domain varies by file; verify per asset.",
+      "media_type": "image",
+      "keywords": [
+        "space",
+        "astronaut",
+        "international space station",
+        "microgravity"
+      ],
+      "trust_score": 4
+    },
+    {
+      "title": "Wikimedia Commons video search: space astronaut international space station microgravity",
+      "source": "Wikimedia Commons",
+      "url": "https://commons.wikimedia.org/w/index.php?search=space+astronaut+international+space+station+microgravity+filetype%3Avideo",
+      "license": "Creative Commons/Public Domain varies by file; verify per asset.",
+      "media_type": "video",
+      "keywords": [
+        "space",
+        "astronaut",
+        "international space station",
+        "microgravity"
+      ],
+      "trust_score": 4
+    },
+    {
+      "title": "ESA image search: space astronaut international space station microgravity",
+      "source": "ESA",
+      "url": "https://www.esa.int/esasearch?q=space+astronaut+international+space+station+microgravity+image",
+      "license": "ESA official media usage terms; verify per asset.",
+      "media_type": "image",
+      "keywords": [
+        "space",
+        "astronaut",
+        "international space station",
+        "microgravity"
+      ],
+      "trust_score": 5
+    },
+    {
+      "title": "ESA video search: space astronaut international space station microgravity",
+      "source": "ESA",
+      "url": "https://www.esa.int/esasearch?q=space+astronaut+international+space+station+microgravity+video",
+      "license": "ESA official media usage terms; verify per asset.",
+      "media_type": "video",
+      "keywords": [
+        "space",
+        "astronaut",
+        "international space station",
+        "microgravity"
+      ],
+      "trust_score": 5
+    },
+    {
+      "title": "Pexels image search: space astronaut international space station microgravity",
+      "source": "Pexels",
+      "url": "https://www.pexels.com/search/space%20astronaut%20international%20space%20station%20microgravity%20image/",
+      "license": "Pexels License; verify per asset.",
+      "media_type": "image",
+      "keywords": [
+        "space",
+        "astronaut",
+        "international space station",
+        "microgravity"
+      ],
+      "trust_score": 3
+    },
+    {
+      "title": "Pexels video search: space astronaut international space station microgravity",
+      "source": "Pexels",
+      "url": "https://www.pexels.com/search/space%20astronaut%20international%20space%20station%20microgravity%20video/",
+      "license": "Pexels License; verify per asset.",
+      "media_type": "video",
+      "keywords": [
+        "space",
+        "astronaut",
+        "international space station",
+        "microgravity"
+      ],
+      "trust_score": 3
+    },
+    {
+      "title": "Pixabay image search: space astronaut international space station microgravity",
+      "source": "Pixabay",
+      "url": "https://pixabay.com/images/search/space%20astronaut%20international%20space%20station%20microgravity/",
+      "license": "Pixabay Content License; verify per asset.",
+      "media_type": "image",
+      "keywords": [
+        "space",
+        "astronaut",
+        "international space station",
+        "microgravity"
+      ],
+      "trust_score": 3
+    },
+    {
+      "title": "Pixabay video search: space astronaut international space station microgravity",
+      "source": "Pixabay",
+      "url": "https://pixabay.com/videos/search/space%20astronaut%20international%20space%20station%20microgravity/",
+      "license": "Pixabay Content License; verify per asset.",
+      "media_type": "video",
+      "keywords": [
+        "space",
+        "astronaut",
+        "international space station",
+        "microgravity"
+      ],
+      "trust_score": 3
+    }
+  ],
+  "scene_07": [
+    {
+      "title": "NASA image search: space astronaut international space station microgravity",
+      "source": "NASA",
+      "url": "https://images.nasa.gov/search-results?q=space+astronaut+international+space+station+microgravity&media_type=image",
+      "license": "NASA public domain or official media usage terms; verify per asset.",
+      "media_type": "image",
+      "keywords": [
+        "space",
+        "astronaut",
+        "international space station",
+        "microgravity"
+      ],
+      "trust_score": 5
+    },
+    {
+      "title": "NASA video search: space astronaut international space station microgravity",
+      "source": "NASA",
+      "url": "https://images.nasa.gov/search-results?q=space+astronaut+international+space+station+microgravity&media_type=video",
+      "license": "NASA public domain or official media usage terms; verify per asset.",
+      "media_type": "video",
+      "keywords": [
+        "space",
+        "astronaut",
+        "international space station",
+        "microgravity"
+      ],
+      "trust_score": 5
+    },
+    {
+      "title": "NOAA image search: space astronaut international space station microgravity",
+      "source": "NOAA",
+      "url": "https://www.noaa.gov/search?query=space+astronaut+international+space+station+microgravity+image",
+      "license": "NOAA public domain or official media usage terms; verify per asset.",
+      "media_type": "image",
+      "keywords": [
+        "space",
+        "astronaut",
+        "international space station",
+        "microgravity"
+      ],
+      "trust_score": 5
+    },
+    {
+      "title": "NOAA video search: space astronaut international space station microgravity",
+      "source": "NOAA",
+      "url": "https://www.noaa.gov/search?query=space+astronaut+international+space+station+microgravity+video",
+      "license": "NOAA public domain or official media usage terms; verify per asset.",
+      "media_type": "video",
+      "keywords": [
+        "space",
+        "astronaut",
+        "international space station",
+        "microgravity"
+      ],
+      "trust_score": 5
+    },
+    {
+      "title": "Wikimedia Commons image search: space astronaut international space station microgravity",
+      "source": "Wikimedia Commons",
+      "url": "https://commons.wikimedia.org/w/index.php?search=space+astronaut+international+space+station+microgravity+filetype%3Aimage",
+      "license": "Creative Commons/Public Domain varies by file; verify per asset.",
+      "media_type": "image",
+      "keywords": [
+        "space",
+        "astronaut",
+        "international space station",
+        "microgravity"
+      ],
+      "trust_score": 4
+    },
+    {
+      "title": "Wikimedia Commons video search: space astronaut international space station microgravity",
+      "source": "Wikimedia Commons",
+      "url": "https://commons.wikimedia.org/w/index.php?search=space+astronaut+international+space+station+microgravity+filetype%3Avideo",
+      "license": "Creative Commons/Public Domain varies by file; verify per asset.",
+      "media_type": "video",
+      "keywords": [
+        "space",
+        "astronaut",
+        "international space station",
+        "microgravity"
+      ],
+      "trust_score": 4
+    },
+    {
+      "title": "ESA image search: space astronaut international space station microgravity",
+      "source": "ESA",
+      "url": "https://www.esa.int/esasearch?q=space+astronaut+international+space+station+microgravity+image",
+      "license": "ESA official media usage terms; verify per asset.",
+      "media_type": "image",
+      "keywords": [
+        "space",
+        "astronaut",
+        "international space station",
+        "microgravity"
+      ],
+      "trust_score": 5
+    },
+    {
+      "title": "ESA video search: space astronaut international space station microgravity",
+      "source": "ESA",
+      "url": "https://www.esa.int/esasearch?q=space+astronaut+international+space+station+microgravity+video",
+      "license": "ESA official media usage terms; verify per asset.",
+      "media_type": "video",
+      "keywords": [
+        "space",
+        "astronaut",
+        "international space station",
+        "microgravity"
+      ],
+      "trust_score": 5
+    },
+    {
+      "title": "Pexels image search: space astronaut international space station microgravity",
+      "source": "Pexels",
+      "url": "https://www.pexels.com/search/space%20astronaut%20international%20space%20station%20microgravity%20image/",
+      "license": "Pexels License; verify per asset.",
+      "media_type": "image",
+      "keywords": [
+        "space",
+        "astronaut",
+        "international space station",
+        "microgravity"
+      ],
+      "trust_score": 3
+    },
+    {
+      "title": "Pexels video search: space astronaut international space station microgravity",
+      "source": "Pexels",
+      "url": "https://www.pexels.com/search/space%20astronaut%20international%20space%20station%20microgravity%20video/",
+      "license": "Pexels License; verify per asset.",
+      "media_type": "video",
+      "keywords": [
+        "space",
+        "astronaut",
+        "international space station",
+        "microgravity"
+      ],
+      "trust_score": 3
+    },
+    {
+      "title": "Pixabay image search: space astronaut international space station microgravity",
+      "source": "Pixabay",
+      "url": "https://pixabay.com/images/search/space%20astronaut%20international%20space%20station%20microgravity/",
+      "license": "Pixabay Content License; verify per asset.",
+      "media_type": "image",
+      "keywords": [
+        "space",
+        "astronaut",
+        "international space station",
+        "microgravity"
+      ],
+      "trust_score": 3
+    },
+    {
+      "title": "Pixabay video search: space astronaut international space station microgravity",
+      "source": "Pixabay",
+      "url": "https://pixabay.com/videos/search/space%20astronaut%20international%20space%20station%20microgravity/",
+      "license": "Pixabay Content License; verify per asset.",
+      "media_type": "video",
+      "keywords": [
+        "space",
+        "astronaut",
+        "international space station",
+        "microgravity"
+      ],
+      "trust_score": 3
+    }
+  ],
+  "scene_08": [
+    {
+      "title": "NASA image search: space astronaut international space station microgravity",
+      "source": "NASA",
+      "url": "https://images.nasa.gov/search-results?q=space+astronaut+international+space+station+microgravity&media_type=image",
+      "license": "NASA public domain or official media usage terms; verify per asset.",
+      "media_type": "image",
+      "keywords": [
+        "space",
+        "astronaut",
+        "international space station",
+        "microgravity"
+      ],
+      "trust_score": 5
+    },
+    {
+      "title": "NASA video search: space astronaut international space station microgravity",
+      "source": "NASA",
+      "url": "https://images.nasa.gov/search-results?q=space+astronaut+international+space+station+microgravity&media_type=video",
+      "license": "NASA public domain or official media usage terms; verify per asset.",
+      "media_type": "video",
+      "keywords": [
+        "space",
+        "astronaut",
+        "international space station",
+        "microgravity"
+      ],
+      "trust_score": 5
+    },
+    {
+      "title": "NOAA image search: space astronaut international space station microgravity",
+      "source": "NOAA",
+      "url": "https://www.noaa.gov/search?query=space+astronaut+international+space+station+microgravity+image",
+      "license": "NOAA public domain or official media usage terms; verify per asset.",
+      "media_type": "image",
+      "keywords": [
+        "space",
+        "astronaut",
+        "international space station",
+        "microgravity"
+      ],
+      "trust_score": 5
+    },
+    {
+      "title": "NOAA video search: space astronaut international space station microgravity",
+      "source": "NOAA",
+      "url": "https://www.noaa.gov/search?query=space+astronaut+international+space+station+microgravity+video",
+      "license": "NOAA public domain or official media usage terms; verify per asset.",
+      "media_type": "video",
+      "keywords": [
+        "space",
+        "astronaut",
+        "international space station",
+        "microgravity"
+      ],
+      "trust_score": 5
+    },
+    {
+      "title": "Wikimedia Commons image search: space astronaut international space station microgravity",
+      "source": "Wikimedia Commons",
+      "url": "https://commons.wikimedia.org/w/index.php?search=space+astronaut+international+space+station+microgravity+filetype%3Aimage",
+      "license": "Creative Commons/Public Domain varies by file; verify per asset.",
+      "media_type": "image",
+      "keywords": [
+        "space",
+        "astronaut",
+        "international space station",
+        "microgravity"
+      ],
+      "trust_score": 4
+    },
+    {
+      "title": "Wikimedia Commons video search: space astronaut international space station microgravity",
+      "source": "Wikimedia Commons",
+      "url": "https://commons.wikimedia.org/w/index.php?search=space+astronaut+international+space+station+microgravity+filetype%3Avideo",
+      "license": "Creative Commons/Public Domain varies by file; verify per asset.",
+      "media_type": "video",
+      "keywords": [
+        "space",
+        "astronaut",
+        "international space station",
+        "microgravity"
+      ],
+      "trust_score": 4
+    },
+    {
+      "title": "ESA image search: space astronaut international space station microgravity",
+      "source": "ESA",
+      "url": "https://www.esa.int/esasearch?q=space+astronaut+international+space+station+microgravity+image",
+      "license": "ESA official media usage terms; verify per asset.",
+      "media_type": "image",
+      "keywords": [
+        "space",
+        "astronaut",
+        "international space station",
+        "microgravity"
+      ],
+      "trust_score": 5
+    },
+    {
+      "title": "ESA video search: space astronaut international space station microgravity",
+      "source": "ESA",
+      "url": "https://www.esa.int/esasearch?q=space+astronaut+international+space+station+microgravity+video",
+      "license": "ESA official media usage terms; verify per asset.",
+      "media_type": "video",
+      "keywords": [
+        "space",
+        "astronaut",
+        "international space station",
+        "microgravity"
+      ],
+      "trust_score": 5
+    },
+    {
+      "title": "Pexels image search: space astronaut international space station microgravity",
+      "source": "Pexels",
+      "url": "https://www.pexels.com/search/space%20astronaut%20international%20space%20station%20microgravity%20image/",
+      "license": "Pexels License; verify per asset.",
+      "media_type": "image",
+      "keywords": [
+        "space",
+        "astronaut",
+        "international space station",
+        "microgravity"
+      ],
+      "trust_score": 3
+    },
+    {
+      "title": "Pexels video search: space astronaut international space station microgravity",
+      "source": "Pexels",
+      "url": "https://www.pexels.com/search/space%20astronaut%20international%20space%20station%20microgravity%20video/",
+      "license": "Pexels License; verify per asset.",
+      "media_type": "video",
+      "keywords": [
+        "space",
+        "astronaut",
+        "international space station",
+        "microgravity"
+      ],
+      "trust_score": 3
+    },
+    {
+      "title": "Pixabay image search: space astronaut international space station microgravity",
+      "source": "Pixabay",
+      "url": "https://pixabay.com/images/search/space%20astronaut%20international%20space%20station%20microgravity/",
+      "license": "Pixabay Content License; verify per asset.",
+      "media_type": "image",
+      "keywords": [
+        "space",
+        "astronaut",
+        "international space station",
+        "microgravity"
+      ],
+      "trust_score": 3
+    },
+    {
+      "title": "Pixabay video search: space astronaut international space station microgravity",
+      "source": "Pixabay",
+      "url": "https://pixabay.com/videos/search/space%20astronaut%20international%20space%20station%20microgravity/",
+      "license": "Pixabay Content License; verify per asset.",
+      "media_type": "video",
+      "keywords": [
+        "space",
+        "astronaut",
+        "international space station",
+        "microgravity"
+      ],
+      "trust_score": 3
+    }
+  ],
+  "scene_09": [
+    {
+      "title": "NASA image search: space astronaut international space station microgravity",
+      "source": "NASA",
+      "url": "https://images.nasa.gov/search-results?q=space+astronaut+international+space+station+microgravity&media_type=image",
+      "license": "NASA public domain or official media usage terms; verify per asset.",
+      "media_type": "image",
+      "keywords": [
+        "space",
+        "astronaut",
+        "international space station",
+        "microgravity"
+      ],
+      "trust_score": 5
+    },
+    {
+      "title": "NASA video search: space astronaut international space station microgravity",
+      "source": "NASA",
+      "url": "https://images.nasa.gov/search-results?q=space+astronaut+international+space+station+microgravity&media_type=video",
+      "license": "NASA public domain or official media usage terms; verify per asset.",
+      "media_type": "video",
+      "keywords": [
+        "space",
+        "astronaut",
+        "international space station",
+        "microgravity"
+      ],
+      "trust_score": 5
+    },
+    {
+      "title": "NOAA image search: space astronaut international space station microgravity",
+      "source": "NOAA",
+      "url": "https://www.noaa.gov/search?query=space+astronaut+international+space+station+microgravity+image",
+      "license": "NOAA public domain or official media usage terms; verify per asset.",
+      "media_type": "image",
+      "keywords": [
+        "space",
+        "astronaut",
+        "international space station",
+        "microgravity"
+      ],
+      "trust_score": 5
+    },
+    {
+      "title": "NOAA video search: space astronaut international space station microgravity",
+      "source": "NOAA",
+      "url": "https://www.noaa.gov/search?query=space+astronaut+international+space+station+microgravity+video",
+      "license": "NOAA public domain or official media usage terms; verify per asset.",
+      "media_type": "video",
+      "keywords": [
+        "space",
+        "astronaut",
+        "international space station",
+        "microgravity"
+      ],
+      "trust_score": 5
+    },
+    {
+      "title": "Wikimedia Commons image search: space astronaut international space station microgravity",
+      "source": "Wikimedia Commons",
+      "url": "https://commons.wikimedia.org/w/index.php?search=space+astronaut+international+space+station+microgravity+filetype%3Aimage",
+      "license": "Creative Commons/Public Domain varies by file; verify per asset.",
+      "media_type": "image",
+      "keywords": [
+        "space",
+        "astronaut",
+        "international space station",
+        "microgravity"
+      ],
+      "trust_score": 4
+    },
+    {
+      "title": "Wikimedia Commons video search: space astronaut international space station microgravity",
+      "source": "Wikimedia Commons",
+      "url": "https://commons.wikimedia.org/w/index.php?search=space+astronaut+international+space+station+microgravity+filetype%3Avideo",
+      "license": "Creative Commons/Public Domain varies by file; verify per asset.",
+      "media_type": "video",
+      "keywords": [
+        "space",
+        "astronaut",
+        "international space station",
+        "microgravity"
+      ],
+      "trust_score": 4
+    },
+    {
+      "title": "ESA image search: space astronaut international space station microgravity",
+      "source": "ESA",
+      "url": "https://www.esa.int/esasearch?q=space+astronaut+international+space+station+microgravity+image",
+      "license": "ESA official media usage terms; verify per asset.",
+      "media_type": "image",
+      "keywords": [
+        "space",
+        "astronaut",
+        "international space station",
+        "microgravity"
+      ],
+      "trust_score": 5
+    },
+    {
+      "title": "ESA video search: space astronaut international space station microgravity",
+      "source": "ESA",
+      "url": "https://www.esa.int/esasearch?q=space+astronaut+international+space+station+microgravity+video",
+      "license": "ESA official media usage terms; verify per asset.",
+      "media_type": "video",
+      "keywords": [
+        "space",
+        "astronaut",
+        "international space station",
+        "microgravity"
+      ],
+      "trust_score": 5
+    },
+    {
+      "title": "Pexels image search: space astronaut international space station microgravity",
+      "source": "Pexels",
+      "url": "https://www.pexels.com/search/space%20astronaut%20international%20space%20station%20microgravity%20image/",
+      "license": "Pexels License; verify per asset.",
+      "media_type": "image",
+      "keywords": [
+        "space",
+        "astronaut",
+        "international space station",
+        "microgravity"
+      ],
+      "trust_score": 3
+    },
+    {
+      "title": "Pexels video search: space astronaut international space station microgravity",
+      "source": "Pexels",
+      "url": "https://www.pexels.com/search/space%20astronaut%20international%20space%20station%20microgravity%20video/",
+      "license": "Pexels License; verify per asset.",
+      "media_type": "video",
+      "keywords": [
+        "space",
+        "astronaut",
+        "international space station",
+        "microgravity"
+      ],
+      "trust_score": 3
+    },
+    {
+      "title": "Pixabay image search: space astronaut international space station microgravity",
+      "source": "Pixabay",
+      "url": "https://pixabay.com/images/search/space%20astronaut%20international%20space%20station%20microgravity/",
+      "license": "Pixabay Content License; verify per asset.",
+      "media_type": "image",
+      "keywords": [
+        "space",
+        "astronaut",
+        "international space station",
+        "microgravity"
+      ],
+      "trust_score": 3
+    },
+    {
+      "title": "Pixabay video search: space astronaut international space station microgravity",
+      "source": "Pixabay",
+      "url": "https://pixabay.com/videos/search/space%20astronaut%20international%20space%20station%20microgravity/",
+      "license": "Pixabay Content License; verify per asset.",
+      "media_type": "video",
+      "keywords": [
+        "space",
+        "astronaut",
+        "international space station",
+        "microgravity"
+      ],
+      "trust_score": 3
+    }
+  ],
+  "scene_10": [
+    {
+      "title": "NASA image search: space astronaut international space station microgravity",
+      "source": "NASA",
+      "url": "https://images.nasa.gov/search-results?q=space+astronaut+international+space+station+microgravity&media_type=image",
+      "license": "NASA public domain or official media usage terms; verify per asset.",
+      "media_type": "image",
+      "keywords": [
+        "space",
+        "astronaut",
+        "international space station",
+        "microgravity"
+      ],
+      "trust_score": 5
+    },
+    {
+      "title": "NASA video search: space astronaut international space station microgravity",
+      "source": "NASA",
+      "url": "https://images.nasa.gov/search-results?q=space+astronaut+international+space+station+microgravity&media_type=video",
+      "license": "NASA public domain or official media usage terms; verify per asset.",
+      "media_type": "video",
+      "keywords": [
+        "space",
+        "astronaut",
+        "international space station",
+        "microgravity"
+      ],
+      "trust_score": 5
+    },
+    {
+      "title": "NOAA image search: space astronaut international space station microgravity",
+      "source": "NOAA",
+      "url": "https://www.noaa.gov/search?query=space+astronaut+international+space+station+microgravity+image",
+      "license": "NOAA public domain or official media usage terms; verify per asset.",
+      "media_type": "image",
+      "keywords": [
+        "space",
+        "astronaut",
+        "international space station",
+        "microgravity"
+      ],
+      "trust_score": 5
+    },
+    {
+      "title": "NOAA video search: space astronaut international space station microgravity",
+      "source": "NOAA",
+      "url": "https://www.noaa.gov/search?query=space+astronaut+international+space+station+microgravity+video",
+      "license": "NOAA public domain or official media usage terms; verify per asset.",
+      "media_type": "video",
+      "keywords": [
+        "space",
+        "astronaut",
+        "international space station",
+        "microgravity"
+      ],
+      "trust_score": 5
+    },
+    {
+      "title": "Wikimedia Commons image search: space astronaut international space station microgravity",
+      "source": "Wikimedia Commons",
+      "url": "https://commons.wikimedia.org/w/index.php?search=space+astronaut+international+space+station+microgravity+filetype%3Aimage",
+      "license": "Creative Commons/Public Domain varies by file; verify per asset.",
+      "media_type": "image",
+      "keywords": [
+        "space",
+        "astronaut",
+        "international space station",
+        "microgravity"
+      ],
+      "trust_score": 4
+    },
+    {
+      "title": "Wikimedia Commons video search: space astronaut international space station microgravity",
+      "source": "Wikimedia Commons",
+      "url": "https://commons.wikimedia.org/w/index.php?search=space+astronaut+international+space+station+microgravity+filetype%3Avideo",
+      "license": "Creative Commons/Public Domain varies by file; verify per asset.",
+      "media_type": "video",
+      "keywords": [
+        "space",
+        "astronaut",
+        "international space station",
+        "microgravity"
+      ],
+      "trust_score": 4
+    },
+    {
+      "title": "ESA image search: space astronaut international space station microgravity",
+      "source": "ESA",
+      "url": "https://www.esa.int/esasearch?q=space+astronaut+international+space+station+microgravity+image",
+      "license": "ESA official media usage terms; verify per asset.",
+      "media_type": "image",
+      "keywords": [
+        "space",
+        "astronaut",
+        "international space station",
+        "microgravity"
+      ],
+      "trust_score": 5
+    },
+    {
+      "title": "ESA video search: space astronaut international space station microgravity",
+      "source": "ESA",
+      "url": "https://www.esa.int/esasearch?q=space+astronaut+international+space+station+microgravity+video",
+      "license": "ESA official media usage terms; verify per asset.",
+      "media_type": "video",
+      "keywords": [
+        "space",
+        "astronaut",
+        "international space station",
+        "microgravity"
+      ],
+      "trust_score": 5
+    },
+    {
+      "title": "Pexels image search: space astronaut international space station microgravity",
+      "source": "Pexels",
+      "url": "https://www.pexels.com/search/space%20astronaut%20international%20space%20station%20microgravity%20image/",
+      "license": "Pexels License; verify per asset.",
+      "media_type": "image",
+      "keywords": [
+        "space",
+        "astronaut",
+        "international space station",
+        "microgravity"
+      ],
+      "trust_score": 3
+    },
+    {
+      "title": "Pexels video search: space astronaut international space station microgravity",
+      "source": "Pexels",
+      "url": "https://www.pexels.com/search/space%20astronaut%20international%20space%20station%20microgravity%20video/",
+      "license": "Pexels License; verify per asset.",
+      "media_type": "video",
+      "keywords": [
+        "space",
+        "astronaut",
+        "international space station",
+        "microgravity"
+      ],
+      "trust_score": 3
+    },
+    {
+      "title": "Pixabay image search: space astronaut international space station microgravity",
+      "source": "Pixabay",
+      "url": "https://pixabay.com/images/search/space%20astronaut%20international%20space%20station%20microgravity/",
+      "license": "Pixabay Content License; verify per asset.",
+      "media_type": "image",
+      "keywords": [
+        "space",
+        "astronaut",
+        "international space station",
+        "microgravity"
+      ],
+      "trust_score": 3
+    },
+    {
+      "title": "Pixabay video search: space astronaut international space station microgravity",
+      "source": "Pixabay",
+      "url": "https://pixabay.com/videos/search/space%20astronaut%20international%20space%20station%20microgravity/",
+      "license": "Pixabay Content License; verify per asset.",
+      "media_type": "video",
+      "keywords": [
+        "space",
+        "astronaut",
+        "international space station",
+        "microgravity"
+      ],
+      "trust_score": 3
+    }
+  ],
+  "scene_11": [
+    {
+      "title": "NASA image search: space astronaut international space station microgravity",
+      "source": "NASA",
+      "url": "https://images.nasa.gov/search-results?q=space+astronaut+international+space+station+microgravity&media_type=image",
+      "license": "NASA public domain or official media usage terms; verify per asset.",
+      "media_type": "image",
+      "keywords": [
+        "space",
+        "astronaut",
+        "international space station",
+        "microgravity"
+      ],
+      "trust_score": 5
+    },
+    {
+      "title": "NASA video search: space astronaut international space station microgravity",
+      "source": "NASA",
+      "url": "https://images.nasa.gov/search-results?q=space+astronaut+international+space+station+microgravity&media_type=video",
+      "license": "NASA public domain or official media usage terms; verify per asset.",
+      "media_type": "video",
+      "keywords": [
+        "space",
+        "astronaut",
+        "international space station",
+        "microgravity"
+      ],
+      "trust_score": 5
+    },
+    {
+      "title": "NOAA image search: space astronaut international space station microgravity",
+      "source": "NOAA",
+      "url": "https://www.noaa.gov/search?query=space+astronaut+international+space+station+microgravity+image",
+      "license": "NOAA public domain or official media usage terms; verify per asset.",
+      "media_type": "image",
+      "keywords": [
+        "space",
+        "astronaut",
+        "international space station",
+        "microgravity"
+      ],
+      "trust_score": 5
+    },
+    {
+      "title": "NOAA video search: space astronaut international space station microgravity",
+      "source": "NOAA",
+      "url": "https://www.noaa.gov/search?query=space+astronaut+international+space+station+microgravity+video",
+      "license": "NOAA public domain or official media usage terms; verify per asset.",
+      "media_type": "video",
+      "keywords": [
+        "space",
+        "astronaut",
+        "international space station",
+        "microgravity"
+      ],
+      "trust_score": 5
+    },
+    {
+      "title": "Wikimedia Commons image search: space astronaut international space station microgravity",
+      "source": "Wikimedia Commons",
+      "url": "https://commons.wikimedia.org/w/index.php?search=space+astronaut+international+space+station+microgravity+filetype%3Aimage",
+      "license": "Creative Commons/Public Domain varies by file; verify per asset.",
+      "media_type": "image",
+      "keywords": [
+        "space",
+        "astronaut",
+        "international space station",
+        "microgravity"
+      ],
+      "trust_score": 4
+    },
+    {
+      "title": "Wikimedia Commons video search: space astronaut international space station microgravity",
+      "source": "Wikimedia Commons",
+      "url": "https://commons.wikimedia.org/w/index.php?search=space+astronaut+international+space+station+microgravity+filetype%3Avideo",
+      "license": "Creative Commons/Public Domain varies by file; verify per asset.",
+      "media_type": "video",
+      "keywords": [
+        "space",
+        "astronaut",
+        "international space station",
+        "microgravity"
+      ],
+      "trust_score": 4
+    },
+    {
+      "title": "ESA image search: space astronaut international space station microgravity",
+      "source": "ESA",
+      "url": "https://www.esa.int/esasearch?q=space+astronaut+international+space+station+microgravity+image",
+      "license": "ESA official media usage terms; verify per asset.",
+      "media_type": "image",
+      "keywords": [
+        "space",
+        "astronaut",
+        "international space station",
+        "microgravity"
+      ],
+      "trust_score": 5
+    },
+    {
+      "title": "ESA video search: space astronaut international space station microgravity",
+      "source": "ESA",
+      "url": "https://www.esa.int/esasearch?q=space+astronaut+international+space+station+microgravity+video",
+      "license": "ESA official media usage terms; verify per asset.",
+      "media_type": "video",
+      "keywords": [
+        "space",
+        "astronaut",
+        "international space station",
+        "microgravity"
+      ],
+      "trust_score": 5
+    },
+    {
+      "title": "Pexels image search: space astronaut international space station microgravity",
+      "source": "Pexels",
+      "url": "https://www.pexels.com/search/space%20astronaut%20international%20space%20station%20microgravity%20image/",
+      "license": "Pexels License; verify per asset.",
+      "media_type": "image",
+      "keywords": [
+        "space",
+        "astronaut",
+        "international space station",
+        "microgravity"
+      ],
+      "trust_score": 3
+    },
+    {
+      "title": "Pexels video search: space astronaut international space station microgravity",
+      "source": "Pexels",
+      "url": "https://www.pexels.com/search/space%20astronaut%20international%20space%20station%20microgravity%20video/",
+      "license": "Pexels License; verify per asset.",
+      "media_type": "video",
+      "keywords": [
+        "space",
+        "astronaut",
+        "international space station",
+        "microgravity"
+      ],
+      "trust_score": 3
+    },
+    {
+      "title": "Pixabay image search: space astronaut international space station microgravity",
+      "source": "Pixabay",
+      "url": "https://pixabay.com/images/search/space%20astronaut%20international%20space%20station%20microgravity/",
+      "license": "Pixabay Content License; verify per asset.",
+      "media_type": "image",
+      "keywords": [
+        "space",
+        "astronaut",
+        "international space station",
+        "microgravity"
+      ],
+      "trust_score": 3
+    },
+    {
+      "title": "Pixabay video search: space astronaut international space station microgravity",
+      "source": "Pixabay",
+      "url": "https://pixabay.com/videos/search/space%20astronaut%20international%20space%20station%20microgravity/",
+      "license": "Pixabay Content License; verify per asset.",
+      "media_type": "video",
+      "keywords": [
+        "space",
+        "astronaut",
+        "international space station",
+        "microgravity"
+      ],
+      "trust_score": 3
+    }
+  ],
+  "scene_12": [
+    {
+      "title": "NASA image search: space astronaut international space station microgravity",
+      "source": "NASA",
+      "url": "https://images.nasa.gov/search-results?q=space+astronaut+international+space+station+microgravity&media_type=image",
+      "license": "NASA public domain or official media usage terms; verify per asset.",
+      "media_type": "image",
+      "keywords": [
+        "space",
+        "astronaut",
+        "international space station",
+        "microgravity"
+      ],
+      "trust_score": 5
+    },
+    {
+      "title": "NASA video search: space astronaut international space station microgravity",
+      "source": "NASA",
+      "url": "https://images.nasa.gov/search-results?q=space+astronaut+international+space+station+microgravity&media_type=video",
+      "license": "NASA public domain or official media usage terms; verify per asset.",
+      "media_type": "video",
+      "keywords": [
+        "space",
+        "astronaut",
+        "international space station",
+        "microgravity"
+      ],
+      "trust_score": 5
+    },
+    {
+      "title": "NOAA image search: space astronaut international space station microgravity",
+      "source": "NOAA",
+      "url": "https://www.noaa.gov/search?query=space+astronaut+international+space+station+microgravity+image",
+      "license": "NOAA public domain or official media usage terms; verify per asset.",
+      "media_type": "image",
+      "keywords": [
+        "space",
+        "astronaut",
+        "international space station",
+        "microgravity"
+      ],
+      "trust_score": 5
+    },
+    {
+      "title": "NOAA video search: space astronaut international space station microgravity",
+      "source": "NOAA",
+      "url": "https://www.noaa.gov/search?query=space+astronaut+international+space+station+microgravity+video",
+      "license": "NOAA public domain or official media usage terms; verify per asset.",
+      "media_type": "video",
+      "keywords": [
+        "space",
+        "astronaut",
+        "international space station",
+        "microgravity"
+      ],
+      "trust_score": 5
+    },
+    {
+      "title": "Wikimedia Commons image search: space astronaut international space station microgravity",
+      "source": "Wikimedia Commons",
+      "url": "https://commons.wikimedia.org/w/index.php?search=space+astronaut+international+space+station+microgravity+filetype%3Aimage",
+      "license": "Creative Commons/Public Domain varies by file; verify per asset.",
+      "media_type": "image",
+      "keywords": [
+        "space",
+        "astronaut",
+        "international space station",
+        "microgravity"
+      ],
+      "trust_score": 4
+    },
+    {
+      "title": "Wikimedia Commons video search: space astronaut international space station microgravity",
+      "source": "Wikimedia Commons",
+      "url": "https://commons.wikimedia.org/w/index.php?search=space+astronaut+international+space+station+microgravity+filetype%3Avideo",
+      "license": "Creative Commons/Public Domain varies by file; verify per asset.",
+      "media_type": "video",
+      "keywords": [
+        "space",
+        "astronaut",
+        "international space station",
+        "microgravity"
+      ],
+      "trust_score": 4
+    },
+    {
+      "title": "ESA image search: space astronaut international space station microgravity",
+      "source": "ESA",
+      "url": "https://www.esa.int/esasearch?q=space+astronaut+international+space+station+microgravity+image",
+      "license": "ESA official media usage terms; verify per asset.",
+      "media_type": "image",
+      "keywords": [
+        "space",
+        "astronaut",
+        "international space station",
+        "microgravity"
+      ],
+      "trust_score": 5
+    },
+    {
+      "title": "ESA video search: space astronaut international space station microgravity",
+      "source": "ESA",
+      "url": "https://www.esa.int/esasearch?q=space+astronaut+international+space+station+microgravity+video",
+      "license": "ESA official media usage terms; verify per asset.",
+      "media_type": "video",
+      "keywords": [
+        "space",
+        "astronaut",
+        "international space station",
+        "microgravity"
+      ],
+      "trust_score": 5
+    },
+    {
+      "title": "Pexels image search: space astronaut international space station microgravity",
+      "source": "Pexels",
+      "url": "https://www.pexels.com/search/space%20astronaut%20international%20space%20station%20microgravity%20image/",
+      "license": "Pexels License; verify per asset.",
+      "media_type": "image",
+      "keywords": [
+        "space",
+        "astronaut",
+        "international space station",
+        "microgravity"
+      ],
+      "trust_score": 3
+    },
+    {
+      "title": "Pexels video search: space astronaut international space station microgravity",
+      "source": "Pexels",
+      "url": "https://www.pexels.com/search/space%20astronaut%20international%20space%20station%20microgravity%20video/",
+      "license": "Pexels License; verify per asset.",
+      "media_type": "video",
+      "keywords": [
+        "space",
+        "astronaut",
+        "international space station",
+        "microgravity"
+      ],
+      "trust_score": 3
+    },
+    {
+      "title": "Pixabay image search: space astronaut international space station microgravity",
+      "source": "Pixabay",
+      "url": "https://pixabay.com/images/search/space%20astronaut%20international%20space%20station%20microgravity/",
+      "license": "Pixabay Content License; verify per asset.",
+      "media_type": "image",
+      "keywords": [
+        "space",
+        "astronaut",
+        "international space station",
+        "microgravity"
+      ],
+      "trust_score": 3
+    },
+    {
+      "title": "Pixabay video search: space astronaut international space station microgravity",
+      "source": "Pixabay",
+      "url": "https://pixabay.com/videos/search/space%20astronaut%20international%20space%20station%20microgravity/",
+      "license": "Pixabay Content License; verify per asset.",
+      "media_type": "video",
+      "keywords": [
+        "space",
+        "astronaut",
+        "international space station",
+        "microgravity"
+      ],
+      "trust_score": 3
+    }
+  ]
+}

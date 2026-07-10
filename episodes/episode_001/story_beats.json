@@ -1,0 +1,16 @@
+{
+  "hook": "사람이 382일 동안 우주에 있으면?",
+  "misconception": "사람들은 근육부터 망가질 거라고 생각한다.",
+  "reveal": "하지만 먼저 문제가 생길 수 있는 곳은 눈이다.",
+  "explanation": "미세중력 때문에 체액이 머리 쪽으로 이동하고, 시야 변화와 연결될 수 있다.",
+  "second_reveal": "뼈와 근육도 약해진다. 골밀도는 월 1~1.5% 손실될 수 있다.",
+  "human_moment": "우주에 적응한 몸은 지구로 돌아온 뒤 다시 적응해야 한다.",
+  "ending": "인간의 몸은 지구용으로 설계되어 있다는 결론.",
+  "next_episode_hook": "화성에서는 이 변화가 더 심해질까?",
+  "emotion_curve": [
+    "curiosity",
+    "surprise",
+    "understanding",
+    "wonder"
+  ]
+}

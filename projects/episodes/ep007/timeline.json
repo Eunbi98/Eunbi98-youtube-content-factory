@@ -1,0 +1,49 @@
+{
+  "version": "3.0",
+  "episode_id": "ep007",
+  "title": "과거는 왜 다시 발견될까?",
+  "fps": 30,
+  "width": 1080,
+  "height": 1920,
+  "duration": 34,
+  "bgm": null,
+  "voice": null,
+  "scenes": [
+    {
+      "id": "scene_001",
+      "type": "hook",
+      "start": 0,
+      "duration": 5,
+      "title": "사람은 왜 과거를 파헤칠까?",
+      "narration": "우리는 왜 오래된 유적과 기록에 끌릴까요?",
+      "subtitle": "왜 과거를 파헤칠까?",
+      "media": {
+        "type": "image",
+        "src": "/assets/ep007/scene_001.jpg",
+        "fit": "cover"
+      },
+      "keywords": [
+        "ancient ruins",
+        "history mystery"
+      ]
+    },
+    {
+      "id": "scene_002",
+      "type": "answer",
+      "start": 5,
+      "duration": 7,
+      "title": "답은 단순한 호기심이 아닙니다",
+      "narration": "과거를 아는 건 지금의 우리를 이해하는 가장 빠른 방법이기 때문입니다.",
+      "subtitle": "지금의 우리를 알기 위해서입니다",
+      "media": {
+        "type": "image",
+        "src": "/assets/ep007/scene_002.jpg",
+        "fit": "cover"
+      },
+      "keywords": [
+        "archive",
+        "old documents"
+      ]
+    }
+  ]
+}

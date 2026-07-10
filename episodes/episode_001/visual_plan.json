@@ -1,0 +1,159 @@
+[
+  {
+    "scene": 1,
+    "narration": "사람이 382일 동안 우주에 있으면?",
+    "visual_type": "infographic",
+    "reason": "숫자 표현이 핵심 정보라 수치가 한눈에 보이는 인포그래픽이 가장 적합하다.",
+    "search_keywords": [
+      "spaceflight human body infographic",
+      "382 days in space timeline infographic"
+    ],
+    "image_prompt": "Clean vertical shorts infographic, high contrast Korean captions, visualize this idea: 사람이 382일 동안 우주에 있으면?",
+    "camera_motion": "none",
+    "duration": 4.2
+  },
+  {
+    "scene": 2,
+    "narration": "가장 먼저 망가지는 건\n근육일까요?",
+    "visual_type": "animation",
+    "reason": "눈에 보이지 않는 신체 변화 설명은 애니메이션 도식이 이해를 돕는다.",
+    "search_keywords": [
+      "space medicine explainer animation"
+    ],
+    "image_prompt": "Simple medical explainer animation frame, dark space background, clear arrows and labels for: 가장 먼저 망가지는 건 근육일까요?",
+    "camera_motion": "pan_left",
+    "duration": 4.2
+  },
+  {
+    "scene": 3,
+    "narration": "아닙니다.",
+    "visual_type": "ai_image",
+    "reason": "감정적 질문이나 추상적 결론은 상징적인 AI 이미지가 분위기를 만들기 좋다.",
+    "search_keywords": [
+      "cinematic astronaut looking at Mars",
+      "human body designed for Earth symbolic image"
+    ],
+    "image_prompt": "Cinematic AI image, lonely astronaut silhouette, Earth and Mars mood, emotional visual metaphor for: 아닙니다.",
+    "camera_motion": "zoom_out",
+    "duration": 4.2
+  },
+  {
+    "scene": 4,
+    "narration": "먼저 문제가 생길 수 있는 곳은\n눈입니다.",
+    "visual_type": "animation",
+    "reason": "눈에 보이지 않는 신체 변화 설명은 애니메이션 도식이 이해를 돕는다.",
+    "search_keywords": [
+      "spaceflight vision change animation",
+      "astronaut eye pressure microgravity animation"
+    ],
+    "image_prompt": "Simple medical explainer animation frame, dark space background, clear arrows and labels for: 먼저 문제가 생길 수 있는 곳은 눈입니다.",
+    "camera_motion": "pan_left",
+    "duration": 4.2
+  },
+  {
+    "scene": 5,
+    "narration": "우주에서는 중력이 거의 없어서\n몸속의 체액이 머리 쪽으로 몰립니다.",
+    "visual_type": "animation",
+    "reason": "눈에 보이지 않는 신체 변화 설명은 애니메이션 도식이 이해를 돕는다.",
+    "search_keywords": [
+      "microgravity fluid shift animation",
+      "spaceflight body fluid shift head animation"
+    ],
+    "image_prompt": "Simple medical explainer animation frame, dark space background, clear arrows and labels for: 우주에서는 중력이 거의 없어서 몸속의 체액이 머리 쪽으로 몰립니다.",
+    "camera_motion": "zoom_in",
+    "duration": 4.2
+  },
+  {
+    "scene": 6,
+    "narration": "그래서 눈이 평소와 다르게\n보이기 시작할 수 있습니다.",
+    "visual_type": "animation",
+    "reason": "눈에 보이지 않는 신체 변화 설명은 애니메이션 도식이 이해를 돕는다.",
+    "search_keywords": [
+      "spaceflight vision change animation",
+      "astronaut eye pressure microgravity animation"
+    ],
+    "image_prompt": "Simple medical explainer animation frame, dark space background, clear arrows and labels for: 그래서 눈이 평소와 다르게 보이기 시작할 수 있습니다.",
+    "camera_motion": "pan_left",
+    "duration": 4.2
+  },
+  {
+    "scene": 7,
+    "narration": "더 놀라운 건 뼈가\n매달 1~1.5%씩 줄어든다는 겁니다.",
+    "visual_type": "infographic",
+    "reason": "숫자 표현이 핵심 정보라 수치가 한눈에 보이는 인포그래픽이 가장 적합하다.",
+    "search_keywords": [
+      "spaceflight human body infographic",
+      "bone density loss microgravity 1.5 percent infographic"
+    ],
+    "image_prompt": "Clean vertical shorts infographic, high contrast Korean captions, visualize this idea: 더 놀라운 건 뼈가 매달 1~1.5%씩 줄어든다는 겁니다.",
+    "camera_motion": "none",
+    "duration": 4.2
+  },
+  {
+    "scene": 8,
+    "narration": "그래서 우주비행사들은\n매일 2시간 가까이 운동합니다.",
+    "visual_type": "infographic",
+    "reason": "숫자 표현이 핵심 정보라 수치가 한눈에 보이는 인포그래픽이 가장 적합하다.",
+    "search_keywords": [
+      "spaceflight human body infographic",
+      "astronaut daily exercise two hours infographic"
+    ],
+    "image_prompt": "Clean vertical shorts infographic, high contrast Korean captions, visualize this idea: 그래서 우주비행사들은 매일 2시간 가까이 운동합니다.",
+    "camera_motion": "none",
+    "duration": 4.2
+  },
+  {
+    "scene": 9,
+    "narration": "운동은 선택이 아니라\n몸을 버티게 하는 루틴입니다.",
+    "visual_type": "real_video",
+    "reason": "우주비행사 행동은 실제 ISS 영상 자료가 있으면 가장 신뢰감 있게 보인다.",
+    "search_keywords": [
+      "NASA astronaut exercise ISS video",
+      "International Space Station astronaut workout",
+      "Frank Rubio ISS return video"
+    ],
+    "image_prompt": "",
+    "camera_motion": "pan_right",
+    "duration": 4.2
+  },
+  {
+    "scene": 10,
+    "narration": "그런데도 지구로 돌아오면\n걷는 것부터 다시 적응해야 합니다.",
+    "visual_type": "real_video",
+    "reason": "우주비행사 행동은 실제 ISS 영상 자료가 있으면 가장 신뢰감 있게 보인다.",
+    "search_keywords": [
+      "NASA astronaut exercise ISS video",
+      "International Space Station astronaut workout",
+      "Frank Rubio ISS return video"
+    ],
+    "image_prompt": "",
+    "camera_motion": "pan_right",
+    "duration": 4.2
+  },
+  {
+    "scene": 11,
+    "narration": "인간의 몸은\n지구에 맞춰져 있기 때문입니다.",
+    "visual_type": "animation",
+    "reason": "눈에 보이지 않는 신체 변화 설명은 애니메이션 도식이 이해를 돕는다.",
+    "search_keywords": [
+      "astronaut return to Earth rehabilitation animation",
+      "gravity readaptation animation"
+    ],
+    "image_prompt": "Simple medical explainer animation frame, dark space background, clear arrows and labels for: 인간의 몸은 지구에 맞춰져 있기 때문입니다.",
+    "camera_motion": "zoom_in",
+    "duration": 4.2
+  },
+  {
+    "scene": 12,
+    "narration": "그렇다면\n화성에서는 어떻게 될까요?",
+    "visual_type": "ai_image",
+    "reason": "감정적 질문이나 추상적 결론은 상징적인 AI 이미지가 분위기를 만들기 좋다.",
+    "search_keywords": [
+      "cinematic astronaut looking at Mars",
+      "human body designed for Earth symbolic image"
+    ],
+    "image_prompt": "Cinematic AI image, lonely astronaut silhouette, Earth and Mars mood, emotional visual metaphor for: 그렇다면 화성에서는 어떻게 될까요?",
+    "camera_motion": "zoom_out",
+    "duration": 4.2
+  }
+]

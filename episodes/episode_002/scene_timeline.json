@@ -1,0 +1,132 @@
+{
+  "episode_id": "episode_002",
+  "timeline_version": 1,
+  "source_inputs": [
+    "knowledge_pack.json",
+    "story_beats.json"
+  ],
+  "total_duration": 22.0,
+  "scene_count": 8,
+  "style_reference": "ORIGIN_EPISODE_001_MASTER_REFERENCE",
+  "scenes": [
+    {
+      "scene_id": "scene_01",
+      "duration": 2.0,
+      "start_time": 0.0,
+      "end_time": 2.0,
+      "purpose": "Hook",
+      "narration": "사람이 바다 11,000m까지 내려가면?",
+      "caption": "바다 11,000m\n까지 내려가면?",
+      "recommended_asset_type": "official_video",
+      "camera_motion": "slow_zoom_in",
+      "transition": "cut",
+      "sfx": "deep whoosh",
+      "bgm_energy": "high"
+    },
+    {
+      "scene_id": "scene_02",
+      "duration": 2.0,
+      "start_time": 2.0,
+      "end_time": 4.0,
+      "purpose": "Misconception",
+      "narration": "사람들은 가장 먼저 추위가 문제일 거라고 생각한다.",
+      "caption": "먼저 위험한 건\n추위일까요?",
+      "recommended_asset_type": "animation",
+      "camera_motion": "static",
+      "transition": "cut",
+      "sfx": "cold hit",
+      "bgm_energy": "medium"
+    },
+    {
+      "scene_id": "scene_03",
+      "duration": 2.0,
+      "start_time": 4.0,
+      "end_time": 6.0,
+      "purpose": "Reveal",
+      "narration": "하지만 먼저 사람을 덮치는 것은 압력이다.",
+      "caption": "아닙니다.\n먼저 압력입니다.",
+      "recommended_asset_type": "infographic",
+      "camera_motion": "push_in",
+      "transition": "cut",
+      "sfx": "pressure thump",
+      "bgm_energy": "high"
+    },
+    {
+      "scene_id": "scene_04",
+      "duration": 3.0,
+      "start_time": 6.0,
+      "end_time": 9.0,
+      "purpose": "Pressure Scale",
+      "narration": "11,000m 부근에서는 지상보다 천 배 이상 큰 압력이 모든 방향에서 밀어붙인다.",
+      "caption": "지상보다\n천 배 이상",
+      "recommended_asset_type": "infographic",
+      "camera_motion": "slow_zoom_in",
+      "transition": "cross_dissolve",
+      "sfx": "low rumble",
+      "bgm_energy": "high"
+    },
+    {
+      "scene_id": "scene_05",
+      "duration": 3.0,
+      "start_time": 9.0,
+      "end_time": 12.0,
+      "purpose": "Submersible Rule",
+      "narration": "그래서 인간은 바다에 직접 내려가는 것이 아니라, 압력을 버티는 잠수정 안에 들어가야 한다.",
+      "caption": "인간은\n잠수정 안에 있어야 합니다.",
+      "recommended_asset_type": "official_video",
+      "camera_motion": "slow_zoom_out",
+      "transition": "cross_dissolve",
+      "sfx": "metal creak",
+      "bgm_energy": "medium"
+    },
+    {
+      "scene_id": "scene_06",
+      "duration": 3.0,
+      "start_time": 12.0,
+      "end_time": 15.0,
+      "purpose": "Human Scale",
+      "narration": "잠수정 안의 작은 공간만이 인간에게 남는 안전한 방이다.",
+      "caption": "작은 금속 방만이\n안전한 공간입니다.",
+      "recommended_asset_type": "animation",
+      "camera_motion": "static",
+      "transition": "cross_dissolve",
+      "sfx": "heartbeat low",
+      "bgm_energy": "low"
+    },
+    {
+      "scene_id": "scene_07",
+      "duration": 4.0,
+      "start_time": 15.0,
+      "end_time": 19.0,
+      "purpose": "Wonder",
+      "narration": "그런데 그 어둠과 압력 속에서도 심해 생물은 살아간다.",
+      "caption": "그 어둠 속에도\n생물은 살아 있습니다.",
+      "recommended_asset_type": "official_video",
+      "camera_motion": "pan_right",
+      "transition": "cross_dissolve",
+      "sfx": "water shimmer",
+      "bgm_energy": "medium"
+    },
+    {
+      "scene_id": "scene_08",
+      "duration": 3.0,
+      "start_time": 19.0,
+      "end_time": 22.0,
+      "purpose": "Ending Question",
+      "narration": "그렇다면 바다에는 아직 더 깊은 곳이 있을까?",
+      "caption": "바다에는\n더 깊은 곳이 있을까요?",
+      "recommended_asset_type": "official_image",
+      "camera_motion": "slow_zoom_out",
+      "transition": "dip_to_black",
+      "sfx": "distant drop",
+      "bgm_energy": "low"
+    }
+  ],
+  "editing_rules": [
+    "Design visual rhythm before final narration.",
+    "Use short ORIGIN-style captions with one strong idea per scene.",
+    "Prefer official NOAA/NASA/Wikimedia material for real deep-sea footage.",
+    "Use infographics for invisible pressure and depth concepts.",
+    "Keep transitions simple: cuts for reveals, cross dissolves for descent, dip to black for ending."
+  ]
+}

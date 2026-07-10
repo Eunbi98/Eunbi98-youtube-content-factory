@@ -1,0 +1,815 @@
+{
+  "episode": "002",
+  "episode_id": "episode_002",
+  "download_policy": "selected_candidates_only",
+  "max_assets_per_scene": 2,
+  "max_bytes": 31457280,
+  "assets": [
+    {
+      "scene": "scene_01",
+      "title": "NOAA Mariana Trench Marine National Monument image",
+      "source": "NOAA",
+      "original_url": "https://www.noaa.gov/search?query=deep+ocean+mariana+trench+underwater+submarine+image",
+      "download_url": "https://www.fisheries.noaa.gov/s3//styles/media_750_x500/s3/2021-02/750x500-hydrothermal-vent-NOAA.jpg?itok=nXlm97qT",
+      "license": "NOAA public domain or official media usage terms; verify per asset.",
+      "media_type": "image",
+      "keywords": [
+        "deep ocean",
+        "mariana trench",
+        "underwater",
+        "submarine"
+      ],
+      "trust_score": 5,
+      "local_path": "C:\\Users\\qkrdm\\OneDrive\\바탕 화면\\youtube-content-factory\\episodes\\episode_002\\assets\\images\\scene_01_NOAA_image_NOAA_Mariana_Trench_Marine_National_Monument_image.jpg",
+      "bytes": 117032,
+      "content_type": "image/jpeg",
+      "license_path": "C:\\Users\\qkrdm\\OneDrive\\바탕 화면\\youtube-content-factory\\episodes\\episode_002\\assets\\licenses\\scene_01_NOAA_image_NOAA_Mariana_Trench_Marine_National_Monument_image.license.json"
+    },
+    {
+      "scene": "scene_01",
+      "title": "File:China's soft robot realizes deep sea exploration and free swimming.webm",
+      "source": "Wikimedia Commons",
+      "original_url": "https://commons.wikimedia.org/w/index.php?search=deep+ocean+mariana+trench+underwater+submarine+filetype%3Avideo",
+      "download_url": "https://upload.wikimedia.org/wikipedia/commons/5/54/China%27s_soft_robot_realizes_deep_sea_exploration_and_free_swimming.webm",
+      "license": "CC BY 2.5",
+      "media_type": "video",
+      "keywords": [
+        "deep ocean",
+        "mariana trench",
+        "underwater",
+        "submarine"
+      ],
+      "trust_score": 4,
+      "local_path": "C:\\Users\\qkrdm\\OneDrive\\바탕 화면\\youtube-content-factory\\episodes\\episode_002\\assets\\videos\\scene_01_Wikimedia_Commons_video_China_s_soft_robot_realizes_deep_sea_exploration_and_free_swimming.webm",
+      "bytes": 2556342,
+      "content_type": "video/webm",
+      "license_path": "C:\\Users\\qkrdm\\OneDrive\\바탕 화면\\youtube-content-factory\\episodes\\episode_002\\assets\\licenses\\scene_01_Wikimedia_Commons_video_China_s_soft_robot_realizes_deep_sea_exploration_and_free_swimming.license.json"
+    },
+    {
+      "scene": "scene_02",
+      "title": "NOAA Mariana Trench Marine National Monument image",
+      "source": "NOAA",
+      "original_url": "https://www.noaa.gov/search?query=deep+ocean+mariana+trench+underwater+submarine+image",
+      "download_url": "https://www.fisheries.noaa.gov/s3//styles/media_750_x500/s3/2021-02/750x500-jellyfish-enigma-seamount-mtmnm-NOAA.jpg?itok=MtYn7fHz",
+      "license": "NOAA public domain or official media usage terms; verify per asset.",
+      "media_type": "image",
+      "keywords": [
+        "deep ocean",
+        "mariana trench",
+        "underwater",
+        "submarine"
+      ],
+      "trust_score": 5,
+      "local_path": "C:\\Users\\qkrdm\\OneDrive\\바탕 화면\\youtube-content-factory\\episodes\\episode_002\\assets\\images\\scene_02_NOAA_image_NOAA_Mariana_Trench_Marine_National_Monument_image.jpg",
+      "bytes": 24709,
+      "content_type": "image/jpeg",
+      "license_path": "C:\\Users\\qkrdm\\OneDrive\\바탕 화면\\youtube-content-factory\\episodes\\episode_002\\assets\\licenses\\scene_02_NOAA_image_NOAA_Mariana_Trench_Marine_National_Monument_image.license.json"
+    },
+    {
+      "scene": "scene_02",
+      "title": "File:China's soft robot realizes deep sea exploration and free swimming.webm",
+      "source": "Wikimedia Commons",
+      "original_url": "https://commons.wikimedia.org/w/index.php?search=deep+ocean+mariana+trench+underwater+submarine+filetype%3Avideo",
+      "download_url": "https://upload.wikimedia.org/wikipedia/commons/5/54/China%27s_soft_robot_realizes_deep_sea_exploration_and_free_swimming.webm",
+      "license": "CC BY 2.5",
+      "media_type": "video",
+      "keywords": [
+        "deep ocean",
+        "mariana trench",
+        "underwater",
+        "submarine"
+      ],
+      "trust_score": 4,
+      "local_path": "C:\\Users\\qkrdm\\OneDrive\\바탕 화면\\youtube-content-factory\\episodes\\episode_002\\assets\\videos\\scene_02_Wikimedia_Commons_video_China_s_soft_robot_realizes_deep_sea_exploration_and_free_swimming.webm",
+      "bytes": 2556342,
+      "content_type": "video/webm",
+      "license_path": "C:\\Users\\qkrdm\\OneDrive\\바탕 화면\\youtube-content-factory\\episodes\\episode_002\\assets\\licenses\\scene_02_Wikimedia_Commons_video_China_s_soft_robot_realizes_deep_sea_exploration_and_free_swimming.license.json"
+    },
+    {
+      "scene": "scene_03",
+      "title": "NOAA Mariana Trench Marine National Monument image",
+      "source": "NOAA",
+      "original_url": "https://www.noaa.gov/search?query=deep+ocean+mariana+trench+underwater+submarine+image",
+      "download_url": "https://www.fisheries.noaa.gov/s3//styles/media_750_x500/s3/2021-02/750x500-rov-deep-discoverer-chamorro-seamount-NOAA-OER.jpg?itok=6ZBiyqPw",
+      "license": "NOAA public domain or official media usage terms; verify per asset.",
+      "media_type": "image",
+      "keywords": [
+        "deep ocean",
+        "mariana trench",
+        "underwater",
+        "submarine"
+      ],
+      "trust_score": 5,
+      "local_path": "C:\\Users\\qkrdm\\OneDrive\\바탕 화면\\youtube-content-factory\\episodes\\episode_002\\assets\\images\\scene_03_NOAA_image_NOAA_Mariana_Trench_Marine_National_Monument_image.jpg",
+      "bytes": 27240,
+      "content_type": "image/jpeg",
+      "license_path": "C:\\Users\\qkrdm\\OneDrive\\바탕 화면\\youtube-content-factory\\episodes\\episode_002\\assets\\licenses\\scene_03_NOAA_image_NOAA_Mariana_Trench_Marine_National_Monument_image.license.json"
+    },
+    {
+      "scene": "scene_03",
+      "title": "File:China's soft robot realizes deep sea exploration and free swimming.webm",
+      "source": "Wikimedia Commons",
+      "original_url": "https://commons.wikimedia.org/w/index.php?search=deep+ocean+mariana+trench+underwater+submarine+filetype%3Avideo",
+      "download_url": "https://upload.wikimedia.org/wikipedia/commons/5/54/China%27s_soft_robot_realizes_deep_sea_exploration_and_free_swimming.webm",
+      "license": "CC BY 2.5",
+      "media_type": "video",
+      "keywords": [
+        "deep ocean",
+        "mariana trench",
+        "underwater",
+        "submarine"
+      ],
+      "trust_score": 4,
+      "local_path": "C:\\Users\\qkrdm\\OneDrive\\바탕 화면\\youtube-content-factory\\episodes\\episode_002\\assets\\videos\\scene_03_Wikimedia_Commons_video_China_s_soft_robot_realizes_deep_sea_exploration_and_free_swimming.webm",
+      "bytes": 2556342,
+      "content_type": "video/webm",
+      "license_path": "C:\\Users\\qkrdm\\OneDrive\\바탕 화면\\youtube-content-factory\\episodes\\episode_002\\assets\\licenses\\scene_03_Wikimedia_Commons_video_China_s_soft_robot_realizes_deep_sea_exploration_and_free_swimming.license.json"
+    },
+    {
+      "scene": "scene_04",
+      "title": "NOAA Mariana Trench Marine National Monument image",
+      "source": "NOAA",
+      "original_url": "https://www.noaa.gov/search?query=deep+ocean+mariana+trench+underwater+submarine+image",
+      "download_url": "https://www.fisheries.noaa.gov/s3//styles/media_750_x500/s3/2021-02/750x500-hydrothermal-vent-NOAA.jpg?itok=nXlm97qT",
+      "license": "NOAA public domain or official media usage terms; verify per asset.",
+      "media_type": "image",
+      "keywords": [
+        "deep ocean",
+        "mariana trench",
+        "underwater",
+        "submarine"
+      ],
+      "trust_score": 5,
+      "local_path": "C:\\Users\\qkrdm\\OneDrive\\바탕 화면\\youtube-content-factory\\episodes\\episode_002\\assets\\images\\scene_04_NOAA_image_NOAA_Mariana_Trench_Marine_National_Monument_image.jpg",
+      "bytes": 117032,
+      "content_type": "image/jpeg",
+      "license_path": "C:\\Users\\qkrdm\\OneDrive\\바탕 화면\\youtube-content-factory\\episodes\\episode_002\\assets\\licenses\\scene_04_NOAA_image_NOAA_Mariana_Trench_Marine_National_Monument_image.license.json"
+    },
+    {
+      "scene": "scene_05",
+      "title": "NOAA Mariana Trench Marine National Monument image",
+      "source": "NOAA",
+      "original_url": "https://www.noaa.gov/search?query=deep+ocean+mariana+trench+underwater+submarine+image",
+      "download_url": "https://www.fisheries.noaa.gov/s3//styles/media_750_x500/s3/2021-02/750x500-jellyfish-enigma-seamount-mtmnm-NOAA.jpg?itok=MtYn7fHz",
+      "license": "NOAA public domain or official media usage terms; verify per asset.",
+      "media_type": "image",
+      "keywords": [
+        "deep ocean",
+        "mariana trench",
+        "underwater",
+        "submarine"
+      ],
+      "trust_score": 5,
+      "local_path": "C:\\Users\\qkrdm\\OneDrive\\바탕 화면\\youtube-content-factory\\episodes\\episode_002\\assets\\images\\scene_05_NOAA_image_NOAA_Mariana_Trench_Marine_National_Monument_image.jpg",
+      "bytes": 24709,
+      "content_type": "image/jpeg",
+      "license_path": "C:\\Users\\qkrdm\\OneDrive\\바탕 화면\\youtube-content-factory\\episodes\\episode_002\\assets\\licenses\\scene_05_NOAA_image_NOAA_Mariana_Trench_Marine_National_Monument_image.license.json"
+    },
+    {
+      "scene": "scene_06",
+      "title": "NOAA Mariana Trench Marine National Monument image",
+      "source": "NOAA",
+      "original_url": "https://www.noaa.gov/search?query=deep+ocean+mariana+trench+underwater+submarine+image",
+      "download_url": "https://www.fisheries.noaa.gov/s3//styles/media_750_x500/s3/2021-02/750x500-rov-deep-discoverer-chamorro-seamount-NOAA-OER.jpg?itok=6ZBiyqPw",
+      "license": "NOAA public domain or official media usage terms; verify per asset.",
+      "media_type": "image",
+      "keywords": [
+        "deep ocean",
+        "mariana trench",
+        "underwater",
+        "submarine"
+      ],
+      "trust_score": 5,
+      "local_path": "C:\\Users\\qkrdm\\OneDrive\\바탕 화면\\youtube-content-factory\\episodes\\episode_002\\assets\\images\\scene_06_NOAA_image_NOAA_Mariana_Trench_Marine_National_Monument_image.jpg",
+      "bytes": 27240,
+      "content_type": "image/jpeg",
+      "license_path": "C:\\Users\\qkrdm\\OneDrive\\바탕 화면\\youtube-content-factory\\episodes\\episode_002\\assets\\licenses\\scene_06_NOAA_image_NOAA_Mariana_Trench_Marine_National_Monument_image.license.json"
+    },
+    {
+      "scene": "scene_07",
+      "title": "NOAA Mariana Trench Marine National Monument image",
+      "source": "NOAA",
+      "original_url": "https://www.noaa.gov/search?query=deep+ocean+mariana+trench+underwater+submarine+image",
+      "download_url": "https://www.fisheries.noaa.gov/s3//styles/media_750_x500/s3/2021-02/750x500-hydrothermal-vent-NOAA.jpg?itok=nXlm97qT",
+      "license": "NOAA public domain or official media usage terms; verify per asset.",
+      "media_type": "image",
+      "keywords": [
+        "deep ocean",
+        "mariana trench",
+        "underwater",
+        "submarine"
+      ],
+      "trust_score": 5,
+      "local_path": "C:\\Users\\qkrdm\\OneDrive\\바탕 화면\\youtube-content-factory\\episodes\\episode_002\\assets\\images\\scene_07_NOAA_image_NOAA_Mariana_Trench_Marine_National_Monument_image.jpg",
+      "bytes": 117032,
+      "content_type": "image/jpeg",
+      "license_path": "C:\\Users\\qkrdm\\OneDrive\\바탕 화면\\youtube-content-factory\\episodes\\episode_002\\assets\\licenses\\scene_07_NOAA_image_NOAA_Mariana_Trench_Marine_National_Monument_image.license.json"
+    },
+    {
+      "scene": "scene_08",
+      "title": "NOAA Mariana Trench Marine National Monument image",
+      "source": "NOAA",
+      "original_url": "https://www.noaa.gov/search?query=deep+ocean+mariana+trench+underwater+submarine+image",
+      "download_url": "https://www.fisheries.noaa.gov/s3//styles/media_750_x500/s3/2021-02/750x500-jellyfish-enigma-seamount-mtmnm-NOAA.jpg?itok=MtYn7fHz",
+      "license": "NOAA public domain or official media usage terms; verify per asset.",
+      "media_type": "image",
+      "keywords": [
+        "deep ocean",
+        "mariana trench",
+        "underwater",
+        "submarine"
+      ],
+      "trust_score": 5,
+      "local_path": "C:\\Users\\qkrdm\\OneDrive\\바탕 화면\\youtube-content-factory\\episodes\\episode_002\\assets\\images\\scene_08_NOAA_image_NOAA_Mariana_Trench_Marine_National_Monument_image.jpg",
+      "bytes": 24709,
+      "content_type": "image/jpeg",
+      "license_path": "C:\\Users\\qkrdm\\OneDrive\\바탕 화면\\youtube-content-factory\\episodes\\episode_002\\assets\\licenses\\scene_08_NOAA_image_NOAA_Mariana_Trench_Marine_National_Monument_image.license.json"
+    }
+  ],
+  "skipped": [
+    {
+      "scene": "scene_01",
+      "title": "NASA image search: deep ocean mariana trench underwater submarine",
+      "source": "NASA",
+      "media_type": "image",
+      "url": "https://images.nasa.gov/search-results?q=deep+ocean+mariana+trench+underwater+submarine&media_type=image",
+      "reason": "No direct downloadable asset could be resolved."
+    },
+    {
+      "scene": "scene_01",
+      "title": "NASA video search: deep ocean mariana trench underwater submarine",
+      "source": "NASA",
+      "media_type": "video",
+      "url": "https://images.nasa.gov/search-results?q=deep+ocean+mariana+trench+underwater+submarine&media_type=video",
+      "reason": "No direct downloadable asset could be resolved."
+    },
+    {
+      "scene": "scene_01",
+      "title": "NOAA video search: deep ocean mariana trench underwater submarine",
+      "source": "NOAA",
+      "media_type": "video",
+      "url": "https://www.noaa.gov/search?query=deep+ocean+mariana+trench+underwater+submarine+video",
+      "reason": "No direct downloadable asset could be resolved."
+    },
+    {
+      "scene": "scene_01",
+      "title": "ESA image search: deep ocean mariana trench underwater submarine",
+      "source": "ESA",
+      "media_type": "image",
+      "url": "https://www.esa.int/esasearch?q=deep+ocean+mariana+trench+underwater+submarine+image",
+      "reason": "No direct downloadable asset could be resolved."
+    },
+    {
+      "scene": "scene_01",
+      "title": "ESA video search: deep ocean mariana trench underwater submarine",
+      "source": "ESA",
+      "media_type": "video",
+      "url": "https://www.esa.int/esasearch?q=deep+ocean+mariana+trench+underwater+submarine+video",
+      "reason": "No direct downloadable asset could be resolved."
+    },
+    {
+      "scene": "scene_01",
+      "title": "Wikimedia Commons image search: deep ocean mariana trench underwater submarine",
+      "source": "Wikimedia Commons",
+      "media_type": "image",
+      "url": "https://commons.wikimedia.org/w/index.php?search=deep+ocean+mariana+trench+underwater+submarine+filetype%3Aimage",
+      "reason": "No direct downloadable asset could be resolved."
+    },
+    {
+      "scene": "scene_02",
+      "title": "NASA image search: deep ocean mariana trench underwater submarine",
+      "source": "NASA",
+      "media_type": "image",
+      "url": "https://images.nasa.gov/search-results?q=deep+ocean+mariana+trench+underwater+submarine&media_type=image",
+      "reason": "No direct downloadable asset could be resolved."
+    },
+    {
+      "scene": "scene_02",
+      "title": "NASA video search: deep ocean mariana trench underwater submarine",
+      "source": "NASA",
+      "media_type": "video",
+      "url": "https://images.nasa.gov/search-results?q=deep+ocean+mariana+trench+underwater+submarine&media_type=video",
+      "reason": "No direct downloadable asset could be resolved."
+    },
+    {
+      "scene": "scene_02",
+      "title": "NOAA video search: deep ocean mariana trench underwater submarine",
+      "source": "NOAA",
+      "media_type": "video",
+      "url": "https://www.noaa.gov/search?query=deep+ocean+mariana+trench+underwater+submarine+video",
+      "reason": "No direct downloadable asset could be resolved."
+    },
+    {
+      "scene": "scene_02",
+      "title": "ESA image search: deep ocean mariana trench underwater submarine",
+      "source": "ESA",
+      "media_type": "image",
+      "url": "https://www.esa.int/esasearch?q=deep+ocean+mariana+trench+underwater+submarine+image",
+      "reason": "No direct downloadable asset could be resolved."
+    },
+    {
+      "scene": "scene_02",
+      "title": "ESA video search: deep ocean mariana trench underwater submarine",
+      "source": "ESA",
+      "media_type": "video",
+      "url": "https://www.esa.int/esasearch?q=deep+ocean+mariana+trench+underwater+submarine+video",
+      "reason": "No direct downloadable asset could be resolved."
+    },
+    {
+      "scene": "scene_02",
+      "title": "Wikimedia Commons image search: deep ocean mariana trench underwater submarine",
+      "source": "Wikimedia Commons",
+      "media_type": "image",
+      "url": "https://commons.wikimedia.org/w/index.php?search=deep+ocean+mariana+trench+underwater+submarine+filetype%3Aimage",
+      "reason": "No direct downloadable asset could be resolved."
+    },
+    {
+      "scene": "scene_03",
+      "title": "NASA image search: deep ocean mariana trench underwater submarine",
+      "source": "NASA",
+      "media_type": "image",
+      "url": "https://images.nasa.gov/search-results?q=deep+ocean+mariana+trench+underwater+submarine&media_type=image",
+      "reason": "No direct downloadable asset could be resolved."
+    },
+    {
+      "scene": "scene_03",
+      "title": "NASA video search: deep ocean mariana trench underwater submarine",
+      "source": "NASA",
+      "media_type": "video",
+      "url": "https://images.nasa.gov/search-results?q=deep+ocean+mariana+trench+underwater+submarine&media_type=video",
+      "reason": "No direct downloadable asset could be resolved."
+    },
+    {
+      "scene": "scene_03",
+      "title": "NOAA video search: deep ocean mariana trench underwater submarine",
+      "source": "NOAA",
+      "media_type": "video",
+      "url": "https://www.noaa.gov/search?query=deep+ocean+mariana+trench+underwater+submarine+video",
+      "reason": "No direct downloadable asset could be resolved."
+    },
+    {
+      "scene": "scene_03",
+      "title": "ESA image search: deep ocean mariana trench underwater submarine",
+      "source": "ESA",
+      "media_type": "image",
+      "url": "https://www.esa.int/esasearch?q=deep+ocean+mariana+trench+underwater+submarine+image",
+      "reason": "No direct downloadable asset could be resolved."
+    },
+    {
+      "scene": "scene_03",
+      "title": "ESA video search: deep ocean mariana trench underwater submarine",
+      "source": "ESA",
+      "media_type": "video",
+      "url": "https://www.esa.int/esasearch?q=deep+ocean+mariana+trench+underwater+submarine+video",
+      "reason": "No direct downloadable asset could be resolved."
+    },
+    {
+      "scene": "scene_03",
+      "title": "Wikimedia Commons image search: deep ocean mariana trench underwater submarine",
+      "source": "Wikimedia Commons",
+      "media_type": "image",
+      "url": "https://commons.wikimedia.org/w/index.php?search=deep+ocean+mariana+trench+underwater+submarine+filetype%3Aimage",
+      "reason": "No direct downloadable asset could be resolved."
+    },
+    {
+      "scene": "scene_04",
+      "title": "NASA image search: deep ocean mariana trench underwater submarine",
+      "source": "NASA",
+      "media_type": "image",
+      "url": "https://images.nasa.gov/search-results?q=deep+ocean+mariana+trench+underwater+submarine&media_type=image",
+      "reason": "No direct downloadable asset could be resolved."
+    },
+    {
+      "scene": "scene_04",
+      "title": "NASA video search: deep ocean mariana trench underwater submarine",
+      "source": "NASA",
+      "media_type": "video",
+      "url": "https://images.nasa.gov/search-results?q=deep+ocean+mariana+trench+underwater+submarine&media_type=video",
+      "reason": "No direct downloadable asset could be resolved."
+    },
+    {
+      "scene": "scene_04",
+      "title": "NOAA video search: deep ocean mariana trench underwater submarine",
+      "source": "NOAA",
+      "media_type": "video",
+      "url": "https://www.noaa.gov/search?query=deep+ocean+mariana+trench+underwater+submarine+video",
+      "reason": "No direct downloadable asset could be resolved."
+    },
+    {
+      "scene": "scene_04",
+      "title": "ESA image search: deep ocean mariana trench underwater submarine",
+      "source": "ESA",
+      "media_type": "image",
+      "url": "https://www.esa.int/esasearch?q=deep+ocean+mariana+trench+underwater+submarine+image",
+      "reason": "No direct downloadable asset could be resolved."
+    },
+    {
+      "scene": "scene_04",
+      "title": "ESA video search: deep ocean mariana trench underwater submarine",
+      "source": "ESA",
+      "media_type": "video",
+      "url": "https://www.esa.int/esasearch?q=deep+ocean+mariana+trench+underwater+submarine+video",
+      "reason": "No direct downloadable asset could be resolved."
+    },
+    {
+      "scene": "scene_04",
+      "title": "Wikimedia Commons image search: deep ocean mariana trench underwater submarine",
+      "source": "Wikimedia Commons",
+      "media_type": "image",
+      "url": "https://commons.wikimedia.org/w/index.php?search=deep+ocean+mariana+trench+underwater+submarine+filetype%3Aimage",
+      "reason": "No direct downloadable asset could be resolved."
+    },
+    {
+      "scene": "scene_04",
+      "title": "Wikimedia Commons video search: deep ocean mariana trench underwater submarine",
+      "source": "Wikimedia Commons",
+      "media_type": "video",
+      "url": "https://commons.wikimedia.org/w/index.php?search=deep+ocean+mariana+trench+underwater+submarine+filetype%3Avideo",
+      "reason": "HTTPError: HTTP Error 429: Too Many Requests"
+    },
+    {
+      "scene": "scene_04",
+      "title": "Pexels image search: deep ocean mariana trench underwater submarine",
+      "source": "Pexels",
+      "media_type": "image",
+      "url": "https://www.pexels.com/search/deep%20ocean%20mariana%20trench%20underwater%20submarine%20image/",
+      "reason": "No direct downloadable asset could be resolved."
+    },
+    {
+      "scene": "scene_04",
+      "title": "Pexels video search: deep ocean mariana trench underwater submarine",
+      "source": "Pexels",
+      "media_type": "video",
+      "url": "https://www.pexels.com/search/deep%20ocean%20mariana%20trench%20underwater%20submarine%20video/",
+      "reason": "No direct downloadable asset could be resolved."
+    },
+    {
+      "scene": "scene_04",
+      "title": "Pixabay image search: deep ocean mariana trench underwater submarine",
+      "source": "Pixabay",
+      "media_type": "image",
+      "url": "https://pixabay.com/images/search/deep%20ocean%20mariana%20trench%20underwater%20submarine/",
+      "reason": "No direct downloadable asset could be resolved."
+    },
+    {
+      "scene": "scene_04",
+      "title": "Pixabay video search: deep ocean mariana trench underwater submarine",
+      "source": "Pixabay",
+      "media_type": "video",
+      "url": "https://pixabay.com/videos/search/deep%20ocean%20mariana%20trench%20underwater%20submarine/",
+      "reason": "No direct downloadable asset could be resolved."
+    },
+    {
+      "scene": "scene_05",
+      "title": "NASA image search: deep ocean mariana trench underwater submarine",
+      "source": "NASA",
+      "media_type": "image",
+      "url": "https://images.nasa.gov/search-results?q=deep+ocean+mariana+trench+underwater+submarine&media_type=image",
+      "reason": "No direct downloadable asset could be resolved."
+    },
+    {
+      "scene": "scene_05",
+      "title": "NASA video search: deep ocean mariana trench underwater submarine",
+      "source": "NASA",
+      "media_type": "video",
+      "url": "https://images.nasa.gov/search-results?q=deep+ocean+mariana+trench+underwater+submarine&media_type=video",
+      "reason": "No direct downloadable asset could be resolved."
+    },
+    {
+      "scene": "scene_05",
+      "title": "NOAA video search: deep ocean mariana trench underwater submarine",
+      "source": "NOAA",
+      "media_type": "video",
+      "url": "https://www.noaa.gov/search?query=deep+ocean+mariana+trench+underwater+submarine+video",
+      "reason": "No direct downloadable asset could be resolved."
+    },
+    {
+      "scene": "scene_05",
+      "title": "ESA image search: deep ocean mariana trench underwater submarine",
+      "source": "ESA",
+      "media_type": "image",
+      "url": "https://www.esa.int/esasearch?q=deep+ocean+mariana+trench+underwater+submarine+image",
+      "reason": "No direct downloadable asset could be resolved."
+    },
+    {
+      "scene": "scene_05",
+      "title": "ESA video search: deep ocean mariana trench underwater submarine",
+      "source": "ESA",
+      "media_type": "video",
+      "url": "https://www.esa.int/esasearch?q=deep+ocean+mariana+trench+underwater+submarine+video",
+      "reason": "No direct downloadable asset could be resolved."
+    },
+    {
+      "scene": "scene_05",
+      "title": "Wikimedia Commons image search: deep ocean mariana trench underwater submarine",
+      "source": "Wikimedia Commons",
+      "media_type": "image",
+      "url": "https://commons.wikimedia.org/w/index.php?search=deep+ocean+mariana+trench+underwater+submarine+filetype%3Aimage",
+      "reason": "HTTPError: HTTP Error 429: Too Many Requests"
+    },
+    {
+      "scene": "scene_05",
+      "title": "Wikimedia Commons video search: deep ocean mariana trench underwater submarine",
+      "source": "Wikimedia Commons",
+      "media_type": "video",
+      "url": "https://commons.wikimedia.org/w/index.php?search=deep+ocean+mariana+trench+underwater+submarine+filetype%3Avideo",
+      "reason": "HTTPError: HTTP Error 429: Too Many Requests"
+    },
+    {
+      "scene": "scene_05",
+      "title": "Pexels image search: deep ocean mariana trench underwater submarine",
+      "source": "Pexels",
+      "media_type": "image",
+      "url": "https://www.pexels.com/search/deep%20ocean%20mariana%20trench%20underwater%20submarine%20image/",
+      "reason": "No direct downloadable asset could be resolved."
+    },
+    {
+      "scene": "scene_05",
+      "title": "Pexels video search: deep ocean mariana trench underwater submarine",
+      "source": "Pexels",
+      "media_type": "video",
+      "url": "https://www.pexels.com/search/deep%20ocean%20mariana%20trench%20underwater%20submarine%20video/",
+      "reason": "No direct downloadable asset could be resolved."
+    },
+    {
+      "scene": "scene_05",
+      "title": "Pixabay image search: deep ocean mariana trench underwater submarine",
+      "source": "Pixabay",
+      "media_type": "image",
+      "url": "https://pixabay.com/images/search/deep%20ocean%20mariana%20trench%20underwater%20submarine/",
+      "reason": "No direct downloadable asset could be resolved."
+    },
+    {
+      "scene": "scene_05",
+      "title": "Pixabay video search: deep ocean mariana trench underwater submarine",
+      "source": "Pixabay",
+      "media_type": "video",
+      "url": "https://pixabay.com/videos/search/deep%20ocean%20mariana%20trench%20underwater%20submarine/",
+      "reason": "No direct downloadable asset could be resolved."
+    },
+    {
+      "scene": "scene_06",
+      "title": "NASA image search: deep ocean mariana trench underwater submarine",
+      "source": "NASA",
+      "media_type": "image",
+      "url": "https://images.nasa.gov/search-results?q=deep+ocean+mariana+trench+underwater+submarine&media_type=image",
+      "reason": "No direct downloadable asset could be resolved."
+    },
+    {
+      "scene": "scene_06",
+      "title": "NASA video search: deep ocean mariana trench underwater submarine",
+      "source": "NASA",
+      "media_type": "video",
+      "url": "https://images.nasa.gov/search-results?q=deep+ocean+mariana+trench+underwater+submarine&media_type=video",
+      "reason": "No direct downloadable asset could be resolved."
+    },
+    {
+      "scene": "scene_06",
+      "title": "NOAA video search: deep ocean mariana trench underwater submarine",
+      "source": "NOAA",
+      "media_type": "video",
+      "url": "https://www.noaa.gov/search?query=deep+ocean+mariana+trench+underwater+submarine+video",
+      "reason": "No direct downloadable asset could be resolved."
+    },
+    {
+      "scene": "scene_06",
+      "title": "ESA image search: deep ocean mariana trench underwater submarine",
+      "source": "ESA",
+      "media_type": "image",
+      "url": "https://www.esa.int/esasearch?q=deep+ocean+mariana+trench+underwater+submarine+image",
+      "reason": "No direct downloadable asset could be resolved."
+    },
+    {
+      "scene": "scene_06",
+      "title": "ESA video search: deep ocean mariana trench underwater submarine",
+      "source": "ESA",
+      "media_type": "video",
+      "url": "https://www.esa.int/esasearch?q=deep+ocean+mariana+trench+underwater+submarine+video",
+      "reason": "No direct downloadable asset could be resolved."
+    },
+    {
+      "scene": "scene_06",
+      "title": "Wikimedia Commons image search: deep ocean mariana trench underwater submarine",
+      "source": "Wikimedia Commons",
+      "media_type": "image",
+      "url": "https://commons.wikimedia.org/w/index.php?search=deep+ocean+mariana+trench+underwater+submarine+filetype%3Aimage",
+      "reason": "HTTPError: HTTP Error 429: Too Many Requests"
+    },
+    {
+      "scene": "scene_06",
+      "title": "Wikimedia Commons video search: deep ocean mariana trench underwater submarine",
+      "source": "Wikimedia Commons",
+      "media_type": "video",
+      "url": "https://commons.wikimedia.org/w/index.php?search=deep+ocean+mariana+trench+underwater+submarine+filetype%3Avideo",
+      "reason": "HTTPError: HTTP Error 429: Too Many Requests"
+    },
+    {
+      "scene": "scene_06",
+      "title": "Pexels image search: deep ocean mariana trench underwater submarine",
+      "source": "Pexels",
+      "media_type": "image",
+      "url": "https://www.pexels.com/search/deep%20ocean%20mariana%20trench%20underwater%20submarine%20image/",
+      "reason": "No direct downloadable asset could be resolved."
+    },
+    {
+      "scene": "scene_06",
+      "title": "Pexels video search: deep ocean mariana trench underwater submarine",
+      "source": "Pexels",
+      "media_type": "video",
+      "url": "https://www.pexels.com/search/deep%20ocean%20mariana%20trench%20underwater%20submarine%20video/",
+      "reason": "No direct downloadable asset could be resolved."
+    },
+    {
+      "scene": "scene_06",
+      "title": "Pixabay image search: deep ocean mariana trench underwater submarine",
+      "source": "Pixabay",
+      "media_type": "image",
+      "url": "https://pixabay.com/images/search/deep%20ocean%20mariana%20trench%20underwater%20submarine/",
+      "reason": "No direct downloadable asset could be resolved."
+    },
+    {
+      "scene": "scene_06",
+      "title": "Pixabay video search: deep ocean mariana trench underwater submarine",
+      "source": "Pixabay",
+      "media_type": "video",
+      "url": "https://pixabay.com/videos/search/deep%20ocean%20mariana%20trench%20underwater%20submarine/",
+      "reason": "No direct downloadable asset could be resolved."
+    },
+    {
+      "scene": "scene_07",
+      "title": "NASA image search: deep ocean mariana trench underwater submarine",
+      "source": "NASA",
+      "media_type": "image",
+      "url": "https://images.nasa.gov/search-results?q=deep+ocean+mariana+trench+underwater+submarine&media_type=image",
+      "reason": "No direct downloadable asset could be resolved."
+    },
+    {
+      "scene": "scene_07",
+      "title": "NASA video search: deep ocean mariana trench underwater submarine",
+      "source": "NASA",
+      "media_type": "video",
+      "url": "https://images.nasa.gov/search-results?q=deep+ocean+mariana+trench+underwater+submarine&media_type=video",
+      "reason": "No direct downloadable asset could be resolved."
+    },
+    {
+      "scene": "scene_07",
+      "title": "NOAA video search: deep ocean mariana trench underwater submarine",
+      "source": "NOAA",
+      "media_type": "video",
+      "url": "https://www.noaa.gov/search?query=deep+ocean+mariana+trench+underwater+submarine+video",
+      "reason": "No direct downloadable asset could be resolved."
+    },
+    {
+      "scene": "scene_07",
+      "title": "ESA image search: deep ocean mariana trench underwater submarine",
+      "source": "ESA",
+      "media_type": "image",
+      "url": "https://www.esa.int/esasearch?q=deep+ocean+mariana+trench+underwater+submarine+image",
+      "reason": "No direct downloadable asset could be resolved."
+    },
+    {
+      "scene": "scene_07",
+      "title": "ESA video search: deep ocean mariana trench underwater submarine",
+      "source": "ESA",
+      "media_type": "video",
+      "url": "https://www.esa.int/esasearch?q=deep+ocean+mariana+trench+underwater+submarine+video",
+      "reason": "No direct downloadable asset could be resolved."
+    },
+    {
+      "scene": "scene_07",
+      "title": "Wikimedia Commons image search: deep ocean mariana trench underwater submarine",
+      "source": "Wikimedia Commons",
+      "media_type": "image",
+      "url": "https://commons.wikimedia.org/w/index.php?search=deep+ocean+mariana+trench+underwater+submarine+filetype%3Aimage",
+      "reason": "HTTPError: HTTP Error 429: Too Many Requests"
+    },
+    {
+      "scene": "scene_07",
+      "title": "Wikimedia Commons video search: deep ocean mariana trench underwater submarine",
+      "source": "Wikimedia Commons",
+      "media_type": "video",
+      "url": "https://commons.wikimedia.org/w/index.php?search=deep+ocean+mariana+trench+underwater+submarine+filetype%3Avideo",
+      "reason": "HTTPError: HTTP Error 429: Too Many Requests"
+    },
+    {
+      "scene": "scene_07",
+      "title": "Pexels image search: deep ocean mariana trench underwater submarine",
+      "source": "Pexels",
+      "media_type": "image",
+      "url": "https://www.pexels.com/search/deep%20ocean%20mariana%20trench%20underwater%20submarine%20image/",
+      "reason": "No direct downloadable asset could be resolved."
+    },
+    {
+      "scene": "scene_07",
+      "title": "Pexels video search: deep ocean mariana trench underwater submarine",
+      "source": "Pexels",
+      "media_type": "video",
+      "url": "https://www.pexels.com/search/deep%20ocean%20mariana%20trench%20underwater%20submarine%20video/",
+      "reason": "No direct downloadable asset could be resolved."
+    },
+    {
+      "scene": "scene_07",
+      "title": "Pixabay image search: deep ocean mariana trench underwater submarine",
+      "source": "Pixabay",
+      "media_type": "image",
+      "url": "https://pixabay.com/images/search/deep%20ocean%20mariana%20trench%20underwater%20submarine/",
+      "reason": "No direct downloadable asset could be resolved."
+    },
+    {
+      "scene": "scene_07",
+      "title": "Pixabay video search: deep ocean mariana trench underwater submarine",
+      "source": "Pixabay",
+      "media_type": "video",
+      "url": "https://pixabay.com/videos/search/deep%20ocean%20mariana%20trench%20underwater%20submarine/",
+      "reason": "No direct downloadable asset could be resolved."
+    },
+    {
+      "scene": "scene_08",
+      "title": "NASA image search: deep ocean mariana trench underwater submarine",
+      "source": "NASA",
+      "media_type": "image",
+      "url": "https://images.nasa.gov/search-results?q=deep+ocean+mariana+trench+underwater+submarine&media_type=image",
+      "reason": "No direct downloadable asset could be resolved."
+    },
+    {
+      "scene": "scene_08",
+      "title": "NASA video search: deep ocean mariana trench underwater submarine",
+      "source": "NASA",
+      "media_type": "video",
+      "url": "https://images.nasa.gov/search-results?q=deep+ocean+mariana+trench+underwater+submarine&media_type=video",
+      "reason": "No direct downloadable asset could be resolved."
+    },
+    {
+      "scene": "scene_08",
+      "title": "NOAA video search: deep ocean mariana trench underwater submarine",
+      "source": "NOAA",
+      "media_type": "video",
+      "url": "https://www.noaa.gov/search?query=deep+ocean+mariana+trench+underwater+submarine+video",
+      "reason": "No direct downloadable asset could be resolved."
+    },
+    {
+      "scene": "scene_08",
+      "title": "ESA image search: deep ocean mariana trench underwater submarine",
+      "source": "ESA",
+      "media_type": "image",
+      "url": "https://www.esa.int/esasearch?q=deep+ocean+mariana+trench+underwater+submarine+image",
+      "reason": "No direct downloadable asset could be resolved."
+    },
+    {
+      "scene": "scene_08",
+      "title": "ESA video search: deep ocean mariana trench underwater submarine",
+      "source": "ESA",
+      "media_type": "video",
+      "url": "https://www.esa.int/esasearch?q=deep+ocean+mariana+trench+underwater+submarine+video",
+      "reason": "No direct downloadable asset could be resolved."
+    },
+    {
+      "scene": "scene_08",
+      "title": "Wikimedia Commons image search: deep ocean mariana trench underwater submarine",
+      "source": "Wikimedia Commons",
+      "media_type": "image",
+      "url": "https://commons.wikimedia.org/w/index.php?search=deep+ocean+mariana+trench+underwater+submarine+filetype%3Aimage",
+      "reason": "HTTPError: HTTP Error 429: Too Many Requests"
+    },
+    {
+      "scene": "scene_08",
+      "title": "Wikimedia Commons video search: deep ocean mariana trench underwater submarine",
+      "source": "Wikimedia Commons",
+      "media_type": "video",
+      "url": "https://commons.wikimedia.org/w/index.php?search=deep+ocean+mariana+trench+underwater+submarine+filetype%3Avideo",
+      "reason": "HTTPError: HTTP Error 429: Too Many Requests"
+    },
+    {
+      "scene": "scene_08",
+      "title": "Pexels image search: deep ocean mariana trench underwater submarine",
+      "source": "Pexels",
+      "media_type": "image",
+      "url": "https://www.pexels.com/search/deep%20ocean%20mariana%20trench%20underwater%20submarine%20image/",
+      "reason": "No direct downloadable asset could be resolved."
+    },
+    {
+      "scene": "scene_08",
+      "title": "Pexels video search: deep ocean mariana trench underwater submarine",
+      "source": "Pexels",
+      "media_type": "video",
+      "url": "https://www.pexels.com/search/deep%20ocean%20mariana%20trench%20underwater%20submarine%20video/",
+      "reason": "No direct downloadable asset could be resolved."
+    },
+    {
+      "scene": "scene_08",
+      "title": "Pixabay image search: deep ocean mariana trench underwater submarine",
+      "source": "Pixabay",
+      "media_type": "image",
+      "url": "https://pixabay.com/images/search/deep%20ocean%20mariana%20trench%20underwater%20submarine/",
+      "reason": "No direct downloadable asset could be resolved."
+    },
+    {
+      "scene": "scene_08",
+      "title": "Pixabay video search: deep ocean mariana trench underwater submarine",
+      "source": "Pixabay",
+      "media_type": "video",
+      "url": "https://pixabay.com/videos/search/deep%20ocean%20mariana%20trench%20underwater%20submarine/",
+      "reason": "No direct downloadable asset could be resolved."
+    }
+  ]
+}

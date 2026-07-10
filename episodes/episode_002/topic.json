@@ -1,0 +1,21 @@
+{
+  "episode_id": "episode_002",
+  "episode": "002",
+  "title": "사람이 바다 11,000m까지 내려가면?",
+  "main_question": "사람이 바다 11,000m까지 내려가면?",
+  "topic_keywords": [
+    "deep ocean",
+    "mariana trench",
+    "challenger deep",
+    "underwater pressure",
+    "submersible",
+    "deep sea life",
+    "hydrothermal vents",
+    "NOAA ocean exploration"
+  ],
+  "target_duration_seconds": {
+    "min": 20,
+    "max": 25
+  },
+  "production_status": "initial_package_only_no_render"
+}

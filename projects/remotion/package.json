@@ -1,0 +1,17 @@
+{
+  "scripts": {
+    "preview": "remotion preview src/index.ts",
+    "render:ep007": "remotion render src/index.ts HistoryTemplate ../output/ep007.mp4"
+  },
+  "dependencies": {
+    "@remotion/cli": "^4.0.364",
+    "remotion": "^4.0.364",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@types/react": "^18.2.66",
+    "@types/react-dom": "^18.2.22",
+    "typescript": "^5.4.5"
+  }
+}
