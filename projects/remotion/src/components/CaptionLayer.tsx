@@ -58,6 +58,9 @@ export const CaptionLayer: React.FC<
 		>
 			<div
 				style={{
+					width:
+						ep005Theme.caption.width,
+
 					fontFamily:
 						ep005Theme.fontFamily,
 
@@ -88,6 +91,14 @@ export const CaptionLayer: React.FC<
 
 					whiteSpace: 'pre-wrap',
 					wordBreak: 'keep-all',
+					overflowWrap: 'break-word',
+
+					display: '-webkit-box',
+					WebkitBoxOrient: 'vertical',
+					WebkitLineClamp:
+						ep005Theme.caption.maxLines,
+
+					overflow: 'hidden',
 				}}
 			>
 				{caption}

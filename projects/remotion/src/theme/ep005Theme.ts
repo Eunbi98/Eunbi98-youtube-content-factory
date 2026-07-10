@@ -3,41 +3,36 @@ import {SAFE_FRAME} from '../layout/SafeFrame';
 export const ep005Theme = {
 	backgroundColor: '#17212D',
 
-	/*
-	 * EP005 원본 제목에 가까운 민트 그린.
-	 */
-	titleColor: '#63E88F',
-
+	titleColor: '#7cffb2',
 	captionColor: '#FFFFFF',
-	accentColor: '#63E88F',
+	accentColor: '#7cffb2',
 
 	fontFamily:
 		'"Pretendard", "Noto Sans KR", "Apple SD Gothic Neo", Arial, sans-serif',
 
 	title: {
-	top: SAFE_FRAME.title.top,
-	left: SAFE_FRAME.title.left,
-	right: SAFE_FRAME.title.right,
-	height: SAFE_FRAME.title.height,
+		top: SAFE_FRAME.title.top,
+		left: SAFE_FRAME.title.left,
+		right: SAFE_FRAME.title.right,
+		height: SAFE_FRAME.title.height,
 
-	fontSize: 112,
-	fontWeight: 900,
-	lineHeight: 1.02,
+		fontSize: 112,
+		fontWeight: 900,
+		lineHeight: 1.02,
 
-	letterSpacing: "-0.065em",
+		letterSpacing: '-0.065em',
+		textAlign: 'center' as const,
 
-	textAlign: "center" as const,
+		color: '#7cffb2',
 
-	color: "#63E88F",
+		textStroke: '5px #07110C',
 
-	textStroke: "5px #07110C",
-
-	textShadow: [
-		"0 4px 0 rgba(0,0,0,0.95)",
-		"0 8px 16px rgba(0,0,0,0.90)",
-		"0 0 6px rgba(0,0,0,1)",
-	].join(", "),
-},
+		textShadow: [
+			'0 4px 0 rgba(0, 0, 0, 0.95)',
+			'0 8px 16px rgba(0, 0, 0, 0.90)',
+			'0 0 6px rgba(0, 0, 0, 1)',
+		].join(', '),
+	},
 
 	visual: {
 		top: SAFE_FRAME.video.top,
@@ -50,6 +45,9 @@ export const ep005Theme = {
 		left: SAFE_FRAME.caption.left,
 		right: SAFE_FRAME.caption.right,
 		bottom: SAFE_FRAME.caption.bottom,
+
+		width: '100%',
+		maxLines: 2,
 
 		fontSize: 58,
 		fontWeight: 800,
@@ -67,4 +65,4 @@ export const ep005Theme = {
 			'0 6px 12px rgba(0, 0, 0, 1)',
 		].join(', '),
 	},
-};
+} as const;
