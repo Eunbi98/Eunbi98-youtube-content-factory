@@ -15,38 +15,29 @@ export const ep005Theme = {
 		'"Pretendard", "Noto Sans KR", "Apple SD Gothic Neo", Arial, sans-serif',
 
 	title: {
-		/*
-		 * 제목을 검은 상단 영역이 아니라
-		 * 영상 위쪽에 겹쳐 표시합니다.
-		 */
-		top: SAFE_FRAME.video.top + 30,
-		left: 55,
-		right: 55,
-		height: 250,
+	top: SAFE_FRAME.title.top,
+	left: SAFE_FRAME.title.left,
+	right: SAFE_FRAME.title.right,
+	height: SAFE_FRAME.title.height,
 
-		/*
-		 * 기존 70px보다 크게 설정합니다.
-		 */
-		fontSize: 104,
-		fontWeight: 900,
-		lineHeight: 1.06,
+	fontSize: 112,
+	fontWeight: 900,
+	lineHeight: 1.02,
 
-		letterSpacing: '-0.055em',
-		textAlign: 'center' as const,
+	letterSpacing: "-0.065em",
 
-		color: '#63E88F',
+	textAlign: "center" as const,
 
-		/*
-		 * EP005 스타일의 검은 외곽선과 그림자.
-		 */
-		textStroke: '4px #07110C',
+	color: "#63E88F",
 
-		textShadow: [
-			'0 4px 0 rgba(0, 0, 0, 0.95)',
-			'0 8px 14px rgba(0, 0, 0, 0.90)',
-			'0 0 5px rgba(0, 0, 0, 1)',
-		].join(', '),
-	},
+	textStroke: "5px #07110C",
+
+	textShadow: [
+		"0 4px 0 rgba(0,0,0,0.95)",
+		"0 8px 16px rgba(0,0,0,0.90)",
+		"0 0 6px rgba(0,0,0,1)",
+	].join(", "),
+},
 
 	visual: {
 		top: SAFE_FRAME.video.top,

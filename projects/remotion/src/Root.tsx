@@ -38,8 +38,8 @@ import type {EpisodeTimeline} from './types/timeline';
 			backgroundColor: '#14202B',
 
 			media: {
-        	type: 'video',
-        	src: 'assets/ep005/scene_01.mp4',
+        	type: 'image',
+        	src: 'assets/ep005/scene_01.png',
         	fit: 'cover',
         	position: 'center center',
 },

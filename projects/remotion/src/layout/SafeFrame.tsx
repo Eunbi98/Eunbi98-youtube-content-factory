@@ -1,22 +1,22 @@
 export const SAFE_FRAME = {
 	title: {
-		top: 68,
-		left: 64,
-		right: 64,
-		height: 170,
+		top: 180,
+		left: 42,
+		right: 42,
+		height: 250,
 	},
 
 	video: {
-		top: 248,
+		top: 0,
 		left: 0,
 		right: 0,
-		bottom: 300,
+		bottom: 0,
 	},
 
 	caption: {
 		left: 60,
 		right: 60,
-		bottom: 92,
+		bottom: 350,
 	},
 
 	uiUnsafe: {
