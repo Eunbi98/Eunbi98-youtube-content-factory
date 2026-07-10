@@ -21,7 +21,7 @@ export const TitleLayer: React.FC<
 				height: ep005Theme.title.height,
 
 				display: 'flex',
-				alignItems: 'center',
+				alignItems: 'flex-start',
 				justifyContent: 'center',
 
 				fontFamily:
@@ -44,7 +44,12 @@ export const TitleLayer: React.FC<
 
 				color:
 					color ??
-					ep005Theme.titleColor,
+					ep005Theme.title.color,
+
+				WebkitTextStroke:
+					ep005Theme.title.textStroke,
+
+				paintOrder: 'stroke fill',
 
 				textShadow:
 					ep005Theme.title.textShadow,
@@ -53,9 +58,10 @@ export const TitleLayer: React.FC<
 				wordBreak: 'keep-all',
 
 				zIndex: 30,
+				pointerEvents: 'none',
 			}}
 		>
 			{title}
 		</div>
 	);
-};
+};  

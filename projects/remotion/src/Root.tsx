@@ -11,7 +11,7 @@ import type {EpisodeTimeline} from './types/timeline';
     const ep005Timeline: EpisodeTimeline = {
         episodeId: 'EP005',
 
-        title: '하늘에서\n물고기가 내린다면?',
+        title: '“물고기 비”를\n들어본 적 있나요?',
 
         fps: 30,
 	width: 1080,
@@ -21,9 +21,8 @@ import type {EpisodeTimeline} from './types/timeline';
 
 	theme: {
 		backgroundColor: '#000000',
-		titleColor: '#F4D35E',
 		captionColor: '#FFFFFF',
-		accentColor: '#F4D35E',
+		accentColor: '#63E88F',
 	},
 
 	scenes: [

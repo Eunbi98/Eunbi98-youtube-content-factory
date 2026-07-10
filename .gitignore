@@ -27,3 +27,8 @@ output/images/
 .DS_Store
 Thumbs.db
 .vscode/
+
+# Generated outputs
+output/
+# Generated outputs
+output/
