@@ -1,5 +1,4 @@
 import React from 'react';
-import {AbsoluteFill} from 'remotion';
 
 import {ep005Theme} from '../theme/ep005Theme';
 import type {TimelineScene} from '../types/timeline';
@@ -22,16 +21,16 @@ export const OverlayLayer: React.FC<
 	}
 
 	let background =
-		'linear-gradient(180deg, rgba(0,0,0,0.18) 0%, rgba(0,0,0,0.02) 45%, rgba(0,0,0,0.70) 100%)';
+		ep005Theme.overlay.cinematic;
 
 	if (overlay === 'vignette') {
 		background =
-			'radial-gradient(circle at center, rgba(0,0,0,0) 40%, rgba(0,0,0,0.75) 100%)';
+			ep005Theme.overlay.vignette;
 	}
 
 	if (overlay === 'dark') {
 		background =
-			'rgba(0,0,0,0.42)';
+			ep005Theme.overlay.dark;
 	}
 
 	return (
@@ -48,6 +47,12 @@ export const OverlayLayer: React.FC<
 				opacity,
 
 				pointerEvents: 'none',
+
+				/*
+				 * VisualLayer 위에 표시하되,
+				 * TitleLayer와 CaptionLayer보다 아래에 둡니다.
+				 */
+				zIndex: 15,
 			}}
 		/>
 	);
