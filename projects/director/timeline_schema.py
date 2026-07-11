@@ -109,8 +109,11 @@ class Scene:
                 3,
             ),
             "title": self.title,
+
+            # TTS와 화면 자막이 동일한 원문을 사용합니다.
             "narration": self.narration,
-            "caption": self.subtitle,
+            "caption": self.narration,
+
             "backgroundColor": (
                 self.background_color
             ),
