@@ -1,10 +1,7 @@
-﻿from __future__ import annotations
+from __future__ import annotations
 
 import argparse
-import json
-import shutil
 import sys
-import time
 from pathlib import Path
 
 
@@ -14,19 +11,13 @@ RUNNER_DIR = ROOT_DIR / "projects" / "runner"
 if str(RUNNER_DIR) not in sys.path:
     sys.path.insert(0, str(RUNNER_DIR))
 
-from asset_manager import (  # noqa: E402
-    AssetValidationError,
-    collect_required_assets,
-    sync_episode_assets,
+from pipeline_context import (  # noqa: E402
+    FactoryPaths,
+    FactoryRunOptions,
 )
-from render_runner import (  # noqa: E402
-    CommandExecutionError,
-    render_episode,
-    typecheck_remotion,
-)
-from timeline_validator import (  # noqa: E402
-    TimelineValidationError,
-    load_and_validate_timeline,
+from runner_factory_core import (  # noqa: E402
+    FactoryCore,
+    FactoryExecutionError,
 )
 
 
@@ -43,7 +34,7 @@ def normalize_episode_id(
     if not number_text.isdigit():
         raise ValueError(
             "에피소드 형식이 올바르지 않습니다. "
-            "예: ep007 또는 007"
+            "예: ep008 또는 008"
         )
 
     return f"ep{int(number_text):03d}"
@@ -52,15 +43,24 @@ def normalize_episode_id(
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(
         description=(
-            "Episode timeline과 assets를 검증하고 "
-            "Remotion 영상으로 렌더합니다."
+            "Director, Timeline, Assets, Remotion을 "
+            "통합 실행하는 Factory Runner입니다."
         )
     )
 
     parser.add_argument(
         "--episode",
         required=True,
-        help="렌더할 에피소드 ID. 예: ep007",
+        help="처리할 에피소드 ID. 예: ep008",
+    )
+
+    parser.add_argument(
+        "--rebuild-timeline",
+        action="store_true",
+        help=(
+            "기존 timeline.json이 있어도 "
+            "Director로 다시 생성합니다."
+        ),
     )
 
     parser.add_argument(
@@ -73,90 +73,15 @@ def parse_args() -> argparse.Namespace:
         "--validate-only",
         action="store_true",
         help=(
-            "timeline과 assets 검증까지만 "
-            "실행합니다."
+            "Timeline과 Assets 검증까지만 실행하고 "
+            "렌더는 생략합니다."
         ),
     )
 
     return parser.parse_args()
 
 
-def copy_timeline(
-    source_path: Path,
-    destination_path: Path,
-) -> None:
-    destination_path.parent.mkdir(
-        parents=True,
-        exist_ok=True,
-    )
-
-    shutil.copy2(
-        source_path,
-        destination_path,
-    )
-
-
-def save_run_log(
-    *,
-    log_path: Path,
-    episode_id: str,
-    status: str,
-    elapsed_seconds: float,
-    output_path: Path | None,
-    timeline_path: Path,
-    source_assets_path: Path,
-    public_assets_path: Path,
-    required_asset_count: int,
-    copied_asset_count: int,
-    error_message: str | None = None,
-) -> None:
-    log_path.parent.mkdir(
-        parents=True,
-        exist_ok=True,
-    )
-
-    payload = {
-        "episodeId": episode_id,
-        "status": status,
-        "elapsedSeconds": round(
-            elapsed_seconds,
-            2,
-        ),
-        "timelinePath": str(
-            timeline_path
-        ),
-        "sourceAssetsPath": str(
-            source_assets_path
-        ),
-        "publicAssetsPath": str(
-            public_assets_path
-        ),
-        "requiredAssetCount": (
-            required_asset_count
-        ),
-        "copiedAssetCount": (
-            copied_asset_count
-        ),
-        "outputPath": (
-            str(output_path)
-            if output_path is not None
-            else None
-        ),
-        "error": error_message,
-    }
-
-    log_path.write_text(
-        json.dumps(
-            payload,
-            ensure_ascii=False,
-            indent=2,
-        ),
-        encoding="utf-8",
-    )
-
-
 def main() -> int:
-    started_at = time.perf_counter()
     args = parse_args()
 
     try:
@@ -167,276 +92,32 @@ def main() -> int:
         print(f"[실패] {exc}")
         return 2
 
-    episode_dir = (
-        ROOT_DIR
-        / "projects"
-        / "episodes"
-        / episode_id
+    paths = FactoryPaths.create(
+        root_dir=ROOT_DIR,
+        episode_id=episode_id,
     )
 
-    source_timeline = (
-        episode_dir
-        / "timeline.json"
+    options = FactoryRunOptions(
+        rebuild_timeline=(
+            args.rebuild_timeline
+        ),
+        skip_typecheck=(
+            args.skip_typecheck
+        ),
+        validate_only=(
+            args.validate_only
+        ),
     )
-
-    source_assets_dir = (
-        episode_dir
-        / "assets"
-    )
-
-    remotion_dir = (
-        ROOT_DIR
-        / "projects"
-        / "remotion"
-    )
-
-    public_timeline = (
-        remotion_dir
-        / "public"
-        / "timeline.json"
-    )
-
-    public_assets_dir = (
-        remotion_dir
-        / "public"
-        / "assets"
-        / episode_id
-    )
-
-    output_path = (
-        ROOT_DIR
-        / "projects"
-        / "output"
-        / f"{episode_id}.mp4"
-    )
-
-    log_path = (
-        ROOT_DIR
-        / "projects"
-        / "output"
-        / "logs"
-        / f"{episode_id}.json"
-    )
-
-    required_asset_count = 0
-    copied_asset_count = 0
-
-    print("=" * 58)
-    print(" YouTube Content Factory Runner")
-    print("=" * 58)
-    print(f"에피소드 : {episode_id}")
-    print(f"Timeline : {source_timeline}")
-    print(f"Assets   : {source_assets_dir}")
 
     try:
-        timeline, summary = (
-            load_and_validate_timeline(
-                source_timeline
-            )
-        )
-
-        print()
-        print("[완료] Timeline 검증")
-        print(f"       제목: {summary.title}")
-        print(
-            f"       장면: {summary.scene_count}개"
-        )
-        print(
-            "       길이: "
-            f"{summary.total_duration:.2f}초"
-        )
-        print(
-            "       화면: "
-            f"{summary.width}x{summary.height} "
-            f"/ {summary.fps}fps"
-        )
-
-        required_assets = (
-            collect_required_assets(
-                timeline,
-                episode_id=episode_id,
-            )
-        )
-
-        required_asset_count = len(
-            required_assets
-        )
-
-        print()
-        print("[확인] 필수 미디어")
-        print(
-            f"       {required_asset_count}개"
-        )
-
-        for asset_path in required_assets:
-            print(
-                f"       - {asset_path.as_posix()}"
-            )
-
-        asset_result = sync_episode_assets(
-            episode_assets_dir=(
-                source_assets_dir
-            ),
-            public_assets_dir=(
-                public_assets_dir
-            ),
-            required_assets=(
-                required_assets
-            ),
-        )
-
-        copied_asset_count = (
-            asset_result.copied_count
-        )
-
-        print()
-        print("[완료] Assets 검증 및 복사")
-        print(
-            f"       원본: "
-            f"{asset_result.source_dir}"
-        )
-        print(
-            f"       대상: "
-            f"{asset_result.destination_dir}"
-        )
-        print(
-            "       복사: "
-            f"{asset_result.copied_count}개"
-        )
-
-        if args.validate_only:
-            elapsed = (
-                time.perf_counter()
-                - started_at
-            )
-
-            save_run_log(
-                log_path=log_path,
-                episode_id=episode_id,
-                status="validated",
-                elapsed_seconds=elapsed,
-                output_path=None,
-                timeline_path=source_timeline,
-                source_assets_path=(
-                    source_assets_dir
-                ),
-                public_assets_path=(
-                    public_assets_dir
-                ),
-                required_asset_count=(
-                    required_asset_count
-                ),
-                copied_asset_count=(
-                    copied_asset_count
-                ),
-            )
-
-            print()
-            print(
-                "[종료] Timeline과 Assets "
-                "검증 완료"
-            )
-            return 0
-
-        copy_timeline(
-            source_timeline,
-            public_timeline,
-        )
-
-        print()
-        print("[완료] Remotion timeline 복사")
-        print(f"       {public_timeline}")
-
-        if not args.skip_typecheck:
-            typecheck_remotion(
-                remotion_dir
-            )
-
-        render_episode(
-            remotion_dir,
-            output_path,
-        )
-
-        elapsed = (
-            time.perf_counter()
-            - started_at
-        )
-
-        save_run_log(
-            log_path=log_path,
-            episode_id=episode_id,
-            status="success",
-            elapsed_seconds=elapsed,
-            output_path=output_path,
-            timeline_path=source_timeline,
-            source_assets_path=(
-                source_assets_dir
-            ),
-            public_assets_path=(
-                public_assets_dir
-            ),
-            required_asset_count=(
-                required_asset_count
-            ),
-            copied_asset_count=(
-                copied_asset_count
-            ),
-        )
-
-        print()
-        print("=" * 58)
-        print(" Factory Runner 완료")
-        print("=" * 58)
-        print(f"영상: {output_path}")
-        print(f"로그: {log_path}")
-        print(
-            f"Assets: {copied_asset_count}개"
-        )
-        print(f"소요: {elapsed:.2f}초")
-
-        return 0
-
-    except (
-        TimelineValidationError,
-        AssetValidationError,
-        CommandExecutionError,
-        OSError,
-    ) as exc:
-        elapsed = (
-            time.perf_counter()
-            - started_at
-        )
-
-        save_run_log(
-            log_path=log_path,
-            episode_id=episode_id,
-            status="failed",
-            elapsed_seconds=elapsed,
-            output_path=None,
-            timeline_path=source_timeline,
-            source_assets_path=(
-                source_assets_dir
-            ),
-            public_assets_path=(
-                public_assets_dir
-            ),
-            required_asset_count=(
-                required_asset_count
-            ),
-            copied_asset_count=(
-                copied_asset_count
-            ),
-            error_message=str(exc),
-        )
-
-        print()
-        print("=" * 58)
-        print(" Factory Runner 실패")
-        print("=" * 58)
-        print(str(exc))
-        print(f"로그: {log_path}")
-
+        result = FactoryCore(
+            paths=paths,
+            options=options,
+        ).run()
+    except FactoryExecutionError:
         return 1
+
+    return 0 if result.succeeded else 1
 
 
 if __name__ == "__main__":
