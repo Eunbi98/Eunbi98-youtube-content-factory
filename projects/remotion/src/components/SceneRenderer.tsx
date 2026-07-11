@@ -1,5 +1,11 @@
 import React from 'react';
-import {AbsoluteFill} from 'remotion';
+
+import {
+	AbsoluteFill,
+	Easing,
+	interpolate,
+	useCurrentFrame,
+} from 'remotion';
 
 import {
 	SceneTransition,
@@ -11,12 +17,22 @@ import type {
 	TransitionType,
 } from '../types/timeline';
 
-import {CaptionLayer} from './CaptionLayer';
-import {OverlayLayer} from './OverlayLayer';
-import {VisualLayer} from './VisualLayer';
+import {
+	CaptionLayer,
+} from './CaptionLayer';
+
+import {
+	OverlayLayer,
+} from './OverlayLayer';
+
+import {
+	VisualLayer,
+} from './VisualLayer';
+
 
 type SceneRendererProps = {
 	scene: TimelineScene;
+	previousScene?: TimelineScene;
 
 	durationInFrames: number;
 	transitionDurationInFrames: number;
@@ -27,47 +43,109 @@ type SceneRendererProps = {
 	captionColor: string;
 };
 
-const createTransitionConfig = (
-	transition: TransitionType | undefined,
-	durationInFrames: number,
-): SceneTransitionConfig => {
-	const safeDuration = Math.max(
-		1,
-		Math.floor(durationInFrames),
+
+type PreviousSceneLayerProps = {
+	scene: TimelineScene;
+	transitionDurationInFrames: number;
+};
+
+
+const CLAMP = {
+	extrapolateLeft:
+		'clamp' as const,
+
+	extrapolateRight:
+		'clamp' as const,
+};
+
+
+const PreviousSceneLayer:
+React.FC<
+	PreviousSceneLayerProps
+> = ({
+	scene,
+	transitionDurationInFrames,
+}) => {
+	const frame =
+		useCurrentFrame();
+
+	const safeTransitionDuration =
+		Math.max(
+			1,
+			Math.floor(
+				transitionDurationInFrames,
+			),
+		);
+
+	const opacity =
+		interpolate(
+			frame,
+			[
+				0,
+				safeTransitionDuration,
+			],
+			[
+				1,
+				0,
+			],
+			{
+				...CLAMP,
+
+				easing:
+					Easing.inOut(
+						Easing.cubic,
+					),
+			},
+		);
+
+	return (
+		<AbsoluteFill
+			style={{
+				opacity,
+				zIndex: 0,
+			}}
+		>
+			<VisualLayer
+				scene={scene}
+				durationInFrames={
+					safeTransitionDuration
+				}
+			/>
+
+			<OverlayLayer
+				scene={scene}
+			/>
+		</AbsoluteFill>
 	);
+};
 
-	switch (transition ?? 'cut') {
-		case 'fade':
-			return {
-				preset: 'fade',
 
-				durationInFrames:
-					safeDuration,
+const createTransitionConfig = (
+	transition:
+		TransitionType |
+		undefined,
 
-				enableEnter: true,
+	durationInFrames:
+		number,
+): SceneTransitionConfig => {
+	const safeDuration =
+		Math.max(
+			1,
+			Math.floor(
+				durationInFrames,
+			),
+		);
 
-				/*
-				 * 현재 Sequence는 서로 겹치지 않으므로
-				 * 종료 Fade를 사용하면 검은 화면이 생깁니다.
-				 */
-				enableExit: false,
-			};
-
+	switch (
+		transition ?? 'fade'
+	) {
 		case 'slide_left':
 			return {
 				preset: 'slide',
-
 				durationInFrames:
 					safeDuration,
-
 				direction: 'left',
-
-				/*
-				 * 화면 전체를 이동시키지 않고
-				 * 12%만 움직여 자연스럽게 보이게 합니다.
-				 */
-				slideDistance: 0.12,
-
+				slideDistance: 0.08,
 				enableEnter: true,
 				enableExit: false,
 			};
@@ -75,13 +153,10 @@ const createTransitionConfig = (
 		case 'slide_right':
 			return {
 				preset: 'slide',
-
 				durationInFrames:
 					safeDuration,
-
 				direction: 'right',
-				slideDistance: 0.12,
-
+				slideDistance: 0.08,
 				enableEnter: true,
 				enableExit: false,
 			};
@@ -89,76 +164,112 @@ const createTransitionConfig = (
 		case 'zoom':
 			return {
 				preset: 'zoom',
-
 				durationInFrames:
 					safeDuration,
-
-				zoomInScale: 0.96,
-				zoomOutScale: 1.04,
-
+				zoomInScale: 0.98,
+				zoomOutScale: 1.02,
 				enableEnter: true,
 				enableExit: false,
 			};
 
 		case 'cut':
-		default:
 			return {
 				preset: 'cut',
-
 				durationInFrames:
 					safeDuration,
-
 				enableEnter: false,
+				enableExit: false,
+			};
+
+		case 'fade':
+		default:
+			return {
+				preset: 'fade',
+				durationInFrames:
+					safeDuration,
+				enableEnter: true,
 				enableExit: false,
 			};
 	}
 };
 
-export const SceneRenderer: React.FC<
+
+export const SceneRenderer:
+React.FC<
 	SceneRendererProps
 > = ({
 	scene,
+	previousScene,
+
 	durationInFrames,
 	transitionDurationInFrames,
+
 	isFirstScene,
 	isLastScene,
+
 	captionColor,
 }) => {
-	const safeDurationInFrames = Math.max(
-		1,
-		Math.floor(durationInFrames),
-	);
+	const safeDurationInFrames =
+		Math.max(
+			1,
+			Math.floor(
+				durationInFrames,
+			),
+		);
+
+	const safeTransitionDuration =
+		Math.max(
+			1,
+			Math.min(
+				Math.floor(
+					transitionDurationInFrames,
+				),
+
+				Math.floor(
+					safeDurationInFrames *
+						0.45,
+				),
+			),
+		);
 
 	const transitionConfig =
 		createTransitionConfig(
 			scene.transition,
-			transitionDurationInFrames,
+			safeTransitionDuration,
 		);
 
-	const resolvedTransition: SceneTransitionConfig =
-		{
-			...transitionConfig,
+	const resolvedTransition:
+	SceneTransitionConfig = {
+		...transitionConfig,
 
-			/*
-			 * 첫 장면은 처음부터 완전히 표시합니다.
-			 */
-			enableEnter:
-				!isFirstScene &&
-				transitionConfig.enableEnter,
+		enableEnter:
+			!isFirstScene &&
+			transitionConfig
+				.enableEnter,
 
-			/*
-			 * Sequence가 겹치지 않는 현재 구조에서는
-			 * exit 효과를 비활성화합니다.
-			 */
-			enableExit: false,
-		};
+		enableExit: false,
+	};
+
+	const shouldRenderPrevious =
+		!isFirstScene &&
+		Boolean(previousScene) &&
+		resolvedTransition.preset !==
+			'cut';
 
 	return (
-		<AbsoluteFill
-			style={{
-				overflow: 'hidden',
-			}}
-		>
+		<AbsoluteFill>
+			{shouldRenderPrevious &&
+			previousScene ? (
+				<PreviousSceneLayer
+					scene={
+						previousScene
+					}
+					transitionDurationInFrames={
+						safeTransitionDuration
+					}
+				/>
+			) : null}
+
 			<SceneTransition
 				durationInFrames={
 					safeDurationInFrames
@@ -166,7 +277,12 @@ export const SceneRenderer: React.FC<
 				transition={
 					resolvedTransition
 				}
-				isLastScene={isLastScene}
+				isLastScene={
+					isLastScene
+				}
+				style={{
+					zIndex: 1,
+				}}
 			>
 				<AbsoluteFill>
 					<VisualLayer
@@ -179,19 +295,22 @@ export const SceneRenderer: React.FC<
 					<OverlayLayer
 						scene={scene}
 					/>
-
-					{scene.caption ? (
-						<CaptionLayer
-							caption={
-								scene.caption
-							}
-							color={
-								captionColor
-							}
-						/>
-					) : null}
 				</AbsoluteFill>
 			</SceneTransition>
+
+			{scene.caption ? (
+				<CaptionLayer
+					caption={
+						scene.caption
+					}
+					color={
+						captionColor
+					}
+					durationInFrames={
+						safeDurationInFrames
+					}
+				/>
+			) : null}
 		</AbsoluteFill>
 	);
 };
