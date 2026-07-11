@@ -1,89 +1,143 @@
 from __future__ import annotations
 
+from duration_planner import DurationPlanner
+from story_graph import Beat, Story
+from timeline_scheduler import (
+    ScheduledScene,
+    TimelineScheduler,
+)
 from timeline_schema import (
     Media,
     Scene,
     Timeline,
     TimelineTheme,
 )
-from story_graph import Beat, Story
 
 
 class StoryCompiler:
     """
-    Story Graph를 Director가 처리할 수 있는
-    Timeline Scene 구조로 변환합니다.
+    Story Graph를 Timeline 구조로 변환합니다.
 
-    현재 Patch에서는 다음 값을 자동 생성합니다.
+    StoryCompiler의 책임:
 
-    - scene id
-    - scene start
-    - 전체 timeline duration
-    - StoryMedia → Media 변환
+    - Story 검증
+    - Beat를 Scene으로 변환
+    - Timeline 객체 생성
 
-    cameraMotion, transition, overlay는
-    timeline_schema 내부 Director Rule Engine이
-    자동으로 결정합니다.
+    StoryCompiler가 담당하지 않는 책임:
+
+    - Scene duration 계산
+      -> DurationPlanner
+
+    - Scene start 계산
+      -> TimelineScheduler
+
+    - 카메라, 전환, 오버레이 결정
+      -> Director Rule Engine
+
+    Patch 5-4부터 StoryCompiler는 직접 시간을 계산하지 않습니다.
     """
 
-    def compile(self, story: Story) -> Timeline:
-        self._validate_story(story)
-
-        scenes: list[Scene] = []
-        current_start = 0.0
-
-        for index, beat in enumerate(
-            story.beats,
-            start=1,
-        ):
-            scene = self._compile_beat(
-                beat=beat,
-                scene_index=index,
-                start=current_start,
-            )
-
-            scenes.append(scene)
-
-            current_start += beat.duration
-
-        total_duration = round(
-            current_start,
-            3,
+    def __init__(
+        self,
+        *,
+        duration_planner: (
+            DurationPlanner | None
+        ) = None,
+        timeline_scheduler: (
+            TimelineScheduler | None
+        ) = None,
+    ) -> None:
+        self._duration_planner = duration_planner
+        self._timeline_scheduler = (
+            timeline_scheduler
+            or TimelineScheduler()
         )
 
-        return Timeline(
-            version="5.2",
+    def compile(
+        self,
+        story: Story,
+    ) -> Timeline:
+        """
+        Story를 완성된 Timeline으로 변환합니다.
+        """
+
+        self._validate_story(story)
+
+        duration_planner = (
+            self._duration_planner
+            or DurationPlanner(
+                fps=story.fps,
+            )
+        )
+
+        durations = duration_planner.plan_many(
+            story.beats
+        )
+
+        schedule = (
+            self._timeline_scheduler.schedule(
+                beats=story.beats,
+                durations=durations,
+            )
+        )
+
+        scenes = [
+            self._compile_scheduled_scene(
+                scheduled_scene=scheduled_scene,
+                scene_index=index,
+            )
+            for index, scheduled_scene
+            in enumerate(
+                schedule.scenes,
+                start=1,
+            )
+        ]
+
+        timeline = Timeline(
+            version="5.4",
             episode_id=story.episode_id,
             title=story.title,
             fps=story.fps,
             width=story.width,
             height=story.height,
-            duration=total_duration,
+            duration=schedule.total_duration,
             bgm=story.bgm,
             voice=story.voice,
             theme=TimelineTheme(
                 background_color=(
                     story.background_color
                 ),
-                title_color=story.title_color,
+                title_color=(
+                    story.title_color
+                ),
                 caption_color=(
                     story.caption_color
                 ),
-                accent_color=story.accent_color,
+                accent_color=(
+                    story.accent_color
+                ),
             ),
             scenes=scenes,
         )
 
-    def _compile_beat(
+        timeline.validate()
+
+        return timeline
+
+    def _compile_scheduled_scene(
         self,
         *,
-        beat: Beat,
+        scheduled_scene: ScheduledScene,
         scene_index: int,
-        start: float,
     ) -> Scene:
-        scene_id = (
-            f"scene_{scene_index:03d}"
-        )
+        """
+        TimelineScheduler가 계산한 시간 정보를 사용해
+        하나의 ScheduledScene을 Timeline Scene으로 변환합니다.
+        """
+
+        beat = scheduled_scene.beat
+        scene_id = f"scene_{scene_index:03d}"
 
         media = Media(
             type=beat.media.type,
@@ -95,20 +149,15 @@ class StoryCompiler:
         return Scene(
             id=scene_id,
             type=beat.type,
-            start=round(start, 3),
-            duration=round(
-                beat.duration,
-                3,
-            ),
+            start=scheduled_scene.start,
+            duration=scheduled_scene.duration,
             title=beat.title.strip(),
-            narration=(
-                beat.narration.strip()
-            ),
-            subtitle=(
-                beat.subtitle.strip()
-            ),
+            narration=beat.narration.strip(),
+            subtitle=beat.subtitle.strip(),
             media=media,
-            keywords=list(beat.keywords),
+            keywords=list(
+                beat.keywords
+            ),
             background_color=(
                 beat.background_color
             ),
@@ -138,7 +187,8 @@ class StoryCompiler:
 
         if story.fps <= 0:
             raise ValueError(
-                "Story fps는 1 이상이어야 합니다."
+                "Story fps는 "
+                "1 이상이어야 합니다."
             )
 
         if (
@@ -166,12 +216,6 @@ class StoryCompiler:
         beat_index: int,
     ) -> None:
         prefix = f"Beat {beat_index}"
-
-        if beat.duration <= 0:
-            raise ValueError(
-                f"{prefix}: duration은 "
-                "0보다 커야 합니다."
-            )
 
         if not beat.title.strip():
             raise ValueError(
