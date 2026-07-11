@@ -36,8 +36,6 @@ class Media:
         }
 
         if self.src:
-            # Remotion staticFile()에서는 /로 시작하지 않는
-            # public 폴더 기준 상대경로를 사용합니다.
             data["src"] = self.src.lstrip("/\\")
 
         return data
@@ -59,18 +57,33 @@ class Scene:
 
     background_color: str = "#111111"
 
-    # 필요할 때만 사람이 직접 값을 덮어쓸 수 있습니다.
-    camera_motion: Optional[CameraMotion] = None
-    transition: Optional[TransitionType] = None
-    transition_duration: Optional[float] = None
-    overlay: Optional[OverlayType] = None
-    overlay_opacity: Optional[float] = None
+    camera_motion: Optional[
+        CameraMotion
+    ] = None
+
+    transition: Optional[
+        TransitionType
+    ] = None
+
+    transition_duration: Optional[
+        float
+    ] = None
+
+    overlay: Optional[
+        OverlayType
+    ] = None
+
+    overlay_opacity: Optional[
+        float
+    ] = None
 
     def to_remotion_dict(
         self,
         *,
         scene_index: int,
-        previous_motion: Optional[CameraMotion],
+        previous_motion: Optional[
+            CameraMotion
+        ],
     ) -> dict[str, Any]:
         direction = direct_scene(
             scene_type=self.type,
@@ -90,7 +103,8 @@ class Scene:
 
         resolved_transition_duration = (
             self.transition_duration
-            if self.transition_duration is not None
+            if self.transition_duration
+            is not None
             else direction.transition_duration
         )
 
@@ -101,20 +115,35 @@ class Scene:
 
         resolved_overlay_opacity = (
             self.overlay_opacity
-            if self.overlay_opacity is not None
+            if self.overlay_opacity
+            is not None
             else direction.overlay_opacity
         )
 
         return {
             "id": self.id,
-            "start": round(self.start, 3),
-            "duration": round(self.duration, 3),
+            "start": round(
+                self.start,
+                3,
+            ),
+            "duration": round(
+                self.duration,
+                3,
+            ),
             "title": self.title,
             "caption": self.subtitle,
-            "backgroundColor": self.background_color,
-            "media": self.media.to_remotion_dict(),
-            "cameraMotion": resolved_camera_motion,
-            "transition": resolved_transition,
+            "backgroundColor": (
+                self.background_color
+            ),
+            "media": (
+                self.media.to_remotion_dict()
+            ),
+            "cameraMotion": (
+                resolved_camera_motion
+            ),
+            "transition": (
+                resolved_transition
+            ),
             "transitionDuration": round(
                 resolved_transition_duration,
                 3,
@@ -134,12 +163,22 @@ class TimelineTheme:
     caption_color: str = "#FFFFFF"
     accent_color: str = "#7CFFB2"
 
-    def to_remotion_dict(self) -> dict[str, str]:
+    def to_remotion_dict(
+        self,
+    ) -> dict[str, str]:
         return {
-            "backgroundColor": self.background_color,
-            "titleColor": self.title_color,
-            "captionColor": self.caption_color,
-            "accentColor": self.accent_color,
+            "backgroundColor": (
+                self.background_color
+            ),
+            "titleColor": (
+                self.title_color
+            ),
+            "captionColor": (
+                self.caption_color
+            ),
+            "accentColor": (
+                self.accent_color
+            ),
         }
 
 
@@ -160,17 +199,29 @@ class Timeline:
 
     scenes: list[Scene]
 
-    theme: Optional[TimelineTheme] = None
+    theme: Optional[
+        TimelineTheme
+    ] = None
 
     def validate(self) -> None:
+        """
+        Timeline 데이터를 검증합니다.
+
+        시간 비교 시 Python 부동소수점 오차로 인해
+        정상적인 장면이 겹친 것으로 판단되지 않도록
+        작은 허용 오차를 적용합니다.
+        """
+
         if not self.episode_id.strip():
             raise ValueError(
-                "episode_id는 비어 있을 수 없습니다."
+                "episode_id는 "
+                "비어 있을 수 없습니다."
             )
 
         if not self.title.strip():
             raise ValueError(
-                "title은 비어 있을 수 없습니다."
+                "title은 "
+                "비어 있을 수 없습니다."
             )
 
         if self.fps <= 0:
@@ -178,19 +229,27 @@ class Timeline:
                 "fps는 1 이상이어야 합니다."
             )
 
-        if self.width <= 0 or self.height <= 0:
+        if (
+            self.width <= 0
+            or self.height <= 0
+        ):
             raise ValueError(
-                "width와 height는 1 이상이어야 합니다."
+                "width와 height는 "
+                "1 이상이어야 합니다."
             )
 
         if not self.scenes:
             raise ValueError(
-                "최소 한 개 이상의 scene이 필요합니다."
+                "최소 한 개 이상의 "
+                "scene이 필요합니다."
             )
 
+        time_tolerance = 0.001
         previous_end = 0.0
 
-        for index, scene in enumerate(self.scenes):
+        for index, scene in enumerate(
+            self.scenes
+        ):
             if scene.duration <= 0:
                 raise ValueError(
                     f"{scene.id}: duration은 "
@@ -203,36 +262,64 @@ class Timeline:
                     "0 이상이어야 합니다."
                 )
 
-            if index > 0 and scene.start < previous_end:
+            if (
+                index > 0
+                and scene.start
+                < previous_end
+                - time_tolerance
+            ):
                 raise ValueError(
                     f"{scene.id}: 이전 장면과 "
-                    "시간이 겹칩니다."
+                    "시간이 겹칩니다. "
+                    f"start={scene.start}, "
+                    f"previous_end={previous_end}"
                 )
 
-            previous_end = (
+            previous_end = round(
                 scene.start
-                + scene.duration
+                + scene.duration,
+                3,
             )
 
-        if self.duration < previous_end:
+        if (
+            self.duration
+            < previous_end
+            - time_tolerance
+        ):
             raise ValueError(
                 "Timeline duration이 마지막 장면의 "
-                "종료 시간보다 짧습니다."
+                "종료 시간보다 짧습니다. "
+                f"duration={self.duration}, "
+                f"last_scene_end={previous_end}"
             )
 
-    def to_remotion_dict(self) -> dict[str, Any]:
+    def to_remotion_dict(
+        self,
+    ) -> dict[str, Any]:
         self.validate()
 
-        theme = self.theme or TimelineTheme()
+        theme = (
+            self.theme
+            or TimelineTheme()
+        )
 
-        rendered_scenes: list[dict[str, Any]] = []
-        previous_motion: Optional[CameraMotion] = None
+        rendered_scenes: list[
+            dict[str, Any]
+        ] = []
 
-        for index, scene in enumerate(self.scenes):
+        previous_motion: Optional[
+            CameraMotion
+        ] = None
+
+        for index, scene in enumerate(
+            self.scenes
+        ):
             rendered_scene = (
                 scene.to_remotion_dict(
                     scene_index=index,
-                    previous_motion=previous_motion,
+                    previous_motion=(
+                        previous_motion
+                    ),
                 )
             )
 
@@ -241,11 +328,15 @@ class Timeline:
             )
 
             previous_motion = (
-                rendered_scene["cameraMotion"]
+                rendered_scene[
+                    "cameraMotion"
+                ]
             )
 
         return {
-            "episodeId": self.episode_id.upper(),
+            "episodeId": (
+                self.episode_id.upper()
+            ),
             "title": self.title,
             "fps": self.fps,
             "width": self.width,
@@ -254,7 +345,9 @@ class Timeline:
                 self.duration,
                 3,
             ),
-            "theme": theme.to_remotion_dict(),
+            "theme": (
+                theme.to_remotion_dict()
+            ),
             "scenes": rendered_scenes,
         }
 
@@ -264,12 +357,15 @@ def save_timeline(
     output_path: str | Path,
 ) -> None:
     path = Path(output_path)
+
     path.parent.mkdir(
         parents=True,
         exist_ok=True,
     )
 
-    data = timeline.to_remotion_dict()
+    data = (
+        timeline.to_remotion_dict()
+    )
 
     with path.open(
         "w",
@@ -281,4 +377,5 @@ def save_timeline(
             ensure_ascii=False,
             indent=2,
         )
+
         file.write("\n")
