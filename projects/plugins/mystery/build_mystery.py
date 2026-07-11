@@ -6,14 +6,8 @@ from pathlib import Path
 
 
 CURRENT_DIR = Path(__file__).resolve().parent
-
-PROJECTS_DIR = (
-    CURRENT_DIR.parent.parent
-)
-
-DIRECTOR_DIR = (
-    PROJECTS_DIR / "director"
-)
+PROJECTS_DIR = CURRENT_DIR.parent.parent
+DIRECTOR_DIR = PROJECTS_DIR / "director"
 
 for import_path in (
     CURRENT_DIR,
@@ -28,9 +22,7 @@ for import_path in (
         )
 
 
-from factory_core import FactoryCore
 from mystery_plugin import MysteryPlugin
-from timeline_schema import save_timeline
 
 
 DEFAULT_EVIDENCE = Path(
@@ -47,7 +39,7 @@ DEFAULT_OUTPUT = Path(
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(
         description=(
-            "Mystery Story와 Timeline 자동 생성"
+            "Mystery Plugin End-to-End 빌드"
         )
     )
 
@@ -81,31 +73,21 @@ def main() -> None:
 
     plugin = MysteryPlugin()
 
-    story = plugin.generate(
+    result = plugin.build(
         episode_id=args.episode_id,
         topic=args.topic,
         evidence_path=args.evidence,
-    )
-
-    factory = FactoryCore()
-
-    result = factory.build_with_result(
-        story
-    )
-
-    save_timeline(
-        result.timeline,
-        args.output,
+        output_path=args.output,
     )
 
     print(
-        "Mystery Plugin Story 생성 완료"
+        "Mystery Plugin End-to-End 완료"
     )
     print(
-        f"주제: {story.title}"
+        f"Episode: {args.episode_id}"
     )
     print(
-        f"Beat 수: {len(story.beats)}"
+        f"주제: {args.topic}"
     )
     print(
         f"Scene 수: {result.scene_count}"
