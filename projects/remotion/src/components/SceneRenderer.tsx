@@ -300,16 +300,15 @@ React.FC<
 
 			{scene.caption ? (
 				<CaptionLayer
-					caption={
-						scene.caption
-					}
-					color={
-						captionColor
-					}
-					durationInFrames={
-						safeDurationInFrames
-					}
-				/>
+				caption={scene.caption}
+				color={captionColor}
+				durationInFrames={
+					safeDurationInFrames
+				}
+				wordTimings={
+					scene.wordTimings
+				}
+			/>
 			) : null}
 		</AbsoluteFill>
 	);

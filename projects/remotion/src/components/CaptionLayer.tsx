@@ -12,11 +12,23 @@ import {
 	ep005Theme,
 } from '../theme/ep005Theme';
 
+import type {
+	WordTiming,
+} from '../types/timeline';
+
 
 type CaptionLayerProps = {
 	caption?: string;
 	color?: string;
 	durationInFrames?: number;
+	wordTimings?: WordTiming[];
+};
+
+
+type CaptionPageTiming = {
+	index: number;
+	startFrame: number;
+	endFrame: number;
 };
 
 
@@ -34,6 +46,19 @@ const normalizeCaption = (
 		.replace(/\r/g, ' ')
 		.replace(/\n/g, ' ')
 		.replace(/\s+/g, ' ')
+		.trim();
+};
+
+
+const normalizeWord = (
+	text: string,
+): string => {
+	return text
+		.toLowerCase()
+		.replace(
+			/[\s,.!?，。！？"'“”‘’()[\]{}:;·…\-_/\\]/g,
+			'',
+		)
 		.trim();
 };
 
@@ -71,7 +96,10 @@ const splitBySentence = (
 	}
 
 	return matches
-		.map((part) => part.trim())
+		.map(
+			(part) =>
+				part.trim(),
+		)
 		.filter(Boolean);
 };
 
@@ -87,9 +115,12 @@ const splitLongSentence = (
 	}
 
 	const words =
-		text.split(/\s+/);
+		text
+			.split(/\s+/)
+			.filter(Boolean);
 
 	const pages: string[] = [];
+
 	let currentPage = '';
 
 	for (const word of words) {
@@ -116,33 +147,21 @@ const splitLongSentence = (
 	}
 
 	if (currentPage) {
-		pages.push(currentPage);
+		pages.push(
+			currentPage,
+		);
 	}
 
 	return pages;
 };
 
 
-/**
- * 마지막 페이지에 단어 하나만 남거나 너무 짧으면
- * 이전 페이지의 뒷부분을 함께 이동시킵니다.
- *
- * 예:
- *   최고의 시절이자 최악의 시절,
- *   지혜의 시대이자 어리석음의 시대였습니다.
- *
- * 잘못된 분할:
- *   지혜의 시대이자 어리석음의
- *   시대였습니다.
- *
- * 보정:
- *   지혜의 시대이자
- *   어리석음의 시대였습니다.
- */
 const rebalanceLastPage = (
 	inputPages: string[],
 ): string[] => {
-	const pages = [...inputPages];
+	const pages = [
+		...inputPages,
+	];
 
 	if (pages.length < 2) {
 		return pages;
@@ -155,9 +174,13 @@ const rebalanceLastPage = (
 		pages[lastIndex];
 
 	const lastPageIsTooShort =
-		getVisibleLength(lastPage) <
+		getVisibleLength(
+			lastPage,
+		) <
 			MIN_LAST_PAGE_LENGTH ||
-		getWordCount(lastPage) <
+		getWordCount(
+			lastPage,
+		) <
 			MIN_LAST_PAGE_WORDS;
 
 	if (!lastPageIsTooShort) {
@@ -165,7 +188,9 @@ const rebalanceLastPage = (
 	}
 
 	const previousPage =
-		pages[lastIndex - 1];
+		pages[
+			lastIndex - 1
+		];
 
 	const previousWords =
 		previousPage
@@ -241,8 +266,9 @@ const mergeVeryShortPages = (
 
 		if (
 			previous &&
-			getVisibleLength(normalized) <
-				6 &&
+			getVisibleLength(
+				normalized,
+			) < 6 &&
 			`${previous} ${normalized}`
 				.length <=
 				MAX_PAGE_LENGTH
@@ -255,7 +281,9 @@ const mergeVeryShortPages = (
 			continue;
 		}
 
-		result.push(normalized);
+		result.push(
+			normalized,
+		);
 	}
 
 	return result;
@@ -266,7 +294,9 @@ const buildCaptionPages = (
 	text: string,
 ): string[] => {
 	const normalized =
-		normalizeCaption(text);
+		normalizeCaption(
+			text,
+		);
 
 	if (!normalized) {
 		return [];
@@ -318,12 +348,18 @@ const addBalancedLineBreak = (
 			);
 
 		return [
-			text.slice(0, middle),
-			text.slice(middle),
+			text.slice(
+				0,
+				middle,
+			),
+			text.slice(
+				middle,
+			),
 		].join('\n');
 	}
 
 	let bestIndex = 1;
+
 	let bestScore =
 		Number.POSITIVE_INFINITY;
 
@@ -334,12 +370,17 @@ const addBalancedLineBreak = (
 	) {
 		const firstLine =
 			words
-				.slice(0, index)
+				.slice(
+					0,
+					index,
+				)
 				.join(' ');
 
 		const secondLine =
 			words
-				.slice(index)
+				.slice(
+					index,
+				)
 				.join(' ');
 
 		const lengthDifference =
@@ -382,11 +423,16 @@ const addBalancedLineBreak = (
 
 	return [
 		words
-			.slice(0, bestIndex)
+			.slice(
+				0,
+				bestIndex,
+			)
 			.join(' '),
 
 		words
-			.slice(bestIndex)
+			.slice(
+				bestIndex,
+			)
 			.join(' '),
 	].join('\n');
 };
@@ -407,29 +453,29 @@ const getPageWeights = (
 };
 
 
-const getActivePageIndex = (
+const buildFallbackPageTimings = (
 	{
-		frame,
 		pages,
 		durationInFrames,
 	}: {
-		frame: number;
 		pages: string[];
 		durationInFrames: number;
 	},
-): {
-	index: number;
-	startFrame: number;
-} => {
-	if (pages.length <= 1) {
-		return {
-			index: 0,
-			startFrame: 0,
-		};
+): CaptionPageTiming[] => {
+	if (pages.length === 0) {
+		return [];
 	}
 
+	const safeDuration =
+		Math.max(
+			pages.length,
+			durationInFrames,
+		);
+
 	const weights =
-		getPageWeights(pages);
+		getPageWeights(
+			pages,
+		);
 
 	const totalWeight =
 		weights.reduce(
@@ -437,6 +483,8 @@ const getActivePageIndex = (
 				sum + value,
 			0,
 		);
+
+	const timings: CaptionPageTiming[] = [];
 
 	let accumulatedFrame = 0;
 
@@ -449,52 +497,427 @@ const getActivePageIndex = (
 			index ===
 			pages.length - 1;
 
+		const remainingPages =
+			pages.length -
+			index -
+			1;
+
+		const remainingFrames =
+			safeDuration -
+			accumulatedFrame;
+
+		const calculatedDuration =
+			Math.max(
+				1,
+				Math.round(
+					safeDuration *
+						(
+							weights[index] /
+							totalWeight
+						),
+				),
+			);
+
 		const pageDuration =
 			isLast
-				? durationInFrames -
-					accumulatedFrame
+				? remainingFrames
 				: Math.max(
 						1,
-						Math.round(
-							durationInFrames *
-								(
-									weights[index] /
-									totalWeight
-								),
+						Math.min(
+							calculatedDuration,
+							remainingFrames -
+								remainingPages,
 						),
 					);
 
 		const endFrame =
 			isLast
-				? durationInFrames
+				? safeDuration
 				: accumulatedFrame +
 					pageDuration;
 
-		if (
-			frame >= accumulatedFrame &&
-			frame < endFrame
-		) {
-			return {
-				index,
-				startFrame:
-					accumulatedFrame,
-			};
-		}
+		timings.push({
+			index,
+			startFrame:
+				accumulatedFrame,
+			endFrame,
+		});
 
 		accumulatedFrame =
 			endFrame;
 	}
 
-	return {
-		index:
-			pages.length - 1,
+	return timings;
+};
 
-		startFrame:
+
+const getPageWords = (
+	page: string,
+): string[] => {
+	return page
+		.split(/\s+/)
+		.map(
+			(word) =>
+				normalizeWord(
+					word,
+				),
+		)
+		.filter(Boolean);
+};
+
+
+const getTimingWords = (
+	wordTimings: WordTiming[],
+): Array<{
+	timing: WordTiming;
+	normalizedText: string;
+}> => {
+	return wordTimings
+		.filter(
+			(timing) =>
+				Number.isFinite(
+					timing.offset,
+				) &&
+				Number.isFinite(
+					timing.end,
+				) &&
+				timing.offset >= 0 &&
+				timing.end >=
+					timing.offset,
+		)
+		.map(
+			(timing) => ({
+				timing,
+				normalizedText:
+					normalizeWord(
+						timing.text,
+					),
+			}),
+		)
+		.filter(
+			(item) =>
+				Boolean(
+					item.normalizedText,
+				),
+		);
+};
+
+
+const wordsAreCompatible = (
+	pageWord: string,
+	timingWord: string,
+): boolean => {
+	if (
+		pageWord === timingWord
+	) {
+		return true;
+	}
+
+	if (
+		pageWord.includes(
+			timingWord,
+		) ||
+		timingWord.includes(
+			pageWord,
+		)
+	) {
+		return true;
+	}
+
+	return false;
+};
+
+
+const findPageWordRange = (
+	{
+		pageWords,
+		timingWords,
+		searchStartIndex,
+	}: {
+		pageWords: string[];
+		timingWords: Array<{
+			timing: WordTiming;
+			normalizedText: string;
+		}>;
+		searchStartIndex: number;
+	},
+): {
+	startIndex: number;
+	endIndex: number;
+} | null => {
+	if (
+		pageWords.length === 0 ||
+		searchStartIndex >=
+			timingWords.length
+	) {
+		return null;
+	}
+
+	let timingIndex =
+		searchStartIndex;
+
+	let pageWordIndex = 0;
+
+	let matchedStartIndex = -1;
+
+	while (
+		timingIndex <
+			timingWords.length &&
+		pageWordIndex <
+			pageWords.length
+	) {
+		const pageWord =
+			pageWords[
+				pageWordIndex
+			];
+
+		const timingWord =
+			timingWords[
+				timingIndex
+			].normalizedText;
+
+		if (
+			wordsAreCompatible(
+				pageWord,
+				timingWord,
+			)
+		) {
+			if (
+				matchedStartIndex < 0
+			) {
+				matchedStartIndex =
+					timingIndex;
+			}
+
+			pageWordIndex += 1;
+			timingIndex += 1;
+
+			continue;
+		}
+
+		if (
+			matchedStartIndex < 0
+		) {
+			timingIndex += 1;
+			continue;
+		}
+
+		/*
+		 * Edge TTS가 조사 또는 숫자를 별도 토큰으로
+		 * 나누는 경우를 허용합니다.
+		 */
+		const nextTimingWord =
+			timingWords[
+				timingIndex + 1
+			]?.normalizedText;
+
+		if (
+			nextTimingWord &&
+			wordsAreCompatible(
+				pageWord,
+				`${timingWord}${nextTimingWord}`,
+			)
+		) {
+			pageWordIndex += 1;
+			timingIndex += 2;
+
+			continue;
+		}
+
+		break;
+	}
+
+	if (
+		matchedStartIndex < 0 ||
+		pageWordIndex <
+			pageWords.length
+	) {
+		return null;
+	}
+
+	return {
+		startIndex:
+			matchedStartIndex,
+
+		endIndex:
 			Math.max(
-				0,
-				accumulatedFrame - 1,
+				matchedStartIndex,
+				timingIndex - 1,
 			),
 	};
+};
+
+
+const buildWordTimingPageTimings = (
+	{
+		pages,
+		wordTimings,
+		fps,
+		durationInFrames,
+	}: {
+		pages: string[];
+		wordTimings: WordTiming[];
+		fps: number;
+		durationInFrames: number;
+	},
+): CaptionPageTiming[] | null => {
+	if (
+		pages.length === 0 ||
+		wordTimings.length === 0
+	) {
+		return null;
+	}
+
+	const timingWords =
+		getTimingWords(
+			wordTimings,
+		);
+
+	if (timingWords.length === 0) {
+		return null;
+	}
+
+	const ranges: Array<{
+		startIndex: number;
+		endIndex: number;
+	}> = [];
+
+	let searchStartIndex = 0;
+
+	for (const page of pages) {
+		const pageWords =
+			getPageWords(
+				page,
+			);
+
+		const range =
+			findPageWordRange({
+				pageWords,
+				timingWords,
+				searchStartIndex,
+			});
+
+		if (!range) {
+			return null;
+		}
+
+		ranges.push(
+			range,
+		);
+
+		searchStartIndex =
+			range.endIndex + 1;
+	}
+
+	const pageTimings =
+		ranges.map(
+			(range, index) => {
+				const firstWord =
+					timingWords[
+						range.startIndex
+					].timing;
+
+				const isLastPage =
+					index ===
+					ranges.length - 1;
+
+				const nextRange =
+					ranges[
+						index + 1
+					];
+
+				const rawStartFrame =
+					Math.floor(
+						firstWord.offset *
+							fps,
+					);
+
+				const rawEndFrame =
+					isLastPage
+						? durationInFrames
+						: Math.floor(
+								timingWords[
+									nextRange
+										.startIndex
+								].timing
+									.offset *
+									fps,
+							);
+
+				const startFrame =
+					Math.max(
+						0,
+						Math.min(
+							durationInFrames -
+								1,
+							rawStartFrame,
+						),
+					);
+
+				const endFrame =
+					Math.max(
+						startFrame + 1,
+						Math.min(
+							durationInFrames,
+							rawEndFrame,
+						),
+					);
+
+				return {
+					index,
+					startFrame,
+					endFrame,
+				};
+			},
+		);
+
+	/*
+	 * 첫 단어 전의 짧은 무음 구간에도
+	 * 첫 자막이 보이도록 시작 프레임을 0으로 고정합니다.
+	 */
+	if (pageTimings.length > 0) {
+		pageTimings[0] = {
+			...pageTimings[0],
+			startFrame: 0,
+		};
+	}
+
+	return pageTimings;
+};
+
+
+const getActivePage = (
+	{
+		frame,
+		pageTimings,
+	}: {
+		frame: number;
+		pageTimings: CaptionPageTiming[];
+	},
+): CaptionPageTiming => {
+	const found =
+		pageTimings.find(
+			(page) =>
+				frame >=
+					page.startFrame &&
+				frame <
+					page.endFrame,
+		);
+
+	if (found) {
+		return found;
+	}
+
+	if (
+		frame <
+		pageTimings[0].startFrame
+	) {
+		return pageTimings[0];
+	}
+
+	return pageTimings[
+		pageTimings.length - 1
+	];
 };
 
 
@@ -505,6 +928,7 @@ React.FC<
 	caption,
 	color,
 	durationInFrames,
+	wordTimings,
 }) => {
 	const frame =
 		useCurrentFrame();
@@ -514,6 +938,15 @@ React.FC<
 		durationInFrames:
 			compositionDurationInFrames,
 	} = useVideoConfig();
+
+	const resolvedDuration =
+		Math.max(
+			1,
+			Math.floor(
+				durationInFrames ??
+					compositionDurationInFrames,
+			),
+		);
 
 	const pages = useMemo(
 		() => {
@@ -528,28 +961,57 @@ React.FC<
 		[caption],
 	);
 
+	const pageTimings =
+		useMemo(
+			() => {
+				if (
+					pages.length === 0
+				) {
+					return [];
+				}
+
+				const wordTimingResult =
+					wordTimings &&
+					wordTimings.length > 0
+						? buildWordTimingPageTimings({
+								pages,
+								wordTimings,
+								fps,
+								durationInFrames:
+									resolvedDuration,
+							})
+						: null;
+
+				if (wordTimingResult) {
+					return wordTimingResult;
+				}
+
+				return buildFallbackPageTimings({
+					pages,
+					durationInFrames:
+						resolvedDuration,
+				});
+			},
+			[
+				pages,
+				wordTimings,
+				fps,
+				resolvedDuration,
+			],
+		);
+
 	if (
 		!caption ||
-		pages.length === 0
+		pages.length === 0 ||
+		pageTimings.length === 0
 	) {
 		return null;
 	}
 
-	const resolvedDuration =
-		Math.max(
-			1,
-			Math.floor(
-				durationInFrames ??
-					compositionDurationInFrames,
-			),
-		);
-
 	const activePage =
-		getActivePageIndex({
+		getActivePage({
 			frame,
-			pages,
-			durationInFrames:
-				resolvedDuration,
+			pageTimings,
 		});
 
 	const localFrame =

@@ -1,5 +1,6 @@
 ﻿from __future__ import annotations
 
+import json
 import shutil
 import subprocess
 from pathlib import Path
@@ -21,6 +22,7 @@ def find_windows_command(
 
     for candidate in candidates:
         resolved = shutil.which(candidate)
+
         if resolved:
             return resolved
 
@@ -37,7 +39,7 @@ def run_command(
 ) -> None:
     print()
     print(f"[실행] {step_name}")
-    print("       " + " ".join(command))
+    print(" " + " ".join(command))
 
     process = subprocess.run(
         list(command),
@@ -76,12 +78,21 @@ def typecheck_remotion(
 def render_episode(
     remotion_dir: Path,
     output_path: Path,
+    *,
+    episode_id: str,
 ) -> None:
     npx = find_windows_command("npx")
 
     output_path.parent.mkdir(
         parents=True,
         exist_ok=True,
+    )
+
+    input_props = json.dumps(
+        {
+            "episodeId": episode_id,
+        },
+        ensure_ascii=False,
     )
 
     run_command(
@@ -92,6 +103,8 @@ def render_episode(
             "src/index.ts",
             "Episode",
             str(output_path.resolve()),
+            "--props",
+            input_props,
         ],
         cwd=remotion_dir,
         step_name="Remotion 렌더",
@@ -99,6 +112,7 @@ def render_episode(
 
     if not output_path.exists():
         raise CommandExecutionError(
-            "렌더 명령은 완료됐지만 MP4가 생성되지 않았습니다: "
+            "렌더 명령은 완료됐지만 "
+            "MP4가 생성되지 않았습니다: "
             f"{output_path}"
         )

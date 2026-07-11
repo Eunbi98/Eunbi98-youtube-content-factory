@@ -1,4 +1,5 @@
 import React from 'react';
+
 import {
 	CalculateMetadataFunction,
 	Composition,
@@ -10,47 +11,99 @@ import {
 	type EpisodeCompositionProps,
 } from './compositions/EpisodeComposition';
 
-import type {EpisodeTimeline} from './types/timeline';
-import {validateTimeline} from './utils/timeline';
+import type {
+	EpisodeTimeline,
+} from './types/timeline';
 
+import {
+	validateTimeline,
+} from './utils/timeline';
 
 const fallbackTimeline: EpisodeTimeline = {
-	episodeId: 'LOADING',
+	episodeId: 'ep008',
 	title: 'Timeline Loading',
+
 	fps: 30,
 	width: 1080,
 	height: 1920,
+
 	totalDuration: 1,
+
 	theme: {
 		backgroundColor: '#000000',
 		titleColor: '#7CFFB2',
 		captionColor: '#FFFFFF',
 		accentColor: '#7CFFB2',
 	},
+
 	scenes: [
 		{
 			id: 'scene_loading',
 			start: 0,
 			duration: 1,
-			caption: 'Timeline loading...',
-			backgroundColor: '#000000',
+
+			caption:
+				'Timeline loading...',
+
+			backgroundColor:
+				'#000000',
+
 			media: {
 				type: 'color',
 			},
-			cameraMotion: 'static',
-			transition: 'fade',
-			transitionDuration: 0.3,
-			overlay: 'none',
+
+			cameraMotion:
+				'static',
+
+			transition:
+				'fade',
+
+			transitionDuration:
+				0.3,
+
+			overlay:
+				'none',
 		},
 	],
 };
 
+const normalizeEpisodeId = (
+	rawEpisodeId: string | undefined,
+): string => {
+	const normalized =
+		rawEpisodeId
+			?.trim()
+			.toLowerCase();
+
+	if (!normalized) {
+		return 'ep008';
+	}
+
+	if (!/^ep\d{3,}$/.test(normalized)) {
+		throw new Error(
+			`Invalid episodeId: ${rawEpisodeId}`,
+		);
+	}
+
+	return normalized;
+};
 
 const calculateMetadata: CalculateMetadataFunction<
 	EpisodeCompositionProps
-> = async ({abortSignal}) => {
+> = async ({
+	props,
+	abortSignal,
+}) => {
+	const episodeId =
+		normalizeEpisodeId(
+			props.episodeId,
+		);
+
+	const timelinePath =
+		`${episodeId}/timeline.json`;
+
 	const response = await fetch(
-		staticFile('timeline.json'),
+		staticFile(timelinePath),
 		{
 			signal: abortSignal,
 			cache: 'no-store',
@@ -59,7 +112,9 @@ const calculateMetadata: CalculateMetadataFunction<
 
 	if (!response.ok) {
 		throw new Error(
-			`Failed to load timeline.json: ${response.status} ${response.statusText}`,
+			`Failed to load ${timelinePath}: ` +
+			`${response.status} ` +
+			`${response.statusText}`,
 		);
 	}
 
@@ -69,47 +124,85 @@ const calculateMetadata: CalculateMetadataFunction<
 	const timeline =
 		validateTimeline(rawTimeline);
 
+	if (
+		timeline.episodeId
+			.trim()
+			.toLowerCase() !==
+		episodeId
+	) {
+		throw new Error(
+			`Timeline episodeId mismatch: ` +
+			`expected ${episodeId}, ` +
+			`received ${timeline.episodeId}`,
+		);
+	}
+
 	return {
-		durationInFrames: Math.max(
-			1,
-			Math.ceil(
-				timeline.totalDuration *
-					timeline.fps,
+		durationInFrames:
+			Math.max(
+				1,
+				Math.ceil(
+					timeline.totalDuration *
+						timeline.fps,
+				),
 			),
-		),
-		fps: timeline.fps,
-		width: timeline.width,
-		height: timeline.height,
+
+		fps:
+			timeline.fps,
+
+		width:
+			timeline.width,
+
+		height:
+			timeline.height,
+
 		props: {
+			episodeId,
 			timeline,
 		},
 	};
 };
-
 
 const CompatibleEpisodeComposition =
 	EpisodeComposition as React.ComponentType<
 		EpisodeCompositionProps
 	>;
 
-
-export const RemotionRoot: React.FC = () => {
+export const RemotionRoot:
+React.FC = () => {
 	return (
 		<Composition
 			id="Episode"
+
 			component={
 				CompatibleEpisodeComposition
 			}
+
 			durationInFrames={
 				fallbackTimeline.totalDuration *
 				fallbackTimeline.fps
 			}
-			fps={fallbackTimeline.fps}
-			width={fallbackTimeline.width}
-			height={fallbackTimeline.height}
+
+			fps={
+				fallbackTimeline.fps
+			}
+
+			width={
+				fallbackTimeline.width
+			}
+
+			height={
+				fallbackTimeline.height
+			}
+
 			defaultProps={{
-				timeline: fallbackTimeline,
+				episodeId:
+					fallbackTimeline.episodeId,
+
+				timeline:
+					fallbackTimeline,
 			}}
+
 			calculateMetadata={
 				calculateMetadata
 			}

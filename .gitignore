@@ -45,3 +45,7 @@ projects/remotion/public/assets/temp/
 
 # Render output
 projects/remotion/output/
+# Generated episode runtime files
+projects/episodes/*/audio/
+projects/remotion/public/ep*/
+projects/episodes/*/timeline.json.bak

@@ -10,11 +10,17 @@ class FactoryPaths:
     root_dir: Path
     episode_id: str
     episode_dir: Path
+
     source_timeline: Path
     source_assets_dir: Path
+    source_audio_dir: Path
+
     remotion_dir: Path
+    public_episode_dir: Path
     public_timeline: Path
     public_assets_dir: Path
+    public_audio_dir: Path
+
     output_path: Path
     log_path: Path
 
@@ -38,6 +44,12 @@ class FactoryPaths:
             / "remotion"
         )
 
+        public_episode_dir = (
+            remotion_dir
+            / "public"
+            / episode_id
+        )
+
         return cls(
             root_dir=root_dir,
             episode_id=episode_id,
@@ -50,17 +62,23 @@ class FactoryPaths:
                 episode_dir
                 / "assets"
             ),
+            source_audio_dir=(
+                episode_dir
+                / "audio"
+            ),
             remotion_dir=remotion_dir,
+            public_episode_dir=(
+                public_episode_dir
+            ),
             public_timeline=(
-                remotion_dir
-                / "public"
+                public_episode_dir
                 / "timeline.json"
             ),
             public_assets_dir=(
-                remotion_dir
-                / "public"
-                / "assets"
-                / episode_id
+                public_episode_dir
+            ),
+            public_audio_dir=(
+                public_episode_dir
             ),
             output_path=(
                 root_dir
@@ -89,19 +107,25 @@ class FactoryRunOptions:
 class FactoryRunContext:
     paths: FactoryPaths
     options: FactoryRunOptions
+
     timeline: dict[str, Any] | None = None
     timeline_generated: bool = False
+
     title: str = ""
     scene_count: int = 0
     total_duration: float = 0.0
     fps: int = 0
     width: int = 0
     height: int = 0
+
     required_assets: tuple[Path, ...] = field(
         default_factory=tuple
     )
+
     required_asset_count: int = 0
     copied_asset_count: int = 0
+    copied_audio_count: int = 0
+
     elapsed_seconds: float = 0.0
     status: str = "pending"
     error_message: str | None = None
@@ -110,8 +134,10 @@ class FactoryRunContext:
         self,
     ) -> dict[str, Any]:
         return {
-            "release": "6.2",
-            "episodeId": self.paths.episode_id,
+            "release": "6.3",
+            "episodeId": (
+                self.paths.episode_id
+            ),
             "status": self.status,
             "elapsedSeconds": round(
                 self.elapsed_seconds,
@@ -126,17 +152,23 @@ class FactoryRunContext:
             "sourceAssetsPath": str(
                 self.paths.source_assets_dir
             ),
+            "sourceAudioPath": str(
+                self.paths.source_audio_dir
+            ),
+            "publicEpisodePath": str(
+                self.paths.public_episode_dir
+            ),
             "publicTimelinePath": str(
                 self.paths.public_timeline
-            ),
-            "publicAssetsPath": str(
-                self.paths.public_assets_dir
             ),
             "requiredAssetCount": (
                 self.required_asset_count
             ),
             "copiedAssetCount": (
                 self.copied_asset_count
+            ),
+            "copiedAudioCount": (
+                self.copied_audio_count
             ),
             "sceneCount": self.scene_count,
             "totalDuration": round(
