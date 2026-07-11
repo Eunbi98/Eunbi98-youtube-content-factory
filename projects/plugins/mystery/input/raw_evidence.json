@@ -1,0 +1,65 @@
+[
+  {
+    "title": "공식 기록으로 확인되는 사건",
+    "claim": "공식 기관 기록에는 해당 해역에서 발생한 여러 사고가 기상과 항해 조건으로 설명된다고 정리되어 있습니다.",
+    "source_name": "Example Official Archive",
+    "source_url": "https://example.gov/archive/bermuda",
+    "source_tier": "official",
+    "evidence_type": "fact",
+    "published_at": "2025-01-01",
+    "keywords": [
+      "공식 기록",
+      "지도",
+      "사고"
+    ]
+  },
+  {
+    "title": "가장 널리 알려진 실제 사례",
+    "claim": "실제로 가장 유명한 사례 중 하나는 비행 편대의 실종 사건이며 당시 수색 기록도 남아 있습니다.",
+    "source_name": "Example Reference",
+    "source_url": "https://example.org/reference/flight",
+    "source_tier": "reference",
+    "evidence_type": "case",
+    "published_at": null,
+    "keywords": [
+      "비행기",
+      "기록",
+      "사진"
+    ]
+  },
+  {
+    "title": "과학적 반박",
+    "claim": "하지만 연구자들은 사고 빈도가 다른 혼잡 해역과 비교해 특별히 높지 않다는 반박을 제시합니다.",
+    "source_name": "Example Academic Journal",
+    "source_url": "https://example.edu/paper/triangle",
+    "source_tier": "academic",
+    "evidence_type": "counterpoint",
+    "published_at": "2024-06-10",
+    "keywords": [
+      "연구",
+      "통계"
+    ]
+  },
+  {
+    "title": "중복 사례",
+    "claim": "실제로 가장 유명한 사례 중 하나는 비행 편대의 실종 사건이며 당시 수색 기록도 남아 있습니다.",
+    "source_name": "Duplicate News",
+    "source_url": "https://example.com/news/duplicate",
+    "source_tier": "news",
+    "evidence_type": "case",
+    "published_at": "2024-07-01",
+    "keywords": [
+      "비행기"
+    ]
+  },
+  {
+    "title": "잘못된 URL",
+    "claim": "이 항목은 URL 검증에서 제거되어야 합니다.",
+    "source_name": "Invalid Source",
+    "source_url": "not-a-url",
+    "source_tier": "unknown",
+    "evidence_type": "fact",
+    "published_at": null,
+    "keywords": []
+  }
+]
