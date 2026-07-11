@@ -1,21 +1,52 @@
-# youtube-content-factory
+# Release 6 Feature 5 — Mystery Plugin Integration
 
-AI 기반 YouTube Shorts 자동 제작 파이프라인입니다.
-
-## 목표
-
-해외 콘텐츠를 자동 수집한 뒤 AI로 평가하고, 쇼츠용 대본과 산출물을 생성합니다.
-
-최종 목표는 다음 흐름입니다.
+## 적용 파일
 
 ```text
-해외 콘텐츠 수집
-→ 본문 추출
-→ 본문 정제
-→ 후보 평가
-→ AI 쇼츠 기획
-→ JSON 생성
-→ 이미지 다운로드
-→ 음성 생성
-→ 자막 생성
-→ 영상 생성
+projects/plugins/mystery/mystery_plugin.py
+projects/plugins/mystery/build_mystery.py
+```
+
+두 파일 모두 기존 파일을 덮어씁니다.
+
+## 실행
+
+Evidence 결과를 먼저 생성합니다.
+
+```powershell
+python projects\plugins\mystery\build_evidence.py
+python -m compileall projects\plugins\mystery
+python projects\plugins\mystery\build_mystery.py
+```
+
+다른 주제로 실행:
+
+```powershell
+python projects\plugins\mystery\build_mystery.py `
+  --episode-id ep010 `
+  --topic "사라진 도시" `
+  --output "projects/episodes/ep010/timeline.json"
+```
+
+## 최종 API
+
+```python
+result = MysteryPlugin().build(
+    episode_id="ep010",
+    topic="사라진 도시",
+    evidence_path="projects/plugins/mystery/output/evidence_result.json",
+    output_path="projects/episodes/ep010/timeline.json",
+)
+```
+
+## Release 6 완료 구조
+
+```text
+Research Plan
+→ Evidence Collector
+→ Story Planner
+→ Story Optimizer
+→ Story Validator
+→ Factory Core
+→ Timeline JSON
+```

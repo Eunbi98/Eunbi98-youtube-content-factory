@@ -1,5 +1,9 @@
 import React from 'react';
-import {Composition} from 'remotion';
+import {
+	CalculateMetadataFunction,
+	Composition,
+	staticFile,
+} from 'remotion';
 
 import {
 	EpisodeComposition,
@@ -7,143 +11,87 @@ import {
 } from './compositions/EpisodeComposition';
 
 import type {EpisodeTimeline} from './types/timeline';
+import {validateTimeline} from './utils/timeline';
 
-    const ep005Timeline: EpisodeTimeline = {
-        episodeId: 'EP005',
 
-        title: '“물고기 비”를\n들어본 적 있나요?',
-
-        fps: 30,
+const fallbackTimeline: EpisodeTimeline = {
+	episodeId: 'LOADING',
+	title: 'Timeline Loading',
+	fps: 30,
 	width: 1080,
 	height: 1920,
-
-	totalDuration: 24,
-
+	totalDuration: 1,
 	theme: {
 		backgroundColor: '#000000',
+		titleColor: '#7CFFB2',
 		captionColor: '#FFFFFF',
-		accentColor: '#63E88F',
+		accentColor: '#7CFFB2',
 	},
-
 	scenes: [
 		{
-			id: 'scene_01',
-
+			id: 'scene_loading',
 			start: 0,
-			duration: 4,
-
-			caption:
-				'하늘에서 물고기가\n떨어진다면 믿으시겠습니까?',
-
-			backgroundColor: '#14202B',
-
+			duration: 1,
+			caption: 'Timeline loading...',
+			backgroundColor: '#000000',
 			media: {
-        	type: 'image',
-        	src: 'assets/ep005/scene_01.png',
-        	fit: 'cover',
-        	position: 'center center',
-},
-			cameraMotion: 'zoom_in',
+				type: 'color',
+			},
+			cameraMotion: 'static',
 			transition: 'fade',
 			transitionDuration: 0.3,
-
-			overlay: 'cinematic',
-		},
-
-		{
-			id: 'scene_02',
-
-			start: 4,
-			duration: 5,
-
-			caption:
-				'실제로 세계 곳곳에서\n물고기 비가 보고됐습니다.',
-
-			backgroundColor: '#223748',
-
-			media: {
-				type: 'color',
-			},
-
-			cameraMotion: 'pan_right',
-			transition: 'fade',
-			transitionDuration: 0.3,
-
-			overlay: 'vignette',
-		},
-
-		{
-			id: 'scene_03',
-
-			start: 9,
-			duration: 5,
-
-			caption:
-				'강한 회오리바람이\n물고기를 빨아 올린 뒤',
-
-			backgroundColor: '#314A5D',
-
-			media: {
-				type: 'color',
-			},
-
-			cameraMotion: 'zoom_in',
-			transition: 'slide_left',
-			transitionDuration: 0.3,
-
-			overlay: 'cinematic',
-		},
-
-		{
-			id: 'scene_04',
-
-			start: 14,
-			duration: 5,
-
-			caption:
-				'멀리 이동하다가\n비와 함께 떨어지는 겁니다.',
-
-			backgroundColor: '#1C3040',
-
-			media: {
-				type: 'color',
-			},
-
-			cameraMotion: 'pan_left',
-			transition: 'fade',
-			transitionDuration: 0.3,
-
-			overlay: 'cinematic',
-		},
-
-		{
-			id: 'scene_05',
-
-			start: 19,
-			duration: 5,
-
-			caption:
-				'물고기 비는 전설이 아니라\n실제로 가능한 현상입니다.',
-
-			backgroundColor: '#101820',
-
-			media: {
-				type: 'color',
-			},
-
-			cameraMotion: 'zoom_out',
-			transition: 'zoom',
-			transitionDuration: 0.3,
-
-			overlay: 'dark',
+			overlay: 'none',
 		},
 	],
 };
+
+
+const calculateMetadata: CalculateMetadataFunction<
+	EpisodeCompositionProps
+> = async ({abortSignal}) => {
+	const response = await fetch(
+		staticFile('timeline.json'),
+		{
+			signal: abortSignal,
+			cache: 'no-store',
+		},
+	);
+
+	if (!response.ok) {
+		throw new Error(
+			`Failed to load timeline.json: ${response.status} ${response.statusText}`,
+		);
+	}
+
+	const rawTimeline: unknown =
+		await response.json();
+
+	const timeline =
+		validateTimeline(rawTimeline);
+
+	return {
+		durationInFrames: Math.max(
+			1,
+			Math.ceil(
+				timeline.totalDuration *
+					timeline.fps,
+			),
+		),
+		fps: timeline.fps,
+		width: timeline.width,
+		height: timeline.height,
+		props: {
+			timeline,
+		},
+	};
+};
+
 
 const CompatibleEpisodeComposition =
 	EpisodeComposition as React.ComponentType<
 		EpisodeCompositionProps
 	>;
+
 
 export const RemotionRoot: React.FC = () => {
 	return (
@@ -153,15 +101,18 @@ export const RemotionRoot: React.FC = () => {
 				CompatibleEpisodeComposition
 			}
 			durationInFrames={
-				ep005Timeline.totalDuration *
-				ep005Timeline.fps
+				fallbackTimeline.totalDuration *
+				fallbackTimeline.fps
 			}
-			fps={ep005Timeline.fps}
-			width={ep005Timeline.width}
-			height={ep005Timeline.height}
+			fps={fallbackTimeline.fps}
+			width={fallbackTimeline.width}
+			height={fallbackTimeline.height}
 			defaultProps={{
-				timeline: ep005Timeline,
+				timeline: fallbackTimeline,
 			}}
+			calculateMetadata={
+				calculateMetadata
+			}
 		/>
 	);
 };

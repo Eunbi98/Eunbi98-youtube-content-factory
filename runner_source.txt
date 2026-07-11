@@ -1,0 +1,644 @@
+
+===== asset_manager.py =====
+
+from __future__ import annotations
+
+import shutil
+from dataclasses import dataclass
+from pathlib import Path
+from typing import Any
+
+
+class AssetValidationError(ValueError):
+    """에피소드 미디어 파일이 없거나 잘못됐을 때 발생합니다."""
+
+
+@dataclass(frozen=True)
+class AssetSyncResult:
+    source_dir: Path
+    destination_dir: Path
+    required_count: int
+    copied_count: int
+    asset_paths: tuple[Path, ...]
+
+
+def _normalize_media_path(
+    raw_src: str,
+    episode_id: str,
+) -> Path:
+    normalized = raw_src.replace("\\", "/").strip()
+
+    prefixes = (
+        f"assets/{episode_id}/",
+        f"public/assets/{episode_id}/",
+        f"/assets/{episode_id}/",
+        f"/public/assets/{episode_id}/",
+    )
+
+    for prefix in prefixes:
+        if normalized.lower().startswith(
+            prefix.lower()
+        ):
+            normalized = normalized[len(prefix):]
+            break
+
+    normalized = normalized.lstrip("/")
+
+    if not normalized:
+        raise AssetValidationError(
+            "비어 있는 media.src가 발견되었습니다."
+        )
+
+    relative_path = Path(normalized)
+
+    if relative_path.is_absolute():
+        raise AssetValidationError(
+            f"절대 경로는 사용할 수 없습니다: {raw_src}"
+        )
+
+    if ".." in relative_path.parts:
+        raise AssetValidationError(
+            f"상위 폴더 경로는 사용할 수 없습니다: {raw_src}"
+        )
+
+    return relative_path
+
+
+def collect_required_assets(
+    timeline: dict[str, Any],
+    *,
+    episode_id: str,
+) -> tuple[Path, ...]:
+    scenes = timeline.get("scenes", [])
+
+    required_assets: list[Path] = []
+    seen_assets: set[str] = set()
+
+    for index, scene in enumerate(
+        scenes,
+        start=1,
+    ):
+        if not isinstance(scene, dict):
+            continue
+
+        media = scene.get("media")
+
+        if not isinstance(media, dict):
+            continue
+
+        media_type = media.get("type")
+
+        if media_type in (
+            None,
+            "color",
+        ):
+            continue
+
+        raw_src = media.get("src")
+
+        if not isinstance(raw_src, str):
+            raise AssetValidationError(
+                f"{index}번째 scene의 media.src가 없습니다."
+            )
+
+        relative_path = _normalize_media_path(
+            raw_src,
+            episode_id,
+        )
+
+        key = relative_path.as_posix().lower()
+
+        if key not in seen_assets:
+            seen_assets.add(key)
+            required_assets.append(
+                relative_path
+            )
+
+    return tuple(required_assets)
+
+
+def validate_episode_assets(
+    *,
+    episode_assets_dir: Path,
+    required_assets: tuple[Path, ...],
+) -> None:
+    if required_assets and not episode_assets_dir.exists():
+        raise AssetValidationError(
+            "에피소드 assets 폴더가 없습니다: "
+            f"{episode_assets_dir}"
+        )
+
+    missing_assets: list[Path] = []
+    empty_assets: list[Path] = []
+
+    for relative_path in required_assets:
+        source_path = (
+            episode_assets_dir
+            / relative_path
+        )
+
+        if not source_path.exists():
+            missing_assets.append(
+                relative_path
+            )
+            continue
+
+        if not source_path.is_file():
+            missing_assets.append(
+                relative_path
+            )
+            continue
+
+        if source_path.stat().st_size == 0:
+            empty_assets.append(
+                relative_path
+            )
+
+    if missing_assets:
+        missing_text = "\n".join(
+            f"  - {path.as_posix()}"
+            for path in missing_assets
+        )
+
+        raise AssetValidationError(
+            "필수 미디어 파일이 없습니다:\n"
+            f"{missing_text}"
+        )
+
+    if empty_assets:
+        empty_text = "\n".join(
+            f"  - {path.as_posix()}"
+            for path in empty_assets
+        )
+
+        raise AssetValidationError(
+            "크기가 0바이트인 미디어 파일이 있습니다:\n"
+            f"{empty_text}"
+        )
+
+
+def sync_episode_assets(
+    *,
+    episode_assets_dir: Path,
+    public_assets_dir: Path,
+    required_assets: tuple[Path, ...],
+) -> AssetSyncResult:
+    validate_episode_assets(
+        episode_assets_dir=episode_assets_dir,
+        required_assets=required_assets,
+    )
+
+    if public_assets_dir.exists():
+        shutil.rmtree(
+            public_assets_dir
+        )
+
+    public_assets_dir.mkdir(
+        parents=True,
+        exist_ok=True,
+    )
+
+    copied_assets: list[Path] = []
+
+    for relative_path in required_assets:
+        source_path = (
+            episode_assets_dir
+            / relative_path
+        )
+
+        destination_path = (
+            public_assets_dir
+            / relative_path
+        )
+
+        destination_path.parent.mkdir(
+            parents=True,
+            exist_ok=True,
+        )
+
+        shutil.copy2(
+            source_path,
+            destination_path,
+        )
+
+        copied_assets.append(
+            destination_path
+        )
+
+    return AssetSyncResult(
+        source_dir=episode_assets_dir,
+        destination_dir=public_assets_dir,
+        required_count=len(
+            required_assets
+        ),
+        copied_count=len(
+            copied_assets
+        ),
+        asset_paths=tuple(
+            copied_assets
+        ),
+    )
+
+
+===== director_runner.py =====
+
+from __future__ import annotations
+
+import sys
+from pathlib import Path
+
+
+class DirectorExecutionError(RuntimeError):
+    """Director 실행 실패."""
+
+
+def build_episode_timeline(
+    *,
+    root_dir: Path,
+    episode_id: str,
+) -> Path:
+    director_dir = (
+        root_dir
+        / "projects"
+        / "director"
+    )
+
+    output_path = (
+        root_dir
+        / "projects"
+        / "episodes"
+        / episode_id
+        / "timeline.json"
+    )
+
+    if not director_dir.exists():
+        raise DirectorExecutionError(
+            f"Director 폴더가 없습니다: {director_dir}"
+        )
+
+    director_dir_text = str(director_dir)
+
+    if director_dir_text not in sys.path:
+        sys.path.insert(
+            0,
+            director_dir_text,
+        )
+
+    try:
+        from director import (
+            Director,
+            DirectorError,
+        )
+    except ImportError as exc:
+        raise DirectorExecutionError(
+            f"Director import 실패: {exc}"
+        ) from exc
+
+    print()
+    print("[실행] Director Timeline 생성")
+    print(f"       에피소드: {episode_id}")
+
+    try:
+        result = Director().build(
+            episode_id=episode_id,
+            output_path=output_path,
+        )
+    except DirectorError as exc:
+        raise DirectorExecutionError(
+            str(exc)
+        ) from exc
+    except Exception as exc:
+        raise DirectorExecutionError(
+            f"Director 처리 중 오류: {exc}"
+        ) from exc
+
+    print("[완료] Director Timeline 생성")
+    print(
+        f"       장면: {result.scene_count}개"
+    )
+    print(
+        f"       길이: {result.total_duration:.2f}초"
+    )
+    print(f"       출력: {output_path}")
+
+    return output_path
+
+
+===== render_runner.py =====
+
+from __future__ import annotations
+
+import shutil
+import subprocess
+from pathlib import Path
+from typing import Sequence
+
+
+class CommandExecutionError(RuntimeError):
+    """외부 명령 실행 실패."""
+
+
+def find_windows_command(
+    command: str,
+) -> str:
+    candidates = (
+        f"{command}.cmd",
+        f"{command}.exe",
+        command,
+    )
+
+    for candidate in candidates:
+        resolved = shutil.which(candidate)
+        if resolved:
+            return resolved
+
+    raise CommandExecutionError(
+        f"명령을 찾을 수 없습니다: {command}"
+    )
+
+
+def run_command(
+    command: Sequence[str],
+    *,
+    cwd: Path,
+    step_name: str,
+) -> None:
+    print()
+    print(f"[실행] {step_name}")
+    print("       " + " ".join(command))
+
+    process = subprocess.run(
+        list(command),
+        cwd=cwd,
+        check=False,
+        text=True,
+        encoding="utf-8",
+        errors="replace",
+    )
+
+    if process.returncode != 0:
+        raise CommandExecutionError(
+            f"{step_name} 실패 "
+            f"(종료 코드: {process.returncode})"
+        )
+
+    print(f"[완료] {step_name}")
+
+
+def typecheck_remotion(
+    remotion_dir: Path,
+) -> None:
+    npx = find_windows_command("npx")
+
+    run_command(
+        [
+            npx,
+            "tsc",
+            "--noEmit",
+        ],
+        cwd=remotion_dir,
+        step_name="TypeScript 검사",
+    )
+
+
+def render_episode(
+    remotion_dir: Path,
+    output_path: Path,
+) -> None:
+    npx = find_windows_command("npx")
+
+    output_path.parent.mkdir(
+        parents=True,
+        exist_ok=True,
+    )
+
+    run_command(
+        [
+            npx,
+            "remotion",
+            "render",
+            "src/index.ts",
+            "Episode",
+            str(output_path.resolve()),
+        ],
+        cwd=remotion_dir,
+        step_name="Remotion 렌더",
+    )
+
+    if not output_path.exists():
+        raise CommandExecutionError(
+            "렌더 명령은 완료됐지만 MP4가 생성되지 않았습니다: "
+            f"{output_path}"
+        )
+
+
+===== timeline_validator.py =====
+
+from __future__ import annotations
+
+import json
+from dataclasses import dataclass
+from pathlib import Path
+from typing import Any
+
+
+class TimelineValidationError(ValueError):
+    """timeline.json 구조가 올바르지 않을 때 발생합니다."""
+
+
+@dataclass(frozen=True)
+class TimelineSummary:
+    episode_id: str
+    title: str
+    fps: int
+    width: int
+    height: int
+    total_duration: float
+    scene_count: int
+
+
+def _require(
+    condition: bool,
+    message: str,
+) -> None:
+    if not condition:
+        raise TimelineValidationError(message)
+
+
+def load_and_validate_timeline(
+    timeline_path: Path,
+) -> tuple[dict[str, Any], TimelineSummary]:
+    if not timeline_path.exists():
+        raise TimelineValidationError(
+            f"timeline.json을 찾을 수 없습니다: {timeline_path}"
+        )
+
+    try:
+        raw_text = timeline_path.read_text(
+            encoding="utf-8"
+        )
+        data = json.loads(raw_text)
+    except UnicodeDecodeError as exc:
+        raise TimelineValidationError(
+            "timeline.json이 UTF-8 형식이 아닙니다."
+        ) from exc
+    except json.JSONDecodeError as exc:
+        raise TimelineValidationError(
+            "timeline.json JSON 문법 오류: "
+            f"{exc.msg} (줄 {exc.lineno}, 열 {exc.colno})"
+        ) from exc
+
+    _require(
+        isinstance(data, dict),
+        "timeline 최상위 값은 객체여야 합니다.",
+    )
+
+    required_fields = (
+        "episodeId",
+        "title",
+        "fps",
+        "width",
+        "height",
+        "totalDuration",
+        "scenes",
+    )
+
+    for field in required_fields:
+        _require(
+            field in data,
+            f"필수 항목이 없습니다: {field}",
+        )
+
+    episode_id = data["episodeId"]
+    title = data["title"]
+    fps = data["fps"]
+    width = data["width"]
+    height = data["height"]
+    total_duration = data["totalDuration"]
+    scenes = data["scenes"]
+
+    _require(
+        isinstance(episode_id, str)
+        and bool(episode_id.strip()),
+        "episodeId는 빈 문자열이 아니어야 합니다.",
+    )
+    _require(
+        isinstance(title, str)
+        and bool(title.strip()),
+        "title은 빈 문자열이 아니어야 합니다.",
+    )
+    _require(
+        isinstance(fps, int) and fps > 0,
+        "fps는 1 이상의 정수여야 합니다.",
+    )
+    _require(
+        isinstance(width, int) and width > 0,
+        "width는 1 이상의 정수여야 합니다.",
+    )
+    _require(
+        isinstance(height, int) and height > 0,
+        "height는 1 이상의 정수여야 합니다.",
+    )
+    _require(
+        isinstance(total_duration, (int, float))
+        and total_duration > 0,
+        "totalDuration은 0보다 커야 합니다.",
+    )
+    _require(
+        isinstance(scenes, list) and len(scenes) > 0,
+        "scenes는 하나 이상의 장면을 포함해야 합니다.",
+    )
+
+    seen_ids: set[str] = set()
+    previous_end = 0.0
+
+    for index, scene in enumerate(scenes, start=1):
+        _require(
+            isinstance(scene, dict),
+            f"{index}번째 scene은 객체여야 합니다.",
+        )
+
+        for field in (
+            "id",
+            "start",
+            "duration",
+            "caption",
+            "media",
+        ):
+            _require(
+                field in scene,
+                f"{index}번째 scene에 {field}가 없습니다.",
+            )
+
+        scene_id = scene["id"]
+        start = scene["start"]
+        duration = scene["duration"]
+        caption = scene["caption"]
+        media = scene["media"]
+
+        _require(
+            isinstance(scene_id, str)
+            and bool(scene_id.strip()),
+            f"{index}번째 scene id가 올바르지 않습니다.",
+        )
+        _require(
+            scene_id not in seen_ids,
+            f"scene id가 중복되었습니다: {scene_id}",
+        )
+        seen_ids.add(scene_id)
+
+        _require(
+            isinstance(start, (int, float))
+            and start >= 0,
+            f"{scene_id}의 start가 올바르지 않습니다.",
+        )
+        _require(
+            isinstance(duration, (int, float))
+            and duration > 0,
+            f"{scene_id}의 duration은 0보다 커야 합니다.",
+        )
+        _require(
+            isinstance(caption, str),
+            f"{scene_id}의 caption은 문자열이어야 합니다.",
+        )
+        _require(
+            isinstance(media, dict),
+            f"{scene_id}의 media는 객체여야 합니다.",
+        )
+        _require(
+            "type" in media,
+            f"{scene_id}의 media.type이 없습니다.",
+        )
+
+        start_value = float(start)
+        duration_value = float(duration)
+
+        _require(
+            start_value >= previous_end - 0.001,
+            f"{scene_id}가 이전 scene과 겹칩니다.",
+        )
+
+        previous_end = start_value + duration_value
+
+    _require(
+        previous_end <= float(total_duration) + 0.05,
+        "마지막 scene 종료 시간이 totalDuration을 초과합니다.",
+    )
+
+    summary = TimelineSummary(
+        episode_id=episode_id,
+        title=title,
+        fps=fps,
+        width=width,
+        height=height,
+        total_duration=float(total_duration),
+        scene_count=len(scenes),
+    )
+
+    return data, summary
+
+
+===== __init__.py =====
+
+"""Factory Runner package."""
+

@@ -10,7 +10,11 @@ export type CameraMotion =
 	| 'pan_left'
 	| 'pan_right'
 	| 'pan_up'
-	| 'pan_down';
+	| 'pan_down'
+	| 'zoom_in_left'
+	| 'zoom_in_right'
+	| 'zoom_in_up'
+	| 'zoom_in_down';
 
 export type TransitionType =
 	| 'cut'
@@ -28,6 +32,7 @@ export type OverlayType =
 export type SceneMedia = {
 	type: MediaType;
 	src?: string;
+
 	fit?: 'cover' | 'contain';
 	position?: string;
 };
@@ -46,6 +51,7 @@ export type TimelineScene = {
 	media?: SceneMedia;
 
 	cameraMotion?: CameraMotion;
+
 	transition?: TransitionType;
 	transitionDuration?: number;
 
@@ -55,8 +61,10 @@ export type TimelineScene = {
 
 export type TimelineTheme = {
 	backgroundColor?: string;
+
 	titleColor?: string;
 	captionColor?: string;
+
 	accentColor?: string;
 };
 
@@ -67,8 +75,10 @@ export type EpisodeTimeline = {
 	fps: number;
 	width: number;
 	height: number;
+
 	totalDuration: number;
 
 	theme?: TimelineTheme;
+
 	scenes: TimelineScene[];
 };

@@ -36,3 +36,12 @@ output/
 output/
 
 output/
+
+# Generated timelines
+projects/episodes/*/timeline.json
+
+# Temporary render assets
+projects/remotion/public/assets/temp/
+
+# Render output
+projects/remotion/output/

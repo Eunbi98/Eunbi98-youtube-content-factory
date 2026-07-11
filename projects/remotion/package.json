@@ -1,7 +1,8 @@
 {
   "scripts": {
-    "preview": "remotion preview src/index.ts",
-    "render:ep007": "remotion render src/index.ts HistoryTemplate ../output/ep007.mp4"
+    "dev": "remotion preview src/index.ts",
+    "preview": "npm run dev",
+    "render": "remotion render src/index.ts Episode ../output/output.mp4"
   },
   "dependencies": {
     "@remotion/cli": "^4.0.364",
