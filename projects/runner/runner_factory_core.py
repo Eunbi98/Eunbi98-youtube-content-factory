@@ -7,6 +7,22 @@ import time
 from pathlib import Path
 from typing import Any
 
+
+RUNNER_DIR = Path(__file__).resolve().parent
+PROJECTS_DIR = RUNNER_DIR.parent
+MEDIA_DIR = PROJECTS_DIR / "media"
+
+media_dir_text = str(
+    MEDIA_DIR
+)
+
+if media_dir_text not in sys.path:
+    sys.path.insert(
+        0,
+        media_dir_text,
+    )
+
+
 from asset_manager import (
     AssetValidationError,
     collect_required_assets,
@@ -15,6 +31,10 @@ from asset_manager import (
 from director_runner import (
     DirectorExecutionError,
     build_episode_timeline,
+)
+from media_collector import (
+    MediaCollectorError,
+    TimelineMediaCollector,
 )
 from pipeline_context import (
     FactoryPaths,
@@ -36,9 +56,15 @@ from timeline_validator import (
     TimelineValidationError,
     load_and_validate_timeline,
 )
+from wikimedia_provider import (
+    WikimediaProvider,
+    WikimediaProviderError,
+)
 
 
-class FactoryExecutionError(RuntimeError):
+class FactoryExecutionError(
+    RuntimeError
+):
     """Factory Pipeline 전체 실행 실패."""
 
 
@@ -48,7 +74,10 @@ class FactoryCore:
         *,
         paths: FactoryPaths,
         options: FactoryRunOptions,
-        reporter: ConsoleEventReporter | None = None,
+        reporter: (
+            ConsoleEventReporter
+            | None
+        ) = None,
     ) -> None:
         self._context = FactoryRunContext(
             paths=paths,
@@ -63,23 +92,28 @@ class FactoryCore:
     def run(
         self,
     ) -> FactoryRunResult:
-        started_at = time.perf_counter()
+        started_at = (
+            time.perf_counter()
+        )
 
         self._emit(
             FactoryEventType.PIPELINE_STARTED,
             "시작",
             {
                 "에피소드": (
-                    self._context.paths.episode_id
+                    self._context
+                    .paths
+                    .episode_id
                 ),
                 "Timeline": (
-                    self._context.paths.source_timeline
+                    self._context
+                    .paths
+                    .source_timeline
                 ),
                 "Assets": (
-                    self._context.paths.source_assets_dir
-                ),
-                "Audio": (
-                    self._context.paths.source_audio_dir
+                    self._context
+                    .paths
+                    .source_assets_dir
                 ),
             },
         )
@@ -87,24 +121,21 @@ class FactoryCore:
         try:
             self._prepare_timeline()
 
-            self._validate_timeline(
-                stage_name="Timeline 초기 검증",
-            )
+            self._collect_missing_media()
 
-            self._generate_tts_and_sync_duration()
-
-            self._validate_timeline(
-                stage_name=(
-                    "TTS 동기화 Timeline 검증"
-                ),
-            )
+            self._validate_timeline()
 
             self._collect_and_sync_assets()
 
-            self._validate_audio_files()
+            if (
+                self._context
+                .options
+                .validate_only
+            ):
+                self._context.status = (
+                    "validated"
+                )
 
-            if self._context.options.validate_only:
-                self._context.status = "validated"
                 self._context.elapsed_seconds = (
                     time.perf_counter()
                     - started_at
@@ -113,15 +144,18 @@ class FactoryCore:
                 self._save_log()
 
                 self._emit(
-                    FactoryEventType.VALIDATION_COMPLETED,
+                    FactoryEventType
+                    .VALIDATION_COMPLETED,
                     "종료",
                     {
                         "결과": (
-                            "Timeline, TTS, Assets "
+                            "Timeline과 Assets "
                             "검증 완료"
                         ),
                         "로그": (
-                            self._context.paths.log_path
+                            self._context
+                            .paths
+                            .log_path
                         ),
                         "소요": (
                             f"{self._context.elapsed_seconds:.2f}초"
@@ -129,13 +163,20 @@ class FactoryCore:
                     },
                 )
 
-                return self._build_result()
+                return (
+                    self._build_result()
+                )
 
-            self._publish_episode()
+            self._publish_timeline()
+
             self._run_typecheck()
+
             self._render()
 
-            self._context.status = "success"
+            self._context.status = (
+                "success"
+            )
+
             self._context.elapsed_seconds = (
                 time.perf_counter()
                 - started_at
@@ -144,29 +185,25 @@ class FactoryCore:
             self._save_log()
 
             self._emit(
-                FactoryEventType.PIPELINE_COMPLETED,
+                FactoryEventType
+                .PIPELINE_COMPLETED,
                 "완료",
                 {
                     "영상": (
-                        self._context.paths.output_path
-                    ),
-                    "Public": (
-                        self._context.paths.public_episode_dir
+                        self._context
+                        .paths
+                        .output_path
                     ),
                     "로그": (
-                        self._context.paths.log_path
+                        self._context
+                        .paths
+                        .log_path
                     ),
                     "장면": (
                         f"{self._context.scene_count}개"
                     ),
                     "Assets": (
                         f"{self._context.copied_asset_count}개"
-                    ),
-                    "Audio": (
-                        f"{self._context.copied_audio_count}개"
-                    ),
-                    "길이": (
-                        f"{self._context.total_duration:.3f}초"
                     ),
                     "소요": (
                         f"{self._context.elapsed_seconds:.2f}초"
@@ -181,12 +218,19 @@ class FactoryCore:
             AssetValidationError,
             DirectorExecutionError,
             CommandExecutionError,
+            MediaCollectorError,
+            WikimediaProviderError,
             OSError,
-            RuntimeError,
             ValueError,
         ) as exc:
-            self._context.status = "failed"
-            self._context.error_message = str(exc)
+            self._context.status = (
+                "failed"
+            )
+
+            self._context.error_message = (
+                str(exc)
+            )
+
             self._context.elapsed_seconds = (
                 time.perf_counter()
                 - started_at
@@ -195,12 +239,15 @@ class FactoryCore:
             self._save_log()
 
             self._emit(
-                FactoryEventType.PIPELINE_FAILED,
+                FactoryEventType
+                .PIPELINE_FAILED,
                 "실패",
                 {
                     "오류": str(exc),
                     "로그": (
-                        self._context.paths.log_path
+                        self._context
+                        .paths
+                        .log_path
                     ),
                 },
             )
@@ -217,43 +264,59 @@ class FactoryCore:
 
         should_generate = (
             options.rebuild_timeline
-            or not paths.source_timeline.exists()
+            or not paths
+            .source_timeline
+            .exists()
         )
 
         if not should_generate:
             return
 
         self._emit(
-            FactoryEventType.DIRECTOR_STARTED,
+            FactoryEventType
+            .DIRECTOR_STARTED,
             "실행",
             {
                 "단계": (
                     "Director Timeline 생성"
                 ),
-                "에피소드": paths.episode_id,
+                "에피소드": (
+                    paths.episode_id
+                ),
             },
         )
 
-        generated_path = build_episode_timeline(
-            root_dir=paths.root_dir,
-            episode_id=paths.episode_id,
+        generated_path = (
+            build_episode_timeline(
+                root_dir=paths.root_dir,
+                episode_id=(
+                    paths.episode_id
+                ),
+            )
         )
 
         if (
             generated_path.resolve()
-            != paths.source_timeline.resolve()
+            != paths
+            .source_timeline
+            .resolve()
         ):
             raise DirectorExecutionError(
-                "Director 출력 경로가 예상 경로와 "
-                "다릅니다.\n"
-                f"예상: {paths.source_timeline}\n"
-                f"실제: {generated_path}"
+                "Director 출력 경로가 "
+                "예상 경로와 다릅니다.\n"
+                f"예상: "
+                f"{paths.source_timeline}\n"
+                f"실제: "
+                f"{generated_path}"
             )
 
-        self._context.timeline_generated = True
+        self._context.timeline_generated = (
+            True
+        )
 
         self._emit(
-            FactoryEventType.DIRECTOR_COMPLETED,
+            FactoryEventType
+            .DIRECTOR_COMPLETED,
             "완료",
             {
                 "단계": (
@@ -263,55 +326,375 @@ class FactoryCore:
             },
         )
 
+    def _collect_missing_media(
+        self,
+    ) -> None:
+        """
+        Timeline을 읽어 실제 assets 폴더에 없는
+        Scene 이미지가 있는지 확인합니다.
+
+        누락된 장면만 Wikimedia Collector로
+        자동 수집합니다.
+        """
+
+        timeline_path = (
+            self._context
+            .paths
+            .source_timeline
+        )
+
+        assets_dir = (
+            self._context
+            .paths
+            .source_assets_dir
+        )
+
+        if not timeline_path.exists():
+            raise TimelineValidationError(
+                "Media Collector 실행 전 "
+                "Timeline 파일이 없습니다:\n"
+                f"{timeline_path}"
+            )
+
+        timeline_data = (
+            self._load_raw_timeline(
+                timeline_path
+            )
+        )
+
+        missing_scene_ids = (
+            self._find_missing_scene_assets(
+                timeline_data=(
+                    timeline_data
+                ),
+                assets_dir=assets_dir,
+            )
+        )
+
+        if not missing_scene_ids:
+            self._emit(
+                FactoryEventType
+                .ASSETS_DISCOVERED,
+                "건너뜀",
+                {
+                    "단계": (
+                        "Media Collector"
+                    ),
+                    "결과": (
+                        "필수 Scene 이미지가 "
+                        "모두 존재함"
+                    ),
+                },
+            )
+
+            return
+
+        self._emit(
+            FactoryEventType
+            .ASSETS_DISCOVERED,
+            "실행",
+            {
+                "단계": (
+                    "Wikimedia Media Collector"
+                ),
+                "누락 장면": (
+                    ", ".join(
+                        missing_scene_ids
+                    )
+                ),
+                "개수": (
+                    f"{len(missing_scene_ids)}개"
+                ),
+            },
+        )
+
+        with WikimediaProvider() as provider:
+            collector = (
+                TimelineMediaCollector(
+                    provider=provider
+                )
+            )
+
+            result = collector.collect(
+                timeline_path=(
+                    timeline_path
+                ),
+                assets_dir=assets_dir,
+                orientation="any",
+                max_search_queries=5,
+                candidates_per_query=8,
+                min_width=720,
+                min_height=720,
+                overwrite=False,
+                update_timeline=True,
+                scene_ids=(
+                    missing_scene_ids
+                ),
+            )
+
+        self._emit(
+            FactoryEventType
+            .ASSETS_SYNCED,
+            "완료",
+            {
+                "단계": (
+                    "Wikimedia Media Collector"
+                ),
+                "신규 다운로드": (
+                    f"{result.collected_count}개"
+                ),
+                "기존 재사용": (
+                    f"{result.reused_count}개"
+                ),
+                "Assets": (
+                    result.assets_dir
+                ),
+                "Manifest": (
+                    result.manifest_path
+                ),
+            },
+        )
+
+    @staticmethod
+    def _load_raw_timeline(
+        timeline_path: Path,
+    ) -> dict[str, Any]:
+        try:
+            raw_data = json.loads(
+                timeline_path.read_text(
+                    encoding="utf-8",
+                )
+            )
+
+        except json.JSONDecodeError as exc:
+            raise TimelineValidationError(
+                "Timeline JSON 형식이 "
+                "올바르지 않습니다.\n"
+                f"파일: {timeline_path}\n"
+                f"줄: {exc.lineno}\n"
+                f"열: {exc.colno}\n"
+                f"원인: {exc.msg}"
+            ) from exc
+
+        except OSError as exc:
+            raise TimelineValidationError(
+                "Timeline 파일을 "
+                "읽지 못했습니다.\n"
+                f"파일: {timeline_path}\n"
+                f"원인: {exc}"
+            ) from exc
+
+        if not isinstance(
+            raw_data,
+            dict,
+        ):
+            raise TimelineValidationError(
+                "Timeline 최상위 데이터는 "
+                "객체여야 합니다."
+            )
+
+        return raw_data
+
+    @staticmethod
+    def _find_missing_scene_assets(
+        *,
+        timeline_data: dict[str, Any],
+        assets_dir: Path,
+    ) -> list[str]:
+        raw_scenes = timeline_data.get(
+            "scenes"
+        )
+
+        if not isinstance(
+            raw_scenes,
+            list,
+        ):
+            raise TimelineValidationError(
+                "Timeline scenes 필드가 "
+                "배열이 아닙니다."
+            )
+
+        missing_scene_ids: list[str] = []
+
+        for index, raw_scene in enumerate(
+            raw_scenes,
+            start=1,
+        ):
+            if not isinstance(
+                raw_scene,
+                dict,
+            ):
+                raise TimelineValidationError(
+                    f"{index}번째 Scene이 "
+                    "객체가 아닙니다."
+                )
+
+            raw_scene_id = (
+                raw_scene.get("id")
+            )
+
+            if not isinstance(
+                raw_scene_id,
+                str,
+            ):
+                raise TimelineValidationError(
+                    f"{index}번째 Scene의 "
+                    "id가 문자열이 아닙니다."
+                )
+
+            scene_id = (
+                raw_scene_id.strip()
+            )
+
+            if not scene_id:
+                raise TimelineValidationError(
+                    f"{index}번째 Scene의 "
+                    "id가 비어 있습니다."
+                )
+
+            raw_media = raw_scene.get(
+                "media"
+            )
+
+            if not isinstance(
+                raw_media,
+                dict,
+            ):
+                missing_scene_ids.append(
+                    scene_id
+                )
+
+                continue
+
+            media_type = raw_media.get(
+                "type"
+            )
+
+            if media_type not in {
+                "image",
+                "video",
+            }:
+                continue
+
+            raw_src = raw_media.get(
+                "src"
+            )
+
+            if not isinstance(
+                raw_src,
+                str,
+            ):
+                missing_scene_ids.append(
+                    scene_id
+                )
+
+                continue
+
+            src = (
+                raw_src
+                .strip()
+                .lstrip("/\\")
+            )
+
+            if not src:
+                missing_scene_ids.append(
+                    scene_id
+                )
+
+                continue
+
+            source_path = (
+                assets_dir / src
+            )
+
+            if (
+                not source_path.exists()
+                or not source_path.is_file()
+                or source_path.stat().st_size
+                <= 0
+            ):
+                missing_scene_ids.append(
+                    scene_id
+                )
+
+        return missing_scene_ids
+
     def _validate_timeline(
         self,
-        *,
-        stage_name: str,
     ) -> None:
         timeline, summary = (
             load_and_validate_timeline(
-                self._context.paths.source_timeline
+                self._context
+                .paths
+                .source_timeline
             )
         )
 
         expected_episode = (
-            self._context.paths.episode_id.lower()
+            self._context
+            .paths
+            .episode_id
+            .lower()
         )
 
         if (
-            summary.episode_id.strip().lower()
+            summary
+            .episode_id
+            .strip()
+            .lower()
             != expected_episode
         ):
             raise TimelineValidationError(
                 "timeline episodeId가 요청한 "
                 "에피소드와 일치하지 않습니다.\n"
-                f"요청: {expected_episode}\n"
-                f"timeline: {summary.episode_id}"
+                f"요청: "
+                f"{expected_episode}\n"
+                f"timeline: "
+                f"{summary.episode_id}"
             )
 
-        self._context.timeline = timeline
-        self._context.title = summary.title
+        self._context.timeline = (
+            timeline
+        )
+
+        self._context.title = (
+            summary.title
+        )
+
         self._context.scene_count = (
             summary.scene_count
         )
+
         self._context.total_duration = (
             summary.total_duration
         )
-        self._context.fps = summary.fps
-        self._context.width = summary.width
-        self._context.height = summary.height
+
+        self._context.fps = (
+            summary.fps
+        )
+
+        self._context.width = (
+            summary.width
+        )
+
+        self._context.height = (
+            summary.height
+        )
 
         self._emit(
-            FactoryEventType.TIMELINE_VALIDATED,
+            FactoryEventType
+            .TIMELINE_VALIDATED,
             "완료",
             {
-                "단계": stage_name,
+                "단계": (
+                    "Timeline 검증"
+                ),
                 "제목": summary.title,
                 "장면": (
                     f"{summary.scene_count}개"
                 ),
                 "길이": (
-                    f"{summary.total_duration:.3f}초"
+                    f"{summary.total_duration:.2f}초"
                 ),
                 "화면": (
                     f"{summary.width}x"
@@ -321,195 +704,54 @@ class FactoryCore:
             },
         )
 
-    def _generate_tts_and_sync_duration(
-        self,
-    ) -> None:
-        tts_dir = (
-            self._context.paths.root_dir
-            / "projects"
-            / "tts"
-        )
-
-        if not tts_dir.exists():
-            raise FactoryExecutionError(
-                "TTS 모듈 폴더를 찾을 수 없습니다.\n"
-                f"경로: {tts_dir}"
-            )
-
-        if str(tts_dir) not in sys.path:
-            sys.path.insert(
-                0,
-                str(tts_dir),
-            )
-
-        try:
-            from tts_batch import (
-                TTSBatchError,
-                TimelineTTSBatchGenerator,
-            )
-            from tts_config import (
-                TTSConfig,
-                TTSConfigError,
-            )
-            from tts_engine import (
-                EdgeTTSEngine,
-                TTSEngineError,
-            )
-
-        except ImportError as exc:
-            raise FactoryExecutionError(
-                "TTS 모듈을 불러오지 "
-                "못했습니다.\n"
-                f"경로: {tts_dir}\n"
-                f"원인: {exc}"
-            ) from exc
-
-        self._emit(
-            FactoryEventType.DIRECTOR_STARTED,
-            "실행",
-            {
-                "단계": (
-                    "TTS 생성 및 Duration Sync"
-                ),
-                "Timeline": (
-                    self._context.paths.source_timeline
-                ),
-            },
-        )
-
-        try:
-            config = TTSConfig.from_environment()
-
-            engine = EdgeTTSEngine(
-                config=config,
-            )
-
-            generator = (
-                TimelineTTSBatchGenerator(
-                    engine=engine,
-                )
-            )
-
-            result = generator.generate_sync(
-                timeline_path=(
-                    self._context.paths.source_timeline
-                ),
-                output_dir=(
-                    self._context.paths.source_audio_dir
-                ),
-                sync_timeline=True,
-            )
-
-        except (
-            TTSConfigError,
-            TTSEngineError,
-            TTSBatchError,
-        ) as exc:
-            raise FactoryExecutionError(
-                "TTS 생성 또는 Duration Sync에 "
-                "실패했습니다.\n"
-                f"원인: {exc}"
-            ) from exc
-
-        if result.total_count <= 0:
-            raise FactoryExecutionError(
-                "생성된 TTS 장면이 없습니다."
-            )
-
-        if (
-            result.total_count
-            != self._context.scene_count
-        ):
-            raise FactoryExecutionError(
-                "Timeline 장면 수와 TTS 파일 수가 "
-                "일치하지 않습니다.\n"
-                f"Timeline: "
-                f"{self._context.scene_count}\n"
-                f"TTS: {result.total_count}"
-            )
-
-        for audio_result in result.results:
-            if not audio_result.output_path.exists():
-                raise FactoryExecutionError(
-                    "생성된 TTS 파일을 찾을 수 "
-                    "없습니다.\n"
-                    f"장면: {audio_result.scene_id}\n"
-                    f"파일: "
-                    f"{audio_result.output_path}"
-                )
-
-            if audio_result.file_size_bytes <= 0:
-                raise FactoryExecutionError(
-                    "TTS 파일의 크기가 "
-                    "0입니다.\n"
-                    f"장면: {audio_result.scene_id}"
-                )
-
-            if audio_result.duration_seconds <= 0:
-                raise FactoryExecutionError(
-                    "TTS 파일의 길이가 "
-                    "0초 이하입니다.\n"
-                    f"장면: {audio_result.scene_id}"
-                )
-
-        self._emit(
-            FactoryEventType.DIRECTOR_COMPLETED,
-            "완료",
-            {
-                "단계": (
-                    "TTS 생성 및 Duration Sync"
-                ),
-                "전체": (
-                    f"{result.total_count}개"
-                ),
-                "신규": (
-                    f"{result.generated_count}개"
-                ),
-                "재사용": (
-                    f"{result.reused_count}개"
-                ),
-                "길이": (
-                    f"{result.total_duration:.3f}초"
-                ),
-            },
-        )
-
     def _collect_and_sync_assets(
         self,
     ) -> None:
-        if self._context.timeline is None:
+        if (
+            self._context.timeline
+            is None
+        ):
             raise TimelineValidationError(
                 "검증된 Timeline이 없습니다."
             )
 
-        required_assets = collect_required_assets(
-            self._context.timeline,
-            episode_id=(
-                self._context.paths.episode_id
-            ),
+        required_assets = (
+            collect_required_assets(
+                self._context.timeline,
+                episode_id=(
+                    self._context
+                    .paths
+                    .episode_id
+                ),
+            )
         )
 
         self._context.required_assets = (
             required_assets
         )
-        self._context.required_asset_count = len(
-            required_assets
+
+        self._context.required_asset_count = (
+            len(required_assets)
         )
 
         asset_text = (
             ", ".join(
                 path.as_posix()
-                for path in required_assets
+                for path
+                in required_assets
             )
             if required_assets
             else "없음"
         )
 
         self._emit(
-            FactoryEventType.ASSETS_DISCOVERED,
+            FactoryEventType
+            .ASSETS_DISCOVERED,
             "확인",
             {
-                "단계": "필수 미디어",
+                "단계": (
+                    "필수 미디어"
+                ),
                 "개수": (
                     f"{len(required_assets)}개"
                 ),
@@ -519,12 +761,18 @@ class FactoryCore:
 
         result = sync_episode_assets(
             episode_assets_dir=(
-                self._context.paths.source_assets_dir
+                self._context
+                .paths
+                .source_assets_dir
             ),
             public_assets_dir=(
-                self._context.paths.public_assets_dir
+                self._context
+                .paths
+                .public_assets_dir
             ),
-            required_assets=required_assets,
+            required_assets=(
+                required_assets
+            ),
         )
 
         self._context.copied_asset_count = (
@@ -532,243 +780,84 @@ class FactoryCore:
         )
 
         self._emit(
-            FactoryEventType.ASSETS_SYNCED,
+            FactoryEventType
+            .ASSETS_SYNCED,
             "완료",
             {
                 "단계": (
-                    "Assets 검증 및 Public 복사"
+                    "Assets 검증 및 복사"
                 ),
                 "원본": result.source_dir,
-                "대상": result.destination_dir,
+                "대상": (
+                    result.destination_dir
+                ),
                 "복사": (
                     f"{result.copied_count}개"
                 ),
             },
         )
 
-    def _validate_audio_files(
+    def _publish_timeline(
         self,
     ) -> None:
-        if self._context.timeline is None:
-            raise TimelineValidationError(
-                "검증된 Timeline이 없습니다."
-            )
-
-        scenes = self._context.timeline.get(
-            "scenes",
-            [],
+        source = (
+            self._context
+            .paths
+            .source_timeline
         )
 
-        if not isinstance(scenes, list):
-            raise FactoryExecutionError(
-                "Timeline scenes가 배열이 아닙니다."
-            )
+        destination = (
+            self._context
+            .paths
+            .public_timeline
+        )
 
-        audio_files: list[Path] = []
-
-        for index, scene in enumerate(
-            scenes,
-            start=1,
-        ):
-            if not isinstance(scene, dict):
-                raise FactoryExecutionError(
-                    f"{index}번째 scene 형식이 "
-                    "올바르지 않습니다."
-                )
-
-            raw_audio = scene.get("audio")
-
-            if not isinstance(raw_audio, str):
-                raise FactoryExecutionError(
-                    f"{index}번째 scene에 "
-                    "audio 경로가 없습니다."
-                )
-
-            audio_name = Path(raw_audio).name
-
-            audio_path = (
-                self._context.paths.source_audio_dir
-                / audio_name
-            )
-
-            if not audio_path.exists():
-                raise FactoryExecutionError(
-                    "TTS 파일이 없습니다:\n"
-                    f"{audio_path}"
-                )
-
-            if audio_path.stat().st_size <= 0:
-                raise FactoryExecutionError(
-                    "크기가 0인 TTS 파일입니다:\n"
-                    f"{audio_path}"
-                )
-
-            audio_files.append(audio_path)
-
-        if len(audio_files) != len(scenes):
-            raise FactoryExecutionError(
-                "Scene 수와 Audio 수가 "
-                "일치하지 않습니다."
-            )
-
-    def _publish_episode(
-        self,
-    ) -> None:
-        paths = self._context.paths
-
-        paths.public_episode_dir.mkdir(
+        destination.parent.mkdir(
             parents=True,
             exist_ok=True,
         )
 
-        copied_audio_count = 0
-
-        for source_audio in sorted(
-            paths.source_audio_dir.glob("*.mp3")
-        ):
-            destination_audio = (
-                paths.public_audio_dir
-                / source_audio.name
-            )
-
-            shutil.copy2(
-                source_audio,
-                destination_audio,
-            )
-
-            copied_audio_count += 1
-
-        self._context.copied_audio_count = (
-            copied_audio_count
-        )
-
-        timeline_data = self._load_source_timeline()
-
-        self._rewrite_public_paths(
-            timeline_data
-        )
-
-        paths.public_timeline.write_text(
-            json.dumps(
-                timeline_data,
-                ensure_ascii=False,
-                indent=2,
-            )
-            + "\n",
-            encoding="utf-8",
+        shutil.copy2(
+            source,
+            destination,
         )
 
         self._emit(
-            FactoryEventType.TIMELINE_PUBLISHED,
+            FactoryEventType
+            .TIMELINE_PUBLISHED,
             "완료",
             {
                 "단계": (
-                    "Remotion Episode 배포"
+                    "Remotion Timeline 복사"
                 ),
-                "대상": (
-                    paths.public_episode_dir
-                ),
-                "Timeline": (
-                    paths.public_timeline
-                ),
-                "Assets": (
-                    f"{self._context.copied_asset_count}개"
-                ),
-                "Audio": (
-                    f"{copied_audio_count}개"
-                ),
+                "대상": destination,
             },
-        )
-
-    def _load_source_timeline(
-        self,
-    ) -> dict[str, Any]:
-        path = self._context.paths.source_timeline
-
-        try:
-            data = json.loads(
-                path.read_text(
-                    encoding="utf-8"
-                )
-            )
-        except (
-            OSError,
-            json.JSONDecodeError,
-        ) as exc:
-            raise FactoryExecutionError(
-                "Timeline을 읽지 못했습니다.\n"
-                f"파일: {path}\n"
-                f"원인: {exc}"
-            ) from exc
-
-        if not isinstance(data, dict):
-            raise FactoryExecutionError(
-                "Timeline 최상위 데이터가 "
-                "객체가 아닙니다."
-            )
-
-        return data
-
-    def _rewrite_public_paths(
-        self,
-        timeline_data: dict[str, Any],
-    ) -> None:
-        episode_id = (
-            self._context.paths.episode_id
-        )
-
-        scenes = timeline_data.get(
-            "scenes",
-            [],
-        )
-
-        if not isinstance(scenes, list):
-            raise FactoryExecutionError(
-                "Timeline scenes가 배열이 아닙니다."
-            )
-
-        for scene in scenes:
-            if not isinstance(scene, dict):
-                continue
-
-            media = scene.get("media")
-
-            if isinstance(media, dict):
-                raw_src = media.get("src")
-
-                if isinstance(raw_src, str):
-                    media["src"] = (
-                        f"{episode_id}/"
-                        f"{Path(raw_src).name}"
-                    )
-
-            raw_audio = scene.get("audio")
-
-            if isinstance(raw_audio, str):
-                scene["audio"] = (
-                    f"{episode_id}/"
-                    f"{Path(raw_audio).name}"
-                )
-
-        timeline_data["episodeId"] = (
-            episode_id
         )
 
     def _run_typecheck(
         self,
     ) -> None:
-        if self._context.options.skip_typecheck:
+        if (
+            self._context
+            .options
+            .skip_typecheck
+        ):
             return
 
         typecheck_remotion(
-            self._context.paths.remotion_dir
+            self._context
+            .paths
+            .remotion_dir
         )
 
         self._emit(
-            FactoryEventType.TYPECHECK_COMPLETED,
+            FactoryEventType
+            .TYPECHECK_COMPLETED,
             "완료",
             {
-                "단계": "TypeScript 검사",
+                "단계": (
+                    "TypeScript 검사"
+                ),
             },
         )
 
@@ -776,20 +865,26 @@ class FactoryCore:
         self,
     ) -> None:
         render_episode(
-            self._context.paths.remotion_dir,
-            self._context.paths.output_path,
-            episode_id=(
-                self._context.paths.episode_id
-            ),
+            self._context
+            .paths
+            .remotion_dir,
+            self._context
+            .paths
+            .output_path,
         )
 
         self._emit(
-            FactoryEventType.RENDER_COMPLETED,
+            FactoryEventType
+            .RENDER_COMPLETED,
             "완료",
             {
-                "단계": "Remotion 렌더",
+                "단계": (
+                    "Remotion 렌더"
+                ),
                 "영상": (
-                    self._context.paths.output_path
+                    self._context
+                    .paths
+                    .output_path
                 ),
             },
         )
@@ -797,7 +892,11 @@ class FactoryCore:
     def _save_log(
         self,
     ) -> None:
-        log_path = self._context.paths.log_path
+        log_path = (
+            self._context
+            .paths
+            .log_path
+        )
 
         log_path.parent.mkdir(
             parents=True,
@@ -806,7 +905,8 @@ class FactoryCore:
 
         log_path.write_text(
             json.dumps(
-                self._context.build_log_payload(),
+                self._context
+                .build_log_payload(),
                 ensure_ascii=False,
                 indent=2,
             ),
@@ -824,40 +924,58 @@ class FactoryCore:
             )
         )
 
-        output_path: Path | None = None
+        output_path: (
+            Path | None
+        ) = None
 
-        if self._context.status == "success":
+        if (
+            self._context.status
+            == "success"
+        ):
             output_path = (
-                self._context.paths.output_path
+                self._context
+                .paths
+                .output_path
             )
 
         return FactoryRunResult(
             episode_id=(
-                self._context.paths.episode_id
+                self._context
+                .paths
+                .episode_id
             ),
-            status=self._context.status,
+            status=(
+                self._context.status
+            ),
             succeeded=succeeded,
             timeline_generated=(
-                self._context.timeline_generated
+                self._context
+                .timeline_generated
             ),
             scene_count=(
                 self._context.scene_count
             ),
             total_duration=(
-                self._context.total_duration
+                self._context
+                .total_duration
             ),
             required_asset_count=(
-                self._context.required_asset_count
+                self._context
+                .required_asset_count
             ),
             copied_asset_count=(
-                self._context.copied_asset_count
+                self._context
+                .copied_asset_count
             ),
             output_path=output_path,
             log_path=(
-                self._context.paths.log_path
+                self._context
+                .paths
+                .log_path
             ),
             elapsed_seconds=(
-                self._context.elapsed_seconds
+                self._context
+                .elapsed_seconds
             ),
         )
 
@@ -865,7 +983,10 @@ class FactoryCore:
         self,
         event_type: FactoryEventType,
         title: str,
-        details: dict[str, object],
+        details: dict[
+            str,
+            object,
+        ],
     ) -> None:
         self._reporter.emit(
             FactoryEvent(

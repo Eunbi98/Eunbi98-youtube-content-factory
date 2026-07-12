@@ -1,9 +1,17 @@
 from __future__ import annotations
 
 import json
-from dataclasses import dataclass
+from dataclasses import (
+    dataclass,
+    field,
+)
 from pathlib import Path
-from typing import Any, Literal, Optional
+from typing import (
+    Any,
+    Iterable,
+    Literal,
+    Optional,
+)
 
 from director_rules import (
     CameraMotion,
@@ -21,14 +29,99 @@ MediaType = Literal[
 ]
 
 
+def normalize_keywords(
+    values: Iterable[str],
+) -> list[str]:
+    """
+    검색 키워드의 공백을 정리하고,
+    빈 값과 중복 값을 제거합니다.
+
+    대소문자만 다른 키워드는 같은 값으로 취급하지만,
+    최초 입력 문자열의 표기는 유지합니다.
+    """
+
+    normalized_keywords: list[str] = []
+    seen: set[str] = set()
+
+    for raw_value in values:
+        if not isinstance(
+            raw_value,
+            str,
+        ):
+            continue
+
+        normalized = " ".join(
+            raw_value
+            .replace("\r", " ")
+            .replace("\n", " ")
+            .split()
+        )
+
+        if not normalized:
+            continue
+
+        identity = normalized.casefold()
+
+        if identity in seen:
+            continue
+
+        seen.add(identity)
+
+        normalized_keywords.append(
+            normalized
+        )
+
+    return normalized_keywords
+
+
+def merge_keywords(
+    *keyword_groups: Iterable[str],
+) -> list[str]:
+    """
+    여러 키워드 목록을 입력 순서대로 합친 뒤
+    빈 값과 중복 값을 제거합니다.
+    """
+
+    merged: list[str] = []
+
+    for keyword_group in keyword_groups:
+        merged.extend(
+            keyword_group
+        )
+
+    return normalize_keywords(
+        merged
+    )
+
+
 @dataclass
 class Media:
     type: MediaType
     src: Optional[str] = None
-    fit: Literal["cover", "contain"] = "cover"
+    fit: Literal[
+        "cover",
+        "contain",
+    ] = "cover"
     position: str = "center center"
 
-    def to_remotion_dict(self) -> dict[str, Any]:
+    # 기존 Media 생성 코드와 호환되도록
+    # 마지막에 기본값 필드로 추가합니다.
+    keywords: list[str] = field(
+        default_factory=list
+    )
+
+    def to_remotion_dict(
+        self,
+        *,
+        scene_keywords: Optional[
+            Iterable[str]
+        ] = None,
+    ) -> dict[str, Any]:
+        resolved_keywords = merge_keywords(
+            scene_keywords or (),
+            self.keywords,
+        )
+
         data: dict[str, Any] = {
             "type": self.type,
             "fit": self.fit,
@@ -36,7 +129,14 @@ class Media:
         }
 
         if self.src:
-            data["src"] = self.src.lstrip("/\\")
+            data["src"] = (
+                self.src.lstrip("/\\")
+            )
+
+        if resolved_keywords:
+            data["keywords"] = (
+                resolved_keywords
+            )
 
         return data
 
@@ -53,17 +153,29 @@ class Scene:
     media: Media
     keywords: list[str]
     background_color: str = "#111111"
-    camera_motion: Optional[CameraMotion] = None
-    transition: Optional[TransitionType] = None
-    transition_duration: Optional[float] = None
-    overlay: Optional[OverlayType] = None
-    overlay_opacity: Optional[float] = None
+    camera_motion: Optional[
+        CameraMotion
+    ] = None
+    transition: Optional[
+        TransitionType
+    ] = None
+    transition_duration: Optional[
+        float
+    ] = None
+    overlay: Optional[
+        OverlayType
+    ] = None
+    overlay_opacity: Optional[
+        float
+    ] = None
 
     def to_remotion_dict(
         self,
         *,
         scene_index: int,
-        previous_motion: Optional[CameraMotion],
+        previous_motion: Optional[
+            CameraMotion
+        ],
     ) -> dict[str, Any]:
         direction = direct_scene(
             scene_type=self.type,
@@ -83,7 +195,8 @@ class Scene:
 
         resolved_transition_duration = (
             self.transition_duration
-            if self.transition_duration is not None
+            if self.transition_duration
+            is not None
             else direction.transition_duration
         )
 
@@ -94,11 +207,19 @@ class Scene:
 
         resolved_overlay_opacity = (
             self.overlay_opacity
-            if self.overlay_opacity is not None
+            if self.overlay_opacity
+            is not None
             else direction.overlay_opacity
         )
 
-        return {
+        resolved_keywords = (
+            merge_keywords(
+                self.keywords,
+                self.media.keywords,
+            )
+        )
+
+        data: dict[str, Any] = {
             "id": self.id,
             "start": round(
                 self.start,
@@ -110,16 +231,31 @@ class Scene:
             ),
             "title": self.title,
 
-            # TTS와 화면 자막이 동일한 원문을 사용합니다.
+            # TTS와 화면 자막이
+            # 동일한 원문을 사용합니다.
             "narration": self.narration,
             "caption": self.narration,
 
             "backgroundColor": (
                 self.background_color
             ),
-            "media": (
-                self.media.to_remotion_dict()
+
+            # Collector가 장면에서 바로 읽을 수 있는
+            # 최상위 검색 키워드입니다.
+            "keywords": (
+                resolved_keywords
             ),
+
+            # 다른 Provider와의 호환을 위해
+            # media 내부에도 같은 키워드를 보존합니다.
+            "media": (
+                self.media.to_remotion_dict(
+                    scene_keywords=(
+                        resolved_keywords
+                    ),
+                )
+            ),
+
             "cameraMotion": (
                 resolved_camera_motion
             ),
@@ -136,6 +272,8 @@ class Scene:
                 3,
             ),
         }
+
+        return data
 
 
 @dataclass
@@ -176,7 +314,9 @@ class Timeline:
     bgm: Optional[str]
     voice: Optional[str]
     scenes: list[Scene]
-    theme: Optional[TimelineTheme] = None
+    theme: Optional[
+        TimelineTheme
+    ] = None
 
     def validate(self) -> None:
         """
@@ -207,20 +347,46 @@ class Timeline:
             or self.height <= 0
         ):
             raise ValueError(
-                "width와 height는 1 이상이어야 합니다."
+                "width와 height는 "
+                "1 이상이어야 합니다."
             )
 
         if not self.scenes:
             raise ValueError(
-                "최소 한 개 이상의 scene이 필요합니다."
+                "최소 한 개 이상의 "
+                "scene이 필요합니다."
             )
 
         time_tolerance = 0.001
         previous_end = 0.0
+        seen_scene_ids: set[str] = set()
 
         for index, scene in enumerate(
             self.scenes
         ):
+            normalized_scene_id = (
+                scene.id.strip()
+            )
+
+            if not normalized_scene_id:
+                raise ValueError(
+                    f"{index + 1}번째 scene의 "
+                    "id는 비어 있을 수 없습니다."
+                )
+
+            if (
+                normalized_scene_id
+                in seen_scene_ids
+            ):
+                raise ValueError(
+                    "중복된 scene id가 있습니다: "
+                    f"{normalized_scene_id}"
+                )
+
+            seen_scene_ids.add(
+                normalized_scene_id
+            )
+
             if scene.duration <= 0:
                 raise ValueError(
                     f"{scene.id}: duration은 "
@@ -242,7 +408,8 @@ class Timeline:
             if (
                 index > 0
                 and scene.start
-                < previous_end - time_tolerance
+                < previous_end
+                - time_tolerance
             ):
                 raise ValueError(
                     f"{scene.id}: 이전 장면과 "
@@ -252,17 +419,19 @@ class Timeline:
                 )
 
             previous_end = round(
-                scene.start + scene.duration,
+                scene.start
+                + scene.duration,
                 3,
             )
 
         if (
             self.duration
-            < previous_end - time_tolerance
+            < previous_end
+            - time_tolerance
         ):
             raise ValueError(
-                "Timeline duration이 마지막 장면의 "
-                "종료 시간보다 짧습니다.\n"
+                "Timeline duration이 마지막 "
+                "장면의 종료 시간보다 짧습니다.\n"
                 f"duration={self.duration}, "
                 f"last_scene_end={previous_end}"
             )
@@ -339,14 +508,18 @@ def save_timeline(
     timeline: Timeline,
     output_path: str | Path,
 ) -> None:
-    path = Path(output_path)
+    path = Path(
+        output_path
+    )
 
     path.parent.mkdir(
         parents=True,
         exist_ok=True,
     )
 
-    data = timeline.to_remotion_dict()
+    data = (
+        timeline.to_remotion_dict()
+    )
 
     with path.open(
         "w",
@@ -358,4 +531,5 @@ def save_timeline(
             ensure_ascii=False,
             indent=2,
         )
+
         file.write("\n")

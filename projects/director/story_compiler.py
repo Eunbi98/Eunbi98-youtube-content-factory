@@ -1,6 +1,10 @@
 from __future__ import annotations
 
 from duration_planner import DurationPlanner
+from search_prompt import (
+    SearchPromptError,
+    build_scene_search_prompt,
+)
 from story_graph import Beat, Story
 from timeline_scheduler import (
     ScheduledScene,
@@ -11,7 +15,11 @@ from timeline_schema import (
     Scene,
     Timeline,
     TimelineTheme,
+    normalize_keywords,
 )
+
+
+DEFAULT_MEDIA_QUERY_COUNT = 8
 
 
 class StoryCompiler:
@@ -22,6 +30,7 @@ class StoryCompiler:
 
     - Story 검증
     - Beat를 Scene으로 변환
+    - 장면별 미디어 검색어 생성
     - Timeline 객체 생성
 
     StoryCompiler가 담당하지 않는 책임:
@@ -36,6 +45,9 @@ class StoryCompiler:
       -> Director Rule Engine
 
     Patch 5-4부터 StoryCompiler는 직접 시간을 계산하지 않습니다.
+
+    Release 6.5부터 Scene별 영문 미디어 검색어를
+    search_prompt.py를 통해 생성합니다.
     """
 
     def __init__(
@@ -47,11 +59,27 @@ class StoryCompiler:
         timeline_scheduler: (
             TimelineScheduler | None
         ) = None,
+        max_media_queries: int = (
+            DEFAULT_MEDIA_QUERY_COUNT
+        ),
     ) -> None:
-        self._duration_planner = duration_planner
+        if max_media_queries <= 0:
+            raise ValueError(
+                "max_media_queries는 "
+                "1 이상이어야 합니다."
+            )
+
+        self._duration_planner = (
+            duration_planner
+        )
+
         self._timeline_scheduler = (
             timeline_scheduler
             or TimelineScheduler()
+        )
+
+        self._max_media_queries = (
+            max_media_queries
         )
 
     def compile(
@@ -62,7 +90,9 @@ class StoryCompiler:
         Story를 완성된 Timeline으로 변환합니다.
         """
 
-        self._validate_story(story)
+        self._validate_story(
+            story
+        )
 
         duration_planner = (
             self._duration_planner
@@ -71,12 +101,15 @@ class StoryCompiler:
             )
         )
 
-        durations = duration_planner.plan_many(
-            story.beats
+        durations = (
+            duration_planner.plan_many(
+                story.beats
+            )
         )
 
         schedule = (
-            self._timeline_scheduler.schedule(
+            self._timeline_scheduler
+            .schedule(
                 beats=story.beats,
                 durations=durations,
             )
@@ -84,7 +117,9 @@ class StoryCompiler:
 
         scenes = [
             self._compile_scheduled_scene(
-                scheduled_scene=scheduled_scene,
+                scheduled_scene=(
+                    scheduled_scene
+                ),
                 scene_index=index,
             )
             for index, scheduled_scene
@@ -95,13 +130,17 @@ class StoryCompiler:
         ]
 
         timeline = Timeline(
-            version="5.4",
-            episode_id=story.episode_id,
+            version="6.5",
+            episode_id=(
+                story.episode_id
+            ),
             title=story.title,
             fps=story.fps,
             width=story.width,
             height=story.height,
-            duration=schedule.total_duration,
+            duration=(
+                schedule.total_duration
+            ),
             bgm=story.bgm,
             voice=story.voice,
             theme=TimelineTheme(
@@ -128,40 +167,150 @@ class StoryCompiler:
     def _compile_scheduled_scene(
         self,
         *,
-        scheduled_scene: ScheduledScene,
+        scheduled_scene: (
+            ScheduledScene
+        ),
         scene_index: int,
     ) -> Scene:
         """
         TimelineScheduler가 계산한 시간 정보를 사용해
-        하나의 ScheduledScene을 Timeline Scene으로 변환합니다.
+        하나의 ScheduledScene을 Timeline Scene으로
+        변환합니다.
         """
 
-        beat = scheduled_scene.beat
-        scene_id = f"scene_{scene_index:03d}"
+        beat = (
+            scheduled_scene.beat
+        )
+
+        scene_id = (
+            f"scene_{scene_index:03d}"
+        )
+
+        title = (
+            beat.title.strip()
+        )
+
+        narration = (
+            beat.narration.strip()
+        )
+
+        source_keywords = (
+            normalize_keywords(
+                beat.keywords
+            )
+        )
+
+        media_keywords = (
+            self._build_media_keywords(
+                scene_id=scene_id,
+                title=title,
+                narration=narration,
+                source_keywords=(
+                    source_keywords
+                ),
+            )
+        )
 
         media = Media(
             type=beat.media.type,
             src=beat.media.src,
             fit=beat.media.fit,
-            position=beat.media.position,
+            position=(
+                beat.media.position
+            ),
+            keywords=(
+                media_keywords
+            ),
         )
 
         return Scene(
             id=scene_id,
             type=beat.type,
-            start=scheduled_scene.start,
-            duration=scheduled_scene.duration,
-            title=beat.title.strip(),
-            narration=beat.narration.strip(),
-            subtitle=beat.subtitle.strip(),
+            start=(
+                scheduled_scene.start
+            ),
+            duration=(
+                scheduled_scene.duration
+            ),
+            title=title,
+            narration=narration,
+            subtitle=(
+                beat.subtitle.strip()
+            ),
             media=media,
-            keywords=list(
-                beat.keywords
+            keywords=(
+                media_keywords
             ),
             background_color=(
                 beat.background_color
             ),
         )
+
+    def _build_media_keywords(
+        self,
+        *,
+        scene_id: str,
+        title: str,
+        narration: str,
+        source_keywords: list[str],
+    ) -> list[str]:
+        """
+        Beat의 키워드와 장면 내용을 이용해
+        실제 Provider 검색에 사용할 영문 검색어를
+        생성합니다.
+
+        알려진 한국어 엔티티는 search_prompt.py의
+        ENTITY_ALIASES를 통해 영문 검색어로 변환됩니다.
+
+        검색어 변환이 불가능하더라도 Timeline 생성
+        자체는 중단하지 않고 기존 Beat 키워드를
+        보존합니다.
+        """
+
+        try:
+            prompt = (
+                build_scene_search_prompt(
+                    scene_id=scene_id,
+                    title=title,
+                    narration=narration,
+                    keywords=(
+                        source_keywords
+                    ),
+                    max_queries=(
+                        self
+                        ._max_media_queries
+                    ),
+                )
+            )
+
+        except SearchPromptError as exc:
+            print(
+                f"[검색어 경고] {scene_id}: "
+                "영문 미디어 검색어를 "
+                "생성하지 못했습니다."
+            )
+
+            print(
+                f"              원인: {exc}"
+            )
+
+            return source_keywords
+
+        generated_queries = [
+            query.query
+            for query in prompt.queries
+        ]
+
+        resolved_keywords = (
+            normalize_keywords(
+                generated_queries
+            )
+        )
+
+        if resolved_keywords:
+            return resolved_keywords
+
+        return source_keywords
 
     def _validate_story(
         self,
@@ -215,7 +364,9 @@ class StoryCompiler:
         beat: Beat,
         beat_index: int,
     ) -> None:
-        prefix = f"Beat {beat_index}"
+        prefix = (
+            f"Beat {beat_index}"
+        )
 
         if not beat.title.strip():
             raise ValueError(
@@ -237,7 +388,10 @@ class StoryCompiler:
 
         if (
             beat.media.type
-            in {"image", "video"}
+            in {
+                "image",
+                "video",
+            }
             and not beat.media.src
         ):
             raise ValueError(

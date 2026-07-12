@@ -1,0 +1,608 @@
+{
+  "version": "6.5",
+  "episodeId": "EP008",
+  "title": "사라진 도시는\n어떻게 발견될까?",
+  "fps": 30,
+  "width": 1080,
+  "height": 1920,
+  "totalDuration": 33.02,
+  "theme": {
+    "backgroundColor": "#000000",
+    "titleColor": "#7CFFB2",
+    "captionColor": "#FFFFFF",
+    "accentColor": "#7CFFB2"
+  },
+  "scenes": [
+    {
+      "id": "scene_001",
+      "start": 0.0,
+      "duration": 6.05,
+      "title": "땅속에 도시 전체가 숨겨져 있다면?",
+      "narration": "수백 년 동안 아무도 몰랐던 도시가 땅속에서 발견된다면 믿으시겠습니까?",
+      "caption": "수백 년 동안 아무도 몰랐던 도시가 땅속에서 발견된다면 믿으시겠습니까?",
+      "backgroundColor": "#14202B",
+      "keywords": [
+        "lost underground city",
+        "ancient ruins mystery",
+        "lost underground city wide view",
+        "ancient ruins mystery wide view",
+        "lost underground city interior",
+        "lost underground city close up",
+        "ancient ruins mystery interior",
+        "ancient ruins mystery close up"
+      ],
+      "media": {
+        "type": "image",
+        "fit": "cover",
+        "position": "center center",
+        "src": "scene_001.jpg",
+        "keywords": [
+          "lost underground city",
+          "ancient ruins mystery",
+          "lost underground city wide view",
+          "ancient ruins mystery wide view",
+          "lost underground city interior",
+          "lost underground city close up",
+          "ancient ruins mystery interior",
+          "ancient ruins mystery close up"
+        ]
+      },
+      "cameraMotion": "zoom_in",
+      "transition": "fade",
+      "transitionDuration": 0.3,
+      "overlay": "cinematic",
+      "overlayOpacity": 1.0,
+      "audioDuration": 5.9,
+      "audio": "audio/scene_001.mp3",
+      "timing": "audio/scene_001.timing.json",
+      "wordTimings": [
+        {
+          "text": "수백",
+          "offset": 0.1,
+          "duration": 0.3,
+          "end": 0.4
+        },
+        {
+          "text": "년",
+          "offset": 0.412,
+          "duration": 0.188,
+          "end": 0.6
+        },
+        {
+          "text": "동안",
+          "offset": 0.613,
+          "duration": 0.4,
+          "end": 1.013
+        },
+        {
+          "text": "아무도",
+          "offset": 1.025,
+          "duration": 0.338,
+          "end": 1.363
+        },
+        {
+          "text": "몰랐던",
+          "offset": 1.375,
+          "duration": 0.5,
+          "end": 1.875
+        },
+        {
+          "text": "도시가",
+          "offset": 1.887,
+          "duration": 0.45,
+          "end": 2.337
+        },
+        {
+          "text": "땅속에서",
+          "offset": 2.35,
+          "duration": 0.588,
+          "end": 2.938
+        },
+        {
+          "text": "발견된다면",
+          "offset": 2.95,
+          "duration": 0.912,
+          "end": 3.862
+        },
+        {
+          "text": "믿으시겠습니까",
+          "offset": 3.875,
+          "duration": 1.15,
+          "end": 5.025
+        }
+      ],
+      "wordCount": 9,
+      "mediaSource": {
+        "provider": "wikimedia",
+        "mediaId": "101209830",
+        "query": "ancient ruins mystery",
+        "searchedQueries": [
+          "lost underground city",
+          "ancient ruins mystery",
+          "lost underground city wide view",
+          "ancient ruins mystery wide view",
+          "lost underground city interior"
+        ],
+        "candidateCount": 11,
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Pompeii_Ruins_Villa_of_the_Mysteries_Fresco_%2848445480376%29.jpg",
+        "downloadUrl": "https://upload.wikimedia.org/wikipedia/commons/4/4f/Pompeii_Ruins_Villa_of_the_Mysteries_Fresco_%2848445480376%29.jpg",
+        "author": "Gary Todd from Xinzheng, China",
+        "authorUrl": null,
+        "licenseName": "Public domain",
+        "licenseUrl": null,
+        "width": 4000,
+        "height": 6000,
+        "orientation": "portrait",
+        "score": 136.0
+      }
+    },
+    {
+      "id": "scene_002",
+      "start": 6.05,
+      "duration": 6.44,
+      "title": "실제로 사라진 도시는 계속 발견됩니다",
+      "narration": "사막과 밀림, 현대 도시 아래에서도 오랫동안 잊힌 유적이 발견되고 있습니다.",
+      "caption": "사막과 밀림, 현대 도시 아래에서도 오랫동안 잊힌 유적이 발견되고 있습니다.",
+      "backgroundColor": "#223748",
+      "keywords": [
+        "archaeological discovery",
+        "buried ancient city",
+        "archaeological discovery wide view",
+        "buried ancient city wide view",
+        "archaeological discovery interior",
+        "archaeological discovery close up",
+        "buried ancient city interior",
+        "buried ancient city close up"
+      ],
+      "media": {
+        "type": "image",
+        "fit": "cover",
+        "position": "center center",
+        "src": "assets/ep008/scene_002.jpg",
+        "keywords": [
+          "archaeological discovery",
+          "buried ancient city",
+          "archaeological discovery wide view",
+          "buried ancient city wide view",
+          "archaeological discovery interior",
+          "archaeological discovery close up",
+          "buried ancient city interior",
+          "buried ancient city close up"
+        ]
+      },
+      "cameraMotion": "pan_right",
+      "transition": "cut",
+      "transitionDuration": 0.2,
+      "overlay": "cinematic",
+      "overlayOpacity": 1.0,
+      "audioDuration": 6.29,
+      "audio": "audio/scene_002.mp3",
+      "timing": "audio/scene_002.timing.json",
+      "wordTimings": [
+        {
+          "text": "사막과",
+          "offset": 0.1,
+          "duration": 0.55,
+          "end": 0.65
+        },
+        {
+          "text": "밀림",
+          "offset": 0.662,
+          "duration": 0.525,
+          "end": 1.187
+        },
+        {
+          "text": "현대",
+          "offset": 1.363,
+          "duration": 0.325,
+          "end": 1.688
+        },
+        {
+          "text": "도시",
+          "offset": 1.7,
+          "duration": 0.3,
+          "end": 2.0
+        },
+        {
+          "text": "아래에서도",
+          "offset": 2.013,
+          "duration": 0.738,
+          "end": 2.751
+        },
+        {
+          "text": "오랫동안",
+          "offset": 2.763,
+          "duration": 0.588,
+          "end": 3.351
+        },
+        {
+          "text": "잊힌",
+          "offset": 3.362,
+          "duration": 0.3,
+          "end": 3.662
+        },
+        {
+          "text": "유적이",
+          "offset": 3.675,
+          "duration": 0.4,
+          "end": 4.075
+        },
+        {
+          "text": "발견되고",
+          "offset": 4.088,
+          "duration": 0.675,
+          "end": 4.763
+        },
+        {
+          "text": "있습니다",
+          "offset": 4.775,
+          "duration": 0.637,
+          "end": 5.412
+        }
+      ],
+      "wordCount": 10
+    },
+    {
+      "id": "scene_003",
+      "start": 12.49,
+      "duration": 7.3,
+      "title": "흙과 식물이 모든 흔적을 감춰 버립니다",
+      "narration": "도시가 버려진 뒤 오랜 시간이 지나면 건물은 무너지고 흙과 식물이 그 위를 덮습니다.",
+      "caption": "도시가 버려진 뒤 오랜 시간이 지나면 건물은 무너지고 흙과 식물이 그 위를 덮습니다.",
+      "backgroundColor": "#314A5D",
+      "keywords": [
+        "ruins covered by jungle",
+        "lost city landscape",
+        "ruins covered by jungle wide view",
+        "lost city landscape wide view",
+        "ruins covered by jungle interior",
+        "ruins covered by jungle close up",
+        "lost city landscape interior",
+        "lost city landscape close up"
+      ],
+      "media": {
+        "type": "image",
+        "fit": "cover",
+        "position": "center center",
+        "src": "assets/ep008/scene_003.jpg",
+        "keywords": [
+          "ruins covered by jungle",
+          "lost city landscape",
+          "ruins covered by jungle wide view",
+          "lost city landscape wide view",
+          "ruins covered by jungle interior",
+          "ruins covered by jungle close up",
+          "lost city landscape interior",
+          "lost city landscape close up"
+        ]
+      },
+      "cameraMotion": "pan_left",
+      "transition": "fade",
+      "transitionDuration": 0.3,
+      "overlay": "cinematic",
+      "overlayOpacity": 1.0,
+      "audioDuration": 7.15,
+      "audio": "audio/scene_003.mp3",
+      "timing": "audio/scene_003.timing.json",
+      "wordTimings": [
+        {
+          "text": "도시가",
+          "offset": 0.1,
+          "duration": 0.425,
+          "end": 0.525
+        },
+        {
+          "text": "버려진",
+          "offset": 0.537,
+          "duration": 0.463,
+          "end": 1.0
+        },
+        {
+          "text": "뒤",
+          "offset": 1.012,
+          "duration": 0.2,
+          "end": 1.212
+        },
+        {
+          "text": "오랜",
+          "offset": 1.225,
+          "duration": 0.412,
+          "end": 1.637
+        },
+        {
+          "text": "시간이",
+          "offset": 1.65,
+          "duration": 0.338,
+          "end": 1.988
+        },
+        {
+          "text": "지나면",
+          "offset": 2.0,
+          "duration": 0.512,
+          "end": 2.512
+        },
+        {
+          "text": "건물은",
+          "offset": 2.525,
+          "duration": 0.75,
+          "end": 3.275
+        },
+        {
+          "text": "무너지고",
+          "offset": 3.288,
+          "duration": 0.637,
+          "end": 3.925
+        },
+        {
+          "text": "흙과",
+          "offset": 3.938,
+          "duration": 0.525,
+          "end": 4.463
+        },
+        {
+          "text": "식물이",
+          "offset": 4.475,
+          "duration": 0.5,
+          "end": 4.975
+        },
+        {
+          "text": "그",
+          "offset": 4.987,
+          "duration": 0.225,
+          "end": 5.212
+        },
+        {
+          "text": "위를",
+          "offset": 5.225,
+          "duration": 0.275,
+          "end": 5.5
+        },
+        {
+          "text": "덮습니다",
+          "offset": 5.513,
+          "duration": 0.75,
+          "end": 6.263
+        }
+      ],
+      "wordCount": 13
+    },
+    {
+      "id": "scene_004",
+      "start": 19.79,
+      "duration": 7.28,
+      "title": "레이저는 숲 아래까지 볼 수 있습니다",
+      "narration": "최근에는 라이다라는 레이저 기술로 울창한 숲 아래 숨겨진 건물과 도로의 형태까지 찾아냅니다.",
+      "caption": "최근에는 라이다라는 레이저 기술로 울창한 숲 아래 숨겨진 건물과 도로의 형태까지 찾아냅니다.",
+      "backgroundColor": "#1C3040",
+      "keywords": [
+        "lidar archaeology",
+        "jungle city scan",
+        "lidar archaeology wide view",
+        "jungle city scan wide view",
+        "lidar archaeology interior",
+        "lidar archaeology close up",
+        "jungle city scan interior",
+        "jungle city scan close up"
+      ],
+      "media": {
+        "type": "image",
+        "fit": "cover",
+        "position": "center center",
+        "src": "assets/ep008/scene_004.jpg",
+        "keywords": [
+          "lidar archaeology",
+          "jungle city scan",
+          "lidar archaeology wide view",
+          "jungle city scan wide view",
+          "lidar archaeology interior",
+          "lidar archaeology close up",
+          "jungle city scan interior",
+          "jungle city scan close up"
+        ]
+      },
+      "cameraMotion": "zoom_in_right",
+      "transition": "slide_left",
+      "transitionDuration": 0.3,
+      "overlay": "vignette",
+      "overlayOpacity": 1.0,
+      "audioDuration": 7.13,
+      "audio": "audio/scene_004.mp3",
+      "timing": "audio/scene_004.timing.json",
+      "wordTimings": [
+        {
+          "text": "최근에는",
+          "offset": 0.1,
+          "duration": 0.65,
+          "end": 0.75
+        },
+        {
+          "text": "라이다라는",
+          "offset": 0.762,
+          "duration": 0.625,
+          "end": 1.387
+        },
+        {
+          "text": "레이저",
+          "offset": 1.4,
+          "duration": 0.4,
+          "end": 1.8
+        },
+        {
+          "text": "기술로",
+          "offset": 1.812,
+          "duration": 0.463,
+          "end": 2.275
+        },
+        {
+          "text": "울창한",
+          "offset": 2.288,
+          "duration": 0.475,
+          "end": 2.763
+        },
+        {
+          "text": "숲",
+          "offset": 2.775,
+          "duration": 0.138,
+          "end": 2.913
+        },
+        {
+          "text": "아래",
+          "offset": 2.925,
+          "duration": 0.188,
+          "end": 3.113
+        },
+        {
+          "text": "숨겨진",
+          "offset": 3.125,
+          "duration": 0.5,
+          "end": 3.625
+        },
+        {
+          "text": "건물과",
+          "offset": 3.638,
+          "duration": 0.5,
+          "end": 4.138
+        },
+        {
+          "text": "도로의",
+          "offset": 4.15,
+          "duration": 0.525,
+          "end": 4.675
+        },
+        {
+          "text": "형태까지",
+          "offset": 4.688,
+          "duration": 0.713,
+          "end": 5.401
+        },
+        {
+          "text": "찾아냅니다",
+          "offset": 5.412,
+          "duration": 0.838,
+          "end": 6.25
+        }
+      ],
+      "wordCount": 12
+    },
+    {
+      "id": "scene_005",
+      "start": 27.07,
+      "duration": 5.95,
+      "title": "아직 발견되지 않은 도시가 남아 있을지도 모릅니다",
+      "narration": "우리가 걷는 땅 아래에도 아직 발견되지 않은 역사가 숨어 있을지 모릅니다.",
+      "caption": "우리가 걷는 땅 아래에도 아직 발견되지 않은 역사가 숨어 있을지 모릅니다.",
+      "backgroundColor": "#101820",
+      "keywords": [
+        "hidden history",
+        "undiscovered ancient city",
+        "hidden history wide view",
+        "undiscovered ancient city wide view",
+        "hidden history interior",
+        "hidden history close up",
+        "undiscovered ancient city interior",
+        "undiscovered ancient city close up"
+      ],
+      "media": {
+        "type": "image",
+        "fit": "cover",
+        "position": "center center",
+        "src": "assets/ep008/scene_005.jpg",
+        "keywords": [
+          "hidden history",
+          "undiscovered ancient city",
+          "hidden history wide view",
+          "undiscovered ancient city wide view",
+          "hidden history interior",
+          "hidden history close up",
+          "undiscovered ancient city interior",
+          "undiscovered ancient city close up"
+        ]
+      },
+      "cameraMotion": "zoom_out",
+      "transition": "fade",
+      "transitionDuration": 0.35,
+      "overlay": "dark",
+      "overlayOpacity": 1.0,
+      "audioDuration": 5.95,
+      "audio": "audio/scene_005.mp3",
+      "timing": "audio/scene_005.timing.json",
+      "wordTimings": [
+        {
+          "text": "우리가",
+          "offset": 0.1,
+          "duration": 0.412,
+          "end": 0.512
+        },
+        {
+          "text": "걷는",
+          "offset": 0.525,
+          "duration": 0.338,
+          "end": 0.863
+        },
+        {
+          "text": "땅",
+          "offset": 0.875,
+          "duration": 0.175,
+          "end": 1.05
+        },
+        {
+          "text": "아래에도",
+          "offset": 1.062,
+          "duration": 0.613,
+          "end": 1.675
+        },
+        {
+          "text": "아직",
+          "offset": 1.688,
+          "duration": 0.45,
+          "end": 2.138
+        },
+        {
+          "text": "발견되지",
+          "offset": 2.15,
+          "duration": 0.637,
+          "end": 2.787
+        },
+        {
+          "text": "않은",
+          "offset": 2.8,
+          "duration": 0.25,
+          "end": 3.05
+        },
+        {
+          "text": "역사가",
+          "offset": 3.062,
+          "duration": 0.5,
+          "end": 3.562
+        },
+        {
+          "text": "숨어",
+          "offset": 3.575,
+          "duration": 0.287,
+          "end": 3.862
+        },
+        {
+          "text": "있을지",
+          "offset": 3.875,
+          "duration": 0.475,
+          "end": 4.35
+        },
+        {
+          "text": "모릅니다",
+          "offset": 4.362,
+          "duration": 0.713,
+          "end": 5.075
+        }
+      ],
+      "wordCount": 11
+    }
+  ],
+  "tts": {
+    "provider": "edge",
+    "sceneGapMs": 150,
+    "audioDirectory": "audio",
+    "synchronized": true,
+    "wordTiming": true,
+    "timingVersion": "1.0"
+  }
+}
