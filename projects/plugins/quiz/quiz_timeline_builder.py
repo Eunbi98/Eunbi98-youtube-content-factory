@@ -14,10 +14,10 @@ class QuizTimelineBuilder:
     DEFAULT_WIDTH = 1080
     DEFAULT_HEIGHT = 1920
 
-    DEFAULT_BACKGROUND_COLOR = "#0F172A"
-    DEFAULT_TITLE_COLOR = "#FFD54A"
-    DEFAULT_CAPTION_COLOR = "#FFFFFF"
-    DEFAULT_ACCENT_COLOR = "#7CFFB2"
+    DEFAULT_BACKGROUND_COLOR = "#6FB382"
+    DEFAULT_TITLE_COLOR = "#214F2A"
+    DEFAULT_CAPTION_COLOR = "#214F2A"
+    DEFAULT_ACCENT_COLOR = "#F6D25B"
 
     def load_quiz_scenes(
         self,
@@ -179,9 +179,7 @@ class QuizTimelineBuilder:
 
             current_start = round(
                 current_start
-                + float(
-                    timeline_scene["duration"]
-                ),
+                + float(timeline_scene["duration"]),
                 3,
             )
 
@@ -190,7 +188,9 @@ class QuizTimelineBuilder:
         )
 
         return {
+            "version": "8.1",
             "episodeId": episode_id,
+            "channel": "quiz",
             "title": title,
             "fps": fps,
             "width": width,
@@ -273,71 +273,68 @@ class QuizTimelineBuilder:
             f"{scene_id}.display_text",
         )
 
+        tts_text = raw_scene.get("tts_text")
+
+        if tts_text is not None:
+            tts_text = self._require_text(
+                tts_text,
+                f"{scene_id}.tts_text",
+            )
+
         if scene_type == "intro":
             return self._create_timeline_scene(
                 scene_id=scene_id,
+                scene_type="intro",
                 start=start,
                 duration=duration,
                 title=title,
                 caption=display_text,
-                background_color=(
-                    self.DEFAULT_BACKGROUND_COLOR
-                ),
+                narration=tts_text,
                 transition="fade",
                 transition_duration=0.25,
-                overlay="none",
-                overlay_opacity=0.0,
             )
 
         if scene_type == "question":
             return self._create_timeline_scene(
                 scene_id=scene_id,
+                scene_type="question",
                 start=start,
                 duration=duration,
                 title=title,
                 caption=display_text,
-                background_color=(
-                    self.DEFAULT_BACKGROUND_COLOR
-                ),
+                narration=tts_text,
                 transition="fade",
                 transition_duration=0.2,
-                overlay="none",
-                overlay_opacity=0.0,
             )
 
         if scene_type == "answer":
             return self._create_timeline_scene(
                 scene_id=scene_id,
+                scene_type="answer",
                 start=start,
                 duration=duration,
                 title="정답",
                 caption=display_text,
-                background_color="#12372A",
+                narration=tts_text,
                 transition="zoom",
                 transition_duration=0.2,
-                overlay="none",
-                overlay_opacity=0.0,
             )
 
         if scene_type == "ending":
             return self._create_timeline_scene(
                 scene_id=scene_id,
+                scene_type="ending",
                 start=start,
                 duration=duration,
                 title=title,
                 caption=display_text,
-                background_color=(
-                    self.DEFAULT_BACKGROUND_COLOR
-                ),
+                narration=tts_text,
                 transition="fade",
                 transition_duration=0.25,
-                overlay="none",
-                overlay_opacity=0.0,
             )
 
         raise QuizTimelineBuildError(
-            f"지원하지 않는 scene_type입니다: "
-            f"{scene_type}"
+            f"지원하지 않는 scene_type입니다: {scene_type}"
         )
 
     def _build_countdown_timeline_scenes(
@@ -381,17 +378,15 @@ class QuizTimelineBuilder:
                     scene_id=(
                         f"{scene_id}_{countdown_value}"
                     ),
+                    scene_type="countdown",
                     start=current_start,
                     duration=1.0,
                     title="정답 공개까지",
                     caption=str(countdown_value),
-                    background_color=(
-                        self.DEFAULT_BACKGROUND_COLOR
-                    ),
+                    narration=None,
                     transition="cut",
                     transition_duration=0.0,
-                    overlay="none",
-                    overlay_opacity=0.0,
+                    countdown_value=countdown_value,
                 )
             )
 
@@ -406,23 +401,26 @@ class QuizTimelineBuilder:
         self,
         *,
         scene_id: str,
+        scene_type: str,
         start: float,
         duration: float,
         title: str,
         caption: str,
-        background_color: str,
+        narration: str | None,
         transition: str,
         transition_duration: float,
-        overlay: str,
-        overlay_opacity: float,
+        countdown_value: int | None = None,
     ) -> dict[str, Any]:
-        return {
+        scene: dict[str, Any] = {
             "id": scene_id,
+            "sceneType": scene_type,
             "start": round(start, 3),
             "duration": round(duration, 3),
             "title": title,
             "caption": caption,
-            "backgroundColor": background_color,
+            "backgroundColor": (
+                self.DEFAULT_BACKGROUND_COLOR
+            ),
             "media": {
                 "type": "color",
                 "fit": "cover",
@@ -430,12 +428,18 @@ class QuizTimelineBuilder:
             },
             "cameraMotion": "static",
             "transition": transition,
-            "transitionDuration": (
-                transition_duration
-            ),
-            "overlay": overlay,
-            "overlayOpacity": overlay_opacity,
+            "transitionDuration": transition_duration,
+            "overlay": "none",
+            "overlayOpacity": 0.0,
         }
+
+        if narration:
+            scene["narration"] = narration
+
+        if countdown_value is not None:
+            scene["countdownValue"] = countdown_value
+
+        return scene
 
     def _validate_timeline_scenes(
         self,
@@ -452,11 +456,28 @@ class QuizTimelineBuilder:
 
             if scene_id in scene_ids:
                 raise QuizTimelineBuildError(
-                    f"Timeline Scene ID가 "
-                    f"중복되었습니다: {scene_id}"
+                    f"Timeline Scene ID가 중복되었습니다: "
+                    f"{scene_id}"
                 )
 
             scene_ids.add(scene_id)
+
+            scene_type = self._require_text(
+                scene.get("sceneType"),
+                f"{scene_id}.sceneType",
+            )
+
+            if scene_type not in {
+                "intro",
+                "question",
+                "countdown",
+                "answer",
+                "ending",
+            }:
+                raise QuizTimelineBuildError(
+                    f"{scene_id}: 지원하지 않는 "
+                    f"sceneType입니다: {scene_type}"
+                )
 
             start = self._require_non_negative_number(
                 scene.get("start"),
@@ -512,8 +533,7 @@ class QuizTimelineBuilder:
             or value <= 0
         ):
             raise QuizTimelineBuildError(
-                f"{field_name}은 1 이상의 "
-                "정수여야 합니다."
+                f"{field_name}은 1 이상의 정수여야 합니다."
             )
 
         return value
@@ -529,8 +549,7 @@ class QuizTimelineBuilder:
             or value <= 0
         ):
             raise QuizTimelineBuildError(
-                f"{field_name}은 0보다 큰 "
-                "숫자여야 합니다."
+                f"{field_name}은 0보다 큰 숫자여야 합니다."
             )
 
         return float(value)
@@ -546,8 +565,7 @@ class QuizTimelineBuilder:
             or value < 0
         ):
             raise QuizTimelineBuildError(
-                f"{field_name}은 0 이상의 "
-                "숫자여야 합니다."
+                f"{field_name}은 0 이상의 숫자여야 합니다."
             )
 
         return float(value)
