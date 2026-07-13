@@ -1,3 +1,7 @@
+from .nasa_provider import (
+    NasaProvider,
+    NasaProviderError,
+)
 from .wikimedia_provider import (
     WikimediaProvider,
     WikimediaProviderError,
@@ -5,6 +9,8 @@ from .wikimedia_provider import (
 )
 
 __all__ = [
+    "NasaProvider",
+    "NasaProviderError",
     "WikimediaProvider",
     "WikimediaProviderError",
     "deduplicate_candidates",
