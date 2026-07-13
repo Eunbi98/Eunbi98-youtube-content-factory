@@ -49,3 +49,5 @@ projects/remotion/output/
 projects/episodes/*/audio/
 projects/remotion/public/ep*/
 projects/episodes/*/timeline.json.bak
+
+config/api_keys.json
