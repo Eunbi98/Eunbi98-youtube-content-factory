@@ -33,12 +33,8 @@ from director_runner import (
     build_episode_timeline,
 )
 from media_collector import (
+    MediaCollector,
     MediaCollectorError,
-    TimelineMediaCollector,
-)
-from provider_registry import (
-    MediaProviderRegistry,
-    ProviderRegistryError,
 )
 from pipeline_context import (
     FactoryPaths,
@@ -56,13 +52,13 @@ from render_runner import (
     render_episode,
     typecheck_remotion,
 )
+from scene_query_generator import (
+    SceneQueryGenerator,
+    SceneQueryGeneratorError,
+)
 from timeline_validator import (
     TimelineValidationError,
     load_and_validate_timeline,
-)
-from wikimedia_provider import (
-    WikimediaProvider,
-    WikimediaProviderError,
 )
 
 
@@ -124,6 +120,8 @@ class FactoryCore:
 
         try:
             self._prepare_timeline()
+
+            self._generate_media_queries()
 
             self._collect_missing_media()
 
@@ -218,16 +216,16 @@ class FactoryCore:
             return self._build_result()
 
         except (
-                    TimelineValidationError,
-                    AssetValidationError,
-                    DirectorExecutionError,
-                    CommandExecutionError,
-                    MediaCollectorError,
-                    ProviderRegistryError,
-                    WikimediaProviderError,
-                    OSError,
-                    ValueError,
-                ) as exc:
+            TimelineValidationError,
+            AssetValidationError,
+            DirectorExecutionError,
+            CommandExecutionError,
+            MediaCollectorError,
+            SceneQueryGeneratorError,
+            OSError,
+            ValueError,
+            RuntimeError,
+        ) as exc:
             self._context.status = (
                 "failed"
             )
@@ -331,17 +329,69 @@ class FactoryCore:
             },
         )
 
+    def _generate_media_queries(
+        self,
+    ) -> None:
+        timeline_path = (
+            self._context
+            .paths
+            .source_timeline
+        )
+
+        if not timeline_path.exists():
+            raise TimelineValidationError(
+                "Scene Query 생성 전 "
+                "Timeline 파일이 없습니다:\n"
+                f"{timeline_path}"
+            )
+
+        output_path = (
+            timeline_path.parent
+            / "media_queries.json"
+        )
+
+        self._emit(
+            FactoryEventType
+            .ASSETS_DISCOVERED,
+            "실행",
+            {
+                "단계": (
+                    "Scene Query Generator"
+                ),
+                "Timeline": timeline_path,
+            },
+        )
+
+        result = (
+            SceneQueryGenerator()
+            .generate(
+                timeline_path=timeline_path,
+                output_path=output_path,
+                max_queries=10,
+                update_timeline=True,
+            )
+        )
+
+        self._emit(
+            FactoryEventType
+            .ASSETS_DISCOVERED,
+            "완료",
+            {
+                "단계": (
+                    "Scene Query Generator"
+                ),
+                "장면": (
+                    f"{result.scene_count}개"
+                ),
+                "출력": (
+                    result.output_path
+                ),
+            },
+        )
+
     def _collect_missing_media(
         self,
     ) -> None:
-        """
-        Timeline을 읽어 실제 assets 폴더에 없는
-        Scene 이미지가 있는지 확인합니다.
-
-        누락된 장면만 Wikimedia Collector로
-        자동 수집합니다.
-        """
-
         timeline_path = (
             self._context
             .paths
@@ -383,10 +433,10 @@ class FactoryCore:
                 "건너뜀",
                 {
                     "단계": (
-                        "Media Collector"
+                        "Release 7 Media Collector"
                     ),
                     "결과": (
-                        "필수 Scene 이미지가 "
+                        "필수 Scene 미디어가 "
                         "모두 존재함"
                     ),
                 },
@@ -400,7 +450,7 @@ class FactoryCore:
             "실행",
             {
                 "단계": (
-                    "Wikimedia Media Collector"
+                    "Release 7 Media Collector"
                 ),
                 "누락 장면": (
                     ", ".join(
@@ -413,47 +463,43 @@ class FactoryCore:
             },
         )
 
-        wikimedia_provider = (
-            WikimediaProvider()
-        )
-
-        registry = (
-            MediaProviderRegistry(
-                providers=[
-                    wikimedia_provider,
-                ]
-            )
-        )
-
-        try:
-            collector = (
-                TimelineMediaCollector(
-                    registry=registry
+        manifest_path = (
+            MediaCollector(
+                episode_id=(
+                    self._context
+                    .paths
+                    .episode_id
                 )
             )
+            .collect(
+                force=False,
+                query_limit=5,
+                candidates_per_query=20,
+            )
+        )
 
-            result = collector.collect(
-                timeline_path=(
-                    timeline_path
+        refreshed_timeline = (
+            self._load_raw_timeline(
+                timeline_path
+            )
+        )
+
+        remaining_missing = (
+            self._find_missing_scene_assets(
+                timeline_data=(
+                    refreshed_timeline
                 ),
                 assets_dir=assets_dir,
-                orientation="any",
-                max_search_queries=5,
-                candidates_per_query=8,
-                min_width=720,
-                min_height=720,
-                overwrite=False,
-                update_timeline=True,
-                scene_ids=(
-                    missing_scene_ids
-                ),
-                provider_names=[
-                    "wikimedia",
-                ],
             )
+        )
 
-        finally:
-            wikimedia_provider.close()
+        if remaining_missing:
+            raise MediaCollectorError(
+                "Media Collector 실행 후에도 "
+                "누락된 Scene 미디어가 있습니다.\n"
+                f"누락: "
+                f"{', '.join(remaining_missing)}"
+            )
 
         self._emit(
             FactoryEventType
@@ -461,20 +507,13 @@ class FactoryCore:
             "완료",
             {
                 "단계": (
-                    "Wikimedia Media Collector"
+                    "Release 7 Media Collector"
                 ),
                 "신규 다운로드": (
-                    f"{result.collected_count}개"
+                    f"{len(missing_scene_ids)}개"
                 ),
-                "기존 재사용": (
-                    f"{result.reused_count}개"
-                ),
-                "Assets": (
-                    result.assets_dir
-                ),
-                "Manifest": (
-                    result.manifest_path
-                ),
+                "Assets": assets_dir,
+                "Manifest": manifest_path,
             },
         )
 
