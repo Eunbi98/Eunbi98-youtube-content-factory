@@ -1,0 +1,72 @@
+{
+  "episode_id": "ep010",
+  "genre": "quiz",
+  "quiz_type": "short_answer",
+  "title": "알고도 틀리는 상식 퀴즈 5문제",
+  "question_count": 5,
+  "settings": {
+    "max_question_lines": 2,
+    "max_question_chars_per_line": 15,
+    "countdown_seconds": 3,
+    "question_tts_enabled": true,
+    "answer_tts_enabled": true,
+    "countdown_tts_enabled": false,
+    "explanation_enabled": false
+  },
+  "questions": [
+    {
+      "id": "q001",
+      "category": "science",
+      "difficulty": "easy",
+      "question": "태양계에서 가장 큰 행성은?",
+      "answer": "목성",
+      "question_tts": "태양계에서 가장 큰 행성은 무엇일까요?",
+      "answer_tts": "정답은 목성입니다.",
+      "countdown_seconds": 3
+    },
+    {
+      "id": "q002",
+      "category": "history",
+      "difficulty": "easy",
+      "question": "훈민정음을 만든 왕은?",
+      "answer": "세종대왕",
+      "question_tts": "훈민정음을 만든 왕은 누구일까요?",
+      "answer_tts": "정답은 세종대왕입니다.",
+      "countdown_seconds": 3
+    },
+    {
+      "id": "q003",
+      "category": "geography",
+      "difficulty": "normal",
+      "question": "세계에서 가장 큰 사막은?",
+      "answer": "남극",
+      "question_tts": "세계에서 가장 큰 사막은 어디일까요?",
+      "answer_tts": "정답은 남극입니다.",
+      "countdown_seconds": 3
+    },
+    {
+      "id": "q004",
+      "category": "language",
+      "difficulty": "normal",
+      "question": "한글 자음의 기본자는 몇 개일까?",
+      "answer": "5개",
+      "question_tts": "한글 자음의 기본자는 몇 개일까요?",
+      "answer_tts": "정답은 다섯 개입니다.",
+      "countdown_seconds": 3
+    },
+    {
+      "id": "q005",
+      "category": "science",
+      "difficulty": "normal",
+      "question": "사람의 몸에서 가장 큰 장기는?",
+      "answer": "피부",
+      "question_tts": "사람의 몸에서 가장 큰 장기는 무엇일까요?",
+      "answer_tts": "정답은 피부입니다.",
+      "countdown_seconds": 3
+    }
+  ],
+  "ending": {
+    "text": "몇 문제를 맞혔나요?",
+    "tts": "몇 문제를 맞혔는지 댓글로 남겨주세요."
+  }
+}

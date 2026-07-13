@@ -1,3 +1,11 @@
+from .question_engine import (
+    QuestionBank,
+    QuestionCandidate,
+    QuestionEngine,
+    QuestionEngineError,
+    QuestionSelectionResult,
+    load_excluded_hashes,
+)
 from .quiz_scene_builder import (
     QuizAudioEvent,
     QuizScene,
@@ -19,6 +27,11 @@ from .quiz_timeline_builder import (
 )
 
 __all__ = [
+    "QuestionBank",
+    "QuestionCandidate",
+    "QuestionEngine",
+    "QuestionEngineError",
+    "QuestionSelectionResult",
     "QuizAudioEvent",
     "QuizEpisode",
     "QuizQuestion",
@@ -30,4 +43,5 @@ __all__ = [
     "QuizTimelineBuildError",
     "QuizTimelineBuilder",
     "QuizValidationError",
+    "load_excluded_hashes",
 ]
