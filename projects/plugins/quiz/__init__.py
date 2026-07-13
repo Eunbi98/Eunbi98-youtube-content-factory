@@ -13,6 +13,10 @@ from .quiz_schema import (
 from .quiz_story_builder import (
     QuizStoryBuilder,
 )
+from .quiz_timeline_builder import (
+    QuizTimelineBuildError,
+    QuizTimelineBuilder,
+)
 
 __all__ = [
     "QuizAudioEvent",
@@ -23,5 +27,7 @@ __all__ = [
     "QuizSceneBuilder",
     "QuizSceneCollection",
     "QuizStoryBuilder",
+    "QuizTimelineBuildError",
+    "QuizTimelineBuilder",
     "QuizValidationError",
 ]
