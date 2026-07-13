@@ -1,0 +1,1693 @@
+﻿from __future__ import annotations
+
+import argparse
+import sys
+from pathlib import Path
+
+
+ROOT_DIR = Path(__file__).resolve().parent
+RUNNER_DIR = ROOT_DIR / "projects" / "runner"
+
+if str(RUNNER_DIR) not in sys.path:
+    sys.path.insert(0, str(RUNNER_DIR))
+
+from pipeline_context import (  # noqa: E402
+    FactoryPaths,
+    FactoryRunOptions,
+)
+from runner_factory_core import (  # noqa: E402
+    FactoryCore,
+    FactoryExecutionError,
+)
+
+
+def normalize_episode_id(
+    raw_episode: str,
+) -> str:
+    episode = raw_episode.strip().lower()
+
+    if episode.startswith("ep"):
+        number_text = episode[2:]
+    else:
+        number_text = episode
+
+    if not number_text.isdigit():
+        raise ValueError(
+            "에피소드 형식이 올바르지 않습니다. "
+            "예: ep008 또는 008"
+        )
+
+    return f"ep{int(number_text):03d}"
+
+
+def parse_args() -> argparse.Namespace:
+    parser = argparse.ArgumentParser(
+        description=(
+            "Director, Timeline, Assets, Remotion을 "
+            "통합 실행하는 Factory Runner입니다."
+        )
+    )
+
+    parser.add_argument(
+        "--episode",
+        required=True,
+        help="처리할 에피소드 ID. 예: ep008",
+    )
+
+    parser.add_argument(
+        "--rebuild-timeline",
+        action="store_true",
+        help=(
+            "기존 timeline.json이 있어도 "
+            "Director로 다시 생성합니다."
+        ),
+    )
+
+    parser.add_argument(
+        "--skip-typecheck",
+        action="store_true",
+        help="TypeScript 검사를 생략합니다.",
+    )
+
+    parser.add_argument(
+        "--validate-only",
+        action="store_true",
+        help=(
+            "Timeline과 Assets 검증까지만 실행하고 "
+            "렌더는 생략합니다."
+        ),
+    )
+
+    return parser.parse_args()
+
+
+def main() -> int:
+    args = parse_args()
+
+    try:
+        episode_id = normalize_episode_id(
+            args.episode
+        )
+    except ValueError as exc:
+        print(f"[실패] {exc}")
+        return 2
+
+    paths = FactoryPaths.create(
+        root_dir=ROOT_DIR,
+        episode_id=episode_id,
+    )
+
+    options = FactoryRunOptions(
+        rebuild_timeline=(
+            args.rebuild_timeline
+        ),
+        skip_typecheck=(
+            args.skip_typecheck
+        ),
+        validate_only=(
+            args.validate_only
+        ),
+    )
+
+    try:
+        result = FactoryCore(
+            paths=paths,
+            options=options,
+        ).run()
+    except FactoryExecutionError:
+        return 1
+
+    return 0 if result.succeeded else 1
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())
+from __future__ import annotations
+
+import argparse
+import json
+import sys
+from dataclasses import replace
+from pathlib import Path
+from typing import Any
+
+MEDIA_DIR = Path(__file__).resolve().parent
+PROJECT_ROOT = MEDIA_DIR.parents[1]
+
+for module_path in (
+    MEDIA_DIR,
+    MEDIA_DIR / "providers",
+):
+    module_path_text = str(
+        module_path
+    )
+    if module_path_text not in sys.path:
+        sys.path.insert(
+            0,
+            module_path_text,
+        )
+
+from api_key_loader import load_api_keys  # noqa: E402
+from cache_manager import CacheManager  # noqa: E402
+from downloader import MediaDownloader  # noqa: E402
+from manifest_builder import ManifestBuilder  # noqa: E402
+from media_ranker import rerank_candidates  # noqa: E402
+from provider_models import MediaCandidate  # noqa: E402
+from providers.nasa_provider import NasaProvider  # noqa: E402
+from providers.wikimedia_provider import WikimediaProvider  # noqa: E402
+
+
+SPACE_TERMS = {
+    "nasa",
+    "mars",
+    "moon",
+    "space",
+    "galaxy",
+    "asteroid",
+    "planet",
+    "solar",
+    "astronaut",
+}
+
+
+class MediaCollectorError(RuntimeError):
+    pass
+
+
+def load_json_object(
+    path: Path,
+) -> dict[str, Any]:
+    try:
+        data = json.loads(
+            path.read_text(
+                encoding="utf-8"
+            )
+        )
+    except (
+        OSError,
+        json.JSONDecodeError,
+    ) as exc:
+        raise MediaCollectorError(
+            "JSON 파일을 읽지 못했습니다.\n"
+            f"파일: {path}\n"
+            f"원인: {exc}"
+        ) from exc
+
+    if not isinstance(data, dict):
+        raise MediaCollectorError(
+            "JSON 최상위 값은 객체여야 합니다."
+        )
+
+    return data
+
+
+def candidate_from_dict(
+    data: dict[str, Any],
+) -> MediaCandidate:
+    return MediaCandidate(**data)
+
+
+def candidate_to_dict(
+    candidate: MediaCandidate,
+) -> dict[str, Any]:
+    return candidate.to_dict()
+
+
+def should_use_nasa(
+    query: str,
+) -> bool:
+    normalized = query.casefold()
+    return any(
+        term in normalized
+        for term in SPACE_TERMS
+    )
+
+
+class MediaCollector:
+    def __init__(
+        self,
+        *,
+        episode_id: str,
+    ) -> None:
+        self.episode_id = episode_id
+        self.episode_dir = (
+            PROJECT_ROOT
+            / "projects"
+            / "episodes"
+            / episode_id
+        )
+        self.query_path = (
+            self.episode_dir
+            / "media_queries.json"
+        )
+        self.assets_dir = (
+            self.episode_dir
+            / "assets"
+        )
+        self.cache = CacheManager(
+            PROJECT_ROOT
+            / "projects"
+            / "output"
+            / "media_cache"
+        )
+        self.wikimedia = (
+            WikimediaProvider()
+        )
+        self.nasa = NasaProvider()
+        self.downloader = (
+            MediaDownloader()
+        )
+        self.api_keys = load_api_keys(
+            PROJECT_ROOT
+        )
+
+    def collect(
+        self,
+        *,
+        force: bool = False,
+        query_limit: int = 5,
+        candidates_per_query: int = 20,
+    ) -> Path:
+        if not self.query_path.exists():
+            raise MediaCollectorError(
+                "media_queries.json이 없습니다.\n"
+                f"파일: {self.query_path}"
+            )
+
+        payload = load_json_object(
+            self.query_path
+        )
+        raw_scenes = payload.get(
+            "scenes"
+        )
+
+        if not isinstance(
+            raw_scenes,
+            list,
+        ):
+            raise MediaCollectorError(
+                "media_queries.json의 scenes가 "
+                "배열이 아닙니다."
+            )
+
+        manifest = ManifestBuilder(
+            episode_id=self.episode_id,
+            episode_dir=self.episode_dir,
+        )
+
+        for raw_scene in raw_scenes:
+            if not isinstance(
+                raw_scene,
+                dict,
+            ):
+                continue
+
+            scene_id = str(
+                raw_scene.get(
+                    "sceneId",
+                    "",
+                )
+            ).strip()
+
+            raw_queries = raw_scene.get(
+                "queries"
+            )
+
+            if (
+                not scene_id
+                or not isinstance(
+                    raw_queries,
+                    list,
+                )
+            ):
+                continue
+
+            existing = list(
+                self.assets_dir.glob(
+                    f"{scene_id}.*"
+                )
+            )
+
+            if existing and not force:
+                print(
+                    f"[SKIP] {scene_id}: "
+                    "기존 파일 사용"
+                )
+                continue
+
+            candidates: list[
+                MediaCandidate
+            ] = []
+
+            for raw_query in (
+                raw_queries[:query_limit]
+            ):
+                if not isinstance(
+                    raw_query,
+                    dict,
+                ):
+                    continue
+
+                query = str(
+                    raw_query.get(
+                        "query",
+                        "",
+                    )
+                ).strip()
+
+                if not query:
+                    continue
+
+                candidates.extend(
+                    self._search_provider(
+                        provider_name="wikimedia",
+                        query=query,
+                        limit=candidates_per_query,
+                    )
+                )
+
+                if should_use_nasa(query):
+                    candidates.extend(
+                        self._search_provider(
+                            provider_name="nasa",
+                            query=query,
+                            limit=min(
+                                candidates_per_query,
+                                10,
+                            ),
+                        )
+                    )
+
+            ranked = rerank_candidates(
+                query=str(
+                    raw_scene.get(
+                        "primaryQuery",
+                        "",
+                    )
+                ),
+                candidates=candidates,
+            )
+
+            if not ranked:
+                raise MediaCollectorError(
+                    f"{scene_id}: 사용할 수 있는 "
+                    "미디어 후보가 없습니다."
+                )
+
+            selected = ranked[0]
+            local_path = (
+                self.downloader.download(
+                    candidate=selected,
+                    destination_dir=(
+                        self.assets_dir
+                    ),
+                    scene_id=scene_id,
+                )
+            )
+            sha256 = (
+                self.downloader.file_sha256(
+                    local_path
+                )
+            )
+
+            manifest.add_scene(
+                scene_id=scene_id,
+                query=selected.query,
+                candidate=selected,
+                local_path=local_path,
+                sha256=sha256,
+            )
+
+            print(
+                f"[OK] {scene_id}: "
+                f"{selected.provider} / "
+                f"{selected.title}"
+            )
+
+        return manifest.save(
+            self.episode_dir
+            / "media_manifest_v7.json"
+        )
+
+    def _search_provider(
+        self,
+        *,
+        provider_name: str,
+        query: str,
+        limit: int,
+    ) -> list[MediaCandidate]:
+        cache_key = self.cache.build_key(
+            provider_name,
+            query,
+            str(limit),
+        )
+
+        cached = self.cache.load_json(
+            cache_key
+        )
+
+        if cached is not None:
+            raw_candidates = cached.get(
+                "candidates"
+            )
+
+            if isinstance(
+                raw_candidates,
+                list,
+            ):
+                return [
+                    candidate_from_dict(
+                        item
+                    )
+                    for item in raw_candidates
+                    if isinstance(
+                        item,
+                        dict,
+                    )
+                ]
+
+        if provider_name == "wikimedia":
+            candidates = (
+                self.wikimedia.search(
+                    query=query,
+                    limit=limit,
+                )
+            )
+        elif provider_name == "nasa":
+            candidates = self.nasa.search(
+                query=query,
+                limit=limit,
+            )
+        else:
+            candidates = []
+
+        self.cache.save_json(
+            cache_key,
+            {
+                "provider": provider_name,
+                "query": query,
+                "candidates": [
+                    candidate_to_dict(
+                        candidate
+                    )
+                    for candidate in candidates
+                ],
+            },
+        )
+
+        return candidates
+
+
+def build_parser() -> argparse.ArgumentParser:
+    parser = argparse.ArgumentParser(
+        description=(
+            "Release 7 Media Collector"
+        )
+    )
+    parser.add_argument(
+        "--episode",
+        required=True,
+    )
+    parser.add_argument(
+        "--force",
+        action="store_true",
+    )
+    parser.add_argument(
+        "--query-limit",
+        type=int,
+        default=5,
+    )
+    parser.add_argument(
+        "--candidates-per-query",
+        type=int,
+        default=20,
+    )
+    return parser
+
+
+def normalize_episode_id(
+    value: str,
+) -> str:
+    normalized = value.strip().lower()
+
+    if normalized.startswith("ep"):
+        number_text = normalized[2:]
+    else:
+        number_text = normalized
+
+    if not number_text.isdigit():
+        raise MediaCollectorError(
+            "에피소드 형식이 올바르지 않습니다."
+        )
+
+    return f"ep{int(number_text):03d}"
+
+
+def main() -> int:
+    parser = build_parser()
+    arguments = parser.parse_args()
+
+    try:
+        episode_id = normalize_episode_id(
+            arguments.episode
+        )
+        output_path = MediaCollector(
+            episode_id=episode_id
+        ).collect(
+            force=arguments.force,
+            query_limit=arguments.query_limit,
+            candidates_per_query=(
+                arguments.candidates_per_query
+            ),
+        )
+    except Exception as exc:
+        print(
+            f"[실패] {exc}",
+            file=sys.stderr,
+        )
+        return 1
+
+    print(
+        "[성공] Media Collector 완료"
+    )
+    print(
+        f"Manifest: {output_path}"
+    )
+    return 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())
+from __future__ import annotations
+
+from dataclasses import dataclass
+from typing import Iterable
+
+from base_provider import (
+    MediaCandidate,
+    MediaKind,
+    MediaProvider,
+    MediaProviderError,
+    MediaSearchRequest,
+)
+
+
+class ProviderRegistryError(RuntimeError):
+    """Provider Registry 실행 중 발생한 오류입니다."""
+
+
+@dataclass(
+    frozen=True,
+    slots=True,
+)
+class ProviderSearchFailure:
+    provider: str
+    message: str
+
+    def to_dict(
+        self,
+    ) -> dict[str, str]:
+        return {
+            "provider": self.provider,
+            "message": self.message,
+        }
+
+
+@dataclass(
+    frozen=True,
+    slots=True,
+)
+class ProviderSearchResult:
+    request: MediaSearchRequest
+    candidates: tuple[
+        MediaCandidate,
+        ...,
+    ]
+    failures: tuple[
+        ProviderSearchFailure,
+        ...,
+    ]
+    searched_provider_count: int
+
+    @property
+    def succeeded_provider_count(
+        self,
+    ) -> int:
+        return (
+            self.searched_provider_count
+            - len(self.failures)
+        )
+
+    @property
+    def candidate_count(
+        self,
+    ) -> int:
+        return len(
+            self.candidates
+        )
+
+    def to_dict(
+        self,
+    ) -> dict[str, object]:
+        return {
+            "request": {
+                "query": self.request.query,
+                "mediaKind": (
+                    self.request.media_kind
+                ),
+                "orientation": (
+                    self.request.orientation
+                ),
+                "maxResults": (
+                    self.request.max_results
+                ),
+                "minWidth": (
+                    self.request.min_width
+                ),
+                "minHeight": (
+                    self.request.min_height
+                ),
+                "safeSearch": (
+                    self.request.safe_search
+                ),
+            },
+            "searchedProviderCount": (
+                self.searched_provider_count
+            ),
+            "succeededProviderCount": (
+                self.succeeded_provider_count
+            ),
+            "candidateCount": (
+                self.candidate_count
+            ),
+            "failures": [
+                failure.to_dict()
+                for failure in self.failures
+            ],
+            "candidates": [
+                candidate.to_dict()
+                for candidate
+                in self.candidates
+            ],
+        }
+
+
+class MediaProviderRegistry:
+    """
+    Media Provider 등록·조회·통합 검색 관리자입니다.
+
+    개별 Provider의 오류가 전체 검색을 중단시키지 않도록
+    Provider별 실패를 수집하고 나머지 검색은 계속합니다.
+    """
+
+    def __init__(
+        self,
+        providers: Iterable[
+            MediaProvider
+        ] | None = None,
+    ) -> None:
+        self._providers: dict[
+            str,
+            MediaProvider,
+        ] = {}
+
+        if providers:
+            for provider in providers:
+                self.register(
+                    provider
+                )
+
+    def register(
+        self,
+        provider: MediaProvider,
+        *,
+        replace: bool = False,
+    ) -> None:
+        provider_name = (
+            self._normalize_provider_name(
+                provider.name
+            )
+        )
+
+        if (
+            provider_name
+            in self._providers
+            and not replace
+        ):
+            raise ProviderRegistryError(
+                "이미 등록된 Provider입니다: "
+                f"{provider_name}"
+            )
+
+        self._providers[
+            provider_name
+        ] = provider
+
+    def unregister(
+        self,
+        provider_name: str,
+    ) -> MediaProvider:
+        normalized_name = (
+            self._normalize_provider_name(
+                provider_name
+            )
+        )
+
+        provider = self._providers.pop(
+            normalized_name,
+            None,
+        )
+
+        if provider is None:
+            raise ProviderRegistryError(
+                "등록되지 않은 Provider입니다: "
+                f"{normalized_name}"
+            )
+
+        return provider
+
+    def clear(
+        self,
+    ) -> None:
+        self._providers.clear()
+
+    def get(
+        self,
+        provider_name: str,
+    ) -> MediaProvider:
+        normalized_name = (
+            self._normalize_provider_name(
+                provider_name
+            )
+        )
+
+        provider = self._providers.get(
+            normalized_name
+        )
+
+        if provider is None:
+            raise ProviderRegistryError(
+                "등록되지 않은 Provider입니다: "
+                f"{normalized_name}"
+            )
+
+        return provider
+
+    def contains(
+        self,
+        provider_name: str,
+    ) -> bool:
+        normalized_name = (
+            self._normalize_provider_name(
+                provider_name
+            )
+        )
+
+        return (
+            normalized_name
+            in self._providers
+        )
+
+    def list_provider_names(
+        self,
+        *,
+        media_kind: MediaKind | None = None,
+    ) -> tuple[str, ...]:
+        names: list[str] = []
+
+        for name, provider in sorted(
+            self._providers.items(),
+            key=lambda item: item[0],
+        ):
+            if (
+                media_kind is not None
+                and not provider.supports(
+                    media_kind
+                )
+            ):
+                continue
+
+            names.append(name)
+
+        return tuple(names)
+
+    def list_providers(
+        self,
+        *,
+        media_kind: MediaKind | None = None,
+    ) -> tuple[
+        MediaProvider,
+        ...,
+    ]:
+        names = self.list_provider_names(
+            media_kind=media_kind
+        )
+
+        return tuple(
+            self._providers[name]
+            for name in names
+        )
+
+    def search(
+        self,
+        request: MediaSearchRequest,
+        *,
+        provider_names: Iterable[
+            str
+        ] | None = None,
+        continue_on_error: bool = True,
+        deduplicate: bool = True,
+    ) -> ProviderSearchResult:
+        providers = (
+            self._resolve_search_providers(
+                request=request,
+                provider_names=(
+                    provider_names
+                ),
+            )
+        )
+
+        if not providers:
+            raise ProviderRegistryError(
+                "검색 가능한 Provider가 없습니다.\n"
+                f"media_kind: "
+                f"{request.media_kind}"
+            )
+
+        candidates: list[
+            MediaCandidate
+        ] = []
+
+        failures: list[
+            ProviderSearchFailure
+        ] = []
+
+        for provider in providers:
+            try:
+                provider.validate_request(
+                    request
+                )
+
+                provider_candidates = (
+                    provider.search(
+                        request
+                    )
+                )
+
+                filtered_candidates = (
+                    provider.filter_candidates(
+                        request=request,
+                        candidates=(
+                            provider_candidates
+                        ),
+                    )
+                )
+
+                candidates.extend(
+                    filtered_candidates
+                )
+
+            except (
+                MediaProviderError,
+                ValueError,
+                OSError,
+                RuntimeError,
+            ) as exc:
+                failure = (
+                    ProviderSearchFailure(
+                        provider=(
+                            provider.name
+                        ),
+                        message=str(exc),
+                    )
+                )
+
+                failures.append(
+                    failure
+                )
+
+                if not continue_on_error:
+                    raise ProviderRegistryError(
+                        "Provider 검색에 "
+                        "실패했습니다.\n"
+                        f"provider: "
+                        f"{provider.name}\n"
+                        f"원인: {exc}"
+                    ) from exc
+
+        if deduplicate:
+            candidates = (
+                self._deduplicate_candidates(
+                    candidates
+                )
+            )
+
+        candidates = self._sort_candidates(
+            candidates
+        )
+
+        return ProviderSearchResult(
+            request=request,
+            candidates=tuple(
+                candidates
+            ),
+            failures=tuple(
+                failures
+            ),
+            searched_provider_count=len(
+                providers
+            ),
+        )
+
+    def _resolve_search_providers(
+        self,
+        *,
+        request: MediaSearchRequest,
+        provider_names: Iterable[
+            str
+        ] | None,
+    ) -> list[
+        MediaProvider
+    ]:
+        if provider_names is None:
+            return list(
+                self.list_providers(
+                    media_kind=(
+                        request.media_kind
+                    )
+                )
+            )
+
+        resolved: list[
+            MediaProvider
+        ] = []
+
+        seen_names: set[str] = set()
+
+        for raw_name in provider_names:
+            normalized_name = (
+                self._normalize_provider_name(
+                    raw_name
+                )
+            )
+
+            if normalized_name in seen_names:
+                continue
+
+            seen_names.add(
+                normalized_name
+            )
+
+            provider = self.get(
+                normalized_name
+            )
+
+            if not provider.supports(
+                request.media_kind
+            ):
+                continue
+
+            resolved.append(
+                provider
+            )
+
+        return resolved
+
+    @staticmethod
+    def _deduplicate_candidates(
+        candidates: list[
+            MediaCandidate
+        ],
+    ) -> list[
+        MediaCandidate
+    ]:
+        deduplicated: list[
+            MediaCandidate
+        ] = []
+
+        seen_keys: set[
+            tuple[str, str]
+        ] = set()
+
+        seen_download_urls: set[str] = set()
+
+        for candidate in candidates:
+            identity_key = (
+                candidate.provider,
+                candidate.media_id,
+            )
+
+            if identity_key in seen_keys:
+                continue
+
+            if (
+                candidate.download_url
+                in seen_download_urls
+            ):
+                continue
+
+            seen_keys.add(
+                identity_key
+            )
+
+            seen_download_urls.add(
+                candidate.download_url
+            )
+
+            deduplicated.append(
+                candidate
+            )
+
+        return deduplicated
+
+    @staticmethod
+    def _sort_candidates(
+        candidates: list[
+            MediaCandidate
+        ],
+    ) -> list[
+        MediaCandidate
+    ]:
+        return sorted(
+            candidates,
+            key=lambda candidate: (
+                -candidate.score,
+                -(
+                    candidate.width
+                    * candidate.height
+                ),
+                candidate.provider,
+                candidate.media_id,
+            ),
+        )
+
+    @staticmethod
+    def _normalize_provider_name(
+        provider_name: str,
+    ) -> str:
+        normalized_name = (
+            provider_name
+            .strip()
+            .lower()
+        )
+
+        if not normalized_name:
+            raise ProviderRegistryError(
+                "Provider 이름은 "
+                "비어 있을 수 없습니다."
+            )
+
+        return normalized_name
+
+
+def main() -> int:
+    """
+    실제 Provider 구현 전 Registry 자체 동작을
+    검증하기 위한 간단한 테스트입니다.
+    """
+
+    registry = (
+        MediaProviderRegistry()
+    )
+
+    print("=" * 62)
+    print(
+        " YouTube Content Factory "
+        "Media Provider Registry"
+    )
+    print("=" * 62)
+    print(
+        f"{'provider_count':>18}: "
+        f"{len(registry.list_provider_names())}"
+    )
+    print(
+        f"{'providers':>18}: "
+        f"{registry.list_provider_names()}"
+    )
+    print("-" * 62)
+    print(
+        "[성공] Provider Registry "
+        "초기화 완료"
+    )
+
+    return 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(
+        main()
+    )
+from __future__ import annotations
+
+from abc import ABC, abstractmethod
+from dataclasses import dataclass
+from pathlib import Path
+from typing import Literal
+
+
+MediaKind = Literal[
+    "image",
+    "video",
+]
+
+
+Orientation = Literal[
+    "portrait",
+    "landscape",
+    "square",
+    "any",
+]
+
+
+class MediaProviderError(RuntimeError):
+    """미디어 Provider 실행 중 발생한 오류입니다."""
+
+
+@dataclass(
+    frozen=True,
+    slots=True,
+)
+class MediaSearchRequest:
+    query: str
+    media_kind: MediaKind = "image"
+    orientation: Orientation = "portrait"
+    max_results: int = 10
+    min_width: int = 720
+    min_height: int = 1280
+    safe_search: bool = True
+
+    def __post_init__(
+        self,
+    ) -> None:
+        normalized_query = (
+            self.query
+            .strip()
+        )
+
+        if not normalized_query:
+            raise ValueError(
+                "미디어 검색어는 비어 있을 수 없습니다."
+            )
+
+        object.__setattr__(
+            self,
+            "query",
+            normalized_query,
+        )
+
+        if self.media_kind not in {
+            "image",
+            "video",
+        }:
+            raise ValueError(
+                "지원하지 않는 media_kind입니다: "
+                f"{self.media_kind}"
+            )
+
+        if self.orientation not in {
+            "portrait",
+            "landscape",
+            "square",
+            "any",
+        }:
+            raise ValueError(
+                "지원하지 않는 orientation입니다: "
+                f"{self.orientation}"
+            )
+
+        if self.max_results <= 0:
+            raise ValueError(
+                "max_results는 1 이상이어야 합니다."
+            )
+
+        if self.max_results > 100:
+            raise ValueError(
+                "max_results는 100 이하여야 합니다."
+            )
+
+        if self.min_width <= 0:
+            raise ValueError(
+                "min_width는 1 이상이어야 합니다."
+            )
+
+        if self.min_height <= 0:
+            raise ValueError(
+                "min_height는 1 이상이어야 합니다."
+            )
+
+
+@dataclass(
+    frozen=True,
+    slots=True,
+)
+class MediaCandidate:
+    provider: str
+    media_id: str
+    media_kind: MediaKind
+
+    title: str
+    source_url: str
+    download_url: str
+
+    width: int
+    height: int
+
+    author: str | None = None
+    author_url: str | None = None
+    license_name: str | None = None
+    license_url: str | None = None
+
+    thumbnail_url: str | None = None
+    duration_seconds: float | None = None
+
+    file_extension: str | None = None
+    file_size_bytes: int | None = None
+
+    score: float = 0.0
+
+    def __post_init__(
+        self,
+    ) -> None:
+        normalized_provider = (
+            self.provider
+            .strip()
+            .lower()
+        )
+
+        normalized_media_id = (
+            self.media_id
+            .strip()
+        )
+
+        normalized_title = (
+            self.title
+            .strip()
+        )
+
+        normalized_source_url = (
+            self.source_url
+            .strip()
+        )
+
+        normalized_download_url = (
+            self.download_url
+            .strip()
+        )
+
+        if not normalized_provider:
+            raise ValueError(
+                "provider는 비어 있을 수 없습니다."
+            )
+
+        if not normalized_media_id:
+            raise ValueError(
+                "media_id는 비어 있을 수 없습니다."
+            )
+
+        if self.media_kind not in {
+            "image",
+            "video",
+        }:
+            raise ValueError(
+                "지원하지 않는 media_kind입니다: "
+                f"{self.media_kind}"
+            )
+
+        if not normalized_title:
+            normalized_title = (
+                normalized_media_id
+            )
+
+        if not normalized_source_url:
+            raise ValueError(
+                "source_url은 비어 있을 수 없습니다."
+            )
+
+        if not normalized_download_url:
+            raise ValueError(
+                "download_url은 비어 있을 수 없습니다."
+            )
+
+        if self.width < 0:
+            raise ValueError(
+                "width는 0 이상이어야 합니다."
+            )
+
+        if self.height < 0:
+            raise ValueError(
+                "height는 0 이상이어야 합니다."
+            )
+
+        if (
+            self.duration_seconds is not None
+            and self.duration_seconds < 0
+        ):
+            raise ValueError(
+                "duration_seconds는 "
+                "0 이상이어야 합니다."
+            )
+
+        if (
+            self.file_size_bytes is not None
+            and self.file_size_bytes < 0
+        ):
+            raise ValueError(
+                "file_size_bytes는 "
+                "0 이상이어야 합니다."
+            )
+
+        object.__setattr__(
+            self,
+            "provider",
+            normalized_provider,
+        )
+
+        object.__setattr__(
+            self,
+            "media_id",
+            normalized_media_id,
+        )
+
+        object.__setattr__(
+            self,
+            "title",
+            normalized_title,
+        )
+
+        object.__setattr__(
+            self,
+            "source_url",
+            normalized_source_url,
+        )
+
+        object.__setattr__(
+            self,
+            "download_url",
+            normalized_download_url,
+        )
+
+        if self.file_extension:
+            normalized_extension = (
+                self.file_extension
+                .strip()
+                .lower()
+                .lstrip(".")
+            )
+
+            object.__setattr__(
+                self,
+                "file_extension",
+                normalized_extension
+                or None,
+            )
+
+    @property
+    def aspect_ratio(
+        self,
+    ) -> float | None:
+        if (
+            self.width <= 0
+            or self.height <= 0
+        ):
+            return None
+
+        return round(
+            self.width
+            / self.height,
+            4,
+        )
+
+    @property
+    def orientation(
+        self,
+    ) -> Orientation:
+        if (
+            self.width <= 0
+            or self.height <= 0
+        ):
+            return "any"
+
+        if self.width == self.height:
+            return "square"
+
+        if self.width > self.height:
+            return "landscape"
+
+        return "portrait"
+
+    def matches_request(
+        self,
+        request: MediaSearchRequest,
+    ) -> bool:
+        if (
+            self.media_kind
+            != request.media_kind
+        ):
+            return False
+
+        if (
+            self.width > 0
+            and self.width
+            < request.min_width
+        ):
+            return False
+
+        if (
+            self.height > 0
+            and self.height
+            < request.min_height
+        ):
+            return False
+
+        if (
+            request.orientation
+            != "any"
+            and self.orientation
+            != request.orientation
+        ):
+            return False
+
+        return True
+
+    def with_score(
+        self,
+        score: float,
+    ) -> "MediaCandidate":
+        return MediaCandidate(
+            provider=self.provider,
+            media_id=self.media_id,
+            media_kind=self.media_kind,
+            title=self.title,
+            source_url=self.source_url,
+            download_url=self.download_url,
+            width=self.width,
+            height=self.height,
+            author=self.author,
+            author_url=self.author_url,
+            license_name=self.license_name,
+            license_url=self.license_url,
+            thumbnail_url=self.thumbnail_url,
+            duration_seconds=(
+                self.duration_seconds
+            ),
+            file_extension=(
+                self.file_extension
+            ),
+            file_size_bytes=(
+                self.file_size_bytes
+            ),
+            score=round(
+                float(score),
+                3,
+            ),
+        )
+
+    def build_filename(
+        self,
+        *,
+        scene_id: str,
+        fallback_extension: str,
+    ) -> str:
+        normalized_scene_id = (
+            scene_id
+            .strip()
+        )
+
+        if not normalized_scene_id:
+            raise ValueError(
+                "scene_id는 비어 있을 수 없습니다."
+            )
+
+        extension = (
+            self.file_extension
+            or fallback_extension
+        )
+
+        normalized_extension = (
+            extension
+            .strip()
+            .lower()
+            .lstrip(".")
+        )
+
+        if not normalized_extension:
+            raise ValueError(
+                "파일 확장자가 비어 있습니다."
+            )
+
+        return (
+            f"{normalized_scene_id}."
+            f"{normalized_extension}"
+        )
+
+    def to_dict(
+        self,
+    ) -> dict[str, object]:
+        return {
+            "provider": self.provider,
+            "mediaId": self.media_id,
+            "mediaKind": self.media_kind,
+            "title": self.title,
+            "sourceUrl": self.source_url,
+            "downloadUrl": self.download_url,
+            "thumbnailUrl": self.thumbnail_url,
+            "width": self.width,
+            "height": self.height,
+            "aspectRatio": self.aspect_ratio,
+            "orientation": self.orientation,
+            "durationSeconds": (
+                self.duration_seconds
+            ),
+            "author": self.author,
+            "authorUrl": self.author_url,
+            "licenseName": (
+                self.license_name
+            ),
+            "licenseUrl": (
+                self.license_url
+            ),
+            "fileExtension": (
+                self.file_extension
+            ),
+            "fileSizeBytes": (
+                self.file_size_bytes
+            ),
+            "score": self.score,
+        }
+
+
+@dataclass(
+    frozen=True,
+    slots=True,
+)
+class MediaDownloadResult:
+    candidate: MediaCandidate
+    output_path: Path
+    file_size_bytes: int
+
+    def __post_init__(
+        self,
+    ) -> None:
+        if self.file_size_bytes <= 0:
+            raise ValueError(
+                "다운로드 파일 크기는 "
+                "0보다 커야 합니다."
+            )
+
+    def to_dict(
+        self,
+    ) -> dict[str, object]:
+        return {
+            "candidate": (
+                self.candidate.to_dict()
+            ),
+            "outputPath": str(
+                self.output_path
+            ),
+            "fileSizeBytes": (
+                self.file_size_bytes
+            ),
+        }
+
+
+class MediaProvider(ABC):
+    """
+    모든 미디어 검색 Provider가 구현해야 하는
+    공통 인터페이스입니다.
+    """
+
+    @property
+    @abstractmethod
+    def name(
+        self,
+    ) -> str:
+        """Provider 식별자입니다."""
+
+    @property
+    def supported_media_kinds(
+        self,
+    ) -> frozenset[MediaKind]:
+        return frozenset({
+            "image",
+        })
+
+    def supports(
+        self,
+        media_kind: MediaKind,
+    ) -> bool:
+        return (
+            media_kind
+            in self.supported_media_kinds
+        )
+
+    @abstractmethod
+    def search(
+        self,
+        request: MediaSearchRequest,
+    ) -> list[MediaCandidate]:
+        """
+        검색 조건에 맞는 미디어 후보를 반환합니다.
+        """
+
+    @abstractmethod
+    def download(
+        self,
+        *,
+        candidate: MediaCandidate,
+        output_path: Path,
+        overwrite: bool = False,
+    ) -> MediaDownloadResult:
+        """
+        선택된 미디어 후보를 로컬 파일로 저장합니다.
+        """
+
+    def validate_request(
+        self,
+        request: MediaSearchRequest,
+    ) -> None:
+        if not self.supports(
+            request.media_kind
+        ):
+            raise MediaProviderError(
+                f"{self.name} Provider는 "
+                f"{request.media_kind} 검색을 "
+                "지원하지 않습니다."
+            )
+
+    def filter_candidates(
+        self,
+        *,
+        request: MediaSearchRequest,
+        candidates: list[MediaCandidate],
+    ) -> list[MediaCandidate]:
+        filtered = [
+            candidate
+            for candidate in candidates
+            if candidate.matches_request(
+                request
+            )
+        ]
+
+        return filtered[
+            : request.max_results
+        ]

@@ -3,7 +3,6 @@ import React, {
 } from 'react';
 
 import {
-	spring,
 	useCurrentFrame,
 	useVideoConfig,
 } from 'remotion';
@@ -1014,30 +1013,6 @@ React.FC<
 			pageTimings,
 		});
 
-	const localFrame =
-		Math.max(
-			0,
-			frame -
-				activePage.startFrame,
-		);
-
-	const entrance =
-		spring({
-			frame:
-				localFrame,
-
-			fps,
-
-			config: {
-				damping: 18,
-				stiffness: 150,
-				mass: 0.7,
-			},
-		});
-
-	const translateY =
-		(1 - entrance) * 18;
-
 	const displayedCaption =
 		addBalancedLineBreak(
 			pages[
@@ -1111,14 +1086,20 @@ React.FC<
 						.color,
 
 				WebkitTextStroke:
-					ep005Theme
-						.caption
-						.textStroke,
+					'0px transparent',
 
 				textShadow:
-					ep005Theme
-						.caption
-						.textShadow,
+					[
+						'-3px -3px 0 #000000',
+						'0 -3px 0 #000000',
+						'3px -3px 0 #000000',
+						'-3px 0 0 #000000',
+						'3px 0 0 #000000',
+						'-3px 3px 0 #000000',
+						'0 3px 0 #000000',
+						'3px 3px 0 #000000',
+						'0 6px 10px rgba(0, 0, 0, 0.7)',
+					].join(', '),
 
 				whiteSpace:
 					'pre-line',
@@ -1132,11 +1113,15 @@ React.FC<
 				overflow:
 					'visible',
 
-				opacity:
-					entrance,
+				opacity: 1,
 
-				transform:
-					`translateY(${translateY}px)`,
+				transform: 'none',
+
+				WebkitFontSmoothing:
+					'antialiased',
+
+				textRendering:
+					'geometricPrecision',
 
 				zIndex:
 					30,

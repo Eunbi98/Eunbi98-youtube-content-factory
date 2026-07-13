@@ -1,12 +1,14 @@
 {
-  "version": "1.1",
+  "version": "1.2",
   "episodeId": "ep008",
-  "provider": "wikimedia",
-  "timelinePath": "C:\\Users\\qkrdm\\OneDrive\\바탕 화면\\youtube-content-factory\\projects\\episodes\\ep008\\timeline.json",
-  "assetsDirectory": "C:\\Users\\qkrdm\\OneDrive\\바탕 화면\\youtube-content-factory\\projects\\episodes\\ep008\\assets",
-  "collectedCount": 2,
-  "reusedCount": 3,
-  "sceneCount": 5,
+  "providers": [
+    "wikimedia"
+  ],
+  "timelinePath": "C:\\Users\\user\\Desktop\\Eunbi98-youtube-content-factory\\projects\\episodes\\ep008\\timeline.json",
+  "assetsDirectory": "C:\\Users\\user\\Desktop\\Eunbi98-youtube-content-factory\\projects\\episodes\\ep008\\assets",
+  "collectedCount": 1,
+  "reusedCount": 0,
+  "sceneCount": 1,
   "results": [
     {
       "sceneId": "scene_001",
@@ -18,8 +20,11 @@
         "ancient ruins mystery wide view",
         "lost underground city interior"
       ],
-      "candidateCount": 11,
-      "outputPath": "C:\\Users\\qkrdm\\OneDrive\\바탕 화면\\youtube-content-factory\\projects\\episodes\\ep008\\assets\\scene_001.jpg",
+      "searchedProviders": [
+        "wikimedia"
+      ],
+      "candidateCount": 9,
+      "outputPath": "C:\\Users\\user\\Desktop\\Eunbi98-youtube-content-factory\\projects\\episodes\\ep008\\assets\\scene_001.jpg",
       "reused": false,
       "candidate": {
         "provider": "wikimedia",
@@ -41,146 +46,6 @@
         "fileExtension": "jpg",
         "fileSizeBytes": null,
         "score": 136.0
-      }
-    },
-    {
-      "sceneId": "scene_002",
-      "query": "buried ancient city",
-      "searchedQueries": [
-        "archaeological discovery",
-        "buried ancient city",
-        "archaeological discovery wide view",
-        "buried ancient city wide view",
-        "archaeological discovery interior"
-      ],
-      "candidateCount": 18,
-      "outputPath": "C:\\Users\\qkrdm\\OneDrive\\바탕 화면\\youtube-content-factory\\projects\\episodes\\ep008\\assets\\scene_002.jpg",
-      "reused": true,
-      "candidate": {
-        "provider": "wikimedia",
-        "mediaId": "61949735",
-        "mediaKind": "image",
-        "title": "Former city of Yungay buried by the 1970 landslide (6021459612)",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Former_city_of_Yungay_buried_by_the_1970_landslide_%286021459612%29.jpg",
-        "downloadUrl": "https://upload.wikimedia.org/wikipedia/commons/9/9d/Former_city_of_Yungay_buried_by_the_1970_landslide_%286021459612%29.jpg",
-        "thumbnailUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/Former_city_of_Yungay_buried_by_the_1970_landslide_%286021459612%29.jpg/1280px-Former_city_of_Yungay_buried_by_the_1970_landslide_%286021459612%29.jpg",
-        "width": 2736,
-        "height": 3648,
-        "aspectRatio": 0.75,
-        "orientation": "portrait",
-        "durationSeconds": null,
-        "author": "sergejf",
-        "authorUrl": null,
-        "licenseName": "CC BY-SA 2.0",
-        "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
-        "fileExtension": "jpg",
-        "fileSizeBytes": null,
-        "score": 134.0
-      }
-    },
-    {
-      "sceneId": "scene_003",
-      "query": "lost city landscape",
-      "searchedQueries": [
-        "ruins covered by jungle",
-        "lost city landscape",
-        "ruins covered by jungle wide view",
-        "lost city landscape wide view",
-        "ruins covered by jungle interior"
-      ],
-      "candidateCount": 14,
-      "outputPath": "C:\\Users\\qkrdm\\OneDrive\\바탕 화면\\youtube-content-factory\\projects\\episodes\\ep008\\assets\\scene_003.tif",
-      "reused": false,
-      "candidate": {
-        "provider": "wikimedia",
-        "mediaId": "33801432",
-        "mediaKind": "image",
-        "title": "FROM UPPER PARKING LOST, VIEW OF DOWNTOWN TOWARDS NORTHEAST - Central City, Central City, Gilpin County, CO",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:FROM_UPPER_PARKING_LOST%2C_VIEW_OF_DOWNTOWN_TOWARDS_NORTHEAST_-_Central_City%2C_Central_City%2C_Gilpin_County%2C_CO_HABS_CO-203-4.tif",
-        "downloadUrl": "https://upload.wikimedia.org/wikipedia/commons/d/d9/FROM_UPPER_PARKING_LOST%2C_VIEW_OF_DOWNTOWN_TOWARDS_NORTHEAST_-_Central_City%2C_Central_City%2C_Gilpin_County%2C_CO_HABS_CO-203-4.tif",
-        "thumbnailUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/FROM_UPPER_PARKING_LOST%2C_VIEW_OF_DOWNTOWN_TOWARDS_NORTHEAST_-_Central_City%2C_Central_City%2C_Gilpin_County%2C_CO_HABS_CO-203-4.tif/lossy-page1-1280px-FROM_UPPER_PARKING_LOST%2C_VIEW_OF_DOWNTOWN_TOWARDS_NORTHEAST_-_Central_City%2C_Central_City%2C_Gilpin_County%2C_CO_HABS_CO-203-4.tif.jpg",
-        "width": 5614,
-        "height": 4472,
-        "aspectRatio": 1.2554,
-        "orientation": "landscape",
-        "durationSeconds": null,
-        "author": "Lyon, Robert Related names: Padilla, Mary, transmitter",
-        "authorUrl": null,
-        "licenseName": "Public domain",
-        "licenseUrl": null,
-        "fileExtension": "tif",
-        "fileSizeBytes": null,
-        "score": 127.0
-      }
-    },
-    {
-      "sceneId": "scene_004",
-      "query": "lidar archaeology",
-      "searchedQueries": [
-        "lidar archaeology",
-        "jungle city scan",
-        "lidar archaeology wide view",
-        "jungle city scan wide view",
-        "lidar archaeology interior"
-      ],
-      "candidateCount": 10,
-      "outputPath": "C:\\Users\\qkrdm\\OneDrive\\바탕 화면\\youtube-content-factory\\projects\\episodes\\ep008\\assets\\scene_004.jpg",
-      "reused": true,
-      "candidate": {
-        "provider": "wikimedia",
-        "mediaId": "95008963",
-        "mediaKind": "image",
-        "title": "El Tintal Mano De León Complex Lidar Map PAET",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:El_Tintal_Mano_De_Le%C3%B3n_Complex_Lidar_Map_PAET.jpg",
-        "downloadUrl": "https://upload.wikimedia.org/wikipedia/commons/b/b3/El_Tintal_Mano_De_Le%C3%B3n_Complex_Lidar_Map_PAET.jpg",
-        "thumbnailUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b3/El_Tintal_Mano_De_Le%C3%B3n_Complex_Lidar_Map_PAET.jpg/1280px-El_Tintal_Mano_De_Le%C3%B3n_Complex_Lidar_Map_PAET.jpg",
-        "width": 3600,
-        "height": 3600,
-        "aspectRatio": 1.0,
-        "orientation": "square",
-        "durationSeconds": null,
-        "author": "Carlos R. Chiriboga/PAET",
-        "authorUrl": null,
-        "licenseName": "CC BY-SA 4.0",
-        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-        "fileExtension": "jpg",
-        "fileSizeBytes": null,
-        "score": 128.0
-      }
-    },
-    {
-      "sceneId": "scene_005",
-      "query": "hidden history",
-      "searchedQueries": [
-        "hidden history",
-        "undiscovered ancient city",
-        "hidden history wide view",
-        "undiscovered ancient city wide view",
-        "hidden history interior"
-      ],
-      "candidateCount": 24,
-      "outputPath": "C:\\Users\\qkrdm\\OneDrive\\바탕 화면\\youtube-content-factory\\projects\\episodes\\ep008\\assets\\scene_005.jpg",
-      "reused": true,
-      "candidate": {
-        "provider": "wikimedia",
-        "mediaId": "128332006",
-        "mediaKind": "image",
-        "title": "Byway ^ hidden history - geograph.org.uk - 4364742",
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Byway_%5E_hidden_history_-_geograph.org.uk_-_4364742.jpg",
-        "downloadUrl": "https://upload.wikimedia.org/wikipedia/commons/2/28/Byway_%5E_hidden_history_-_geograph.org.uk_-_4364742.jpg",
-        "thumbnailUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/28/Byway_%5E_hidden_history_-_geograph.org.uk_-_4364742.jpg/1280px-Byway_%5E_hidden_history_-_geograph.org.uk_-_4364742.jpg",
-        "width": 4604,
-        "height": 3133,
-        "aspectRatio": 1.4695,
-        "orientation": "landscape",
-        "durationSeconds": null,
-        "author": "Fernweh",
-        "authorUrl": null,
-        "licenseName": "CC BY-SA 2.0",
-        "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
-        "fileExtension": "jpg",
-        "fileSizeBytes": null,
-        "score": 135.0
       }
     }
   ]

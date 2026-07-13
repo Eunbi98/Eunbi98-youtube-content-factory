@@ -1,0 +1,519 @@
+{
+  "version": "2.0",
+  "episodeId": "ep009",
+  "timelinePath": "C:\\Users\\user\\Desktop\\Eunbi98-youtube-content-factory\\projects\\episodes\\ep009\\timeline.json",
+  "sceneCount": 5,
+  "scenes": [
+    {
+      "sceneId": "scene_001",
+      "title": "화성의 노을은 왜 파란색일까",
+      "narration": "지구의 노을은 붉은데 화성에서는 태양 주변이 파랗게 보입니다.",
+      "sourceKeywords": [
+        "Mars blue sunset",
+        "Martian sunset blue sky",
+        "Mars sunset Curiosity rover",
+        "Martian sunset blue sky wide view",
+        "Martian sunset blue sky landscape",
+        "Mars sunset Curiosity rover wide view",
+        "Mars sunset Curiosity rover landscape",
+        "Martian sunset blue sky close up",
+        "Martian sunset blue sky detailed view",
+        "Mars sunset Curiosity rover close up",
+        "Mars sunset Curiosity rover detailed view",
+        "Martian sunset blue sky wide view wide view",
+        "Martian sunset blue sky wide view landscape",
+        "Mars sunset Curiosity rover wide view wide view",
+        "Mars sunset Curiosity rover wide view landscape",
+        "Martian sunset blue sky wide view close up",
+        "Martian sunset blue sky wide view detailed view",
+        "Mars sunset Curiosity rover wide view close up",
+        "Mars sunset Curiosity rover wide view detailed view"
+      ],
+      "entities": [
+        "화성",
+        "Mars blue sunset Martian sunset blue sky Mars",
+        "et blue sky wide view Martian sunset blue",
+        "er wide view Mars sunset Curiosity rover landscape",
+        "up Martian sunset blue sky detailed view Mars",
+        "sunset Curiosity rover detailed view Martian sunset blue",
+        "Martian sunset blue sky wide view landscape Mars",
+        "ew wide view Mars sunset Curiosity rover wide",
+        "sky wide view close up Martian sunset blue",
+        "Curiosity rover wide view close up Mars sunset",
+        "ed view"
+      ],
+      "primaryQuery": "Martian sunset blue sky wide view",
+      "queries": [
+        {
+          "query": "Martian sunset blue sky wide view",
+          "intent": "primary",
+          "priority": 1,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Mars sunset Curiosity rover wide view",
+          "intent": "primary",
+          "priority": 2,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Martian sunset blue sky wide view wide view",
+          "intent": "wide",
+          "priority": 3,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Martian sunset blue sky wide view landscape",
+          "intent": "wide",
+          "priority": 4,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Mars sunset Curiosity rover wide view wide view",
+          "intent": "wide",
+          "priority": 5,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Mars sunset Curiosity rover wide view landscape",
+          "intent": "wide",
+          "priority": 6,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Martian sunset blue sky wide view close up",
+          "intent": "detail",
+          "priority": 7,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Martian sunset blue sky wide view detailed view",
+          "intent": "detail",
+          "priority": 8,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Mars sunset Curiosity rover wide view close up",
+          "intent": "detail",
+          "priority": 9,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Mars sunset Curiosity rover wide view detailed view",
+          "intent": "detail",
+          "priority": 10,
+          "mediaKind": "any"
+        }
+      ]
+    },
+    {
+      "sceneId": "scene_002",
+      "title": "평소 화성 하늘은 붉게 보입니다",
+      "narration": "화성 대기에 떠다니는 미세한 먼지가 붉은빛을 하늘 전체로 퍼뜨리기 때문입니다.",
+      "sourceKeywords": [
+        "Mars red sky dust atmosphere",
+        "Martian atmosphere dust",
+        "Mars landscape red sky",
+        "Mars red sky dust atmosphere wide view",
+        "Mars red sky dust atmosphere landscape",
+        "Mars landscape red sky wide view",
+        "Mars landscape red sky landscape",
+        "Mars red sky dust atmosphere close up",
+        "Mars red sky dust atmosphere detailed view",
+        "Mars landscape red sky close up",
+        "Mars landscape red sky detailed view",
+        "Mars red sky dust atmosphere landscape wide view",
+        "Mars red sky dust atmosphere landscape landscape",
+        "Mars landscape red sky wide view wide view",
+        "Mars landscape red sky wide view landscape",
+        "Mars red sky dust atmosphere landscape close up",
+        "Mars red sky dust atmosphere landscape detailed view",
+        "Mars landscape red sky wide view close up",
+        "Mars landscape red sky wide view detailed view"
+      ],
+      "entities": [
+        "화성",
+        "Mars red sky dust atmosphere Martian atmosphere dust",
+        "red sky dust atmosphere wide view Mars red",
+        "dscape red sky wide view Mars landscape red",
+        "phere close up Mars red sky dust atmosphere",
+        "close up Mars landscape red sky detailed view",
+        "ape wide view Mars red sky dust atmosphere",
+        "sky wide view wide view Mars landscape red",
+        "ust atmosphere landscape close up Mars red sky",
+        "view Mars landscape red sky wide view close",
+        "etailed view"
+      ],
+      "primaryQuery": "Mars red sky dust atmosphere landscape",
+      "queries": [
+        {
+          "query": "Mars red sky dust atmosphere landscape",
+          "intent": "primary",
+          "priority": 1,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Mars landscape red sky wide view",
+          "intent": "primary",
+          "priority": 2,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Mars red sky dust atmosphere landscape wide view",
+          "intent": "wide",
+          "priority": 3,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Mars red sky dust atmosphere landscape landscape",
+          "intent": "wide",
+          "priority": 4,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Mars landscape red sky wide view wide view",
+          "intent": "wide",
+          "priority": 5,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Mars landscape red sky wide view landscape",
+          "intent": "wide",
+          "priority": 6,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Mars red sky dust atmosphere landscape close up",
+          "intent": "detail",
+          "priority": 7,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Mars red sky dust atmosphere landscape detailed view",
+          "intent": "detail",
+          "priority": 8,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Mars landscape red sky wide view close up",
+          "intent": "detail",
+          "priority": 9,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Mars landscape red sky wide view detailed view",
+          "intent": "detail",
+          "priority": 10,
+          "mediaKind": "any"
+        }
+      ]
+    },
+    {
+      "sceneId": "scene_003",
+      "title": "노을이 지면 빛의 길이가 길어집니다",
+      "narration": "해가 낮아지면 햇빛은 화성 대기 속을 더 길게 지나며 먼지와 강하게 만납니다.",
+      "sourceKeywords": [
+        "Mars sunset horizon atmosphere",
+        "Martian sunset dust scattering",
+        "Mars horizon sunlight",
+        "Mars sunset horizon atmosphere wide view",
+        "Mars sunset horizon atmosphere landscape",
+        "Martian sunset dust scattering wide view",
+        "Martian sunset dust scattering landscape",
+        "Mars sunset horizon atmosphere close up",
+        "Mars sunset horizon atmosphere detailed view",
+        "Martian sunset dust scattering close up",
+        "Martian sunset dust scattering detailed view",
+        "Mars sunset horizon atmosphere wide view wide view",
+        "Mars sunset horizon atmosphere wide view landscape",
+        "Martian sunset dust scattering wide view wide view",
+        "Martian sunset dust scattering wide view landscape",
+        "Mars sunset horizon atmosphere wide view close up",
+        "Mars sunset horizon atmosphere wide view detailed view",
+        "Martian sunset dust scattering wide view close up",
+        "Martian sunset dust scattering wide view detailed view"
+      ],
+      "entities": [
+        "화성",
+        "Mars sunset horizon atmosphere Martian sunset dust scattering",
+        "ht Mars sunset horizon atmosphere wide view Mars",
+        "ape Martian sunset dust scattering wide view Martian",
+        "cape Mars sunset horizon atmosphere close up Mars",
+        "led view Martian sunset dust scattering close up",
+        "etailed view Mars sunset horizon atmosphere wide view",
+        "atmosphere wide view landscape Martian sunset dust scattering",
+        "iew Martian sunset dust scattering wide view landscape",
+        "here wide view close up Mars sunset horizon",
+        "rtian sunset dust scattering wide view close up",
+        "de view detailed view"
+      ],
+      "primaryQuery": "Mars sunset horizon atmosphere wide view",
+      "queries": [
+        {
+          "query": "Mars sunset horizon atmosphere wide view",
+          "intent": "primary",
+          "priority": 1,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Martian sunset dust scattering wide view",
+          "intent": "primary",
+          "priority": 2,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Mars sunset horizon atmosphere wide view wide view",
+          "intent": "wide",
+          "priority": 3,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Mars sunset horizon atmosphere wide view landscape",
+          "intent": "wide",
+          "priority": 4,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Martian sunset dust scattering wide view wide view",
+          "intent": "wide",
+          "priority": 5,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Martian sunset dust scattering wide view landscape",
+          "intent": "wide",
+          "priority": 6,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Mars sunset horizon atmosphere wide view close up",
+          "intent": "detail",
+          "priority": 7,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Mars sunset horizon atmosphere wide view detailed view",
+          "intent": "detail",
+          "priority": 8,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Martian sunset dust scattering wide view close up",
+          "intent": "detail",
+          "priority": 9,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Martian sunset dust scattering wide view detailed view",
+          "intent": "detail",
+          "priority": 10,
+          "mediaKind": "any"
+        }
+      ]
+    },
+    {
+      "sceneId": "scene_004",
+      "title": "푸른빛은 태양 가까이에 모입니다",
+      "narration": "미세한 먼지는 푸른빛을 태양 방향 가까이에 남겨 주변만 푸른색으로 보이게 만듭니다.",
+      "sourceKeywords": [
+        "Mars blue sunset light scattering",
+        "Curiosity blue sunset Gale crater",
+        "NASA Mars blue sunset",
+        "Mars blue sunset light scattering wide view",
+        "Mars blue sunset light scattering landscape",
+        "Curiosity blue sunset Gale crater wide view",
+        "Curiosity blue sunset Gale crater landscape",
+        "Mars blue sunset light scattering close up",
+        "Mars blue sunset light scattering detailed view",
+        "Curiosity blue sunset Gale crater close up",
+        "Curiosity blue sunset Gale crater detailed view",
+        "Mars blue sunset light scattering landscape wide view",
+        "Mars blue sunset light scattering landscape landscape",
+        "Curiosity blue sunset Gale crater landscape wide view",
+        "Curiosity blue sunset Gale crater landscape landscape",
+        "Mars blue sunset light scattering landscape close up",
+        "Mars blue sunset light scattering landscape detailed view",
+        "Curiosity blue sunset Gale crater landscape close up",
+        "Curiosity blue sunset Gale crater landscape detailed view"
+      ],
+      "entities": [
+        "Mars blue sunset light scattering Curiosity blue sunset",
+        "sunset Mars blue sunset light scattering wide view",
+        "ering landscape Curiosity blue sunset Gale crater wide",
+        "Gale crater landscape Mars blue sunset light scattering",
+        "light scattering detailed view Curiosity blue sunset Gale",
+        "ty blue sunset Gale crater detailed view Mars",
+        "ape wide view Mars blue sunset light scattering",
+        "sunset Gale crater landscape wide view Curiosity blue",
+        "ape landscape Mars blue sunset light scattering landscape",
+        "et light scattering landscape detailed view Curiosity blue",
+        "dscape close up Curiosity blue sunset Gale crater"
+      ],
+      "primaryQuery": "Mars blue sunset light scattering landscape",
+      "queries": [
+        {
+          "query": "Mars blue sunset light scattering landscape",
+          "intent": "primary",
+          "priority": 1,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Curiosity blue sunset Gale crater landscape",
+          "intent": "primary",
+          "priority": 2,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Mars blue sunset light scattering landscape wide view",
+          "intent": "wide",
+          "priority": 3,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Mars blue sunset light scattering landscape landscape",
+          "intent": "wide",
+          "priority": 4,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Curiosity blue sunset Gale crater landscape wide view",
+          "intent": "wide",
+          "priority": 5,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Curiosity blue sunset Gale crater landscape landscape",
+          "intent": "wide",
+          "priority": 6,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Mars blue sunset light scattering landscape close up",
+          "intent": "detail",
+          "priority": 7,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Mars blue sunset light scattering landscape detailed view",
+          "intent": "detail",
+          "priority": 8,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Curiosity blue sunset Gale crater landscape close up",
+          "intent": "detail",
+          "priority": 9,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Curiosity blue sunset Gale crater landscape detailed view",
+          "intent": "detail",
+          "priority": 10,
+          "mediaKind": "any"
+        }
+      ]
+    },
+    {
+      "sceneId": "scene_005",
+      "title": "지구와 정반대인 화성의 노을",
+      "narration": "붉은 행성에서 만나는 파란 노을 직접 본다면 어떤 느낌일까요",
+      "sourceKeywords": [
+        "Perseverance Mars sunset",
+        "Mars blue sunset panorama",
+        "Martian sunset rover view",
+        "Mars blue sunset panorama wide view",
+        "Mars blue sunset panorama landscape",
+        "Martian sunset rover view wide view",
+        "Martian sunset rover view landscape",
+        "Mars blue sunset panorama close up",
+        "Mars blue sunset panorama detailed view",
+        "Martian sunset rover view close up",
+        "Martian sunset rover view detailed view",
+        "Mars blue sunset panorama wide view wide view",
+        "Mars blue sunset panorama wide view landscape",
+        "Martian sunset rover view wide view wide view",
+        "Martian sunset rover view wide view landscape",
+        "Mars blue sunset panorama wide view close up",
+        "Mars blue sunset panorama wide view detailed view",
+        "Martian sunset rover view wide view close up",
+        "Martian sunset rover view wide view detailed view"
+      ],
+      "entities": [
+        "화성",
+        "Perseverance Mars sunset Mars blue sunset panorama Martian",
+        "blue sunset panorama wide view Mars blue sunset",
+        "rover view wide view Martian sunset rover view",
+        "close up Mars blue sunset panorama detailed view",
+        "up Martian sunset rover view detailed view Mars",
+        "wide view Mars blue sunset panorama wide view",
+        "wide view wide view Martian sunset rover view",
+        "panorama wide view close up Mars blue sunset",
+        "artian sunset rover view wide view close up",
+        "etailed view"
+      ],
+      "primaryQuery": "Mars blue sunset panorama wide view",
+      "queries": [
+        {
+          "query": "Mars blue sunset panorama wide view",
+          "intent": "primary",
+          "priority": 1,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Martian sunset rover view wide view",
+          "intent": "primary",
+          "priority": 2,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Mars blue sunset panorama wide view wide view",
+          "intent": "wide",
+          "priority": 3,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Mars blue sunset panorama wide view landscape",
+          "intent": "wide",
+          "priority": 4,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Martian sunset rover view wide view wide view",
+          "intent": "wide",
+          "priority": 5,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Martian sunset rover view wide view landscape",
+          "intent": "wide",
+          "priority": 6,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Mars blue sunset panorama wide view close up",
+          "intent": "detail",
+          "priority": 7,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Mars blue sunset panorama wide view detailed view",
+          "intent": "detail",
+          "priority": 8,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Martian sunset rover view wide view close up",
+          "intent": "detail",
+          "priority": 9,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Martian sunset rover view wide view detailed view",
+          "intent": "detail",
+          "priority": 10,
+          "mediaKind": "any"
+        }
+      ]
+    }
+  ]
+}

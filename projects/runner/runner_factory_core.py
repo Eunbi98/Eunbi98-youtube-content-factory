@@ -1,4 +1,4 @@
-from __future__ import annotations
+﻿from __future__ import annotations
 
 import json
 import shutil
@@ -879,9 +879,93 @@ class FactoryCore:
             exist_ok=True,
         )
 
-        shutil.copy2(
-            source,
-            destination,
+        timeline_data = (
+            self._load_raw_timeline(
+                source
+            )
+        )
+
+        raw_scenes = timeline_data.get(
+            "scenes"
+        )
+
+        if not isinstance(
+            raw_scenes,
+            list,
+        ):
+            raise TimelineValidationError(
+                "Timeline scenes 필드가 "
+                "배열이 아닙니다."
+            )
+
+        episode_id = (
+            self._context
+            .paths
+            .episode_id
+        )
+
+        episode_prefix = (
+            f"{episode_id}/"
+        )
+
+        for raw_scene in raw_scenes:
+            if not isinstance(
+                raw_scene,
+                dict,
+            ):
+                continue
+
+            raw_media = raw_scene.get(
+                "media"
+            )
+
+            if not isinstance(
+                raw_media,
+                dict,
+            ):
+                continue
+
+            raw_src = raw_media.get(
+                "src"
+            )
+
+            if not isinstance(
+                raw_src,
+                str,
+            ):
+                continue
+
+            src = (
+                raw_src
+                .strip()
+                .replace("\\", "/")
+                .lstrip("/")
+            )
+
+            if not src:
+                continue
+
+            if src.startswith(
+                episode_prefix
+            ):
+                public_src = src
+            else:
+                public_src = (
+                    episode_prefix
+                    + src
+                )
+
+            raw_media["src"] = (
+                public_src
+            )
+
+        destination.write_text(
+            json.dumps(
+                timeline_data,
+                ensure_ascii=False,
+                indent=2,
+            ) + "\n",
+            encoding="utf-8",
         )
 
         self._emit(
@@ -933,6 +1017,11 @@ class FactoryCore:
             self._context
             .paths
             .output_path,
+            episode_id=(
+                self._context
+                .paths
+                .episode_id
+            ),
         )
 
         self._emit(

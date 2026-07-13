@@ -1,0 +1,167 @@
+{
+  "version": "6.5",
+  "episodeId": "EP009",
+  "title": "화성의 노을은\n왜 파란색일까?",
+  "fps": 30,
+  "width": 1080,
+  "height": 1920,
+  "totalDuration": 31.5,
+  "theme": {
+    "backgroundColor": "#000000",
+    "titleColor": "#7CFFB2",
+    "captionColor": "#FFFFFF",
+    "accentColor": "#7CFFB2"
+  },
+  "scenes": [
+    {
+      "id": "scene_001",
+      "start": 0.0,
+      "duration": 5.8,
+      "title": "화성의 노을은 왜 파란색일까?",
+      "narration": "지구의 노을은 붉은데, 화성에서는 태양 주변이 파랗게 보입니다.",
+      "caption": "지구의 노을은 붉은데, 화성에서는 태양 주변이 파랗게 보입니다.",
+      "backgroundColor": "#171D2A",
+      "keywords": [
+        "Mars blue sunset",
+        "Martian sunset blue sky",
+        "Mars sunset Curiosity rover"
+      ],
+      "media": {
+        "type": "image",
+        "fit": "cover",
+        "position": "center center",
+        "src": "scene_001.jpg",
+        "keywords": [
+          "Mars blue sunset",
+          "Martian sunset blue sky",
+          "Mars sunset Curiosity rover"
+        ]
+      },
+      "cameraMotion": "zoom_in",
+      "transition": "fade",
+      "transitionDuration": 0.3,
+      "overlay": "cinematic",
+      "overlayOpacity": 1.0
+    },
+    {
+      "id": "scene_002",
+      "start": 5.8,
+      "duration": 6.0,
+      "title": "평소 화성 하늘은 붉게 보입니다",
+      "narration": "화성 대기에 떠다니는 미세한 먼지가 붉은빛을 하늘 전체로 퍼뜨리기 때문입니다.",
+      "caption": "화성 대기에 떠다니는 미세한 먼지가 붉은빛을 하늘 전체로 퍼뜨리기 때문입니다.",
+      "backgroundColor": "#3A211C",
+      "keywords": [
+        "Mars red sky dust atmosphere",
+        "Martian atmosphere dust",
+        "Mars landscape red sky"
+      ],
+      "media": {
+        "type": "image",
+        "fit": "cover",
+        "position": "center center",
+        "src": "scene_002.jpg",
+        "keywords": [
+          "Mars red sky dust atmosphere",
+          "Martian atmosphere dust",
+          "Mars landscape red sky"
+        ]
+      },
+      "cameraMotion": "pan_right",
+      "transition": "cut",
+      "transitionDuration": 0.2,
+      "overlay": "cinematic",
+      "overlayOpacity": 1.0
+    },
+    {
+      "id": "scene_003",
+      "start": 11.8,
+      "duration": 6.4,
+      "title": "노을이 지면 빛의 길이가 길어집니다",
+      "narration": "해가 낮아지면 햇빛은 화성 대기 속을 더 길게 지나며 먼지와 강하게 만납니다.",
+      "caption": "해가 낮아지면 햇빛은 화성 대기 속을 더 길게 지나며 먼지와 강하게 만납니다.",
+      "backgroundColor": "#2B303D",
+      "keywords": [
+        "Mars sunset horizon atmosphere",
+        "Martian sunset dust scattering",
+        "Mars horizon sunlight"
+      ],
+      "media": {
+        "type": "image",
+        "fit": "cover",
+        "position": "center center",
+        "src": "scene_003.jpg",
+        "keywords": [
+          "Mars sunset horizon atmosphere",
+          "Martian sunset dust scattering",
+          "Mars horizon sunlight"
+        ]
+      },
+      "cameraMotion": "pan_left",
+      "transition": "fade",
+      "transitionDuration": 0.3,
+      "overlay": "vignette",
+      "overlayOpacity": 1.0
+    },
+    {
+      "id": "scene_004",
+      "start": 18.2,
+      "duration": 7.0,
+      "title": "푸른빛은 태양 가까이에 모입니다",
+      "narration": "미세한 먼지는 푸른빛을 태양 방향 가까이에 남겨, 주변만 푸른색으로 보이게 만듭니다.",
+      "caption": "미세한 먼지는 푸른빛을 태양 방향 가까이에 남겨, 주변만 푸른색으로 보이게 만듭니다.",
+      "backgroundColor": "#17263A",
+      "keywords": [
+        "Mars blue sunset light scattering",
+        "Curiosity blue sunset Gale crater",
+        "NASA Mars blue sunset"
+      ],
+      "media": {
+        "type": "image",
+        "fit": "cover",
+        "position": "center center",
+        "src": "scene_004.jpg",
+        "keywords": [
+          "Mars blue sunset light scattering",
+          "Curiosity blue sunset Gale crater",
+          "NASA Mars blue sunset"
+        ]
+      },
+      "cameraMotion": "zoom_in_right",
+      "transition": "slide_left",
+      "transitionDuration": 0.3,
+      "overlay": "cinematic",
+      "overlayOpacity": 1.0
+    },
+    {
+      "id": "scene_005",
+      "start": 25.2,
+      "duration": 6.3,
+      "title": "지구와 정반대인 화성의 노을",
+      "narration": "붉은 행성에서 만나는 파란 노을, 직접 본다면 어떤 느낌일까요?",
+      "caption": "붉은 행성에서 만나는 파란 노을, 직접 본다면 어떤 느낌일까요?",
+      "backgroundColor": "#111722",
+      "keywords": [
+        "Perseverance Mars sunset",
+        "Mars blue sunset panorama",
+        "Martian sunset rover view"
+      ],
+      "media": {
+        "type": "image",
+        "fit": "cover",
+        "position": "center center",
+        "src": "scene_005.jpg",
+        "keywords": [
+          "Perseverance Mars sunset",
+          "Mars blue sunset panorama",
+          "Martian sunset rover view"
+        ]
+      },
+      "cameraMotion": "zoom_out",
+      "transition": "fade",
+      "transitionDuration": 0.35,
+      "overlay": "dark",
+      "overlayOpacity": 1.0
+    }
+  ]
+}
