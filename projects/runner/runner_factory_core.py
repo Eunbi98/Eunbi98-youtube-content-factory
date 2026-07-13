@@ -36,6 +36,10 @@ from media_collector import (
     MediaCollectorError,
     TimelineMediaCollector,
 )
+from provider_registry import (
+    MediaProviderRegistry,
+    ProviderRegistryError,
+)
 from pipeline_context import (
     FactoryPaths,
     FactoryRunContext,
@@ -127,6 +131,8 @@ class FactoryCore:
 
             self._collect_and_sync_assets()
 
+            self._publish_timeline()
+
             if (
                 self._context
                 .options
@@ -166,8 +172,6 @@ class FactoryCore:
                 return (
                     self._build_result()
                 )
-
-            self._publish_timeline()
 
             self._run_typecheck()
 
@@ -214,15 +218,16 @@ class FactoryCore:
             return self._build_result()
 
         except (
-            TimelineValidationError,
-            AssetValidationError,
-            DirectorExecutionError,
-            CommandExecutionError,
-            MediaCollectorError,
-            WikimediaProviderError,
-            OSError,
-            ValueError,
-        ) as exc:
+                    TimelineValidationError,
+                    AssetValidationError,
+                    DirectorExecutionError,
+                    CommandExecutionError,
+                    MediaCollectorError,
+                    ProviderRegistryError,
+                    WikimediaProviderError,
+                    OSError,
+                    ValueError,
+                ) as exc:
             self._context.status = (
                 "failed"
             )
@@ -408,10 +413,22 @@ class FactoryCore:
             },
         )
 
-        with WikimediaProvider() as provider:
+        wikimedia_provider = (
+            WikimediaProvider()
+        )
+
+        registry = (
+            MediaProviderRegistry(
+                providers=[
+                    wikimedia_provider,
+                ]
+            )
+        )
+
+        try:
             collector = (
                 TimelineMediaCollector(
-                    provider=provider
+                    registry=registry
                 )
             )
 
@@ -430,7 +447,13 @@ class FactoryCore:
                 scene_ids=(
                     missing_scene_ids
                 ),
+                provider_names=[
+                    "wikimedia",
+                ],
             )
+
+        finally:
+            wikimedia_provider.close()
 
         self._emit(
             FactoryEventType

@@ -29,7 +29,12 @@ for module_path in (
 
 from base_provider import (  # noqa: E402
     MediaCandidate,
+    MediaProvider,
     MediaSearchRequest,
+)
+from provider_registry import (  # noqa: E402
+    MediaProviderRegistry,
+    ProviderRegistryError,
 )
 from search_prompt import (  # noqa: E402
     SearchPromptError,
@@ -79,6 +84,7 @@ class SceneCollectionResult:
     reused: bool
     searched_queries: tuple[str, ...]
     candidate_count: int
+    searched_providers: tuple[str, ...]
 
     def to_dict(
         self,
@@ -88,6 +94,9 @@ class SceneCollectionResult:
             "query": self.query,
             "searchedQueries": list(
                 self.searched_queries
+            ),
+            "searchedProviders": list(
+                self.searched_providers
             ),
             "candidateCount": (
                 self.candidate_count
@@ -527,7 +536,10 @@ def find_raw_scene(
 
     for raw_scene in raw_scenes:
         if (
-            isinstance(raw_scene, dict)
+            isinstance(
+                raw_scene,
+                dict,
+            )
             and raw_scene.get("id")
             == scene_id
         ):
@@ -605,18 +617,21 @@ def build_search_queries(
         )
 
     has_english_query = any(
-        contains_latin_text(query)
+        contains_latin_text(
+            query
+        )
         for query in queries
     )
 
     if not has_english_query:
         print(
             "       [경고] 검색어가 모두 "
-            "한국어입니다. Wikimedia 검색률이 "
-            "매우 낮을 수 있습니다."
+            "한국어입니다."
         )
 
-    return tuple(queries)
+    return tuple(
+        queries
+    )
 
 
 def tokenize_search_text(
@@ -680,10 +695,16 @@ def calculate_orientation_score(
     requested_orientation: str,
 ) -> float:
     if requested_orientation == "any":
-        if candidate.orientation == "portrait":
+        if (
+            candidate.orientation
+            == "portrait"
+        ):
             return 10.0
 
-        if candidate.orientation == "square":
+        if (
+            candidate.orientation
+            == "square"
+        ):
             return 7.0
 
         return 5.0
@@ -695,8 +716,10 @@ def calculate_orientation_score(
         return 25.0
 
     if (
-        requested_orientation == "portrait"
-        and candidate.orientation == "square"
+        requested_orientation
+        == "portrait"
+        and candidate.orientation
+        == "square"
     ):
         return 8.0
 
@@ -856,12 +879,13 @@ def deduplicate_candidate_hits(
 
 def collect_candidate_hits(
     *,
-    provider: WikimediaProvider,
+    registry: MediaProviderRegistry,
     queries: Sequence[str],
     orientation: str,
     candidates_per_query: int,
     min_width: int,
     min_height: int,
+    provider_names: Sequence[str] | None,
 ) -> tuple[
     list[CandidateSearchHit],
     tuple[str, ...],
@@ -899,16 +923,34 @@ def collect_candidate_hits(
         )
 
         try:
-            candidates = provider.search(
-                request
+            search_result = registry.search(
+                request,
+                provider_names=(
+                    provider_names
+                ),
+                continue_on_error=True,
+                deduplicate=True,
             )
 
-        except WikimediaProviderError as exc:
+        except ProviderRegistryError as exc:
             print(
                 "       [검색 실패] "
                 f"{exc}"
             )
             continue
+
+        for failure in (
+            search_result.failures
+        ):
+            print(
+                "       [Provider 실패] "
+                f"{failure.provider}: "
+                f"{failure.message}"
+            )
+
+        candidates = list(
+            search_result.candidates
+        )
 
         if not candidates:
             print(
@@ -916,9 +958,34 @@ def collect_candidate_hits(
             )
             continue
 
+        provider_counts: dict[
+            str,
+            int,
+        ] = {}
+
+        for candidate in candidates:
+            provider_counts[
+                candidate.provider
+            ] = (
+                provider_counts.get(
+                    candidate.provider,
+                    0,
+                )
+                + 1
+            )
+
+        provider_summary = ", ".join(
+            f"{name} {count}개"
+            for name, count
+            in sorted(
+                provider_counts.items()
+            )
+        )
+
         print(
-            f"       [후보] "
-            f"{len(candidates)}개"
+            "       [후보] "
+            f"{len(candidates)}개 "
+            f"({provider_summary})"
         )
 
         for candidate in candidates:
@@ -956,7 +1023,9 @@ def collect_candidate_hits(
         deduplicate_candidate_hits(
             all_hits
         ),
-        tuple(searched_queries),
+        tuple(
+            searched_queries
+        ),
     )
 
 
@@ -1053,7 +1122,10 @@ def update_timeline_scene_media(
 
     media = (
         raw_media
-        if isinstance(raw_media, dict)
+        if isinstance(
+            raw_media,
+            dict,
+        )
         else {}
     )
 
@@ -1078,31 +1150,49 @@ def update_timeline_scene_media(
 
     raw_scene["mediaSource"] = {
         "provider": (
-            scene_result.candidate.provider
+            scene_result
+            .candidate
+            .provider
         ),
         "mediaId": (
-            scene_result.candidate.media_id
+            scene_result
+            .candidate
+            .media_id
         ),
         "query": (
             scene_result.query
         ),
         "searchedQueries": list(
-            scene_result.searched_queries
+            scene_result
+            .searched_queries
+        ),
+        "searchedProviders": list(
+            scene_result
+            .searched_providers
         ),
         "candidateCount": (
-            scene_result.candidate_count
+            scene_result
+            .candidate_count
         ),
         "sourceUrl": (
-            scene_result.candidate.source_url
+            scene_result
+            .candidate
+            .source_url
         ),
         "downloadUrl": (
-            scene_result.candidate.download_url
+            scene_result
+            .candidate
+            .download_url
         ),
         "author": (
-            scene_result.candidate.author
+            scene_result
+            .candidate
+            .author
         ),
         "authorUrl": (
-            scene_result.candidate.author_url
+            scene_result
+            .candidate
+            .author_url
         ),
         "licenseName": (
             scene_result
@@ -1115,10 +1205,14 @@ def update_timeline_scene_media(
             .license_url
         ),
         "width": (
-            scene_result.candidate.width
+            scene_result
+            .candidate
+            .width
         ),
         "height": (
-            scene_result.candidate.height
+            scene_result
+            .candidate
+            .height
         ),
         "orientation": (
             scene_result
@@ -1126,23 +1220,60 @@ def update_timeline_scene_media(
             .orientation
         ),
         "score": (
-            scene_result.candidate.score
+            scene_result
+            .candidate
+            .score
         ),
     }
 
 
 class TimelineMediaCollector:
     """
-    Timeline의 장면 정보를 읽어 Wikimedia Commons에서
-    장면별 이미지를 검색하고 assets 폴더에 저장합니다.
+    Timeline 장면별로 여러 Provider를 검색하고
+    가장 높은 점수의 이미지를 다운로드합니다.
+
+    provider 인수는 기존 Runner와의 호환을 위해
+    유지합니다. 신규 코드는 registry 사용을 권장합니다.
     """
 
     def __init__(
         self,
         *,
-        provider: WikimediaProvider,
+        registry: (
+            MediaProviderRegistry
+            | None
+        ) = None,
+        provider: (
+            MediaProvider
+            | None
+        ) = None,
     ) -> None:
-        self.provider = provider
+        if (
+            registry is not None
+            and provider is not None
+        ):
+            raise ValueError(
+                "registry와 provider는 "
+                "동시에 지정할 수 없습니다."
+            )
+
+        if registry is not None:
+            self.registry = registry
+
+        elif provider is not None:
+            self.registry = (
+                MediaProviderRegistry(
+                    providers=[
+                        provider,
+                    ]
+                )
+            )
+
+        else:
+            raise ValueError(
+                "registry 또는 provider 중 "
+                "하나는 반드시 필요합니다."
+            )
 
     def collect(
         self,
@@ -1157,6 +1288,7 @@ class TimelineMediaCollector:
         overwrite: bool = False,
         update_timeline: bool = True,
         scene_ids: Sequence[str] | None = None,
+        provider_names: Sequence[str] | None = None,
     ) -> MediaCollectionResult:
         if max_search_queries <= 0:
             raise MediaCollectorError(
@@ -1168,6 +1300,30 @@ class TimelineMediaCollector:
             raise MediaCollectorError(
                 "candidates_per_query는 "
                 "1 이상이어야 합니다."
+            )
+
+        available_provider_names = (
+            self.registry
+            .list_provider_names(
+                media_kind="image"
+            )
+        )
+
+        if not available_provider_names:
+            raise MediaCollectorError(
+                "등록된 이미지 Provider가 없습니다."
+            )
+
+        if provider_names:
+            searched_provider_names = tuple(
+                provider_name.strip().lower()
+                for provider_name
+                in provider_names
+                if provider_name.strip()
+            )
+        else:
+            searched_provider_names = (
+                available_provider_names
             )
 
         resolved_timeline_path = (
@@ -1254,7 +1410,7 @@ class TimelineMediaCollector:
         print("=" * 72)
         print(
             " YouTube Content Factory "
-            "Timeline Media Collector"
+            "Multi Provider Media Collector"
         )
         print("=" * 72)
         print(
@@ -1268,6 +1424,12 @@ class TimelineMediaCollector:
         print(
             f"{'assets':>18}: "
             f"{resolved_assets_dir}"
+        )
+        print(
+            f"{'providers':>18}: "
+            + ", ".join(
+                searched_provider_names
+            )
         )
         print(
             f"{'scene_count':>18}: "
@@ -1293,7 +1455,7 @@ class TimelineMediaCollector:
 
             hits, searched_queries = (
                 collect_candidate_hits(
-                    provider=self.provider,
+                    registry=self.registry,
                     queries=queries,
                     orientation=orientation,
                     candidates_per_query=(
@@ -1301,24 +1463,30 @@ class TimelineMediaCollector:
                     ),
                     min_width=min_width,
                     min_height=min_height,
+                    provider_names=(
+                        searched_provider_names
+                    ),
                 )
             )
 
             if not hits:
                 query_preview = "\n".join(
                     f"  - {query}"
-                    for query in searched_queries
+                    for query
+                    in searched_queries
                 )
 
                 raise MediaCollectorError(
-                    f"{scene.scene_id}: 모든 검색어에서 "
-                    "사용 가능한 이미지를 찾지 "
-                    "못했습니다.\n"
+                    f"{scene.scene_id}: 모든 검색어와 "
+                    "Provider에서 사용 가능한 "
+                    "이미지를 찾지 못했습니다.\n"
                     "사용한 검색어:\n"
-                    f"{query_preview}\n\n"
-                    "Timeline 장면의 keywords 또는 "
-                    "mediaSearch에 영문 핵심 검색어가 "
-                    "필요합니다."
+                    f"{query_preview}\n"
+                    "Provider:\n"
+                    f"  - "
+                    + "\n  - ".join(
+                        searched_provider_names
+                    )
                 )
 
             selected_hit = (
@@ -1329,6 +1497,12 @@ class TimelineMediaCollector:
 
             selected_candidate = (
                 selected_hit.candidate
+            )
+
+            selected_provider = (
+                self.registry.get(
+                    selected_candidate.provider
+                )
             )
 
             extension = (
@@ -1347,7 +1521,9 @@ class TimelineMediaCollector:
 
             existed_before = (
                 output_path.exists()
-                and output_path.stat().st_size
+                and output_path
+                .stat()
+                .st_size
                 > 0
                 and not overwrite
             )
@@ -1365,7 +1541,7 @@ class TimelineMediaCollector:
             )
 
             download_result = (
-                self.provider.download(
+                selected_provider.download(
                     candidate=(
                         selected_candidate
                     ),
@@ -1394,6 +1570,9 @@ class TimelineMediaCollector:
                     candidate_count=len(
                         hits
                     ),
+                    searched_providers=(
+                        searched_provider_names
+                    ),
                 )
             )
 
@@ -1415,6 +1594,10 @@ class TimelineMediaCollector:
             print(
                 f"       전체 후보: "
                 f"{len(hits)}개"
+            )
+            print(
+                f"       선택 Provider: "
+                f"{selected_candidate.provider}"
             )
             print(
                 f"       선택 검색어: "
@@ -1470,10 +1653,10 @@ class TimelineMediaCollector:
             str,
             Any,
         ] = {
-            "version": "1.1",
+            "version": "1.2",
             "episodeId": episode_id,
-            "provider": (
-                self.provider.name
+            "providers": list(
+                searched_provider_names
             ),
             "timelinePath": str(
                 resolved_timeline_path
@@ -1514,7 +1697,9 @@ class TimelineMediaCollector:
                 collected_count
             ),
             reused_count=reused_count,
-            results=tuple(results),
+            results=tuple(
+                results
+            ),
         )
 
 
@@ -1553,7 +1738,7 @@ def build_argument_parser(
     parser = argparse.ArgumentParser(
         description=(
             "Timeline의 각 장면에 맞는 이미지를 "
-            "Wikimedia Commons에서 검색하고 "
+            "등록된 Media Provider에서 검색하고 "
             "자동 다운로드합니다."
         )
     )
@@ -1561,27 +1746,16 @@ def build_argument_parser(
     parser.add_argument(
         "--episode",
         default="ep008",
-        help=(
-            "에피소드 ID입니다. "
-            "기본값: ep008"
-        ),
     )
 
     parser.add_argument(
         "--timeline",
         default=None,
-        help=(
-            "timeline.json 경로입니다. "
-            "생략하면 에피소드 폴더를 사용합니다."
-        ),
     )
 
     parser.add_argument(
         "--assets-dir",
         default=None,
-        help=(
-            "이미지를 저장할 assets 폴더입니다."
-        ),
     )
 
     parser.add_argument(
@@ -1623,8 +1797,14 @@ def build_argument_parser(
         "--scene",
         action="append",
         default=[],
+    )
+
+    parser.add_argument(
+        "--provider",
+        action="append",
+        default=[],
         help=(
-            "특정 장면만 수집합니다. "
+            "사용할 Provider 이름입니다. "
             "여러 번 지정할 수 있습니다."
         ),
     )
@@ -1632,19 +1812,11 @@ def build_argument_parser(
     parser.add_argument(
         "--overwrite",
         action="store_true",
-        help=(
-            "기존 장면 이미지가 있어도 "
-            "새로 다운로드합니다."
-        ),
     )
 
     parser.add_argument(
         "--no-update-timeline",
         action="store_true",
-        help=(
-            "이미지만 받고 timeline.json은 "
-            "수정하지 않습니다."
-        ),
     )
 
     return parser
@@ -1700,48 +1872,58 @@ def main() -> int:
         arguments.assets_dir
     )
 
-    try:
-        with WikimediaProvider() as provider:
-            collector = (
-                TimelineMediaCollector(
-                    provider=provider
-                )
-            )
+    provider = WikimediaProvider()
 
-            result = collector.collect(
-                timeline_path=timeline_path,
-                assets_dir=assets_dir,
-                orientation=(
-                    arguments.orientation
-                ),
-                max_search_queries=(
-                    arguments
-                    .max_search_queries
-                ),
-                candidates_per_query=(
-                    arguments
-                    .candidates_per_query
-                ),
-                min_width=(
-                    arguments.min_width
-                ),
-                min_height=(
-                    arguments.min_height
-                ),
-                overwrite=(
-                    arguments.overwrite
-                ),
-                update_timeline=(
-                    not arguments
-                    .no_update_timeline
-                ),
-                scene_ids=(
-                    arguments.scene
-                ),
-            )
+    registry = MediaProviderRegistry(
+        providers=[
+            provider,
+        ]
+    )
+
+    try:
+        collector = TimelineMediaCollector(
+            registry=registry
+        )
+
+        result = collector.collect(
+            timeline_path=timeline_path,
+            assets_dir=assets_dir,
+            orientation=(
+                arguments.orientation
+            ),
+            max_search_queries=(
+                arguments
+                .max_search_queries
+            ),
+            candidates_per_query=(
+                arguments
+                .candidates_per_query
+            ),
+            min_width=(
+                arguments.min_width
+            ),
+            min_height=(
+                arguments.min_height
+            ),
+            overwrite=(
+                arguments.overwrite
+            ),
+            update_timeline=(
+                not arguments
+                .no_update_timeline
+            ),
+            scene_ids=(
+                arguments.scene
+            ),
+            provider_names=(
+                arguments.provider
+                or None
+            ),
+        )
 
     except (
         MediaCollectorError,
+        ProviderRegistryError,
         WikimediaProviderError,
         SearchPromptError,
         ValueError,
@@ -1754,7 +1936,12 @@ def main() -> int:
 
         return 1
 
-    print_summary(result)
+    finally:
+        provider.close()
+
+    print_summary(
+        result
+    )
 
     return 0
 
