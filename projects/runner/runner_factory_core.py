@@ -1,4 +1,4 @@
-﻿from __future__ import annotations
+from __future__ import annotations
 
 import json
 import shutil
@@ -11,16 +11,21 @@ from typing import Any
 RUNNER_DIR = Path(__file__).resolve().parent
 PROJECTS_DIR = RUNNER_DIR.parent
 MEDIA_DIR = PROJECTS_DIR / "media"
+TTS_DIR = PROJECTS_DIR / "tts"
 
-media_dir_text = str(
-    MEDIA_DIR
-)
-
-if media_dir_text not in sys.path:
-    sys.path.insert(
-        0,
-        media_dir_text,
+for module_path in (
+    MEDIA_DIR,
+    TTS_DIR,
+):
+    module_path_text = str(
+        module_path
     )
+
+    if module_path_text not in sys.path:
+        sys.path.insert(
+            0,
+            module_path_text,
+        )
 
 
 from asset_manager import (
@@ -59,6 +64,22 @@ from scene_query_generator import (
 from timeline_validator import (
     TimelineValidationError,
     load_and_validate_timeline,
+)
+from tts_batch import (
+    TTSBatchError,
+    TimelineTTSBatchGenerator,
+)
+from tts_config import (
+    TTSConfig,
+    TTSConfigError,
+)
+from tts_engine import (
+    EdgeTTSEngine,
+    TTSEngineError,
+)
+from quiz_audio_pipeline import (
+    QuizAudioPipeline,
+    QuizAudioPipelineError,
 )
 
 
@@ -125,9 +146,13 @@ class FactoryCore:
 
             self._collect_missing_media()
 
+            self._generate_tts()
+
             self._validate_timeline()
 
             self._collect_and_sync_assets()
+
+            self._sync_audio_assets()
 
             self._publish_timeline()
 
@@ -222,6 +247,10 @@ class FactoryCore:
             CommandExecutionError,
             MediaCollectorError,
             SceneQueryGeneratorError,
+            TTSBatchError,
+            TTSConfigError,
+            TTSEngineError,
+            QuizAudioPipelineError,
             OSError,
             ValueError,
             RuntimeError,
@@ -681,6 +710,209 @@ class FactoryCore:
 
         return missing_scene_ids
 
+    def _generate_tts(
+        self,
+    ) -> None:
+        timeline_path = (
+            self._context
+            .paths
+            .source_timeline
+        )
+
+        if not timeline_path.exists():
+            raise TimelineValidationError(
+                "TTS 생성 전 Timeline 파일이 없습니다:\n"
+                f"{timeline_path}"
+            )
+
+        self._emit(
+            FactoryEventType
+            .ASSETS_DISCOVERED,
+            "실행",
+            {
+                "단계": "TTS 생성 및 Timeline 동기화",
+                "Timeline": timeline_path,
+            },
+        )
+
+        try:
+            timeline_data = json.loads(
+                timeline_path.read_text(
+                    encoding="utf-8-sig"
+                )
+            )
+        except (
+            OSError,
+            json.JSONDecodeError,
+        ) as exc:
+            raise TimelineValidationError(
+                "TTS 생성 전 Timeline을 읽지 못했습니다.\n"
+                f"파일: {timeline_path}\n"
+                f"원인: {exc}"
+            ) from exc
+
+        is_quiz = (
+            isinstance(timeline_data, dict)
+            and (
+                str(
+                    timeline_data.get("channel")
+                    or ""
+                ).strip().lower()
+                == "quiz"
+                or any(
+                    isinstance(scene, dict)
+                    and str(
+                        scene.get("sceneType")
+                        or scene.get("scene_type")
+                        or ""
+                    ).strip().lower()
+                    in {
+                        "intro",
+                        "question",
+                        "countdown",
+                        "answer",
+                        "ending",
+                    }
+                    for scene in (
+                        timeline_data.get("scenes")
+                        if isinstance(
+                            timeline_data.get("scenes"),
+                            list,
+                        )
+                        else []
+                    )
+                )
+            )
+        )
+
+        config = TTSConfig.from_environment()
+        engine = EdgeTTSEngine(
+            config=config
+        )
+        output_dir = (
+            timeline_path.parent
+            / "audio"
+        )
+
+        if is_quiz:
+            result = QuizAudioPipeline(
+                engine=engine
+            ).generate_sync(
+                timeline_path=timeline_path,
+                output_dir=output_dir,
+            )
+
+            self._emit(
+                FactoryEventType
+                .ASSETS_SYNCED,
+                "완료",
+                {
+                    "단계": "Quiz Scene Audio 생성",
+                    "TTS Scene": f"{result.tts_count}개",
+                    "Countdown": f"{result.countdown_count}개",
+                    "새로 생성": f"{result.generated_count}개",
+                    "기존 재사용": f"{result.reused_count}개",
+                    "Audio": result.output_dir,
+                },
+            )
+            return
+
+        generator = TimelineTTSBatchGenerator(
+            engine=engine
+        )
+
+        result = generator.generate_sync(
+            timeline_path=timeline_path,
+            output_dir=output_dir,
+            sync_timeline=True,
+        )
+
+        self._emit(
+            FactoryEventType
+            .ASSETS_SYNCED,
+            "완료",
+            {
+                "단계": "TTS 생성 및 Timeline 동기화",
+                "전체 장면": f"{result.total_count}개",
+                "새로 생성": f"{result.generated_count}개",
+                "기존 재사용": f"{result.reused_count}개",
+                "전체 길이": f"{result.total_duration:.3f}초",
+                "Audio": result.output_dir,
+            },
+        )
+
+    def _sync_audio_assets(
+        self,
+    ) -> None:
+        episode_dir = (
+            self._context
+            .paths
+            .source_timeline
+            .parent
+        )
+        source_audio_dir = (
+            episode_dir
+            / "audio"
+        )
+        destination_audio_dir = (
+            self._context
+            .paths
+            .public_assets_dir
+            / "audio"
+        )
+
+        if not source_audio_dir.exists():
+            raise AssetValidationError(
+                "TTS audio 폴더가 없습니다:\n"
+                f"{source_audio_dir}"
+            )
+
+        audio_files = sorted(
+            path
+            for path in source_audio_dir.iterdir()
+            if (
+                path.is_file()
+                and path.suffix.lower()
+                in {".mp3", ".wav", ".m4a", ".aac"}
+            )
+        )
+
+        if not audio_files:
+            raise AssetValidationError(
+                "복사할 TTS 오디오 파일이 없습니다:\n"
+                f"{source_audio_dir}"
+            )
+
+        destination_audio_dir.mkdir(
+            parents=True,
+            exist_ok=True,
+        )
+
+        copied_count = 0
+
+        for source_path in audio_files:
+            destination_path = (
+                destination_audio_dir
+                / source_path.name
+            )
+            shutil.copy2(
+                source_path,
+                destination_path,
+            )
+            copied_count += 1
+
+        self._emit(
+            FactoryEventType
+            .ASSETS_SYNCED,
+            "완료",
+            {
+                "단계": "TTS Audio 복사",
+                "원본": source_audio_dir,
+                "대상": destination_audio_dir,
+                "복사": f"{copied_count}개",
+            },
+        )
+
     def _validate_timeline(
         self,
     ) -> None:
@@ -879,93 +1111,9 @@ class FactoryCore:
             exist_ok=True,
         )
 
-        timeline_data = (
-            self._load_raw_timeline(
-                source
-            )
-        )
-
-        raw_scenes = timeline_data.get(
-            "scenes"
-        )
-
-        if not isinstance(
-            raw_scenes,
-            list,
-        ):
-            raise TimelineValidationError(
-                "Timeline scenes 필드가 "
-                "배열이 아닙니다."
-            )
-
-        episode_id = (
-            self._context
-            .paths
-            .episode_id
-        )
-
-        episode_prefix = (
-            f"{episode_id}/"
-        )
-
-        for raw_scene in raw_scenes:
-            if not isinstance(
-                raw_scene,
-                dict,
-            ):
-                continue
-
-            raw_media = raw_scene.get(
-                "media"
-            )
-
-            if not isinstance(
-                raw_media,
-                dict,
-            ):
-                continue
-
-            raw_src = raw_media.get(
-                "src"
-            )
-
-            if not isinstance(
-                raw_src,
-                str,
-            ):
-                continue
-
-            src = (
-                raw_src
-                .strip()
-                .replace("\\", "/")
-                .lstrip("/")
-            )
-
-            if not src:
-                continue
-
-            if src.startswith(
-                episode_prefix
-            ):
-                public_src = src
-            else:
-                public_src = (
-                    episode_prefix
-                    + src
-                )
-
-            raw_media["src"] = (
-                public_src
-            )
-
-        destination.write_text(
-            json.dumps(
-                timeline_data,
-                ensure_ascii=False,
-                indent=2,
-            ) + "\n",
-            encoding="utf-8",
+        shutil.copy2(
+            source,
+            destination,
         )
 
         self._emit(
