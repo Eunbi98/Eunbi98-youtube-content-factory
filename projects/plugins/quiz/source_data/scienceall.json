@@ -1,0 +1,53 @@
+{
+  "source_id": "scienceall",
+  "facts": [
+    {
+      "id": "scienceall_elementary_001",
+      "level": "elementary",
+      "category": "science",
+      "fact": "지구가 태양을 한 바퀴 도는 데 걸리는 시간은 약 365일이다.",
+      "answer": "약 365일",
+      "explanation": "지구의 공전 주기는 약 365.24일이며, 남는 시간을 보정하기 위해 윤년을 둔다.",
+      "source_url": "https://www.scienceall.com/",
+      "verified_at": "2026-07-14",
+      "evergreen": true,
+      "tags": ["earth", "orbit", "space"]
+    },
+    {
+      "id": "scienceall_elementary_002",
+      "level": "elementary",
+      "category": "science",
+      "fact": "식물이 빛을 이용해 양분을 만드는 작용을 광합성이라고 한다.",
+      "answer": "광합성",
+      "explanation": "식물은 주로 잎의 엽록체에서 빛에너지를 이용해 양분을 만든다.",
+      "source_url": "https://www.scienceall.com/",
+      "verified_at": "2026-07-14",
+      "evergreen": true,
+      "tags": ["plant", "photosynthesis", "biology"]
+    },
+    {
+      "id": "scienceall_middle_001",
+      "level": "middle",
+      "category": "science",
+      "fact": "원소의 성질을 유지하는 가장 작은 입자는 원자이다.",
+      "answer": "원자",
+      "explanation": "원자는 원자핵과 전자로 이루어지며 화학 반응의 기본 단위가 된다.",
+      "source_url": "https://www.scienceall.com/",
+      "verified_at": "2026-07-14",
+      "evergreen": true,
+      "tags": ["atom", "chemistry", "element"]
+    },
+    {
+      "id": "scienceall_high_001",
+      "level": "high",
+      "category": "science",
+      "fact": "세포 호흡에서 포도당의 에너지를 세포가 사용할 수 있는 형태로 전달하는 대표 물질은 ATP이다.",
+      "answer": "ATP",
+      "explanation": "ATP는 인산 결합에 에너지를 저장하고 세포의 다양한 생명 활동에 에너지를 공급한다.",
+      "source_url": "https://www.scienceall.com/",
+      "verified_at": "2026-07-14",
+      "evergreen": true,
+      "tags": ["atp", "cell", "biology"]
+    }
+  ]
+}

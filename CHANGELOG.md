@@ -1,8 +1,20 @@
-# Release 8.3.3
+# Release 8.4.1 — Quiz Source Collector
 
-- Quiz Timeline은 Remotion `QuizEpisode` Composition으로 렌더
-- Mystery Timeline은 기존 `Episode` Composition 유지
-- Quiz Scene 오디오 경로를 `epXXX/audio/...` 형식으로 저장
-- Question, Answer, Countdown 오디오 경로 일치
-- 기존 Quiz 레이아웃 유지
-- TTS 기반 동적 Scene duration 유지
+## Added
+
+- 난이도 체계: `elementary`, `middle`, `high`, `current`
+- 공식 출처 Source Registry
+- 검증된 로컬 Source Pack
+- Fact 데이터 스키마 및 검증
+- 출처 우선순위 기반 품질 점수
+- Fact 중복 제거용 SHA-256 해시
+- 난이도·카테고리 필터
+- `fact_pool_<level>.json` 생성 CLI
+
+## Unchanged
+
+- Mystery Factory
+- Quiz Scene Builder
+- Quiz Audio Pipeline
+- Remotion 레이아웃
+- Factory Runner

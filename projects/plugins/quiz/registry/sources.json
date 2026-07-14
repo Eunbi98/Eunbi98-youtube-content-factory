@@ -1,0 +1,83 @@
+{
+  "version": "1.0",
+  "sources": [
+    {
+      "id": "scienceall",
+      "name": "사이언스올",
+      "organization": "한국과학창의재단",
+      "homepage": "https://www.scienceall.com/",
+      "levels": ["elementary", "middle", "high"],
+      "categories": ["science", "technology", "environment"],
+      "language": "ko",
+      "priority": 95,
+      "collection_mode": "local_json",
+      "data_file": "scienceall.json",
+      "enabled": true
+    },
+    {
+      "id": "national_museum_korea",
+      "name": "국립중앙박물관",
+      "organization": "국립중앙박물관",
+      "homepage": "https://www.museum.go.kr/",
+      "levels": ["elementary", "middle", "high"],
+      "categories": ["history", "culture"],
+      "language": "ko",
+      "priority": 95,
+      "collection_mode": "local_json",
+      "data_file": "national_museum_korea.json",
+      "enabled": true
+    },
+    {
+      "id": "national_geographic_information_institute",
+      "name": "국토지리정보원",
+      "organization": "국토지리정보원",
+      "homepage": "https://www.ngii.go.kr/",
+      "levels": ["elementary", "middle", "high"],
+      "categories": ["geography", "general"],
+      "language": "ko",
+      "priority": 92,
+      "collection_mode": "local_json",
+      "data_file": "ngii.json",
+      "enabled": true
+    },
+    {
+      "id": "national_institute_korean_language",
+      "name": "국립국어원",
+      "organization": "국립국어원",
+      "homepage": "https://www.korean.go.kr/",
+      "levels": ["elementary", "middle", "high"],
+      "categories": ["language", "culture"],
+      "language": "ko",
+      "priority": 94,
+      "collection_mode": "local_json",
+      "data_file": "korean_language.json",
+      "enabled": true
+    },
+    {
+      "id": "nasa",
+      "name": "NASA",
+      "organization": "National Aeronautics and Space Administration",
+      "homepage": "https://www.nasa.gov/",
+      "levels": ["elementary", "middle", "high", "current"],
+      "categories": ["science", "technology", "current"],
+      "language": "en",
+      "priority": 98,
+      "collection_mode": "local_json",
+      "data_file": "nasa.json",
+      "enabled": true
+    },
+    {
+      "id": "korea_policy_briefing",
+      "name": "대한민국 정책브리핑",
+      "organization": "문화체육관광부",
+      "homepage": "https://www.korea.kr/",
+      "levels": ["current"],
+      "categories": ["current", "society", "economy", "technology", "health", "environment"],
+      "language": "ko",
+      "priority": 96,
+      "collection_mode": "local_json",
+      "data_file": "korea_policy_briefing.json",
+      "enabled": true
+    }
+  ]
+}
