@@ -1,20 +1,16 @@
-# Release 8.4.1 — Quiz Source Collector
+# Release 8.4.2
 
 ## Added
 
-- 난이도 체계: `elementary`, `middle`, `high`, `current`
-- 공식 출처 Source Registry
-- 검증된 로컬 Source Pack
-- Fact 데이터 스키마 및 검증
-- 출처 우선순위 기반 품질 점수
-- Fact 중복 제거용 SHA-256 해시
-- 난이도·카테고리 필터
-- `fact_pool_<level>.json` 생성 CLI
+- Fact Pool 기반 Question Generator
+- 직접 질문, 빈칸 질문, 설명형 질문 자동 생성
+- 정답, 해설, 검색 키워드, 공식 출처 메타데이터 유지
+- Question 품질 점수 계산
+- 중복 문제 제거
+- 난이도별 `question_pool_<level>.json` 생성
 
-## Unchanged
+## Compatibility
 
-- Mystery Factory
-- Quiz Scene Builder
-- Quiz Audio Pipeline
-- Remotion 레이아웃
-- Factory Runner
+- Release 8.3 Quiz Renderer 및 Audio Pipeline 변경 없음
+- Mystery Factory 변경 없음
+- 기존 Fact Pool 구조 유지
