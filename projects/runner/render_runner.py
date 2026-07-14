@@ -1,4 +1,4 @@
-﻿from __future__ import annotations
+from __future__ import annotations
 
 import json
 import shutil
@@ -95,13 +95,41 @@ def render_episode(
         ensure_ascii=False,
     )
 
+    timeline_path = (
+        remotion_dir
+        / "public"
+        / episode_id
+        / "timeline.json"
+    )
+
+    composition_id = "Episode"
+
+    if timeline_path.exists():
+        try:
+            timeline_data = json.loads(
+                timeline_path.read_text(encoding="utf-8-sig")
+            )
+        except (OSError, json.JSONDecodeError) as exc:
+            raise CommandExecutionError(
+                "렌더 Composition 판별용 Timeline을 읽지 못했습니다: "
+                f"{timeline_path}\n원인: {exc}"
+            ) from exc
+
+        if isinstance(timeline_data, dict):
+            channel = str(
+                timeline_data.get("channel") or ""
+            ).strip().lower()
+
+            if channel == "quiz":
+                composition_id = "QuizEpisode"
+
     run_command(
         [
             npx,
             "remotion",
             "render",
             "src/index.ts",
-            "Episode",
+            composition_id,
             str(output_path.resolve()),
             "--props",
             input_props,

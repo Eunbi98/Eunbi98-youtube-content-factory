@@ -1,15 +1,8 @@
-# CHANGELOG
+# Release 8.3.3
 
-## Release 6 Feature 5
-
-### Added
-
-- `MysteryPlugin.build()` 통합 API
-- Story 생성, 최적화, Factory Core 실행, Timeline 저장 통합
-- End-to-End CLI 정리
-
-### Preserved
-
-- 기존 `MysteryPlugin.generate()` API
-- Factory Core 장르 독립성
-- Remotion Renderer 책임 분리
+- Quiz Timeline은 Remotion `QuizEpisode` Composition으로 렌더
+- Mystery Timeline은 기존 `Episode` Composition 유지
+- Quiz Scene 오디오 경로를 `epXXX/audio/...` 형식으로 저장
+- Question, Answer, Countdown 오디오 경로 일치
+- 기존 Quiz 레이아웃 유지
+- TTS 기반 동적 Scene duration 유지

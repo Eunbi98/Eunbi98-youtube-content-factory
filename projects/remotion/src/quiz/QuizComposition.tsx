@@ -2,7 +2,9 @@ import React from 'react';
 
 import {
 	AbsoluteFill,
+	Audio,
 	Sequence,
+	staticFile,
 } from 'remotion';
 
 import type {
@@ -47,6 +49,10 @@ export const QuizComposition: React.FC<
 		);
 	}
 
+	const episodeId = timeline.episodeId
+		.trim()
+		.toLowerCase();
+
 	return (
 		<AbsoluteFill>
 			{timeline.scenes.map((scene) => {
@@ -78,6 +84,18 @@ export const QuizComposition: React.FC<
 								timeline.title
 							}
 						/>
+
+						{scene.audio ? (
+							<Audio
+								src={staticFile(
+									scene.audio.toLowerCase().startsWith(
+										`${episodeId}/`,
+									)
+										? scene.audio
+										: `${episodeId}/${scene.audio.replace(/^\/+/, '')}`,
+								)}
+							/>
+						) : null}
 					</Sequence>
 				);
 			})}
