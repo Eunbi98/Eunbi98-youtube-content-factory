@@ -30,6 +30,8 @@ from manifest_builder import ManifestBuilder  # noqa: E402
 from media_ranker import rerank_candidates  # noqa: E402
 from provider_models import MediaCandidate  # noqa: E402
 from providers.nasa_provider import NasaProvider  # noqa: E402
+from providers.openverse_provider import OpenverseProvider  # noqa: E402
+from providers.pixabay_provider import PixabayProvider  # noqa: E402
 from providers.wikimedia_provider import WikimediaProvider  # noqa: E402
 
 
@@ -43,6 +45,21 @@ SPACE_TERMS = {
     "planet",
     "solar",
     "astronaut",
+}
+
+LIFESTYLE_TERMS = {
+    "person",
+    "people",
+    "sleep",
+    "sleeping",
+    "bed",
+    "bedroom",
+    "wake",
+    "wakes",
+    "awake",
+    "tired",
+    "stress",
+    "stressed",
 }
 
 
@@ -126,15 +143,31 @@ class MediaCollector:
             / "output"
             / "media_cache"
         )
+        self.api_keys = load_api_keys(
+            PROJECT_ROOT
+        )
         self.wikimedia = (
             WikimediaProvider()
         )
         self.nasa = NasaProvider()
+        self.openverse = OpenverseProvider()
+
+        pixabay_api_key = (
+            self.api_keys.get(
+                "pixabay",
+                "",
+            ).strip()
+        )
+        self.pixabay = (
+            PixabayProvider(
+                api_key=pixabay_api_key,
+            )
+            if pixabay_api_key
+            else None
+        )
+
         self.downloader = (
             MediaDownloader()
-        )
-        self.api_keys = load_api_keys(
-            PROJECT_ROOT
         )
 
     def collect(
@@ -234,9 +267,19 @@ class MediaCollector:
                 if not query:
                     continue
 
+                normalized_query_terms = {
+                    term.casefold()
+                    for term in query.split()
+                }
+
+                is_lifestyle_query = bool(
+                    normalized_query_terms
+                    & LIFESTYLE_TERMS
+                )
+
                 candidates.extend(
                     self._search_provider(
-                        provider_name="wikimedia",
+                        provider_name="openverse",
                         query=query,
                         limit=candidates_per_query,
                     )
@@ -251,6 +294,24 @@ class MediaCollector:
                                 candidates_per_query,
                                 10,
                             ),
+                        )
+                    )
+
+                if not is_lifestyle_query:
+                    candidates.extend(
+                        self._search_provider(
+                            provider_name="wikimedia",
+                            query=query,
+                            limit=candidates_per_query,
+                        )
+                    )
+
+                if self.pixabay is not None:
+                    candidates.extend(
+                        self._search_provider(
+                            provider_name="pixabay",
+                            query=query,
+                            limit=candidates_per_query,
                         )
                     )
 
@@ -273,8 +334,12 @@ class MediaCollector:
             selected: MediaCandidate | None = None
             local_path: Path | None = None
             download_errors: list[str] = []
+            blocked_providers: set[str] = set()
 
             for candidate in ranked:
+                if candidate.provider in blocked_providers:
+                    continue
+
                 try:
                     local_path = (
                         self.downloader.download(
@@ -288,15 +353,31 @@ class MediaCollector:
                     selected = candidate
                     break
                 except MediaDownloadError as exc:
+                    error_text = str(exc)
+
                     download_errors.append(
                         f"{candidate.provider}: "
-                        f"{candidate.title} / {exc}"
+                        f"{candidate.title} / {error_text}"
                     )
+
                     print(
                         f"[RETRY] {scene_id}: "
                         f"{candidate.provider} / "
                         f"{candidate.title}"
                     )
+
+                    if (
+                        "429" in error_text
+                        or "Too Many Requests" in error_text
+                    ):
+                        blocked_providers.add(
+                            candidate.provider
+                        )
+                        print(
+                            f"[SKIP PROVIDER] {scene_id}: "
+                            f"{candidate.provider} "
+                            "rate limited"
+                        )
 
             if (
                 selected is None
@@ -358,9 +439,12 @@ class MediaCollector:
                 "candidates"
             )
 
-            if isinstance(
-                raw_candidates,
-                list,
+            if (
+                isinstance(
+                    raw_candidates,
+                    list,
+                )
+                and raw_candidates
             ):
                 return [
                     candidate_from_dict(
@@ -382,6 +466,19 @@ class MediaCollector:
             )
         elif provider_name == "nasa":
             candidates = self.nasa.search(
+                query=query,
+                limit=limit,
+            )
+        elif provider_name == "openverse":
+            candidates = self.openverse.search(
+                query=query,
+                limit=limit,
+            )
+        elif (
+            provider_name == "pixabay"
+            and self.pixabay is not None
+        ):
+            candidates = self.pixabay.search(
                 query=query,
                 limit=limit,
             )

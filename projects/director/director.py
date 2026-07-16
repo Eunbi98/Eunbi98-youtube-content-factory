@@ -6,6 +6,7 @@ from typing import Callable
 from build_timeline import (
     build_ep008_story,
     build_ep010_story,
+    build_ep011_story,
 )
 from factory_core import FactoryBuildResult, FactoryCore
 from story_graph import Story
@@ -19,6 +20,7 @@ class DirectorError(RuntimeError):
 STORY_BUILDERS: dict[str, Callable[[], Story]] = {
     "ep008": build_ep008_story,
     "ep010": build_ep010_story,
+    "ep011": build_ep011_story,
 }
 
 

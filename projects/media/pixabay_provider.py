@@ -1,4 +1,4 @@
-from __future__ import annotations
+﻿from __future__ import annotations
 
 import argparse
 import os
@@ -40,7 +40,7 @@ PIXABAY_LICENSE_URL: Final[str] = (
 class PixabayProviderError(
     MediaProviderError
 ):
-    """Pixabay 검색 또는 다운로드 오류입니다."""
+    """Pixabay 寃???먮뒗 ?ㅼ슫濡쒕뱶 ?ㅻ쪟?낅땲??"""
 
 
 def normalize_string(
@@ -172,7 +172,7 @@ class PixabayProvider(
     MediaProvider
 ):
     """
-    Pixabay 공식 API 기반 이미지 Provider입니다.
+    Pixabay 怨듭떇 API 湲곕컲 ?대?吏 Provider?낅땲??
     """
 
     def __init__(
@@ -196,9 +196,9 @@ class PixabayProvider(
 
         if not resolved_api_key:
             raise PixabayProviderError(
-                "PIXABAY_API_KEY가 없습니다.\n"
-                "프로젝트 루트의 .env 파일에 "
-                "다음 형식으로 추가하세요:\n"
+                "PIXABAY_API_KEY媛 ?놁뒿?덈떎.\n"
+                "?꾨줈?앺듃 猷⑦듃??.env ?뚯씪??"
+                "?ㅼ쓬 ?뺤떇?쇰줈 異붽??섏꽭??\n"
                 "PIXABAY_API_KEY=your_key"
             )
 
@@ -208,7 +208,7 @@ class PixabayProvider(
 
         if not normalized_language:
             raise ValueError(
-                "language는 비어 있을 수 없습니다."
+                "language??鍮꾩뼱 ?덉쓣 ???놁뒿?덈떎."
             )
 
         if image_type not in {
@@ -218,7 +218,7 @@ class PixabayProvider(
             "vector",
         }:
             raise ValueError(
-                "지원하지 않는 image_type입니다: "
+                "吏?먰븯吏 ?딅뒗 image_type?낅땲?? "
                 f"{image_type}"
             )
 
@@ -227,7 +227,7 @@ class PixabayProvider(
             "latest",
         }:
             raise ValueError(
-                "지원하지 않는 order입니다: "
+                "吏?먰븯吏 ?딅뒗 order?낅땲?? "
                 f"{order}"
             )
 
@@ -349,10 +349,10 @@ class PixabayProvider(
             ValueError,
         ) as exc:
             raise PixabayProviderError(
-                "Pixabay 이미지 검색에 "
-                "실패했습니다.\n"
-                f"검색어: {request.query}\n"
-                f"원인: {exc}"
+                "Pixabay ?대?吏 寃?됱뿉 "
+                "?ㅽ뙣?덉뒿?덈떎.\n"
+                f"寃?됱뼱: {request.query}\n"
+                f"?먯씤: {exc}"
             ) from exc
 
         candidates = (
@@ -378,9 +378,9 @@ class PixabayProvider(
             != self.name
         ):
             raise PixabayProviderError(
-                "다른 Provider의 후보는 "
-                "PixabayProvider로 "
-                "다운로드할 수 없습니다.\n"
+                "?ㅻⅨ Provider???꾨낫??"
+                "PixabayProvider濡?"
+                "?ㅼ슫濡쒕뱶?????놁뒿?덈떎.\n"
                 f"candidate.provider: "
                 f"{candidate.provider}"
             )
@@ -390,8 +390,8 @@ class PixabayProvider(
             != "image"
         ):
             raise PixabayProviderError(
-                "PixabayProvider는 현재 "
-                "이미지 다운로드만 지원합니다."
+                "PixabayProvider???꾩옱 "
+                "?대?吏 ?ㅼ슫濡쒕뱶留?吏?먰빀?덈떎."
             )
 
         try:
@@ -413,12 +413,12 @@ class PixabayProvider(
             OSError,
         ) as exc:
             raise PixabayProviderError(
-                "Pixabay 이미지 다운로드에 "
-                "실패했습니다.\n"
-                f"제목: {candidate.title}\n"
+                "Pixabay ?대?吏 ?ㅼ슫濡쒕뱶??"
+                "?ㅽ뙣?덉뒿?덈떎.\n"
+                f"?쒕ぉ: {candidate.title}\n"
                 f"URL: "
                 f"{candidate.download_url}\n"
-                f"원인: {exc}"
+                f"?먯씤: {exc}"
             ) from exc
 
         return MediaDownloadResult(
@@ -713,8 +713,8 @@ def build_argument_parser(
 ) -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(
         description=(
-            "Pixabay에서 이미지를 "
-            "검색하고 다운로드합니다."
+            "Pixabay?먯꽌 ?대?吏瑜?"
+            "寃?됲븯怨??ㅼ슫濡쒕뱶?⑸땲??"
         )
     )
 

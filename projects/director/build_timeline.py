@@ -321,3 +321,128 @@ def build_ep010_story() -> Story:
         ],
     )
 
+def build_ep011_story() -> Story:
+    return Story(
+        episode_id="ep011",
+        title="\uc7a0\ub4e4 \ub54c \uac11\uc790\uae30\n\ub5a8\uc5b4\uc9c0\ub294 \ub290\ub08c\uc758 \uc774\uc720",
+        fps=30,
+        width=1080,
+        height=1920,
+        background_color="#000000",
+        title_color="#7CFFB2",
+        caption_color="#FFFFFF",
+        accent_color="#7CFFB2",
+        beats=[
+            Hook(
+                title="\uc65c \uc7a0\ub4e4 \ub54c\n\ub5a8\uc5b4\uc9c0\ub294 \ub290\ub08c\uc774 \ub4e4\uae4c\uc694?",
+                narration=(
+                    "\uc65c \uc7a0\ub4e4 \ub54c \uac11\uc790\uae30 "
+                    "\ub5a8\uc5b4\uc9c0\ub294 \ub290\ub08c\uc774 \ub4e4\uae4c\uc694?"
+                ),
+                subtitle=(
+                    "\uc65c \uc7a0\ub4e4 \ub54c \uac11\uc790\uae30\n"
+                    "\ub5a8\uc5b4\uc9c0\ub294 \ub290\ub08c\uc774 \ub4e4\uae4c\uc694?"
+                ),
+                duration=5,
+                media=StoryMedia(
+                    type="image",
+                    src="ep011/scene_001.jpg",
+                ),
+                keywords=[
+                    "sleeping",
+                    "sleep",
+                    "bed",
+                ],
+            ),
+            Answer(
+                title="\ubab8\uc774 \uc6c0\ucc14\ud558\uba70\n\uae68\ub294 \uc21c\uac04",
+                narration=(
+                    "\uc7a0\ub4e4\uae30 \uc9c1\uc804 \ubab8\uc774 \uc6c0\ucc14\ud558\uba70 "
+                    "\uae6c \uc801\uc774 \uc788\ub2e4\uba74 \uc5ec\ub7ec\ubd84\ub9cc "
+                    "\uadf8\ub7f0 \uac83\uc774 \uc544\ub2d9\ub2c8\ub2e4."
+                ),
+                subtitle=(
+                    "\ubab8\uc774 \uc6c0\ucc14\ud558\uba70 \uae7c\ub2e4\uba74\n"
+                    "\uc5ec\ub7ec\ubd84\ub9cc \uadf8\ub7f0 \uac8c \uc544\ub2d9\ub2c8\ub2e4"
+                ),
+                duration=7,
+                media=StoryMedia(
+                    type="image",
+                    src="ep011/scene_002.jpg",
+                ),
+                keywords=[
+                    "waking up",
+                    "waking up in bed",
+                    "startled awake",   
+                ],
+            ),
+            Narrative(
+                title="\ub1cc\uac00 \ucd94\ub77d\uc73c\ub85c\n\ucc29\uac01\ud569\ub2c8\ub2e4",
+                narration=(
+                    "\uc7a0\uc774 \ub4e4\uba74\uc11c \uadfc\uc721\uc758 \ud798\uc774 "
+                    "\ud480\ub9ac\ub294 \uc21c\uac04, \ub1cc\uac00 \uadf8 \ubcc0\ud654\ub97c "
+                    "\ucd94\ub77d\uc73c\ub85c \ucc29\uac01\ud558\uae30\ub3c4 \ud569\ub2c8\ub2e4."
+                ),
+                subtitle=(
+                    "\uadfc\uc721\uc758 \ud798\uc774 \ud480\ub9ac\ub294 \uc21c\uac04\n"
+                    "\ub1cc\uac00 \ucd94\ub77d\uc73c\ub85c \ucc29\uac01\ud569\ub2c8\ub2e4"
+                ),
+                duration=7,
+                media=StoryMedia(
+                    type="image",
+                    src="ep011/scene_003.jpg",
+                ),
+                keywords=[
+                    "human brain illustration",
+                    "brain neurons",
+                    "brain activity",
+                ],
+            ),
+            Fact(
+                title="\uc774 \ud604\uc0c1\uc758 \uc774\ub984\uc740\n\uc785\uba74\uacbd\ub828",
+                narration=(
+                    "\uc774 \ud604\uc0c1\uc744 \uc785\uba74\uacbd\ub828\uc774\ub77c\uace0 "
+                    "\ud558\uba70, \ub300\ubd80\ubd84 \uac74\uac15\ud55c \uc0ac\ub78c\uc5d0\uac8c\ub3c4 "
+                    "\ub098\ud0c0\ub0a0 \uc218 \uc788\uc2b5\ub2c8\ub2e4."
+                ),
+                subtitle=(
+                    "\uc774 \ud604\uc0c1\uc758 \uc774\ub984\uc740 \uc785\uba74\uacbd\ub828\n"
+                    "\ub300\ubd80\ubd84 \uc815\uc0c1\uc801\uc778 \ud604\uc0c1\uc785\ub2c8\ub2e4"
+                ),
+                duration=7,
+                media=StoryMedia(
+                    type="image",
+                    src="ep011/scene_004.jpg",
+                ),
+                keywords=[
+                    "sleep illustration",
+                    "sleep science",
+                    "sleeping body",
+                ],
+            ),
+            Ending(
+                title="\ud53c\uace4\ud560\uc218\ub85d\n\ub354 \uc790\uc8fc \uc0dd\uae38 \uc218 \uc788\uc2b5\ub2c8\ub2e4",
+                narration=(
+                    "\ud53c\uace4\ud558\uac70\ub098 \uc2a4\ud2b8\ub808\uc2a4\ub97c "
+                    "\ub9ce\uc774 \ubc1b\uc73c\uba74 \ub354 \uc790\uc8fc \ub098\ud0c0\ub0a0 "
+                    "\uc218 \uc788\uc2b5\ub2c8\ub2e4. \uc5ec\ub7ec\ubd84\ub3c4 "
+                    "\uc774\ub7f0 \uacbd\ud5d8\uc774 \uc788\uc5c8\ub098\uc694?"
+                ),
+                subtitle=(
+                    "\ud53c\uace4\ud558\uba74 \ub354 \uc790\uc8fc \uc0dd\uae38 \uc218 \uc788\uc2b5\ub2c8\ub2e4\n"
+                    "\uc5ec\ub7ec\ubd84\ub3c4 \uacbd\ud5d8\ud574 \ubcf4\uc168\ub098\uc694?"
+                ),
+                duration=7,
+                media=StoryMedia(
+                    type="image",
+                    src="ep011/scene_005.jpg",
+                ),
+                keywords=[
+                    "tired person",
+                    "stressed person",
+                    "peaceful sleeping",
+                ],
+            ),
+        ],
+    )
+

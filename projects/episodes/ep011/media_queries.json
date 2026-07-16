@@ -1,0 +1,434 @@
+{
+  "version": "2.0",
+  "episodeId": "ep011",
+  "timelinePath": "C:\\Users\\user\\Desktop\\Eunbi98-youtube-content-factory\\projects\\episodes\\ep011\\timeline.json",
+  "sceneCount": 5,
+  "scenes": [
+    {
+      "sceneId": "scene_001",
+      "title": "왜 잠들 때 떨어지는 느낌이 들까요",
+      "narration": "왜 잠들 때 갑자기 떨어지는 느낌이 들까요",
+      "sourceKeywords": [
+        "sleeping",
+        "sleep",
+        "sleeping wide view",
+        "sleeping landscape",
+        "sleep wide view",
+        "sleep landscape",
+        "sleeping close up",
+        "sleeping detailed view",
+        "sleep close up",
+        "sleep detailed view"
+      ],
+      "entities": [
+        "sleeping sleep sleeping wide view sleeping landscape sleep",
+        "ape sleeping close up sleeping detailed view sleep"
+      ],
+      "primaryQuery": "sleeping",
+      "queries": [
+        {
+          "query": "sleeping",
+          "intent": "primary",
+          "priority": 1,
+          "mediaKind": "any"
+        },
+        {
+          "query": "sleep",
+          "intent": "primary",
+          "priority": 2,
+          "mediaKind": "any"
+        },
+        {
+          "query": "sleeping wide view",
+          "intent": "wide",
+          "priority": 3,
+          "mediaKind": "any"
+        },
+        {
+          "query": "sleep wide view",
+          "intent": "wide",
+          "priority": 4,
+          "mediaKind": "any"
+        },
+        {
+          "query": "sleeping close up",
+          "intent": "detail",
+          "priority": 5,
+          "mediaKind": "any"
+        },
+        {
+          "query": "sleeping detailed view",
+          "intent": "detail",
+          "priority": 6,
+          "mediaKind": "any"
+        },
+        {
+          "query": "sleep close up",
+          "intent": "detail",
+          "priority": 7,
+          "mediaKind": "any"
+        },
+        {
+          "query": "sleep detailed view",
+          "intent": "detail",
+          "priority": 8,
+          "mediaKind": "any"
+        },
+        {
+          "query": "sleeping landscape",
+          "intent": "wide",
+          "priority": 9,
+          "mediaKind": "any"
+        },
+        {
+          "query": "sleep landscape",
+          "intent": "wide",
+          "priority": 10,
+          "mediaKind": "any"
+        }
+      ]
+    },
+    {
+      "sceneId": "scene_002",
+      "title": "몸이 움찔하며 깨는 순간",
+      "narration": "잠들기 직전 몸이 움찔하며 깬 적이 있다면 여러분만 그런 것이 아닙니다.",
+      "sourceKeywords": [
+        "waking up bed",
+        "waking up",
+        "waking up bed wide view",
+        "waking up bed landscape",
+        "waking up wide view",
+        "waking up landscape",
+        "waking up bed close up",
+        "waking up bed detailed view",
+        "waking up close up",
+        "waking up detailed view"
+      ],
+      "entities": [
+        "waking up bed waking up waking up bed",
+        "wide view waking up landscape waking up bed",
+        "waking up close up waking up detailed view"
+      ],
+      "primaryQuery": "waking up bed",
+      "queries": [
+        {
+          "query": "waking up bed",
+          "intent": "primary",
+          "priority": 1,
+          "mediaKind": "any"
+        },
+        {
+          "query": "waking up",
+          "intent": "primary",
+          "priority": 2,
+          "mediaKind": "any"
+        },
+        {
+          "query": "waking up bed wide view",
+          "intent": "wide",
+          "priority": 3,
+          "mediaKind": "any"
+        },
+        {
+          "query": "waking up bed close up",
+          "intent": "detail",
+          "priority": 4,
+          "mediaKind": "any"
+        },
+        {
+          "query": "waking up bed detailed view",
+          "intent": "detail",
+          "priority": 5,
+          "mediaKind": "any"
+        },
+        {
+          "query": "waking up bed landscape",
+          "intent": "wide",
+          "priority": 6,
+          "mediaKind": "any"
+        },
+        {
+          "query": "waking up wide view",
+          "intent": "wide",
+          "priority": 7,
+          "mediaKind": "any"
+        },
+        {
+          "query": "waking up close up",
+          "intent": "detail",
+          "priority": 8,
+          "mediaKind": "any"
+        },
+        {
+          "query": "waking up detailed view",
+          "intent": "detail",
+          "priority": 9,
+          "mediaKind": "any"
+        },
+        {
+          "query": "waking up landscape",
+          "intent": "wide",
+          "priority": 10,
+          "mediaKind": "any"
+        }
+      ]
+    },
+    {
+      "sceneId": "scene_003",
+      "title": "뇌가 추락으로 착각합니다",
+      "narration": "잠이 들면서 근육의 힘이 풀리는 순간 뇌가 그 변화를 추락으로 착각하기도 합니다.",
+      "sourceKeywords": [
+        "human brain illustration",
+        "brain neurons",
+        "human brain illustration wide view",
+        "human brain illustration landscape",
+        "brain neurons wide view",
+        "brain neurons landscape",
+        "human brain illustration close up",
+        "human brain illustration detailed view",
+        "brain neurons close up",
+        "brain neurons detailed view"
+      ],
+      "entities": [
+        "human brain illustration brain neurons human brain illustration",
+        "rain illustration landscape brain neurons wide view brain",
+        "brain illustration close up human brain illustration detailed",
+        "close up brain neurons detailed view"
+      ],
+      "primaryQuery": "human brain illustration",
+      "queries": [
+        {
+          "query": "human brain illustration",
+          "intent": "primary",
+          "priority": 1,
+          "mediaKind": "any"
+        },
+        {
+          "query": "brain neurons",
+          "intent": "primary",
+          "priority": 2,
+          "mediaKind": "any"
+        },
+        {
+          "query": "human brain illustration wide view",
+          "intent": "wide",
+          "priority": 3,
+          "mediaKind": "any"
+        },
+        {
+          "query": "human brain illustration close up",
+          "intent": "detail",
+          "priority": 4,
+          "mediaKind": "any"
+        },
+        {
+          "query": "human brain illustration detailed view",
+          "intent": "detail",
+          "priority": 5,
+          "mediaKind": "any"
+        },
+        {
+          "query": "human brain illustration landscape",
+          "intent": "wide",
+          "priority": 6,
+          "mediaKind": "any"
+        },
+        {
+          "query": "brain neurons wide view",
+          "intent": "wide",
+          "priority": 7,
+          "mediaKind": "any"
+        },
+        {
+          "query": "brain neurons close up",
+          "intent": "detail",
+          "priority": 8,
+          "mediaKind": "any"
+        },
+        {
+          "query": "brain neurons detailed view",
+          "intent": "detail",
+          "priority": 9,
+          "mediaKind": "any"
+        },
+        {
+          "query": "brain neurons landscape",
+          "intent": "wide",
+          "priority": 10,
+          "mediaKind": "any"
+        }
+      ]
+    },
+    {
+      "sceneId": "scene_004",
+      "title": "이 현상의 이름은 입면경련",
+      "narration": "이 현상을 입면경련이라고 하며 대부분 건강한 사람에게도 나타날 수 있습니다.",
+      "sourceKeywords": [
+        "sleep illustration",
+        "sleep science",
+        "sleep illustration wide view",
+        "sleep illustration landscape",
+        "sleep science wide view",
+        "sleep science landscape",
+        "sleep illustration close up",
+        "sleep illustration detailed view",
+        "sleep science close up",
+        "sleep science detailed view"
+      ],
+      "entities": [
+        "sleep illustration sleep science sleep illustration wide view",
+        "landscape sleep science wide view sleep science landscape",
+        "up sleep illustration detailed view sleep science close",
+        "ed view"
+      ],
+      "primaryQuery": "sleep illustration",
+      "queries": [
+        {
+          "query": "sleep illustration",
+          "intent": "primary",
+          "priority": 1,
+          "mediaKind": "any"
+        },
+        {
+          "query": "sleep science",
+          "intent": "primary",
+          "priority": 2,
+          "mediaKind": "any"
+        },
+        {
+          "query": "sleep illustration wide view",
+          "intent": "wide",
+          "priority": 3,
+          "mediaKind": "any"
+        },
+        {
+          "query": "sleep science wide view",
+          "intent": "wide",
+          "priority": 4,
+          "mediaKind": "any"
+        },
+        {
+          "query": "sleep illustration close up",
+          "intent": "detail",
+          "priority": 5,
+          "mediaKind": "any"
+        },
+        {
+          "query": "sleep illustration detailed view",
+          "intent": "detail",
+          "priority": 6,
+          "mediaKind": "any"
+        },
+        {
+          "query": "sleep science close up",
+          "intent": "detail",
+          "priority": 7,
+          "mediaKind": "any"
+        },
+        {
+          "query": "sleep science detailed view",
+          "intent": "detail",
+          "priority": 8,
+          "mediaKind": "any"
+        },
+        {
+          "query": "sleep illustration landscape",
+          "intent": "wide",
+          "priority": 9,
+          "mediaKind": "any"
+        },
+        {
+          "query": "sleep science landscape",
+          "intent": "wide",
+          "priority": 10,
+          "mediaKind": "any"
+        }
+      ]
+    },
+    {
+      "sceneId": "scene_005",
+      "title": "피곤할수록 더 자주 생길 수 있습니다",
+      "narration": "피곤하거나 스트레스를 많이 받으면 더 자주 나타날 수 있습니다. 여러분도 이런 경험이 있었나요",
+      "sourceKeywords": [
+        "tired person",
+        "stressed person",
+        "tired person wide view",
+        "tired person landscape",
+        "stressed person wide view",
+        "stressed person landscape",
+        "tired person close up",
+        "tired person detailed view",
+        "stressed person close up",
+        "stressed person detailed view"
+      ],
+      "entities": [
+        "tired person stressed person tired person wide view",
+        "ed person wide view stressed person landscape tired",
+        "detailed view stressed person close up stressed person"
+      ],
+      "primaryQuery": "tired person",
+      "queries": [
+        {
+          "query": "tired person",
+          "intent": "primary",
+          "priority": 1,
+          "mediaKind": "any"
+        },
+        {
+          "query": "stressed person",
+          "intent": "primary",
+          "priority": 2,
+          "mediaKind": "any"
+        },
+        {
+          "query": "tired person wide view",
+          "intent": "wide",
+          "priority": 3,
+          "mediaKind": "any"
+        },
+        {
+          "query": "stressed person wide view",
+          "intent": "wide",
+          "priority": 4,
+          "mediaKind": "any"
+        },
+        {
+          "query": "tired person close up",
+          "intent": "detail",
+          "priority": 5,
+          "mediaKind": "any"
+        },
+        {
+          "query": "tired person detailed view",
+          "intent": "detail",
+          "priority": 6,
+          "mediaKind": "any"
+        },
+        {
+          "query": "stressed person close up",
+          "intent": "detail",
+          "priority": 7,
+          "mediaKind": "any"
+        },
+        {
+          "query": "stressed person detailed view",
+          "intent": "detail",
+          "priority": 8,
+          "mediaKind": "any"
+        },
+        {
+          "query": "tired person landscape",
+          "intent": "wide",
+          "priority": 9,
+          "mediaKind": "any"
+        },
+        {
+          "query": "stressed person landscape",
+          "intent": "wide",
+          "priority": 10,
+          "mediaKind": "any"
+        }
+      ]
+    }
+  ]
+}
