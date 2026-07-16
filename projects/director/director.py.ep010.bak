@@ -1,25 +1,14 @@
 ﻿from __future__ import annotations
 
 from pathlib import Path
-from typing import Callable
 
-from build_timeline import (
-    build_ep008_story,
-    build_ep010_story,
-)
+from build_timeline import build_ep008_story
 from factory_core import FactoryBuildResult, FactoryCore
-from story_graph import Story
 from timeline_schema import save_timeline
 
 
 class DirectorError(RuntimeError):
     """Director 처리 실패."""
-
-
-STORY_BUILDERS: dict[str, Callable[[], Story]] = {
-    "ep008": build_ep008_story,
-    "ep010": build_ep010_story,
-}
 
 
 class Director:
@@ -29,31 +18,18 @@ class Director:
         episode_id: str,
         output_path: Path,
     ) -> FactoryBuildResult:
-        normalized_episode_id = episode_id.lower()
-
-        story_builder = STORY_BUILDERS.get(
-            normalized_episode_id
-        )
-
-        if story_builder is None:
-            supported = ", ".join(
-                sorted(STORY_BUILDERS)
-            )
+        if episode_id != "ep008":
             raise DirectorError(
-                "지원하지 않는 에피소드입니다. "
-                f"요청: {episode_id}, 지원: {supported}"
+                "현재 Story 생성기는 ep008만 지원합니다. "
+                f"요청: {episode_id}"
             )
 
-        story = story_builder()
+        story = build_ep008_story()
 
-        if (
-            story.episode_id.lower()
-            != normalized_episode_id
-        ):
+        if story.episode_id.lower() != episode_id:
             raise DirectorError(
                 "Story episode_id가 요청값과 다릅니다. "
-                f"Story: {story.episode_id}, "
-                f"요청: {episode_id}"
+                f"Story: {story.episode_id}, 요청: {episode_id}"
             )
 
         result = FactoryCore().build_with_result(

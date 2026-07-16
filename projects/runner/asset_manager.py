@@ -1,4 +1,4 @@
-﻿from __future__ import annotations
+from __future__ import annotations
 
 import shutil
 from dataclasses import dataclass
@@ -129,9 +129,23 @@ def validate_episode_assets(
     empty_assets: list[Path] = []
 
     for relative_path in required_assets:
+        normalized_path = relative_path
+
+        if (
+            normalized_path.parts
+            and normalized_path.parts[0].lower()
+            in {
+                "assets",
+                episode_assets_dir.parent.name.lower(),
+            }
+        ):
+            normalized_path = Path(
+                *normalized_path.parts[1:]
+            )
+
         source_path = (
             episode_assets_dir
-            / relative_path
+            / normalized_path
         )
 
         if not source_path.exists():
@@ -198,14 +212,28 @@ def sync_episode_assets(
     copied_assets: list[Path] = []
 
     for relative_path in required_assets:
+        normalized_path = relative_path
+
+        if (
+            normalized_path.parts
+            and normalized_path.parts[0].lower()
+            in {
+                "assets",
+                episode_assets_dir.parent.name.lower(),
+            }
+        ):
+            normalized_path = Path(
+                *normalized_path.parts[1:]
+            )
+
         source_path = (
             episode_assets_dir
-            / relative_path
+            / normalized_path
         )
 
         destination_path = (
             public_assets_dir
-            / relative_path
+            / normalized_path
         )
 
         destination_path.parent.mkdir(

@@ -657,7 +657,9 @@ def synchronize_timeline(
             audio_result.duration_seconds
         )
 
-        raw_scene["audio"] = (
+        episode_id = timeline_path.parent.name
+
+        audio_relative_path = (
             build_episode_relative_path(
                 timeline_path=timeline_path,
                 target_path=(
@@ -666,13 +668,23 @@ def synchronize_timeline(
             )
         )
 
-        raw_scene["timing"] = (
+        timing_relative_path = (
             build_episode_relative_path(
                 timeline_path=timeline_path,
                 target_path=(
                     audio_result.metadata_path
                 ),
             )
+        )
+
+        raw_scene["audio"] = (
+            f"{episode_id}/"
+            f"{audio_relative_path}"
+        )
+
+        raw_scene["timing"] = (
+            f"{episode_id}/"
+            f"{timing_relative_path}"
         )
 
         raw_scene["wordTimings"] = (
@@ -703,7 +715,9 @@ def synchronize_timeline(
     timeline_data["tts"] = {
         "provider": "edge",
         "sceneGapMs": scene_gap_ms,
-        "audioDirectory": "audio",
+        "audioDirectory": (
+            f"{timeline_path.parent.name}/audio"
+        ),
         "synchronized": True,
         "wordTiming": True,
         "timingVersion": "1.0",

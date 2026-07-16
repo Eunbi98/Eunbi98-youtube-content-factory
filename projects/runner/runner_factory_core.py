@@ -694,8 +694,22 @@ class FactoryCore:
 
                 continue
 
+            src_path = Path(src)
+
+            if (
+                src_path.parts
+                and src_path.parts[0].lower()
+                in {
+                    "assets",
+                    assets_dir.parent.name.lower(),
+                }
+            ):
+                src_path = Path(
+                    *src_path.parts[1:]
+                )
+
             source_path = (
-                assets_dir / src
+                assets_dir / src_path
             )
 
             if (

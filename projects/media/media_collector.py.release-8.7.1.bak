@@ -25,7 +25,7 @@ for module_path in (
 
 from api_key_loader import load_api_keys  # noqa: E402
 from cache_manager import CacheManager  # noqa: E402
-from downloader import MediaDownloadError, MediaDownloader  # noqa: E402
+from downloader import MediaDownloader  # noqa: E402
 from manifest_builder import ManifestBuilder  # noqa: E402
 from media_ranker import rerank_candidates  # noqa: E402
 from provider_models import MediaCandidate  # noqa: E402
@@ -270,47 +270,16 @@ class MediaCollector:
                     "미디어 후보가 없습니다."
                 )
 
-            selected: MediaCandidate | None = None
-            local_path: Path | None = None
-            download_errors: list[str] = []
-
-            for candidate in ranked:
-                try:
-                    local_path = (
-                        self.downloader.download(
-                            candidate=candidate,
-                            destination_dir=(
-                                self.assets_dir
-                            ),
-                            scene_id=scene_id,
-                        )
-                    )
-                    selected = candidate
-                    break
-                except MediaDownloadError as exc:
-                    download_errors.append(
-                        f"{candidate.provider}: "
-                        f"{candidate.title} / {exc}"
-                    )
-                    print(
-                        f"[RETRY] {scene_id}: "
-                        f"{candidate.provider} / "
-                        f"{candidate.title}"
-                    )
-
-            if (
-                selected is None
-                or local_path is None
-            ):
-                error_preview = "\n".join(
-                    download_errors[:5]
+            selected = ranked[0]
+            local_path = (
+                self.downloader.download(
+                    candidate=selected,
+                    destination_dir=(
+                        self.assets_dir
+                    ),
+                    scene_id=scene_id,
                 )
-                raise MediaCollectorError(
-                    f"{scene_id}: ?? ??? ?? "
-                    "????? ??????.\n"
-                    f"{error_preview}"
-                )
-
+            )
             sha256 = (
                 self.downloader.file_sha256(
                     local_path

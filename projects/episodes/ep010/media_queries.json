@@ -2,3045 +2,486 @@
   "version": "2.0",
   "episodeId": "ep010",
   "timelinePath": "C:\\Users\\user\\Desktop\\Eunbi98-youtube-content-factory\\projects\\episodes\\ep010\\timeline.json",
-  "sceneCount": 27,
+  "sceneCount": 5,
   "scenes": [
     {
-      "sceneId": "quiz_intro",
-      "title": "오늘의 퀴즈",
-      "narration": "알고도 틀리는 상식 퀴즈 5문제",
+      "sceneId": "scene_001",
+      "title": "왜 이 나무들은 모두 휘어 있을까요",
+      "narration": "왜 이 숲의 나무들은 모두 같은 방향으로 휘어 있을까요",
       "sourceKeywords": [
-        "general knowledge quiz",
-        "quiz show opening",
-        "question mark",
-        "general knowledge quiz wide view",
-        "general knowledge quiz landscape",
-        "quiz show opening wide view",
-        "quiz show opening landscape",
-        "general knowledge quiz close up",
-        "general knowledge quiz detailed view",
-        "quiz show opening close up",
-        "quiz show opening detailed view",
-        "general knowledge quiz wide view wide view",
-        "general knowledge quiz wide view landscape",
-        "quiz show opening wide view wide view",
-        "quiz show opening wide view landscape",
-        "general knowledge quiz wide view close up",
-        "general knowledge quiz wide view detailed view",
-        "quiz show opening wide view close up",
-        "quiz show opening wide view detailed view",
-        "general knowledge quiz wide view landscape wide view",
-        "general knowledge quiz wide view landscape landscape",
-        "quiz show opening wide view landscape wide view",
-        "quiz show opening wide view landscape landscape",
-        "general knowledge quiz wide view landscape close up",
-        "general knowledge quiz wide view landscape detailed view",
-        "quiz show opening wide view landscape close up",
-        "quiz show opening wide view landscape detailed view"
+        "Krzywy Las curved pine trees",
+        "crooked forest wide view",
+        "Krzywy Las curved pine trees wide view",
+        "Krzywy Las curved pine trees landscape",
+        "crooked forest wide view wide view",
+        "crooked forest wide view landscape",
+        "Krzywy Las curved pine trees close up",
+        "Krzywy Las curved pine trees detailed view",
+        "Krzywy Las curved pine trees landscape wide view",
+        "Krzywy Las curved pine trees landscape landscape",
+        "crooked forest wide view wide view wide view",
+        "crooked forest wide view wide view landscape",
+        "Krzywy Las curved pine trees landscape close up",
+        "Krzywy Las curved pine trees landscape detailed view",
+        "crooked forest wide view wide view close up",
+        "crooked forest wide view wide view detailed view",
+        "crooked forest"
       ],
       "entities": [
-        "general knowledge quiz quiz show opening question mark",
-        "view general knowledge quiz landscape quiz show opening",
-        "ning landscape general knowledge quiz close up general",
-        "ew quiz show opening close up quiz show",
-        "uiz wide view wide view general knowledge quiz",
-        "ing wide view wide view quiz show opening",
-        "uiz wide view close up general knowledge quiz",
-        "pening wide view close up quiz show opening",
-        "edge quiz wide view landscape wide view general",
-        "landscape quiz show opening wide view landscape wide",
-        "view landscape landscape general knowledge quiz wide view",
-        "neral knowledge quiz wide view landscape detailed view",
-        "landscape close up quiz show opening wide view"
+        "Krzywy Las curved pine trees crooked forest wide",
+        "wide view Krzywy Las curved pine trees landscape",
+        "view crooked forest wide view landscape Krzywy Las",
+        "ywy Las curved pine trees detailed view Krzywy",
+        "de view Krzywy Las curved pine trees landscape",
+        "wide view wide view crooked forest wide view",
+        "pine trees landscape close up Krzywy Las curved",
+        "iew crooked forest wide view wide view close",
+        "detailed view crooked forest"
       ],
-      "primaryQuery": "general knowledge quiz wide view landscape",
+      "primaryQuery": "Krzywy Las curved pine trees",
       "queries": [
         {
-          "query": "general knowledge quiz wide view landscape",
+          "query": "Krzywy Las curved pine trees",
           "intent": "primary",
           "priority": 1,
           "mediaKind": "any"
         },
         {
-          "query": "quiz show opening wide view landscape",
+          "query": "crooked forest",
           "intent": "primary",
           "priority": 2,
           "mediaKind": "any"
         },
         {
-          "query": "general knowledge quiz wide view landscape wide view",
+          "query": "Krzywy Las curved pine trees landscape",
           "intent": "wide",
           "priority": 3,
           "mediaKind": "any"
         },
         {
-          "query": "general knowledge quiz wide view landscape landscape",
+          "query": "crooked forest wide view wide view",
           "intent": "wide",
           "priority": 4,
           "mediaKind": "any"
         },
         {
-          "query": "quiz show opening wide view landscape wide view",
+          "query": "crooked forest wide view landscape",
           "intent": "wide",
           "priority": 5,
           "mediaKind": "any"
         },
         {
-          "query": "quiz show opening wide view landscape landscape",
+          "query": "crooked forest wide view",
           "intent": "wide",
           "priority": 6,
           "mediaKind": "any"
         },
         {
-          "query": "general knowledge quiz wide view landscape close up",
-          "intent": "detail",
+          "query": "Krzywy Las curved pine trees wide view",
+          "intent": "wide",
           "priority": 7,
           "mediaKind": "any"
         },
         {
-          "query": "general knowledge quiz wide view landscape detailed view",
+          "query": "Krzywy Las curved pine trees close up",
           "intent": "detail",
           "priority": 8,
           "mediaKind": "any"
         },
         {
-          "query": "quiz show opening wide view landscape close up",
+          "query": "Krzywy Las curved pine trees detailed view",
           "intent": "detail",
           "priority": 9,
           "mediaKind": "any"
         },
         {
-          "query": "quiz show opening wide view landscape detailed view",
-          "intent": "detail",
+          "query": "Krzywy Las curved pine trees landscape wide view",
+          "intent": "wide",
           "priority": 10,
           "mediaKind": "any"
         }
       ]
     },
     {
-      "sceneId": "q001_question",
-      "title": "문제 1",
-      "narration": "태양계에서 가장 큰 행성은 무엇일까요",
+      "sceneId": "scene_002",
+      "title": "폴란드의 휘어진 숲",
+      "narration": "이곳은 폴란드의 휘어진 숲입니다. 약 사백 그루의 소나무가 비슷한 모양으로 휘어 있습니다.",
       "sourceKeywords": [
-        "general knowledge question",
-        "quiz question",
-        "thinking concept",
-        "general knowledge question wide view",
-        "general knowledge question landscape",
-        "quiz question wide view",
-        "quiz question landscape",
-        "general knowledge question close up",
-        "general knowledge question detailed view",
-        "quiz question close up",
-        "quiz question detailed view",
-        "general knowledge question wide view wide view",
-        "general knowledge question wide view landscape",
-        "general knowledge question close up wide view",
-        "general knowledge question close up landscape",
-        "general knowledge question wide view close up",
-        "general knowledge question wide view detailed view",
-        "general knowledge question close up close up",
-        "general knowledge question close up detailed view",
-        "general knowledge question wide view landscape wide view",
-        "general knowledge question wide view landscape landscape",
-        "general knowledge question close up landscape wide view",
-        "general knowledge question close up landscape landscape",
-        "general knowledge question wide view landscape close up",
-        "general knowledge question wide view landscape detailed view",
-        "general knowledge question close up landscape close up",
-        "general knowledge question close up landscape detailed view"
+        "curved pine trees Poland close up",
+        "Crooked Forest Gryfino Poland",
+        "curved pine trees Poland close up wide view",
+        "curved pine trees Poland close up landscape",
+        "Crooked Forest Gryfino Poland wide view",
+        "Crooked Forest Gryfino Poland landscape",
+        "curved pine trees Poland close up close up",
+        "curved pine trees Poland close up detailed view",
+        "Crooked Forest Gryfino Poland wide view wide view",
+        "Crooked Forest Gryfino Poland wide view landscape",
+        "Crooked Forest Gryfino Poland wide view close up",
+        "Crooked Forest Gryfino Poland wide view detailed view",
+        "curved pine trees Poland"
       ],
       "entities": [
-        "general knowledge question quiz question thinking concept general",
-        "ion wide view general knowledge question landscape quiz",
-        "uestion landscape general knowledge question close up general",
-        "detailed view quiz question close up quiz question",
-        "question wide view wide view general knowledge question",
-        "eral knowledge question close up wide view general",
-        "ndscape general knowledge question wide view close up",
-        "wide view detailed view general knowledge question close",
-        "ledge question close up detailed view general knowledge",
-        "ape wide view general knowledge question wide view",
-        "owledge question close up landscape wide view general",
-        "landscape landscape general knowledge question wide view landscape",
-        "al knowledge question wide view landscape detailed view",
-        "close up landscape close up general knowledge question",
-        "led view"
+        "curved pine trees Poland close up Crooked Forest",
+        "Poland close up wide view curved pine trees",
+        "est Gryfino Poland wide view Crooked Forest Gryfino",
+        "trees Poland close up close up curved pine",
+        "ooked Forest Gryfino Poland wide view wide view",
+        "view landscape Crooked Forest Gryfino Poland wide view",
+        "Gryfino Poland wide view detailed view curved pine"
       ],
-      "primaryQuery": "general knowledge question wide view landscape",
+      "primaryQuery": "curved pine trees Poland",
       "queries": [
         {
-          "query": "general knowledge question wide view landscape",
+          "query": "curved pine trees Poland",
           "intent": "primary",
           "priority": 1,
           "mediaKind": "any"
         },
         {
-          "query": "general knowledge question close up landscape",
+          "query": "Crooked Forest Gryfino Poland",
           "intent": "primary",
           "priority": 2,
           "mediaKind": "any"
         },
         {
-          "query": "general knowledge question wide view landscape wide view",
-          "intent": "wide",
+          "query": "curved pine trees Poland close up",
+          "intent": "detail",
           "priority": 3,
           "mediaKind": "any"
         },
         {
-          "query": "general knowledge question wide view landscape landscape",
+          "query": "Crooked Forest Gryfino Poland wide view",
           "intent": "wide",
           "priority": 4,
           "mediaKind": "any"
         },
         {
-          "query": "general knowledge question close up landscape wide view",
+          "query": "Crooked Forest Gryfino Poland landscape",
           "intent": "wide",
           "priority": 5,
           "mediaKind": "any"
         },
         {
-          "query": "general knowledge question close up landscape landscape",
+          "query": "curved pine trees Poland close up wide view",
           "intent": "wide",
           "priority": 6,
           "mediaKind": "any"
         },
         {
-          "query": "general knowledge question wide view landscape close up",
-          "intent": "detail",
+          "query": "curved pine trees Poland close up landscape",
+          "intent": "wide",
           "priority": 7,
           "mediaKind": "any"
         },
         {
-          "query": "general knowledge question wide view landscape detailed view",
+          "query": "curved pine trees Poland close up close up",
           "intent": "detail",
           "priority": 8,
           "mediaKind": "any"
         },
         {
-          "query": "general knowledge question close up landscape close up",
+          "query": "curved pine trees Poland close up detailed view",
           "intent": "detail",
           "priority": 9,
           "mediaKind": "any"
         },
         {
-          "query": "general knowledge question close up landscape detailed view",
-          "intent": "detail",
+          "query": "Crooked Forest Gryfino Poland wide view wide view",
+          "intent": "wide",
           "priority": 10,
           "mediaKind": "any"
         }
       ]
     },
     {
-      "sceneId": "q001_countdown_3",
-      "title": "정답 공개까지",
-      "narration": "3",
+      "sceneId": "scene_003",
+      "title": "사람이 일부러 구부렸을까",
+      "narration": "가장 유명한 가설은 사람이 곡선 목재를 얻기 위해 어린 나무를 일부러 구부렸다는 것입니다.",
       "sourceKeywords": [
-        "quiz countdown timer",
-        "three second countdown",
-        "thinking time",
-        "quiz countdown timer wide view",
-        "quiz countdown timer landscape",
-        "three second countdown wide view",
-        "three second countdown landscape",
-        "quiz countdown timer close up",
-        "quiz countdown timer detailed view",
-        "three second countdown close up",
-        "three second countdown detailed view",
-        "quiz countdown timer wide view wide view",
-        "quiz countdown timer wide view landscape",
-        "three second countdown wide view wide view",
-        "three second countdown wide view landscape",
-        "quiz countdown timer wide view close up",
-        "quiz countdown timer wide view detailed view",
-        "three second countdown wide view close up",
-        "three second countdown wide view detailed view",
-        "quiz countdown timer wide view landscape wide view",
-        "quiz countdown timer wide view landscape landscape",
-        "three second countdown wide view landscape wide view",
-        "three second countdown wide view landscape landscape",
-        "quiz countdown timer wide view landscape close up",
-        "quiz countdown timer wide view landscape detailed view",
-        "three second countdown wide view landscape close up",
-        "three second countdown wide view landscape detailed view"
+        "Crooked Forest bent tree trunks",
+        "curved pine trunk Poland",
+        "Crooked Forest bent tree trunks wide view",
+        "Crooked Forest bent tree trunks landscape",
+        "curved pine trunk Poland wide view",
+        "curved pine trunk Poland landscape",
+        "Crooked Forest bent tree trunks close up",
+        "Crooked Forest bent tree trunks detailed view",
+        "Crooked Forest bent tree trunks landscape wide view",
+        "Crooked Forest bent tree trunks landscape landscape",
+        "curved pine trunk Poland wide view wide view",
+        "curved pine trunk Poland wide view landscape",
+        "Crooked Forest bent tree trunks landscape close up",
+        "Crooked Forest bent tree trunks landscape detailed view",
+        "curved pine trunk Poland wide view close up",
+        "curved pine trunk Poland wide view detailed view"
       ],
       "entities": [
-        "quiz countdown timer three second countdown thinking time",
-        "wide view quiz countdown timer landscape three second",
-        "econd countdown landscape quiz countdown timer close up",
-        "iled view three second countdown close up three",
-        "iz countdown timer wide view wide view quiz",
-        "hree second countdown wide view wide view three",
-        "ape quiz countdown timer wide view close up",
-        "ed view three second countdown wide view close",
-        "detailed view quiz countdown timer wide view landscape",
-        "timer wide view landscape landscape three second countdown",
-        "de view three second countdown wide view landscape",
-        "wide view landscape close up quiz countdown timer",
-        "ew three second countdown wide view landscape close",
-        "view landscape detailed view"
+        "Crooked Forest bent tree trunks curved pine trunk",
+        "trunks wide view Crooked Forest bent tree trunks",
+        "nd wide view curved pine trunk Poland landscape",
+        "lose up Crooked Forest bent tree trunks detailed",
+        "unks landscape wide view Crooked Forest bent tree",
+        "ed pine trunk Poland wide view wide view",
+        "cape Crooked Forest bent tree trunks landscape close",
+        "trunks landscape detailed view curved pine trunk Poland",
+        "pine trunk Poland wide view detailed view"
       ],
-      "primaryQuery": "quiz countdown timer wide view landscape",
+      "primaryQuery": "Crooked Forest bent tree trunks",
       "queries": [
         {
-          "query": "quiz countdown timer wide view landscape",
+          "query": "Crooked Forest bent tree trunks",
           "intent": "primary",
           "priority": 1,
           "mediaKind": "any"
         },
         {
-          "query": "three second countdown wide view landscape",
+          "query": "curved pine trunk Poland",
           "intent": "primary",
           "priority": 2,
           "mediaKind": "any"
         },
         {
-          "query": "quiz countdown timer wide view landscape wide view",
+          "query": "Crooked Forest bent tree trunks landscape",
           "intent": "wide",
           "priority": 3,
           "mediaKind": "any"
         },
         {
-          "query": "quiz countdown timer wide view landscape landscape",
+          "query": "curved pine trunk Poland wide view",
           "intent": "wide",
           "priority": 4,
           "mediaKind": "any"
         },
         {
-          "query": "three second countdown wide view landscape wide view",
+          "query": "curved pine trunk Poland landscape",
           "intent": "wide",
           "priority": 5,
           "mediaKind": "any"
         },
         {
-          "query": "three second countdown wide view landscape landscape",
+          "query": "Crooked Forest bent tree trunks wide view",
           "intent": "wide",
           "priority": 6,
           "mediaKind": "any"
         },
         {
-          "query": "quiz countdown timer wide view landscape close up",
+          "query": "Crooked Forest bent tree trunks close up",
           "intent": "detail",
           "priority": 7,
           "mediaKind": "any"
         },
         {
-          "query": "quiz countdown timer wide view landscape detailed view",
+          "query": "Crooked Forest bent tree trunks detailed view",
           "intent": "detail",
           "priority": 8,
           "mediaKind": "any"
         },
         {
-          "query": "three second countdown wide view landscape close up",
-          "intent": "detail",
+          "query": "Crooked Forest bent tree trunks landscape wide view",
+          "intent": "wide",
           "priority": 9,
           "mediaKind": "any"
         },
         {
-          "query": "three second countdown wide view landscape detailed view",
-          "intent": "detail",
+          "query": "Crooked Forest bent tree trunks landscape landscape",
+          "intent": "wide",
           "priority": 10,
           "mediaKind": "any"
         }
       ]
     },
     {
-      "sceneId": "q001_countdown_2",
-      "title": "정답 공개까지",
-      "narration": "2",
+      "sceneId": "scene_004",
+      "title": "다른 가설도 있지만 증거는 없습니다",
+      "narration": "폭설과 강한 바람 전쟁 당시 차량 때문이라는 주장도 있지만 확실한 증거는 없습니다.",
       "sourceKeywords": [
-        "quiz countdown timer",
-        "three second countdown",
-        "thinking time",
-        "quiz countdown timer wide view",
-        "quiz countdown timer landscape",
-        "three second countdown wide view",
-        "three second countdown landscape",
-        "quiz countdown timer close up",
-        "quiz countdown timer detailed view",
-        "three second countdown close up",
-        "three second countdown detailed view",
-        "quiz countdown timer wide view wide view",
-        "quiz countdown timer wide view landscape",
-        "three second countdown wide view wide view",
-        "three second countdown wide view landscape",
-        "quiz countdown timer wide view close up",
-        "quiz countdown timer wide view detailed view",
-        "three second countdown wide view close up",
-        "three second countdown wide view detailed view",
-        "quiz countdown timer wide view landscape wide view",
-        "quiz countdown timer wide view landscape landscape",
-        "three second countdown wide view landscape wide view",
-        "three second countdown wide view landscape landscape",
-        "quiz countdown timer wide view landscape close up",
-        "quiz countdown timer wide view landscape detailed view",
-        "three second countdown wide view landscape close up",
-        "three second countdown wide view landscape detailed view"
+        "Crooked Forest winter Poland",
+        "Krzywy Las forest landscape",
+        "Crooked Forest winter Poland wide view",
+        "Crooked Forest winter Poland landscape",
+        "Krzywy Las forest landscape wide view",
+        "Krzywy Las forest landscape landscape",
+        "Crooked Forest winter Poland close up",
+        "Crooked Forest winter Poland detailed view",
+        "Crooked Forest winter Poland wide view wide view",
+        "Crooked Forest winter Poland wide view landscape",
+        "Krzywy Las forest landscape wide view wide view",
+        "Krzywy Las forest landscape wide view landscape",
+        "Crooked Forest winter Poland wide view close up",
+        "Crooked Forest winter Poland wide view detailed view",
+        "Krzywy Las forest landscape wide view close up",
+        "Krzywy Las forest landscape wide view detailed view",
+        "Krzywy Las forest"
       ],
       "entities": [
-        "quiz countdown timer three second countdown thinking time",
-        "wide view quiz countdown timer landscape three second",
-        "econd countdown landscape quiz countdown timer close up",
-        "iled view three second countdown close up three",
-        "iz countdown timer wide view wide view quiz",
-        "hree second countdown wide view wide view three",
-        "ape quiz countdown timer wide view close up",
-        "ed view three second countdown wide view close",
-        "detailed view quiz countdown timer wide view landscape",
-        "timer wide view landscape landscape three second countdown",
-        "de view three second countdown wide view landscape",
-        "wide view landscape close up quiz countdown timer",
-        "ew three second countdown wide view landscape close",
-        "view landscape detailed view"
+        "Crooked Forest winter Poland Krzywy Las forest landscape",
+        "land wide view Crooked Forest winter Poland landscape",
+        "wide view Krzywy Las forest landscape landscape Crooked",
+        "up Crooked Forest winter Poland detailed view Crooked",
+        "view wide view Crooked Forest winter Poland wide",
+        "landscape wide view wide view Krzywy Las forest",
+        "oked Forest winter Poland wide view close up",
+        "ew detailed view Krzywy Las forest landscape wide",
+        "landscape wide view detailed view Krzywy Las forest"
       ],
-      "primaryQuery": "quiz countdown timer wide view landscape",
+      "primaryQuery": "Crooked Forest winter Poland",
       "queries": [
         {
-          "query": "quiz countdown timer wide view landscape",
+          "query": "Crooked Forest winter Poland",
           "intent": "primary",
           "priority": 1,
           "mediaKind": "any"
         },
         {
-          "query": "three second countdown wide view landscape",
+          "query": "Krzywy Las forest",
           "intent": "primary",
           "priority": 2,
           "mediaKind": "any"
         },
         {
-          "query": "quiz countdown timer wide view landscape wide view",
+          "query": "Crooked Forest winter Poland wide view",
           "intent": "wide",
           "priority": 3,
           "mediaKind": "any"
         },
         {
-          "query": "quiz countdown timer wide view landscape landscape",
+          "query": "Krzywy Las forest landscape wide view",
           "intent": "wide",
           "priority": 4,
           "mediaKind": "any"
         },
         {
-          "query": "three second countdown wide view landscape wide view",
-          "intent": "wide",
+          "query": "Crooked Forest winter Poland close up",
+          "intent": "detail",
           "priority": 5,
           "mediaKind": "any"
         },
         {
-          "query": "three second countdown wide view landscape landscape",
-          "intent": "wide",
+          "query": "Crooked Forest winter Poland detailed view",
+          "intent": "detail",
           "priority": 6,
           "mediaKind": "any"
         },
         {
-          "query": "quiz countdown timer wide view landscape close up",
-          "intent": "detail",
+          "query": "Crooked Forest winter Poland landscape",
+          "intent": "wide",
           "priority": 7,
           "mediaKind": "any"
         },
         {
-          "query": "quiz countdown timer wide view landscape detailed view",
-          "intent": "detail",
+          "query": "Krzywy Las forest landscape landscape",
+          "intent": "wide",
           "priority": 8,
           "mediaKind": "any"
         },
         {
-          "query": "three second countdown wide view landscape close up",
-          "intent": "detail",
+          "query": "Krzywy Las forest landscape",
+          "intent": "wide",
           "priority": 9,
           "mediaKind": "any"
         },
         {
-          "query": "three second countdown wide view landscape detailed view",
-          "intent": "detail",
+          "query": "Crooked Forest winter Poland wide view wide view",
+          "intent": "wide",
           "priority": 10,
           "mediaKind": "any"
         }
       ]
     },
     {
-      "sceneId": "q001_countdown_1",
-      "title": "정답 공개까지",
-      "narration": "1",
+      "sceneId": "scene_005",
+      "title": "아직 풀리지 않은 숲의 미스터리",
+      "narration": "정확한 원인은 아직 밝혀지지 않았습니다. 여러분은 사람이 만든 숲이라고 생각하시나요 자연이 만든 현상이라고 생각하시나요",
       "sourceKeywords": [
-        "quiz countdown timer",
-        "three second countdown",
-        "thinking time",
-        "quiz countdown timer wide view",
-        "quiz countdown timer landscape",
-        "three second countdown wide view",
-        "three second countdown landscape",
-        "quiz countdown timer close up",
-        "quiz countdown timer detailed view",
-        "three second countdown close up",
-        "three second countdown detailed view",
-        "quiz countdown timer wide view wide view",
-        "quiz countdown timer wide view landscape",
-        "three second countdown wide view wide view",
-        "three second countdown wide view landscape",
-        "quiz countdown timer wide view close up",
-        "quiz countdown timer wide view detailed view",
-        "three second countdown wide view close up",
-        "three second countdown wide view detailed view",
-        "quiz countdown timer wide view landscape wide view",
-        "quiz countdown timer wide view landscape landscape",
-        "three second countdown wide view landscape wide view",
-        "three second countdown wide view landscape landscape",
-        "quiz countdown timer wide view landscape close up",
-        "quiz countdown timer wide view landscape detailed view",
-        "three second countdown wide view landscape close up",
-        "three second countdown wide view landscape detailed view"
+        "Crooked Forest Poland mysterious",
+        "Krzywy Las forest wide",
+        "Crooked Forest Poland mysterious wide view",
+        "Crooked Forest Poland mysterious landscape",
+        "Krzywy Las forest wide wide view",
+        "Krzywy Las forest wide landscape",
+        "Crooked Forest Poland mysterious close up",
+        "Crooked Forest Poland mysterious detailed view",
+        "Crooked Forest Poland mysterious wide view wide view",
+        "Crooked Forest Poland mysterious wide view landscape",
+        "Krzywy Las forest wide wide view wide view",
+        "Krzywy Las forest wide wide view landscape",
+        "Crooked Forest Poland mysterious wide view close up",
+        "Crooked Forest Poland mysterious wide view detailed view",
+        "Krzywy Las forest wide wide view close up",
+        "Krzywy Las forest wide wide view detailed view"
       ],
       "entities": [
-        "quiz countdown timer three second countdown thinking time",
-        "wide view quiz countdown timer landscape three second",
-        "econd countdown landscape quiz countdown timer close up",
-        "iled view three second countdown close up three",
-        "iz countdown timer wide view wide view quiz",
-        "hree second countdown wide view wide view three",
-        "ape quiz countdown timer wide view close up",
-        "ed view three second countdown wide view close",
-        "detailed view quiz countdown timer wide view landscape",
-        "timer wide view landscape landscape three second countdown",
-        "de view three second countdown wide view landscape",
-        "wide view landscape close up quiz countdown timer",
-        "ew three second countdown wide view landscape close",
-        "view landscape detailed view"
+        "미스터리",
+        "Crooked Forest Poland mysterious Krzywy Las forest wide",
+        "terious wide view Crooked Forest Poland mysterious landscape",
+        "de wide view Krzywy Las forest wide landscape",
+        "ose up Crooked Forest Poland mysterious detailed view",
+        "rious wide view wide view Crooked Forest Poland",
+        "zywy Las forest wide wide view wide view",
+        "pe Crooked Forest Poland mysterious wide view close",
+        "erious wide view detailed view Krzywy Las forest",
+        "forest wide wide view detailed view"
       ],
-      "primaryQuery": "quiz countdown timer wide view landscape",
+      "primaryQuery": "Crooked Forest Poland mysterious",
       "queries": [
         {
-          "query": "quiz countdown timer wide view landscape",
+          "query": "Crooked Forest Poland mysterious",
           "intent": "primary",
           "priority": 1,
           "mediaKind": "any"
         },
         {
-          "query": "three second countdown wide view landscape",
+          "query": "Krzywy Las forest wide",
           "intent": "primary",
           "priority": 2,
           "mediaKind": "any"
         },
         {
-          "query": "quiz countdown timer wide view landscape wide view",
+          "query": "Crooked Forest Poland mysterious wide view",
           "intent": "wide",
           "priority": 3,
           "mediaKind": "any"
         },
         {
-          "query": "quiz countdown timer wide view landscape landscape",
+          "query": "Krzywy Las forest wide wide view",
           "intent": "wide",
           "priority": 4,
           "mediaKind": "any"
         },
         {
-          "query": "three second countdown wide view landscape wide view",
-          "intent": "wide",
+          "query": "Crooked Forest Poland mysterious close up",
+          "intent": "detail",
           "priority": 5,
           "mediaKind": "any"
         },
         {
-          "query": "three second countdown wide view landscape landscape",
-          "intent": "wide",
+          "query": "Crooked Forest Poland mysterious detailed view",
+          "intent": "detail",
           "priority": 6,
           "mediaKind": "any"
         },
         {
-          "query": "quiz countdown timer wide view landscape close up",
-          "intent": "detail",
+          "query": "Crooked Forest Poland mysterious landscape",
+          "intent": "wide",
           "priority": 7,
           "mediaKind": "any"
         },
         {
-          "query": "quiz countdown timer wide view landscape detailed view",
-          "intent": "detail",
+          "query": "Krzywy Las forest wide landscape",
+          "intent": "wide",
           "priority": 8,
           "mediaKind": "any"
         },
         {
-          "query": "three second countdown wide view landscape close up",
-          "intent": "detail",
+          "query": "Crooked Forest Poland mysterious wide view wide view",
+          "intent": "wide",
           "priority": 9,
           "mediaKind": "any"
         },
         {
-          "query": "three second countdown wide view landscape detailed view",
-          "intent": "detail",
-          "priority": 10,
-          "mediaKind": "any"
-        }
-      ]
-    },
-    {
-      "sceneId": "q001_answer",
-      "title": "정답",
-      "narration": "정답은 목성입니다.",
-      "sourceKeywords": [
-        "quiz answer reveal",
-        "correct answer",
-        "success celebration",
-        "quiz answer reveal wide view",
-        "quiz answer reveal landscape",
-        "correct answer wide view",
-        "correct answer landscape",
-        "quiz answer reveal close up",
-        "quiz answer reveal detailed view",
-        "correct answer close up",
-        "correct answer detailed view",
-        "quiz answer reveal wide view wide view",
-        "quiz answer reveal wide view landscape",
-        "quiz answer reveal close up wide view",
-        "quiz answer reveal close up landscape",
-        "quiz answer reveal wide view close up",
-        "quiz answer reveal wide view detailed view",
-        "quiz answer reveal close up close up",
-        "quiz answer reveal close up detailed view",
-        "quiz answer reveal wide view landscape wide view",
-        "quiz answer reveal wide view landscape landscape",
-        "quiz answer reveal close up landscape wide view",
-        "quiz answer reveal close up landscape landscape",
-        "quiz answer reveal wide view landscape close up",
-        "quiz answer reveal wide view landscape detailed view",
-        "quiz answer reveal close up landscape close up",
-        "quiz answer reveal close up landscape detailed view"
-      ],
-      "entities": [
-        "quiz answer reveal correct answer success celebration quiz",
-        "quiz answer reveal landscape correct answer wide view",
-        "quiz answer reveal close up quiz answer reveal",
-        "up correct answer detailed view quiz answer reveal",
-        "reveal wide view landscape quiz answer reveal close",
-        "veal close up landscape quiz answer reveal wide",
-        "wide view detailed view quiz answer reveal close",
-        "lose up detailed view quiz answer reveal wide",
-        "reveal wide view landscape landscape quiz answer reveal",
-        "view quiz answer reveal close up landscape landscape",
-        "landscape close up quiz answer reveal wide view",
-        "er reveal close up landscape close up quiz",
-        "led view"
-      ],
-      "primaryQuery": "quiz answer reveal wide view landscape",
-      "queries": [
-        {
-          "query": "quiz answer reveal wide view landscape",
-          "intent": "primary",
-          "priority": 1,
-          "mediaKind": "any"
-        },
-        {
-          "query": "quiz answer reveal close up landscape",
-          "intent": "primary",
-          "priority": 2,
-          "mediaKind": "any"
-        },
-        {
-          "query": "quiz answer reveal wide view landscape wide view",
+          "query": "Crooked Forest Poland mysterious wide view landscape",
           "intent": "wide",
-          "priority": 3,
-          "mediaKind": "any"
-        },
-        {
-          "query": "quiz answer reveal wide view landscape landscape",
-          "intent": "wide",
-          "priority": 4,
-          "mediaKind": "any"
-        },
-        {
-          "query": "quiz answer reveal close up landscape wide view",
-          "intent": "wide",
-          "priority": 5,
-          "mediaKind": "any"
-        },
-        {
-          "query": "quiz answer reveal close up landscape landscape",
-          "intent": "wide",
-          "priority": 6,
-          "mediaKind": "any"
-        },
-        {
-          "query": "quiz answer reveal wide view landscape close up",
-          "intent": "detail",
-          "priority": 7,
-          "mediaKind": "any"
-        },
-        {
-          "query": "quiz answer reveal wide view landscape detailed view",
-          "intent": "detail",
-          "priority": 8,
-          "mediaKind": "any"
-        },
-        {
-          "query": "quiz answer reveal close up landscape close up",
-          "intent": "detail",
-          "priority": 9,
-          "mediaKind": "any"
-        },
-        {
-          "query": "quiz answer reveal close up landscape detailed view",
-          "intent": "detail",
-          "priority": 10,
-          "mediaKind": "any"
-        }
-      ]
-    },
-    {
-      "sceneId": "q002_question",
-      "title": "문제 2",
-      "narration": "훈민정음을 만든 왕은 누구일까요",
-      "sourceKeywords": [
-        "general knowledge question",
-        "quiz question",
-        "thinking concept",
-        "general knowledge question wide view",
-        "general knowledge question landscape",
-        "quiz question wide view",
-        "quiz question landscape",
-        "general knowledge question close up",
-        "general knowledge question detailed view",
-        "quiz question close up",
-        "quiz question detailed view",
-        "general knowledge question wide view wide view",
-        "general knowledge question wide view landscape",
-        "general knowledge question close up wide view",
-        "general knowledge question close up landscape",
-        "general knowledge question wide view close up",
-        "general knowledge question wide view detailed view",
-        "general knowledge question close up close up",
-        "general knowledge question close up detailed view",
-        "general knowledge question wide view landscape wide view",
-        "general knowledge question wide view landscape landscape",
-        "general knowledge question close up landscape wide view",
-        "general knowledge question close up landscape landscape",
-        "general knowledge question wide view landscape close up",
-        "general knowledge question wide view landscape detailed view",
-        "general knowledge question close up landscape close up",
-        "general knowledge question close up landscape detailed view"
-      ],
-      "entities": [
-        "general knowledge question quiz question thinking concept general",
-        "ion wide view general knowledge question landscape quiz",
-        "uestion landscape general knowledge question close up general",
-        "detailed view quiz question close up quiz question",
-        "question wide view wide view general knowledge question",
-        "eral knowledge question close up wide view general",
-        "ndscape general knowledge question wide view close up",
-        "wide view detailed view general knowledge question close",
-        "ledge question close up detailed view general knowledge",
-        "ape wide view general knowledge question wide view",
-        "owledge question close up landscape wide view general",
-        "landscape landscape general knowledge question wide view landscape",
-        "al knowledge question wide view landscape detailed view",
-        "close up landscape close up general knowledge question",
-        "led view"
-      ],
-      "primaryQuery": "general knowledge question wide view landscape",
-      "queries": [
-        {
-          "query": "general knowledge question wide view landscape",
-          "intent": "primary",
-          "priority": 1,
-          "mediaKind": "any"
-        },
-        {
-          "query": "general knowledge question close up landscape",
-          "intent": "primary",
-          "priority": 2,
-          "mediaKind": "any"
-        },
-        {
-          "query": "general knowledge question wide view landscape wide view",
-          "intent": "wide",
-          "priority": 3,
-          "mediaKind": "any"
-        },
-        {
-          "query": "general knowledge question wide view landscape landscape",
-          "intent": "wide",
-          "priority": 4,
-          "mediaKind": "any"
-        },
-        {
-          "query": "general knowledge question close up landscape wide view",
-          "intent": "wide",
-          "priority": 5,
-          "mediaKind": "any"
-        },
-        {
-          "query": "general knowledge question close up landscape landscape",
-          "intent": "wide",
-          "priority": 6,
-          "mediaKind": "any"
-        },
-        {
-          "query": "general knowledge question wide view landscape close up",
-          "intent": "detail",
-          "priority": 7,
-          "mediaKind": "any"
-        },
-        {
-          "query": "general knowledge question wide view landscape detailed view",
-          "intent": "detail",
-          "priority": 8,
-          "mediaKind": "any"
-        },
-        {
-          "query": "general knowledge question close up landscape close up",
-          "intent": "detail",
-          "priority": 9,
-          "mediaKind": "any"
-        },
-        {
-          "query": "general knowledge question close up landscape detailed view",
-          "intent": "detail",
-          "priority": 10,
-          "mediaKind": "any"
-        }
-      ]
-    },
-    {
-      "sceneId": "q002_countdown_3",
-      "title": "정답 공개까지",
-      "narration": "3",
-      "sourceKeywords": [
-        "quiz countdown timer",
-        "three second countdown",
-        "thinking time",
-        "quiz countdown timer wide view",
-        "quiz countdown timer landscape",
-        "three second countdown wide view",
-        "three second countdown landscape",
-        "quiz countdown timer close up",
-        "quiz countdown timer detailed view",
-        "three second countdown close up",
-        "three second countdown detailed view",
-        "quiz countdown timer wide view wide view",
-        "quiz countdown timer wide view landscape",
-        "three second countdown wide view wide view",
-        "three second countdown wide view landscape",
-        "quiz countdown timer wide view close up",
-        "quiz countdown timer wide view detailed view",
-        "three second countdown wide view close up",
-        "three second countdown wide view detailed view",
-        "quiz countdown timer wide view landscape wide view",
-        "quiz countdown timer wide view landscape landscape",
-        "three second countdown wide view landscape wide view",
-        "three second countdown wide view landscape landscape",
-        "quiz countdown timer wide view landscape close up",
-        "quiz countdown timer wide view landscape detailed view",
-        "three second countdown wide view landscape close up",
-        "three second countdown wide view landscape detailed view"
-      ],
-      "entities": [
-        "quiz countdown timer three second countdown thinking time",
-        "wide view quiz countdown timer landscape three second",
-        "econd countdown landscape quiz countdown timer close up",
-        "iled view three second countdown close up three",
-        "iz countdown timer wide view wide view quiz",
-        "hree second countdown wide view wide view three",
-        "ape quiz countdown timer wide view close up",
-        "ed view three second countdown wide view close",
-        "detailed view quiz countdown timer wide view landscape",
-        "timer wide view landscape landscape three second countdown",
-        "de view three second countdown wide view landscape",
-        "wide view landscape close up quiz countdown timer",
-        "ew three second countdown wide view landscape close",
-        "view landscape detailed view"
-      ],
-      "primaryQuery": "quiz countdown timer wide view landscape",
-      "queries": [
-        {
-          "query": "quiz countdown timer wide view landscape",
-          "intent": "primary",
-          "priority": 1,
-          "mediaKind": "any"
-        },
-        {
-          "query": "three second countdown wide view landscape",
-          "intent": "primary",
-          "priority": 2,
-          "mediaKind": "any"
-        },
-        {
-          "query": "quiz countdown timer wide view landscape wide view",
-          "intent": "wide",
-          "priority": 3,
-          "mediaKind": "any"
-        },
-        {
-          "query": "quiz countdown timer wide view landscape landscape",
-          "intent": "wide",
-          "priority": 4,
-          "mediaKind": "any"
-        },
-        {
-          "query": "three second countdown wide view landscape wide view",
-          "intent": "wide",
-          "priority": 5,
-          "mediaKind": "any"
-        },
-        {
-          "query": "three second countdown wide view landscape landscape",
-          "intent": "wide",
-          "priority": 6,
-          "mediaKind": "any"
-        },
-        {
-          "query": "quiz countdown timer wide view landscape close up",
-          "intent": "detail",
-          "priority": 7,
-          "mediaKind": "any"
-        },
-        {
-          "query": "quiz countdown timer wide view landscape detailed view",
-          "intent": "detail",
-          "priority": 8,
-          "mediaKind": "any"
-        },
-        {
-          "query": "three second countdown wide view landscape close up",
-          "intent": "detail",
-          "priority": 9,
-          "mediaKind": "any"
-        },
-        {
-          "query": "three second countdown wide view landscape detailed view",
-          "intent": "detail",
-          "priority": 10,
-          "mediaKind": "any"
-        }
-      ]
-    },
-    {
-      "sceneId": "q002_countdown_2",
-      "title": "정답 공개까지",
-      "narration": "2",
-      "sourceKeywords": [
-        "quiz countdown timer",
-        "three second countdown",
-        "thinking time",
-        "quiz countdown timer wide view",
-        "quiz countdown timer landscape",
-        "three second countdown wide view",
-        "three second countdown landscape",
-        "quiz countdown timer close up",
-        "quiz countdown timer detailed view",
-        "three second countdown close up",
-        "three second countdown detailed view",
-        "quiz countdown timer wide view wide view",
-        "quiz countdown timer wide view landscape",
-        "three second countdown wide view wide view",
-        "three second countdown wide view landscape",
-        "quiz countdown timer wide view close up",
-        "quiz countdown timer wide view detailed view",
-        "three second countdown wide view close up",
-        "three second countdown wide view detailed view",
-        "quiz countdown timer wide view landscape wide view",
-        "quiz countdown timer wide view landscape landscape",
-        "three second countdown wide view landscape wide view",
-        "three second countdown wide view landscape landscape",
-        "quiz countdown timer wide view landscape close up",
-        "quiz countdown timer wide view landscape detailed view",
-        "three second countdown wide view landscape close up",
-        "three second countdown wide view landscape detailed view"
-      ],
-      "entities": [
-        "quiz countdown timer three second countdown thinking time",
-        "wide view quiz countdown timer landscape three second",
-        "econd countdown landscape quiz countdown timer close up",
-        "iled view three second countdown close up three",
-        "iz countdown timer wide view wide view quiz",
-        "hree second countdown wide view wide view three",
-        "ape quiz countdown timer wide view close up",
-        "ed view three second countdown wide view close",
-        "detailed view quiz countdown timer wide view landscape",
-        "timer wide view landscape landscape three second countdown",
-        "de view three second countdown wide view landscape",
-        "wide view landscape close up quiz countdown timer",
-        "ew three second countdown wide view landscape close",
-        "view landscape detailed view"
-      ],
-      "primaryQuery": "quiz countdown timer wide view landscape",
-      "queries": [
-        {
-          "query": "quiz countdown timer wide view landscape",
-          "intent": "primary",
-          "priority": 1,
-          "mediaKind": "any"
-        },
-        {
-          "query": "three second countdown wide view landscape",
-          "intent": "primary",
-          "priority": 2,
-          "mediaKind": "any"
-        },
-        {
-          "query": "quiz countdown timer wide view landscape wide view",
-          "intent": "wide",
-          "priority": 3,
-          "mediaKind": "any"
-        },
-        {
-          "query": "quiz countdown timer wide view landscape landscape",
-          "intent": "wide",
-          "priority": 4,
-          "mediaKind": "any"
-        },
-        {
-          "query": "three second countdown wide view landscape wide view",
-          "intent": "wide",
-          "priority": 5,
-          "mediaKind": "any"
-        },
-        {
-          "query": "three second countdown wide view landscape landscape",
-          "intent": "wide",
-          "priority": 6,
-          "mediaKind": "any"
-        },
-        {
-          "query": "quiz countdown timer wide view landscape close up",
-          "intent": "detail",
-          "priority": 7,
-          "mediaKind": "any"
-        },
-        {
-          "query": "quiz countdown timer wide view landscape detailed view",
-          "intent": "detail",
-          "priority": 8,
-          "mediaKind": "any"
-        },
-        {
-          "query": "three second countdown wide view landscape close up",
-          "intent": "detail",
-          "priority": 9,
-          "mediaKind": "any"
-        },
-        {
-          "query": "three second countdown wide view landscape detailed view",
-          "intent": "detail",
-          "priority": 10,
-          "mediaKind": "any"
-        }
-      ]
-    },
-    {
-      "sceneId": "q002_countdown_1",
-      "title": "정답 공개까지",
-      "narration": "1",
-      "sourceKeywords": [
-        "quiz countdown timer",
-        "three second countdown",
-        "thinking time",
-        "quiz countdown timer wide view",
-        "quiz countdown timer landscape",
-        "three second countdown wide view",
-        "three second countdown landscape",
-        "quiz countdown timer close up",
-        "quiz countdown timer detailed view",
-        "three second countdown close up",
-        "three second countdown detailed view",
-        "quiz countdown timer wide view wide view",
-        "quiz countdown timer wide view landscape",
-        "three second countdown wide view wide view",
-        "three second countdown wide view landscape",
-        "quiz countdown timer wide view close up",
-        "quiz countdown timer wide view detailed view",
-        "three second countdown wide view close up",
-        "three second countdown wide view detailed view",
-        "quiz countdown timer wide view landscape wide view",
-        "quiz countdown timer wide view landscape landscape",
-        "three second countdown wide view landscape wide view",
-        "three second countdown wide view landscape landscape",
-        "quiz countdown timer wide view landscape close up",
-        "quiz countdown timer wide view landscape detailed view",
-        "three second countdown wide view landscape close up",
-        "three second countdown wide view landscape detailed view"
-      ],
-      "entities": [
-        "quiz countdown timer three second countdown thinking time",
-        "wide view quiz countdown timer landscape three second",
-        "econd countdown landscape quiz countdown timer close up",
-        "iled view three second countdown close up three",
-        "iz countdown timer wide view wide view quiz",
-        "hree second countdown wide view wide view three",
-        "ape quiz countdown timer wide view close up",
-        "ed view three second countdown wide view close",
-        "detailed view quiz countdown timer wide view landscape",
-        "timer wide view landscape landscape three second countdown",
-        "de view three second countdown wide view landscape",
-        "wide view landscape close up quiz countdown timer",
-        "ew three second countdown wide view landscape close",
-        "view landscape detailed view"
-      ],
-      "primaryQuery": "quiz countdown timer wide view landscape",
-      "queries": [
-        {
-          "query": "quiz countdown timer wide view landscape",
-          "intent": "primary",
-          "priority": 1,
-          "mediaKind": "any"
-        },
-        {
-          "query": "three second countdown wide view landscape",
-          "intent": "primary",
-          "priority": 2,
-          "mediaKind": "any"
-        },
-        {
-          "query": "quiz countdown timer wide view landscape wide view",
-          "intent": "wide",
-          "priority": 3,
-          "mediaKind": "any"
-        },
-        {
-          "query": "quiz countdown timer wide view landscape landscape",
-          "intent": "wide",
-          "priority": 4,
-          "mediaKind": "any"
-        },
-        {
-          "query": "three second countdown wide view landscape wide view",
-          "intent": "wide",
-          "priority": 5,
-          "mediaKind": "any"
-        },
-        {
-          "query": "three second countdown wide view landscape landscape",
-          "intent": "wide",
-          "priority": 6,
-          "mediaKind": "any"
-        },
-        {
-          "query": "quiz countdown timer wide view landscape close up",
-          "intent": "detail",
-          "priority": 7,
-          "mediaKind": "any"
-        },
-        {
-          "query": "quiz countdown timer wide view landscape detailed view",
-          "intent": "detail",
-          "priority": 8,
-          "mediaKind": "any"
-        },
-        {
-          "query": "three second countdown wide view landscape close up",
-          "intent": "detail",
-          "priority": 9,
-          "mediaKind": "any"
-        },
-        {
-          "query": "three second countdown wide view landscape detailed view",
-          "intent": "detail",
-          "priority": 10,
-          "mediaKind": "any"
-        }
-      ]
-    },
-    {
-      "sceneId": "q002_answer",
-      "title": "정답",
-      "narration": "정답은 세종대왕입니다.",
-      "sourceKeywords": [
-        "quiz answer reveal",
-        "correct answer",
-        "success celebration",
-        "quiz answer reveal wide view",
-        "quiz answer reveal landscape",
-        "correct answer wide view",
-        "correct answer landscape",
-        "quiz answer reveal close up",
-        "quiz answer reveal detailed view",
-        "correct answer close up",
-        "correct answer detailed view",
-        "quiz answer reveal wide view wide view",
-        "quiz answer reveal wide view landscape",
-        "quiz answer reveal close up wide view",
-        "quiz answer reveal close up landscape",
-        "quiz answer reveal wide view close up",
-        "quiz answer reveal wide view detailed view",
-        "quiz answer reveal close up close up",
-        "quiz answer reveal close up detailed view",
-        "quiz answer reveal wide view landscape wide view",
-        "quiz answer reveal wide view landscape landscape",
-        "quiz answer reveal close up landscape wide view",
-        "quiz answer reveal close up landscape landscape",
-        "quiz answer reveal wide view landscape close up",
-        "quiz answer reveal wide view landscape detailed view",
-        "quiz answer reveal close up landscape close up",
-        "quiz answer reveal close up landscape detailed view"
-      ],
-      "entities": [
-        "quiz answer reveal correct answer success celebration quiz",
-        "quiz answer reveal landscape correct answer wide view",
-        "quiz answer reveal close up quiz answer reveal",
-        "up correct answer detailed view quiz answer reveal",
-        "reveal wide view landscape quiz answer reveal close",
-        "veal close up landscape quiz answer reveal wide",
-        "wide view detailed view quiz answer reveal close",
-        "lose up detailed view quiz answer reveal wide",
-        "reveal wide view landscape landscape quiz answer reveal",
-        "view quiz answer reveal close up landscape landscape",
-        "landscape close up quiz answer reveal wide view",
-        "er reveal close up landscape close up quiz",
-        "led view"
-      ],
-      "primaryQuery": "quiz answer reveal wide view landscape",
-      "queries": [
-        {
-          "query": "quiz answer reveal wide view landscape",
-          "intent": "primary",
-          "priority": 1,
-          "mediaKind": "any"
-        },
-        {
-          "query": "quiz answer reveal close up landscape",
-          "intent": "primary",
-          "priority": 2,
-          "mediaKind": "any"
-        },
-        {
-          "query": "quiz answer reveal wide view landscape wide view",
-          "intent": "wide",
-          "priority": 3,
-          "mediaKind": "any"
-        },
-        {
-          "query": "quiz answer reveal wide view landscape landscape",
-          "intent": "wide",
-          "priority": 4,
-          "mediaKind": "any"
-        },
-        {
-          "query": "quiz answer reveal close up landscape wide view",
-          "intent": "wide",
-          "priority": 5,
-          "mediaKind": "any"
-        },
-        {
-          "query": "quiz answer reveal close up landscape landscape",
-          "intent": "wide",
-          "priority": 6,
-          "mediaKind": "any"
-        },
-        {
-          "query": "quiz answer reveal wide view landscape close up",
-          "intent": "detail",
-          "priority": 7,
-          "mediaKind": "any"
-        },
-        {
-          "query": "quiz answer reveal wide view landscape detailed view",
-          "intent": "detail",
-          "priority": 8,
-          "mediaKind": "any"
-        },
-        {
-          "query": "quiz answer reveal close up landscape close up",
-          "intent": "detail",
-          "priority": 9,
-          "mediaKind": "any"
-        },
-        {
-          "query": "quiz answer reveal close up landscape detailed view",
-          "intent": "detail",
-          "priority": 10,
-          "mediaKind": "any"
-        }
-      ]
-    },
-    {
-      "sceneId": "q003_question",
-      "title": "문제 3",
-      "narration": "세계에서 가장 큰 사막은 어디일까요",
-      "sourceKeywords": [
-        "general knowledge question",
-        "quiz question",
-        "thinking concept",
-        "desert aerial view",
-        "general knowledge question wide view",
-        "general knowledge question landscape",
-        "desert aerial view wide view",
-        "desert aerial view landscape",
-        "general knowledge question close up",
-        "general knowledge question detailed view",
-        "desert aerial view close up",
-        "desert aerial view detailed view",
-        "general knowledge question wide view wide view",
-        "general knowledge question wide view landscape",
-        "desert aerial view wide view wide view",
-        "desert aerial view wide view landscape",
-        "general knowledge question wide view close up",
-        "general knowledge question wide view detailed view",
-        "desert aerial view wide view close up",
-        "desert aerial view wide view detailed view",
-        "general knowledge question wide view landscape wide view",
-        "general knowledge question wide view landscape landscape",
-        "desert aerial view wide view landscape wide view",
-        "desert aerial view wide view landscape landscape",
-        "general knowledge question wide view landscape close up",
-        "general knowledge question wide view landscape detailed view",
-        "desert aerial view wide view landscape close up",
-        "desert aerial view wide view landscape detailed view"
-      ],
-      "entities": [
-        "사막",
-        "general knowledge question quiz question thinking concept desert",
-        "ral knowledge question wide view general knowledge question",
-        "al view wide view desert aerial view landscape",
-        "general knowledge question detailed view desert aerial view",
-        "ial view detailed view general knowledge question wide",
-        "wledge question wide view landscape desert aerial view",
-        "aerial view wide view landscape general knowledge question",
-        "eral knowledge question wide view detailed view desert",
-        "up desert aerial view wide view detailed view",
-        "iew landscape wide view general knowledge question wide",
-        "desert aerial view wide view landscape wide view",
-        "dscape landscape general knowledge question wide view landscape",
-        "knowledge question wide view landscape detailed view desert",
-        "landscape close up desert aerial view wide view"
-      ],
-      "primaryQuery": "general knowledge question wide view landscape",
-      "queries": [
-        {
-          "query": "general knowledge question wide view landscape",
-          "intent": "primary",
-          "priority": 1,
-          "mediaKind": "any"
-        },
-        {
-          "query": "desert aerial view wide view landscape",
-          "intent": "primary",
-          "priority": 2,
-          "mediaKind": "any"
-        },
-        {
-          "query": "general knowledge question wide view landscape wide view",
-          "intent": "wide",
-          "priority": 3,
-          "mediaKind": "any"
-        },
-        {
-          "query": "general knowledge question wide view landscape landscape",
-          "intent": "wide",
-          "priority": 4,
-          "mediaKind": "any"
-        },
-        {
-          "query": "desert aerial view wide view landscape wide view",
-          "intent": "wide",
-          "priority": 5,
-          "mediaKind": "any"
-        },
-        {
-          "query": "desert aerial view wide view landscape landscape",
-          "intent": "wide",
-          "priority": 6,
-          "mediaKind": "any"
-        },
-        {
-          "query": "general knowledge question wide view landscape close up",
-          "intent": "detail",
-          "priority": 7,
-          "mediaKind": "any"
-        },
-        {
-          "query": "general knowledge question wide view landscape detailed view",
-          "intent": "detail",
-          "priority": 8,
-          "mediaKind": "any"
-        },
-        {
-          "query": "desert aerial view wide view landscape close up",
-          "intent": "detail",
-          "priority": 9,
-          "mediaKind": "any"
-        },
-        {
-          "query": "desert aerial view wide view landscape detailed view",
-          "intent": "detail",
-          "priority": 10,
-          "mediaKind": "any"
-        }
-      ]
-    },
-    {
-      "sceneId": "q003_countdown_3",
-      "title": "정답 공개까지",
-      "narration": "3",
-      "sourceKeywords": [
-        "quiz countdown timer",
-        "three second countdown",
-        "thinking time",
-        "quiz countdown timer wide view",
-        "quiz countdown timer landscape",
-        "three second countdown wide view",
-        "three second countdown landscape",
-        "quiz countdown timer close up",
-        "quiz countdown timer detailed view",
-        "three second countdown close up",
-        "three second countdown detailed view",
-        "quiz countdown timer wide view wide view",
-        "quiz countdown timer wide view landscape",
-        "three second countdown wide view wide view",
-        "three second countdown wide view landscape",
-        "quiz countdown timer wide view close up",
-        "quiz countdown timer wide view detailed view",
-        "three second countdown wide view close up",
-        "three second countdown wide view detailed view",
-        "quiz countdown timer wide view landscape wide view",
-        "quiz countdown timer wide view landscape landscape",
-        "three second countdown wide view landscape wide view",
-        "three second countdown wide view landscape landscape",
-        "quiz countdown timer wide view landscape close up",
-        "quiz countdown timer wide view landscape detailed view",
-        "three second countdown wide view landscape close up",
-        "three second countdown wide view landscape detailed view"
-      ],
-      "entities": [
-        "quiz countdown timer three second countdown thinking time",
-        "wide view quiz countdown timer landscape three second",
-        "econd countdown landscape quiz countdown timer close up",
-        "iled view three second countdown close up three",
-        "iz countdown timer wide view wide view quiz",
-        "hree second countdown wide view wide view three",
-        "ape quiz countdown timer wide view close up",
-        "ed view three second countdown wide view close",
-        "detailed view quiz countdown timer wide view landscape",
-        "timer wide view landscape landscape three second countdown",
-        "de view three second countdown wide view landscape",
-        "wide view landscape close up quiz countdown timer",
-        "ew three second countdown wide view landscape close",
-        "view landscape detailed view"
-      ],
-      "primaryQuery": "quiz countdown timer wide view landscape",
-      "queries": [
-        {
-          "query": "quiz countdown timer wide view landscape",
-          "intent": "primary",
-          "priority": 1,
-          "mediaKind": "any"
-        },
-        {
-          "query": "three second countdown wide view landscape",
-          "intent": "primary",
-          "priority": 2,
-          "mediaKind": "any"
-        },
-        {
-          "query": "quiz countdown timer wide view landscape wide view",
-          "intent": "wide",
-          "priority": 3,
-          "mediaKind": "any"
-        },
-        {
-          "query": "quiz countdown timer wide view landscape landscape",
-          "intent": "wide",
-          "priority": 4,
-          "mediaKind": "any"
-        },
-        {
-          "query": "three second countdown wide view landscape wide view",
-          "intent": "wide",
-          "priority": 5,
-          "mediaKind": "any"
-        },
-        {
-          "query": "three second countdown wide view landscape landscape",
-          "intent": "wide",
-          "priority": 6,
-          "mediaKind": "any"
-        },
-        {
-          "query": "quiz countdown timer wide view landscape close up",
-          "intent": "detail",
-          "priority": 7,
-          "mediaKind": "any"
-        },
-        {
-          "query": "quiz countdown timer wide view landscape detailed view",
-          "intent": "detail",
-          "priority": 8,
-          "mediaKind": "any"
-        },
-        {
-          "query": "three second countdown wide view landscape close up",
-          "intent": "detail",
-          "priority": 9,
-          "mediaKind": "any"
-        },
-        {
-          "query": "three second countdown wide view landscape detailed view",
-          "intent": "detail",
-          "priority": 10,
-          "mediaKind": "any"
-        }
-      ]
-    },
-    {
-      "sceneId": "q003_countdown_2",
-      "title": "정답 공개까지",
-      "narration": "2",
-      "sourceKeywords": [
-        "quiz countdown timer",
-        "three second countdown",
-        "thinking time",
-        "quiz countdown timer wide view",
-        "quiz countdown timer landscape",
-        "three second countdown wide view",
-        "three second countdown landscape",
-        "quiz countdown timer close up",
-        "quiz countdown timer detailed view",
-        "three second countdown close up",
-        "three second countdown detailed view",
-        "quiz countdown timer wide view wide view",
-        "quiz countdown timer wide view landscape",
-        "three second countdown wide view wide view",
-        "three second countdown wide view landscape",
-        "quiz countdown timer wide view close up",
-        "quiz countdown timer wide view detailed view",
-        "three second countdown wide view close up",
-        "three second countdown wide view detailed view",
-        "quiz countdown timer wide view landscape wide view",
-        "quiz countdown timer wide view landscape landscape",
-        "three second countdown wide view landscape wide view",
-        "three second countdown wide view landscape landscape",
-        "quiz countdown timer wide view landscape close up",
-        "quiz countdown timer wide view landscape detailed view",
-        "three second countdown wide view landscape close up",
-        "three second countdown wide view landscape detailed view"
-      ],
-      "entities": [
-        "quiz countdown timer three second countdown thinking time",
-        "wide view quiz countdown timer landscape three second",
-        "econd countdown landscape quiz countdown timer close up",
-        "iled view three second countdown close up three",
-        "iz countdown timer wide view wide view quiz",
-        "hree second countdown wide view wide view three",
-        "ape quiz countdown timer wide view close up",
-        "ed view three second countdown wide view close",
-        "detailed view quiz countdown timer wide view landscape",
-        "timer wide view landscape landscape three second countdown",
-        "de view three second countdown wide view landscape",
-        "wide view landscape close up quiz countdown timer",
-        "ew three second countdown wide view landscape close",
-        "view landscape detailed view"
-      ],
-      "primaryQuery": "quiz countdown timer wide view landscape",
-      "queries": [
-        {
-          "query": "quiz countdown timer wide view landscape",
-          "intent": "primary",
-          "priority": 1,
-          "mediaKind": "any"
-        },
-        {
-          "query": "three second countdown wide view landscape",
-          "intent": "primary",
-          "priority": 2,
-          "mediaKind": "any"
-        },
-        {
-          "query": "quiz countdown timer wide view landscape wide view",
-          "intent": "wide",
-          "priority": 3,
-          "mediaKind": "any"
-        },
-        {
-          "query": "quiz countdown timer wide view landscape landscape",
-          "intent": "wide",
-          "priority": 4,
-          "mediaKind": "any"
-        },
-        {
-          "query": "three second countdown wide view landscape wide view",
-          "intent": "wide",
-          "priority": 5,
-          "mediaKind": "any"
-        },
-        {
-          "query": "three second countdown wide view landscape landscape",
-          "intent": "wide",
-          "priority": 6,
-          "mediaKind": "any"
-        },
-        {
-          "query": "quiz countdown timer wide view landscape close up",
-          "intent": "detail",
-          "priority": 7,
-          "mediaKind": "any"
-        },
-        {
-          "query": "quiz countdown timer wide view landscape detailed view",
-          "intent": "detail",
-          "priority": 8,
-          "mediaKind": "any"
-        },
-        {
-          "query": "three second countdown wide view landscape close up",
-          "intent": "detail",
-          "priority": 9,
-          "mediaKind": "any"
-        },
-        {
-          "query": "three second countdown wide view landscape detailed view",
-          "intent": "detail",
-          "priority": 10,
-          "mediaKind": "any"
-        }
-      ]
-    },
-    {
-      "sceneId": "q003_countdown_1",
-      "title": "정답 공개까지",
-      "narration": "1",
-      "sourceKeywords": [
-        "quiz countdown timer",
-        "three second countdown",
-        "thinking time",
-        "quiz countdown timer wide view",
-        "quiz countdown timer landscape",
-        "three second countdown wide view",
-        "three second countdown landscape",
-        "quiz countdown timer close up",
-        "quiz countdown timer detailed view",
-        "three second countdown close up",
-        "three second countdown detailed view",
-        "quiz countdown timer wide view wide view",
-        "quiz countdown timer wide view landscape",
-        "three second countdown wide view wide view",
-        "three second countdown wide view landscape",
-        "quiz countdown timer wide view close up",
-        "quiz countdown timer wide view detailed view",
-        "three second countdown wide view close up",
-        "three second countdown wide view detailed view",
-        "quiz countdown timer wide view landscape wide view",
-        "quiz countdown timer wide view landscape landscape",
-        "three second countdown wide view landscape wide view",
-        "three second countdown wide view landscape landscape",
-        "quiz countdown timer wide view landscape close up",
-        "quiz countdown timer wide view landscape detailed view",
-        "three second countdown wide view landscape close up",
-        "three second countdown wide view landscape detailed view"
-      ],
-      "entities": [
-        "quiz countdown timer three second countdown thinking time",
-        "wide view quiz countdown timer landscape three second",
-        "econd countdown landscape quiz countdown timer close up",
-        "iled view three second countdown close up three",
-        "iz countdown timer wide view wide view quiz",
-        "hree second countdown wide view wide view three",
-        "ape quiz countdown timer wide view close up",
-        "ed view three second countdown wide view close",
-        "detailed view quiz countdown timer wide view landscape",
-        "timer wide view landscape landscape three second countdown",
-        "de view three second countdown wide view landscape",
-        "wide view landscape close up quiz countdown timer",
-        "ew three second countdown wide view landscape close",
-        "view landscape detailed view"
-      ],
-      "primaryQuery": "quiz countdown timer wide view landscape",
-      "queries": [
-        {
-          "query": "quiz countdown timer wide view landscape",
-          "intent": "primary",
-          "priority": 1,
-          "mediaKind": "any"
-        },
-        {
-          "query": "three second countdown wide view landscape",
-          "intent": "primary",
-          "priority": 2,
-          "mediaKind": "any"
-        },
-        {
-          "query": "quiz countdown timer wide view landscape wide view",
-          "intent": "wide",
-          "priority": 3,
-          "mediaKind": "any"
-        },
-        {
-          "query": "quiz countdown timer wide view landscape landscape",
-          "intent": "wide",
-          "priority": 4,
-          "mediaKind": "any"
-        },
-        {
-          "query": "three second countdown wide view landscape wide view",
-          "intent": "wide",
-          "priority": 5,
-          "mediaKind": "any"
-        },
-        {
-          "query": "three second countdown wide view landscape landscape",
-          "intent": "wide",
-          "priority": 6,
-          "mediaKind": "any"
-        },
-        {
-          "query": "quiz countdown timer wide view landscape close up",
-          "intent": "detail",
-          "priority": 7,
-          "mediaKind": "any"
-        },
-        {
-          "query": "quiz countdown timer wide view landscape detailed view",
-          "intent": "detail",
-          "priority": 8,
-          "mediaKind": "any"
-        },
-        {
-          "query": "three second countdown wide view landscape close up",
-          "intent": "detail",
-          "priority": 9,
-          "mediaKind": "any"
-        },
-        {
-          "query": "three second countdown wide view landscape detailed view",
-          "intent": "detail",
-          "priority": 10,
-          "mediaKind": "any"
-        }
-      ]
-    },
-    {
-      "sceneId": "q003_answer",
-      "title": "정답",
-      "narration": "정답은 남극입니다.",
-      "sourceKeywords": [
-        "quiz answer reveal",
-        "correct answer",
-        "success celebration",
-        "South Pole research station",
-        "South Pole research station wide view",
-        "South Pole research station landscape",
-        "quiz answer reveal wide view",
-        "quiz answer reveal landscape",
-        "South Pole research station close up",
-        "South Pole research station detailed view",
-        "quiz answer reveal close up",
-        "quiz answer reveal detailed view",
-        "South Pole research station wide view wide view",
-        "South Pole research station wide view landscape",
-        "South Pole research station close up wide view",
-        "South Pole research station close up landscape",
-        "South Pole research station wide view close up",
-        "South Pole research station wide view detailed view",
-        "South Pole research station close up close up",
-        "South Pole research station close up detailed view"
-      ],
-      "entities": [
-        "남극",
-        "quiz answer reveal correct answer success celebration South",
-        "South Pole research station wide view South Pole",
-        "answer reveal wide view quiz answer reveal landscape",
-        "close up South Pole research station detailed view",
-        "iz answer reveal detailed view South Pole research",
-        "uth Pole research station wide view landscape South",
-        "wide view South Pole research station close up",
-        "ation wide view close up South Pole research",
-        "Pole research station close up close up South",
-        "tailed view"
-      ],
-      "primaryQuery": "South Pole research station wide view",
-      "queries": [
-        {
-          "query": "South Pole research station wide view",
-          "intent": "primary",
-          "priority": 1,
-          "mediaKind": "any"
-        },
-        {
-          "query": "South Pole research station close up",
-          "intent": "primary",
-          "priority": 2,
-          "mediaKind": "any"
-        },
-        {
-          "query": "South Pole research station wide view wide view",
-          "intent": "wide",
-          "priority": 3,
-          "mediaKind": "any"
-        },
-        {
-          "query": "South Pole research station wide view landscape",
-          "intent": "wide",
-          "priority": 4,
-          "mediaKind": "any"
-        },
-        {
-          "query": "South Pole research station close up wide view",
-          "intent": "wide",
-          "priority": 5,
-          "mediaKind": "any"
-        },
-        {
-          "query": "South Pole research station close up landscape",
-          "intent": "wide",
-          "priority": 6,
-          "mediaKind": "any"
-        },
-        {
-          "query": "South Pole research station wide view close up",
-          "intent": "detail",
-          "priority": 7,
-          "mediaKind": "any"
-        },
-        {
-          "query": "South Pole research station wide view detailed view",
-          "intent": "detail",
-          "priority": 8,
-          "mediaKind": "any"
-        },
-        {
-          "query": "South Pole research station close up close up",
-          "intent": "detail",
-          "priority": 9,
-          "mediaKind": "any"
-        },
-        {
-          "query": "South Pole research station close up detailed view",
-          "intent": "detail",
-          "priority": 10,
-          "mediaKind": "any"
-        }
-      ]
-    },
-    {
-      "sceneId": "q004_question",
-      "title": "문제 4",
-      "narration": "한글 자음의 기본자는 몇 개일까요",
-      "sourceKeywords": [
-        "general knowledge question",
-        "quiz question",
-        "thinking concept",
-        "general knowledge question wide view",
-        "general knowledge question landscape",
-        "quiz question wide view",
-        "quiz question landscape",
-        "general knowledge question close up",
-        "general knowledge question detailed view",
-        "quiz question close up",
-        "quiz question detailed view",
-        "general knowledge question wide view wide view",
-        "general knowledge question wide view landscape",
-        "general knowledge question close up wide view",
-        "general knowledge question close up landscape",
-        "general knowledge question wide view close up",
-        "general knowledge question wide view detailed view",
-        "general knowledge question close up close up",
-        "general knowledge question close up detailed view",
-        "general knowledge question wide view landscape wide view",
-        "general knowledge question wide view landscape landscape",
-        "general knowledge question close up landscape wide view",
-        "general knowledge question close up landscape landscape",
-        "general knowledge question wide view landscape close up",
-        "general knowledge question wide view landscape detailed view",
-        "general knowledge question close up landscape close up",
-        "general knowledge question close up landscape detailed view"
-      ],
-      "entities": [
-        "general knowledge question quiz question thinking concept general",
-        "ion wide view general knowledge question landscape quiz",
-        "uestion landscape general knowledge question close up general",
-        "detailed view quiz question close up quiz question",
-        "question wide view wide view general knowledge question",
-        "eral knowledge question close up wide view general",
-        "ndscape general knowledge question wide view close up",
-        "wide view detailed view general knowledge question close",
-        "ledge question close up detailed view general knowledge",
-        "ape wide view general knowledge question wide view",
-        "owledge question close up landscape wide view general",
-        "landscape landscape general knowledge question wide view landscape",
-        "al knowledge question wide view landscape detailed view",
-        "close up landscape close up general knowledge question",
-        "led view"
-      ],
-      "primaryQuery": "general knowledge question wide view landscape",
-      "queries": [
-        {
-          "query": "general knowledge question wide view landscape",
-          "intent": "primary",
-          "priority": 1,
-          "mediaKind": "any"
-        },
-        {
-          "query": "general knowledge question close up landscape",
-          "intent": "primary",
-          "priority": 2,
-          "mediaKind": "any"
-        },
-        {
-          "query": "general knowledge question wide view landscape wide view",
-          "intent": "wide",
-          "priority": 3,
-          "mediaKind": "any"
-        },
-        {
-          "query": "general knowledge question wide view landscape landscape",
-          "intent": "wide",
-          "priority": 4,
-          "mediaKind": "any"
-        },
-        {
-          "query": "general knowledge question close up landscape wide view",
-          "intent": "wide",
-          "priority": 5,
-          "mediaKind": "any"
-        },
-        {
-          "query": "general knowledge question close up landscape landscape",
-          "intent": "wide",
-          "priority": 6,
-          "mediaKind": "any"
-        },
-        {
-          "query": "general knowledge question wide view landscape close up",
-          "intent": "detail",
-          "priority": 7,
-          "mediaKind": "any"
-        },
-        {
-          "query": "general knowledge question wide view landscape detailed view",
-          "intent": "detail",
-          "priority": 8,
-          "mediaKind": "any"
-        },
-        {
-          "query": "general knowledge question close up landscape close up",
-          "intent": "detail",
-          "priority": 9,
-          "mediaKind": "any"
-        },
-        {
-          "query": "general knowledge question close up landscape detailed view",
-          "intent": "detail",
-          "priority": 10,
-          "mediaKind": "any"
-        }
-      ]
-    },
-    {
-      "sceneId": "q004_countdown_3",
-      "title": "정답 공개까지",
-      "narration": "3",
-      "sourceKeywords": [
-        "quiz countdown timer",
-        "three second countdown",
-        "thinking time",
-        "quiz countdown timer wide view",
-        "quiz countdown timer landscape",
-        "three second countdown wide view",
-        "three second countdown landscape",
-        "quiz countdown timer close up",
-        "quiz countdown timer detailed view",
-        "three second countdown close up",
-        "three second countdown detailed view",
-        "quiz countdown timer wide view wide view",
-        "quiz countdown timer wide view landscape",
-        "three second countdown wide view wide view",
-        "three second countdown wide view landscape",
-        "quiz countdown timer wide view close up",
-        "quiz countdown timer wide view detailed view",
-        "three second countdown wide view close up",
-        "three second countdown wide view detailed view",
-        "quiz countdown timer wide view landscape wide view",
-        "quiz countdown timer wide view landscape landscape",
-        "three second countdown wide view landscape wide view",
-        "three second countdown wide view landscape landscape",
-        "quiz countdown timer wide view landscape close up",
-        "quiz countdown timer wide view landscape detailed view",
-        "three second countdown wide view landscape close up",
-        "three second countdown wide view landscape detailed view"
-      ],
-      "entities": [
-        "quiz countdown timer three second countdown thinking time",
-        "wide view quiz countdown timer landscape three second",
-        "econd countdown landscape quiz countdown timer close up",
-        "iled view three second countdown close up three",
-        "iz countdown timer wide view wide view quiz",
-        "hree second countdown wide view wide view three",
-        "ape quiz countdown timer wide view close up",
-        "ed view three second countdown wide view close",
-        "detailed view quiz countdown timer wide view landscape",
-        "timer wide view landscape landscape three second countdown",
-        "de view three second countdown wide view landscape",
-        "wide view landscape close up quiz countdown timer",
-        "ew three second countdown wide view landscape close",
-        "view landscape detailed view"
-      ],
-      "primaryQuery": "quiz countdown timer wide view landscape",
-      "queries": [
-        {
-          "query": "quiz countdown timer wide view landscape",
-          "intent": "primary",
-          "priority": 1,
-          "mediaKind": "any"
-        },
-        {
-          "query": "three second countdown wide view landscape",
-          "intent": "primary",
-          "priority": 2,
-          "mediaKind": "any"
-        },
-        {
-          "query": "quiz countdown timer wide view landscape wide view",
-          "intent": "wide",
-          "priority": 3,
-          "mediaKind": "any"
-        },
-        {
-          "query": "quiz countdown timer wide view landscape landscape",
-          "intent": "wide",
-          "priority": 4,
-          "mediaKind": "any"
-        },
-        {
-          "query": "three second countdown wide view landscape wide view",
-          "intent": "wide",
-          "priority": 5,
-          "mediaKind": "any"
-        },
-        {
-          "query": "three second countdown wide view landscape landscape",
-          "intent": "wide",
-          "priority": 6,
-          "mediaKind": "any"
-        },
-        {
-          "query": "quiz countdown timer wide view landscape close up",
-          "intent": "detail",
-          "priority": 7,
-          "mediaKind": "any"
-        },
-        {
-          "query": "quiz countdown timer wide view landscape detailed view",
-          "intent": "detail",
-          "priority": 8,
-          "mediaKind": "any"
-        },
-        {
-          "query": "three second countdown wide view landscape close up",
-          "intent": "detail",
-          "priority": 9,
-          "mediaKind": "any"
-        },
-        {
-          "query": "three second countdown wide view landscape detailed view",
-          "intent": "detail",
-          "priority": 10,
-          "mediaKind": "any"
-        }
-      ]
-    },
-    {
-      "sceneId": "q004_countdown_2",
-      "title": "정답 공개까지",
-      "narration": "2",
-      "sourceKeywords": [
-        "quiz countdown timer",
-        "three second countdown",
-        "thinking time",
-        "quiz countdown timer wide view",
-        "quiz countdown timer landscape",
-        "three second countdown wide view",
-        "three second countdown landscape",
-        "quiz countdown timer close up",
-        "quiz countdown timer detailed view",
-        "three second countdown close up",
-        "three second countdown detailed view",
-        "quiz countdown timer wide view wide view",
-        "quiz countdown timer wide view landscape",
-        "three second countdown wide view wide view",
-        "three second countdown wide view landscape",
-        "quiz countdown timer wide view close up",
-        "quiz countdown timer wide view detailed view",
-        "three second countdown wide view close up",
-        "three second countdown wide view detailed view",
-        "quiz countdown timer wide view landscape wide view",
-        "quiz countdown timer wide view landscape landscape",
-        "three second countdown wide view landscape wide view",
-        "three second countdown wide view landscape landscape",
-        "quiz countdown timer wide view landscape close up",
-        "quiz countdown timer wide view landscape detailed view",
-        "three second countdown wide view landscape close up",
-        "three second countdown wide view landscape detailed view"
-      ],
-      "entities": [
-        "quiz countdown timer three second countdown thinking time",
-        "wide view quiz countdown timer landscape three second",
-        "econd countdown landscape quiz countdown timer close up",
-        "iled view three second countdown close up three",
-        "iz countdown timer wide view wide view quiz",
-        "hree second countdown wide view wide view three",
-        "ape quiz countdown timer wide view close up",
-        "ed view three second countdown wide view close",
-        "detailed view quiz countdown timer wide view landscape",
-        "timer wide view landscape landscape three second countdown",
-        "de view three second countdown wide view landscape",
-        "wide view landscape close up quiz countdown timer",
-        "ew three second countdown wide view landscape close",
-        "view landscape detailed view"
-      ],
-      "primaryQuery": "quiz countdown timer wide view landscape",
-      "queries": [
-        {
-          "query": "quiz countdown timer wide view landscape",
-          "intent": "primary",
-          "priority": 1,
-          "mediaKind": "any"
-        },
-        {
-          "query": "three second countdown wide view landscape",
-          "intent": "primary",
-          "priority": 2,
-          "mediaKind": "any"
-        },
-        {
-          "query": "quiz countdown timer wide view landscape wide view",
-          "intent": "wide",
-          "priority": 3,
-          "mediaKind": "any"
-        },
-        {
-          "query": "quiz countdown timer wide view landscape landscape",
-          "intent": "wide",
-          "priority": 4,
-          "mediaKind": "any"
-        },
-        {
-          "query": "three second countdown wide view landscape wide view",
-          "intent": "wide",
-          "priority": 5,
-          "mediaKind": "any"
-        },
-        {
-          "query": "three second countdown wide view landscape landscape",
-          "intent": "wide",
-          "priority": 6,
-          "mediaKind": "any"
-        },
-        {
-          "query": "quiz countdown timer wide view landscape close up",
-          "intent": "detail",
-          "priority": 7,
-          "mediaKind": "any"
-        },
-        {
-          "query": "quiz countdown timer wide view landscape detailed view",
-          "intent": "detail",
-          "priority": 8,
-          "mediaKind": "any"
-        },
-        {
-          "query": "three second countdown wide view landscape close up",
-          "intent": "detail",
-          "priority": 9,
-          "mediaKind": "any"
-        },
-        {
-          "query": "three second countdown wide view landscape detailed view",
-          "intent": "detail",
-          "priority": 10,
-          "mediaKind": "any"
-        }
-      ]
-    },
-    {
-      "sceneId": "q004_countdown_1",
-      "title": "정답 공개까지",
-      "narration": "1",
-      "sourceKeywords": [
-        "quiz countdown timer",
-        "three second countdown",
-        "thinking time",
-        "quiz countdown timer wide view",
-        "quiz countdown timer landscape",
-        "three second countdown wide view",
-        "three second countdown landscape",
-        "quiz countdown timer close up",
-        "quiz countdown timer detailed view",
-        "three second countdown close up",
-        "three second countdown detailed view",
-        "quiz countdown timer wide view wide view",
-        "quiz countdown timer wide view landscape",
-        "three second countdown wide view wide view",
-        "three second countdown wide view landscape",
-        "quiz countdown timer wide view close up",
-        "quiz countdown timer wide view detailed view",
-        "three second countdown wide view close up",
-        "three second countdown wide view detailed view",
-        "quiz countdown timer wide view landscape wide view",
-        "quiz countdown timer wide view landscape landscape",
-        "three second countdown wide view landscape wide view",
-        "three second countdown wide view landscape landscape",
-        "quiz countdown timer wide view landscape close up",
-        "quiz countdown timer wide view landscape detailed view",
-        "three second countdown wide view landscape close up",
-        "three second countdown wide view landscape detailed view"
-      ],
-      "entities": [
-        "quiz countdown timer three second countdown thinking time",
-        "wide view quiz countdown timer landscape three second",
-        "econd countdown landscape quiz countdown timer close up",
-        "iled view three second countdown close up three",
-        "iz countdown timer wide view wide view quiz",
-        "hree second countdown wide view wide view three",
-        "ape quiz countdown timer wide view close up",
-        "ed view three second countdown wide view close",
-        "detailed view quiz countdown timer wide view landscape",
-        "timer wide view landscape landscape three second countdown",
-        "de view three second countdown wide view landscape",
-        "wide view landscape close up quiz countdown timer",
-        "ew three second countdown wide view landscape close",
-        "view landscape detailed view"
-      ],
-      "primaryQuery": "quiz countdown timer wide view landscape",
-      "queries": [
-        {
-          "query": "quiz countdown timer wide view landscape",
-          "intent": "primary",
-          "priority": 1,
-          "mediaKind": "any"
-        },
-        {
-          "query": "three second countdown wide view landscape",
-          "intent": "primary",
-          "priority": 2,
-          "mediaKind": "any"
-        },
-        {
-          "query": "quiz countdown timer wide view landscape wide view",
-          "intent": "wide",
-          "priority": 3,
-          "mediaKind": "any"
-        },
-        {
-          "query": "quiz countdown timer wide view landscape landscape",
-          "intent": "wide",
-          "priority": 4,
-          "mediaKind": "any"
-        },
-        {
-          "query": "three second countdown wide view landscape wide view",
-          "intent": "wide",
-          "priority": 5,
-          "mediaKind": "any"
-        },
-        {
-          "query": "three second countdown wide view landscape landscape",
-          "intent": "wide",
-          "priority": 6,
-          "mediaKind": "any"
-        },
-        {
-          "query": "quiz countdown timer wide view landscape close up",
-          "intent": "detail",
-          "priority": 7,
-          "mediaKind": "any"
-        },
-        {
-          "query": "quiz countdown timer wide view landscape detailed view",
-          "intent": "detail",
-          "priority": 8,
-          "mediaKind": "any"
-        },
-        {
-          "query": "three second countdown wide view landscape close up",
-          "intent": "detail",
-          "priority": 9,
-          "mediaKind": "any"
-        },
-        {
-          "query": "three second countdown wide view landscape detailed view",
-          "intent": "detail",
-          "priority": 10,
-          "mediaKind": "any"
-        }
-      ]
-    },
-    {
-      "sceneId": "q004_answer",
-      "title": "정답",
-      "narration": "정답은 다섯 개입니다.",
-      "sourceKeywords": [
-        "quiz answer reveal",
-        "correct answer",
-        "success celebration",
-        "quiz answer reveal wide view",
-        "quiz answer reveal landscape",
-        "correct answer wide view",
-        "correct answer landscape",
-        "quiz answer reveal close up",
-        "quiz answer reveal detailed view",
-        "correct answer close up",
-        "correct answer detailed view",
-        "quiz answer reveal wide view wide view",
-        "quiz answer reveal wide view landscape",
-        "quiz answer reveal close up wide view",
-        "quiz answer reveal close up landscape",
-        "quiz answer reveal wide view close up",
-        "quiz answer reveal wide view detailed view",
-        "quiz answer reveal close up close up",
-        "quiz answer reveal close up detailed view",
-        "quiz answer reveal wide view landscape wide view",
-        "quiz answer reveal wide view landscape landscape",
-        "quiz answer reveal close up landscape wide view",
-        "quiz answer reveal close up landscape landscape",
-        "quiz answer reveal wide view landscape close up",
-        "quiz answer reveal wide view landscape detailed view",
-        "quiz answer reveal close up landscape close up",
-        "quiz answer reveal close up landscape detailed view"
-      ],
-      "entities": [
-        "quiz answer reveal correct answer success celebration quiz",
-        "quiz answer reveal landscape correct answer wide view",
-        "quiz answer reveal close up quiz answer reveal",
-        "up correct answer detailed view quiz answer reveal",
-        "reveal wide view landscape quiz answer reveal close",
-        "veal close up landscape quiz answer reveal wide",
-        "wide view detailed view quiz answer reveal close",
-        "lose up detailed view quiz answer reveal wide",
-        "reveal wide view landscape landscape quiz answer reveal",
-        "view quiz answer reveal close up landscape landscape",
-        "landscape close up quiz answer reveal wide view",
-        "er reveal close up landscape close up quiz",
-        "led view"
-      ],
-      "primaryQuery": "quiz answer reveal wide view landscape",
-      "queries": [
-        {
-          "query": "quiz answer reveal wide view landscape",
-          "intent": "primary",
-          "priority": 1,
-          "mediaKind": "any"
-        },
-        {
-          "query": "quiz answer reveal close up landscape",
-          "intent": "primary",
-          "priority": 2,
-          "mediaKind": "any"
-        },
-        {
-          "query": "quiz answer reveal wide view landscape wide view",
-          "intent": "wide",
-          "priority": 3,
-          "mediaKind": "any"
-        },
-        {
-          "query": "quiz answer reveal wide view landscape landscape",
-          "intent": "wide",
-          "priority": 4,
-          "mediaKind": "any"
-        },
-        {
-          "query": "quiz answer reveal close up landscape wide view",
-          "intent": "wide",
-          "priority": 5,
-          "mediaKind": "any"
-        },
-        {
-          "query": "quiz answer reveal close up landscape landscape",
-          "intent": "wide",
-          "priority": 6,
-          "mediaKind": "any"
-        },
-        {
-          "query": "quiz answer reveal wide view landscape close up",
-          "intent": "detail",
-          "priority": 7,
-          "mediaKind": "any"
-        },
-        {
-          "query": "quiz answer reveal wide view landscape detailed view",
-          "intent": "detail",
-          "priority": 8,
-          "mediaKind": "any"
-        },
-        {
-          "query": "quiz answer reveal close up landscape close up",
-          "intent": "detail",
-          "priority": 9,
-          "mediaKind": "any"
-        },
-        {
-          "query": "quiz answer reveal close up landscape detailed view",
-          "intent": "detail",
-          "priority": 10,
-          "mediaKind": "any"
-        }
-      ]
-    },
-    {
-      "sceneId": "q005_question",
-      "title": "문제 5",
-      "narration": "사람의 몸에서 가장 큰 장기는 무엇일까요",
-      "sourceKeywords": [
-        "general knowledge question",
-        "quiz question",
-        "thinking concept",
-        "general knowledge question wide view",
-        "general knowledge question landscape",
-        "quiz question wide view",
-        "quiz question landscape",
-        "general knowledge question close up",
-        "general knowledge question detailed view",
-        "quiz question close up",
-        "quiz question detailed view",
-        "general knowledge question wide view wide view",
-        "general knowledge question wide view landscape",
-        "general knowledge question close up wide view",
-        "general knowledge question close up landscape",
-        "general knowledge question wide view close up",
-        "general knowledge question wide view detailed view",
-        "general knowledge question close up close up",
-        "general knowledge question close up detailed view",
-        "general knowledge question wide view landscape wide view",
-        "general knowledge question wide view landscape landscape",
-        "general knowledge question close up landscape wide view",
-        "general knowledge question close up landscape landscape",
-        "general knowledge question wide view landscape close up",
-        "general knowledge question wide view landscape detailed view",
-        "general knowledge question close up landscape close up",
-        "general knowledge question close up landscape detailed view"
-      ],
-      "entities": [
-        "general knowledge question quiz question thinking concept general",
-        "ion wide view general knowledge question landscape quiz",
-        "uestion landscape general knowledge question close up general",
-        "detailed view quiz question close up quiz question",
-        "question wide view wide view general knowledge question",
-        "eral knowledge question close up wide view general",
-        "ndscape general knowledge question wide view close up",
-        "wide view detailed view general knowledge question close",
-        "ledge question close up detailed view general knowledge",
-        "ape wide view general knowledge question wide view",
-        "owledge question close up landscape wide view general",
-        "landscape landscape general knowledge question wide view landscape",
-        "al knowledge question wide view landscape detailed view",
-        "close up landscape close up general knowledge question",
-        "led view"
-      ],
-      "primaryQuery": "general knowledge question wide view landscape",
-      "queries": [
-        {
-          "query": "general knowledge question wide view landscape",
-          "intent": "primary",
-          "priority": 1,
-          "mediaKind": "any"
-        },
-        {
-          "query": "general knowledge question close up landscape",
-          "intent": "primary",
-          "priority": 2,
-          "mediaKind": "any"
-        },
-        {
-          "query": "general knowledge question wide view landscape wide view",
-          "intent": "wide",
-          "priority": 3,
-          "mediaKind": "any"
-        },
-        {
-          "query": "general knowledge question wide view landscape landscape",
-          "intent": "wide",
-          "priority": 4,
-          "mediaKind": "any"
-        },
-        {
-          "query": "general knowledge question close up landscape wide view",
-          "intent": "wide",
-          "priority": 5,
-          "mediaKind": "any"
-        },
-        {
-          "query": "general knowledge question close up landscape landscape",
-          "intent": "wide",
-          "priority": 6,
-          "mediaKind": "any"
-        },
-        {
-          "query": "general knowledge question wide view landscape close up",
-          "intent": "detail",
-          "priority": 7,
-          "mediaKind": "any"
-        },
-        {
-          "query": "general knowledge question wide view landscape detailed view",
-          "intent": "detail",
-          "priority": 8,
-          "mediaKind": "any"
-        },
-        {
-          "query": "general knowledge question close up landscape close up",
-          "intent": "detail",
-          "priority": 9,
-          "mediaKind": "any"
-        },
-        {
-          "query": "general knowledge question close up landscape detailed view",
-          "intent": "detail",
-          "priority": 10,
-          "mediaKind": "any"
-        }
-      ]
-    },
-    {
-      "sceneId": "q005_countdown_3",
-      "title": "정답 공개까지",
-      "narration": "3",
-      "sourceKeywords": [
-        "quiz countdown timer",
-        "three second countdown",
-        "thinking time",
-        "quiz countdown timer wide view",
-        "quiz countdown timer landscape",
-        "three second countdown wide view",
-        "three second countdown landscape",
-        "quiz countdown timer close up",
-        "quiz countdown timer detailed view",
-        "three second countdown close up",
-        "three second countdown detailed view",
-        "quiz countdown timer wide view wide view",
-        "quiz countdown timer wide view landscape",
-        "three second countdown wide view wide view",
-        "three second countdown wide view landscape",
-        "quiz countdown timer wide view close up",
-        "quiz countdown timer wide view detailed view",
-        "three second countdown wide view close up",
-        "three second countdown wide view detailed view",
-        "quiz countdown timer wide view landscape wide view",
-        "quiz countdown timer wide view landscape landscape",
-        "three second countdown wide view landscape wide view",
-        "three second countdown wide view landscape landscape",
-        "quiz countdown timer wide view landscape close up",
-        "quiz countdown timer wide view landscape detailed view",
-        "three second countdown wide view landscape close up",
-        "three second countdown wide view landscape detailed view"
-      ],
-      "entities": [
-        "quiz countdown timer three second countdown thinking time",
-        "wide view quiz countdown timer landscape three second",
-        "econd countdown landscape quiz countdown timer close up",
-        "iled view three second countdown close up three",
-        "iz countdown timer wide view wide view quiz",
-        "hree second countdown wide view wide view three",
-        "ape quiz countdown timer wide view close up",
-        "ed view three second countdown wide view close",
-        "detailed view quiz countdown timer wide view landscape",
-        "timer wide view landscape landscape three second countdown",
-        "de view three second countdown wide view landscape",
-        "wide view landscape close up quiz countdown timer",
-        "ew three second countdown wide view landscape close",
-        "view landscape detailed view"
-      ],
-      "primaryQuery": "quiz countdown timer wide view landscape",
-      "queries": [
-        {
-          "query": "quiz countdown timer wide view landscape",
-          "intent": "primary",
-          "priority": 1,
-          "mediaKind": "any"
-        },
-        {
-          "query": "three second countdown wide view landscape",
-          "intent": "primary",
-          "priority": 2,
-          "mediaKind": "any"
-        },
-        {
-          "query": "quiz countdown timer wide view landscape wide view",
-          "intent": "wide",
-          "priority": 3,
-          "mediaKind": "any"
-        },
-        {
-          "query": "quiz countdown timer wide view landscape landscape",
-          "intent": "wide",
-          "priority": 4,
-          "mediaKind": "any"
-        },
-        {
-          "query": "three second countdown wide view landscape wide view",
-          "intent": "wide",
-          "priority": 5,
-          "mediaKind": "any"
-        },
-        {
-          "query": "three second countdown wide view landscape landscape",
-          "intent": "wide",
-          "priority": 6,
-          "mediaKind": "any"
-        },
-        {
-          "query": "quiz countdown timer wide view landscape close up",
-          "intent": "detail",
-          "priority": 7,
-          "mediaKind": "any"
-        },
-        {
-          "query": "quiz countdown timer wide view landscape detailed view",
-          "intent": "detail",
-          "priority": 8,
-          "mediaKind": "any"
-        },
-        {
-          "query": "three second countdown wide view landscape close up",
-          "intent": "detail",
-          "priority": 9,
-          "mediaKind": "any"
-        },
-        {
-          "query": "three second countdown wide view landscape detailed view",
-          "intent": "detail",
-          "priority": 10,
-          "mediaKind": "any"
-        }
-      ]
-    },
-    {
-      "sceneId": "q005_countdown_2",
-      "title": "정답 공개까지",
-      "narration": "2",
-      "sourceKeywords": [
-        "quiz countdown timer",
-        "three second countdown",
-        "thinking time",
-        "quiz countdown timer wide view",
-        "quiz countdown timer landscape",
-        "three second countdown wide view",
-        "three second countdown landscape",
-        "quiz countdown timer close up",
-        "quiz countdown timer detailed view",
-        "three second countdown close up",
-        "three second countdown detailed view",
-        "quiz countdown timer wide view wide view",
-        "quiz countdown timer wide view landscape",
-        "three second countdown wide view wide view",
-        "three second countdown wide view landscape",
-        "quiz countdown timer wide view close up",
-        "quiz countdown timer wide view detailed view",
-        "three second countdown wide view close up",
-        "three second countdown wide view detailed view",
-        "quiz countdown timer wide view landscape wide view",
-        "quiz countdown timer wide view landscape landscape",
-        "three second countdown wide view landscape wide view",
-        "three second countdown wide view landscape landscape",
-        "quiz countdown timer wide view landscape close up",
-        "quiz countdown timer wide view landscape detailed view",
-        "three second countdown wide view landscape close up",
-        "three second countdown wide view landscape detailed view"
-      ],
-      "entities": [
-        "quiz countdown timer three second countdown thinking time",
-        "wide view quiz countdown timer landscape three second",
-        "econd countdown landscape quiz countdown timer close up",
-        "iled view three second countdown close up three",
-        "iz countdown timer wide view wide view quiz",
-        "hree second countdown wide view wide view three",
-        "ape quiz countdown timer wide view close up",
-        "ed view three second countdown wide view close",
-        "detailed view quiz countdown timer wide view landscape",
-        "timer wide view landscape landscape three second countdown",
-        "de view three second countdown wide view landscape",
-        "wide view landscape close up quiz countdown timer",
-        "ew three second countdown wide view landscape close",
-        "view landscape detailed view"
-      ],
-      "primaryQuery": "quiz countdown timer wide view landscape",
-      "queries": [
-        {
-          "query": "quiz countdown timer wide view landscape",
-          "intent": "primary",
-          "priority": 1,
-          "mediaKind": "any"
-        },
-        {
-          "query": "three second countdown wide view landscape",
-          "intent": "primary",
-          "priority": 2,
-          "mediaKind": "any"
-        },
-        {
-          "query": "quiz countdown timer wide view landscape wide view",
-          "intent": "wide",
-          "priority": 3,
-          "mediaKind": "any"
-        },
-        {
-          "query": "quiz countdown timer wide view landscape landscape",
-          "intent": "wide",
-          "priority": 4,
-          "mediaKind": "any"
-        },
-        {
-          "query": "three second countdown wide view landscape wide view",
-          "intent": "wide",
-          "priority": 5,
-          "mediaKind": "any"
-        },
-        {
-          "query": "three second countdown wide view landscape landscape",
-          "intent": "wide",
-          "priority": 6,
-          "mediaKind": "any"
-        },
-        {
-          "query": "quiz countdown timer wide view landscape close up",
-          "intent": "detail",
-          "priority": 7,
-          "mediaKind": "any"
-        },
-        {
-          "query": "quiz countdown timer wide view landscape detailed view",
-          "intent": "detail",
-          "priority": 8,
-          "mediaKind": "any"
-        },
-        {
-          "query": "three second countdown wide view landscape close up",
-          "intent": "detail",
-          "priority": 9,
-          "mediaKind": "any"
-        },
-        {
-          "query": "three second countdown wide view landscape detailed view",
-          "intent": "detail",
-          "priority": 10,
-          "mediaKind": "any"
-        }
-      ]
-    },
-    {
-      "sceneId": "q005_countdown_1",
-      "title": "정답 공개까지",
-      "narration": "1",
-      "sourceKeywords": [
-        "quiz countdown timer",
-        "three second countdown",
-        "thinking time",
-        "quiz countdown timer wide view",
-        "quiz countdown timer landscape",
-        "three second countdown wide view",
-        "three second countdown landscape",
-        "quiz countdown timer close up",
-        "quiz countdown timer detailed view",
-        "three second countdown close up",
-        "three second countdown detailed view",
-        "quiz countdown timer wide view wide view",
-        "quiz countdown timer wide view landscape",
-        "three second countdown wide view wide view",
-        "three second countdown wide view landscape",
-        "quiz countdown timer wide view close up",
-        "quiz countdown timer wide view detailed view",
-        "three second countdown wide view close up",
-        "three second countdown wide view detailed view",
-        "quiz countdown timer wide view landscape wide view",
-        "quiz countdown timer wide view landscape landscape",
-        "three second countdown wide view landscape wide view",
-        "three second countdown wide view landscape landscape",
-        "quiz countdown timer wide view landscape close up",
-        "quiz countdown timer wide view landscape detailed view",
-        "three second countdown wide view landscape close up",
-        "three second countdown wide view landscape detailed view"
-      ],
-      "entities": [
-        "quiz countdown timer three second countdown thinking time",
-        "wide view quiz countdown timer landscape three second",
-        "econd countdown landscape quiz countdown timer close up",
-        "iled view three second countdown close up three",
-        "iz countdown timer wide view wide view quiz",
-        "hree second countdown wide view wide view three",
-        "ape quiz countdown timer wide view close up",
-        "ed view three second countdown wide view close",
-        "detailed view quiz countdown timer wide view landscape",
-        "timer wide view landscape landscape three second countdown",
-        "de view three second countdown wide view landscape",
-        "wide view landscape close up quiz countdown timer",
-        "ew three second countdown wide view landscape close",
-        "view landscape detailed view"
-      ],
-      "primaryQuery": "quiz countdown timer wide view landscape",
-      "queries": [
-        {
-          "query": "quiz countdown timer wide view landscape",
-          "intent": "primary",
-          "priority": 1,
-          "mediaKind": "any"
-        },
-        {
-          "query": "three second countdown wide view landscape",
-          "intent": "primary",
-          "priority": 2,
-          "mediaKind": "any"
-        },
-        {
-          "query": "quiz countdown timer wide view landscape wide view",
-          "intent": "wide",
-          "priority": 3,
-          "mediaKind": "any"
-        },
-        {
-          "query": "quiz countdown timer wide view landscape landscape",
-          "intent": "wide",
-          "priority": 4,
-          "mediaKind": "any"
-        },
-        {
-          "query": "three second countdown wide view landscape wide view",
-          "intent": "wide",
-          "priority": 5,
-          "mediaKind": "any"
-        },
-        {
-          "query": "three second countdown wide view landscape landscape",
-          "intent": "wide",
-          "priority": 6,
-          "mediaKind": "any"
-        },
-        {
-          "query": "quiz countdown timer wide view landscape close up",
-          "intent": "detail",
-          "priority": 7,
-          "mediaKind": "any"
-        },
-        {
-          "query": "quiz countdown timer wide view landscape detailed view",
-          "intent": "detail",
-          "priority": 8,
-          "mediaKind": "any"
-        },
-        {
-          "query": "three second countdown wide view landscape close up",
-          "intent": "detail",
-          "priority": 9,
-          "mediaKind": "any"
-        },
-        {
-          "query": "three second countdown wide view landscape detailed view",
-          "intent": "detail",
-          "priority": 10,
-          "mediaKind": "any"
-        }
-      ]
-    },
-    {
-      "sceneId": "q005_answer",
-      "title": "정답",
-      "narration": "정답은 피부입니다.",
-      "sourceKeywords": [
-        "quiz answer reveal",
-        "correct answer",
-        "success celebration",
-        "quiz answer reveal wide view",
-        "quiz answer reveal landscape",
-        "correct answer wide view",
-        "correct answer landscape",
-        "quiz answer reveal close up",
-        "quiz answer reveal detailed view",
-        "correct answer close up",
-        "correct answer detailed view",
-        "quiz answer reveal wide view wide view",
-        "quiz answer reveal wide view landscape",
-        "quiz answer reveal close up wide view",
-        "quiz answer reveal close up landscape",
-        "quiz answer reveal wide view close up",
-        "quiz answer reveal wide view detailed view",
-        "quiz answer reveal close up close up",
-        "quiz answer reveal close up detailed view",
-        "quiz answer reveal wide view landscape wide view",
-        "quiz answer reveal wide view landscape landscape",
-        "quiz answer reveal close up landscape wide view",
-        "quiz answer reveal close up landscape landscape",
-        "quiz answer reveal wide view landscape close up",
-        "quiz answer reveal wide view landscape detailed view",
-        "quiz answer reveal close up landscape close up",
-        "quiz answer reveal close up landscape detailed view"
-      ],
-      "entities": [
-        "quiz answer reveal correct answer success celebration quiz",
-        "quiz answer reveal landscape correct answer wide view",
-        "quiz answer reveal close up quiz answer reveal",
-        "up correct answer detailed view quiz answer reveal",
-        "reveal wide view landscape quiz answer reveal close",
-        "veal close up landscape quiz answer reveal wide",
-        "wide view detailed view quiz answer reveal close",
-        "lose up detailed view quiz answer reveal wide",
-        "reveal wide view landscape landscape quiz answer reveal",
-        "view quiz answer reveal close up landscape landscape",
-        "landscape close up quiz answer reveal wide view",
-        "er reveal close up landscape close up quiz",
-        "led view"
-      ],
-      "primaryQuery": "quiz answer reveal wide view landscape",
-      "queries": [
-        {
-          "query": "quiz answer reveal wide view landscape",
-          "intent": "primary",
-          "priority": 1,
-          "mediaKind": "any"
-        },
-        {
-          "query": "quiz answer reveal close up landscape",
-          "intent": "primary",
-          "priority": 2,
-          "mediaKind": "any"
-        },
-        {
-          "query": "quiz answer reveal wide view landscape wide view",
-          "intent": "wide",
-          "priority": 3,
-          "mediaKind": "any"
-        },
-        {
-          "query": "quiz answer reveal wide view landscape landscape",
-          "intent": "wide",
-          "priority": 4,
-          "mediaKind": "any"
-        },
-        {
-          "query": "quiz answer reveal close up landscape wide view",
-          "intent": "wide",
-          "priority": 5,
-          "mediaKind": "any"
-        },
-        {
-          "query": "quiz answer reveal close up landscape landscape",
-          "intent": "wide",
-          "priority": 6,
-          "mediaKind": "any"
-        },
-        {
-          "query": "quiz answer reveal wide view landscape close up",
-          "intent": "detail",
-          "priority": 7,
-          "mediaKind": "any"
-        },
-        {
-          "query": "quiz answer reveal wide view landscape detailed view",
-          "intent": "detail",
-          "priority": 8,
-          "mediaKind": "any"
-        },
-        {
-          "query": "quiz answer reveal close up landscape close up",
-          "intent": "detail",
-          "priority": 9,
-          "mediaKind": "any"
-        },
-        {
-          "query": "quiz answer reveal close up landscape detailed view",
-          "intent": "detail",
-          "priority": 10,
-          "mediaKind": "any"
-        }
-      ]
-    },
-    {
-      "sceneId": "quiz_ending",
-      "title": "오늘의 결과",
-      "narration": "몇 문제를 맞혔는지 댓글로 남겨주세요.",
-      "sourceKeywords": [
-        "quiz results screen",
-        "quiz score celebration",
-        "knowledge challenge ending",
-        "quiz results screen wide view",
-        "quiz results screen landscape",
-        "quiz score celebration wide view",
-        "quiz score celebration landscape",
-        "quiz results screen close up",
-        "quiz results screen detailed view",
-        "quiz score celebration close up",
-        "quiz score celebration detailed view",
-        "quiz results screen wide view wide view",
-        "quiz results screen wide view landscape",
-        "quiz score celebration wide view wide view",
-        "quiz score celebration wide view landscape",
-        "quiz results screen wide view close up",
-        "quiz results screen wide view detailed view",
-        "quiz score celebration wide view close up",
-        "quiz score celebration wide view detailed view",
-        "quiz results screen wide view landscape wide view",
-        "quiz results screen wide view landscape landscape",
-        "quiz score celebration wide view landscape wide view",
-        "quiz score celebration wide view landscape landscape",
-        "quiz results screen wide view landscape close up",
-        "quiz results screen wide view landscape detailed view",
-        "quiz score celebration wide view landscape close up",
-        "quiz score celebration wide view landscape detailed view"
-      ],
-      "entities": [
-        "quiz results screen quiz score celebration knowledge challenge",
-        "screen wide view quiz results screen landscape quiz",
-        "quiz score celebration landscape quiz results screen close",
-        "detailed view quiz score celebration close up quiz",
-        "quiz results screen wide view wide view quiz",
-        "quiz score celebration wide view wide view quiz",
-        "cape quiz results screen wide view close up",
-        "view quiz score celebration wide view close up",
-        "detailed view quiz results screen wide view landscape",
-        "en wide view landscape landscape quiz score celebration",
-        "view quiz score celebration wide view landscape landscape",
-        "view landscape close up quiz results screen wide",
-        "uiz score celebration wide view landscape close up",
-        "ew landscape detailed view"
-      ],
-      "primaryQuery": "quiz results screen wide view landscape",
-      "queries": [
-        {
-          "query": "quiz results screen wide view landscape",
-          "intent": "primary",
-          "priority": 1,
-          "mediaKind": "any"
-        },
-        {
-          "query": "quiz score celebration wide view landscape",
-          "intent": "primary",
-          "priority": 2,
-          "mediaKind": "any"
-        },
-        {
-          "query": "quiz results screen wide view landscape wide view",
-          "intent": "wide",
-          "priority": 3,
-          "mediaKind": "any"
-        },
-        {
-          "query": "quiz results screen wide view landscape landscape",
-          "intent": "wide",
-          "priority": 4,
-          "mediaKind": "any"
-        },
-        {
-          "query": "quiz score celebration wide view landscape wide view",
-          "intent": "wide",
-          "priority": 5,
-          "mediaKind": "any"
-        },
-        {
-          "query": "quiz score celebration wide view landscape landscape",
-          "intent": "wide",
-          "priority": 6,
-          "mediaKind": "any"
-        },
-        {
-          "query": "quiz results screen wide view landscape close up",
-          "intent": "detail",
-          "priority": 7,
-          "mediaKind": "any"
-        },
-        {
-          "query": "quiz results screen wide view landscape detailed view",
-          "intent": "detail",
-          "priority": 8,
-          "mediaKind": "any"
-        },
-        {
-          "query": "quiz score celebration wide view landscape close up",
-          "intent": "detail",
-          "priority": 9,
-          "mediaKind": "any"
-        },
-        {
-          "query": "quiz score celebration wide view landscape detailed view",
-          "intent": "detail",
           "priority": 10,
           "mediaKind": "any"
         }

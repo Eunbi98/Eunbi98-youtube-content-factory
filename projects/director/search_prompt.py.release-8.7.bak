@@ -1035,70 +1035,70 @@ VISUAL_SUFFIX_PATTERNS: tuple[
     (
         "portrait",
         re.compile(
-            r"\b(?:vertical|portrait view)\b",
+            r"\\b(?:vertical|portrait view)\\b",
             flags=re.IGNORECASE,
         ),
     ),
     (
         "wide",
         re.compile(
-            r"\b(?:wide view|landscape)\b",
+            r"\\b(?:wide view|landscape)\\b",
             flags=re.IGNORECASE,
         ),
     ),
     (
         "detail",
         re.compile(
-            r"\b(?:close up|detailed view)\b",
+            r"\\b(?:close up|detailed view)\\b",
             flags=re.IGNORECASE,
         ),
     ),
     (
         "interior",
         re.compile(
-            r"\b(?:interior|inside)\b",
+            r"\\b(?:interior|inside)\\b",
             flags=re.IGNORECASE,
         ),
     ),
     (
         "aerial",
         re.compile(
-            r"\b(?:aerial view|drone view)\b",
+            r"\\b(?:aerial view|drone view)\\b",
             flags=re.IGNORECASE,
         ),
     ),
     (
         "map",
         re.compile(
-            r"\b(?:location map|map)\b",
+            r"\\b(?:location map|map)\\b",
             flags=re.IGNORECASE,
         ),
     ),
     (
         "atmosphere",
         re.compile(
-            r"\b(?:cinematic|dramatic)\b",
+            r"\\b(?:cinematic|dramatic)\\b",
             flags=re.IGNORECASE,
         ),
     ),
     (
         "historical",
         re.compile(
-            r"\b(?:historical photograph|archive)\b",
+            r"\\b(?:historical photograph|archive)\\b",
             flags=re.IGNORECASE,
         ),
     ),
     (
         "scientific",
         re.compile(
-            r"\b(?:scientific visualization|diagram)\b",
+            r"\\b(?:scientific visualization|diagram)\\b",
             flags=re.IGNORECASE,
         ),
     ),
     (
         "people",
         re.compile(
-            r"\b(?:people|documentary)\b",
+            r"\\b(?:people|documentary)\\b",
             flags=re.IGNORECASE,
         ),
     ),
@@ -1137,7 +1137,7 @@ def strip_visual_suffixes(
         )
 
     normalized = re.sub(
-        r"\s+",
+        r"\\s+",
         " ",
         normalized,
     )
