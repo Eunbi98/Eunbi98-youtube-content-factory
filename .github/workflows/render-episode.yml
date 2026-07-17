@@ -4,9 +4,19 @@ on:
   workflow_dispatch:
     inputs:
       episode_id:
-        description: "Episode ID (example: ep014)"
+        description: "Episode ID (example: ep014) or auto for production"
         required: true
         default: "ep014"
+        type: string
+      category:
+        description: "Selected candidate category for automatic production"
+        required: false
+        default: ""
+        type: string
+      candidate_json:
+        description: "Selected topic JSON; empty renders an existing episode"
+        required: false
+        default: ""
         type: string
   push:
     branches:
@@ -16,14 +26,24 @@ on:
       - "projects/episodes/**/episode.json"
 
 permissions:
-  contents: read
+  contents: write
 
 concurrency:
   group: render-episode
   cancel-in-progress: false
 
 jobs:
+  produce:
+    if: ${{ inputs.candidate_json != '' }}
+    uses: ./.github/workflows/produce-episode.yml
+    with:
+      category: ${{ inputs.category }}
+      candidate_json: ${{ inputs.candidate_json }}
+      episode_id: ${{ inputs.episode_id }}
+    secrets: inherit
+
   render:
+    if: ${{ inputs.candidate_json == '' }}
     runs-on: ubuntu-latest
     timeout-minutes: 60
 
