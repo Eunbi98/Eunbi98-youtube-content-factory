@@ -90,10 +90,12 @@ jobs:
         working-directory: projects/remotion
         run: npm ci
 
-      - name: Install FFmpeg
+      - name: Install system dependencies
         run: |
           sudo apt-get update
-          sudo apt-get install --yes ffmpeg
+          sudo apt-get install --yes ffmpeg fonts-noto-cjk
+          fc-cache -f
+          fc-match "Noto Sans CJK KR"
 
       - name: Check FFmpeg
         run: ffmpeg -version

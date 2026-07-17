@@ -8,7 +8,7 @@ export const ep005Theme = {
 	accentColor: '#7cffb2',
 
 	fontFamily:
-		'"Pretendard", "Noto Sans KR", "Apple SD Gothic Neo", Arial, sans-serif',
+		'"Pretendard", "Noto Sans KR", "Noto Sans CJK KR", "Apple SD Gothic Neo", Arial, sans-serif',
 
 	title: {
 		top: SAFE_FRAME.title.top,
