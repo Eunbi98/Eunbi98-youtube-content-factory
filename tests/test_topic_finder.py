@@ -309,6 +309,23 @@ class TopicFinderTests(unittest.TestCase):
         self.assertNotIn("코로나19", result.candidates[0].topic)
         self.assertEqual(0, result.candidates[0].source_count)
 
+    def test_generic_science_quote_without_hook_is_rejected(self) -> None:
+        items = [
+            TopicSourceItem(
+                title="노벨물리학상 교수 과학 연구는 평생을 바칠 가치",
+                url="https://example.com/interview",
+                source="과학뉴스",
+                published_at="2026-07-17T10:00:00+00:00",
+            )
+        ]
+        result = AutoTopicFinder(
+            source=FakeSource(items),
+            now=lambda: NOW,
+        ).find(category="science", limit=1)
+
+        self.assertNotIn("평생을 바칠 가치", result.candidates[0].topic)
+        self.assertEqual(0, result.candidates[0].source_count)
+
 
 if __name__ == "__main__":
     unittest.main()

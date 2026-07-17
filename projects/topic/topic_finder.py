@@ -262,6 +262,7 @@ class AutoTopicFinder:
                 or self._is_excluded(topic)
                 or self._is_brand_excluded(topic)
                 or not self._is_channel_fit(category, topic)
+                or not self._is_story_worthy(topic)
                 or self._is_already_covered(topic, excluded_topics)
             ):
                 continue
@@ -449,6 +450,13 @@ class AutoTopicFinder:
         lowered = topic.casefold()
         return any(
             keyword.casefold() in lowered for keyword in BRAND_EXCLUDE_KEYWORDS
+        )
+
+    @classmethod
+    def _is_story_worthy(cls, topic: str) -> bool:
+        return bool(
+            cls._keyword_hits(topic, HOOK_KEYWORDS)
+            or cls._keyword_hits(topic, VISUAL_KEYWORDS)
         )
 
     @staticmethod
