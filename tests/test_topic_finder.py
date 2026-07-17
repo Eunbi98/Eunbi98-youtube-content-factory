@@ -33,6 +33,11 @@ class FailingSource:
         raise RuntimeError("network unavailable")
 
 
+class UnexpectedSource:
+    def fetch(self, *, category: str, limit: int) -> list[TopicSourceItem]:
+        raise AssertionError("archive mode must not fetch live news")
+
+
 class TopicFinderTests(unittest.TestCase):
     def test_recent_repeated_topic_is_ranked_first(self) -> None:
         items = [
@@ -182,6 +187,80 @@ class TopicFinderTests(unittest.TestCase):
         ).find(category="history", limit=1)
 
         self.assertEqual("fallback", result.mode)
+        self.assertEqual(0, result.candidates[0].source_count)
+
+    def test_archive_mode_uses_curated_topics_without_live_fetch(self) -> None:
+        result = AutoTopicFinder(
+            source=UnexpectedSource(),
+            now=lambda: NOW,
+        ).find(category="mystery", limit=3, source_mode="archive")
+
+        self.assertEqual("archive", result.mode)
+        self.assertEqual(3, result.candidate_count)
+        self.assertTrue(
+            all(candidate.source_count == 0 for candidate in result.candidates)
+        )
+        self.assertIn("미스터리 아카이브", result.candidates[0].reasons[0])
+
+    def test_mixed_mode_keeps_trend_and_archive_quota(self) -> None:
+        items = [
+            TopicSourceItem(
+                title="화성에서 새로운 물의 흔적 발견",
+                url="https://example.com/mars-water",
+                source="NASA",
+                published_at="2026-07-17T10:00:00+00:00",
+            ),
+            TopicSourceItem(
+                title="외계 행성 대기에서 생명 연구 단서 발견",
+                url="https://example.com/exoplanet",
+                source="Science",
+                published_at="2026-07-17T09:00:00+00:00",
+            ),
+        ]
+        result = AutoTopicFinder(
+            source=FakeSource(items),
+            now=lambda: NOW,
+        ).find(category="space", limit=5, source_mode="mixed")
+
+        self.assertEqual("mixed", result.mode)
+        self.assertEqual(2, sum(item.source_count > 0 for item in result.candidates))
+        self.assertEqual(3, sum(item.source_count == 0 for item in result.candidates))
+
+    def test_all_category_combines_multiple_channel_categories(self) -> None:
+        result = AutoTopicFinder(
+            source=UnexpectedSource(),
+            now=lambda: NOW,
+        ).find(category="all", limit=8, source_mode="archive")
+
+        self.assertEqual("all", result.category)
+        self.assertEqual("archive", result.mode)
+        self.assertGreaterEqual(
+            len({candidate.category for candidate in result.candidates}),
+            3,
+        )
+        self.assertEqual(
+            sorted(
+                (candidate.score for candidate in result.candidates),
+                reverse=True,
+            ),
+            [candidate.score for candidate in result.candidates],
+        )
+
+    def test_game_patch_is_rejected_by_brand_filter(self) -> None:
+        items = [
+            TopicSourceItem(
+                title="문명7 대격변 패치 업데이트 공개",
+                url="https://example.com/game",
+                source="게임뉴스",
+                published_at="2026-07-17T10:00:00+00:00",
+            )
+        ]
+        result = AutoTopicFinder(
+            source=FakeSource(items),
+            now=lambda: NOW,
+        ).find(category="history", limit=1)
+
+        self.assertNotIn("문명7", result.candidates[0].topic)
         self.assertEqual(0, result.candidates[0].source_count)
 
 

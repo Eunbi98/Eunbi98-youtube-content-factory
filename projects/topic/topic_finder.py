@@ -6,14 +6,16 @@ from typing import Callable, Iterable
 
 from .news_source import GoogleNewsTopicSource, TopicSource
 from .topic_catalog import (
+    ARCHIVE_TOPICS,
+    BRAND_EXCLUDE_KEYWORDS,
     CATEGORY_KEYWORDS,
     CATEGORY_LABELS,
     CHANNEL_FIT_KEYWORDS,
     EXCLUDE_KEYWORDS,
-    FALLBACK_TOPICS,
     HOOK_KEYWORDS,
     LOW_QUALITY_SOURCE_KEYWORDS,
     SENSATIONAL_KEYWORDS,
+    SOURCE_MODE_LABELS,
     TOPIC_MATCH_STOPWORDS,
     TRUSTED_SOURCE_KEYWORDS,
     VISUAL_KEYWORDS,
@@ -45,45 +47,95 @@ class AutoTopicFinder:
         category: str,
         limit: int = 10,
         excluded_topics: Iterable[str] = (),
+        source_mode: str = "trend",
     ) -> TopicFinderResult:
         normalized_category = category.strip().lower()
-        if normalized_category not in CATEGORY_LABELS:
-            supported = ", ".join(CATEGORY_LABELS)
+        normalized_mode = source_mode.strip().lower()
+        if normalized_category != "all" and normalized_category not in CATEGORY_LABELS:
+            supported = ", ".join(("all", *CATEGORY_LABELS))
             raise TopicFinderError(
                 "지원하지 않는 카테고리입니다. "
                 f"요청: {category}, 지원: {supported}"
             )
         if limit < 1 or limit > 20:
             raise TopicFinderError("후보 개수는 1개 이상 20개 이하여야 합니다.")
+        if normalized_mode not in SOURCE_MODE_LABELS:
+            supported = ", ".join(SOURCE_MODE_LABELS)
+            raise TopicFinderError(
+                "지원하지 않는 수집 모드입니다. "
+                f"요청: {source_mode}, 지원: {supported}"
+            )
 
         excluded_topic_texts = tuple(excluded_topics)
+        if normalized_category == "all":
+            return self._find_all(
+                limit=limit,
+                excluded_topics=excluded_topic_texts,
+                source_mode=normalized_mode,
+            )
+
         warnings: list[str] = []
         source_items: list[TopicSourceItem] = []
-        try:
-            source_items = self._source.fetch(
-                category=normalized_category,
-                limit=max(limit * 6, 30),
-            )
-        except Exception as exc:  # 외부 뉴스 장애는 기본 후보로 복구합니다.
-            warnings.append(f"실시간 뉴스 수집 실패: {exc}")
+        if normalized_mode != "archive":
+            try:
+                source_items = self._source.fetch(
+                    category=normalized_category,
+                    limit=max(limit * 6, 30),
+                )
+            except Exception as exc:  # 외부 뉴스 장애는 아카이브로 복구합니다.
+                warnings.append(f"실시간 뉴스 수집 실패: {exc}")
 
         live_candidates = self._build_live_candidates(
             category=normalized_category,
             items=source_items,
             excluded_topics=excluded_topic_texts,
         )
-        selected = live_candidates[:limit]
-        used_fallback = len(selected) < limit
-
-        if used_fallback:
+        if normalized_mode == "archive":
+            selected = self._build_archive_candidates(
+                category=normalized_category,
+                existing_topics=set(),
+                excluded_topics=excluded_topic_texts,
+                limit=limit,
+            )
+            mode = "archive"
+        elif normalized_mode == "mixed":
+            archive_target = (limit * 3 + 4) // 5
+            trend_target = limit - archive_target
+            selected = live_candidates[:trend_target]
             selected.extend(
-                self._build_fallback_candidates(
+                self._build_archive_candidates(
                     category=normalized_category,
                     existing_topics={item.topic for item in selected},
                     excluded_topics=excluded_topic_texts,
-                    limit=limit - len(selected),
+                    limit=archive_target,
                 )
             )
+            if len(selected) < limit:
+                missing = limit - len(selected)
+                selected.extend(
+                    live_candidates[trend_target : trend_target + missing]
+                )
+            mode = "mixed" if live_candidates and any(
+                item.source_count == 0 for item in selected
+            ) else ("live" if live_candidates else "archive")
+        else:
+            selected = live_candidates[:limit]
+            used_fallback = len(selected) < limit
+            if used_fallback:
+                selected.extend(
+                    self._build_archive_candidates(
+                        category=normalized_category,
+                        existing_topics={item.topic for item in selected},
+                        excluded_topics=excluded_topic_texts,
+                        limit=limit - len(selected),
+                    )
+                )
+            if live_candidates and used_fallback:
+                mode = "hybrid"
+            elif live_candidates:
+                mode = "live"
+            else:
+                mode = "fallback"
 
         selected.sort(
             key=lambda item: (item.score, item.source_count, item.topic),
@@ -91,7 +143,73 @@ class AutoTopicFinder:
         )
         selected = selected[:limit]
 
-        ranked = [
+        ranked = self._rank(selected)
+
+        generated_at = self._as_utc(self._now()).isoformat()
+        return TopicFinderResult(
+            category=normalized_category,
+            generated_at=generated_at,
+            mode=mode,
+            candidate_count=len(ranked),
+            candidates=ranked,
+            warnings=warnings,
+        )
+
+    def _find_all(
+        self,
+        *,
+        limit: int,
+        excluded_topics: tuple[str, ...],
+        source_mode: str,
+    ) -> TopicFinderResult:
+        candidates: list[TopicCandidate] = []
+        warnings: list[str] = []
+        per_category_limit = max(5, limit)
+        for category in CATEGORY_LABELS:
+            result = self.find(
+                category=category,
+                limit=per_category_limit,
+                excluded_topics=excluded_topics,
+                source_mode=source_mode,
+            )
+            warnings.extend(result.warnings)
+            for candidate in result.candidates:
+                if any(
+                    self._is_similar(candidate.topic, item.topic)
+                    for item in candidates
+                ):
+                    continue
+                candidates.append(candidate)
+
+        candidates.sort(
+            key=lambda item: (item.score, item.source_count, item.topic),
+            reverse=True,
+        )
+        ranked = self._rank(candidates[:limit])
+        has_live = any(item.source_count > 0 for item in ranked)
+        has_archive = any(item.source_count == 0 for item in ranked)
+        if source_mode == "mixed":
+            result_mode = (
+                "mixed"
+                if has_live and has_archive
+                else ("live" if has_live else "archive")
+            )
+        elif source_mode == "trend" and has_archive:
+            result_mode = "hybrid" if has_live else "fallback"
+        else:
+            result_mode = source_mode
+        return TopicFinderResult(
+            category="all",
+            generated_at=self._as_utc(self._now()).isoformat(),
+            mode=result_mode,
+            candidate_count=len(ranked),
+            candidates=ranked,
+            warnings=list(dict.fromkeys(warnings)),
+        )
+
+    @staticmethod
+    def _rank(items: list[TopicCandidate]) -> list[TopicCandidate]:
+        return [
             TopicCandidate(
                 rank=index,
                 category=item.category,
@@ -103,25 +221,8 @@ class AutoTopicFinder:
                 source_count=item.source_count,
                 sources=item.sources,
             )
-            for index, item in enumerate(selected, start=1)
+            for index, item in enumerate(items, start=1)
         ]
-
-        if live_candidates and used_fallback:
-            mode = "hybrid"
-        elif live_candidates:
-            mode = "live"
-        else:
-            mode = "fallback"
-
-        generated_at = self._as_utc(self._now()).isoformat()
-        return TopicFinderResult(
-            category=normalized_category,
-            generated_at=generated_at,
-            mode=mode,
-            candidate_count=len(ranked),
-            candidates=ranked,
-            warnings=warnings,
-        )
 
     def _build_live_candidates(
         self,
@@ -137,6 +238,7 @@ class AutoTopicFinder:
                 not topic
                 or self._is_low_quality_source(item.source)
                 or self._is_excluded(topic)
+                or self._is_brand_excluded(topic)
                 or not self._is_channel_fit(category, topic)
                 or self._is_already_covered(topic, excluded_topics)
             ):
@@ -190,6 +292,8 @@ class AutoTopicFinder:
                 base_score -= 8
                 reasons.append("과장형 제목 표현 감점")
 
+            reasons.append("채널 브랜드 적합도 통과")
+
             candidates.append(
                 TopicCandidate(
                     rank=0,
@@ -210,7 +314,7 @@ class AutoTopicFinder:
         )
         return candidates
 
-    def _build_fallback_candidates(
+    def _build_archive_candidates(
         self,
         *,
         category: str,
@@ -219,7 +323,7 @@ class AutoTopicFinder:
         limit: int,
     ) -> list[TopicCandidate]:
         results: list[TopicCandidate] = []
-        for index, topic in enumerate(FALLBACK_TOPICS[category]):
+        for index, topic in enumerate(ARCHIVE_TOPICS[category]):
             if (
                 topic in existing_topics
                 or self._is_already_covered(topic, excluded_topics)
@@ -231,10 +335,11 @@ class AutoTopicFinder:
                     category=category,
                     topic=topic,
                     angle=self._build_angle(category, topic),
-                    score=round(64.0 - index * 0.8, 1),
+                    score=round(74.0 - index * 0.8, 1),
                     reasons=[
-                        "채널 성격과 맞는 검증된 상시 관심 주제",
-                        "실시간 신호 부족 시 사용하는 안전 후보",
+                        "채널 성격과 맞는 미스터리 아카이브 주제",
+                        "공식·학술 자료로 재검증할 상시 관심 후보",
+                        "채널 브랜드 적합도 통과",
                     ],
                     search_queries=self._search_queries(category, topic),
                 )
@@ -316,6 +421,13 @@ class AutoTopicFinder:
     def _is_excluded(topic: str) -> bool:
         lowered = topic.casefold()
         return any(keyword.casefold() in lowered for keyword in EXCLUDE_KEYWORDS)
+
+    @staticmethod
+    def _is_brand_excluded(topic: str) -> bool:
+        lowered = topic.casefold()
+        return any(
+            keyword.casefold() in lowered for keyword in BRAND_EXCLUDE_KEYWORDS
+        )
 
     @staticmethod
     def _is_channel_fit(category: str, topic: str) -> bool:
@@ -449,3 +561,4 @@ class AutoTopicFinder:
         if value.tzinfo is None:
             return value.replace(tzinfo=timezone.utc)
         return value.astimezone(timezone.utc)
+    SOURCE_MODE_LABELS,

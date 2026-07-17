@@ -6,13 +6,23 @@ on:
       category:
         description: "Topic category"
         required: true
-        default: "mystery"
+        default: "all"
         type: choice
         options:
+          - all
           - mystery
           - science
           - history
           - space
+      source_mode:
+        description: "Topic source mode"
+        required: true
+        default: "mixed"
+        type: choice
+        options:
+          - mixed
+          - trend
+          - archive
       limit:
         description: "Candidate count (1-20)"
         required: true
@@ -51,15 +61,22 @@ jobs:
         shell: bash
         env:
           REQUESTED_CATEGORY: ${{ inputs.category }}
+          REQUESTED_SOURCE_MODE: ${{ inputs.source_mode }}
           REQUESTED_LIMIT: ${{ inputs.limit }}
         run: |
           set -euo pipefail
 
-          category="${REQUESTED_CATEGORY:-mystery}"
+          category="${REQUESTED_CATEGORY:-all}"
+          source_mode="${REQUESTED_SOURCE_MODE:-mixed}"
           limit="${REQUESTED_LIMIT:-10}"
 
-          if [[ ! "$category" =~ ^(mystery|science|history|space)$ ]]; then
+          if [[ ! "$category" =~ ^(all|mystery|science|history|space)$ ]]; then
             echo "Invalid category: $category" >&2
+            exit 2
+          fi
+
+          if [[ ! "$source_mode" =~ ^(mixed|trend|archive)$ ]]; then
+            echo "Invalid source mode: $source_mode" >&2
             exit 2
           fi
 
@@ -69,6 +86,7 @@ jobs:
           fi
 
           echo "category=$category" >> "$GITHUB_OUTPUT"
+          echo "source_mode=$source_mode" >> "$GITHUB_OUTPUT"
           echo "limit=$limit" >> "$GITHUB_OUTPUT"
           echo "output=projects/output/topics/${category}-${GITHUB_RUN_ID}.json" >> "$GITHUB_OUTPUT"
 
@@ -83,6 +101,7 @@ jobs:
         run: >-
           python projects/topic/build_topics.py
           --category "${{ steps.inputs.outputs.category }}"
+          --source-mode "${{ steps.inputs.outputs.source_mode }}"
           --limit "${{ steps.inputs.outputs.limit }}"
           --output "${{ steps.inputs.outputs.output }}"
 
@@ -93,6 +112,7 @@ jobs:
             echo "## Auto Topic Finder"
             echo
             echo "- Category: ${{ steps.inputs.outputs.category }}"
+            echo "- Source mode: ${{ steps.inputs.outputs.source_mode }}"
             echo "- Mode: $(jq -r '.mode' '${{ steps.inputs.outputs.output }}')"
             echo
             jq -r '.candidates[] | "\(.rank). [\(.score)] \(.topic)"' \

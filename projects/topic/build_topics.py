@@ -10,7 +10,11 @@ ROOT_DIR = Path(__file__).resolve().parents[2]
 if str(ROOT_DIR) not in sys.path:
     sys.path.insert(0, str(ROOT_DIR))
 
-from projects.topic.topic_catalog import CATEGORY_LABELS  # noqa: E402
+from projects.topic.topic_catalog import (  # noqa: E402
+    ALL_CATEGORY_LABEL,
+    CATEGORY_LABELS,
+    SOURCE_MODE_LABELS,
+)
 from projects.topic.topic_finder import (  # noqa: E402
     AutoTopicFinder,
     TopicFinderError,
@@ -54,8 +58,14 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument(
         "--category",
         required=True,
-        choices=tuple(CATEGORY_LABELS),
+        choices=("all", *CATEGORY_LABELS),
         help="주제 카테고리",
+    )
+    parser.add_argument(
+        "--source-mode",
+        choices=tuple(SOURCE_MODE_LABELS),
+        default="mixed",
+        help="수집 방식 (기본값: mixed)",
     )
     parser.add_argument(
         "--limit",
@@ -79,6 +89,7 @@ def main() -> int:
             category=args.category,
             limit=args.limit,
             excluded_topics=load_existing_episode_topics(ROOT_DIR),
+            source_mode=args.source_mode,
         )
     except TopicFinderError as exc:
         print(f"[실패] {exc}")
@@ -91,7 +102,13 @@ def main() -> int:
     )
 
     print("Auto Topic Finder 완료")
-    print(f"카테고리: {CATEGORY_LABELS[result.category]}")
+    category_label = (
+        ALL_CATEGORY_LABEL
+        if result.category == "all"
+        else CATEGORY_LABELS[result.category]
+    )
+    print(f"카테고리: {category_label}")
+    print(f"요청 방식: {SOURCE_MODE_LABELS[args.source_mode]}")
     print(f"수집 모드: {result.mode}")
     for candidate in result.candidates:
         print(f"{candidate.rank:>2}. [{candidate.score:>4.1f}] {candidate.topic}")

@@ -8,6 +8,14 @@ CATEGORY_LABELS = {
     "space": "우주",
 }
 
+ALL_CATEGORY_LABEL = "전체 자동"
+
+SOURCE_MODE_LABELS = {
+    "mixed": "최신 + 미스터리 아카이브",
+    "trend": "최신 화제",
+    "archive": "미스터리 아카이브",
+}
+
 
 CATEGORY_QUERIES = {
     "mystery": (
@@ -207,6 +215,23 @@ EXCLUDE_KEYWORDS = {
 }
 
 
+# 채널 주제와 일부 단어가 겹쳐도 게임·엔터테인먼트 소식은 제외합니다.
+BRAND_EXCLUDE_KEYWORDS = {
+    "게임",
+    "패치",
+    "업데이트",
+    "출시",
+    "시즌",
+    "e스포츠",
+    "드라마",
+    "영화",
+    "웹툰",
+    "애니메이션",
+    "리뷰",
+    "플레이",
+}
+
+
 TOPIC_MATCH_STOPWORDS = {
     "고대",
     "최근",
@@ -305,3 +330,8 @@ FALLBACK_TOPICS = {
         "떠돌이 행성에는 생명체가 살 수 있을까",
     ),
 }
+
+
+# 외부 위키는 아이디어 발견에만 사용하고, 실제 영상 조사는 공식·학술 자료로
+# 다시 검증합니다. 현재 검수된 상시 관심 후보를 아카이브의 첫 데이터로 사용합니다.
+ARCHIVE_TOPICS = FALLBACK_TOPICS
