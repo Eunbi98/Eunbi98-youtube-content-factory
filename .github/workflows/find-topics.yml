@@ -1,0 +1,108 @@
+name: Find video topics
+
+on:
+  workflow_dispatch:
+    inputs:
+      category:
+        description: "Topic category"
+        required: true
+        default: "mystery"
+        type: choice
+        options:
+          - mystery
+          - science
+          - history
+          - space
+      limit:
+        description: "Candidate count (1-20)"
+        required: true
+        default: "10"
+        type: string
+  push:
+    branches:
+      - feature/release-5-director-engine
+    paths:
+      - ".github/workflows/find-topics.yml"
+      - "projects/topic/**"
+
+permissions:
+  contents: read
+
+jobs:
+  find-topics:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Install topic finder dependencies
+        run: python -m pip install feedparser requests
+
+      - name: Resolve inputs
+        id: inputs
+        shell: bash
+        env:
+          REQUESTED_CATEGORY: ${{ inputs.category }}
+          REQUESTED_LIMIT: ${{ inputs.limit }}
+        run: |
+          set -euo pipefail
+
+          category="${REQUESTED_CATEGORY:-mystery}"
+          limit="${REQUESTED_LIMIT:-10}"
+
+          if [[ ! "$category" =~ ^(mystery|science|history|space)$ ]]; then
+            echo "Invalid category: $category" >&2
+            exit 2
+          fi
+
+          if [[ ! "$limit" =~ ^[0-9]+$ ]] || (( limit < 1 || limit > 20 )); then
+            echo "Invalid limit: $limit" >&2
+            exit 2
+          fi
+
+          echo "category=$category" >> "$GITHUB_OUTPUT"
+          echo "limit=$limit" >> "$GITHUB_OUTPUT"
+          echo "output=projects/output/topics/${category}-${GITHUB_RUN_ID}.json" >> "$GITHUB_OUTPUT"
+
+      - name: Run topic finder tests
+        run: >-
+          python -m unittest discover
+          -s tests
+          -p 'test_topic_finder.py'
+          -v
+
+      - name: Generate topic candidates
+        run: >-
+          python projects/topic/build_topics.py
+          --category "${{ steps.inputs.outputs.category }}"
+          --limit "${{ steps.inputs.outputs.limit }}"
+          --output "${{ steps.inputs.outputs.output }}"
+
+      - name: Add result summary
+        shell: bash
+        run: |
+          {
+            echo "## Auto Topic Finder"
+            echo
+            echo "- Category: ${{ steps.inputs.outputs.category }}"
+            echo "- Mode: $(jq -r '.mode' '${{ steps.inputs.outputs.output }}')"
+            echo
+            jq -r '.candidates[] | "\(.rank). [\(.score)] \(.topic)"' \
+              "${{ steps.inputs.outputs.output }}"
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Upload topic candidates
+        uses: actions/upload-artifact@v4
+        with:
+          name: topic-candidates-${{ steps.inputs.outputs.category }}
+          path: ${{ steps.inputs.outputs.output }}
+          if-no-files-found: error
+          retention-days: 7
