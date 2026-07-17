@@ -12,7 +12,10 @@ from .topic_catalog import (
     EXCLUDE_KEYWORDS,
     FALLBACK_TOPICS,
     HOOK_KEYWORDS,
+    LOW_QUALITY_SOURCE_KEYWORDS,
+    SENSATIONAL_KEYWORDS,
     TOPIC_MATCH_STOPWORDS,
+    TRUSTED_SOURCE_KEYWORDS,
     VISUAL_KEYWORDS,
 )
 from .topic_models import TopicCandidate, TopicFinderResult, TopicSourceItem
@@ -82,6 +85,12 @@ class AutoTopicFinder:
                 )
             )
 
+        selected.sort(
+            key=lambda item: (item.score, item.source_count, item.topic),
+            reverse=True,
+        )
+        selected = selected[:limit]
+
         ranked = [
             TopicCandidate(
                 rank=index,
@@ -126,6 +135,7 @@ class AutoTopicFinder:
             topic = self._clean_title(item.title)
             if (
                 not topic
+                or self._is_low_quality_source(item.source)
                 or self._is_excluded(topic)
                 or not self._is_channel_fit(category, topic)
                 or self._is_already_covered(topic, excluded_topics)
@@ -168,6 +178,17 @@ class AutoTopicFinder:
             if source_count > 1:
                 base_score += min(12, (source_count - 1) * 4)
                 reasons.append(f"서로 다른 출처 {source_count}곳에서 다룸")
+
+            trusted_source_count = sum(
+                1 for item in group if self._is_trusted_source(item.source)
+            )
+            if trusted_source_count:
+                base_score += min(10, trusted_source_count * 5)
+                reasons.append("신뢰도 높은 언론·과학 출처에서 다룸")
+
+            if self._keyword_hits(topic, SENSATIONAL_KEYWORDS):
+                base_score -= 8
+                reasons.append("과장형 제목 표현 감점")
 
             candidates.append(
                 TopicCandidate(
@@ -302,6 +323,22 @@ class AutoTopicFinder:
         return any(
             keyword.casefold() in lowered
             for keyword in CHANNEL_FIT_KEYWORDS[category]
+        )
+
+    @staticmethod
+    def _is_low_quality_source(source: str) -> bool:
+        lowered = source.casefold()
+        return any(
+            keyword.casefold() in lowered
+            for keyword in LOW_QUALITY_SOURCE_KEYWORDS
+        )
+
+    @staticmethod
+    def _is_trusted_source(source: str) -> bool:
+        lowered = source.casefold()
+        return any(
+            keyword.casefold() in lowered
+            for keyword in TRUSTED_SOURCE_KEYWORDS
         )
 
     @classmethod

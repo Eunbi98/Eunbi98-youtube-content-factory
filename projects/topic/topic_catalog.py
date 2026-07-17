@@ -223,6 +223,38 @@ TOPIC_MATCH_STOPWORDS = {
 }
 
 
+TRUSTED_SOURCE_KEYWORDS = {
+    "연합뉴스",
+    "뉴시스",
+    "동아일보",
+    "동아사이언스",
+    "과학동아",
+    "지디넷코리아",
+    "BBC",
+    "Reuters",
+    "AP",
+    "NASA",
+    "Nature",
+    "Science",
+    "Smithsonian",
+    "National Geographic",
+}
+
+
+LOW_QUALITY_SOURCE_KEYWORDS = {
+    "Vietnam.vn",
+}
+
+
+SENSATIONAL_KEYWORDS = {
+    "충격",
+    "경악",
+    "소름",
+    "발칵",
+    "!",
+}
+
+
 FALLBACK_TOPICS = {
     "mystery": (
         "보이니치 문서는 왜 아직도 해독되지 않았을까",

@@ -147,6 +147,43 @@ class TopicFinderTests(unittest.TestCase):
         self.assertEqual(1, payload["candidate_count"])
         self.assertEqual(1, payload["candidates"][0]["rank"])
 
+    def test_fallback_candidate_is_sorted_by_score(self) -> None:
+        items = [
+            TopicSourceItem(
+                title="심해에서 전해진 오래된 기록",
+                url="https://example.com/weak-live",
+                source="지역뉴스",
+                published_at="2026-06-01T10:00:00+00:00",
+            )
+        ]
+        result = AutoTopicFinder(
+            source=FakeSource(items),
+            now=lambda: NOW,
+        ).find(category="mystery", limit=2)
+
+        self.assertEqual("hybrid", result.mode)
+        self.assertGreaterEqual(
+            result.candidates[0].score,
+            result.candidates[1].score,
+        )
+
+    def test_low_quality_translation_source_is_filtered(self) -> None:
+        items = [
+            TopicSourceItem(
+                title="3천년 된 고대 무덤에서 새로운 유물 발견",
+                url="https://example.com/translated",
+                source="Vietnam.vn",
+                published_at="2026-07-17T10:00:00+00:00",
+            )
+        ]
+        result = AutoTopicFinder(
+            source=FakeSource(items),
+            now=lambda: NOW,
+        ).find(category="history", limit=1)
+
+        self.assertEqual("fallback", result.mode)
+        self.assertEqual(0, result.candidates[0].source_count)
+
 
 if __name__ == "__main__":
     unittest.main()
