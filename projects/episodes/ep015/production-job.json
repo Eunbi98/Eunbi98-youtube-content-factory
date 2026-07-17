@@ -1,0 +1,87 @@
+{
+  "version": "1.0",
+  "jobId": "ep015-20260717T080421Z",
+  "episodeId": "ep015",
+  "category": "mystery",
+  "status": "media_planned",
+  "createdAt": "2026-07-17T08:04:21.496671+00:00",
+  "selectedTopic": {
+    "rank": 1,
+    "category": "mystery",
+    "topic": "붉은 행성에 벌집이?…NASA도 놀란 미스터리 구조물 [여기는 화성]",
+    "angle": "붉은 행성에 벌집이?…NASA도 놀란 미스터리 구조물 [여기는 화성]에서 아직 풀리지 않은 핵심은 무엇일까?",
+    "score": 79.0,
+    "reasons": [
+      "최근 7일 이내 보도",
+      "미스터리 핵심 키워드 1개 포함",
+      "제목 훅으로 만들기 좋은 발견·의문 요소",
+      "영상 자료로 표현하기 쉬운 주제",
+      "신뢰도 높은 언론·과학 출처에서 다룸"
+    ],
+    "searchQueries": [
+      "붉은 행성에 벌집이?…NASA도 놀란 미스터리 구조물 [여기는 화성]",
+      "붉은 행성에 벌집이?…NASA도 놀란 미스터리 구조물 [여기는 화성] 최신 연구 공식 발표",
+      "붉은 행성에 벌집이?…NASA도 놀란 미스터리 구조물 [여기는 화성] 사실 확인 반박",
+      "붉은 행성에 벌집이?…NASA도 놀란 미스터리 구조물 [여기는 화성] 미스터리 사진 영상 자료"
+    ],
+    "sourceCount": 1,
+    "sources": [
+      {
+        "title": "붉은 행성에 벌집이?…NASA도 놀란 미스터리 구조물 [여기는 화성] - 지디넷코리아",
+        "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE9yWmtpeHRNbjNrUUhCWjFhV3BiS0liaTVHN1FuMWVWWExid1hDTER2TTVUWlAtNjlMcmlBRFVrRkxkVEs2TFRPVkFidkZOaWxkcm05S2l3?oc=5",
+        "source": "지디넷코리아",
+        "published_at": "2026-07-15T05:51:33+00:00"
+      }
+    ]
+  },
+  "researchPlan": {
+    "topic": "붉은 행성에 벌집이?…NASA도 놀란 미스터리 구조물 [여기는 화성]",
+    "angle": "붉은 행성에 벌집이?…NASA도 놀란 미스터리 구조물 [여기는 화성]에서 아직 풀리지 않은 핵심은 무엇일까?",
+    "questions": [
+      "무엇이 언제 어디에서 발견되거나 발표됐는가?",
+      "확인 가능한 핵심 사실과 숫자는 무엇인가?",
+      "주장과 확인된 사실은 어디까지 일치하는가?",
+      "반대 설명이나 한계는 무엇인가?",
+      "영상으로 보여줄 수 있는 장소·유물·관측 자료는 무엇인가?",
+      "시청자가 댓글로 답하고 싶어질 마지막 질문은 무엇인가?"
+    ],
+    "queries": [
+      "붉은 행성에 벌집이?…NASA도 놀란 미스터리 구조물 [여기는 화성]",
+      "붉은 행성에 벌집이?…NASA도 놀란 미스터리 구조물 [여기는 화성] 최신 연구 공식 발표",
+      "붉은 행성에 벌집이?…NASA도 놀란 미스터리 구조물 [여기는 화성] 사실 확인 반박",
+      "붉은 행성에 벌집이?…NASA도 놀란 미스터리 구조물 [여기는 화성] 미스터리 사진 영상 자료",
+      "붉은 행성에 벌집이?…NASA도 놀란 미스터리 구조물 [여기는 화성] official source",
+      "붉은 행성에 벌집이?…NASA도 놀란 미스터리 구조물 [여기는 화성] research paper",
+      "붉은 행성에 벌집이?…NASA도 놀란 미스터리 구조물 [여기는 화성] fact check",
+      "붉은 행성에 벌집이?…NASA도 놀란 미스터리 구조물 [여기는 화성] image archive"
+    ],
+    "sourcePolicy": {
+      "minimumSources": 3,
+      "requiredTiers": [
+        "official_or_academic",
+        "reference",
+        "news"
+      ],
+      "requireCounterpoint": true,
+      "rejectUnverifiedFacts": true
+    },
+    "sourceSeeds": [
+      {
+        "title": "붉은 행성에 벌집이?…NASA도 놀란 미스터리 구조물 [여기는 화성] - 지디넷코리아",
+        "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE9yWmtpeHRNbjNrUUhCWjFhV3BiS0liaTVHN1FuMWVWWExid1hDTER2TTVUWlAtNjlMcmlBRFVrRkxkVEs2TFRPVkFidkZOaWxkcm05S2l3?oc=5",
+        "source": "지디넷코리아",
+        "published_at": "2026-07-15T05:51:33+00:00"
+      }
+    ]
+  },
+  "artifacts": {
+    "evidence": "projects/episodes/ep015/evidence.json",
+    "episodeSpec": "projects/episodes/ep015/episode.json",
+    "timeline": "projects/episodes/ep015/timeline.json",
+    "video": null,
+    "metadata": "projects/episodes/ep015/metadata.json",
+    "mediaQueries": "projects/episodes/ep015/media_queries.json"
+  },
+  "nextAction": "collect_media",
+  "updatedAt": "2026-07-17T08:21:35.881247+00:00"
+}

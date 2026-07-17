@@ -430,6 +430,11 @@ ENTITY_ALIASES: dict[
         "ants macro",
         "ant nest",
     ),
+    "벌집": (
+        "honeycomb pattern",
+        "polygonal honeycomb terrain",
+        "hexagonal geological pattern",
+    ),
     "벌": (
         "honey bee",
         "bee colony",
@@ -794,7 +799,21 @@ def extract_alias_matches(
 
     matches.sort()
 
-    return matches
+    selected: list[tuple[int, int, str]] = []
+    occupied: list[tuple[int, int]] = []
+    for match in matches:
+        start, negative_length, _ = match
+        end = start - negative_length
+        if any(
+            start < occupied_end and end > occupied_start
+            for occupied_start, occupied_end in occupied
+        ):
+            continue
+        selected.append(match)
+        occupied.append((start, end))
+
+    selected.sort(key=lambda item: item[0])
+    return selected
 
 
 def extract_alias_queries(

@@ -1,0 +1,523 @@
+{
+  "version": "2.0",
+  "episodeId": "ep015",
+  "timelinePath": "/workspace/scratch/1c302ab6fdc2/youtube-content-factory/projects/episodes/ep015/timeline.json",
+  "sceneCount": 6,
+  "scenes": [
+    {
+      "sceneId": "scene_001",
+      "title": "화성에 거대한 벌집이 나타났습니다",
+      "narration": "화성 표면에 거대한 벌집이 나타났습니다. 그런데 진짜 미스터리는 그 안의 검은 돌입니다.",
+      "sourceKeywords": [
+        "NASA Curiosity Mars giant honeycomb polygons",
+        "Gale Crater polygon terrain Mastcam",
+        "NASA Curiosity Mars giant honeycomb polygons wide view",
+        "NASA Curiosity Mars giant honeycomb polygons landscape",
+        "Gale Crater polygon terrain Mastcam wide view",
+        "Gale Crater polygon terrain Mastcam landscape",
+        "NASA Curiosity Mars giant honeycomb polygons close up",
+        "NASA Curiosity Mars giant honeycomb polygons detailed view"
+      ],
+      "entities": [
+        "화성",
+        "벌집",
+        "미스터리",
+        "NASA Curiosity Mars giant honeycomb polygons Gale Crater",
+        "NASA Curiosity Mars giant honeycomb polygons wide view",
+        "honeycomb polygons landscape Gale Crater polygon terrain Mastcam",
+        "rater polygon terrain Mastcam landscape NASA Curiosity Mars",
+        "ons close up NASA Curiosity Mars giant honeycomb"
+      ],
+      "primaryQuery": "NASA Curiosity Mars giant honeycomb polygons",
+      "queries": [
+        {
+          "query": "NASA Curiosity Mars giant honeycomb polygons",
+          "intent": "primary",
+          "priority": 1,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Gale Crater polygon terrain Mastcam",
+          "intent": "primary",
+          "priority": 2,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Gale Crater polygon terrain Mastcam landscape",
+          "intent": "wide",
+          "priority": 3,
+          "mediaKind": "any"
+        },
+        {
+          "query": "NASA Curiosity Mars giant honeycomb polygons wide view",
+          "intent": "wide",
+          "priority": 4,
+          "mediaKind": "any"
+        },
+        {
+          "query": "NASA Curiosity Mars giant honeycomb polygons landscape",
+          "intent": "wide",
+          "priority": 5,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Gale Crater polygon terrain Mastcam wide view",
+          "intent": "wide",
+          "priority": 6,
+          "mediaKind": "any"
+        },
+        {
+          "query": "NASA Curiosity Mars giant honeycomb polygons close up",
+          "intent": "detail",
+          "priority": 7,
+          "mediaKind": "any"
+        },
+        {
+          "query": "NASA Curiosity Mars giant honeycomb polygons detailed view",
+          "intent": "detail",
+          "priority": 8,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Gale Crater polygon terrain Mastcam close up",
+          "intent": "detail",
+          "priority": 9,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Gale Crater polygon terrain Mastcam detailed view",
+          "intent": "detail",
+          "priority": 10,
+          "mediaKind": "any"
+        }
+      ]
+    },
+    {
+      "sceneId": "scene_002",
+      "title": "큐리오시티가 직접 촬영했습니다",
+      "narration": "2026년 6월 21일 큐리오시티는 게일 분화구에서 벌집 모양의 다각형 지형을 직접 촬영했습니다.",
+      "sourceKeywords": [
+        "Curiosity rover Gale Crater Mars",
+        "NASA Mastcam polygon terrain Mars",
+        "Curiosity rover Gale Crater Mars wide view",
+        "Curiosity rover Gale Crater Mars landscape",
+        "NASA Mastcam polygon terrain Mars wide view",
+        "NASA Mastcam polygon terrain Mars landscape",
+        "Curiosity rover Gale Crater Mars close up",
+        "Curiosity rover Gale Crater Mars detailed view"
+      ],
+      "entities": [
+        "벌집",
+        "Curiosity rover Gale Crater Mars NASA Mastcam polygon",
+        "Gale Crater Mars wide view Curiosity rover Gale",
+        "cam polygon terrain Mars wide view NASA Mastcam",
+        "riosity rover Gale Crater Mars close up Curiosity",
+        "view"
+      ],
+      "primaryQuery": "Curiosity rover Gale Crater Mars",
+      "queries": [
+        {
+          "query": "Curiosity rover Gale Crater Mars",
+          "intent": "primary",
+          "priority": 1,
+          "mediaKind": "any"
+        },
+        {
+          "query": "NASA Mastcam polygon terrain Mars",
+          "intent": "primary",
+          "priority": 2,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Curiosity rover Gale Crater Mars landscape",
+          "intent": "wide",
+          "priority": 3,
+          "mediaKind": "any"
+        },
+        {
+          "query": "NASA Mastcam polygon terrain Mars landscape",
+          "intent": "wide",
+          "priority": 4,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Curiosity rover Gale Crater Mars wide view",
+          "intent": "wide",
+          "priority": 5,
+          "mediaKind": "any"
+        },
+        {
+          "query": "NASA Mastcam polygon terrain Mars wide view",
+          "intent": "wide",
+          "priority": 6,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Curiosity rover Gale Crater Mars close up",
+          "intent": "detail",
+          "priority": 7,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Curiosity rover Gale Crater Mars detailed view",
+          "intent": "detail",
+          "priority": 8,
+          "mediaKind": "any"
+        },
+        {
+          "query": "NASA Mastcam polygon terrain Mars close up",
+          "intent": "detail",
+          "priority": 9,
+          "mediaKind": "any"
+        },
+        {
+          "query": "NASA Mastcam polygon terrain Mars detailed view",
+          "intent": "detail",
+          "priority": 10,
+          "mediaKind": "any"
+        }
+      ]
+    },
+    {
+      "sceneId": "scene_003",
+      "title": "하지만 처음 발견된 모양은 아닙니다",
+      "narration": "2025년에도 높이 약 1센티미터의 능선이 20에서 30미터 이어진 비슷한 지형이 발견됐습니다.",
+      "sourceKeywords": [
+        "Mars polygonal fractures raised ridges",
+        "Mars rock fracture",
+        "Mars rock fracture close up",
+        "Mars polygonal fractures raised ridges wide view",
+        "Mars polygonal fractures raised ridges landscape",
+        "Mars rock fracture wide view",
+        "Mars rock fracture landscape",
+        "Mars polygonal fractures raised ridges close up"
+      ],
+      "entities": [
+        "Mars polygonal fractures raised ridges Mars rock fracture",
+        "up Mars polygonal fractures raised ridges wide view",
+        "ised ridges landscape Mars rock fracture wide view",
+        "ars polygonal fractures raised ridges close up"
+      ],
+      "primaryQuery": "Mars polygonal fractures raised ridges",
+      "queries": [
+        {
+          "query": "Mars polygonal fractures raised ridges",
+          "intent": "primary",
+          "priority": 1,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Mars rock fracture",
+          "intent": "primary",
+          "priority": 2,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Mars polygonal fractures raised ridges landscape",
+          "intent": "wide",
+          "priority": 3,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Mars rock fracture close up",
+          "intent": "detail",
+          "priority": 4,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Mars rock fracture wide view",
+          "intent": "wide",
+          "priority": 5,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Mars rock fracture landscape",
+          "intent": "wide",
+          "priority": 6,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Mars polygonal fractures raised ridges wide view",
+          "intent": "wide",
+          "priority": 7,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Mars polygonal fractures raised ridges close up",
+          "intent": "detail",
+          "priority": 8,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Mars polygonal fractures raised ridges detailed view",
+          "intent": "detail",
+          "priority": 9,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Mars rock fracture detailed view",
+          "intent": "detail",
+          "priority": 10,
+          "mediaKind": "any"
+        }
+      ]
+    },
+    {
+      "sceneId": "scene_004",
+      "title": "여러 지층에서 반복됐습니다",
+      "narration": "NASA는 게일 분화구의 여러 지층에서 유사한 다각형을 확인했고 균열과 암석의 성분을 분석하고 있습니다.",
+      "sourceKeywords": [
+        "Monte Grande boxwork Mars polygons",
+        "Curiosity APXS ChemCam Mars rocks",
+        "Monte Grande boxwork Mars polygons wide view",
+        "Monte Grande boxwork Mars polygons landscape",
+        "Curiosity APXS ChemCam Mars rocks wide view",
+        "Curiosity APXS ChemCam Mars rocks landscape",
+        "Monte Grande boxwork Mars polygons close up",
+        "Monte Grande boxwork Mars polygons detailed view"
+      ],
+      "entities": [
+        "NASA",
+        "Monte Grande boxwork Mars polygons Curiosity APXS ChemCam",
+        "boxwork Mars polygons wide view Monte Grande boxwork",
+        "osity APXS ChemCam Mars rocks wide view Curiosity",
+        "pe Monte Grande boxwork Mars polygons close up",
+        "detailed view"
+      ],
+      "primaryQuery": "Monte Grande boxwork Mars polygons",
+      "queries": [
+        {
+          "query": "Monte Grande boxwork Mars polygons",
+          "intent": "primary",
+          "priority": 1,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Curiosity APXS ChemCam Mars rocks",
+          "intent": "primary",
+          "priority": 2,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Monte Grande boxwork Mars polygons landscape",
+          "intent": "wide",
+          "priority": 3,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Curiosity APXS ChemCam Mars rocks landscape",
+          "intent": "wide",
+          "priority": 4,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Monte Grande boxwork Mars polygons wide view",
+          "intent": "wide",
+          "priority": 5,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Curiosity APXS ChemCam Mars rocks wide view",
+          "intent": "wide",
+          "priority": 6,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Monte Grande boxwork Mars polygons close up",
+          "intent": "detail",
+          "priority": 7,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Monte Grande boxwork Mars polygons detailed view",
+          "intent": "detail",
+          "priority": 8,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Curiosity APXS ChemCam Mars rocks close up",
+          "intent": "detail",
+          "priority": 9,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Curiosity APXS ChemCam Mars rocks detailed view",
+          "intent": "detail",
+          "priority": 10,
+          "mediaKind": "any"
+        }
+      ]
+    },
+    {
+      "sceneId": "scene_005",
+      "title": "검은 돌의 정체는 아직 모릅니다",
+      "narration": "검은 돌은 다른 지층에서 굴러왔거나 충돌 때 날아왔거나 아예 운석일 가능성도 있습니다.",
+      "sourceKeywords": [
+        "Mars dark rocks meteorite Curiosity",
+        "Gale Crater impact ejecta rocks",
+        "Mars black cobble close up",
+        "Mars dark rocks meteorite Curiosity wide view",
+        "Mars dark rocks meteorite Curiosity landscape",
+        "Gale Crater impact ejecta rocks wide view",
+        "Gale Crater impact ejecta rocks landscape",
+        "Mars dark rocks meteorite Curiosity close up"
+      ],
+      "entities": [
+        "운석",
+        "Mars dark rocks meteorite Curiosity Gale Crater impact",
+        "bble close up Mars dark rocks meteorite Curiosity",
+        "rite Curiosity landscape Gale Crater impact ejecta rocks",
+        "pact ejecta rocks landscape Mars dark rocks meteorite"
+      ],
+      "primaryQuery": "Mars dark rocks meteorite Curiosity",
+      "queries": [
+        {
+          "query": "Mars dark rocks meteorite Curiosity",
+          "intent": "primary",
+          "priority": 1,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Gale Crater impact ejecta rocks",
+          "intent": "primary",
+          "priority": 2,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Mars dark rocks meteorite Curiosity landscape",
+          "intent": "wide",
+          "priority": 3,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Gale Crater impact ejecta rocks landscape",
+          "intent": "wide",
+          "priority": 4,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Mars black cobble close up",
+          "intent": "detail",
+          "priority": 5,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Mars dark rocks meteorite Curiosity wide view",
+          "intent": "wide",
+          "priority": 6,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Gale Crater impact ejecta rocks wide view",
+          "intent": "wide",
+          "priority": 7,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Mars dark rocks meteorite Curiosity close up",
+          "intent": "detail",
+          "priority": 8,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Mars dark rocks meteorite Curiosity detailed view",
+          "intent": "detail",
+          "priority": 9,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Gale Crater impact ejecta rocks close up",
+          "intent": "detail",
+          "priority": 10,
+          "mediaKind": "any"
+        }
+      ]
+    },
+    {
+      "sceneId": "scene_006",
+      "title": "모양보다 더 큰 미스터리가 남았습니다",
+      "narration": "벌집 지형의 형성 과정도 검은 돌의 기원도 아직 확정되지 않았습니다. 여러분은 세 가설 중 무엇이 가장 가능성 있다고 보시나요",
+      "sourceKeywords": [
+        "Curiosity dark rocks Gale Crater",
+        "Mars honeycomb terrain mystery",
+        "Mars geological mystery landscape",
+        "Curiosity dark rocks Gale Crater wide view",
+        "Curiosity dark rocks Gale Crater landscape",
+        "Mars honeycomb terrain mystery wide view",
+        "Mars honeycomb terrain mystery landscape",
+        "Curiosity dark rocks Gale Crater close up"
+      ],
+      "entities": [
+        "미스터리",
+        "벌집",
+        "Curiosity dark rocks Gale Crater Mars honeycomb terrain",
+        "ystery landscape Curiosity dark rocks Gale Crater wide",
+        "Gale Crater landscape Mars honeycomb terrain mystery wide",
+        "rain mystery landscape Curiosity dark rocks Gale Crater"
+      ],
+      "primaryQuery": "Curiosity dark rocks Gale Crater",
+      "queries": [
+        {
+          "query": "Curiosity dark rocks Gale Crater",
+          "intent": "primary",
+          "priority": 1,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Mars honeycomb terrain mystery",
+          "intent": "primary",
+          "priority": 2,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Curiosity dark rocks Gale Crater landscape",
+          "intent": "wide",
+          "priority": 3,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Mars honeycomb terrain mystery wide view",
+          "intent": "wide",
+          "priority": 4,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Mars honeycomb terrain mystery landscape",
+          "intent": "wide",
+          "priority": 5,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Mars geological mystery landscape",
+          "intent": "wide",
+          "priority": 6,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Curiosity dark rocks Gale Crater wide view",
+          "intent": "wide",
+          "priority": 7,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Curiosity dark rocks Gale Crater close up",
+          "intent": "detail",
+          "priority": 8,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Curiosity dark rocks Gale Crater detailed view",
+          "intent": "detail",
+          "priority": 9,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Mars honeycomb terrain mystery close up",
+          "intent": "detail",
+          "priority": 10,
+          "mediaKind": "any"
+        }
+      ]
+    }
+  ]
+}

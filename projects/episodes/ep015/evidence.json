@@ -1,0 +1,131 @@
+{
+  "topic": "붉은 행성에 벌집이?…NASA도 놀란 미스터리 구조물 [여기는 화성]",
+  "items": [
+    {
+      "id": "evidence_1ebb2aa52c62",
+      "title": "Sols 4743-4749: Polygons in the Hollow",
+      "claim": "NASA는 2025년 12월 Monte Grande 박스워크 함몰부에서도 비슷한 다각형을 기록했으며, 게일 분화구의 여러 지층에서 유사한 형태가 보인다고 설명했다. 연구팀은 균열 충전 물질과 주변 암석의 관계를 조성 분석으로 조사하고 있다.",
+      "source_name": "NASA Science",
+      "source_url": "https://science.nasa.gov/blog/curiosity-blog-sols-4743-4749-polygons-in-the-hollow/",
+      "source_tier": "official",
+      "evidence_type": "case",
+      "published_at": "2025-12-18",
+      "keywords": [
+        "Monte Grande",
+        "boxwork",
+        "polygons",
+        "MAHLI",
+        "APXS",
+        "ChemCam"
+      ],
+      "reliability_score": 1.0,
+      "interest_score": 1.0,
+      "visual_score": 0.7,
+      "total_score": 0.94
+    },
+    {
+      "id": "evidence_0c528fbb5823",
+      "title": "Sols 4529-4531: Honeycombs and Waffles on Mars",
+      "claim": "Curiosity는 2025년 5월에도 약 1센티미터 높이의 융기 능선으로 둘러싸인 잘 보존된 다각형 균열을 관측했으며, 이 지형은 약 20~30미터 이어졌다. 즉 2026년 사진이 화성에서 처음 발견된 유일한 벌집형 지형은 아니다.",
+      "source_name": "NASA Science",
+      "source_url": "https://science.nasa.gov/blog/sols-4529-4531-honeycombs-and-waffles-on-mars/",
+      "source_tier": "official",
+      "evidence_type": "timeline",
+      "published_at": "2025-05-06",
+      "keywords": [
+        "Curiosity",
+        "polygonal fractures",
+        "raised ridges",
+        "20 meters",
+        "30 meters"
+      ],
+      "reliability_score": 1.0,
+      "interest_score": 0.9,
+      "visual_score": 0.85,
+      "total_score": 0.94
+    },
+    {
+      "id": "evidence_6c4825e71626",
+      "title": "Sols 4934-4940: In the Land of the Polygons",
+      "claim": "NASA Curiosity는 2026년 6월 21일 게일 분화구에서 궤도상으로 밝고 매끈해 보였던 지형을 가까이 촬영했고, 현장에서 거대한 벌집 모양의 다각형 구조와 어두운 자갈·암석을 확인했다.",
+      "source_name": "NASA Science",
+      "source_url": "https://science.nasa.gov/blog/curiosity-blog-sols-4934-4940-in-the-land-of-the-polygons/",
+      "source_tier": "official",
+      "evidence_type": "fact",
+      "published_at": "2026-07-01",
+      "keywords": [
+        "Curiosity",
+        "Mars",
+        "Gale Crater",
+        "polygons",
+        "honeycomb",
+        "Mastcam"
+      ],
+      "reliability_score": 1.0,
+      "interest_score": 0.8,
+      "visual_score": 0.7,
+      "total_score": 0.88
+    },
+    {
+      "id": "evidence_544d5bc0bc13",
+      "title": "Honeycomb structures spotted on Mars",
+      "claim": "사진 속 어두운 암석의 기원은 확정되지 않았다. 고지대 지층에서 이동한 암석, 게일 분화구 밖 충돌의 분출물, 운석이라는 설명이 모두 후보이며 추가 관측이 필요하다.",
+      "source_name": "Space.com",
+      "source_url": "https://www.space.com/astronomy/mars/honeycomb-structures-spotted-on-mars-space-photo-of-the-day-for-july-14-2026",
+      "source_tier": "news",
+      "evidence_type": "counterpoint",
+      "published_at": "2026-07-14",
+      "keywords": [
+        "dark rocks",
+        "impact ejecta",
+        "meteorites",
+        "unknown origin",
+        "Mars geology"
+      ],
+      "reliability_score": 0.7,
+      "interest_score": 0.95,
+      "visual_score": 0.7,
+      "total_score": 0.775
+    },
+    {
+      "id": "evidence_d039946d15e8",
+      "title": "NASA Curiosity rover discovers mysterious honeycomb-like structure on Mars",
+      "claim": "2차 보도 역시 구조의 정확한 기원이 조사 중이라고 전하며, 화산 활동·물의 흐름·퇴적물 이동·풍식·기후 변화 같은 여러 지질 과정 중 무엇이 관여했는지는 확정하지 않는다.",
+      "source_name": "Business Standard",
+      "source_url": "https://www.business-standard.com/technology/tech-news/nasa-curiosity-rover-discovers-mysterious-honeycomb-like-structure-on-mars-126071600872_1.html",
+      "source_tier": "news",
+      "evidence_type": "counterpoint",
+      "published_at": "2026-07-16",
+      "keywords": [
+        "geological processes",
+        "erosion",
+        "sediment",
+        "climate change",
+        "investigation"
+      ],
+      "reliability_score": 0.7,
+      "interest_score": 0.95,
+      "visual_score": 0.45,
+      "total_score": 0.725
+    }
+  ],
+  "rejected_count": 0,
+  "duplicate_count": 0,
+  "status": "verified",
+  "summary": "Curiosity가 2026년 6월 촬영한 화성 게일 분화구의 거대한 벌집형 다각형 지형은 실제 NASA 관측이다. 그러나 비슷한 다각형 균열은 2025년에도 여러 지층에서 관측됐고, NASA는 조성 측정과 형성 시기 분석을 진행 중이다. 사진 속 어두운 암석의 기원도 고지대에서 굴러온 암석, 충돌 분출물, 운석 등 복수 가설만 제시된 상태다.",
+  "uncertainties": [
+    "다각형 능선이 형성된 정확한 과정과 시기는 아직 확정되지 않았다.",
+    "사진 속 어두운 암석이 화성 암석인지 충돌 분출물인지 운석인지 아직 판별되지 않았다.",
+    "벌집처럼 보이는 형태만으로 생물학적 또는 인공 구조물이라고 해석할 근거는 없다."
+  ],
+  "citations": [
+    "https://science.nasa.gov/blog/curiosity-blog-sols-4934-4940-in-the-land-of-the-polygons/",
+    "https://science.nasa.gov/blog/sols-4529-4531-honeycombs-and-waffles-on-mars/",
+    "https://science.nasa.gov/blog/curiosity-blog-sols-4743-4749-polygons-in-the-hollow/",
+    "https://www.space.com/astronomy/mars/honeycomb-structures-spotted-on-mars-space-photo-of-the-day-for-july-14-2026",
+    "https://www.business-standard.com/technology/tech-news/nasa-curiosity-rover-discovers-mysterious-honeycomb-like-structure-on-mars-126071600872_1.html"
+  ],
+  "provider": "manual_web_research",
+  "model": "gpt-5.6-sol",
+  "verified_at": "2026-07-17T08:15:45.015107+00:00"
+}

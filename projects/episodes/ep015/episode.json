@@ -1,0 +1,80 @@
+{
+  "version": "1.0",
+  "episodeId": "ep015",
+  "channel": "mystery",
+  "title": "화성에 나타난\n거대한 벌집",
+  "theme": {
+    "backgroundColor": "#080B10",
+    "titleColor": "#FFB36B",
+    "captionColor": "#FFFFFF",
+    "accentColor": "#FF6B35"
+  },
+  "scenes": [
+    {
+      "type": "hook",
+      "title": "화성에 거대한\n벌집이 나타났습니다",
+      "narration": "화성 표면에 거대한 벌집이 나타났습니다. 그런데 진짜 미스터리는 그 안의 검은 돌입니다.",
+      "keywords": [
+        "NASA Curiosity Mars giant honeycomb polygons",
+        "Gale Crater polygon terrain Mastcam",
+        "Mars dark rocks Curiosity"
+      ],
+      "evidenceIds": ["evidence_6c4825e71626", "evidence_544d5bc0bc13"]
+    },
+    {
+      "type": "answer",
+      "title": "큐리오시티가\n직접 촬영했습니다",
+      "narration": "2026년 6월 21일, 큐리오시티는 게일 분화구에서 벌집 모양의 다각형 지형을 직접 촬영했습니다.",
+      "keywords": [
+        "Curiosity rover Gale Crater Mars 2026",
+        "NASA Mastcam polygon terrain Mars",
+        "Curiosity Mars surface panorama"
+      ],
+      "evidenceIds": ["evidence_6c4825e71626"]
+    },
+    {
+      "type": "story",
+      "title": "하지만 처음 발견된\n모양은 아닙니다",
+      "narration": "2025년에도 높이 약 1센티미터의 능선이 20에서 30미터 이어진 비슷한 지형이 발견됐습니다.",
+      "keywords": [
+        "Mars polygonal fractures raised ridges",
+        "Curiosity honeycombs waffles Mars 2025",
+        "Mars rock fracture close up"
+      ],
+      "evidenceIds": ["evidence_0c528fbb5823"]
+    },
+    {
+      "type": "fact",
+      "title": "여러 지층에서\n반복됐습니다",
+      "narration": "NASA는 게일 분화구의 여러 지층에서 유사한 다각형을 확인했고, 균열과 암석의 성분을 분석하고 있습니다.",
+      "keywords": [
+        "Monte Grande boxwork Mars polygons",
+        "Curiosity APXS ChemCam Mars rocks",
+        "Gale Crater geological layers"
+      ],
+      "evidenceIds": ["evidence_1ebb2aa52c62"]
+    },
+    {
+      "type": "fact",
+      "title": "검은 돌의 정체는\n아직 모릅니다",
+      "narration": "검은 돌은 다른 지층에서 굴러왔거나 충돌 때 날아왔거나, 아예 운석일 가능성도 있습니다.",
+      "keywords": [
+        "Mars dark rocks meteorite Curiosity",
+        "Gale Crater impact ejecta rocks",
+        "Mars black cobble close up"
+      ],
+      "evidenceIds": ["evidence_544d5bc0bc13"]
+    },
+    {
+      "type": "ending",
+      "title": "모양보다 더 큰\n미스터리가 남았습니다",
+      "narration": "벌집 지형의 형성 과정도, 검은 돌의 기원도 아직 확정되지 않았습니다. 여러분은 세 가설 중 무엇이 가장 가능성 있다고 보시나요?",
+      "keywords": [
+        "Mars honeycomb terrain mystery",
+        "Curiosity dark rocks Gale Crater",
+        "Mars geological mystery landscape"
+      ],
+      "evidenceIds": ["evidence_544d5bc0bc13", "evidence_d039946d15e8"]
+    }
+  ]
+}
