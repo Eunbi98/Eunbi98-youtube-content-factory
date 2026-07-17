@@ -86,6 +86,20 @@ class EpisodeQualityService:
             raise EpisodeQualityError("마지막 Scene은 댓글을 유도하는 질문이어야 합니다.")
 
         self._validate_metadata(metadata_payload)
+        allowed_source_urls = {
+            str(item.get("source_url") or "").strip()
+            for item in evidence_payload.get("items", [])
+            if isinstance(item, dict)
+        }
+        metadata_sources = {
+            str(source).strip() for source in metadata_payload.get("sources", [])
+        }
+        unknown_sources = metadata_sources - allowed_source_urls
+        if unknown_sources:
+            raise EpisodeQualityError(
+                "metadata.sources에 검증되지 않은 URL이 있습니다: "
+                + ", ".join(sorted(unknown_sources))
+            )
 
         updated = copy.deepcopy(job_payload)
         artifacts = updated.setdefault("artifacts", {})

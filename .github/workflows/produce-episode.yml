@@ -1,0 +1,274 @@
+name: Produce selected topic
+
+on:
+  workflow_dispatch:
+    inputs:
+      category:
+        description: "Selected candidate category"
+        required: true
+        type: choice
+        options:
+          - mystery
+          - science
+          - history
+          - space
+      candidate_json:
+        description: "Selected Auto Topic Finder candidate JSON"
+        required: true
+        type: string
+      episode_id:
+        description: "Episode ID or auto"
+        required: true
+        default: "auto"
+        type: string
+
+permissions:
+  contents: write
+
+concurrency:
+  group: produce-episode
+  cancel-in-progress: false
+
+jobs:
+  produce:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+        with:
+          ref: feature/release-5-director-engine
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Install Python dependencies
+        run: python -m pip install -r requirements.txt
+
+      - name: Run production quality tests
+        run: >-
+          python -m unittest
+          tests.test_production_job
+          tests.test_evidence_provider
+          tests.test_episode_provider
+          tests.test_episode_quality
+          -v
+
+      - name: Resolve selected candidate and episode ID
+        id: production
+        shell: bash
+        env:
+          REQUESTED_CATEGORY: ${{ inputs.category }}
+          SELECTED_CANDIDATE_JSON: ${{ inputs.candidate_json }}
+          REQUESTED_EPISODE_ID: ${{ inputs.episode_id }}
+        run: |
+          set -euo pipefail
+
+          python - <<'PY'
+          import json
+          import os
+          from pathlib import Path
+
+          category = os.environ["REQUESTED_CATEGORY"].strip().lower()
+          if category not in {"mystery", "science", "history", "space"}:
+              raise SystemExit(f"Invalid category: {category}")
+
+          candidate = json.loads(os.environ["SELECTED_CANDIDATE_JSON"])
+          if not isinstance(candidate, dict):
+              raise SystemExit("candidate_json must be an object")
+          topic = str(candidate.get("topic") or "").strip()
+          if not topic or len(topic) > 160:
+              raise SystemExit("candidate topic is missing or too long")
+          candidate_category = str(candidate.get("category") or category).lower()
+          if candidate_category != category:
+              raise SystemExit("candidate category does not match input category")
+
+          candidate["rank"] = 1
+          candidate["category"] = category
+          Path("/tmp/selected-candidates.json").write_text(
+              json.dumps(
+                  {"category": category, "candidates": [candidate]},
+                  ensure_ascii=False,
+                  indent=2,
+              ) + "\n",
+              encoding="utf-8",
+          )
+          PY
+
+          episode_id="${REQUESTED_EPISODE_ID,,}"
+          if [[ "$episode_id" == "auto" ]]; then
+            episode_id="$(python - <<'PY'
+          from pathlib import Path
+          from projects.production.select_topic import next_episode_id
+          print(next_episode_id(Path.cwd()))
+          PY
+          )"
+          fi
+          if [[ ! "$episode_id" =~ ^ep[0-9]{3,}$ ]]; then
+            echo "Invalid episode ID: $episode_id" >&2
+            exit 2
+          fi
+          if [[ -d "projects/episodes/$episode_id" ]]; then
+            echo "Episode already exists: $episode_id" >&2
+            exit 2
+          fi
+
+          episode_dir="projects/episodes/$episode_id"
+          mkdir -p "$episode_dir"
+          echo "episode_id=$episode_id" >> "$GITHUB_OUTPUT"
+          echo "episode_dir=$episode_dir" >> "$GITHUB_OUTPUT"
+
+      - name: Create production job
+        run: >-
+          python projects/production/select_topic.py
+          --candidates /tmp/selected-candidates.json
+          --rank 1
+          --episode "${{ steps.production.outputs.episode_id }}"
+          --output "${{ steps.production.outputs.episode_dir }}/production-job.json"
+
+      - name: Validate OpenAI API secret
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+        run: |
+          if [[ -z "${OPENAI_API_KEY:-}" ]]; then
+            echo "OPENAI_API_KEY repository secret is required." >&2
+            exit 2
+          fi
+
+      - name: Collect and verify evidence
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          OPENAI_RESEARCH_MODEL: ${{ vars.OPENAI_RESEARCH_MODEL || 'gpt-5.6' }}
+        run: >-
+          python projects/research/collect_evidence.py
+          --job "${{ steps.production.outputs.episode_dir }}/production-job.json"
+          --output "${{ steps.production.outputs.episode_dir }}/evidence.json"
+          --job-output "${{ steps.production.outputs.episode_dir }}/production-job.json"
+
+      - name: Generate and validate story package
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          OPENAI_STORY_MODEL: ${{ vars.OPENAI_STORY_MODEL || 'gpt-5.6' }}
+        run: >-
+          python projects/production/build_episode_package.py
+          --job "${{ steps.production.outputs.episode_dir }}/production-job.json"
+          --evidence "${{ steps.production.outputs.episode_dir }}/evidence.json"
+          --episode-spec "${{ steps.production.outputs.episode_dir }}/episode.json"
+          --metadata "${{ steps.production.outputs.episode_dir }}/metadata.json"
+          --job-output "${{ steps.production.outputs.episode_dir }}/production-job.json"
+
+      - name: Save verified episode package to branch
+        shell: bash
+        run: |
+          git config user.name "Factory Runner"
+          git config user.email "factory-runner@users.noreply.github.com"
+          git add "${{ steps.production.outputs.episode_dir }}/production-job.json"
+          git add "${{ steps.production.outputs.episode_dir }}/evidence.json"
+          git add "${{ steps.production.outputs.episode_dir }}/episode.json"
+          git add "${{ steps.production.outputs.episode_dir }}/metadata.json"
+          git commit -m "feat(${{ steps.production.outputs.episode_id }}): add verified episode package"
+          git push origin HEAD:feature/release-5-director-engine
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: npm
+          cache-dependency-path: projects/remotion/package-lock.json
+
+      - name: Install Remotion dependencies
+        working-directory: projects/remotion
+        run: npm ci
+
+      - name: Install system dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install --yes ffmpeg fonts-noto-cjk
+          fc-cache -f
+
+      - name: Run Factory through MP4
+        env:
+          PIXABAY_API_KEY: ${{ secrets.PIXABAY_API_KEY }}
+          PEXELS_API_KEY: ${{ secrets.PEXELS_API_KEY }}
+          PYTHONUNBUFFERED: "1"
+        run: >-
+          python factory_runner.py
+          --episode "${{ steps.production.outputs.episode_id }}"
+          --rebuild-timeline
+
+      - name: Mark production job rendered
+        env:
+          EPISODE_ID: ${{ steps.production.outputs.episode_id }}
+          EPISODE_DIR: ${{ steps.production.outputs.episode_dir }}
+          WORKFLOW_RUN_ID: ${{ github.run_id }}
+        run: |
+          python - <<'PY'
+          import json
+          import os
+          from datetime import datetime, timezone
+          from pathlib import Path
+
+          path = Path(os.environ["EPISODE_DIR"]) / "production-job.json"
+          payload = json.loads(path.read_text(encoding="utf-8"))
+          payload["status"] = "rendered"
+          payload["nextAction"] = "review_video"
+          payload["updatedAt"] = datetime.now(timezone.utc).isoformat()
+          payload.setdefault("artifacts", {})["video"] = (
+              f"github-actions://runs/{os.environ['WORKFLOW_RUN_ID']}"
+          )
+          path.write_text(
+              json.dumps(payload, ensure_ascii=False, indent=2) + "\n",
+              encoding="utf-8",
+          )
+          PY
+
+      - name: Save final production state
+        shell: bash
+        run: |
+          git add "${{ steps.production.outputs.episode_dir }}/production-job.json"
+          git add "${{ steps.production.outputs.episode_dir }}/timeline.json"
+          git add "${{ steps.production.outputs.episode_dir }}/media_queries.json"
+          git commit -m "chore(${{ steps.production.outputs.episode_id }}): record production output"
+          git push origin HEAD:feature/release-5-director-engine
+
+      - name: Upload MP4
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ steps.production.outputs.episode_id }}-mp4
+          path: projects/output/${{ steps.production.outputs.episode_id }}.mp4
+          if-no-files-found: error
+          retention-days: 14
+
+      - name: Upload production package
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ steps.production.outputs.episode_id }}-package
+          path: |
+            ${{ steps.production.outputs.episode_dir }}/production-job.json
+            ${{ steps.production.outputs.episode_dir }}/evidence.json
+            ${{ steps.production.outputs.episode_dir }}/episode.json
+            ${{ steps.production.outputs.episode_dir }}/metadata.json
+            ${{ steps.production.outputs.episode_dir }}/timeline.json
+            ${{ steps.production.outputs.episode_dir }}/media_queries.json
+            projects/output/logs/${{ steps.production.outputs.episode_id }}.json
+          if-no-files-found: warn
+          retention-days: 14
+
+      - name: Add production summary
+        if: always()
+        shell: bash
+        run: |
+          {
+            echo "## Factory Production"
+            echo
+            echo "- Episode: ${{ steps.production.outputs.episode_id }}"
+            echo "- Category: ${{ inputs.category }}"
+            echo "- Topic: $(jq -r '.selectedTopic.topic' '${{ steps.production.outputs.episode_dir }}/production-job.json' 2>/dev/null || echo unavailable)"
+            echo "- Status: $(jq -r '.status' '${{ steps.production.outputs.episode_dir }}/production-job.json' 2>/dev/null || echo failed)"
+          } >> "$GITHUB_STEP_SUMMARY"

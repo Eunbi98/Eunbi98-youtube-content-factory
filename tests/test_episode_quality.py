@@ -29,7 +29,11 @@ def _job() -> dict:
 def _evidence() -> dict:
     return {
         "status": "verified",
-        "items": [{"id": "evidence_1"}],
+        "items": [
+            {"id": "evidence_1", "source_url": "https://source-a.example/a"},
+            {"id": "evidence_2", "source_url": "https://source-b.example/b"},
+            {"id": "evidence_3", "source_url": "https://source-c.example/c"},
+        ],
     }
 
 
@@ -64,7 +68,11 @@ def _metadata() -> dict:
         "description": "설명",
         "pinnedComment": "댓글",
         "tags": ["1", "2", "3", "4", "5"],
-        "sources": ["a", "b", "c"],
+        "sources": [
+            "https://source-a.example/a",
+            "https://source-b.example/b",
+            "https://source-c.example/c",
+        ],
     }
 
 
@@ -120,6 +128,21 @@ class EpisodeQualityTests(unittest.TestCase):
                     evidence_payload=_evidence(),
                     episode_spec_path=spec_path,
                     metadata_payload=_metadata(),
+                    metadata_path=directory / "metadata.json",
+                )
+
+    def test_unverified_metadata_source_is_rejected(self) -> None:
+        metadata = _metadata()
+        metadata["sources"][2] = "https://invented.example/source"
+        with tempfile.TemporaryDirectory() as temp_dir:
+            directory = Path(temp_dir)
+            spec_path = self._write_spec(directory, _spec())
+            with self.assertRaises(EpisodeQualityError):
+                EpisodeQualityService().validate_and_advance(
+                    job_payload=_job(),
+                    evidence_payload=_evidence(),
+                    episode_spec_path=spec_path,
+                    metadata_payload=metadata,
                     metadata_path=directory / "metadata.json",
                 )
 
