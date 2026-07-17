@@ -185,7 +185,29 @@ class AutoTopicFinder:
             key=lambda item: (item.score, item.source_count, item.topic),
             reverse=True,
         )
-        ranked = self._rank(candidates[:limit])
+        if source_mode == "mixed":
+            archive_target = (limit * 3 + 4) // 5
+            trend_target = limit - archive_target
+            live_candidates = [item for item in candidates if item.source_count > 0]
+            archive_candidates = [item for item in candidates if item.source_count == 0]
+            selected = live_candidates[:trend_target] + archive_candidates[:archive_target]
+            if len(selected) < limit:
+                selected_topics = {item.topic for item in selected}
+                missing = limit - len(selected)
+                selected.extend(
+                    [
+                        item
+                        for item in candidates
+                        if item.topic not in selected_topics
+                    ][:missing]
+                )
+            selected.sort(
+                key=lambda item: (item.score, item.source_count, item.topic),
+                reverse=True,
+            )
+        else:
+            selected = candidates
+        ranked = self._rank(selected[:limit])
         has_live = any(item.source_count > 0 for item in ranked)
         has_archive = any(item.source_count == 0 for item in ranked)
         if source_mode == "mixed":

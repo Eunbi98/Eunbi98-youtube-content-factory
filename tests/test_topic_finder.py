@@ -38,6 +38,25 @@ class UnexpectedSource:
         raise AssertionError("archive mode must not fetch live news")
 
 
+class CategorySource:
+    items = {
+        "mystery": "고대 유적에서 새로운 미스터리 암호 발견",
+        "science": "과학 연구에서 새로운 생명 현상 발견",
+        "history": "고대 무덤 발굴에서 새로운 역사 유물 발견",
+        "space": "NASA 화성 행성 관측에서 새로운 흔적 발견",
+    }
+
+    def fetch(self, *, category: str, limit: int) -> list[TopicSourceItem]:
+        return [
+            TopicSourceItem(
+                title=self.items[category],
+                url=f"https://example.com/{category}",
+                source="NASA" if category == "space" else "연합뉴스",
+                published_at="2026-07-17T10:00:00+00:00",
+            )
+        ]
+
+
 class TopicFinderTests(unittest.TestCase):
     def test_recent_repeated_topic_is_ranked_first(self) -> None:
         items = [
@@ -245,6 +264,16 @@ class TopicFinderTests(unittest.TestCase):
             ),
             [candidate.score for candidate in result.candidates],
         )
+
+    def test_all_mixed_mode_preserves_global_source_ratio(self) -> None:
+        result = AutoTopicFinder(
+            source=CategorySource(),
+            now=lambda: NOW,
+        ).find(category="all", limit=10, source_mode="mixed")
+
+        self.assertEqual("mixed", result.mode)
+        self.assertEqual(4, sum(item.source_count > 0 for item in result.candidates))
+        self.assertEqual(6, sum(item.source_count == 0 for item in result.candidates))
 
     def test_game_patch_is_rejected_by_brand_filter(self) -> None:
         items = [
