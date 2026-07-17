@@ -1,0 +1,32 @@
+{
+  "version": "1.0",
+  "episodeId": "ep999",
+  "channel": "mystery",
+  "title": "영상 전체 제목",
+  "voice": "ko-KR-SunHiNeural",
+  "theme": {
+    "backgroundColor": "#000000",
+    "titleColor": "#7CFFB2",
+    "captionColor": "#FFFFFF",
+    "accentColor": "#7CFFB2"
+  },
+  "scenes": [
+    {
+      "type": "hook",
+      "title": "첫 장면 제목",
+      "narration": "이 문장이 TTS와 자막에 동일하게 사용됩니다.",
+      "keywords": [
+        "primary English search query",
+        "secondary search query"
+      ]
+    },
+    {
+      "type": "ending",
+      "title": "마지막 장면 제목",
+      "narration": "마지막에는 시청자의 댓글을 유도하는 질문을 넣습니다.",
+      "keywords": [
+        "ending visual search query"
+      ]
+    }
+  ]
+}

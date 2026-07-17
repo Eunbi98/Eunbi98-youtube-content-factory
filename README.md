@@ -1,4 +1,45 @@
-# Release 6 Feature 5 — Mystery Plugin Integration
+# YouTube Content Factory
+
+## Data-driven episode
+
+새 에피소드는 Python 파일을 수정하지 않고 아래 경로에
+`episode.json`을 추가하여 생성합니다.
+
+```text
+projects/episodes/ep014/episode.json
+```
+
+기본 형식은 다음 예제 파일을 복사해 사용합니다.
+
+```text
+projects/episodes/episode.example.json
+```
+
+`scenes[].narration`은 TTS와 자막에 동일하게 사용됩니다.
+첫 Scene은 `hook`, 마지막 Scene은 `ending`이어야 합니다.
+미디어 `src`를 생략하면 다음 규칙으로 자동 생성됩니다.
+
+```text
+ep014/scene_001.jpg
+ep014/scene_002.jpg
+```
+
+실행:
+
+```powershell
+py factory_runner.py --episode ep014 --rebuild-timeline
+```
+
+Episode Spec 테스트:
+
+```powershell
+py -m unittest discover -s tests -v
+```
+
+기존 EP008~EP013 Python Story Builder는 호환성을 위해 유지됩니다.
+같은 에피소드 폴더에 `episode.json`이 있으면 JSON을 우선 사용합니다.
+
+## Legacy Mystery Plugin Integration
 
 ## 적용 파일
 

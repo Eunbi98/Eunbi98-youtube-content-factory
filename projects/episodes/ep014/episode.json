@@ -1,0 +1,64 @@
+{
+  "version": "1.0",
+  "episodeId": "ep014",
+  "channel": "mystery",
+  "title": "죽은 자에게 주어진\n황금 혀",
+  "theme": {
+    "backgroundColor": "#000000",
+    "titleColor": "#7CFFB2",
+    "captionColor": "#FFFFFF",
+    "accentColor": "#7CFFB2"
+  },
+  "scenes": [
+    {
+      "type": "hook",
+      "title": "왜 미라의 입에\n황금 혀를 넣었을까요?",
+      "narration": "고대 이집트인들은 왜 죽은 사람의 입에 황금 혀를 넣었을까요?",
+      "keywords": [
+        "ancient Egyptian mummy gold tongue",
+        "Egyptian tomb gold amulet",
+        "ancient Egypt burial"
+      ]
+    },
+    {
+      "type": "answer",
+      "title": "저승에서도\n말하기 위해서였습니다",
+      "narration": "이 황금 장식은 죽은 사람이 저승에서도 말할 수 있게 돕는 부적이었습니다.",
+      "keywords": [
+        "Egyptian gold tongue amulet",
+        "ancient Egyptian funerary amulet",
+        "Egyptian mummy artifact"
+      ]
+    },
+    {
+      "type": "story",
+      "title": "최근 18개의 무덤에서\n다시 발견됐습니다",
+      "narration": "최근 이집트 마리나 엘 알라메인의 무덤 18곳에서도 황금 혀 장식들이 발견됐습니다.",
+      "keywords": [
+        "Marina el Alamein ancient tombs",
+        "Ptolemaic Roman tomb Egypt",
+        "Egypt archaeological excavation"
+      ]
+    },
+    {
+      "type": "fact",
+      "title": "금은 신들의 살로\n여겨졌습니다",
+      "narration": "고대 이집트에서 금은 신들의 살로 여겨졌고, 영원히 변하지 않는 재료를 뜻했습니다.",
+      "keywords": [
+        "ancient Egyptian gold artifacts",
+        "Egyptian funerary gold",
+        "Egypt museum gold amulet"
+      ]
+    },
+    {
+      "type": "ending",
+      "title": "죽은 뒤에도 목소리가\n필요하다고 믿은 겁니다",
+      "narration": "죽은 뒤에도 신들 앞에서 말할 수 있어야 한다는 믿음. 여러분이라면 어떤 부적을 남기고 싶나요?",
+      "keywords": [
+        "ancient Egyptian afterlife",
+        "Osiris judgment ancient Egypt",
+        "Egyptian Book of the Dead"
+      ]
+    }
+  ]
+}
