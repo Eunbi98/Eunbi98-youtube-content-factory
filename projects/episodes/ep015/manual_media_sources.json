@@ -1,0 +1,38 @@
+{
+  "episodeId": "ep015",
+  "license": "NASA Media Usage Guidelines",
+  "credit": "NASA/JPL-Caltech/MSSS",
+  "reason": "최신 Curiosity 블로그 이미지를 NASA Image Library 검색 API가 반환하지 않아 공식 NASA 원문 자산을 사용함",
+  "scenes": [
+    {
+      "sceneId": "scene_001",
+      "sourcePage": "https://science.nasa.gov/blog/curiosity-blog-sols-4934-4940-in-the-land-of-the-polygons/",
+      "description": "Curiosity Mastcam이 2026년 6월 21일 촬영한 다각형 지형"
+    },
+    {
+      "sceneId": "scene_002",
+      "sourcePage": "https://science.nasa.gov/resource/curiositys-selfie-at-mont-mercou/",
+      "description": "화성 게일 분화구의 Curiosity 로버"
+    },
+    {
+      "sceneId": "scene_003",
+      "sourcePage": "https://science.nasa.gov/blog/sols-4529-4531-honeycombs-and-waffles-on-mars/",
+      "description": "Curiosity가 2025년 5월 촬영한 벌집형 균열 지형"
+    },
+    {
+      "sceneId": "scene_004",
+      "sourcePage": "https://science.nasa.gov/blog/curiosity-blog-sols-4743-4749-polygons-in-the-hollow/",
+      "description": "Monte Grande 박스워크 함몰부의 다각형 암석"
+    },
+    {
+      "sceneId": "scene_005",
+      "sourcePage": "https://science.nasa.gov/blog/curiosity-blog-sols-4934-4940-in-the-land-of-the-polygons/",
+      "description": "다각형 지형과 어두운 암석을 보여주는 Mastcam 이미지"
+    },
+    {
+      "sceneId": "scene_006",
+      "sourcePage": "https://science.nasa.gov/resource/global-view-of-mars-in-low-resolution/",
+      "description": "Viking 2 Orbiter 기반 화성 전경"
+    }
+  ]
+}

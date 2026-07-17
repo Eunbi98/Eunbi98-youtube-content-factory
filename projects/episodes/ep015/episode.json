@@ -2,6 +2,7 @@
   "version": "1.0",
   "episodeId": "ep015",
   "channel": "mystery",
+  "mediaSource": "official_nasa",
   "title": "화성에 나타난\n거대한 벌집",
   "theme": {
     "backgroundColor": "#080B10",
