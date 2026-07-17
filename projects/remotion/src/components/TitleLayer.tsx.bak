@@ -16,10 +16,6 @@ type TitleLayerProps = {
 export const TitleLayer: React.FC<
 	TitleLayerProps
 > = ({title, color}) => {
-    const normalizedTitle = title
-        .replace(/\r?\n/g, ' ')
-        .replace(/\s+/g, ' ')
-        .trim();
 	const frame = useCurrentFrame();
 	const {fps} = useVideoConfig();
 
@@ -88,9 +84,6 @@ export const TitleLayer: React.FC<
 				textAlign:
 					ep005Theme.title.textAlign,
 
-                           overflow: 'hidden',
-                           wordBreak: 'keep-all',
-
 				color:
 					color ??
 					ep005Theme.title.color,
@@ -104,7 +97,7 @@ export const TitleLayer: React.FC<
 					ep005Theme.title.textShadow,
 
 				whiteSpace: 'pre-wrap',
-				maxHeight: '2.04em',
+				wordBreak: 'keep-all',
 
 				opacity,
 
@@ -123,7 +116,7 @@ export const TitleLayer: React.FC<
 				pointerEvents: 'none',
 			}}
 		>
-			{normalizedTitle}
+			{title}
 		</div>
 	);
 };

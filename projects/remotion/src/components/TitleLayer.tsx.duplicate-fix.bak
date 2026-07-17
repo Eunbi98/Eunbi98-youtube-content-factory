@@ -88,7 +88,11 @@ export const TitleLayer: React.FC<
 				textAlign:
 					ep005Theme.title.textAlign,
 
+                           display: '-webkit-box',
+                           WebkitBoxOrient: 'vertical',
+                           WebkitLineClamp: 2,
                            overflow: 'hidden',
+                           whiteSpace: 'normal',
                            wordBreak: 'keep-all',
 
 				color:
@@ -104,7 +108,7 @@ export const TitleLayer: React.FC<
 					ep005Theme.title.textShadow,
 
 				whiteSpace: 'pre-wrap',
-				maxHeight: '2.04em',
+				wordBreak: 'keep-all',
 
 				opacity,
 

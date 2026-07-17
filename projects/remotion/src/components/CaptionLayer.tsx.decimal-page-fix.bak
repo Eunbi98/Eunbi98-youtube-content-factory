@@ -39,15 +39,29 @@ const MIN_LAST_PAGE_WORDS = 2;
 
 
 const normalizeCaption = (
-	text: string,
+ text: string,
 ): string => {
-	return text
-		.replace(/\r/g, ' ')
-		.replace(/\n/g, ' ')
-		.replace(/\s+/g, ' ')
-		.trim();
+ return text
+         .replace(/\r/g, ' ')
+         .replace(/\n/g, ' ')
+         /*
+          * ?? ??? ??? ?? ??? ?????.
+          *
+          * ?:
+          * 24 . 9  -> 24.9
+          * 24. 9   -> 24.9
+          * 3 .14   -> 3.14
+          *
+          * ?? ?? ?? ??? ???? ???? ??
+          * ?????.
+          */
+         .replace(
+                 /(\d)\s*\.\s*(\d)/g,
+                 '$1.$2',
+         )
+         .replace(/\s+/g, ' ')
+         .trim();
 };
-
 
 const normalizeWord = (
 	text: string,
@@ -87,7 +101,7 @@ const splitBySentence = (
 ): string[] => {
 	const matches =
 		text.match(
-			/(?:\d+\.\d+|[^.!?。！？])+[.!?。！？]?/g,
+			/[^.!?。！？]+[.!?。！？]?/g,
 		);
 
 	if (!matches) {
@@ -289,7 +303,7 @@ const mergeVeryShortPages = (
 };
 
 
-const buildCaptionPages = (
+const buildCaptionPagesUnsafe = (
 	text: string,
 ): string[] => {
 	const normalized =
@@ -323,6 +337,62 @@ const buildCaptionPages = (
 		merged,
 	);
 };
+
+const DECIMAL_POINT_TOKEN = '__CAPTION_DECIMAL_POINT__';
+
+const protectCaptionDecimalPoints = (
+    text: string,
+): string => {
+    return text.replace(
+        /(\d)\s*\.\s*(?=\d)/g,
+        `$1${DECIMAL_POINT_TOKEN}`,
+    );
+};
+
+const restoreCaptionDecimalPoints = (
+    text: string,
+): string => {
+    return text.replaceAll(
+        DECIMAL_POINT_TOKEN,
+        '.',
+    );
+};
+
+const buildCaptionPages = (
+    text: string,
+): ReturnType<typeof buildCaptionPagesUnsafe> => {
+    const protectedText =
+        protectCaptionDecimalPoints(text);
+
+    const pages =
+        buildCaptionPagesUnsafe(protectedText);
+
+    return pages.map((page: any) => {
+        if (typeof page === 'string') {
+            return restoreCaptionDecimalPoints(
+                page,
+            );
+        }
+
+        if (
+            page &&
+            typeof page.text === 'string'
+        ) {
+            return {
+                ...page,
+                text:
+                    restoreCaptionDecimalPoints(
+                        page.text,
+                    ),
+            };
+        }
+
+        return page;
+    }) as ReturnType<
+        typeof buildCaptionPagesUnsafe
+    >;
+};
+
 
 
 const addBalancedLineBreak = (

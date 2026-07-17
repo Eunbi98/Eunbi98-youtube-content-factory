@@ -417,85 +417,24 @@ def convert_word_boundaries(
         ...,
     ],
 ) -> list[dict[str, object]]:
-    converted: list[
-        dict[str, object]
-    ] = []
-
-    index = 0
-
-    while index < len(boundaries):
-        boundary = boundaries[index]
-        text = boundary.text.strip()
-
-        # TTS? ???? ?? ??? ??? ?? ?????.
-        # ?: "24" + "." + "9" -> "24.9"
-        if (
-            index + 2 < len(boundaries)
-            and text.isdigit()
-            and boundaries[
-                index + 1
-            ].text.strip() == "."
-            and boundaries[
-                index + 2
-            ].text.strip().isdigit()
-        ):
-            fraction_boundary = boundaries[
-                index + 2
-            ]
-
-            merged_offset = (
-                boundary.offset_seconds
-            )
-            merged_end = (
-                fraction_boundary.end_seconds
-            )
-
-            converted.append(
-                {
-                    "text": (
-                        f"{text}."
-                        f"{fraction_boundary.text.strip()}"
-                    ),
-                    "offset": round(
-                        merged_offset,
-                        3,
-                    ),
-                    "duration": round(
-                        merged_end
-                        - merged_offset,
-                        3,
-                    ),
-                    "end": round(
-                        merged_end,
-                        3,
-                    ),
-                }
-            )
-
-            index += 3
-            continue
-
-        converted.append(
-            {
-                "text": boundary.text,
-                "offset": round(
-                    boundary.offset_seconds,
-                    3,
-                ),
-                "duration": round(
-                    boundary.duration_seconds,
-                    3,
-                ),
-                "end": round(
-                    boundary.end_seconds,
-                    3,
-                ),
-            }
-        )
-
-        index += 1
-
-    return converted
+    return [
+        {
+            "text": boundary.text,
+            "offset": round(
+                boundary.offset_seconds,
+                3,
+            ),
+            "duration": round(
+                boundary.duration_seconds,
+                3,
+            ),
+            "end": round(
+                boundary.end_seconds,
+                3,
+            ),
+        }
+        for boundary in boundaries
+    ]
 
 
 def validate_word_boundaries(

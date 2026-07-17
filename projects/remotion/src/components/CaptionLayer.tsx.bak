@@ -87,7 +87,7 @@ const splitBySentence = (
 ): string[] => {
 	const matches =
 		text.match(
-			/(?:\d+\.\d+|[^.!?。！？])+[.!?。！？]?/g,
+			/[^.!?。！？]+[.!?。！？]?/g,
 		);
 
 	if (!matches) {

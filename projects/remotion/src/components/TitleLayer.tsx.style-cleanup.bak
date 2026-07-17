@@ -105,6 +105,7 @@ export const TitleLayer: React.FC<
 
 				whiteSpace: 'pre-wrap',
 				maxHeight: '2.04em',
+				overflow: 'hidden',
 
 				opacity,
 

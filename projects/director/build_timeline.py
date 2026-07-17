@@ -1,4 +1,4 @@
-from story_compiler import StoryCompiler
+﻿from story_compiler import StoryCompiler
 from story_graph import (
     Answer,
     Ending,
@@ -445,4 +445,134 @@ def build_ep011_story() -> Story:
             ),
         ],
     )
+
+def build_ep012_story() -> Story:
+    return Story(
+        episode_id="ep012",
+        title="지구에서 가장 조용한\n장소",
+        fps=30,
+        width=1080,
+        height=1920,
+        background_color="#000000",
+        title_color="#7CFFB2",
+        caption_color="#FFFFFF",
+        accent_color="#7CFFB2",
+        beats=[
+            Hook(
+                title="지구에서 가장 조용한\n곳에서는?",
+                subtitle=(
+                    "지구에서 가장 조용한 곳에 들어가면 "
+                    "무슨 소리가 들릴까요?"
+                ),
+                narration=(
+                    "지구에서 가장 조용한 곳에 들어가면 "
+                    "무슨 소리가 들릴까요?"
+                ),
+                duration=7,
+                media=StoryMedia(
+                    type="image",
+                    src="ep012/scene_001.jpg",
+                ),
+                keywords=[
+                    "silent room",
+                    "quiet room",
+                    "person listening",
+                ],
+            ),
+            Answer(
+                title="미국의 특별한\n무향실",
+                subtitle=(
+                    "정답은 미국 오르필드 연구소에 있는 "
+                    "특별한 무향실입니다."
+                ),
+                narration=(
+                    "정답은 미국 오르필드 연구소에 있는 "
+                    "특별한 무향실입니다."
+                ),
+                duration=6,
+                media=StoryMedia(
+                    type="image",
+                    src="ep012/scene_002.jpg",
+                ),
+                keywords=[
+                    "anechoic chamber",
+                    "soundproof room",
+                    "acoustic laboratory",
+                ],
+            ),
+            Narrative(
+                title="마이너스 24.9\n데시벨",
+                subtitle=(
+                    "이곳의 배경 소음은 "
+                    "마이너스 24.9데시벨로 측정됐습니다."
+                ),
+                narration=(
+                    "이곳의 배경 소음은 "
+                    "마이너스 24.9데시벨로 측정됐습니다."
+                ),
+                duration=6,
+                media=StoryMedia(
+                    type="image",
+                    src="ep012/scene_003.jpg",
+                ),
+                keywords=[
+                    "acoustic foam",
+                    "sound absorbing wall",
+                    "audio measurement",
+                ],
+            ),
+            Fact(
+                title="몸속 소리가\n들리기 시작합니다",
+                subtitle=(
+                    "주변 소리가 사라지면 심장박동과 호흡처럼 "
+                    "평소에는 묻히던 몸의 소리가 들리기 시작합니다."
+                ),
+                narration=(
+                    "주변 소리가 사라지면 심장박동과 호흡처럼 "
+                    "평소에는 묻히던 몸의 소리가 들리기 시작합니다."
+                ),
+                duration=8,
+                media=StoryMedia(
+                    type="image",
+                    src="ep012/scene_004.jpg",
+                ),
+                keywords=[
+                    "heartbeat",
+                    "human breathing",
+                    "person listening",
+                ],
+            ),
+            Ending(
+                title="여러분은 얼마나\n머물 수 있나요?",
+                subtitle=(
+                    "완벽한 침묵 속에서 들리는 것은 "
+                    "결국 자기 몸의 소리입니다. "
+                    "여러분은 얼마나 오래 머물 수 있을까요?"
+                ),
+                narration=(
+                    "완벽한 침묵 속에서 들리는 것은 "
+                    "결국 자기 몸의 소리입니다. "
+                    "여러분은 얼마나 오래 머물 수 있을까요?"
+                ),
+                duration=8,
+                media=StoryMedia(
+                    type="image",
+                    src="ep012/scene_005.jpg",
+                ),
+                keywords=[
+                    "person in silence",
+                    "person alone room",
+                    "listening carefully",
+                ],
+            ),
+        ],
+    )
+
+
+def build_ep012() -> Timeline:
+    story = build_ep012_story()
+
+    compiler = StoryCompiler()
+
+    return compiler.compile(story)
 
