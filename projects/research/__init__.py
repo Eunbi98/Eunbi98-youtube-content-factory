@@ -1,8 +1,8 @@
 """검증 가능한 영상 근거 수집 Core."""
 
-from .openai_evidence_provider import (
+from .github_models_evidence_provider import (
     EvidenceProviderError,
-    OpenAIEvidenceProvider,
+    GithubModelsEvidenceProvider,
 )
 
-__all__ = ["EvidenceProviderError", "OpenAIEvidenceProvider"]
+__all__ = ["EvidenceProviderError", "GithubModelsEvidenceProvider"]

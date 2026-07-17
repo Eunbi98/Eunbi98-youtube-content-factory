@@ -10,9 +10,10 @@ ROOT_DIR = Path(__file__).resolve().parents[1]
 if str(ROOT_DIR) not in sys.path:
     sys.path.insert(0, str(ROOT_DIR))
 
-from projects.production.openai_episode_provider import (  # noqa: E402
+from projects.ai.github_models_client import GithubModelsClient  # noqa: E402
+from projects.production.github_models_episode_provider import (  # noqa: E402
     EpisodeProviderError,
-    OpenAIEpisodeProvider,
+    GithubModelsEpisodeProvider,
 )
 
 
@@ -95,28 +96,24 @@ class EpisodeProviderTests(unittest.TestCase):
         def transport(payload: dict) -> dict:
             captured.update(payload)
             return {
-                "status": "completed",
-                "output": [
-                    {
-                        "type": "message",
-                        "content": [
-                            {
-                                "type": "output_text",
-                                "text": json.dumps(_package()),
-                            }
-                        ],
-                    }
-                ],
+                "choices": [
+                    {"message": {"content": json.dumps(_package())}}
+                ]
             }
 
-        result = OpenAIEpisodeProvider(
-            api_key="test-key",
-            transport=transport,
+        result = GithubModelsEpisodeProvider(
+            client=GithubModelsClient(
+                token="test-token",
+                transport=transport,
+            )
         ).build(job_payload=_job(), evidence_payload=_evidence())
 
-        self.assertTrue(captured["text"]["format"]["strict"])
-        self.assertEqual(6, captured["text"]["format"]["schema"]["properties"]["episode"]["properties"]["scenes"]["minItems"])
-        self.assertFalse(captured["store"])
+        schema = captured["response_format"]["json_schema"]
+        self.assertTrue(schema["strict"])
+        self.assertEqual(
+            6,
+            schema["schema"]["properties"]["episode"]["properties"]["scenes"]["minItems"],
+        )
         self.assertEqual("ep016", result["episode"]["episodeId"])
 
     def test_provider_rejects_wrong_episode_identity(self) -> None:
@@ -125,28 +122,26 @@ class EpisodeProviderTests(unittest.TestCase):
 
         def transport(_: dict) -> dict:
             return {
-                "status": "completed",
-                "output": [
-                    {
-                        "type": "message",
-                        "content": [
-                            {"type": "output_text", "text": json.dumps(package)}
-                        ],
-                    }
-                ],
+                "choices": [
+                    {"message": {"content": json.dumps(package)}}
+                ]
             }
 
         with self.assertRaises(EpisodeProviderError):
-            OpenAIEpisodeProvider(
-                api_key="test-key",
-                transport=transport,
+            GithubModelsEpisodeProvider(
+                client=GithubModelsClient(
+                    token="test-token",
+                    transport=transport,
+                )
             ).build(job_payload=_job(), evidence_payload=_evidence())
 
     def test_provider_requires_verified_evidence(self) -> None:
         evidence = _evidence()
         evidence["status"] = "draft"
         with self.assertRaises(EpisodeProviderError):
-            OpenAIEpisodeProvider(api_key="test-key").build(
+            GithubModelsEpisodeProvider(
+                client=GithubModelsClient(token="test-token")
+            ).build(
                 job_payload=_job(),
                 evidence_payload=evidence,
             )

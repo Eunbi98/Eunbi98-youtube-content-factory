@@ -14,9 +14,9 @@ from projects.production.episode_quality import (  # noqa: E402
     EpisodeQualityError,
     EpisodeQualityService,
 )
-from projects.production.openai_episode_provider import (  # noqa: E402
+from projects.production.github_models_episode_provider import (  # noqa: E402
     EpisodeProviderError,
-    OpenAIEpisodeProvider,
+    GithubModelsEpisodeProvider,
 )
 
 
@@ -48,7 +48,7 @@ def main() -> int:
         if args.provider_result:
             package = _load(args.provider_result)
         else:
-            package = OpenAIEpisodeProvider.from_environment().build(
+            package = GithubModelsEpisodeProvider.from_environment().build(
                 job_payload=job_payload,
                 evidence_payload=evidence_payload,
             )

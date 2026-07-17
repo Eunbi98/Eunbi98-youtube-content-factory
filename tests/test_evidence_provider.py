@@ -16,9 +16,13 @@ from projects.research.evidence_service import (  # noqa: E402
     EvidenceGateError,
     EvidenceService,
 )
-from projects.research.openai_evidence_provider import (  # noqa: E402
+from projects.ai.github_models_client import (  # noqa: E402
+    GithubModelsClient,
+    GithubModelsError,
+)
+from projects.research.github_models_evidence_provider import (  # noqa: E402
     EvidenceProviderError,
-    OpenAIEvidenceProvider,
+    GithubModelsEvidenceProvider,
 )
 
 
@@ -95,57 +99,82 @@ def _provider_result() -> dict:
                 "url": "https://science.nasa.gov/example-polygons",
             }
         ],
-        "provider": "openai_responses_web_search",
-        "model": "gpt-5.6",
+        "provider": "github_models_public_sources",
+        "model": "openai/gpt-4.1",
     }
 
 
+def _source_documents() -> list[dict[str, str]]:
+    return [
+        {
+            "id": "source_1",
+            "title": item["title"],
+            "source_name": item["source_name"],
+            "source_url": item["source_url"],
+            "source_tier": item["source_tier"],
+            "published_at": item["published_at"],
+            "text": item["claim"],
+        }
+        for item in _provider_result()["items"]
+    ]
+
+
+class _SourceCollector:
+    def collect(self, _: dict) -> list[dict[str, str]]:
+        return _source_documents()
+
+
 class EvidenceProviderTests(unittest.TestCase):
-    def test_provider_requires_web_search_and_structured_output(self) -> None:
+    def test_provider_uses_public_sources_and_structured_output(self) -> None:
         captured: dict = {}
         result_payload = _provider_result()
 
         def transport(payload: dict) -> dict:
             captured.update(payload)
             return {
-                "status": "completed",
-                "output": [
-                    {"type": "web_search_call", "status": "completed"},
-                    {
-                        "type": "message",
-                        "content": [
-                            {
-                                "type": "output_text",
-                                "text": json.dumps(result_payload),
-                                "annotations": [
-                                    {
-                                        "type": "url_citation",
-                                        "url": "https://science.nasa.gov/example-polygons",
-                                        "title": "NASA Science",
-                                    }
-                                ],
-                            }
-                        ],
-                    },
-                ],
+                "choices": [
+                    {"message": {"content": json.dumps(result_payload)}}
+                ]
             }
 
-        result = OpenAIEvidenceProvider(
-            api_key="test-key",
-            transport=transport,
+        result = GithubModelsEvidenceProvider(
+            client=GithubModelsClient(
+                token="test-token",
+                transport=transport,
+            ),
+            source_collector=_SourceCollector(),
         ).collect(_job())
 
-        self.assertEqual([{"type": "web_search"}], captured["tools"])
-        self.assertEqual("required", captured["tool_choice"])
-        self.assertTrue(captured["text"]["format"]["strict"])
-        self.assertFalse(captured["store"])
+        self.assertTrue(captured["response_format"]["json_schema"]["strict"])
+        self.assertEqual("openai/gpt-4.1", captured["model"])
+        self.assertNotIn("tools", captured)
         self.assertEqual("complete", result["status"])
-        self.assertEqual(1, len(result["citations"]))
+        self.assertEqual(3, len(result["citations"]))
 
     def test_environment_key_is_required(self) -> None:
         with patch.dict(os.environ, {}, clear=True):
-            with self.assertRaises(EvidenceProviderError):
-                OpenAIEvidenceProvider.from_environment()
+            with self.assertRaises(GithubModelsError):
+                GithubModelsClient.from_environment()
+
+    def test_provider_rejects_invented_source_url(self) -> None:
+        payload = _provider_result()
+        payload["items"][0]["source_url"] = "https://invented.example/fake"
+
+        def transport(_: dict) -> dict:
+            return {
+                "choices": [
+                    {"message": {"content": json.dumps(payload)}}
+                ]
+            }
+
+        with self.assertRaises(EvidenceProviderError):
+            GithubModelsEvidenceProvider(
+                client=GithubModelsClient(
+                    token="test-token",
+                    transport=transport,
+                ),
+                source_collector=_SourceCollector(),
+            ).collect(_job())
 
     def test_evidence_gate_scores_valid_sources(self) -> None:
         evidence = EvidenceService().build_evidence(

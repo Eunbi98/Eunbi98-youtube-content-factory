@@ -14,9 +14,9 @@ from projects.research.evidence_service import (  # noqa: E402
     EvidenceGateError,
     EvidenceService,
 )
-from projects.research.openai_evidence_provider import (  # noqa: E402
+from projects.research.github_models_evidence_provider import (  # noqa: E402
     EvidenceProviderError,
-    OpenAIEvidenceProvider,
+    GithubModelsEvidenceProvider,
 )
 
 
@@ -31,7 +31,7 @@ def parse_args() -> argparse.Namespace:
         type=Path,
         help=(
             "저장된 Provider 결과를 재검증합니다. "
-            "생략하면 OpenAI Responses API로 웹 근거를 수집합니다."
+            "생략하면 무료 공개 자료와 GitHub Models로 근거를 수집합니다."
         ),
     )
     parser.add_argument(
@@ -56,7 +56,7 @@ def main() -> int:
             if not isinstance(provider_result, dict):
                 raise EvidenceGateError("Provider 결과 최상위 값은 객체여야 합니다.")
         else:
-            provider = OpenAIEvidenceProvider.from_environment()
+            provider = GithubModelsEvidenceProvider.from_environment()
             provider_result = provider.collect(job_payload)
         topic = str(job_payload["selectedTopic"]["topic"])
         service = EvidenceService()

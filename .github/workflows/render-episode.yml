@@ -27,6 +27,7 @@ on:
 
 permissions:
   contents: write
+  models: read
 
 concurrency:
   group: render-episode

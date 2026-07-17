@@ -19,6 +19,7 @@ on:
 
 permissions:
   contents: write
+  models: read
 
 concurrency:
   group: produce-episode
@@ -126,19 +127,10 @@ jobs:
           --episode "${{ steps.production.outputs.episode_id }}"
           --output "${{ steps.production.outputs.episode_dir }}/production-job.json"
 
-      - name: Validate OpenAI API secret
-        env:
-          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
-        run: |
-          if [[ -z "${OPENAI_API_KEY:-}" ]]; then
-            echo "OPENAI_API_KEY repository secret is required." >&2
-            exit 2
-          fi
-
       - name: Collect and verify evidence
         env:
-          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
-          OPENAI_RESEARCH_MODEL: ${{ vars.OPENAI_RESEARCH_MODEL || 'gpt-5.6' }}
+          GITHUB_MODELS_TOKEN: ${{ github.token }}
+          GITHUB_MODELS_MODEL: ${{ vars.GITHUB_MODELS_MODEL || 'openai/gpt-4.1' }}
         run: >-
           python projects/research/collect_evidence.py
           --job "${{ steps.production.outputs.episode_dir }}/production-job.json"
@@ -147,8 +139,8 @@ jobs:
 
       - name: Generate and validate story package
         env:
-          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
-          OPENAI_STORY_MODEL: ${{ vars.OPENAI_STORY_MODEL || 'gpt-5.6' }}
+          GITHUB_MODELS_TOKEN: ${{ github.token }}
+          GITHUB_MODELS_MODEL: ${{ vars.GITHUB_MODELS_MODEL || 'openai/gpt-4.1' }}
         run: >-
           python projects/production/build_episode_package.py
           --job "${{ steps.production.outputs.episode_dir }}/production-job.json"
