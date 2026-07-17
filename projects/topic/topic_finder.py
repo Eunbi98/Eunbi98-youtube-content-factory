@@ -2,15 +2,17 @@ from __future__ import annotations
 
 import re
 from datetime import datetime, timezone
-from typing import Callable
+from typing import Callable, Iterable
 
 from .news_source import GoogleNewsTopicSource, TopicSource
 from .topic_catalog import (
     CATEGORY_KEYWORDS,
     CATEGORY_LABELS,
+    CHANNEL_FIT_KEYWORDS,
     EXCLUDE_KEYWORDS,
     FALLBACK_TOPICS,
     HOOK_KEYWORDS,
+    TOPIC_MATCH_STOPWORDS,
     VISUAL_KEYWORDS,
 )
 from .topic_models import TopicCandidate, TopicFinderResult, TopicSourceItem
@@ -39,6 +41,7 @@ class AutoTopicFinder:
         *,
         category: str,
         limit: int = 10,
+        excluded_topics: Iterable[str] = (),
     ) -> TopicFinderResult:
         normalized_category = category.strip().lower()
         if normalized_category not in CATEGORY_LABELS:
@@ -50,6 +53,7 @@ class AutoTopicFinder:
         if limit < 1 or limit > 20:
             raise TopicFinderError("후보 개수는 1개 이상 20개 이하여야 합니다.")
 
+        excluded_topic_texts = tuple(excluded_topics)
         warnings: list[str] = []
         source_items: list[TopicSourceItem] = []
         try:
@@ -63,6 +67,7 @@ class AutoTopicFinder:
         live_candidates = self._build_live_candidates(
             category=normalized_category,
             items=source_items,
+            excluded_topics=excluded_topic_texts,
         )
         selected = live_candidates[:limit]
         used_fallback = len(selected) < limit
@@ -72,6 +77,7 @@ class AutoTopicFinder:
                 self._build_fallback_candidates(
                     category=normalized_category,
                     existing_topics={item.topic for item in selected},
+                    excluded_topics=excluded_topic_texts,
                     limit=limit - len(selected),
                 )
             )
@@ -113,11 +119,17 @@ class AutoTopicFinder:
         *,
         category: str,
         items: list[TopicSourceItem],
+        excluded_topics: tuple[str, ...],
     ) -> list[TopicCandidate]:
         groups: list[list[TopicSourceItem]] = []
         for item in items:
             topic = self._clean_title(item.title)
-            if not topic or self._is_excluded(topic):
+            if (
+                not topic
+                or self._is_excluded(topic)
+                or not self._is_channel_fit(category, topic)
+                or self._is_already_covered(topic, excluded_topics)
+            ):
                 continue
 
             target_group = next(
@@ -182,11 +194,15 @@ class AutoTopicFinder:
         *,
         category: str,
         existing_topics: set[str],
+        excluded_topics: tuple[str, ...],
         limit: int,
     ) -> list[TopicCandidate]:
         results: list[TopicCandidate] = []
         for index, topic in enumerate(FALLBACK_TOPICS[category]):
-            if topic in existing_topics:
+            if (
+                topic in existing_topics
+                or self._is_already_covered(topic, excluded_topics)
+            ):
                 continue
             results.append(
                 TopicCandidate(
@@ -280,6 +296,29 @@ class AutoTopicFinder:
         lowered = topic.casefold()
         return any(keyword.casefold() in lowered for keyword in EXCLUDE_KEYWORDS)
 
+    @staticmethod
+    def _is_channel_fit(category: str, topic: str) -> bool:
+        lowered = topic.casefold()
+        return any(
+            keyword.casefold() in lowered
+            for keyword in CHANNEL_FIT_KEYWORDS[category]
+        )
+
+    @classmethod
+    def _is_already_covered(
+        cls,
+        topic: str,
+        excluded_topics: tuple[str, ...],
+    ) -> bool:
+        topic_tokens = cls._match_tokens(topic)
+        if not topic_tokens:
+            return False
+        for existing in excluded_topics:
+            existing_tokens = cls._match_tokens(existing)
+            if len(topic_tokens & existing_tokens) >= 3:
+                return True
+        return False
+
     @classmethod
     def _is_similar(cls, left: str, right: str) -> bool:
         left_tokens = cls._tokens(left)
@@ -303,10 +342,50 @@ class AutoTopicFinder:
             "뉴스",
         }
         return {
-            token.casefold()
+            AutoTopicFinder._strip_korean_suffix(token.casefold())
             for token in re.findall(r"[가-힣A-Za-z0-9]{2,}", text)
             if token.casefold() not in stopwords
         }
+
+    @classmethod
+    def _match_tokens(cls, text: str) -> set[str]:
+        return {
+            token
+            for token in cls._tokens(text)
+            if token not in TOPIC_MATCH_STOPWORDS and len(token) >= 2
+        }
+
+    @staticmethod
+    def _strip_korean_suffix(token: str) -> str:
+        suffixes = (
+            "에서는",
+            "에게서",
+            "으로는",
+            "이라는",
+            "에서",
+            "에게",
+            "으로",
+            "에는",
+            "까지",
+            "부터",
+            "처럼",
+            "보다",
+            "의",
+            "은",
+            "는",
+            "이",
+            "가",
+            "을",
+            "를",
+            "에",
+            "도",
+            "와",
+            "과",
+        )
+        for suffix in suffixes:
+            if token.endswith(suffix) and len(token) >= len(suffix) + 2:
+                return token[: -len(suffix)]
+        return token
 
     @staticmethod
     def _build_angle(category: str, topic: str) -> str:

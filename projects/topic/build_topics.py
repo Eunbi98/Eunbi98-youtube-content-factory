@@ -20,6 +20,33 @@ from projects.topic.topic_finder import (  # noqa: E402
 DEFAULT_OUTPUT = Path("projects/output/topics/latest.json")
 
 
+def load_existing_episode_topics(root_dir: Path) -> list[str]:
+    topics: list[str] = []
+    episodes_dir = root_dir / "projects" / "episodes"
+    for spec_path in sorted(episodes_dir.glob("ep*/episode.json")):
+        try:
+            payload = json.loads(spec_path.read_text(encoding="utf-8"))
+        except (OSError, json.JSONDecodeError):
+            continue
+        if not isinstance(payload, dict):
+            continue
+
+        parts = [str(payload.get("title") or "")]
+        scenes = payload.get("scenes")
+        if isinstance(scenes, list):
+            for scene in scenes:
+                if not isinstance(scene, dict):
+                    continue
+                parts.extend(
+                    [
+                        str(scene.get("title") or ""),
+                        str(scene.get("narration") or ""),
+                    ]
+                )
+        topics.append(" ".join(parts))
+    return topics
+
+
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(
         description="카테고리별 최근 영상 주제 후보를 생성합니다."
@@ -51,6 +78,7 @@ def main() -> int:
         result = AutoTopicFinder().find(
             category=args.category,
             limit=args.limit,
+            excluded_topics=load_existing_episode_topics(ROOT_DIR),
         )
     except TopicFinderError as exc:
         print(f"[실패] {exc}")

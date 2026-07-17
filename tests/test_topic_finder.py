@@ -49,7 +49,7 @@ class TopicFinderTests(unittest.TestCase):
                 published_at="2026-07-17T08:00:00+00:00",
             ),
             TopicSourceItem(
-                title="오래된 기록을 다시 읽는 방법 - 뉴스C",
+                title="심해 생물의 오래된 기록을 다시 읽는 방법 - 뉴스C",
                 url="https://example.com/c",
                 source="뉴스C",
                 published_at="2026-07-03T08:00:00+00:00",
@@ -105,6 +105,36 @@ class TopicFinderTests(unittest.TestCase):
                 source=FakeSource([]),
                 now=lambda: NOW,
             ).find(category="crime")
+
+    def test_existing_episode_topic_is_excluded(self) -> None:
+        items = [
+            TopicSourceItem(
+                title="미라의 입에서 발견된 순금 혀와 고대 무덤의 비밀",
+                url="https://example.com/gold-tongue",
+                source="고고학뉴스",
+                published_at="2026-07-17T10:00:00+00:00",
+            ),
+            TopicSourceItem(
+                title="화성에서 발견된 미스터리 구조물의 정체",
+                url="https://example.com/mars",
+                source="우주뉴스",
+                published_at="2026-07-17T09:00:00+00:00",
+            ),
+        ]
+        existing_episode = (
+            "죽은 자에게 주어진 황금 혀. 고대 이집트 미라의 입에 "
+            "황금 혀를 넣은 무덤이 발견됐습니다."
+        )
+        result = AutoTopicFinder(
+            source=FakeSource(items),
+            now=lambda: NOW,
+        ).find(
+            category="mystery",
+            limit=1,
+            excluded_topics=[existing_episode],
+        )
+
+        self.assertIn("화성", result.candidates[0].topic)
 
     def test_result_is_json_serializable_shape(self) -> None:
         result = AutoTopicFinder(
