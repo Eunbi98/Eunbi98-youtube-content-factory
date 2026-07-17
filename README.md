@@ -36,6 +36,16 @@ Episode Spec 테스트:
 py -m unittest discover -s tests -v
 ```
 
+원격 렌더:
+
+```text
+GitHub → Actions → Render episode → Run workflow
+```
+
+`episode_id`에 `ep014` 같은 값을 입력하면 GitHub가 Factory를
+실행합니다. 성공한 MP4는 해당 Workflow Run의 Artifacts에서
+14일 동안 다운로드할 수 있습니다.
+
 기존 EP008~EP013 Python Story Builder는 호환성을 위해 유지됩니다.
 같은 에피소드 폴더에 `episode.json`이 있으면 JSON을 우선 사용합니다.
 

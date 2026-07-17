@@ -1,0 +1,125 @@
+name: Render episode
+
+on:
+  workflow_dispatch:
+    inputs:
+      episode_id:
+        description: "Episode ID (example: ep014)"
+        required: true
+        default: "ep014"
+        type: string
+  push:
+    branches:
+      - feature/release-5-director-engine
+    paths:
+      - ".github/workflows/render-episode.yml"
+      - "projects/episodes/**/episode.json"
+
+permissions:
+  contents: read
+
+concurrency:
+  group: render-episode
+  cancel-in-progress: false
+
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+
+      - name: Resolve episode ID
+        id: episode
+        shell: bash
+        env:
+          MANUAL_EPISODE_ID: ${{ inputs.episode_id }}
+        run: |
+          set -euo pipefail
+
+          episode_id="${MANUAL_EPISODE_ID:-}"
+
+          if [[ -z "$episode_id" ]]; then
+            episode_path="$(
+              git diff-tree --no-commit-id --name-only -r HEAD |
+              grep -E '^projects/episodes/ep[0-9]+/episode\.json$' |
+              tail -n 1 || true
+            )"
+
+            if [[ -n "$episode_path" ]]; then
+              episode_id="$(basename "$(dirname "$episode_path")")"
+            else
+              episode_id="ep014"
+            fi
+          fi
+
+          if [[ ! "$episode_id" =~ ^ep[0-9]{3,}$ ]]; then
+            echo "Invalid episode ID: $episode_id" >&2
+            exit 2
+          fi
+
+          if [[ ! -f "projects/episodes/$episode_id/episode.json" ]]; then
+            echo "Missing episode spec: projects/episodes/$episode_id/episode.json" >&2
+            exit 2
+          fi
+
+          echo "episode_id=$episode_id" >> "$GITHUB_OUTPUT"
+          echo "Rendering $episode_id"
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Install Python dependencies
+        run: python -m pip install -r requirements.txt
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: npm
+          cache-dependency-path: projects/remotion/package-lock.json
+
+      - name: Install Remotion dependencies
+        working-directory: projects/remotion
+        run: npm ci
+
+      - name: Check FFmpeg
+        run: ffmpeg -version
+
+      - name: Run Factory
+        env:
+          PIXABAY_API_KEY: ${{ secrets.PIXABAY_API_KEY }}
+          PEXELS_API_KEY: ${{ secrets.PEXELS_API_KEY }}
+          PYTHONUNBUFFERED: "1"
+        run: >-
+          python factory_runner.py
+          --episode "${{ steps.episode.outputs.episode_id }}"
+          --rebuild-timeline
+
+      - name: Upload MP4
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ steps.episode.outputs.episode_id }}-mp4
+          path: projects/output/${{ steps.episode.outputs.episode_id }}.mp4
+          if-no-files-found: error
+          retention-days: 14
+
+      - name: Upload diagnostic files
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ steps.episode.outputs.episode_id }}-diagnostics
+          path: |
+            projects/output/logs/${{ steps.episode.outputs.episode_id }}.json
+            projects/episodes/${{ steps.episode.outputs.episode_id }}/timeline.json
+            projects/episodes/${{ steps.episode.outputs.episode_id }}/media_queries.json
+            projects/episodes/${{ steps.episode.outputs.episode_id }}/media_manifest_v7.json
+          if-no-files-found: warn
+          retention-days: 14
