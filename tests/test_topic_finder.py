@@ -292,6 +292,23 @@ class TopicFinderTests(unittest.TestCase):
         self.assertNotIn("문명7", result.candidates[0].topic)
         self.assertEqual(0, result.candidates[0].source_count)
 
+    def test_medical_press_release_is_rejected_by_brand_filter(self) -> None:
+        items = [
+            TopicSourceItem(
+                title="코로나19 후유증 브레인 포그 치료제 연구 결과 발표",
+                url="https://example.com/medical",
+                source="의학뉴스",
+                published_at="2026-07-17T10:00:00+00:00",
+            )
+        ]
+        result = AutoTopicFinder(
+            source=FakeSource(items),
+            now=lambda: NOW,
+        ).find(category="science", limit=1)
+
+        self.assertNotIn("코로나19", result.candidates[0].topic)
+        self.assertEqual(0, result.candidates[0].source_count)
+
 
 if __name__ == "__main__":
     unittest.main()
