@@ -51,3 +51,5 @@ projects/remotion/public/ep*/
 projects/episodes/*/timeline.json.bak
 
 config/api_keys.json
+.venv/
+.deps/

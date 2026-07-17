@@ -576,3 +576,125 @@ def build_ep012() -> Timeline:
 
     return compiler.compile(story)
 
+
+def build_ep013_story() -> Story:
+    return Story(
+        episode_id="ep013",
+        title="우주에서 발견된\n진짜 설탕",
+        fps=30,
+        width=1080,
+        height=1920,
+        background_color="#000000",
+        title_color="#7CFFB2",
+        caption_color="#FFFFFF",
+        accent_color="#7CFFB2",
+        beats=[
+            Hook(
+                title="우주에도\n설탕이 있습니다",
+                subtitle=(
+                    "과학자들이 우주에서 처음으로 "
+                    "진짜 당 분자를 발견했습니다."
+                ),
+                narration=(
+                    "과학자들이 우주에서 처음으로 "
+                    "진짜 당 분자를 발견했습니다."
+                ),
+                duration=7,
+                media=StoryMedia(
+                    type="image",
+                    src="ep013/scene_001.jpg",
+                ),
+                keywords=[
+                    "Milky Way galactic center",
+                    "deep space stars",
+                    "interstellar cloud",
+                ],
+            ),
+            Answer(
+                title="이름은\n에리트룰로스",
+                subtitle=(
+                    "이름은 에리트룰로스. "
+                    "네 개의 탄소로 이루어진 당입니다."
+                ),
+                narration=(
+                    "이름은 에리트룰로스. "
+                    "네 개의 탄소로 이루어진 당입니다."
+                ),
+                duration=7,
+                media=StoryMedia(
+                    type="image",
+                    src="ep013/scene_002.jpg",
+                ),
+                keywords=[
+                    "erythrulose molecule",
+                    "sugar molecule model",
+                    "organic molecule space",
+                ],
+            ),
+            Narrative(
+                title="지구에서\n약 2만 7천 광년",
+                subtitle=(
+                    "지구에서 약 2만 7천 광년 떨어진 "
+                    "은하 중심부의 분자 구름에서 포착됐습니다."
+                ),
+                narration=(
+                    "지구에서 약 2만 7천 광년 떨어진 "
+                    "은하 중심부의 분자 구름에서 포착됐습니다."
+                ),
+                duration=8,
+                media=StoryMedia(
+                    type="image",
+                    src="ep013/scene_003.jpg",
+                ),
+                keywords=[
+                    "Milky Way center molecular cloud",
+                    "galactic center dust cloud",
+                    "Sagittarius star cloud",
+                ],
+            ),
+            Fact(
+                title="망원경으로 냄새나 맛을\n본 것은 아닙니다",
+                subtitle=(
+                    "전파망원경 두 대가 분자마다 다른 "
+                    "고유한 전파 신호를 찾아냈습니다."
+                ),
+                narration=(
+                    "전파망원경 두 대가 분자마다 다른 "
+                    "고유한 전파 신호를 찾아냈습니다."
+                ),
+                duration=7,
+                media=StoryMedia(
+                    type="image",
+                    src="ep013/scene_004.jpg",
+                ),
+                keywords=[
+                    "IRAM 30 meter radio telescope",
+                    "Yebes radio telescope",
+                    "radio astronomy observatory",
+                ],
+            ),
+            Ending(
+                title="생명의 재료는\n우주에서 왔을까요?",
+                subtitle=(
+                    "생명을 발견한 것은 아니지만, "
+                    "생명의 재료가 우주에서 만들어질 가능성은 커졌습니다. "
+                    "여러분은 어떻게 생각하나요?"
+                ),
+                narration=(
+                    "생명을 발견한 것은 아니지만, "
+                    "생명의 재료가 우주에서 만들어질 가능성은 커졌습니다. "
+                    "여러분은 어떻게 생각하나요?"
+                ),
+                duration=9,
+                media=StoryMedia(
+                    type="image",
+                    src="ep013/scene_005.jpg",
+                ),
+                keywords=[
+                    "meteorite early Earth",
+                    "origin of life space",
+                    "organic molecules universe",
+                ],
+            ),
+        ],
+    )

@@ -8,6 +8,7 @@ from build_timeline import (
     build_ep010_story,
     build_ep011_story,
     build_ep012_story,
+    build_ep013_story,
 )
 from factory_core import FactoryBuildResult, FactoryCore
 from story_graph import Story
@@ -23,6 +24,7 @@ STORY_BUILDERS: dict[str, Callable[[], Story]] = {
     "ep010": build_ep010_story,
     "ep011": build_ep011_story,
     "ep012": build_ep012_story,
+    "ep013": build_ep013_story,
 }
 
 
@@ -81,4 +83,3 @@ class Director:
             )
 
         return result
-
