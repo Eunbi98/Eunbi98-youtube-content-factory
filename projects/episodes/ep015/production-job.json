@@ -3,7 +3,7 @@
   "jobId": "ep015-20260717T080421Z",
   "episodeId": "ep015",
   "category": "mystery",
-  "status": "media_planned",
+  "status": "rendered",
   "createdAt": "2026-07-17T08:04:21.496671+00:00",
   "selectedTopic": {
     "rank": 1,
@@ -78,10 +78,23 @@
     "evidence": "projects/episodes/ep015/evidence.json",
     "episodeSpec": "projects/episodes/ep015/episode.json",
     "timeline": "projects/episodes/ep015/timeline.json",
-    "video": null,
+    "video": "github-actions://runs/29567495313/artifacts/8401777920",
     "metadata": "projects/episodes/ep015/metadata.json",
     "mediaQueries": "projects/episodes/ep015/media_queries.json"
   },
-  "nextAction": "collect_media",
-  "updatedAt": "2026-07-17T08:21:35.881247+00:00"
+  "nextAction": "review_video",
+  "updatedAt": "2026-07-17T08:49:23+00:00",
+  "renderResult": {
+    "workflowRunId": 29567495313,
+    "artifactId": 8401777920,
+    "commit": "392175af8bde1deec28b5d545311e6e983d0fe7a",
+    "durationSeconds": 51.712,
+    "width": 1080,
+    "height": 1920,
+    "fps": 30,
+    "videoCodec": "h264",
+    "audioCodec": "aac",
+    "ttsCaptionIdentical": true,
+    "visualReview": "passed"
+  }
 }
