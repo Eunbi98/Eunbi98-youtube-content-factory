@@ -90,6 +90,11 @@ jobs:
         working-directory: projects/remotion
         run: npm ci
 
+      - name: Install FFmpeg
+        run: |
+          sudo apt-get update
+          sudo apt-get install --yes ffmpeg
+
       - name: Check FFmpeg
         run: ffmpeg -version
 
