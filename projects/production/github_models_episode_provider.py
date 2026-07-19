@@ -62,8 +62,19 @@ class GithubModelsEpisodeProvider:
             )
         except GithubModelsError as exc:
             raise EpisodeProviderError(str(exc)) from exc
+        self._normalize_render_theme(result)
         self._validate_identity(result, job_payload)
         return result
+
+    @staticmethod
+    def _normalize_render_theme(result: dict[str, Any]) -> None:
+        episode = result.get("episode")
+        if not isinstance(episode, dict):
+            return
+
+        theme = episode.get("theme")
+        if isinstance(theme, dict):
+            theme["captionColor"] = "#FFFFFF"
 
     @staticmethod
     def _validate_inputs(

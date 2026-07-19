@@ -1079,14 +1079,13 @@ React.FC<
 						.caption
 						.letterSpacing,
 
-				color:
-					color ??
-					ep005Theme
-						.caption
-						.color,
+				color: '#FFFFFF',
 
 				WebkitTextStroke:
-					'0px transparent',
+					'3px #000000',
+
+				paintOrder:
+					'stroke fill',
 
 				textShadow:
 					[

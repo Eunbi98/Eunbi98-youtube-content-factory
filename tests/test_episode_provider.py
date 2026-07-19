@@ -135,6 +135,29 @@ class EpisodeProviderTests(unittest.TestCase):
                 )
             ).build(job_payload=_job(), evidence_payload=_evidence())
 
+    def test_provider_normalizes_caption_color_to_white(self) -> None:
+        package = _package()
+        package["episode"]["theme"]["captionColor"] = "#222222"
+
+        def transport(_: dict) -> dict:
+            return {
+                "choices": [
+                    {"message": {"content": json.dumps(package)}}
+                ]
+            }
+
+        result = GithubModelsEpisodeProvider(
+            client=GithubModelsClient(
+                token="test-token",
+                transport=transport,
+            )
+        ).build(job_payload=_job(), evidence_payload=_evidence())
+
+        self.assertEqual(
+            "#FFFFFF",
+            result["episode"]["theme"]["captionColor"],
+        )
+
     def test_provider_requires_verified_evidence(self) -> None:
         evidence = _evidence()
         evidence["status"] = "draft"
