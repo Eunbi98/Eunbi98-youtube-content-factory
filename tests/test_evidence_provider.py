@@ -174,6 +174,62 @@ class EvidenceProviderTests(unittest.TestCase):
         self.assertEqual("complete", result["status"])
         self.assertEqual(3, len(result["citations"]))
 
+    def test_provider_retries_when_model_selects_duplicate_domains(self) -> None:
+        captured: list[dict] = []
+        insufficient = _provider_result()
+        insufficient["items"][1]["source_url"] = "https://science.nasa.gov/second"
+        insufficient["items"][2]["source_url"] = "https://science.nasa.gov/third"
+        complete = _provider_result()
+        source_documents = _source_documents()
+        source_documents.extend(
+            {
+                "id": f"retry_source_{index}",
+                "title": item["title"],
+                "source_name": item["source_name"],
+                "source_url": item["source_url"],
+                "source_tier": item["source_tier"],
+                "published_at": item["published_at"],
+                "text": item["claim"],
+            }
+            for index, item in enumerate(insufficient["items"][1:], start=1)
+        )
+
+        class RetrySourceCollector:
+            def collect(
+                self,
+                _: dict,
+                *,
+                search_queries: list[str] | None = None,
+            ) -> list[dict[str, str]]:
+                if not search_queries:
+                    raise AssertionError("English search queries were not provided")
+                return source_documents
+
+        def transport(payload: dict) -> dict:
+            captured.append(payload)
+            name = payload["response_format"]["json_schema"]["name"]
+            if name == "factory_research_queries":
+                return _model_response(payload, complete)
+            evidence_calls = sum(
+                item["response_format"]["json_schema"]["name"]
+                == "factory_evidence_result"
+                for item in captured
+            )
+            selected = insufficient if evidence_calls == 1 else complete
+            return _model_response(payload, selected)
+
+        result = GithubModelsEvidenceProvider(
+            client=GithubModelsClient(token="test-token", transport=transport),
+            source_collector=RetrySourceCollector(),
+        ).collect(_job())
+
+        self.assertEqual("complete", result["status"])
+        self.assertEqual(3, len(captured))
+        self.assertIn(
+            "Retry once",
+            captured[2]["messages"][0]["content"],
+        )
+
     def test_environment_key_is_required(self) -> None:
         with patch.dict(os.environ, {}, clear=True):
             with self.assertRaises(GithubModelsError):
