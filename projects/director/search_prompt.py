@@ -140,6 +140,34 @@ ENTITY_ALIASES: dict[
     str,
     tuple[str, ...],
 ] = {
+    "보이니치 문서 해독": (
+        "Voynich manuscript undeciphered text",
+        "Voynich manuscript script",
+    ),
+    "보이니치 문서 그림": (
+        "Voynich manuscript illustrations",
+        "Voynich manuscript botanical drawings",
+    ),
+    "보이니치 문서 도해": (
+        "Voynich manuscript illustrations",
+        "Voynich manuscript diagrams",
+    ),
+    "보이니치 문서 가설": (
+        "Voynich manuscript cipher text",
+        "Voynich manuscript writing",
+    ),
+    "보이니치 필사본": (
+        "Voynich manuscript",
+        "Voynich manuscript pages",
+    ),
+    "보이니치 문서": (
+        "Voynich manuscript",
+        "Voynich manuscript pages",
+    ),
+    "윌프레드 보이니치": (
+        "Wilfrid Voynich portrait",
+        "Wilfrid Voynich",
+    ),
     "데린쿠유": (
         "Derinkuyu underground city",
         "Derinkuyu Cappadocia",
@@ -491,6 +519,15 @@ ENGLISH_STOPWORDS = {
     "why",
     "with",
     "would",
+}
+
+
+GENERIC_SCENE_TITLES = {
+    "answer",
+    "ending",
+    "fact",
+    "hook",
+    "story",
 }
 
 
@@ -929,10 +966,16 @@ def build_base_queries(
         )
     )
 
+    searchable_title = (
+        ""
+        if title.casefold() in GENERIC_SCENE_TITLES
+        else title
+    )
+
     combined_text = " ".join(
         value
         for value in (
-            title,
+            searchable_title,
             narration,
         )
         if value

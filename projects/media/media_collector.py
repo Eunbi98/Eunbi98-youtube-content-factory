@@ -203,6 +203,7 @@ class MediaCollector:
             episode_id=self.episode_id,
             episode_dir=self.episode_dir,
         )
+        used_media: set[tuple[str, str]] = set()
 
         for raw_scene in raw_scenes:
             if not isinstance(
@@ -336,7 +337,18 @@ class MediaCollector:
             download_errors: list[str] = []
             blocked_providers: set[str] = set()
 
-            for candidate in ranked:
+            unused_ranked = [
+                candidate
+                for candidate in ranked
+                if (
+                    candidate.provider,
+                    candidate.media_id,
+                ) not in used_media
+            ]
+
+            for candidate in (
+                unused_ranked or ranked
+            ):
                 if candidate.provider in blocked_providers:
                     continue
 
@@ -351,6 +363,12 @@ class MediaCollector:
                         )
                     )
                     selected = candidate
+                    used_media.add(
+                        (
+                            candidate.provider,
+                            candidate.media_id,
+                        )
+                    )
                     break
                 except MediaDownloadError as exc:
                     error_text = str(exc)
