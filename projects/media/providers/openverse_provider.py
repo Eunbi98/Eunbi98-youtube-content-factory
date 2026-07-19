@@ -1,5 +1,6 @@
 ﻿from __future__ import annotations
 
+import re
 from pathlib import Path
 from urllib.parse import urlparse
 
@@ -321,6 +322,14 @@ class OpenverseProvider:
         license_code = _text(
             raw_result.get("license")
         )
+
+        if re.search(
+            r"(?:^|-)(?:nc|nd)(?:-|$)",
+            license_code,
+            flags=re.IGNORECASE,
+        ):
+            return None
+
         license_version = _text(
             raw_result.get(
                 "license_version"

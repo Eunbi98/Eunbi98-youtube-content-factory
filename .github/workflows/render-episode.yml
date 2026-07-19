@@ -25,7 +25,7 @@ on:
       - ".github/workflows/render-episode.yml"
       - "projects/director/search_prompt.py"
       - "projects/episodes/**/episode.json"
-      - "projects/media/media_collector.py"
+      - "projects/media/**"
 
 permissions:
   contents: write
