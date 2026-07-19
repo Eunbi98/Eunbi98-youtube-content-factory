@@ -3,7 +3,7 @@
   "jobId": "ep018-20260719T081252Z",
   "episodeId": "ep018",
   "category": "space",
-  "status": "episode_ready",
+  "status": "rendered",
   "createdAt": "2026-07-19T08:12:52.818877+00:00",
   "selectedTopic": {
     "rank": 1,
@@ -62,9 +62,9 @@
     "evidence": "projects/episodes/ep018/evidence.json",
     "episodeSpec": "projects/episodes/ep018/episode.json",
     "timeline": null,
-    "video": null,
+    "video": "github-actions://runs/29679421854",
     "metadata": "projects/episodes/ep018/metadata.json"
   },
-  "nextAction": "build_timeline",
-  "updatedAt": "2026-07-19T08:13:26.060932+00:00"
+  "nextAction": "review_video",
+  "updatedAt": "2026-07-19T08:19:10.773736+00:00"
 }
