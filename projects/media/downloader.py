@@ -5,6 +5,8 @@ from pathlib import Path
 from urllib.parse import urlparse
 
 import requests
+from requests.adapters import HTTPAdapter
+from urllib3.util.retry import Retry
 
 from provider_models import MediaCandidate
 
@@ -29,6 +31,23 @@ class MediaDownloader:
                     "YouTubeContentFactory/7.5"
                 )
             }
+        )
+        retry = Retry(
+            total=3,
+            backoff_factor=2.0,
+            status_forcelist=(
+                429,
+                500,
+                502,
+                503,
+                504,
+            ),
+            allowed_methods={"GET"},
+            respect_retry_after_header=True,
+        )
+        self.session.mount(
+            "https://",
+            HTTPAdapter(max_retries=retry),
         )
 
     def download(

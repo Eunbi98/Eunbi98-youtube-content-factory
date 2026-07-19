@@ -405,6 +405,9 @@ class WikimediaProvider:
             image_info.get("thumburl")
         ) or None
 
+        if thumbnail_url:
+            download_url = thumbnail_url
+
         if not download_url or not source_url:
             return None
 
