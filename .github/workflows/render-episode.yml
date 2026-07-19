@@ -74,7 +74,12 @@ jobs:
             if [[ -n "$episode_path" ]]; then
               episode_id="$(basename "$(dirname "$episode_path")")"
             else
-              episode_id="ep014"
+              episode_id="$(
+                find projects/episodes -mindepth 2 -maxdepth 2 -type f -name episode.json |
+                sed -E 's#^projects/episodes/(ep[0-9]+)/episode\.json$#\1#' |
+                sort -V |
+                tail -n 1
+              )"
             fi
           fi
 
