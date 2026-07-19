@@ -135,8 +135,9 @@ class EpisodeProviderTests(unittest.TestCase):
                 )
             ).build(job_payload=_job(), evidence_payload=_evidence())
 
-    def test_provider_normalizes_caption_color_to_white(self) -> None:
+    def test_provider_normalizes_render_colors(self) -> None:
         package = _package()
+        package["episode"]["theme"]["titleColor"] = "#2980b9"
         package["episode"]["theme"]["captionColor"] = "#222222"
 
         def transport(_: dict) -> dict:
@@ -153,10 +154,8 @@ class EpisodeProviderTests(unittest.TestCase):
             )
         ).build(job_payload=_job(), evidence_payload=_evidence())
 
-        self.assertEqual(
-            "#FFFFFF",
-            result["episode"]["theme"]["captionColor"],
-        )
+        self.assertEqual("#7BFEB4", result["episode"]["theme"]["titleColor"])
+        self.assertEqual("#FFFFFF", result["episode"]["theme"]["captionColor"])
 
     def test_provider_requires_verified_evidence(self) -> None:
         evidence = _evidence()

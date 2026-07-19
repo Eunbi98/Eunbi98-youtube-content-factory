@@ -74,6 +74,7 @@ class GithubModelsEpisodeProvider:
 
         theme = episode.get("theme")
         if isinstance(theme, dict):
+            theme["titleColor"] = "#7BFEB4"
             theme["captionColor"] = "#FFFFFF"
 
     @staticmethod

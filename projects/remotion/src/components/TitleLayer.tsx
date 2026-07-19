@@ -15,7 +15,7 @@ type TitleLayerProps = {
 
 export const TitleLayer: React.FC<
 	TitleLayerProps
-> = ({title, color}) => {
+> = ({title}) => {
     const normalizedTitle = title
         .replace(/\r?\n/g, ' ')
         .replace(/\s+/g, ' ')
@@ -100,7 +100,6 @@ export const TitleLayer: React.FC<
                            wordBreak: 'keep-all',
 
 				color:
-					color ??
 					ep005Theme.title.color,
 
 				WebkitTextStroke:

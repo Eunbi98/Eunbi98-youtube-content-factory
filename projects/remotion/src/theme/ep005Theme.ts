@@ -3,9 +3,9 @@ import {SAFE_FRAME} from '../layout/SafeFrame';
 export const ep005Theme = {
 	backgroundColor: '#17212D',
 
-	titleColor: '#7cffb2',
+	titleColor: '#7BFEB4',
 	captionColor: '#FFFFFF',
-	accentColor: '#7cffb2',
+	accentColor: '#7BFEB4',
 
 	fontFamily:
 		'"Pretendard", "Noto Sans KR", "Noto Sans CJK KR", "Apple SD Gothic Neo", Arial, sans-serif',
@@ -17,15 +17,15 @@ export const ep005Theme = {
 		height: SAFE_FRAME.title.height,
 
 		fontSize: 112,
-		fontWeight: 900,
+		fontWeight: 950,
 		lineHeight: 1.02,
 
 		letterSpacing: '-0.065em',
 		textAlign: 'center' as const,
 
-		color: '#7cffb2',
+		color: '#7BFEB4',
 
-		textStroke: '5px #07110C',
+		textStroke: '6px #07110C',
 
 		textShadow: [
 			'0 4px 0 rgba(0, 0, 0, 0.95)',
