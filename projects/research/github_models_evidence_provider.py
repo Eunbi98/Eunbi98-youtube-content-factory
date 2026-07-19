@@ -68,23 +68,37 @@ class GithubModelsEvidenceProvider:
             "dates, numbers, or quotations. If the documents are insufficient, "
             "return status insufficient. Write claims and summary in Korean."
         )
-        try:
-            result = self._client.complete_json(
-                system=system,
-                user_payload={
-                    "episodeId": job_payload["episodeId"],
-                    "category": job_payload["category"],
-                    "topic": job_payload["selectedTopic"]["topic"],
-                    "angle": job_payload["selectedTopic"].get("angle", ""),
-                    "questions": job_payload["researchPlan"].get("questions", []),
-                    "sourceDocuments": sources,
-                },
-                schema_name="factory_evidence_result",
-                schema=EVIDENCE_SCHEMA,
-            )
-        except GithubModelsError as exc:
-            raise EvidenceProviderError(str(exc)) from exc
+        user_payload = {
+            "episodeId": job_payload["episodeId"],
+            "category": job_payload["category"],
+            "topic": job_payload["selectedTopic"]["topic"],
+            "angle": job_payload["selectedTopic"].get("angle", ""),
+            "questions": job_payload["researchPlan"].get("questions", []),
+            "sourceDocuments": sources,
+        }
+        result = self._request_evidence(system=system, user_payload=user_payload)
         self._validate_result_sources(result, sources)
+        coverage_issues = self._coverage_issues(result)
+        if coverage_issues:
+            retry_system = (
+                system
+                + " The previous selection failed these mandatory checks: "
+                + "; ".join(coverage_issues)
+                + ". Retry once. Select at least three items whose source_url hostnames "
+                "are all different. Include a counterpoint item and an official or "
+                "academic item. Use only supplied documents and do not weaken any claim."
+            )
+            result = self._request_evidence(
+                system=retry_system,
+                user_payload=user_payload,
+            )
+            self._validate_result_sources(result, sources)
+            coverage_issues = self._coverage_issues(result)
+            if coverage_issues:
+                raise EvidenceProviderError(
+                    "근거 재선정 후에도 제작 품질 기준을 충족하지 못했습니다: "
+                    + ", ".join(coverage_issues)
+                )
         result["citations"] = [
             {"title": item["title"], "url": item["source_url"]}
             for item in sources
@@ -92,6 +106,22 @@ class GithubModelsEvidenceProvider:
         result["provider"] = "github_models_public_sources"
         result["model"] = self._client.model
         return result
+
+    def _request_evidence(
+        self,
+        *,
+        system: str,
+        user_payload: dict[str, Any],
+    ) -> dict[str, Any]:
+        try:
+            return self._client.complete_json(
+                system=system,
+                user_payload=user_payload,
+                schema_name="factory_evidence_result",
+                schema=EVIDENCE_SCHEMA,
+            )
+        except GithubModelsError as exc:
+            raise EvidenceProviderError(str(exc)) from exc
 
     def _expand_search_queries(self, job_payload: dict[str, Any]) -> list[str]:
         topic = str(job_payload["selectedTopic"]["topic"])
@@ -107,6 +137,7 @@ class GithubModelsEvidenceProvider:
                 user_payload={
                     "topic": topic,
                     "category": job_payload["category"],
+                    "plannedQueries": job_payload["researchPlan"].get("queries", []),
                 },
                 schema_name="factory_research_queries",
                 schema=SEARCH_QUERY_SCHEMA,
@@ -128,6 +159,36 @@ class GithubModelsEvidenceProvider:
                 "GitHub Models가 영어 자료 검색어를 충분히 만들지 못했습니다."
             )
         return queries
+
+    @staticmethod
+    def _coverage_issues(result: dict[str, Any]) -> list[str]:
+        items = result.get("items")
+        if not isinstance(items, list):
+            return ["Evidence items가 배열이 아님"]
+        valid_items = [item for item in items if isinstance(item, dict)]
+        issues: list[str] = []
+        if result.get("status") != "complete":
+            issues.append("수집 상태가 complete가 아님")
+        if len(valid_items) < 3:
+            issues.append("검증 근거 3개 미만")
+        domains = {
+            urlparse(str(item.get("source_url") or "")).netloc.casefold()
+            for item in valid_items
+        }
+        domains.discard("")
+        if len(domains) < 3:
+            issues.append("서로 다른 출처 도메인 3개 미만")
+        if not any(
+            item.get("source_tier") in {"official", "academic"}
+            for item in valid_items
+        ):
+            issues.append("공식 또는 학술 출처 없음")
+        if not any(
+            item.get("evidence_type") == "counterpoint"
+            for item in valid_items
+        ):
+            issues.append("반대 근거나 불확실성 없음")
+        return issues
 
     @staticmethod
     def _validate_source_pool(sources: list[dict[str, str]]) -> None:
