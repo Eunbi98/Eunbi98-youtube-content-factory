@@ -1,0 +1,102 @@
+{
+  "channel": "mystery",
+  "episodeId": "ep016",
+  "mediaSource": "https://beinecke.library.yale.edu/collections/highlights/voynich-manuscript",
+  "scenes": [
+    {
+      "evidenceIds": [
+        "evidence_08937d8ddf47"
+      ],
+      "keywords": [
+        "Voynich manuscript Yale",
+        "보이니치 문서 미해독",
+        "보이니치 필사본 실제 사진",
+        "보이니치 미스터리"
+      ],
+      "narration": "아직도 한 단어도 해독되지 않은 보이니치 문서, 왜 이렇게 풀리지 않는 미스터리일까요?",
+      "title": "Hook",
+      "type": "hook"
+    },
+    {
+      "evidenceIds": [
+        "evidence_e70cec269cc4"
+      ],
+      "keywords": [
+        "보이니치 문서 해독 난이도",
+        "언어 미상 보이니치",
+        "고고학적 맥락 손상",
+        "외부 앵커 없는 문서"
+      ],
+      "narration": "해독이 어려운 핵심 원인은 알려지지 않은 언어와 문자, 해석을 위한 외부 앵커의 부재, 자료 부족, 그리고 고고학적 맥락의 손상 때문입니다.",
+      "title": "Answer",
+      "type": "answer"
+    },
+    {
+      "evidenceIds": [
+        "evidence_08a5b1d73ca9",
+        "evidence_5d425f065190"
+      ],
+      "keywords": [
+        "보이니치 문서 발견 역사",
+        "윌프레드 보이니치",
+        "보이니치 문서 그림",
+        "보이니치 필사본 환상적 도해"
+      ],
+      "narration": "1912년 윌프레드 보이니치가 입수한 이 문서는 15세기에 제작된 것으로 추정되며, 약 240페이지에 환상적인 그림과 도해가 가득합니다. 일부 페이지는 누락되어 전체 해석에 한계가 있습니다.",
+      "title": "Story",
+      "type": "story"
+    },
+    {
+      "evidenceIds": [
+        "evidence_08937d8ddf47"
+      ],
+      "keywords": [
+        "보이니치 문서 미해독",
+        "알려지지 않은 문자",
+        "보이니치 필사본 언어",
+        "보이니치 해독 실패 사례"
+      ],
+      "narration": "보이니치 문서는 알려지지 않은 문자와 언어로 쓰여 있으며, 지금까지 한 단어도 해독된 적이 없습니다.",
+      "title": "Fact",
+      "type": "fact"
+    },
+    {
+      "evidenceIds": [
+        "evidence_63e5da57368e",
+        "evidence_7c31ba5d5426"
+      ],
+      "keywords": [
+        "보이니치 문서 가설",
+        "보이니치 암호",
+        "보이니치 인공어",
+        "보이니치 구조적 분석"
+      ],
+      "narration": "학계에서는 자연어, 암호, 인공어, 혹은 정교한 가짜라는 다양한 가설이 제기되었지만, 어느 것도 독립적으로 검증된 적이 없습니다. 최근에는 구조적 참조 시스템이라는 분석도 있지만, 확정된 결론은 아닙니다.",
+      "title": "Fact",
+      "type": "fact"
+    },
+    {
+      "evidenceIds": [
+        "evidence_08937d8ddf47",
+        "evidence_63e5da57368e"
+      ],
+      "keywords": [
+        "보이니치 문서 진짜 언어",
+        "보이니치 문서 가짜 논란",
+        "보이니치 미스터리 의견",
+        "보이니치 문서 해독 가능성"
+      ],
+      "narration": "여러분은 보이니치 문서가 실제 언어라고 생각하시나요, 아니면 정교한 가짜라고 생각하시나요?",
+      "title": "Ending",
+      "type": "ending"
+    }
+  ],
+  "theme": {
+    "accentColor": "#2c3e50",
+    "backgroundColor": "#f5f6fa",
+    "captionColor": "#222222",
+    "titleColor": "#2980b9"
+  },
+  "title": "보이니치 문서는 왜 아직도 해독되지 않았을까?",
+  "version": "1.0"
+}

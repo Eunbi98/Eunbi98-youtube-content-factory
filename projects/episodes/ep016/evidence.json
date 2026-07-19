@@ -1,0 +1,183 @@
+{
+  "topic": "보이니치 문서는 왜 아직도 해독되지 않았을까",
+  "items": [
+    {
+      "id": "evidence_7c31ba5d5426",
+      "title": "A Tutorial on Rigorous Scientific Inference: Bayesian Model Selection, the Zero-Patch Standard, and the Deductive Primacy of Axioms Illustrated by the Voynich Manuscript",
+      "claim": "최근 학술 연구에서는 정보이론적 분석과 구조적 분석 방법(MASA 등)을 통해 보이니치 문서가 언어적 해석이 아닌 구조적 참조 시스템(예: 관계형 데이터베이스 또는 인벤토리)일 가능성이 제기되고 있으나, 이는 역사적 사실로 확정된 것은 아니다.",
+      "source_name": "Preprints.org",
+      "source_url": "https://doi.org/10.20944/preprints202601.1984.v1",
+      "source_tier": "academic",
+      "evidence_type": "counterpoint",
+      "published_at": "2026",
+      "keywords": [
+        "정보이론",
+        "구조적 분석",
+        "MASA",
+        "참조 시스템",
+        "한계"
+      ],
+      "reliability_score": 0.95,
+      "interest_score": 0.95,
+      "visual_score": 0.45,
+      "total_score": 0.85
+    },
+    {
+      "id": "evidence_08a5b1d73ca9",
+      "title": "보이니치 필사본",
+      "claim": "보이니치 문서는 15세기에 쓰인 것으로 추정되며, 1912년에 폴란드계 미국인 서적상 윌프레드 M. 보이니치가 입수했다.",
+      "source_name": "한국어 위키백과",
+      "source_url": "https://ko.wikipedia.org/wiki/%EB%B3%B4%EC%9D%B4%EB%8B%88%EC%B9%98_%ED%95%84%EC%82%AC%EB%B3%B8",
+      "source_tier": "reference",
+      "evidence_type": "fact",
+      "published_at": null,
+      "keywords": [
+        "보이니치 문서",
+        "15세기",
+        "윌프레드 보이니치",
+        "발견",
+        "1912년"
+      ],
+      "reliability_score": 0.8,
+      "interest_score": 0.8,
+      "visual_score": 0.7,
+      "total_score": 0.78
+    },
+    {
+      "id": "evidence_63e5da57368e",
+      "title": "Voynich manuscript",
+      "claim": "학계에서는 보이니치 문서가 자연어, 인공어, 암호, 혹은 정교하게 만들어진 가짜일 가능성 등 다양한 가설이 제기되었으나, 어느 것도 독립적으로 검증된 적이 없다.",
+      "source_name": "Wikipedia",
+      "source_url": "https://en.wikipedia.org/wiki/Voynich_manuscript",
+      "source_tier": "reference",
+      "evidence_type": "counterpoint",
+      "published_at": null,
+      "keywords": [
+        "가설",
+        "자연어",
+        "암호",
+        "가짜",
+        "검증 실패"
+      ],
+      "reliability_score": 0.8,
+      "interest_score": 0.95,
+      "visual_score": 0.45,
+      "total_score": 0.775
+    },
+    {
+      "id": "evidence_08937d8ddf47",
+      "title": "보이니치 필사본",
+      "claim": "보이니치 문서는 알려지지 않은 문자와 언어로 쓰여 있으며, 지금까지 한 단어도 해독된 적이 없다.",
+      "source_name": "한국어 위키백과",
+      "source_url": "https://ko.wikipedia.org/wiki/%EB%B3%B4%EC%9D%B4%EB%8B%88%EC%B9%98_%ED%95%84%EC%82%AC%EB%B3%B8",
+      "source_tier": "reference",
+      "evidence_type": "fact",
+      "published_at": null,
+      "keywords": [
+        "미해독",
+        "문자",
+        "언어",
+        "해독 실패"
+      ],
+      "reliability_score": 0.8,
+      "interest_score": 0.8,
+      "visual_score": 0.45,
+      "total_score": 0.73
+    },
+    {
+      "id": "evidence_5d425f065190",
+      "title": "Voynich manuscript",
+      "claim": "보이니치 문서는 약 240페이지로 구성되어 있으나 일부 페이지가 누락된 것으로 보인다. 대부분의 페이지에는 환상적인 그림과 도해가 포함되어 있다.",
+      "source_name": "Wikipedia",
+      "source_url": "https://en.wikipedia.org/wiki/Voynich_manuscript",
+      "source_tier": "reference",
+      "evidence_type": "fact",
+      "published_at": null,
+      "keywords": [
+        "페이지 수",
+        "그림",
+        "도해",
+        "누락"
+      ],
+      "reliability_score": 0.8,
+      "interest_score": 0.8,
+      "visual_score": 0.45,
+      "total_score": 0.73
+    },
+    {
+      "id": "evidence_e70cec269cc4",
+      "title": "Undeciphered writing systems",
+      "claim": "보이니치 문서의 해독이 어려운 이유는 언어와 문자 체계가 알려지지 않았고, 해석을 위한 외부 '앵커'(예: 확실한 이름이나 날짜)가 없으며, 자료의 양이 적고 고고학적 맥락이 손상되었기 때문이다.",
+      "source_name": "Wikipedia",
+      "source_url": "https://en.wikipedia.org/wiki/Undeciphered_writing_systems",
+      "source_tier": "reference",
+      "evidence_type": "fact",
+      "published_at": null,
+      "keywords": [
+        "해독 난이도",
+        "언어 미상",
+        "외부 앵커 부재",
+        "자료 부족",
+        "고고학적 맥락"
+      ],
+      "reliability_score": 0.8,
+      "interest_score": 0.8,
+      "visual_score": 0.45,
+      "total_score": 0.73
+    }
+  ],
+  "rejected_count": 0,
+  "duplicate_count": 0,
+  "status": "verified",
+  "summary": "보이니치 문서는 15세기에 제작된 것으로 추정되며, 1912년 윌프레드 보이니치가 입수한 이후 지금까지 한 단어도 해독되지 않았다. 해독이 어려운 핵심 원인은 언어와 문자 체계의 미상, 해석을 위한 외부 앵커의 부재, 자료의 부족, 고고학적 맥락의 손상 등이다. 학계에서는 자연어, 암호, 인공어, 혹은 가짜 등 다양한 가설이 제기되었으나 어느 것도 독립적으로 검증된 적이 없다. 최근에는 정보이론적 분석과 구조적 분석 방법을 통해 언어적 해석이 아닌 참조 시스템으로 보는 시각도 있으나, 이는 확정된 결론이 아니다. 영상에서는 보이니치 문서의 실제 유물(야일 대학 소장), 환상적인 그림, 해독 실패의 역사적 사례 등을 보여줄 수 있다. 시청자에게 \"여러분은 보이니치 문서가 실제 언어라고 생각하시나요, 아니면 정교한 가짜라고 생각하시나요?\"라는 질문을 던질 수 있다.",
+  "uncertainties": [
+    "문서의 실제 목적과 의미는 아직도 미확정 상태임",
+    "구조적 분석 결과 역시 역사적 사실로 확정된 것은 아님",
+    "일부 페이지가 누락되어 전체 해석에 한계가 있음"
+  ],
+  "citations": [
+    {
+      "title": "보이니치 필사본",
+      "url": "https://ko.wikipedia.org/wiki/%EB%B3%B4%EC%9D%B4%EB%8B%88%EC%B9%98_%ED%95%84%EC%82%AC%EB%B3%B8"
+    },
+    {
+      "title": "미해독 문자",
+      "url": "https://ko.wikipedia.org/wiki/%EB%AF%B8%ED%95%B4%EB%8F%85_%EB%AC%B8%EC%9E%90"
+    },
+    {
+      "title": "Undeciphered writing systems",
+      "url": "https://en.wikipedia.org/wiki/Undeciphered_writing_systems"
+    },
+    {
+      "title": "Codex Seraphinianus",
+      "url": "https://en.wikipedia.org/wiki/Codex_Seraphinianus"
+    },
+    {
+      "title": "Voynich manuscript",
+      "url": "https://en.wikipedia.org/wiki/Voynich_manuscript"
+    },
+    {
+      "title": "Wilfrid Voynich",
+      "url": "https://en.wikipedia.org/wiki/Wilfrid_Voynich"
+    },
+    {
+      "title": "Computational Constancy Measures of Texts—Yule's<i>K</i>and Rényi's Entropy",
+      "url": "https://doi.org/10.1162/coli_a_00228"
+    },
+    {
+      "title": "Vowel and Consonant Classification through Spectral Decomposition",
+      "url": "https://doi.org/10.18653/v1/w17-4112"
+    },
+    {
+      "title": "A Tutorial on Rigorous Scientific Inference: Bayesian Model Selection, the Zero-Patch Standard, and the Deductive Primacy of Axioms Illustrated by the Voynich Manuscript",
+      "url": "https://doi.org/10.20944/preprints202601.1984.v1"
+    },
+    {
+      "title": "Extending the Application of Meaning Arrangement Structural Analysis (MASA) A Chronological Survey of Fifteenth-Century Manuscripts with Provisional Functional Classification",
+      "url": "https://doi.org/10.5281/zenodo.18103300"
+    }
+  ],
+  "provider": "github_models_public_sources",
+  "model": "openai/gpt-4.1",
+  "verified_at": "2026-07-19T04:03:30.682455+00:00"
+}
