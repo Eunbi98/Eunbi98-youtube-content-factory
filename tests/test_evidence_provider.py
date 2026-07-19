@@ -120,22 +120,41 @@ def _source_documents() -> list[dict[str, str]]:
 
 
 class _SourceCollector:
-    def collect(self, _: dict) -> list[dict[str, str]]:
+    def collect(
+        self,
+        _: dict,
+        *,
+        search_queries: list[str] | None = None,
+    ) -> list[dict[str, str]]:
+        if not search_queries:
+            raise AssertionError("English search queries were not provided")
         return _source_documents()
+
+
+def _model_response(payload: dict, evidence_payload: dict) -> dict:
+    name = payload["response_format"]["json_schema"]["name"]
+    content = (
+        {
+            "englishTopic": "Martian polygonal ridges",
+            "queries": [
+                "Mars polygonal ridges geology",
+                "Curiosity polygon fractures research",
+            ],
+        }
+        if name == "factory_research_queries"
+        else evidence_payload
+    )
+    return {"choices": [{"message": {"content": json.dumps(content)}}]}
 
 
 class EvidenceProviderTests(unittest.TestCase):
     def test_provider_uses_public_sources_and_structured_output(self) -> None:
-        captured: dict = {}
+        captured: list[dict] = []
         result_payload = _provider_result()
 
         def transport(payload: dict) -> dict:
-            captured.update(payload)
-            return {
-                "choices": [
-                    {"message": {"content": json.dumps(result_payload)}}
-                ]
-            }
+            captured.append(payload)
+            return _model_response(payload, result_payload)
 
         result = GithubModelsEvidenceProvider(
             client=GithubModelsClient(
@@ -145,9 +164,13 @@ class EvidenceProviderTests(unittest.TestCase):
             source_collector=_SourceCollector(),
         ).collect(_job())
 
-        self.assertTrue(captured["response_format"]["json_schema"]["strict"])
-        self.assertEqual("openai/gpt-4.1", captured["model"])
-        self.assertNotIn("tools", captured)
+        self.assertEqual(2, len(captured))
+        evidence_request = captured[1]
+        self.assertTrue(
+            evidence_request["response_format"]["json_schema"]["strict"]
+        )
+        self.assertEqual("openai/gpt-4.1", evidence_request["model"])
+        self.assertNotIn("tools", evidence_request)
         self.assertEqual("complete", result["status"])
         self.assertEqual(3, len(result["citations"]))
 
@@ -160,12 +183,8 @@ class EvidenceProviderTests(unittest.TestCase):
         payload = _provider_result()
         payload["items"][0]["source_url"] = "https://invented.example/fake"
 
-        def transport(_: dict) -> dict:
-            return {
-                "choices": [
-                    {"message": {"content": json.dumps(payload)}}
-                ]
-            }
+        def transport(request: dict) -> dict:
+            return _model_response(request, payload)
 
         with self.assertRaises(EvidenceProviderError):
             GithubModelsEvidenceProvider(

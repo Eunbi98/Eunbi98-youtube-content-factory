@@ -45,7 +45,12 @@ class PublicSourceCollector:
         self._get = get
         self._timeout_seconds = timeout_seconds
 
-    def collect(self, job_payload: dict[str, Any]) -> list[dict[str, str]]:
+    def collect(
+        self,
+        job_payload: dict[str, Any],
+        *,
+        search_queries: list[str] | None = None,
+    ) -> list[dict[str, str]]:
         selected = job_payload.get("selectedTopic")
         if not isinstance(selected, dict):
             raise PublicSourceError("Production Job의 selectedTopic이 없습니다.")
@@ -67,17 +72,35 @@ class PublicSourceCollector:
             if document:
                 raw_documents.append(document)
 
+        normalized_queries = [
+            str(query).strip()
+            for query in (search_queries or [])
+            if str(query).strip()
+        ]
+        wiki_requests = [
+            (self.WIKI_APIS[0][0], self.WIKI_APIS[0][1], topic),
+            *[
+                (self.WIKI_APIS[1][0], self.WIKI_APIS[1][1], query)
+                for query in normalized_queries[:2]
+            ],
+        ]
         external_links: list[str] = []
-        for api_url, source_name in self.WIKI_APIS:
+        for api_url, source_name, query in wiki_requests:
             wiki_documents, links = self._collect_wikipedia(
                 api_url=api_url,
                 source_name=source_name,
-                topic=topic,
+                topic=query,
             )
             raw_documents.extend(wiki_documents)
             external_links.extend(links)
 
-        raw_documents.extend(self._collect_openalex(topic))
+        for query in [*normalized_queries, topic][:3]:
+            raw_documents.extend(self._collect_openalex(query))
+            if sum(
+                item.get("source_tier") == "academic"
+                for item in raw_documents
+            ) >= 3:
+                break
 
         for url in external_links[:8]:
             tier = self._classify_url(url)
