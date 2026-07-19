@@ -1,0 +1,184 @@
+{
+  "topic": "우주는 왜 완전히 조용할까",
+  "items": [
+    {
+      "id": "evidence_21f6c7659ef8",
+      "title": "Planetary Boundaries: Exploring the Safe Operating Space for Humanity",
+      "claim": "우주에서 소리가 들리지 않는다는 사실은 물리학적으로 공식적으로 인정된 현상이며, 이는 소리의 전달에 필요한 매질이 우주에는 없기 때문이다.",
+      "source_name": "Ecology and Society",
+      "source_url": "https://doi.org/10.5751/es-03180-140232",
+      "source_tier": "academic",
+      "evidence_type": "fact",
+      "published_at": "2009",
+      "keywords": [
+        "우주",
+        "소리",
+        "매질",
+        "공식",
+        "물리학"
+      ],
+      "reliability_score": 0.95,
+      "interest_score": 0.8,
+      "visual_score": 0.45,
+      "total_score": 0.805
+    },
+    {
+      "id": "evidence_1bf43fdc02b5",
+      "title": "Sound",
+      "claim": "소리가 전달되지 않는다는 점에서 우주는 '완전히 조용하다'고 할 수 있지만, 이는 소리의 정의에 따라 달라질 수 있다. 예를 들어, 우주에서는 전자기파나 기타 형태의 에너지가 존재하므로 '완전히 조용하다'는 표현은 소리라는 물리적 현상에 한정된다.",
+      "source_name": "Wikipedia",
+      "source_url": "https://en.wikipedia.org/wiki/Sound",
+      "source_tier": "reference",
+      "evidence_type": "counterpoint",
+      "published_at": null,
+      "keywords": [
+        "우주",
+        "소리",
+        "전자기파",
+        "완전히 조용하다",
+        "한계"
+      ],
+      "reliability_score": 0.8,
+      "interest_score": 0.95,
+      "visual_score": 0.45,
+      "total_score": 0.775
+    },
+    {
+      "id": "evidence_6646a4d322fa",
+      "title": "Sound",
+      "claim": "우주가 완전히 조용한 이유는 소리가 전달되기 위해서는 압력 변화가 전파될 수 있는 탄성 물질 매질이 필요하지만, 우주는 거의 완전한 진공 상태이기 때문에 소리가 전달되지 않는다.",
+      "source_name": "Wikipedia",
+      "source_url": "https://en.wikipedia.org/wiki/Sound",
+      "source_tier": "reference",
+      "evidence_type": "fact",
+      "published_at": null,
+      "keywords": [
+        "우주",
+        "소리",
+        "진공",
+        "매질",
+        "압력 변화"
+      ],
+      "reliability_score": 0.8,
+      "interest_score": 0.85,
+      "visual_score": 0.45,
+      "total_score": 0.745
+    },
+    {
+      "id": "evidence_27680d1afde0",
+      "title": "Sound",
+      "claim": "인간의 귀는 20Hz에서 20kHz 사이의 주파수에 민감하지만, 우주에서는 이러한 주파수의 소리가 전달될 수 있는 매질이 존재하지 않는다.",
+      "source_name": "Wikipedia",
+      "source_url": "https://en.wikipedia.org/wiki/Sound",
+      "source_tier": "reference",
+      "evidence_type": "fact",
+      "published_at": null,
+      "keywords": [
+        "인간 귀",
+        "주파수",
+        "소리",
+        "우주",
+        "매질"
+      ],
+      "reliability_score": 0.8,
+      "interest_score": 0.85,
+      "visual_score": 0.45,
+      "total_score": 0.745
+    },
+    {
+      "id": "evidence_1907617496c7",
+      "title": "알베르트 아인슈타인",
+      "claim": "아인슈타인은 상대성 이론을 통해 빛이 진공에서도 전파될 수 있음을 밝혔으며, 이는 우주에서 소리가 들리지 않는 이유와 연관된다. 빛은 매질 없이도 이동하지만 소리는 그렇지 않다.",
+      "source_name": "한국어 위키백과",
+      "source_url": "https://ko.wikipedia.org/wiki/%EC%95%8C%EB%B2%A0%EB%A5%B4%ED%8A%B8_%EC%95%84%EC%9D%B8%EC%8A%88%ED%83%80%EC%9D%B8",
+      "source_tier": "reference",
+      "evidence_type": "fact",
+      "published_at": null,
+      "keywords": [
+        "아인슈타인",
+        "상대성 이론",
+        "빛",
+        "진공",
+        "소리"
+      ],
+      "reliability_score": 0.8,
+      "interest_score": 0.85,
+      "visual_score": 0.45,
+      "total_score": 0.745
+    },
+    {
+      "id": "evidence_8c4afd8ae845",
+      "title": "Speed of light",
+      "claim": "빛과 같은 전자기파는 진공에서도 전파될 수 있지만, 소리는 매질이 없으면 전파되지 못한다. 따라서 우주에서는 빛은 볼 수 있지만 소리는 들을 수 없다.",
+      "source_name": "Wikipedia",
+      "source_url": "https://en.wikipedia.org/wiki/Speed_of_light",
+      "source_tier": "reference",
+      "evidence_type": "fact",
+      "published_at": null,
+      "keywords": [
+        "빛",
+        "전자기파",
+        "진공",
+        "소리",
+        "매질"
+      ],
+      "reliability_score": 0.8,
+      "interest_score": 0.8,
+      "visual_score": 0.45,
+      "total_score": 0.73
+    }
+  ],
+  "rejected_count": 0,
+  "duplicate_count": 0,
+  "status": "verified",
+  "summary": "우주가 완전히 조용한 이유는 소리가 전달되기 위해 필요한 매질이 우주에는 없기 때문입니다. 빛과 같은 전자기파는 진공에서도 전파될 수 있지만, 소리는 매질이 없으면 전달되지 못합니다. 인간의 귀가 감지할 수 있는 주파수의 소리도 우주에서는 전달될 수 없습니다. 아인슈타인의 상대성 이론은 빛이 진공에서도 이동할 수 있음을 밝혔으며, 이는 소리와 빛의 차이를 설명합니다. 다만, 우주가 '완전히 조용하다'는 표현은 소리라는 물리적 현상에 한정되며, 전자기파 등 다른 형태의 에너지는 존재합니다. 이 현상은 물리학적으로 공식적으로 인정된 사실입니다.",
+  "uncertainties": [
+    "우주에서 '완전히 조용하다'는 표현은 소리의 정의에 따라 달라질 수 있음",
+    "전자기파 등 다른 형태의 에너지는 우주에 존재함"
+  ],
+  "citations": [
+    {
+      "title": "알베르트 아인슈타인",
+      "url": "https://ko.wikipedia.org/wiki/%EC%95%8C%EB%B2%A0%EB%A5%B4%ED%8A%B8_%EC%95%84%EC%9D%B8%EC%8A%88%ED%83%80%EC%9D%B8"
+    },
+    {
+      "title": "멋진 신세계 (드라마)",
+      "url": "https://ko.wikipedia.org/wiki/%EB%A9%8B%EC%A7%84_%EC%8B%A0%EC%84%B8%EA%B3%84_(%EB%93%9C%EB%9D%BC%EB%A7%88)"
+    },
+    {
+      "title": "Silent film",
+      "url": "https://en.wikipedia.org/wiki/Silent_film"
+    },
+    {
+      "title": "Silent Hill f",
+      "url": "https://en.wikipedia.org/wiki/Silent_Hill_f"
+    },
+    {
+      "title": "Sound",
+      "url": "https://en.wikipedia.org/wiki/Sound"
+    },
+    {
+      "title": "Speed of light",
+      "url": "https://en.wikipedia.org/wiki/Speed_of_light"
+    },
+    {
+      "title": "Planetary Boundaries: Exploring the Safe Operating Space for Humanity",
+      "url": "https://doi.org/10.5751/es-03180-140232"
+    },
+    {
+      "title": "Space Between Words",
+      "url": "https://doi.org/10.1515/9781503619081"
+    },
+    {
+      "title": "Place cells and silent cells in the hippocampus of freely-behaving rats",
+      "url": "https://doi.org/10.1523/jneurosci.09-07-02382.1989"
+    },
+    {
+      "title": "Giving a virtual voice to the silent language of culture: The Cultura project",
+      "url": "https://doi.org/10.64152/10125/25113"
+    }
+  ],
+  "provider": "github_models_public_sources",
+  "model": "openai/gpt-4.1",
+  "verified_at": "2026-07-19T08:13:16.614581+00:00"
+}
