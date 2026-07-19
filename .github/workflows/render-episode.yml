@@ -24,7 +24,9 @@ on:
     paths:
       - ".github/workflows/render-episode.yml"
       - "projects/director/search_prompt.py"
+      - "projects/episodes/**/assets/**"
       - "projects/episodes/**/episode.json"
+      - "projects/episodes/**/manual_media_sources.json"
       - "projects/media/**"
 
 permissions:
@@ -69,12 +71,12 @@ jobs:
           if [[ -z "$episode_id" ]]; then
             episode_path="$(
               git diff-tree --no-commit-id --name-only -r HEAD |
-              grep -E '^projects/episodes/ep[0-9]+/episode\.json$' |
+              grep -E '^projects/episodes/ep[0-9]+/(episode\.json|manual_media_sources\.json|assets/)' |
               tail -n 1 || true
             )"
 
             if [[ -n "$episode_path" ]]; then
-              episode_id="$(basename "$(dirname "$episode_path")")"
+              episode_id="$(cut -d/ -f3 <<< "$episode_path")"
             else
               episode_id="$(
                 find projects/episodes -mindepth 2 -maxdepth 2 -type f -name episode.json |
