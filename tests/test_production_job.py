@@ -83,8 +83,14 @@ class ProductionJobTests(unittest.TestCase):
             5,
         )
         self.assertEqual(
-            3,
+            2,
             result["researchPlan"]["sourcePolicy"]["minimumSources"],
+        )
+        self.assertFalse(
+            result["researchPlan"]["sourcePolicy"]["requireCounterpoint"]
+        )
+        self.assertTrue(
+            result["researchPlan"]["sourcePolicy"]["requireUncertainty"]
         )
 
     def test_rank_selects_requested_candidate(self) -> None:

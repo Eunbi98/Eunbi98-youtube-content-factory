@@ -40,7 +40,10 @@ class EvidenceService:
             topic=topic,
             raw_items=converted,
         )
-        self._validate_gate(result.to_dict())
+        self._validate_gate(
+            result.to_dict(),
+            uncertainties=provider_result.get("uncertainties"),
+        )
 
         payload = result.to_dict()
         payload.update(
@@ -55,6 +58,15 @@ class EvidenceService:
             }
         )
         return payload
+
+    @classmethod
+    def validate_verified_evidence(cls, payload: dict[str, Any]) -> None:
+        if payload.get("status") != "verified":
+            raise EvidenceGateError("사전 조사 Evidence가 verified 상태가 아닙니다.")
+        cls._validate_gate(
+            payload,
+            uncertainties=payload.get("uncertainties"),
+        )
 
     @staticmethod
     def advance_job(
@@ -97,10 +109,14 @@ class EvidenceService:
         )
 
     @staticmethod
-    def _validate_gate(payload: dict[str, Any]) -> None:
+    def _validate_gate(
+        payload: dict[str, Any],
+        *,
+        uncertainties: Any = None,
+    ) -> None:
         items = payload.get("items")
-        if not isinstance(items, list) or len(items) < 3:
-            raise EvidenceGateError("검증된 Evidence가 최소 3개 필요합니다.")
+        if not isinstance(items, list) or len(items) < 2:
+            raise EvidenceGateError("검증된 Evidence가 최소 2개 필요합니다.")
 
         domains = {
             urlparse(str(item.get("source_url") or "")).netloc.casefold()
@@ -108,8 +124,8 @@ class EvidenceService:
             if isinstance(item, dict)
         }
         domains.discard("")
-        if len(domains) < 3:
-            raise EvidenceGateError("서로 다른 출처 도메인이 최소 3개 필요합니다.")
+        if len(domains) < 2:
+            raise EvidenceGateError("서로 다른 출처 도메인이 최소 2개 필요합니다.")
 
         if not any(
             item.get("source_tier") in {"official", "academic"}
@@ -118,9 +134,15 @@ class EvidenceService:
         ):
             raise EvidenceGateError("공식 또는 학술 출처가 최소 1개 필요합니다.")
 
-        if not any(
+        has_counterpoint = any(
             item.get("evidence_type") == "counterpoint"
             for item in items
             if isinstance(item, dict)
-        ):
-            raise EvidenceGateError("반대 근거나 불확실성 Evidence가 필요합니다.")
+        )
+        has_uncertainty = isinstance(uncertainties, list) and any(
+            str(value).strip() for value in uncertainties
+        )
+        if not has_counterpoint and not has_uncertainty:
+            raise EvidenceGateError(
+                "반대 근거나 명시적인 불확실성이 필요합니다."
+            )

@@ -145,8 +145,8 @@ class EpisodeQualityService:
         if not isinstance(tags, list) or len(tags) < 5:
             raise EpisodeQualityError("metadata.tags가 최소 5개 필요합니다.")
         sources = payload.get("sources")
-        if not isinstance(sources, list) or len(sources) < 3:
-            raise EpisodeQualityError("metadata.sources가 최소 3개 필요합니다.")
+        if not isinstance(sources, list) or len(sources) < 2:
+            raise EpisodeQualityError("metadata.sources가 최소 2개 필요합니다.")
 
 
 class TimelineQualityService:

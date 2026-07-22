@@ -49,21 +49,35 @@ def main() -> int:
         if not isinstance(job_payload, dict):
             raise EvidenceGateError("Production Job 최상위 값은 객체여야 합니다.")
 
-        if args.provider_result:
+        selected_topic = job_payload.get("selectedTopic")
+        preflight_evidence = (
+            selected_topic.get("preflightEvidence")
+            if isinstance(selected_topic, dict)
+            else None
+        )
+        service = EvidenceService()
+        if isinstance(preflight_evidence, dict) and preflight_evidence:
+            service.validate_verified_evidence(preflight_evidence)
+            evidence = preflight_evidence
+        elif args.provider_result:
             provider_result = json.loads(
                 args.provider_result.read_text(encoding="utf-8")
             )
             if not isinstance(provider_result, dict):
                 raise EvidenceGateError("Provider 결과 최상위 값은 객체여야 합니다.")
+            topic = str(job_payload["selectedTopic"]["topic"])
+            evidence = service.build_evidence(
+                topic=topic,
+                provider_result=provider_result,
+            )
         else:
             provider = GithubModelsEvidenceProvider.from_environment()
             provider_result = provider.collect(job_payload)
-        topic = str(job_payload["selectedTopic"]["topic"])
-        service = EvidenceService()
-        evidence = service.build_evidence(
-            topic=topic,
-            provider_result=provider_result,
-        )
+            topic = str(job_payload["selectedTopic"]["topic"])
+            evidence = service.build_evidence(
+                topic=topic,
+                provider_result=provider_result,
+            )
         updated_job = service.advance_job(
             job_payload,
             evidence_path=args.output.as_posix(),

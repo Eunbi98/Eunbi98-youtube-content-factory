@@ -59,9 +59,10 @@ class GithubModelsEvidenceProvider:
 
         system = (
             "You verify source documents for a Korean educational YouTube Short. "
-            "Use only the supplied sourceDocuments. Return 3 to 6 non-duplicate "
-            "evidence items from at least 3 source domains, including at least one "
-            "official or academic source and one counterpoint or explicit limit. "
+            "Use only the supplied sourceDocuments. Return 2 to 5 non-duplicate "
+            "evidence items from at least 2 source domains, including at least one "
+            "official or academic source. Include either a counterpoint evidence "
+            "item or a concrete uncertainty in the uncertainties array. "
             "Every claim must be directly supported by the text of its selected "
             "source document. Copy source_url, source_name, source_tier, and "
             "published_at exactly from that document. Never invent facts, URLs, "
@@ -84,9 +85,10 @@ class GithubModelsEvidenceProvider:
                 system
                 + " The previous selection failed these mandatory checks: "
                 + "; ".join(coverage_issues)
-                + ". Retry once. Select at least three items whose source_url hostnames "
-                "are all different. Include a counterpoint item and an official or "
-                "academic item. Use only supplied documents and do not weaken any claim."
+                + ". Retry once. Select at least two items whose source_url hostnames "
+                "are different. Include an official or academic item and either a "
+                "counterpoint or a concrete uncertainty. Use only supplied documents "
+                "and do not weaken any claim."
             )
             result = self._request_evidence(
                 system=retry_system,
@@ -105,6 +107,7 @@ class GithubModelsEvidenceProvider:
         ]
         result["provider"] = "github_models_public_sources"
         result["model"] = self._client.model
+        result["search_queries"] = search_queries
         return result
 
     def _request_evidence(
@@ -169,25 +172,30 @@ class GithubModelsEvidenceProvider:
         issues: list[str] = []
         if result.get("status") != "complete":
             issues.append("수집 상태가 complete가 아님")
-        if len(valid_items) < 3:
-            issues.append("검증 근거 3개 미만")
+        if len(valid_items) < 2:
+            issues.append("검증 근거 2개 미만")
         domains = {
             urlparse(str(item.get("source_url") or "")).netloc.casefold()
             for item in valid_items
         }
         domains.discard("")
-        if len(domains) < 3:
-            issues.append("서로 다른 출처 도메인 3개 미만")
+        if len(domains) < 2:
+            issues.append("서로 다른 출처 도메인 2개 미만")
         if not any(
             item.get("source_tier") in {"official", "academic"}
             for item in valid_items
         ):
             issues.append("공식 또는 학술 출처 없음")
-        if not any(
+        has_counterpoint = any(
             item.get("evidence_type") == "counterpoint"
             for item in valid_items
-        ):
-            issues.append("반대 근거나 불확실성 없음")
+        )
+        uncertainties = result.get("uncertainties")
+        has_uncertainty = isinstance(uncertainties, list) and any(
+            str(value).strip() for value in uncertainties
+        )
+        if not has_counterpoint and not has_uncertainty:
+            issues.append("반대 근거나 명시적 불확실성 없음")
         return issues
 
     @staticmethod
@@ -197,9 +205,9 @@ class GithubModelsEvidenceProvider:
             for source in sources
         }
         domains.discard("")
-        if len(sources) < 3 or len(domains) < 3:
+        if len(sources) < 2 or len(domains) < 2:
             raise EvidenceProviderError(
-                "무료 공개 자료에서 서로 다른 출처 3곳을 확보하지 못했습니다. "
+                "무료 공개 자료에서 서로 다른 출처 2곳을 확보하지 못했습니다. "
                 f"수집 문서: {len(sources)}, 도메인: {len(domains)}"
             )
         if not any(

@@ -267,6 +267,18 @@ class EvidenceProviderTests(unittest.TestCase):
         provider_result = _provider_result()
         provider_result["items"][1]["evidence_type"] = "fact"
 
+        evidence = EvidenceService().build_evidence(
+            topic="화성의 벌집 모양 구조물",
+            provider_result=provider_result,
+        )
+
+        self.assertEqual("verified", evidence["status"])
+
+    def test_evidence_gate_rejects_missing_counterpoint_and_uncertainty(self) -> None:
+        provider_result = _provider_result()
+        provider_result["items"][1]["evidence_type"] = "fact"
+        provider_result["uncertainties"] = []
+
         with self.assertRaises(EvidenceGateError):
             EvidenceService().build_evidence(
                 topic="화성의 벌집 모양 구조물",

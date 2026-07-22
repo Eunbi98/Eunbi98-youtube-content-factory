@@ -148,6 +148,12 @@ class ProductionJobPlanner:
         search_queries = candidate.get("search_queries")
         if not isinstance(search_queries, list):
             search_queries = []
+        preflight_evidence = candidate.get("preflight_evidence")
+        if not isinstance(preflight_evidence, dict):
+            preflight_evidence = {}
+        preflight_media = candidate.get("preflight_media")
+        if not isinstance(preflight_media, dict):
+            preflight_media = {}
 
         return {
             "rank": int(candidate.get("rank") or 0),
@@ -169,6 +175,8 @@ class ProductionJobPlanner:
             "sources": [
                 source for source in sources if isinstance(source, dict)
             ],
+            "preflightEvidence": preflight_evidence,
+            "preflightMedia": preflight_media,
         }
 
     @staticmethod
@@ -210,9 +218,13 @@ class ProductionJobPlanner:
             ],
             "queries": queries,
             "sourcePolicy": {
-                "minimumSources": 3,
-                "requiredTiers": ["official_or_academic", "reference", "news"],
-                "requireCounterpoint": True,
+                "minimumSources": 2,
+                "requiredTiers": [
+                    "official_or_academic",
+                    "supporting_reference_or_news",
+                ],
+                "requireCounterpoint": False,
+                "requireUncertainty": True,
                 "rejectUnverifiedFacts": True,
             },
             "sourceSeeds": selected_topic["sources"],

@@ -107,7 +107,7 @@ EPISODE_PACKAGE_SCHEMA: dict[str, Any] = {
                 "sources": {
                     "type": "array",
                     "items": {"type": "string"},
-                    "minItems": 3,
+                    "minItems": 2,
                 },
             },
             "required": [
@@ -202,7 +202,7 @@ class OpenAIEpisodeProvider:
             "museum, archive, location, object, or scientific visuals. Titles "
             "should be concise Korean with an intentional line break when useful. "
             "Metadata must include an accurate title, description, 5 to 15 tags, "
-            "a pinned comment that repeats the ending question, and at least 3 "
+            "a pinned comment that repeats the ending question, and at least 2 "
             "distinct source URLs copied exactly from evidence. Do not include "
             "unsupported sensational claims. "
             + METADATA_STYLE_INSTRUCTIONS

@@ -41,7 +41,7 @@ class GithubModelsEpisodeProvider:
             "media search queries per scene, aimed at official, Wikimedia, NASA, "
             "museum, archive, location, object, or scientific visuals. Metadata "
             "must include an accurate title, description, 5 to 15 tags, a pinned "
-            "comment that repeats the ending question, and at least 3 distinct "
+            "comment that repeats the ending question, and at least 2 distinct "
             "source URLs copied exactly from evidence. Do not include unsupported "
             "sensational claims. "
             + METADATA_STYLE_INSTRUCTIONS

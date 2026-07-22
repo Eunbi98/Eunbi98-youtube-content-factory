@@ -37,11 +37,12 @@ on:
 
 permissions:
   contents: read
+  models: read
 
 jobs:
   find-topics:
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    timeout-minutes: 30
 
     steps:
       - name: Check out repository
@@ -54,7 +55,7 @@ jobs:
           cache: pip
 
       - name: Install topic finder dependencies
-        run: python -m pip install feedparser requests
+        run: python -m pip install -r requirements.txt
 
       - name: Resolve inputs
         id: inputs
@@ -88,13 +89,16 @@ jobs:
           echo "category=$category" >> "$GITHUB_OUTPUT"
           echo "source_mode=$source_mode" >> "$GITHUB_OUTPUT"
           echo "limit=$limit" >> "$GITHUB_OUTPUT"
+          pool_limit=$(( limit * 2 ))
+          if (( pool_limit > 20 )); then pool_limit=20; fi
+          echo "pool_limit=$pool_limit" >> "$GITHUB_OUTPUT"
           echo "output=projects/output/topics/${category}-${GITHUB_RUN_ID}.json" >> "$GITHUB_OUTPUT"
 
       - name: Run topic finder tests
         run: >-
           python -m unittest discover
           -s tests
-          -p 'test_topic_finder.py'
+          -p 'test_topic*.py'
           -v
 
       - name: Generate topic candidates
@@ -102,8 +106,18 @@ jobs:
           python projects/topic/build_topics.py
           --category "${{ steps.inputs.outputs.category }}"
           --source-mode "${{ steps.inputs.outputs.source_mode }}"
-          --limit "${{ steps.inputs.outputs.limit }}"
+          --limit "${{ steps.inputs.outputs.pool_limit }}"
           --output "${{ steps.inputs.outputs.output }}"
+
+      - name: Preflight evidence and media
+        env:
+          GITHUB_MODELS_TOKEN: ${{ github.token }}
+          GITHUB_MODELS_MODEL: ${{ vars.GITHUB_MODELS_MODEL || 'openai/gpt-4.1' }}
+        run: >-
+          python projects/topic/topic_preflight.py
+          --input "${{ steps.inputs.outputs.output }}"
+          --output "${{ steps.inputs.outputs.output }}"
+          --limit "${{ steps.inputs.outputs.limit }}"
 
       - name: Add result summary
         shell: bash
@@ -114,6 +128,8 @@ jobs:
             echo "- Category: ${{ steps.inputs.outputs.category }}"
             echo "- Source mode: ${{ steps.inputs.outputs.source_mode }}"
             echo "- Mode: $(jq -r '.mode' '${{ steps.inputs.outputs.output }}')"
+            echo "- Preflight checked: $(jq -r '.preflight.checked' '${{ steps.inputs.outputs.output }}')"
+            echo "- Production-ready: $(jq -r '.candidate_count' '${{ steps.inputs.outputs.output }}')"
             echo
             jq -r '.candidates[] | "\(.rank). [\(.score)] \(.topic)"' \
               "${{ steps.inputs.outputs.output }}"

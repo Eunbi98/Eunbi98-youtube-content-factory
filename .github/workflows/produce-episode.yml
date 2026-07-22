@@ -234,7 +234,7 @@ jobs:
           retention-days: 14
 
       - name: Upload production package
-        if: always()
+        if: ${{ success() }}
         uses: actions/upload-artifact@v4
         with:
           name: ${{ steps.production.outputs.episode_id }}-package
@@ -248,6 +248,54 @@ jobs:
             projects/output/logs/${{ steps.production.outputs.episode_id }}.json
           if-no-files-found: warn
           retention-days: 14
+
+      - name: Delete failed episode immediately
+        if: ${{ failure() && steps.production.outputs.episode_id != '' }}
+        shell: bash
+        env:
+          EPISODE_ID: ${{ steps.production.outputs.episode_id }}
+          EPISODE_DIR: ${{ steps.production.outputs.episode_dir }}
+        run: |
+          set -euo pipefail
+          if [[ ! "$EPISODE_ID" =~ ^ep[0-9]{3,}$ ]]; then
+            echo "Refusing cleanup for invalid episode ID: $EPISODE_ID" >&2
+            exit 2
+          fi
+          expected_dir="projects/episodes/$EPISODE_ID"
+          if [[ "$EPISODE_DIR" != "$expected_dir" ]]; then
+            echo "Refusing cleanup for unexpected path: $EPISODE_DIR" >&2
+            exit 2
+          fi
+
+          git config user.name "Factory Runner"
+          git config user.email "factory-runner@users.noreply.github.com"
+          git fetch origin feature/release-5-director-engine
+          git reset --mixed origin/feature/release-5-director-engine
+          git rm -r --ignore-unmatch -- "$expected_dir"
+          python - <<'PY'
+          import os
+          import re
+          import shutil
+          from pathlib import Path
+
+          episode_id = os.environ["EPISODE_ID"]
+          if not re.fullmatch(r"ep[0-9]{3,}", episode_id):
+              raise SystemExit("invalid cleanup episode id")
+          targets = (
+              Path("projects/episodes") / episode_id,
+              Path("projects/output") / f"{episode_id}.mp4",
+              Path("projects/output/logs") / f"{episode_id}.json",
+          )
+          for target in targets:
+              if target.is_dir():
+                  shutil.rmtree(target)
+              elif target.exists():
+                  target.unlink()
+          PY
+          if ! git diff --cached --quiet; then
+            git commit -m "chore($EPISODE_ID): remove failed production"
+            git push origin HEAD:feature/release-5-director-engine
+          fi
 
       - name: Add production summary
         if: always()
