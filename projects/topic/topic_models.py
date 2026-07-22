@@ -22,6 +22,9 @@ class TopicCandidate:
     search_queries: list[str]
     source_count: int = 0
     sources: list[TopicSourceItem] = field(default_factory=list)
+    production_ready: bool = False
+    readiness_score: int = 0
+    readiness_checks: list[str] = field(default_factory=list)
 
     def to_dict(self) -> dict:
         return asdict(self)
