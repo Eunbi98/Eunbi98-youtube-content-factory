@@ -84,7 +84,7 @@ class TopicFinderTests(unittest.TestCase):
             now=lambda: NOW,
         ).find(category="mystery", limit=2)
 
-        self.assertEqual("live", result.mode)
+        self.assertEqual("hybrid", result.mode)
         self.assertIn("고대 유적", result.candidates[0].topic)
         self.assertEqual(2, result.candidates[0].source_count)
         self.assertGreater(
@@ -92,16 +92,18 @@ class TopicFinderTests(unittest.TestCase):
             result.candidates[1].score,
         )
 
-    def test_source_failure_returns_ten_safe_candidates(self) -> None:
+    def test_source_failure_returns_only_preflighted_safe_candidates(self) -> None:
         result = AutoTopicFinder(
             source=FailingSource(),
             now=lambda: NOW,
         ).find(category="science", limit=10)
 
         self.assertEqual("fallback", result.mode)
-        self.assertEqual(10, result.candidate_count)
+        self.assertEqual(5, result.candidate_count)
         self.assertEqual(1, result.candidates[0].rank)
-        self.assertEqual(10, result.candidates[-1].rank)
+        self.assertEqual(5, result.candidates[-1].rank)
+        self.assertTrue(all(item.production_ready for item in result.candidates))
+        self.assertTrue(all(item.readiness_score == 100 for item in result.candidates))
         self.assertTrue(result.warnings)
 
     def test_partial_live_results_are_filled_from_catalog(self) -> None:
@@ -109,7 +111,7 @@ class TopicFinderTests(unittest.TestCase):
             TopicSourceItem(
                 title="화성에서 새로운 물의 흔적 발견 - 우주뉴스",
                 url="https://example.com/mars",
-                source="우주뉴스",
+                source="NASA",
                 published_at="2026-07-17T10:00:00+00:00",
             )
         ]
@@ -141,7 +143,7 @@ class TopicFinderTests(unittest.TestCase):
             TopicSourceItem(
                 title="화성에서 발견된 미스터리 구조물의 정체",
                 url="https://example.com/mars",
-                source="우주뉴스",
+                source="NASA",
                 published_at="2026-07-17T09:00:00+00:00",
             ),
         ]
@@ -185,11 +187,29 @@ class TopicFinderTests(unittest.TestCase):
             now=lambda: NOW,
         ).find(category="mystery", limit=2)
 
-        self.assertEqual("hybrid", result.mode)
+        self.assertEqual("fallback", result.mode)
         self.assertGreaterEqual(
             result.candidates[0].score,
             result.candidates[1].score,
         )
+
+    def test_single_untrusted_live_story_is_not_recommended(self) -> None:
+        items = [
+            TopicSourceItem(
+                title="화성에서 새로운 물의 흔적 발견",
+                url="https://example.com/unverified",
+                source="우주블로그",
+                published_at="2026-07-17T10:00:00+00:00",
+            )
+        ]
+        result = AutoTopicFinder(
+            source=FakeSource(items),
+            now=lambda: NOW,
+        ).find(category="space", limit=2)
+
+        self.assertEqual("fallback", result.mode)
+        self.assertTrue(all(item.source_count == 0 for item in result.candidates))
+        self.assertTrue(all(item.production_ready for item in result.candidates))
 
     def test_low_quality_translation_source_is_filtered(self) -> None:
         items = [
