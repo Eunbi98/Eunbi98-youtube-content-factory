@@ -23,6 +23,12 @@ def _job() -> dict:
         "episodeId": "ep015",
         "status": "evidence_ready",
         "artifacts": {},
+        "selectedTopic": {
+            "topic": "국내 연구진, 화성에서 검은 돌 발견",
+            "sources": [
+                {"title": "국내 연구진, 화성에서 검은 돌 발견 - 뉴스"}
+            ],
+        },
     }
 
 
@@ -64,9 +70,18 @@ def _spec() -> dict:
 
 def _metadata() -> dict:
     return {
-        "title": "제목",
-        "description": "설명",
-        "pinnedComment": "댓글",
+        "title": "화성의 검은 돌은 어디에서 왔을까? #쇼츠 #shorts",
+        "description": (
+            "화성에서 발견된 검은 돌을 알고 계셨나요?\n\n"
+            "탐사 로버가 낯선 암석을 촬영했습니다.\n\n"
+            "아직 그 기원은 정확히 밝혀지지 않았는데요.\n\n"
+            "여러분은 이 돌이 어디에서 왔다고 생각하시나요?\n\n"
+            "댓글로 여러분의 생각을 남겨주세요!"
+        ),
+        "pinnedComment": (
+            "화성의 검은 돌은 어디에서 왔다고 생각하시나요?\n\n"
+            "댓글로 여러분의 추리를 알려주세요!"
+        ),
         "tags": ["1", "2", "3", "4", "5"],
         "sources": [
             "https://source-a.example/a",
@@ -138,6 +153,44 @@ class EpisodeQualityTests(unittest.TestCase):
             directory = Path(temp_dir)
             spec_path = self._write_spec(directory, _spec())
             with self.assertRaises(EpisodeQualityError):
+                EpisodeQualityService().validate_and_advance(
+                    job_payload=_job(),
+                    evidence_payload=_evidence(),
+                    episode_spec_path=spec_path,
+                    metadata_payload=metadata,
+                    metadata_path=directory / "metadata.json",
+                )
+
+    def test_copied_news_title_is_rejected(self) -> None:
+        metadata = _metadata()
+        metadata["title"] = (
+            "국내 연구진, 화성에서 검은 돌 발견 #쇼츠 #shorts"
+        )
+        with tempfile.TemporaryDirectory() as temp_dir:
+            directory = Path(temp_dir)
+            spec_path = self._write_spec(directory, _spec())
+            with self.assertRaisesRegex(
+                EpisodeQualityError,
+                "기사 또는 선택 주제 제목과 너무 유사",
+            ):
+                EpisodeQualityService().validate_and_advance(
+                    job_payload=_job(),
+                    evidence_payload=_evidence(),
+                    episode_spec_path=spec_path,
+                    metadata_payload=metadata,
+                    metadata_path=directory / "metadata.json",
+                )
+
+    def test_description_without_channel_style_is_rejected(self) -> None:
+        metadata = _metadata()
+        metadata["description"] = "기사 내용을 한 문단으로 요약했습니다."
+        with tempfile.TemporaryDirectory() as temp_dir:
+            directory = Path(temp_dir)
+            spec_path = self._write_spec(directory, _spec())
+            with self.assertRaisesRegex(
+                EpisodeQualityError,
+                "문단이 최소 4개",
+            ):
                 EpisodeQualityService().validate_and_advance(
                     job_payload=_job(),
                     evidence_payload=_evidence(),
