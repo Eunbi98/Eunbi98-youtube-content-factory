@@ -124,6 +124,9 @@ class EpisodeProviderTests(unittest.TestCase):
             schema["schema"]["properties"]["episode"]["properties"]["scenes"]["minItems"],
         )
         self.assertEqual("ep016", result["episode"]["episodeId"])
+        self.assertNotIn("#", result["metadata"]["title"])
+        self.assertIn("쇼츠", result["metadata"]["tags"])
+        self.assertIn("shorts", result["metadata"]["tags"])
         self.assertIn(
             "not copied or lightly edited",
             captured["messages"][0]["content"],
