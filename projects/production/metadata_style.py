@@ -36,8 +36,8 @@ class MetadataStyleError(ValueError):
 
 def strip_title_hashtags(value: object) -> str:
     text = str(value or "")
-    text = re.sub(r"(?:^|\\s)#[^\\s#]+", " ", text)
-    return re.sub(r"\\s+", " ", text).strip()
+    text = re.sub(r"(?:^|\s)#[^\s#]+", " ", text)
+    return re.sub(r"\s+", " ", text).strip()
 
 
 def normalize_upload_metadata(metadata: dict[str, Any]) -> None:
