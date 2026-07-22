@@ -17,7 +17,7 @@ on:
       source_mode:
         description: "Topic source mode"
         required: true
-        default: "mixed"
+        default: "archive"
         type: choice
         options:
           - mixed
@@ -26,7 +26,7 @@ on:
       limit:
         description: "Candidate count (1-20)"
         required: true
-        default: "10"
+        default: "5"
         type: string
   push:
     branches:
@@ -67,8 +67,8 @@ jobs:
           set -euo pipefail
 
           category="${REQUESTED_CATEGORY:-all}"
-          source_mode="${REQUESTED_SOURCE_MODE:-mixed}"
-          limit="${REQUESTED_LIMIT:-10}"
+          source_mode="${REQUESTED_SOURCE_MODE:-archive}"
+          limit="${REQUESTED_LIMIT:-5}"
 
           if [[ ! "$category" =~ ^(all|mystery|science|history|space)$ ]]; then
             echo "Invalid category: $category" >&2
@@ -88,7 +88,9 @@ jobs:
           echo "category=$category" >> "$GITHUB_OUTPUT"
           echo "source_mode=$source_mode" >> "$GITHUB_OUTPUT"
           echo "limit=$limit" >> "$GITHUB_OUTPUT"
-          pool_limit=$(( limit * 2 ))
+          # 최종 후보 5개를 억지로 채우지 않습니다. 대신 최대 20개를 먼저
+          # 실제 조사해 자료와 이미지가 가장 풍부한 후보만 승격합니다.
+          pool_limit=$(( limit * 4 ))
           if (( pool_limit > 20 )); then pool_limit=20; fi
           echo "pool_limit=$pool_limit" >> "$GITHUB_OUTPUT"
           echo "output=projects/output/topics/${category}-${GITHUB_RUN_ID}.json" >> "$GITHUB_OUTPUT"
@@ -100,7 +102,7 @@ jobs:
           -p 'test_topic*.py'
           -v
 
-      - name: Generate topic candidates
+      - name: Build broad production-safe topic pool
         run: >-
           python projects/topic/build_topics.py
           --category "${{ steps.inputs.outputs.category }}"
@@ -108,7 +110,7 @@ jobs:
           --limit "${{ steps.inputs.outputs.pool_limit }}"
           --output "${{ steps.inputs.outputs.output }}"
 
-      - name: Preflight evidence and media
+      - name: Collect sources and media before selecting topics
         run: >-
           python projects/topic/topic_preflight.py
           --input "${{ steps.inputs.outputs.output }}"
