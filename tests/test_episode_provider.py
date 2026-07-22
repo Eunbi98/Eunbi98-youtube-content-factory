@@ -76,10 +76,19 @@ def _package() -> dict:
         },
         "metadata": {
             "episodeId": "ep016",
-            "title": "우주는 왜 조용할까?",
-            "description": "검증된 설명",
+            "title": "우주에서는 왜 아무 소리도 들리지 않을까? #쇼츠 #shorts",
+            "description": (
+                "우주가 왜 그렇게 조용한지 알고 계셨나요?\n\n"
+                "우주는 진공에 가까워 소리가 멀리 전달되지 않습니다.\n\n"
+                "영화 속 우주 폭발음도 실제로는 들리지 않는데요.\n\n"
+                "여러분이라면 아무 소리도 없는 우주에서 버틸 수 있을까요?\n\n"
+                "댓글로 여러분의 생각을 남겨주세요!"
+            ),
             "tags": ["우주", "과학", "미스터리", "쇼츠", "NASA"],
-            "pinnedComment": "여러분은 어떻게 생각하시나요?",
+            "pinnedComment": (
+                "우주가 완전히 조용하다는 사실을 알고 계셨나요?\n\n"
+                "댓글로 여러분의 생각을 알려주세요!"
+            ),
             "sources": [
                 "https://science.nasa.gov/example",
                 "https://example.edu/paper",
@@ -115,6 +124,10 @@ class EpisodeProviderTests(unittest.TestCase):
             schema["schema"]["properties"]["episode"]["properties"]["scenes"]["minItems"],
         )
         self.assertEqual("ep016", result["episode"]["episodeId"])
+        self.assertIn(
+            "not copied or lightly edited",
+            captured["messages"][0]["content"],
+        )
 
     def test_provider_rejects_wrong_episode_identity(self) -> None:
         package = _package()
