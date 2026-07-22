@@ -51,9 +51,10 @@ def normalize_upload_metadata(metadata: dict[str, Any]) -> None:
             tag = raw_tag.lstrip("#").strip()
             if tag and tag.lower() not in {item.lower() for item in tags}:
                 tags.append(tag)
-    for required_tag in UPLOAD_TAGS:
-        if required_tag.lower() not in {item.lower() for item in tags}:
-            tags.append(required_tag)
+    upload_tag_keys = {tag.lower() for tag in UPLOAD_TAGS}
+    tags = [tag for tag in tags if tag.lower() not in upload_tag_keys]
+    tags = tags[: 15 - len(UPLOAD_TAGS)]
+    tags.extend(UPLOAD_TAGS)
     metadata["tags"] = tags
 
 
