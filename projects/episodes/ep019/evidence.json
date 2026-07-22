@@ -1,0 +1,134 @@
+{
+  "topic": "공룡을 멸종시킨 날 지구에서는 무슨 일이 있었을까",
+  "items": [
+    {
+      "id": "evidence_98b1cb23c056",
+      "title": "The Chicxulub Asteroid Impact and Mass Extinction at the Cretaceous-Paleogene Boundary",
+      "claim": "치크술루브 충돌이 대량 멸종을 직접적으로 촉발했다는 결론이 지질학적 증거와 모델링된 환경 변화(예: 어둠과 냉각)와 화석 기록의 생태 패턴이 일치한다는 점에서 지지된다.",
+      "source_name": "Science",
+      "source_url": "https://doi.org/10.1126/science.1177265",
+      "source_tier": "academic",
+      "evidence_type": "fact",
+      "published_at": "2010",
+      "keywords": [
+        "치크술루브 충돌",
+        "환경 변화",
+        "화석 기록",
+        "멸종 원인"
+      ],
+      "reliability_score": 0.95,
+      "interest_score": 0.8,
+      "visual_score": 0.7,
+      "total_score": 0.855
+    },
+    {
+      "id": "evidence_b1beae65656e",
+      "title": "Chicxulub impact predates the K-T boundary mass extinction",
+      "claim": "치크술루브 충돌이 K-T(크레타세-팔레오세) 경계 대량 멸종보다 약 30만 년 먼저 일어났다는 반대 증거가 있으며, 이는 멸종의 직접 원인에 대한 논란이 있음을 보여준다.",
+      "source_name": "Proceedings of the National Academy of Sciences",
+      "source_url": "https://doi.org/10.1073/pnas.0400396101",
+      "source_tier": "academic",
+      "evidence_type": "counterpoint",
+      "published_at": "2004",
+      "keywords": [
+        "치크술루브 충돌",
+        "K-T 경계",
+        "멸종 시기",
+        "논란"
+      ],
+      "reliability_score": 0.95,
+      "interest_score": 0.95,
+      "visual_score": 0.45,
+      "total_score": 0.85
+    },
+    {
+      "id": "evidence_510d5cac786d",
+      "title": "Triggering of the largest Deccan eruptions by the Chicxulub impact",
+      "claim": "치크술루브 충돌이 인도 데칸 트랩(Deccan Traps) 화산 폭발을 촉발했을 가능성이 있으며, 이 화산 폭발은 지구 역사상 가장 광범위하고 대규모의 용암 흐름을 일으켰다.",
+      "source_name": "Geological Society of America Bulletin",
+      "source_url": "https://doi.org/10.1130/b31167.1",
+      "source_tier": "academic",
+      "evidence_type": "fact",
+      "published_at": "2015",
+      "keywords": [
+        "치크술루브 충돌",
+        "데칸 트랩",
+        "화산 폭발",
+        "용암 흐름"
+      ],
+      "reliability_score": 0.95,
+      "interest_score": 0.85,
+      "visual_score": 0.45,
+      "total_score": 0.82
+    },
+    {
+      "id": "evidence_9774c84c3414",
+      "title": "The Chicxulub Asteroid Impact and Mass Extinction at the Cretaceous-Paleogene Boundary",
+      "claim": "공룡을 멸종시킨 대량 멸종 사건은 약 6,550만 년 전에 멕시코 치크술루브(Chicxulub) 지역에서 발생한 대형 소행성 충돌과 시기적으로 일치한다.",
+      "source_name": "Science",
+      "source_url": "https://doi.org/10.1126/science.1177265",
+      "source_tier": "academic",
+      "evidence_type": "fact",
+      "published_at": "2010",
+      "keywords": [
+        "치크술루브 충돌",
+        "공룡 멸종",
+        "대량 멸종",
+        "6,550만 년 전"
+      ],
+      "reliability_score": 0.95,
+      "interest_score": 0.8,
+      "visual_score": 0.45,
+      "total_score": 0.805
+    },
+    {
+      "id": "evidence_ceefe201de8b",
+      "title": "The extinction of the dinosaurs",
+      "claim": "비조류 공룡은 6,600만 년 전에 멸종했으며, 이는 대형 소행성 충돌과 대규모 화산 폭발, 기온 및 해수면 변화가 동시에 일어난 시기와 지질학적으로 일치한다.",
+      "source_name": "Biological reviews/Biological reviews of the Cambridge Philosophical Society",
+      "source_url": "https://doi.org/10.1111/brv.12128",
+      "source_tier": "academic",
+      "evidence_type": "fact",
+      "published_at": "2014",
+      "keywords": [
+        "비조류 공룡",
+        "멸종",
+        "소행성 충돌",
+        "화산 폭발",
+        "기온 변화"
+      ],
+      "reliability_score": 0.95,
+      "interest_score": 0.8,
+      "visual_score": 0.45,
+      "total_score": 0.805
+    }
+  ],
+  "rejected_count": 0,
+  "duplicate_count": 0,
+  "status": "verified",
+  "summary": "공룡을 멸종시킨 날, 멕시코 치크술루브 지역에서 대형 소행성 충돌이 발생했고, 이 사건은 대량 멸종과 시기적으로 일치한다는 것이 여러 연구에서 확인되었습니다. 이 충돌은 환경 변화(어둠, 냉각)를 일으켜 멸종을 촉발했으며, 동시에 인도 데칸 트랩 화산 폭발을 유발했을 가능성도 제기됩니다. 그러나 치크술루브 충돌이 멸종보다 약 30만 년 먼저 일어났다는 반대 증거도 있어, 멸종의 직접 원인에 대해 논란이 존재합니다.",
+  "uncertainties": [
+    "치크술루브 충돌과 대량 멸종의 정확한 시기와 인과관계에 대해 학계에서 논란이 있으며, 일부 연구는 충돌이 멸종보다 먼저 일어났다고 주장합니다."
+  ],
+  "citations": [
+    {
+      "title": "The Chicxulub Asteroid Impact and Mass Extinction at the Cretaceous-Paleogene Boundary",
+      "url": "https://doi.org/10.1126/science.1177265"
+    },
+    {
+      "title": "Chicxulub impact predates the K-T boundary mass extinction",
+      "url": "https://doi.org/10.1073/pnas.0400396101"
+    },
+    {
+      "title": "The extinction of the dinosaurs",
+      "url": "https://doi.org/10.1111/brv.12128"
+    },
+    {
+      "title": "Triggering of the largest Deccan eruptions by the Chicxulub impact",
+      "url": "https://doi.org/10.1130/b31167.1"
+    }
+  ],
+  "provider": "github_models_public_sources",
+  "model": "openai/gpt-4.1",
+  "verified_at": "2026-07-22T07:43:22.957879+00:00"
+}

@@ -1,0 +1,168 @@
+{
+  "version": "1.0",
+  "jobId": "ep019-20260722T074310Z",
+  "episodeId": "ep019",
+  "category": "science",
+  "status": "episode_ready",
+  "createdAt": "2026-07-22T07:43:10.859947+00:00",
+  "selectedTopic": {
+    "rank": 1,
+    "category": "science",
+    "topic": "공룡을 멸종시킨 날 지구에서는 무슨 일이 있었을까",
+    "angle": "공룡을 멸종시킨 날 지구에서는 무슨 일이 있었을까이 우리의 상식을 어떻게 바꿀까?",
+    "score": 80.5,
+    "reasons": [
+      "채널 성격과 맞는 미스터리 아카이브 주제",
+      "공식·학술 자료로 재검증할 상시 관심 후보",
+      "채널 브랜드 적합도 통과"
+    ],
+    "searchQueries": [
+      "Chicxulub impact dinosaur extinction evidence",
+      "Chicxulub impact dinosaur extinction evidence research review evidence",
+      "공룡을 멸종시킨 날 지구에서는 무슨 일이 있었을까",
+      "Chicxulub impact dinosaur extinction evidence Wikimedia Commons NASA museum images"
+    ],
+    "sourceCount": 0,
+    "sources": [],
+    "preflightSources": [
+      {
+        "id": "source_1",
+        "title": "The Chicxulub Asteroid Impact and Mass Extinction at the Cretaceous-Paleogene Boundary",
+        "source_name": "Science",
+        "source_url": "https://doi.org/10.1126/science.1177265",
+        "source_tier": "academic",
+        "published_at": "2010",
+        "text": "The Cretaceous-Paleogene boundary approximately 65.5 million years ago marks one of the three largest mass extinctions in the past 500 million years. The extinction event coincided with a large asteroid impact at Chicxulub, Mexico, and occurred within the time of Deccan flood basalt volcanism in India. Here, we synthesize records of the global stratigraphy across this boundary to assess the proposed causes of the mass extinction. Notably, a single ejecta-rich deposit compositionally linked to the Chicxulub impact is globally distributed at the Cretaceous-Paleogene boundary. The temporal match between the ejecta layer and the onset of the extinctions and the agreement of ecological patterns in the fossil record with modeled environmental perturbations (for example, darkness and cooling) lead us to conclude that the Chicxulub impact triggered the mass extinction."
+      },
+      {
+        "id": "source_2",
+        "title": "Chicxulub impact predates the K-T boundary mass extinction",
+        "source_name": "Proceedings of the National Academy of Sciences",
+        "source_url": "https://doi.org/10.1073/pnas.0400396101",
+        "source_tier": "academic",
+        "published_at": "2004",
+        "text": "Since the early l990s the Chicxulub crater on Yucatan, Mexico, has been hailed as the smoking gun that proves the hypothesis that an asteroid killed the dinosaurs and caused the mass extinction of many other organisms at the Cretaceous-Tertiary (K-T) boundary 65 million years ago. Here, we report evidence from a previously uninvestigated core, Yaxcopoil-1, drilled within the Chicxulub crater, indicating that this impact predated the K-T boundary by approximately 300,000 years and thus did not cause the end-Cretaceous mass extinction as commonly believed. The evidence supporting a pre-K-T age was obtained from Yaxcopoil-1 based on five independent proxies, each with characteristic signals across the K-T transition: sedimentology, biostratigraphy, magnetostratigraphy, stable isotopes, and iridium. These data are consistent with earlier evidence for a late Maastrichtian age of the microtektite deposits in northeastern Mexico."
+      },
+      {
+        "id": "source_3",
+        "title": "The extinction of the dinosaurs",
+        "source_name": "Biological reviews/Biological reviews of the Cambridge Philosophical Society",
+        "source_url": "https://doi.org/10.1111/brv.12128",
+        "source_tier": "academic",
+        "published_at": "2014",
+        "text": "Non-avian dinosaurs went extinct 66 million years ago, geologically coincident with the impact of a large bolide (comet or asteroid) during an interval of massive volcanic eruptions and changes in temperature and sea level. There has long been fervent debate about how these events affected dinosaurs. We review a wealth of new data accumulated over the past two decades, provide updated and novel analyses of long-term dinosaur diversity trends during the latest Cretaceous, and discuss an emerging consensus on the extinction's tempo and causes. Little support exists for a global, long-term decline across non-avian dinosaur diversity prior to their extinction at the end of the Cretaceous. However, restructuring of latest Cretaceous dinosaur faunas in North America led to reduced diversity of large-bodied herbivores, perhaps making communities more susceptible to cascading extinctions. The abruptness of the dinosaur extinction suggests a key role for the bolide impact, although the coarseness of the fossil record makes testing the effects of Deccan volcanism difficult."
+      },
+      {
+        "id": "source_4",
+        "title": "Triggering of the largest Deccan eruptions by the Chicxulub impact",
+        "source_name": "Geological Society of America Bulletin",
+        "source_url": "https://doi.org/10.1130/b31167.1",
+        "source_tier": "academic",
+        "published_at": "2015",
+        "text": "New constraints on the timing of the Cretaceous-Paleogene mass extinction and the Chicxulub impact, together with a particularly voluminous and apparently brief eruptive pulse toward the end of the \"main-stage\" eruptions of the Deccan continental fl ood basalt province suggest that these three events may have occurred within less than about a hundred thousand years of each other. Partial melting induced by the Chicxulub event does not provide an energetically plausible explanation for this coincidence, and both geochronologic and magnetic-polarity data show that Deccan volcanism was under way well before Chicxulub/Cretaceous-Paleogene time. However, historical data document that eruptions from existing volcanic systems can be triggered by earthquakes. Seismic modeling of the ground motion due to the Chicxulub impact suggests that the impact could have generated seismic energy densities of order 0.1-1.0 J/m 3 throughout the upper ~200 km of Earth's mantle, suffi cient to trigger volcanic eruptions worldwide based upon comparison with historical examples. Triggering may have been caused by a transient increase in the effective permeability of the existing deep magmatic system beneath the Deccan province, or mantle plume \"head.\" It is therefore reasonable to hypothesize that the Chicxulub impact might have triggered the enormous Poladpur, Ambenali, and Mahabaleshwar (Wai Subgroup) lava fl ows, which together may account for >70% of the Deccan Traps main-stage eruptions. This hypothesis is consistent with independent stratigraphic, geochronologic, geochemical, and tectonic constraints, which combine to indi-cate that at approximately Chicxulub/Cretaceous-Paleogene time, a huge pulse of mantle plume-derived magma passed through the crust with little interaction and erupted to form the most extensive and voluminous lava fl ows known on Earth. High-precision radioisotopic dating of the main-phase Deccan fl ood basalt formations may be able either to confi rm or reject this"
+      }
+    ],
+    "preflightMedia": {
+      "status": "verified",
+      "candidateCount": 9,
+      "successfulQueryCount": 2,
+      "queries": [
+        "The Chicxulub Asteroid Impact and Mass Extinction at the Cretaceous-Paleogene Boundary",
+        "The extinction of the dinosaurs"
+      ],
+      "providers": {
+        "openverse": 2,
+        "wikimedia": 7
+      },
+      "samples": [
+        {
+          "provider": "openverse",
+          "mediaId": "0e463b97-017b-4fde-ae7e-d1d313d3ef96",
+          "title": "thin white line that changed everything",
+          "sourceUrl": "https://www.flickr.com/photos/31856336@N03/5090097984",
+          "license": "BY 2.0",
+          "width": 803,
+          "height": 1024
+        },
+        {
+          "provider": "wikimedia",
+          "mediaId": "84515899",
+          "title": "File:Cretaceous-Tertiary boundary clay (Raton Formation, 65 Ma; southern Colorado, USA) (34782334145).jpg",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Cretaceous-Tertiary_boundary_clay_(Raton_Formation,_65_Ma;_southern_Colorado,_USA)_(34782334145).jpg",
+          "license": "CC BY 2.0",
+          "width": 3768,
+          "height": 2687
+        },
+        {
+          "provider": "openverse",
+          "mediaId": "1629a6d1-546e-4f4e-9012-dfa132391a30",
+          "title": "Resetting Evolution’s Clock? End-Cretaceous Extinction and the Origin of Modern Mammals",
+          "sourceUrl": "https://www.flickr.com/photos/47445767@N05/20860146699",
+          "license": "BY 2.0",
+          "width": 1024,
+          "height": 768
+        },
+        {
+          "provider": "wikimedia",
+          "mediaId": "45241944",
+          "title": "File:Dinosaur in a Box, art program at Northwest Arctic Heritage Center (4689745694).jpg",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Dinosaur_in_a_Box,_art_program_at_Northwest_Arctic_Heritage_Center_(4689745694).jpg",
+          "license": "CC BY 2.0",
+          "width": 3072,
+          "height": 2304
+        },
+        {
+          "provider": "wikimedia",
+          "mediaId": "148263061",
+          "title": "File:Student word during summer art program for children ages 5 to 10. Kids learned about extinction, the work of a paleontologist (38a25ed2-1dd8-b71c-072f-a6e2e9c84ce6).jpg",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Student_word_during_summer_art_program_for_children_ages_5_to_10._Kids_learned_about_extinction,_the_work_of_a_paleontologist_(38a25ed2-1dd8-b71c-072f-a6e2e9c84ce6).jpg",
+          "license": "Public domain",
+          "width": 3072,
+          "height": 2304
+        }
+      ]
+    }
+  },
+  "researchPlan": {
+    "topic": "공룡을 멸종시킨 날 지구에서는 무슨 일이 있었을까",
+    "angle": "공룡을 멸종시킨 날 지구에서는 무슨 일이 있었을까이 우리의 상식을 어떻게 바꿀까?",
+    "questions": [
+      "무엇이 언제 어디에서 발견되거나 발표됐는가?",
+      "확인 가능한 핵심 사실과 숫자는 무엇인가?",
+      "연구 결과와 아직 검증되지 않은 해석은 무엇인가?",
+      "반대 설명이나 한계는 무엇인가?",
+      "영상으로 보여줄 수 있는 장소·유물·관측 자료는 무엇인가?",
+      "시청자가 댓글로 답하고 싶어질 마지막 질문은 무엇인가?"
+    ],
+    "queries": [
+      "Chicxulub impact dinosaur extinction evidence",
+      "Chicxulub impact dinosaur extinction evidence research review evidence",
+      "공룡을 멸종시킨 날 지구에서는 무슨 일이 있었을까",
+      "Chicxulub impact dinosaur extinction evidence Wikimedia Commons NASA museum images",
+      "공룡을 멸종시킨 날 지구에서는 무슨 일이 있었을까 official source",
+      "공룡을 멸종시킨 날 지구에서는 무슨 일이 있었을까 research paper",
+      "공룡을 멸종시킨 날 지구에서는 무슨 일이 있었을까 fact check",
+      "공룡을 멸종시킨 날 지구에서는 무슨 일이 있었을까 image archive"
+    ],
+    "sourcePolicy": {
+      "minimumSources": 2,
+      "requiredTiers": [
+        "official_or_academic",
+        "supporting_reference_or_news"
+      ],
+      "requireCounterpoint": false,
+      "requireUncertainty": true,
+      "rejectUnverifiedFacts": true
+    },
+    "sourceSeeds": []
+  },
+  "artifacts": {
+    "evidence": "projects/episodes/ep019/evidence.json",
+    "episodeSpec": "projects/episodes/ep019/episode.json",
+    "timeline": null,
+    "video": null,
+    "metadata": "projects/episodes/ep019/metadata.json"
+  },
+  "nextAction": "build_timeline",
+  "updatedAt": "2026-07-22T07:43:38.492135+00:00"
+}
