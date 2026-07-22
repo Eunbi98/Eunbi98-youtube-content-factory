@@ -27,6 +27,41 @@ class TopicFinderError(ValueError):
     """Auto Topic Finder 입력 또는 실행 오류."""
 
 
+PRODUCTION_READY_ARCHIVE_TOPICS = {
+    "mystery": {
+        "안티키테라 장치는 어떻게 시대를 앞섰을까",
+        "나스카 라인은 누가 무엇을 위해 만들었을까",
+        "디아틀로프 고개 사건의 가장 현실적인 설명",
+        "로어노크 식민지 사람들은 어디로 사라졌을까",
+        "사하라의 거대한 눈은 어떻게 만들어졌을까",
+    },
+    "science": {
+        "지구 생명체는 왜 잠을 자야 할까",
+        "공룡을 멸종시킨 날 지구에서는 무슨 일이 있었을까",
+        "문어의 지능은 왜 독립적으로 진화했을까",
+        "지구 내부에는 얼마나 많은 물이 숨어 있을까",
+        "지구 자기장이 뒤집히면 어떤 일이 생길까",
+    },
+    "history": {
+        "로마 콘크리트는 왜 2천 년을 버틸까",
+        "폼페이 최후의 하루에는 무슨 일이 있었을까",
+        "괴베클리 테페는 인류 역사를 어떻게 바꿨을까",
+        "진시황 병마용에는 왜 서로 다른 얼굴이 있을까",
+        "바이킹은 콜럼버스보다 먼저 아메리카에 갔을까",
+        "고대인은 스톤헨지의 돌을 어떻게 옮겼을까",
+        "마야 문명은 왜 거대한 도시를 버렸을까",
+    },
+    "space": {
+        "목성의 위성 유로파 바다에 생명체가 있을까",
+        "화성은 어떻게 물을 잃어버렸을까",
+        "중성자별 한 숟가락은 얼마나 무거울까",
+        "태양이 갑자기 사라지면 지구는 언제 알게 될까",
+        "달 뒷면은 왜 지구에서 볼 수 없을까",
+        "떠돌이 행성에는 생명체가 살 수 있을까",
+    },
+}
+
+
 class AutoTopicFinder:
     def __init__(
         self,
@@ -242,6 +277,9 @@ class AutoTopicFinder:
                 search_queries=item.search_queries,
                 source_count=item.source_count,
                 sources=item.sources,
+                production_ready=item.production_ready,
+                readiness_score=item.readiness_score,
+                readiness_checks=item.readiness_checks,
             )
             for index, item in enumerate(items, start=1)
         ]
@@ -317,6 +355,21 @@ class AutoTopicFinder:
 
             reasons.append("채널 브랜드 적합도 통과")
 
+            search_queries = self._search_queries(category, topic)
+            production_ready, readiness_score, readiness_checks = (
+                self._production_readiness(
+                    category=category,
+                    topic=topic,
+                    score=base_score,
+                    source_count=source_count,
+                    trusted_source_count=trusted_source_count,
+                    search_queries=search_queries,
+                    archive=False,
+                )
+            )
+            if not production_ready:
+                continue
+
             candidates.append(
                 TopicCandidate(
                     rank=0,
@@ -325,9 +378,12 @@ class AutoTopicFinder:
                     angle=self._build_angle(category, topic),
                     score=round(min(100.0, base_score), 1),
                     reasons=reasons,
-                    search_queries=self._search_queries(category, topic),
+                    search_queries=search_queries,
                     source_count=source_count,
                     sources=group[:5],
+                    production_ready=True,
+                    readiness_score=readiness_score,
+                    readiness_checks=readiness_checks,
                 )
             )
 
@@ -350,7 +406,22 @@ class AutoTopicFinder:
             if (
                 topic in existing_topics
                 or self._is_already_covered(topic, excluded_topics)
+                or topic not in PRODUCTION_READY_ARCHIVE_TOPICS[category]
             ):
+                continue
+            search_queries = self._search_queries(category, topic)
+            production_ready, readiness_score, readiness_checks = (
+                self._production_readiness(
+                    category=category,
+                    topic=topic,
+                    score=82.0 - index * 0.5,
+                    source_count=0,
+                    trusted_source_count=0,
+                    search_queries=search_queries,
+                    archive=True,
+                )
+            )
+            if not production_ready:
                 continue
             results.append(
                 TopicCandidate(
@@ -358,13 +429,16 @@ class AutoTopicFinder:
                     category=category,
                     topic=topic,
                     angle=self._build_angle(category, topic),
-                    score=round(74.0 - index * 0.8, 1),
+                    score=round(82.0 - index * 0.5, 1),
                     reasons=[
                         "채널 성격과 맞는 미스터리 아카이브 주제",
                         "공식·학술 자료로 재검증할 상시 관심 후보",
                         "채널 브랜드 적합도 통과",
                     ],
-                    search_queries=self._search_queries(category, topic),
+                    search_queries=search_queries,
+                    production_ready=True,
+                    readiness_score=readiness_score,
+                    readiness_checks=readiness_checks,
                 )
             )
             if len(results) >= limit:
@@ -581,10 +655,61 @@ class AutoTopicFinder:
         label = CATEGORY_LABELS[category]
         return [
             topic,
-            f"{topic} 최신 연구 공식 발표",
-            f"{topic} 사실 확인 반박",
-            f"{topic} {label} 사진 영상 자료",
+            f"{topic} 공식 연구 기관 자료",
+            f"{topic} 학술 논문 박물관 NASA",
+            f"{topic} {label} Wikimedia Commons 사진 영상",
         ]
+
+    @classmethod
+    def _production_readiness(
+        cls,
+        *,
+        category: str,
+        topic: str,
+        score: float,
+        source_count: int,
+        trusted_source_count: int,
+        search_queries: list[str],
+        archive: bool,
+    ) -> tuple[bool, int, list[str]]:
+        evidence_ready = archive or source_count >= 2 or trusted_source_count >= 1
+        visual_ready = bool(
+            archive
+            or cls._keyword_hits(topic, VISUAL_KEYWORDS)
+            or category in {"history", "space"}
+            or any(
+                keyword in topic
+                for keyword in ("문어", "자기장", "콘크리트", "스톤헨지")
+            )
+        )
+        short_ready = archive or (
+            10 <= len(topic) <= 100 and cls._is_story_worthy(topic)
+        )
+        queries_ready = len(search_queries) >= 4 and all(
+            len(query.strip()) >= 8 for query in search_queries
+        )
+        score_ready = score >= 72
+
+        checks: list[str] = []
+        if evidence_ready:
+            checks.append("공식·학술 근거 확보 가능")
+        if visual_ready:
+            checks.append("씬별 이미지 수집 가능")
+        if short_ready:
+            checks.append("30초 쇼츠 구성 가능")
+        if queries_ready:
+            checks.append("미디어 검색어 사전 생성")
+        if score_ready:
+            checks.append("주제 품질 기준 통과")
+
+        readiness_score = (
+            (30 if evidence_ready else 0)
+            + (25 if visual_ready else 0)
+            + (20 if short_ready else 0)
+            + (15 if queries_ready else 0)
+            + (10 if score_ready else 0)
+        )
+        return readiness_score == 100, readiness_score, checks
 
     @staticmethod
     def _as_utc(value: datetime) -> datetime:
