@@ -6,7 +6,6 @@ import sys
 from collections import Counter
 from pathlib import Path
 from typing import Any
-from urllib.parse import urlparse
 
 
 ROOT_DIR = Path(__file__).resolve().parents[2]
@@ -24,6 +23,7 @@ from projects.research.public_source_collector import (  # noqa: E402
     PublicSourceCollector,
     PublicSourceError,
 )
+from projects.research.source_identity import source_identities  # noqa: E402
 from provider_models import MediaCandidate  # noqa: E402
 
 
@@ -289,19 +289,15 @@ class CandidatePreflightService:
     @staticmethod
     def _validate_sources(sources: list[dict[str, str]]) -> dict[str, Any]:
         valid = [source for source in sources if isinstance(source, dict)]
-        domains = {
-            urlparse(str(source.get("source_url") or "")).netloc.casefold()
-            for source in valid
-        }
-        domains.discard("")
+        identities = source_identities(valid)
         authoritative = sum(
             source.get("source_tier") in {"official", "academic"}
             for source in valid
         )
-        if len(valid) < 2 or len(domains) < 2:
+        if len(valid) < 2 or len(identities) < 2:
             raise TopicPreflightError(
                 "서로 다른 공개 자료 본문 2곳을 확보하지 못했습니다. "
-                f"문서: {len(valid)}개, 도메인: {len(domains)}개"
+                f"문서: {len(valid)}개, 독립 출처: {len(identities)}개"
             )
         if authoritative < 1:
             raise TopicPreflightError(
@@ -310,7 +306,7 @@ class CandidatePreflightService:
         return {
             "status": "verified",
             "documentCount": len(valid),
-            "domainCount": len(domains),
+            "domainCount": len(identities),
             "authoritativeCount": authoritative,
         }
 

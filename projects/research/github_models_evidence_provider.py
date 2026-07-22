@@ -1,7 +1,6 @@
 from __future__ import annotations
 
 from typing import Any
-from urllib.parse import urlparse
 
 from projects.ai.github_models_client import GithubModelsClient, GithubModelsError
 from projects.research.openai_evidence_provider import EVIDENCE_SCHEMA
@@ -9,6 +8,7 @@ from projects.research.public_source_collector import (
     PublicSourceCollector,
     PublicSourceError,
 )
+from projects.research.source_identity import source_identities
 
 
 class EvidenceProviderError(RuntimeError):
@@ -72,7 +72,7 @@ class GithubModelsEvidenceProvider:
         system = (
             "You verify source documents for a Korean educational YouTube Short. "
             "Use only the supplied sourceDocuments. Return 2 to 5 non-duplicate "
-            "evidence items from at least 2 source domains, including at least one "
+            "evidence items from at least 2 independent source documents, including at least one "
             "official or academic source. Include either a counterpoint evidence "
             "item or a concrete uncertainty in the uncertainties array. "
             "Every claim must be directly supported by the text of its selected "
@@ -97,8 +97,9 @@ class GithubModelsEvidenceProvider:
                 system
                 + " The previous selection failed these mandatory checks: "
                 + "; ".join(coverage_issues)
-                + ". Retry once. Select at least two items whose source_url hostnames "
-                "are different. Include an official or academic item and either a "
+                + ". Retry once. Select at least two independent documents. DOI URLs "
+                "with different identifiers count as different academic works. Include "
+                "an official or academic item and either a "
                 "counterpoint or a concrete uncertainty. Use only supplied documents "
                 "and do not weaken any claim."
             )
@@ -186,13 +187,9 @@ class GithubModelsEvidenceProvider:
             issues.append("수집 상태가 complete가 아님")
         if len(valid_items) < 2:
             issues.append("검증 근거 2개 미만")
-        domains = {
-            urlparse(str(item.get("source_url") or "")).netloc.casefold()
-            for item in valid_items
-        }
-        domains.discard("")
-        if len(domains) < 2:
-            issues.append("서로 다른 출처 도메인 2개 미만")
+        identities = source_identities(valid_items)
+        if len(identities) < 2:
+            issues.append("독립 출처 2개 미만")
         if not any(
             item.get("source_tier") in {"official", "academic"}
             for item in valid_items
@@ -212,15 +209,11 @@ class GithubModelsEvidenceProvider:
 
     @staticmethod
     def _validate_source_pool(sources: list[dict[str, str]]) -> None:
-        domains = {
-            urlparse(str(source.get("source_url") or "")).netloc.casefold()
-            for source in sources
-        }
-        domains.discard("")
-        if len(sources) < 2 or len(domains) < 2:
+        identities = source_identities(sources)
+        if len(sources) < 2 or len(identities) < 2:
             raise EvidenceProviderError(
                 "무료 공개 자료에서 서로 다른 출처 2곳을 확보하지 못했습니다. "
-                f"수집 문서: {len(sources)}, 도메인: {len(domains)}"
+                f"수집 문서: {len(sources)}, 독립 출처: {len(identities)}"
             )
         if not any(
             source.get("source_tier") in {"official", "academic"}

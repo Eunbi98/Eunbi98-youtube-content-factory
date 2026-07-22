@@ -150,6 +150,31 @@ class TopicPreflightTests(unittest.TestCase):
         self.assertEqual(0, result["candidate_count"])
         self.assertEqual(1, len(result["preflight"]["rejected"]))
 
+    def test_distinct_doi_works_count_as_independent_sources(self) -> None:
+        sources = _source_documents()
+        for index, source in enumerate(sources, start=1):
+            source["source_tier"] = "academic"
+            source["source_url"] = f"https://doi.org/10.1000/work-{index}"
+
+        class DoiCollector:
+            def collect(
+                self,
+                *args: object,
+                **kwargs: object,
+            ) -> list[dict[str, str]]:
+                return sources
+
+        result = self._service(source_collector=DoiCollector()).filter_payload(
+            {"category": "space", "mode": "archive", "candidates": [_candidate()]},
+            limit=1,
+        )
+
+        self.assertEqual(1, result["candidate_count"])
+        self.assertEqual(
+            2,
+            result["candidates"][0]["source_preflight"]["domainCount"],
+        )
+
     def test_insufficient_media_removes_candidate_from_result(self) -> None:
         result = self._service(media_count=1).filter_payload(
             {"category": "space", "mode": "live", "candidates": [_candidate()]},

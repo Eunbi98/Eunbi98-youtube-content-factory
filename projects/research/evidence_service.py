@@ -5,7 +5,6 @@ import sys
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
-from urllib.parse import urlparse
 
 
 MYSTERY_DIR = Path(__file__).resolve().parents[1] / "plugins" / "mystery"
@@ -14,6 +13,7 @@ if str(MYSTERY_DIR) not in sys.path:
 
 from evidence_collector import EvidenceCollector  # noqa: E402
 from evidence_schema import RawEvidence  # noqa: E402
+from projects.research.source_identity import source_identities
 
 
 class EvidenceGateError(ValueError):
@@ -118,14 +118,11 @@ class EvidenceService:
         if not isinstance(items, list) or len(items) < 2:
             raise EvidenceGateError("검증된 Evidence가 최소 2개 필요합니다.")
 
-        domains = {
-            urlparse(str(item.get("source_url") or "")).netloc.casefold()
-            for item in items
-            if isinstance(item, dict)
-        }
-        domains.discard("")
-        if len(domains) < 2:
-            raise EvidenceGateError("서로 다른 출처 도메인이 최소 2개 필요합니다.")
+        identities = source_identities(
+            [item for item in items if isinstance(item, dict)]
+        )
+        if len(identities) < 2:
+            raise EvidenceGateError("서로 다른 독립 출처가 최소 2개 필요합니다.")
 
         if not any(
             item.get("source_tier") in {"official", "academic"}
