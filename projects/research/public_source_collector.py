@@ -343,11 +343,15 @@ class PublicSourceCollector:
             return None
         if len(text) < 40:
             return None
+        resolved_tier = source_tier
+        detected_tier = self._classify_url(final_url)
+        if detected_tier in {"official", "academic", "reference"}:
+            resolved_tier = detected_tier
         return {
             "title": title[:300],
             "source_name": fallback_source[:120],
             "source_url": final_url,
-            "source_tier": source_tier,
+            "source_tier": resolved_tier,
             "published_at": published_at,
             "text": text,
         }

@@ -34,6 +34,17 @@ def _candidate_payload() -> dict:
                 "reasons": ["최근 7일 이내 보도"],
                 "search_queries": ["Mars mystery structure NASA"],
                 "source_count": 1,
+                "preflight_sources": [
+                    {
+                        "id": "source_1",
+                        "title": "NASA source",
+                        "source_name": "NASA",
+                        "source_url": "https://science.nasa.gov/example",
+                        "source_tier": "official",
+                        "published_at": "2026-07-01",
+                        "text": "검증을 위해 미리 확보한 공개 자료 본문입니다.",
+                    }
+                ],
                 "sources": [
                     {
                         "title": "화성 미스터리 구조물",
@@ -91,6 +102,10 @@ class ProductionJobTests(unittest.TestCase):
         )
         self.assertTrue(
             result["researchPlan"]["sourcePolicy"]["requireUncertainty"]
+        )
+        self.assertEqual(
+            "https://science.nasa.gov/example",
+            result["selectedTopic"]["preflightSources"][0]["source_url"],
         )
 
     def test_rank_selects_requested_candidate(self) -> None:

@@ -174,6 +174,32 @@ class EvidenceProviderTests(unittest.TestCase):
         self.assertEqual("complete", result["status"])
         self.assertEqual(3, len(result["citations"]))
 
+    def test_provider_reuses_preflight_sources_without_research_query_call(self) -> None:
+        captured: list[dict] = []
+        job = _job()
+        job["selectedTopic"]["preflightSources"] = _source_documents()
+        job["selectedTopic"]["searchQueries"] = ["Mars polygonal terrain"]
+
+        class UnexpectedCollector:
+            def collect(self, *args: object, **kwargs: object) -> list[dict]:
+                raise AssertionError("preflight sources must be reused")
+
+        def transport(payload: dict) -> dict:
+            captured.append(payload)
+            return _model_response(payload, _provider_result())
+
+        result = GithubModelsEvidenceProvider(
+            client=GithubModelsClient(token="test-token", transport=transport),
+            source_collector=UnexpectedCollector(),
+        ).collect(job)
+
+        self.assertEqual("complete", result["status"])
+        self.assertEqual(1, len(captured))
+        self.assertEqual(
+            "factory_evidence_result",
+            captured[0]["response_format"]["json_schema"]["name"],
+        )
+
     def test_provider_retries_when_model_selects_duplicate_domains(self) -> None:
         captured: list[dict] = []
         insufficient = _provider_result()

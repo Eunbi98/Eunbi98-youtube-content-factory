@@ -20,16 +20,10 @@ for module_path in (MEDIA_DIR, PROVIDERS_DIR):
         sys.path.insert(0, str(module_path))
 
 from projects.production.production_job import ProductionJobPlanner  # noqa: E402
-from projects.ai.github_models_client import GithubModelsClient  # noqa: E402
-from projects.research.evidence_service import (  # noqa: E402
-    EvidenceGateError,
-    EvidenceService,
+from projects.research.public_source_collector import (  # noqa: E402
+    PublicSourceCollector,
+    PublicSourceError,
 )
-from projects.research.github_models_evidence_provider import (  # noqa: E402
-    EvidenceProviderError,
-    GithubModelsEvidenceProvider,
-)
-from projects.research.public_source_collector import PublicSourceCollector  # noqa: E402
 from provider_models import MediaCandidate  # noqa: E402
 
 
@@ -41,18 +35,15 @@ class CandidatePreflightService:
     def __init__(
         self,
         *,
-        evidence_provider: Any | None = None,
-        evidence_service: EvidenceService | None = None,
+        source_collector: Any | None = None,
         media_providers: dict[str, Any] | None = None,
         minimum_media_candidates: int = 5,
-        minimum_media_queries: int = 2,
+        minimum_media_queries: int = 1,
         maximum_candidates_checked: int = 5,
     ) -> None:
-        self._evidence_provider = evidence_provider or GithubModelsEvidenceProvider(
-            client=GithubModelsClient.from_environment(timeout_seconds=60.0),
-            source_collector=PublicSourceCollector(timeout_seconds=8.0),
+        self._source_collector = source_collector or PublicSourceCollector(
+            timeout_seconds=8.0
         )
-        self._evidence_service = evidence_service or EvidenceService()
         if media_providers is None:
             from providers.nasa_provider import NasaProvider
             from providers.openverse_provider import OpenverseProvider
@@ -91,7 +82,7 @@ class CandidatePreflightService:
             checked += 1
             try:
                 accepted.append(self._preflight_candidate(raw_candidate))
-            except (EvidenceProviderError, EvidenceGateError, TopicPreflightError) as exc:
+            except TopicPreflightError as exc:
                 rejected.append(
                     {
                         "topic": str(raw_candidate.get("topic") or "(제목 없음)"),
@@ -146,41 +137,37 @@ class CandidatePreflightService:
             category=category,
             candidate=candidate,
         ).to_dict()
-        provider_result = self._evidence_provider.collect(job)
-        evidence = self._evidence_service.build_evidence(
-            topic=topic,
-            provider_result=provider_result,
-        )
-        evidence = self._compact_evidence(evidence)
+        source_queries = [
+            str(value).strip()
+            for value in candidate.get("search_queries", [])
+            if str(value).strip()
+        ]
+        try:
+            sources = self._source_collector.collect(
+                job,
+                search_queries=source_queries,
+            )
+        except PublicSourceError as exc:
+            raise TopicPreflightError(str(exc)) from exc
+        source_preflight = self._validate_sources(sources)
+        compact_sources = self._compact_sources(sources)
 
-        search_queries = self._media_queries(candidate, provider_result)
+        search_queries = self._media_queries(candidate, compact_sources)
         media_preflight = self._probe_media(
             category=category,
             queries=search_queries,
         )
 
-        items = evidence.get("items", [])
-        domains = {
-            urlparse(str(item.get("source_url") or "")).netloc.casefold()
-            for item in items
-            if isinstance(item, dict)
-        }
-        domains.discard("")
-        authoritative = sum(
-            item.get("source_tier") in {"official", "academic"}
-            for item in items
-            if isinstance(item, dict)
-        )
-
         result = dict(candidate)
         result["production_ready"] = True
         result["readiness_score"] = 100
-        result["preflight_evidence"] = evidence
+        result["preflight_sources"] = compact_sources
         result["preflight_media"] = media_preflight
+        result["source_preflight"] = source_preflight
         result["evidence_preflight"] = {
-            "item_count": len(items),
-            "domain_count": len(domains),
-            "authoritative_count": authoritative,
+            "item_count": source_preflight["documentCount"],
+            "domain_count": source_preflight["domainCount"],
+            "authoritative_count": source_preflight["authoritativeCount"],
         }
         result["media_preflight"] = {
             "candidate_count": media_preflight["candidateCount"],
@@ -194,7 +181,7 @@ class CandidatePreflightService:
         ]
         checks.extend(
             [
-                f"검증 본문 {len(items)}건·독립 출처 {len(domains)}곳 확보",
+                f"자료 본문 {source_preflight['documentCount']}건·독립 출처 {source_preflight['domainCount']}곳 확보",
                 f"저작권 사용 가능한 이미지 후보 {media_preflight['candidateCount']}개 확보",
                 "자료와 이미지 사전 패키지 저장 완료",
             ]
@@ -280,10 +267,14 @@ class CandidatePreflightService:
     @staticmethod
     def _media_queries(
         candidate: dict[str, Any],
-        provider_result: dict[str, Any],
+        sources: list[dict[str, str]],
     ) -> list[str]:
         values = [
-            *provider_result.get("search_queries", []),
+            *[
+                source.get("title", "")
+                for source in sources
+                if source.get("title")
+            ],
             *candidate.get("search_queries", []),
             str(candidate.get("topic") or ""),
         ]
@@ -296,19 +287,51 @@ class CandidatePreflightService:
         )
 
     @staticmethod
-    def _compact_evidence(evidence: dict[str, Any]) -> dict[str, Any]:
-        result = dict(evidence)
-        items = [
-            item for item in result.get("items", []) if isinstance(item, dict)
-        ]
-        result["items"] = items[:5]
-        result["citations"] = [
-            {
-                "title": str(item.get("title") or ""),
-                "url": str(item.get("source_url") or ""),
+    def _validate_sources(sources: list[dict[str, str]]) -> dict[str, Any]:
+        valid = [source for source in sources if isinstance(source, dict)]
+        domains = {
+            urlparse(str(source.get("source_url") or "")).netloc.casefold()
+            for source in valid
+        }
+        domains.discard("")
+        authoritative = sum(
+            source.get("source_tier") in {"official", "academic"}
+            for source in valid
+        )
+        if len(valid) < 2 or len(domains) < 2:
+            raise TopicPreflightError(
+                "서로 다른 공개 자료 본문 2곳을 확보하지 못했습니다. "
+                f"문서: {len(valid)}개, 도메인: {len(domains)}개"
+            )
+        if authoritative < 1:
+            raise TopicPreflightError(
+                "공식 또는 학술 자료 본문을 확보하지 못했습니다."
+            )
+        return {
+            "status": "verified",
+            "documentCount": len(valid),
+            "domainCount": len(domains),
+            "authoritativeCount": authoritative,
+        }
+
+    @staticmethod
+    def _compact_sources(sources: list[dict[str, str]]) -> list[dict[str, str]]:
+        result: list[dict[str, str]] = []
+        for source in sources:
+            if not isinstance(source, dict):
+                continue
+            compact = {
+                "id": str(source.get("id") or f"source_{len(result) + 1}"),
+                "title": str(source.get("title") or "")[:300],
+                "source_name": str(source.get("source_name") or "")[:120],
+                "source_url": str(source.get("source_url") or ""),
+                "source_tier": str(source.get("source_tier") or "unknown"),
+                "published_at": str(source.get("published_at") or ""),
+                "text": str(source.get("text") or "")[:2000],
             }
-            for item in result["items"]
-        ]
+            result.append(compact)
+            if len(result) >= 5:
+                break
         return result
 
 
@@ -335,8 +358,6 @@ def main() -> int:
     except (
         OSError,
         json.JSONDecodeError,
-        EvidenceProviderError,
-        EvidenceGateError,
         TopicPreflightError,
     ) as exc:
         print(f"[실패] {exc}")

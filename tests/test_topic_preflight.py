@@ -14,9 +14,7 @@ if str(MEDIA_DIR) not in sys.path:
     sys.path.insert(0, str(MEDIA_DIR))
 
 from provider_models import MediaCandidate  # noqa: E402
-from projects.research.github_models_evidence_provider import (  # noqa: E402
-    EvidenceProviderError,
-)
+from projects.research.public_source_collector import PublicSourceError  # noqa: E402
 from projects.topic.topic_preflight import CandidatePreflightService  # noqa: E402
 
 
@@ -35,51 +33,47 @@ def _candidate(topic: str = "화성에서 발견된 벌집 모양 지형") -> di
     }
 
 
-def _provider_result() -> dict:
-    return {
-        "status": "complete",
-        "summary": "화성의 다각형 지형에 대한 공식 관측과 연구를 확인했다.",
-        "uncertainties": ["정확한 형성 순서는 추가 연구가 필요하다."],
-        "items": [
+def _source_documents() -> list[dict[str, str]]:
+    return [
             {
+                "id": "source_1",
                 "title": "NASA Mars polygons",
-                "claim": "NASA 관측 사진에는 화성 표면의 다각형 융기 구조가 선명하게 나타난다.",
                 "source_name": "NASA Science",
                 "source_url": "https://science.nasa.gov/mars-polygons",
                 "source_tier": "official",
-                "evidence_type": "fact",
                 "published_at": "2026-07-01",
-                "keywords": ["Mars", "사진", "polygons"],
+                "text": "NASA 관측 사진에는 화성 표면의 다각형 융기 구조가 선명하게 나타난다.",
             },
             {
+                "id": "source_2",
                 "title": "Polygonal terrain study",
-                "claim": "연구진은 건조와 지하 얼음 등 여러 과정이 다각형 지형을 만들 수 있다고 설명한다.",
                 "source_name": "Planetary Science Journal",
                 "source_url": "https://example.edu/polygonal-terrain",
                 "source_tier": "academic",
-                "evidence_type": "fact",
                 "published_at": "2025-05-01",
-                "keywords": ["geology", "Mars"],
+                "text": "연구진은 건조와 지하 얼음 등 여러 과정이 다각형 지형을 만들 수 있다고 설명한다.",
             },
-        ],
-        "citations": [],
-        "provider": "test",
-        "model": "test",
-        "search_queries": [
-            "Mars polygonal terrain",
-            "Curiosity honeycomb ridges",
-        ],
-    }
+    ]
 
 
-class FakeEvidenceProvider:
-    def collect(self, job_payload: dict) -> dict:
-        return _provider_result()
+class FakeSourceCollector:
+    def collect(
+        self,
+        job_payload: dict,
+        *,
+        search_queries: list[str] | None = None,
+    ) -> list[dict[str, str]]:
+        return _source_documents()
 
 
-class FailingEvidenceProvider:
-    def collect(self, job_payload: dict) -> dict:
-        raise EvidenceProviderError("독립 출처를 확보하지 못했습니다.")
+class FailingSourceCollector:
+    def collect(
+        self,
+        job_payload: dict,
+        *,
+        search_queries: list[str] | None = None,
+    ) -> list[dict[str, str]]:
+        raise PublicSourceError("독립 출처를 확보하지 못했습니다.")
 
 
 class FakeMediaProvider:
@@ -116,11 +110,11 @@ class TopicPreflightTests(unittest.TestCase):
     def _service(
         self,
         *,
-        evidence_provider: object | None = None,
+        source_collector: object | None = None,
         media_count: int = 3,
     ) -> CandidatePreflightService:
         return CandidatePreflightService(
-            evidence_provider=evidence_provider or FakeEvidenceProvider(),
+            source_collector=source_collector or FakeSourceCollector(),
             media_providers={
                 "openverse": FakeMediaProvider("openverse", media_count),
             },
@@ -136,7 +130,8 @@ class TopicPreflightTests(unittest.TestCase):
 
         self.assertEqual(1, result["candidate_count"])
         accepted = result["candidates"][0]
-        self.assertEqual("verified", accepted["preflight_evidence"]["status"])
+        self.assertEqual("verified", accepted["source_preflight"]["status"])
+        self.assertEqual(2, len(accepted["preflight_sources"]))
         self.assertGreaterEqual(
             accepted["preflight_media"]["candidateCount"],
             5,
@@ -146,7 +141,7 @@ class TopicPreflightTests(unittest.TestCase):
 
     def test_research_failure_removes_candidate_from_result(self) -> None:
         result = self._service(
-            evidence_provider=FailingEvidenceProvider(),
+            source_collector=FailingSourceCollector(),
         ).filter_payload(
             {"category": "space", "mode": "live", "candidates": [_candidate()]},
             limit=5,
@@ -177,7 +172,7 @@ class TopicPreflightTests(unittest.TestCase):
     def test_preflight_caps_expensive_candidate_checks(self) -> None:
         candidates = [_candidate(f"화성 다각형 지형 {index}") for index in range(12)]
         service = CandidatePreflightService(
-            evidence_provider=FailingEvidenceProvider(),
+            source_collector=FailingSourceCollector(),
             media_providers={"openverse": FakeMediaProvider("openverse", 3)},
             maximum_candidates_checked=3,
         )

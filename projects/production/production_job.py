@@ -148,9 +148,9 @@ class ProductionJobPlanner:
         search_queries = candidate.get("search_queries")
         if not isinstance(search_queries, list):
             search_queries = []
-        preflight_evidence = candidate.get("preflight_evidence")
-        if not isinstance(preflight_evidence, dict):
-            preflight_evidence = {}
+        preflight_sources = candidate.get("preflight_sources")
+        if not isinstance(preflight_sources, list):
+            preflight_sources = []
         preflight_media = candidate.get("preflight_media")
         if not isinstance(preflight_media, dict):
             preflight_media = {}
@@ -175,7 +175,9 @@ class ProductionJobPlanner:
             "sources": [
                 source for source in sources if isinstance(source, dict)
             ],
-            "preflightEvidence": preflight_evidence,
+            "preflightSources": [
+                source for source in preflight_sources if isinstance(source, dict)
+            ],
             "preflightMedia": preflight_media,
         }
 

@@ -37,7 +37,6 @@ on:
 
 permissions:
   contents: read
-  models: read
 
 jobs:
   find-topics:
@@ -110,9 +109,6 @@ jobs:
           --output "${{ steps.inputs.outputs.output }}"
 
       - name: Preflight evidence and media
-        env:
-          GITHUB_MODELS_TOKEN: ${{ github.token }}
-          GITHUB_MODELS_MODEL: ${{ vars.GITHUB_MODELS_MODEL || 'openai/gpt-4.1' }}
         run: >-
           python projects/topic/topic_preflight.py
           --input "${{ steps.inputs.outputs.output }}"

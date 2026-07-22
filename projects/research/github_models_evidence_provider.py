@@ -47,14 +47,26 @@ class GithubModelsEvidenceProvider:
 
     def collect(self, job_payload: dict[str, Any]) -> dict[str, Any]:
         self._validate_job(job_payload)
-        search_queries = self._expand_search_queries(job_payload)
-        try:
-            sources = self._source_collector.collect(
-                job_payload,
-                search_queries=search_queries,
-            )
-        except PublicSourceError as exc:
-            raise EvidenceProviderError(str(exc)) from exc
+        selected_topic = job_payload["selectedTopic"]
+        preflight_sources = selected_topic.get("preflightSources")
+        if isinstance(preflight_sources, list) and preflight_sources:
+            sources = [
+                source for source in preflight_sources if isinstance(source, dict)
+            ]
+            search_queries = [
+                str(query).strip()
+                for query in selected_topic.get("searchQueries", [])
+                if str(query).strip()
+            ]
+        else:
+            search_queries = self._expand_search_queries(job_payload)
+            try:
+                sources = self._source_collector.collect(
+                    job_payload,
+                    search_queries=search_queries,
+                )
+            except PublicSourceError as exc:
+                raise EvidenceProviderError(str(exc)) from exc
         self._validate_source_pool(sources)
 
         system = (
