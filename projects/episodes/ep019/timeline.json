@@ -1,0 +1,1324 @@
+{
+  "version": "6.5",
+  "episodeId": "EP019",
+  "title": "공룡 멸종의 진짜 원인은 아직 미스터리? #쇼츠 #shorts",
+  "fps": 30,
+  "width": 1080,
+  "height": 1920,
+  "totalDuration": 55.97,
+  "theme": {
+    "backgroundColor": "#181c2c",
+    "titleColor": "#7BFEB4",
+    "captionColor": "#FFFFFF",
+    "accentColor": "#4b7b9f"
+  },
+  "scenes": [
+    {
+      "id": "scene_001",
+      "start": 0.0,
+      "duration": 5.07,
+      "title": "공룡 멸종의 미스터리",
+      "narration": "공룡이 멸종한 그날, 지구에는 무슨 일이 벌어졌을까요?",
+      "caption": "공룡이 멸종한 그날, 지구에는 무슨 일이 벌어졌을까요?",
+      "backgroundColor": "#14202B",
+      "keywords": [
+        "mysterious ancient site",
+        "beehive",
+        "beehive close up",
+        "mysterious ancient site wide view",
+        "mysterious ancient site landscape",
+        "beehive wide view",
+        "beehive landscape",
+        "mysterious ancient site close up"
+      ],
+      "media": {
+        "type": "image",
+        "fit": "cover",
+        "position": "center center",
+        "src": "ep019/scene_001.jpg",
+        "keywords": [
+          "mysterious ancient site",
+          "beehive",
+          "beehive close up",
+          "mysterious ancient site wide view",
+          "mysterious ancient site landscape",
+          "beehive wide view",
+          "beehive landscape",
+          "mysterious ancient site close up"
+        ]
+      },
+      "cameraMotion": "zoom_in",
+      "transition": "fade",
+      "transitionDuration": 0.3,
+      "overlay": "cinematic",
+      "overlayOpacity": 1.0,
+      "mediaSearch": {
+        "version": "2.0",
+        "primaryQuery": "mysterious ancient site",
+        "sourceKeywords": [
+          "mysterious ancient site",
+          "beehive",
+          "beehive close up",
+          "mysterious ancient site wide view",
+          "mysterious ancient site landscape",
+          "beehive wide view",
+          "beehive landscape",
+          "mysterious ancient site close up"
+        ],
+        "entities": [
+          "공룡",
+          "미스터리",
+          "벌",
+          "mysterious ancient site beehive beehive close up mysterious",
+          "mysterious ancient site landscape beehive wide view beehive",
+          "ancient site close up"
+        ],
+        "queries": [
+          {
+            "query": "mysterious ancient site",
+            "intent": "primary",
+            "priority": 1,
+            "mediaKind": "any"
+          },
+          {
+            "query": "beehive",
+            "intent": "primary",
+            "priority": 2,
+            "mediaKind": "any"
+          },
+          {
+            "query": "mysterious ancient site wide view",
+            "intent": "wide",
+            "priority": 3,
+            "mediaKind": "any"
+          },
+          {
+            "query": "mysterious ancient site close up",
+            "intent": "detail",
+            "priority": 4,
+            "mediaKind": "any"
+          },
+          {
+            "query": "mysterious ancient site landscape",
+            "intent": "wide",
+            "priority": 5,
+            "mediaKind": "any"
+          },
+          {
+            "query": "beehive close up",
+            "intent": "detail",
+            "priority": 6,
+            "mediaKind": "any"
+          },
+          {
+            "query": "beehive wide view",
+            "intent": "wide",
+            "priority": 7,
+            "mediaKind": "any"
+          },
+          {
+            "query": "beehive landscape",
+            "intent": "wide",
+            "priority": 8,
+            "mediaKind": "any"
+          },
+          {
+            "query": "mysterious ancient site detailed view",
+            "intent": "detail",
+            "priority": 9,
+            "mediaKind": "any"
+          },
+          {
+            "query": "beehive detailed view",
+            "intent": "detail",
+            "priority": 10,
+            "mediaKind": "any"
+          }
+        ]
+      },
+      "audioDuration": 4.92,
+      "audio": "ep019/audio/scene_001.mp3",
+      "timing": "ep019/audio/scene_001.timing.json",
+      "wordTimings": [
+        {
+          "text": "공룡이",
+          "offset": 0.1,
+          "duration": 0.45,
+          "end": 0.55
+        },
+        {
+          "text": "멸종한",
+          "offset": 0.562,
+          "duration": 0.55,
+          "end": 1.112
+        },
+        {
+          "text": "그날",
+          "offset": 1.125,
+          "duration": 0.475,
+          "end": 1.6
+        },
+        {
+          "text": "지구에는",
+          "offset": 1.837,
+          "duration": 0.613,
+          "end": 2.45
+        },
+        {
+          "text": "무슨",
+          "offset": 2.462,
+          "duration": 0.312,
+          "end": 2.774
+        },
+        {
+          "text": "일이",
+          "offset": 2.788,
+          "duration": 0.188,
+          "end": 2.976
+        },
+        {
+          "text": "벌어졌을까요",
+          "offset": 2.987,
+          "duration": 1.062,
+          "end": 4.049
+        }
+      ],
+      "wordCount": 7
+    },
+    {
+      "id": "scene_002",
+      "start": 5.07,
+      "duration": 8.36,
+      "title": "충돌이 멸종을 촉발했다?",
+      "narration": "치크술루브 소행성 충돌이 대량 멸종을 촉발했다는 증거가 지질학적 기록과 환경 변화 모델에서 확인됩니다.",
+      "caption": "치크술루브 소행성 충돌이 대량 멸종을 촉발했다는 증거가 지질학적 기록과 환경 변화 모델에서 확인됩니다.",
+      "backgroundColor": "#223748",
+      "keywords": [
+        "NASA asteroid mission",
+        "Chicxulub impact",
+        "NASA asteroid mission wide view",
+        "NASA asteroid mission landscape",
+        "Chicxulub impact wide view",
+        "Chicxulub impact landscape",
+        "NASA asteroid mission close up",
+        "NASA asteroid mission detailed view"
+      ],
+      "media": {
+        "type": "image",
+        "fit": "cover",
+        "position": "center center",
+        "src": "ep019/scene_002.jpg",
+        "keywords": [
+          "NASA asteroid mission",
+          "Chicxulub impact",
+          "NASA asteroid mission wide view",
+          "NASA asteroid mission landscape",
+          "Chicxulub impact wide view",
+          "Chicxulub impact landscape",
+          "NASA asteroid mission close up",
+          "NASA asteroid mission detailed view"
+        ]
+      },
+      "cameraMotion": "pan_right",
+      "transition": "cut",
+      "transitionDuration": 0.2,
+      "overlay": "cinematic",
+      "overlayOpacity": 1.0,
+      "mediaSearch": {
+        "version": "2.0",
+        "primaryQuery": "NASA asteroid mission",
+        "sourceKeywords": [
+          "NASA asteroid mission",
+          "Chicxulub impact",
+          "NASA asteroid mission wide view",
+          "NASA asteroid mission landscape",
+          "Chicxulub impact wide view",
+          "Chicxulub impact landscape",
+          "NASA asteroid mission close up",
+          "NASA asteroid mission detailed view"
+        ],
+        "entities": [
+          "소행성",
+          "NASA asteroid mission Chicxulub impact NASA asteroid mission",
+          "oid mission landscape Chicxulub impact wide view Chicxulub",
+          "asteroid mission close up NASA asteroid mission detailed"
+        ],
+        "queries": [
+          {
+            "query": "NASA asteroid mission",
+            "intent": "primary",
+            "priority": 1,
+            "mediaKind": "any"
+          },
+          {
+            "query": "Chicxulub impact",
+            "intent": "primary",
+            "priority": 2,
+            "mediaKind": "any"
+          },
+          {
+            "query": "NASA asteroid mission wide view",
+            "intent": "wide",
+            "priority": 3,
+            "mediaKind": "any"
+          },
+          {
+            "query": "NASA asteroid mission close up",
+            "intent": "detail",
+            "priority": 4,
+            "mediaKind": "any"
+          },
+          {
+            "query": "NASA asteroid mission detailed view",
+            "intent": "detail",
+            "priority": 5,
+            "mediaKind": "any"
+          },
+          {
+            "query": "NASA asteroid mission landscape",
+            "intent": "wide",
+            "priority": 6,
+            "mediaKind": "any"
+          },
+          {
+            "query": "Chicxulub impact wide view",
+            "intent": "wide",
+            "priority": 7,
+            "mediaKind": "any"
+          },
+          {
+            "query": "Chicxulub impact landscape",
+            "intent": "wide",
+            "priority": 8,
+            "mediaKind": "any"
+          },
+          {
+            "query": "Chicxulub impact close up",
+            "intent": "detail",
+            "priority": 9,
+            "mediaKind": "any"
+          },
+          {
+            "query": "Chicxulub impact detailed view",
+            "intent": "detail",
+            "priority": 10,
+            "mediaKind": "any"
+          }
+        ]
+      },
+      "audioDuration": 8.21,
+      "audio": "ep019/audio/scene_002.mp3",
+      "timing": "ep019/audio/scene_002.timing.json",
+      "wordTimings": [
+        {
+          "text": "치크술루브",
+          "offset": 0.1,
+          "duration": 0.7,
+          "end": 0.8
+        },
+        {
+          "text": "소행성",
+          "offset": 0.812,
+          "duration": 0.525,
+          "end": 1.337
+        },
+        {
+          "text": "충돌이",
+          "offset": 1.35,
+          "duration": 0.487,
+          "end": 1.837
+        },
+        {
+          "text": "대량",
+          "offset": 1.85,
+          "duration": 0.35,
+          "end": 2.2
+        },
+        {
+          "text": "멸종을",
+          "offset": 2.212,
+          "duration": 0.487,
+          "end": 2.699
+        },
+        {
+          "text": "촉발했다는",
+          "offset": 2.712,
+          "duration": 0.688,
+          "end": 3.4
+        },
+        {
+          "text": "증거가",
+          "offset": 3.413,
+          "duration": 0.475,
+          "end": 3.888
+        },
+        {
+          "text": "지질학적",
+          "offset": 3.9,
+          "duration": 0.762,
+          "end": 4.662
+        },
+        {
+          "text": "기록과",
+          "offset": 4.675,
+          "duration": 0.5,
+          "end": 5.175
+        },
+        {
+          "text": "환경",
+          "offset": 5.188,
+          "duration": 0.4,
+          "end": 5.588
+        },
+        {
+          "text": "변화",
+          "offset": 5.6,
+          "duration": 0.263,
+          "end": 5.863
+        },
+        {
+          "text": "모델에서",
+          "offset": 5.875,
+          "duration": 0.588,
+          "end": 6.463
+        },
+        {
+          "text": "확인됩니다",
+          "offset": 6.475,
+          "duration": 0.85,
+          "end": 7.325
+        }
+      ],
+      "wordCount": 13
+    },
+    {
+      "id": "scene_003",
+      "start": 13.43,
+      "duration": 14.69,
+      "title": "공룡 멸종의 순간",
+      "narration": "비조류 공룡은 대형 소행성 충돌과 대규모 화산 폭발, 그리고 기온 변화가 겹친 시기에 멸종했습니다. 이 사건은 지질학적으로 일치하지만, 정확한 인과관계는 아직 논란입니다.",
+      "caption": "비조류 공룡은 대형 소행성 충돌과 대규모 화산 폭발, 그리고 기온 변화가 겹친 시기에 멸종했습니다. 이 사건은 지질학적으로 일치하지만, 정확한 인과관계는 아직 논란입니다.",
+      "backgroundColor": "#314A5D",
+      "keywords": [
+        "NASA asteroid mission",
+        "non-avian dinosaurs",
+        "NASA asteroid mission wide view",
+        "NASA asteroid mission landscape",
+        "non-avian dinosaurs wide view",
+        "non-avian dinosaurs landscape",
+        "NASA asteroid mission close up",
+        "NASA asteroid mission detailed view"
+      ],
+      "media": {
+        "type": "image",
+        "fit": "cover",
+        "position": "center center",
+        "src": "ep019/scene_003.jpg",
+        "keywords": [
+          "NASA asteroid mission",
+          "non-avian dinosaurs",
+          "NASA asteroid mission wide view",
+          "NASA asteroid mission landscape",
+          "non-avian dinosaurs wide view",
+          "non-avian dinosaurs landscape",
+          "NASA asteroid mission close up",
+          "NASA asteroid mission detailed view"
+        ]
+      },
+      "cameraMotion": "pan_left",
+      "transition": "fade",
+      "transitionDuration": 0.3,
+      "overlay": "cinematic",
+      "overlayOpacity": 1.0,
+      "mediaSearch": {
+        "version": "2.0",
+        "primaryQuery": "NASA asteroid mission",
+        "sourceKeywords": [
+          "NASA asteroid mission",
+          "non-avian dinosaurs",
+          "NASA asteroid mission wide view",
+          "NASA asteroid mission landscape",
+          "non-avian dinosaurs wide view",
+          "non-avian dinosaurs landscape",
+          "NASA asteroid mission close up",
+          "NASA asteroid mission detailed view"
+        ],
+        "entities": [
+          "공룡",
+          "소행성",
+          "화산",
+          "NASA asteroid mission non-avian dinosaurs NASA asteroid mission",
+          "teroid mission landscape non-avian dinosaurs wide view non-avian",
+          "ape NASA asteroid mission close up NASA asteroid"
+        ],
+        "queries": [
+          {
+            "query": "NASA asteroid mission",
+            "intent": "primary",
+            "priority": 1,
+            "mediaKind": "any"
+          },
+          {
+            "query": "non-avian dinosaurs",
+            "intent": "primary",
+            "priority": 2,
+            "mediaKind": "any"
+          },
+          {
+            "query": "NASA asteroid mission wide view",
+            "intent": "wide",
+            "priority": 3,
+            "mediaKind": "any"
+          },
+          {
+            "query": "NASA asteroid mission close up",
+            "intent": "detail",
+            "priority": 4,
+            "mediaKind": "any"
+          },
+          {
+            "query": "NASA asteroid mission detailed view",
+            "intent": "detail",
+            "priority": 5,
+            "mediaKind": "any"
+          },
+          {
+            "query": "NASA asteroid mission landscape",
+            "intent": "wide",
+            "priority": 6,
+            "mediaKind": "any"
+          },
+          {
+            "query": "non-avian dinosaurs wide view",
+            "intent": "wide",
+            "priority": 7,
+            "mediaKind": "any"
+          },
+          {
+            "query": "non-avian dinosaurs landscape",
+            "intent": "wide",
+            "priority": 8,
+            "mediaKind": "any"
+          },
+          {
+            "query": "non-avian dinosaurs close up",
+            "intent": "detail",
+            "priority": 9,
+            "mediaKind": "any"
+          },
+          {
+            "query": "non-avian dinosaurs detailed view",
+            "intent": "detail",
+            "priority": 10,
+            "mediaKind": "any"
+          }
+        ]
+      },
+      "audioDuration": 14.54,
+      "audio": "ep019/audio/scene_003.mp3",
+      "timing": "ep019/audio/scene_003.timing.json",
+      "wordTimings": [
+        {
+          "text": "비조류",
+          "offset": 0.1,
+          "duration": 0.412,
+          "end": 0.512
+        },
+        {
+          "text": "공룡은",
+          "offset": 0.525,
+          "duration": 0.575,
+          "end": 1.1
+        },
+        {
+          "text": "대형",
+          "offset": 1.113,
+          "duration": 0.375,
+          "end": 1.488
+        },
+        {
+          "text": "소행성",
+          "offset": 1.5,
+          "duration": 0.525,
+          "end": 2.025
+        },
+        {
+          "text": "충돌과",
+          "offset": 2.038,
+          "duration": 0.575,
+          "end": 2.613
+        },
+        {
+          "text": "대규모",
+          "offset": 2.625,
+          "duration": 0.537,
+          "end": 3.162
+        },
+        {
+          "text": "화산",
+          "offset": 3.175,
+          "duration": 0.338,
+          "end": 3.513
+        },
+        {
+          "text": "폭발",
+          "offset": 3.525,
+          "duration": 0.5,
+          "end": 4.025
+        },
+        {
+          "text": "그리고",
+          "offset": 4.35,
+          "duration": 0.463,
+          "end": 4.813
+        },
+        {
+          "text": "기온",
+          "offset": 4.825,
+          "duration": 0.375,
+          "end": 5.2
+        },
+        {
+          "text": "변화가",
+          "offset": 5.213,
+          "duration": 0.412,
+          "end": 5.625
+        },
+        {
+          "text": "겹친",
+          "offset": 5.638,
+          "duration": 0.375,
+          "end": 6.013
+        },
+        {
+          "text": "시기에",
+          "offset": 6.025,
+          "duration": 0.388,
+          "end": 6.413
+        },
+        {
+          "text": "멸종했습니다",
+          "offset": 6.425,
+          "duration": 1.062,
+          "end": 7.487
+        },
+        {
+          "text": "이",
+          "offset": 8.35,
+          "duration": 0.15,
+          "end": 8.5
+        },
+        {
+          "text": "사건은",
+          "offset": 8.512,
+          "duration": 0.5,
+          "end": 9.012
+        },
+        {
+          "text": "지질학적으로",
+          "offset": 9.025,
+          "duration": 0.8,
+          "end": 9.825
+        },
+        {
+          "text": "일치하지만",
+          "offset": 9.838,
+          "duration": 0.863,
+          "end": 10.701
+        },
+        {
+          "text": "정확한",
+          "offset": 10.925,
+          "duration": 0.5,
+          "end": 11.425
+        },
+        {
+          "text": "인과관계는",
+          "offset": 11.438,
+          "duration": 1.0,
+          "end": 12.438
+        },
+        {
+          "text": "아직",
+          "offset": 12.45,
+          "duration": 0.312,
+          "end": 12.762
+        },
+        {
+          "text": "논란입니다",
+          "offset": 12.775,
+          "duration": 0.875,
+          "end": 13.65
+        }
+      ],
+      "wordCount": 22
+    },
+    {
+      "id": "scene_004",
+      "start": 28.12,
+      "duration": 10.3,
+      "title": "화산 폭발의 연결고리",
+      "narration": "치크술루브 충돌이 인도 데칸 트랩 화산 폭발을 촉발했을 가능성이 있으며, 이 화산은 지구 역사상 가장 광범위한 용암 흐름을 남겼습니다.",
+      "caption": "치크술루브 충돌이 인도 데칸 트랩 화산 폭발을 촉발했을 가능성이 있으며, 이 화산은 지구 역사상 가장 광범위한 용암 흐름을 남겼습니다.",
+      "backgroundColor": "#1C3040",
+      "keywords": [
+        "Chicxulub impact",
+        "Deccan Traps",
+        "Chicxulub impact wide view",
+        "Chicxulub impact landscape",
+        "Deccan Traps wide view",
+        "Deccan Traps landscape",
+        "Chicxulub impact close up",
+        "Chicxulub impact detailed view"
+      ],
+      "media": {
+        "type": "image",
+        "fit": "cover",
+        "position": "center center",
+        "src": "ep019/scene_004.jpg",
+        "keywords": [
+          "Chicxulub impact",
+          "Deccan Traps",
+          "Chicxulub impact wide view",
+          "Chicxulub impact landscape",
+          "Deccan Traps wide view",
+          "Deccan Traps landscape",
+          "Chicxulub impact close up",
+          "Chicxulub impact detailed view"
+        ]
+      },
+      "cameraMotion": "zoom_in_right",
+      "transition": "slide_left",
+      "transitionDuration": 0.3,
+      "overlay": "vignette",
+      "overlayOpacity": 1.0,
+      "mediaSearch": {
+        "version": "2.0",
+        "primaryQuery": "Chicxulub impact",
+        "sourceKeywords": [
+          "Chicxulub impact",
+          "Deccan Traps",
+          "Chicxulub impact wide view",
+          "Chicxulub impact landscape",
+          "Deccan Traps wide view",
+          "Deccan Traps landscape",
+          "Chicxulub impact close up",
+          "Chicxulub impact detailed view"
+        ],
+        "entities": [
+          "화산",
+          "Chicxulub impact Deccan Traps Chicxulub impact wide view",
+          "pe Deccan Traps wide view Deccan Traps landscape",
+          "lub impact detailed view"
+        ],
+        "queries": [
+          {
+            "query": "Chicxulub impact",
+            "intent": "primary",
+            "priority": 1,
+            "mediaKind": "any"
+          },
+          {
+            "query": "Deccan Traps",
+            "intent": "primary",
+            "priority": 2,
+            "mediaKind": "any"
+          },
+          {
+            "query": "Chicxulub impact wide view",
+            "intent": "wide",
+            "priority": 3,
+            "mediaKind": "any"
+          },
+          {
+            "query": "Deccan Traps wide view",
+            "intent": "wide",
+            "priority": 4,
+            "mediaKind": "any"
+          },
+          {
+            "query": "Chicxulub impact close up",
+            "intent": "detail",
+            "priority": 5,
+            "mediaKind": "any"
+          },
+          {
+            "query": "Chicxulub impact detailed view",
+            "intent": "detail",
+            "priority": 6,
+            "mediaKind": "any"
+          },
+          {
+            "query": "Chicxulub impact landscape",
+            "intent": "wide",
+            "priority": 7,
+            "mediaKind": "any"
+          },
+          {
+            "query": "Deccan Traps landscape",
+            "intent": "wide",
+            "priority": 8,
+            "mediaKind": "any"
+          },
+          {
+            "query": "Deccan Traps close up",
+            "intent": "detail",
+            "priority": 9,
+            "mediaKind": "any"
+          },
+          {
+            "query": "Deccan Traps detailed view",
+            "intent": "detail",
+            "priority": 10,
+            "mediaKind": "any"
+          }
+        ]
+      },
+      "audioDuration": 10.15,
+      "audio": "ep019/audio/scene_004.mp3",
+      "timing": "ep019/audio/scene_004.timing.json",
+      "wordTimings": [
+        {
+          "text": "치크술루브",
+          "offset": 0.1,
+          "duration": 0.688,
+          "end": 0.788
+        },
+        {
+          "text": "충돌이",
+          "offset": 0.8,
+          "duration": 0.45,
+          "end": 1.25
+        },
+        {
+          "text": "인도",
+          "offset": 1.262,
+          "duration": 0.275,
+          "end": 1.537
+        },
+        {
+          "text": "데칸",
+          "offset": 1.55,
+          "duration": 0.375,
+          "end": 1.925
+        },
+        {
+          "text": "트랩",
+          "offset": 1.938,
+          "duration": 0.25,
+          "end": 2.188
+        },
+        {
+          "text": "화산",
+          "offset": 2.2,
+          "duration": 0.287,
+          "end": 2.487
+        },
+        {
+          "text": "폭발을",
+          "offset": 2.5,
+          "duration": 0.463,
+          "end": 2.963
+        },
+        {
+          "text": "촉발했을",
+          "offset": 2.975,
+          "duration": 0.625,
+          "end": 3.6
+        },
+        {
+          "text": "가능성이",
+          "offset": 3.612,
+          "duration": 0.625,
+          "end": 4.237
+        },
+        {
+          "text": "있으며",
+          "offset": 4.25,
+          "duration": 0.6,
+          "end": 4.85
+        },
+        {
+          "text": "이",
+          "offset": 5.138,
+          "duration": 0.138,
+          "end": 5.276
+        },
+        {
+          "text": "화산은",
+          "offset": 5.287,
+          "duration": 0.525,
+          "end": 5.812
+        },
+        {
+          "text": "지구",
+          "offset": 5.825,
+          "duration": 0.3,
+          "end": 6.125
+        },
+        {
+          "text": "역사상",
+          "offset": 6.138,
+          "duration": 0.537,
+          "end": 6.675
+        },
+        {
+          "text": "가장",
+          "offset": 6.688,
+          "duration": 0.362,
+          "end": 7.05
+        },
+        {
+          "text": "광범위한",
+          "offset": 7.062,
+          "duration": 0.65,
+          "end": 7.712
+        },
+        {
+          "text": "용암",
+          "offset": 7.725,
+          "duration": 0.275,
+          "end": 8.0
+        },
+        {
+          "text": "흐름을",
+          "offset": 8.012,
+          "duration": 0.338,
+          "end": 8.35
+        },
+        {
+          "text": "남겼습니다",
+          "offset": 8.363,
+          "duration": 0.912,
+          "end": 9.275
+        }
+      ],
+      "wordCount": 19
+    },
+    {
+      "id": "scene_005",
+      "start": 38.42,
+      "duration": 10.81,
+      "title": "시기 논란의 반전",
+      "narration": "하지만 일부 연구에서는 치크술루브 충돌이 멸종보다 약 30만 년 먼저 일어났다고 주장해, 멸종의 직접 원인에 대한 논란이 계속되고 있습니다.",
+      "caption": "하지만 일부 연구에서는 치크술루브 충돌이 멸종보다 약 30만 년 먼저 일어났다고 주장해, 멸종의 직접 원인에 대한 논란이 계속되고 있습니다.",
+      "backgroundColor": "#1C3040",
+      "keywords": [
+        "Chicxulub impact",
+        "K-T boundary",
+        "Chicxulub impact wide view",
+        "Chicxulub impact landscape",
+        "K-T boundary wide view",
+        "K-T boundary landscape",
+        "Chicxulub impact close up",
+        "Chicxulub impact detailed view"
+      ],
+      "media": {
+        "type": "image",
+        "fit": "cover",
+        "position": "center center",
+        "src": "ep019/scene_005.jpg",
+        "keywords": [
+          "Chicxulub impact",
+          "K-T boundary",
+          "Chicxulub impact wide view",
+          "Chicxulub impact landscape",
+          "K-T boundary wide view",
+          "K-T boundary landscape",
+          "Chicxulub impact close up",
+          "Chicxulub impact detailed view"
+        ]
+      },
+      "cameraMotion": "zoom_in_left",
+      "transition": "slide_left",
+      "transitionDuration": 0.3,
+      "overlay": "vignette",
+      "overlayOpacity": 1.0,
+      "mediaSearch": {
+        "version": "2.0",
+        "primaryQuery": "Chicxulub impact",
+        "sourceKeywords": [
+          "Chicxulub impact",
+          "K-T boundary",
+          "Chicxulub impact wide view",
+          "Chicxulub impact landscape",
+          "K-T boundary wide view",
+          "K-T boundary landscape",
+          "Chicxulub impact close up",
+          "Chicxulub impact detailed view"
+        ],
+        "entities": [
+          "Chicxulub impact K-T boundary Chicxulub impact wide view",
+          "pe K-T boundary wide view K-T boundary landscape",
+          "lub impact detailed view"
+        ],
+        "queries": [
+          {
+            "query": "Chicxulub impact",
+            "intent": "primary",
+            "priority": 1,
+            "mediaKind": "any"
+          },
+          {
+            "query": "K-T boundary",
+            "intent": "primary",
+            "priority": 2,
+            "mediaKind": "any"
+          },
+          {
+            "query": "Chicxulub impact wide view",
+            "intent": "wide",
+            "priority": 3,
+            "mediaKind": "any"
+          },
+          {
+            "query": "K-T boundary wide view",
+            "intent": "wide",
+            "priority": 4,
+            "mediaKind": "any"
+          },
+          {
+            "query": "Chicxulub impact close up",
+            "intent": "detail",
+            "priority": 5,
+            "mediaKind": "any"
+          },
+          {
+            "query": "Chicxulub impact detailed view",
+            "intent": "detail",
+            "priority": 6,
+            "mediaKind": "any"
+          },
+          {
+            "query": "Chicxulub impact landscape",
+            "intent": "wide",
+            "priority": 7,
+            "mediaKind": "any"
+          },
+          {
+            "query": "K-T boundary landscape",
+            "intent": "wide",
+            "priority": 8,
+            "mediaKind": "any"
+          },
+          {
+            "query": "K-T boundary close up",
+            "intent": "detail",
+            "priority": 9,
+            "mediaKind": "any"
+          },
+          {
+            "query": "K-T boundary detailed view",
+            "intent": "detail",
+            "priority": 10,
+            "mediaKind": "any"
+          }
+        ]
+      },
+      "audioDuration": 10.66,
+      "audio": "ep019/audio/scene_005.mp3",
+      "timing": "ep019/audio/scene_005.timing.json",
+      "wordTimings": [
+        {
+          "text": "하지만",
+          "offset": 0.1,
+          "duration": 0.475,
+          "end": 0.575
+        },
+        {
+          "text": "일부",
+          "offset": 0.588,
+          "duration": 0.412,
+          "end": 1.0
+        },
+        {
+          "text": "연구에서는",
+          "offset": 1.012,
+          "duration": 0.812,
+          "end": 1.824
+        },
+        {
+          "text": "치크술루브",
+          "offset": 1.837,
+          "duration": 0.725,
+          "end": 2.562
+        },
+        {
+          "text": "충돌이",
+          "offset": 2.575,
+          "duration": 0.463,
+          "end": 3.038
+        },
+        {
+          "text": "멸종보다",
+          "offset": 3.05,
+          "duration": 0.65,
+          "end": 3.7
+        },
+        {
+          "text": "약",
+          "offset": 3.712,
+          "duration": 0.212,
+          "end": 3.924
+        },
+        {
+          "text": "30만",
+          "offset": 3.938,
+          "duration": 0.438,
+          "end": 4.376
+        },
+        {
+          "text": "년",
+          "offset": 4.388,
+          "duration": 0.188,
+          "end": 4.576
+        },
+        {
+          "text": "먼저",
+          "offset": 4.588,
+          "duration": 0.325,
+          "end": 4.913
+        },
+        {
+          "text": "일어났다고",
+          "offset": 4.925,
+          "duration": 0.662,
+          "end": 5.587
+        },
+        {
+          "text": "주장해",
+          "offset": 5.6,
+          "duration": 0.625,
+          "end": 6.225
+        },
+        {
+          "text": "멸종의",
+          "offset": 6.5,
+          "duration": 0.512,
+          "end": 7.012
+        },
+        {
+          "text": "직접",
+          "offset": 7.025,
+          "duration": 0.375,
+          "end": 7.4
+        },
+        {
+          "text": "원인에",
+          "offset": 7.412,
+          "duration": 0.35,
+          "end": 7.762
+        },
+        {
+          "text": "대한",
+          "offset": 7.775,
+          "duration": 0.263,
+          "end": 8.038
+        },
+        {
+          "text": "논란이",
+          "offset": 8.05,
+          "duration": 0.45,
+          "end": 8.5
+        },
+        {
+          "text": "계속되고",
+          "offset": 8.512,
+          "duration": 0.6,
+          "end": 9.112
+        },
+        {
+          "text": "있습니다",
+          "offset": 9.125,
+          "duration": 0.65,
+          "end": 9.775
+        }
+      ],
+      "wordCount": 19
+    },
+    {
+      "id": "scene_006",
+      "start": 49.23,
+      "duration": 6.74,
+      "title": "진짜 원인은 무엇일까?",
+      "narration": "공룡을 멸종시킨 진짜 원인은 무엇일까요? 여러분은 어떻게 생각하시나요?",
+      "caption": "공룡을 멸종시킨 진짜 원인은 무엇일까요? 여러분은 어떻게 생각하시나요?",
+      "backgroundColor": "#101820",
+      "keywords": [
+        "Chicxulub impact",
+        "extinction cause",
+        "Chicxulub impact wide view",
+        "Chicxulub impact landscape",
+        "extinction cause wide view",
+        "extinction cause landscape",
+        "Chicxulub impact close up",
+        "Chicxulub impact detailed view"
+      ],
+      "media": {
+        "type": "image",
+        "fit": "cover",
+        "position": "center center",
+        "src": "ep019/scene_006.jpg",
+        "keywords": [
+          "Chicxulub impact",
+          "extinction cause",
+          "Chicxulub impact wide view",
+          "Chicxulub impact landscape",
+          "extinction cause wide view",
+          "extinction cause landscape",
+          "Chicxulub impact close up",
+          "Chicxulub impact detailed view"
+        ]
+      },
+      "cameraMotion": "zoom_out",
+      "transition": "fade",
+      "transitionDuration": 0.35,
+      "overlay": "dark",
+      "overlayOpacity": 1.0,
+      "mediaSearch": {
+        "version": "2.0",
+        "primaryQuery": "Chicxulub impact",
+        "sourceKeywords": [
+          "Chicxulub impact",
+          "extinction cause",
+          "Chicxulub impact wide view",
+          "Chicxulub impact landscape",
+          "extinction cause wide view",
+          "extinction cause landscape",
+          "Chicxulub impact close up",
+          "Chicxulub impact detailed view"
+        ],
+        "entities": [
+          "공룡",
+          "Chicxulub impact extinction cause Chicxulub impact wide view",
+          "dscape extinction cause wide view extinction cause landscape",
+          "se up Chicxulub impact detailed view"
+        ],
+        "queries": [
+          {
+            "query": "Chicxulub impact",
+            "intent": "primary",
+            "priority": 1,
+            "mediaKind": "any"
+          },
+          {
+            "query": "extinction cause",
+            "intent": "primary",
+            "priority": 2,
+            "mediaKind": "any"
+          },
+          {
+            "query": "Chicxulub impact wide view",
+            "intent": "wide",
+            "priority": 3,
+            "mediaKind": "any"
+          },
+          {
+            "query": "extinction cause wide view",
+            "intent": "wide",
+            "priority": 4,
+            "mediaKind": "any"
+          },
+          {
+            "query": "Chicxulub impact close up",
+            "intent": "detail",
+            "priority": 5,
+            "mediaKind": "any"
+          },
+          {
+            "query": "Chicxulub impact detailed view",
+            "intent": "detail",
+            "priority": 6,
+            "mediaKind": "any"
+          },
+          {
+            "query": "Chicxulub impact landscape",
+            "intent": "wide",
+            "priority": 7,
+            "mediaKind": "any"
+          },
+          {
+            "query": "extinction cause landscape",
+            "intent": "wide",
+            "priority": 8,
+            "mediaKind": "any"
+          },
+          {
+            "query": "extinction cause close up",
+            "intent": "detail",
+            "priority": 9,
+            "mediaKind": "any"
+          },
+          {
+            "query": "extinction cause detailed view",
+            "intent": "detail",
+            "priority": 10,
+            "mediaKind": "any"
+          }
+        ]
+      },
+      "audioDuration": 6.74,
+      "audio": "ep019/audio/scene_006.mp3",
+      "timing": "ep019/audio/scene_006.timing.json",
+      "wordTimings": [
+        {
+          "text": "공룡을",
+          "offset": 0.1,
+          "duration": 0.463,
+          "end": 0.563
+        },
+        {
+          "text": "멸종시킨",
+          "offset": 0.575,
+          "duration": 0.662,
+          "end": 1.237
+        },
+        {
+          "text": "진짜",
+          "offset": 1.25,
+          "duration": 0.325,
+          "end": 1.575
+        },
+        {
+          "text": "원인은",
+          "offset": 1.587,
+          "duration": 0.463,
+          "end": 2.05
+        },
+        {
+          "text": "무엇일까요",
+          "offset": 2.062,
+          "duration": 0.863,
+          "end": 2.925
+        },
+        {
+          "text": "여러분은",
+          "offset": 3.788,
+          "duration": 0.575,
+          "end": 4.363
+        },
+        {
+          "text": "어떻게",
+          "offset": 4.375,
+          "duration": 0.475,
+          "end": 4.85
+        },
+        {
+          "text": "생각하시나요",
+          "offset": 4.862,
+          "duration": 0.988,
+          "end": 5.85
+        }
+      ],
+      "wordCount": 8
+    }
+  ],
+  "tts": {
+    "provider": "edge",
+    "sceneGapMs": 150,
+    "audioDirectory": "ep019/audio",
+    "synchronized": true,
+    "wordTiming": true,
+    "timingVersion": "1.0"
+  }
+}
