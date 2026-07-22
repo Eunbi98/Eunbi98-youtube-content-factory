@@ -3,6 +3,7 @@ from __future__ import annotations
 from typing import Any
 
 from projects.ai.github_models_client import GithubModelsClient, GithubModelsError
+from projects.production.metadata_style import METADATA_STYLE_INSTRUCTIONS
 from projects.production.openai_episode_provider import EPISODE_PACKAGE_SCHEMA
 
 
@@ -42,7 +43,9 @@ class GithubModelsEpisodeProvider:
             "must include an accurate title, description, 5 to 15 tags, a pinned "
             "comment that repeats the ending question, and at least 3 distinct "
             "source URLs copied exactly from evidence. Do not include unsupported "
-            "sensational claims. Return only the structured JSON result."
+            "sensational claims. "
+            + METADATA_STYLE_INSTRUCTIONS
+            + " Return only the structured JSON result."
         )
         try:
             result = self._client.complete_json(
