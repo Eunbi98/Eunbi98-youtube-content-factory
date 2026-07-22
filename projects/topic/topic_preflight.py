@@ -20,6 +20,7 @@ for module_path in (MEDIA_DIR, PROVIDERS_DIR):
         sys.path.insert(0, str(module_path))
 
 from projects.production.production_job import ProductionJobPlanner  # noqa: E402
+from projects.ai.github_models_client import GithubModelsClient  # noqa: E402
 from projects.research.evidence_service import (  # noqa: E402
     EvidenceGateError,
     EvidenceService,
@@ -28,6 +29,7 @@ from projects.research.github_models_evidence_provider import (  # noqa: E402
     EvidenceProviderError,
     GithubModelsEvidenceProvider,
 )
+from projects.research.public_source_collector import PublicSourceCollector  # noqa: E402
 from provider_models import MediaCandidate  # noqa: E402
 
 
@@ -44,9 +46,11 @@ class CandidatePreflightService:
         media_providers: dict[str, Any] | None = None,
         minimum_media_candidates: int = 5,
         minimum_media_queries: int = 2,
+        maximum_candidates_checked: int = 8,
     ) -> None:
-        self._evidence_provider = (
-            evidence_provider or GithubModelsEvidenceProvider.from_environment()
+        self._evidence_provider = evidence_provider or GithubModelsEvidenceProvider(
+            client=GithubModelsClient.from_environment(),
+            source_collector=PublicSourceCollector(timeout_seconds=8.0),
         )
         self._evidence_service = evidence_service or EvidenceService()
         if media_providers is None:
@@ -55,13 +59,14 @@ class CandidatePreflightService:
             from providers.wikimedia_provider import WikimediaProvider
 
             media_providers = {
-                "openverse": OpenverseProvider(),
-                "wikimedia": WikimediaProvider(),
-                "nasa": NasaProvider(),
+                "openverse": OpenverseProvider(timeout_seconds=8.0),
+                "wikimedia": WikimediaProvider(timeout_seconds=8.0),
+                "nasa": NasaProvider(timeout_seconds=8.0),
             }
         self._media_providers = media_providers
         self._minimum_media_candidates = minimum_media_candidates
         self._minimum_media_queries = minimum_media_queries
+        self._maximum_candidates_checked = maximum_candidates_checked
 
     def filter_payload(
         self,
@@ -79,6 +84,8 @@ class CandidatePreflightService:
         rejected: list[dict[str, str]] = []
         checked = 0
         for raw_candidate in raw_candidates:
+            if checked >= self._maximum_candidates_checked:
+                break
             if not isinstance(raw_candidate, dict):
                 continue
             checked += 1
@@ -206,7 +213,7 @@ class CandidatePreflightService:
         provider_counts: Counter[str] = Counter()
         used_queries: list[str] = []
 
-        for query in queries[:6]:
+        for query in queries[:4]:
             before = len(unique)
             provider_names = ["openverse", "wikimedia"]
             if category == "space":

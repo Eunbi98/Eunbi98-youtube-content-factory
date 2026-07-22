@@ -174,6 +174,22 @@ class TopicPreflightTests(unittest.TestCase):
         self.assertEqual(2, result["candidate_count"])
         self.assertEqual([1, 2], [item["rank"] for item in result["candidates"]])
 
+    def test_preflight_caps_expensive_candidate_checks(self) -> None:
+        candidates = [_candidate(f"화성 다각형 지형 {index}") for index in range(12)]
+        service = CandidatePreflightService(
+            evidence_provider=FailingEvidenceProvider(),
+            media_providers={"openverse": FakeMediaProvider("openverse", 3)},
+            maximum_candidates_checked=3,
+        )
+
+        result = service.filter_payload(
+            {"category": "space", "mode": "live", "candidates": candidates},
+            limit=5,
+        )
+
+        self.assertEqual(3, result["preflight"]["checked"])
+        self.assertEqual(3, len(result["preflight"]["rejected"]))
+
 
 if __name__ == "__main__":
     unittest.main()
