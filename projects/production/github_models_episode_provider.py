@@ -3,7 +3,11 @@ from __future__ import annotations
 from typing import Any
 
 from projects.ai.github_models_client import GithubModelsClient, GithubModelsError
-from projects.production.metadata_style import METADATA_STYLE_INSTRUCTIONS
+from projects.production.metadata_style import (
+    METADATA_STYLE_INSTRUCTIONS,
+    normalize_upload_metadata,
+    strip_title_hashtags,
+)
 from projects.production.openai_episode_provider import EPISODE_PACKAGE_SCHEMA
 
 
@@ -65,9 +69,19 @@ class GithubModelsEpisodeProvider:
             )
         except GithubModelsError as exc:
             raise EpisodeProviderError(str(exc)) from exc
+        self._normalize_publish_metadata(result)
         self._normalize_render_theme(result)
         self._validate_identity(result, job_payload)
         return result
+
+    @staticmethod
+    def _normalize_publish_metadata(result: dict[str, Any]) -> None:
+        episode = result.get("episode")
+        metadata = result.get("metadata")
+        if isinstance(episode, dict):
+            episode["title"] = strip_title_hashtags(episode.get("title"))
+        if isinstance(metadata, dict):
+            normalize_upload_metadata(metadata)
 
     @staticmethod
     def _normalize_render_theme(result: dict[str, Any]) -> None:
