@@ -194,6 +194,34 @@ class TopicPreflightTests(unittest.TestCase):
         self.assertEqual(2, result["candidate_count"])
         self.assertEqual([1, 2], [item["rank"] for item in result["candidates"]])
 
+    def test_ranks_candidates_by_collected_production_assets(self) -> None:
+        class VariableMediaProvider(FakeMediaProvider):
+            def search(self, *, query: str, limit: int) -> list[MediaCandidate]:
+                self.count = 8 if "rich" in query else 3
+                return super().search(query=query, limit=limit)
+
+        weak = _candidate("약한 후보")
+        weak["score"] = 95
+        weak["search_queries"] = ["weak one", "weak two"]
+        rich = _candidate("자료가 풍부한 후보")
+        rich["score"] = 70
+        rich["search_queries"] = ["rich one", "rich two"]
+        service = CandidatePreflightService(
+            source_collector=FakeSourceCollector(),
+            media_providers={"openverse": VariableMediaProvider("openverse", 3)},
+            minimum_media_candidates=5,
+            minimum_media_queries=2,
+        )
+
+        result = service.filter_payload(
+            {"category": "space", "mode": "archive", "candidates": [weak, rich]},
+            limit=1,
+        )
+
+        self.assertEqual("자료가 풍부한 후보", result["candidates"][0]["topic"])
+        self.assertEqual("evidence-and-media-first", result["preflight"]["selectionPolicy"])
+        self.assertGreaterEqual(len(result["candidates"][0]["preflight_media"]["samples"]), 5)
+
     def test_preflight_caps_expensive_candidate_checks(self) -> None:
         candidates = [_candidate(f"화성 다각형 지형 {index}") for index in range(12)]
         service = CandidatePreflightService(
