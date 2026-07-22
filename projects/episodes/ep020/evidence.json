@@ -1,0 +1,173 @@
+{
+  "topic": "블랙홀 안으로 들어가면 무엇을 보게 될까",
+  "items": [
+    {
+      "id": "evidence_57b462d7df31",
+      "title": "Quasi-Normal Modes of Stars and Black Holes",
+      "claim": "블랙홀 중심의 특이점에 도달하면 기존의 물리 법칙이 더 이상 적용되지 않으며, 이론적으로 시공간이 무한히 휘어진다. 실제로 관측이나 실험이 불가능하다.",
+      "source_name": "Living Reviews in Relativity",
+      "source_url": "https://doi.org/10.12942/lrr-1999-2",
+      "source_tier": "academic",
+      "evidence_type": "counterpoint",
+      "published_at": "1999",
+      "keywords": [
+        "특이점",
+        "관측 불가능",
+        "물리 법칙 한계"
+      ],
+      "reliability_score": 0.95,
+      "interest_score": 1.0,
+      "visual_score": 0.45,
+      "total_score": 0.865
+    },
+    {
+      "id": "evidence_b2745c710be7",
+      "title": "Black hole information paradox",
+      "claim": "블랙홀 내부에서 실제로 무엇을 볼 수 있는지는 아직 미해결된 문제이며, 양자역학과 일반상대성 이론의 결합이 필요한 '블랙홀 정보 역설'이 존재한다.",
+      "source_name": "Wikipedia",
+      "source_url": "https://en.wikipedia.org/wiki/Black_hole_information_paradox",
+      "source_tier": "reference",
+      "evidence_type": "counterpoint",
+      "published_at": null,
+      "keywords": [
+        "블랙홀 정보 역설",
+        "양자역학",
+        "일반상대성 이론"
+      ],
+      "reliability_score": 0.8,
+      "interest_score": 1.0,
+      "visual_score": 0.45,
+      "total_score": 0.79
+    },
+    {
+      "id": "evidence_923ce13d2905",
+      "title": "Black hole",
+      "claim": "블랙홀은 중력이 너무 강해서 빛조차 빠져나올 수 없는 천체이며, 사건의 지평선을 넘으면 외부로부터 완전히 차단된다.",
+      "source_name": "Wikipedia",
+      "source_url": "https://en.wikipedia.org/wiki/Black_hole",
+      "source_tier": "reference",
+      "evidence_type": "fact",
+      "published_at": null,
+      "keywords": [
+        "블랙홀",
+        "중력",
+        "사건의 지평선"
+      ],
+      "reliability_score": 0.8,
+      "interest_score": 0.8,
+      "visual_score": 0.45,
+      "total_score": 0.73
+    },
+    {
+      "id": "evidence_bf2d9b0a7598",
+      "title": "Black hole",
+      "claim": "일반 상대성 이론에 따르면 블랙홀의 중심에는 특이점이 존재하며, 이곳에서는 시공간의 곡률이 무한대가 된다.",
+      "source_name": "Wikipedia",
+      "source_url": "https://en.wikipedia.org/wiki/Black_hole",
+      "source_tier": "reference",
+      "evidence_type": "fact",
+      "published_at": null,
+      "keywords": [
+        "블랙홀",
+        "특이점",
+        "시공간 곡률"
+      ],
+      "reliability_score": 0.8,
+      "interest_score": 0.8,
+      "visual_score": 0.45,
+      "total_score": 0.73
+    },
+    {
+      "id": "evidence_bd87d6fdf7a3",
+      "title": "Black hole",
+      "claim": "블랙홀 내부에 들어가면 사건의 지평선을 넘는 순간에는 아무런 특이한 현상을 감지할 수 없지만, 중심에 가까워질수록 시공간이 극도로 왜곡된다.",
+      "source_name": "Wikipedia",
+      "source_url": "https://en.wikipedia.org/wiki/Black_hole",
+      "source_tier": "reference",
+      "evidence_type": "fact",
+      "published_at": null,
+      "keywords": [
+        "블랙홀",
+        "사건의 지평선",
+        "시공간 왜곡"
+      ],
+      "reliability_score": 0.8,
+      "interest_score": 0.8,
+      "visual_score": 0.45,
+      "total_score": 0.73
+    },
+    {
+      "id": "evidence_2d4dd992efbb",
+      "title": "시간",
+      "claim": "블랙홀 내부에서 시간과 공간의 개념이 기존과 달라지며, 시간의 상대성과 주관성이 강조되어 블랙홀 내부 경험은 인간의 직관과 크게 다를 수 있다.",
+      "source_name": "한국어 위키백과",
+      "source_url": "https://ko.wikipedia.org/wiki/%EC%8B%9C%EA%B0%84",
+      "source_tier": "reference",
+      "evidence_type": "fact",
+      "published_at": null,
+      "keywords": [
+        "시간",
+        "상대성",
+        "블랙홀 내부 경험"
+      ],
+      "reliability_score": 0.8,
+      "interest_score": 0.8,
+      "visual_score": 0.45,
+      "total_score": 0.73
+    }
+  ],
+  "rejected_count": 0,
+  "duplicate_count": 0,
+  "status": "verified",
+  "summary": "블랙홀 안으로 들어가면 사건의 지평선을 넘는 순간에는 특별한 변화를 감지하지 못하지만, 중심에 가까워질수록 시공간이 극도로 왜곡되고 기존의 물리 법칙이 더 이상 적용되지 않는 특이점에 도달하게 됩니다. 블랙홀 내부에서 실제로 무엇을 볼 수 있는지는 아직 미해결된 문제로, 양자역학과 일반상대성 이론의 결합이 필요한 '블랙홀 정보 역설'이 존재합니다. 시간과 공간의 개념도 기존과 달라져 인간의 직관과 크게 다를 수 있습니다. 블랙홀 내부 관측은 현재 불가능하며, 이론적 논의만 진행되고 있습니다.",
+  "uncertainties": [
+    "블랙홀 내부에서 실제로 무엇을 볼 수 있는지에 대한 직접적 관측 자료가 없음",
+    "특이점에서의 물리 법칙 적용에 대한 한계",
+    "양자역학과 일반상대성 이론의 결합이 아직 완전히 해결되지 않음"
+  ],
+  "citations": [
+    {
+      "title": "시간",
+      "url": "https://ko.wikipedia.org/wiki/%EC%8B%9C%EA%B0%84"
+    },
+    {
+      "title": "The Black Hole (1979 film)",
+      "url": "https://en.wikipedia.org/wiki/The_Black_Hole_(1979_film)"
+    },
+    {
+      "title": "Black hole",
+      "url": "https://en.wikipedia.org/wiki/Black_hole"
+    },
+    {
+      "title": "Black hole information paradox",
+      "url": "https://en.wikipedia.org/wiki/Black_hole_information_paradox"
+    },
+    {
+      "title": "Black hole cosmology",
+      "url": "https://en.wikipedia.org/wiki/Black_hole_cosmology"
+    },
+    {
+      "title": "Quasi-Normal Modes of Stars and Black Holes",
+      "url": "https://doi.org/10.12942/lrr-1999-2"
+    },
+    {
+      "title": "Black holes and the butterfly effect",
+      "url": "https://doi.org/10.1007/jhep03(2014)067"
+    },
+    {
+      "title": "The Galactic Center massive black hole and nuclear star cluster",
+      "url": "https://doi.org/10.1103/revmodphys.82.3121"
+    },
+    {
+      "title": "The Thermodynamics of Black Holes",
+      "url": "https://doi.org/10.12942/lrr-2001-6"
+    },
+    {
+      "title": "Park Bo-gum - Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Park_Bo-gum"
+    }
+  ],
+  "provider": "github_models_public_sources",
+  "model": "openai/gpt-4.1",
+  "verified_at": "2026-07-22T04:53:44.516605+00:00"
+}
