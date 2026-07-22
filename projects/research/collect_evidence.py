@@ -2,8 +2,10 @@ from __future__ import annotations
 
 import argparse
 import json
+import re
 import sys
 from pathlib import Path
+from typing import Any
 
 
 ROOT_DIR = Path(__file__).resolve().parents[2]
@@ -31,7 +33,8 @@ def parse_args() -> argparse.Namespace:
         type=Path,
         help=(
             "저장된 Provider 결과를 재검증합니다. "
-            "생략하면 무료 공개 자료와 GitHub Models로 근거를 수집합니다."
+            "생략하면 사전 검증 자료를 우선 재사용하고, 없을 때만 "
+            "무료 공개 자료와 GitHub Models로 근거를 수집합니다."
         ),
     )
     parser.add_argument(
@@ -40,6 +43,69 @@ def parse_args() -> argparse.Namespace:
         help="갱신할 Production Job 경로. 생략하면 입력 Job을 갱신합니다.",
     )
     return parser.parse_args()
+
+
+def _text(value: Any) -> str:
+    return re.sub(r"\s+", " ", str(value or "")).strip()
+
+
+def evidence_from_preflight_sources(
+    *,
+    topic: str,
+    sources: list[dict[str, Any]],
+    service: EvidenceService,
+) -> dict[str, Any]:
+    items: list[dict[str, Any]] = []
+    for source in sources:
+        if not isinstance(source, dict):
+            continue
+        claim = _text(source.get("text") or source.get("claim"))
+        title = _text(source.get("title"))
+        source_url = _text(source.get("source_url") or source.get("url"))
+        if not title or not claim or not source_url:
+            continue
+        words = [
+            word.strip(".,:;!?()[]{}\"'")
+            for word in title.split()
+            if len(word.strip(".,:;!?()[]{}\"'")) >= 2
+        ]
+        items.append(
+            {
+                "title": title,
+                "claim": claim[:1600],
+                "source_name": _text(source.get("source_name") or source.get("source")) or title,
+                "source_url": source_url,
+                "source_tier": _text(source.get("source_tier")) or "reference",
+                "evidence_type": "fact",
+                "published_at": _text(source.get("published_at")) or None,
+                "keywords": words[:8] or [topic],
+            }
+        )
+
+    if len(items) < 2:
+        raise EvidenceGateError(
+            "사전 검증 자료 본문이 최소 2개 필요합니다."
+        )
+
+    summary_parts = [item["claim"] for item in items[:3]]
+    provider_result = {
+        "status": "complete",
+        "summary": " ".join(summary_parts)[:2400],
+        "uncertainties": [
+            "사전 검증 자료가 확인한 사실 이외의 세부 해석은 확정하지 않습니다."
+        ],
+        "items": items,
+        "citations": [
+            {"title": item["title"], "url": item["source_url"]}
+            for item in items
+        ],
+        "provider": "topic_preflight",
+        "model": None,
+    }
+    return service.build_evidence(
+        topic=topic,
+        provider_result=provider_result,
+    )
 
 
 def main() -> int:
@@ -55,10 +121,22 @@ def main() -> int:
             if isinstance(selected_topic, dict)
             else None
         )
+        preflight_sources = (
+            selected_topic.get("preflightSources")
+            if isinstance(selected_topic, dict)
+            else None
+        )
         service = EvidenceService()
         if isinstance(preflight_evidence, dict) and preflight_evidence:
             service.validate_verified_evidence(preflight_evidence)
             evidence = preflight_evidence
+        elif isinstance(preflight_sources, list) and preflight_sources:
+            topic = str(selected_topic.get("topic") or "")
+            evidence = evidence_from_preflight_sources(
+                topic=topic,
+                sources=preflight_sources,
+                service=service,
+            )
         elif args.provider_result:
             provider_result = json.loads(
                 args.provider_result.read_text(encoding="utf-8")
