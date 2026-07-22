@@ -39,7 +39,7 @@ class CandidatePreflightService:
         media_providers: dict[str, Any] | None = None,
         minimum_media_candidates: int = 5,
         minimum_media_queries: int = 1,
-        maximum_candidates_checked: int = 10,
+        maximum_candidates_checked: int = 20,
     ) -> None:
         self._source_collector = source_collector or PublicSourceCollector(
             timeout_seconds=8.0
@@ -89,8 +89,16 @@ class CandidatePreflightService:
                         "reason": str(exc),
                     }
                 )
-            if len(accepted) >= limit:
-                break
+        # 후보 순서가 아니라 실제로 확보된 자료와 미디어의 양을 기준으로
+        # 최종 주제를 고릅니다. 최대 검사 범위까지 모두 확인한 뒤 상위 후보만 남깁니다.
+        accepted.sort(
+            key=lambda item: (
+                float(item.get("production_score") or 0),
+                float(item.get("score") or 0),
+            ),
+            reverse=True,
+        )
+        accepted = accepted[:limit]
 
         for rank, candidate in enumerate(accepted, start=1):
             candidate["rank"] = rank
@@ -113,6 +121,7 @@ class CandidatePreflightService:
                 "minimumSuccessfulQueries": self._minimum_media_queries,
                 "providers": list(self._media_providers),
             },
+            "selectionPolicy": "evidence-and-media-first",
         }
         warnings = result.get("warnings")
         if not isinstance(warnings, list):
@@ -174,6 +183,15 @@ class CandidatePreflightService:
             "successful_query_count": media_preflight["successfulQueryCount"],
             "providers": media_preflight["providers"],
         }
+        # 제작 성공 가능성을 먼저 반영하고, 흥미도는 동점일 때만 사용합니다.
+        source_strength = min(10, source_preflight["documentCount"] * 2)
+        authority_strength = min(10, source_preflight["authoritativeCount"] * 5)
+        media_strength = min(20, media_preflight["candidateCount"])
+        query_strength = min(10, media_preflight["successfulQueryCount"] * 3)
+        result["production_score"] = min(
+            100,
+            50 + source_strength + authority_strength + media_strength + query_strength,
+        )
         checks = [
             str(value)
             for value in result.get("readiness_checks", [])
@@ -196,6 +214,7 @@ class CandidatePreflightService:
         queries: list[str],
     ) -> dict[str, Any]:
         unique: dict[tuple[str, str], MediaCandidate] = {}
+        media_queries: dict[tuple[str, str], str] = {}
         successful_queries = 0
         provider_counts: Counter[str] = Counter()
         used_queries: list[str] = []
@@ -222,6 +241,7 @@ class CandidatePreflightService:
                     if key in unique:
                         continue
                     unique[key] = media
+                    media_queries[key] = query
                     provider_counts[media.provider] += 1
             if len(unique) > before:
                 successful_queries += 1
@@ -252,8 +272,9 @@ class CandidatePreflightService:
                 "license": media.license_name,
                 "width": media.width,
                 "height": media.height,
+                "query": media_queries[(media.provider, media.media_id)],
             }
-            for media in list(unique.values())[:5]
+            for media in list(unique.values())[:12]
         ]
         return {
             "status": "verified",
@@ -270,12 +291,12 @@ class CandidatePreflightService:
         sources: list[dict[str, str]],
     ) -> list[str]:
         values = [
+            *candidate.get("search_queries", []),
             *[
                 source.get("title", "")
                 for source in sources
                 if source.get("title")
             ],
-            *candidate.get("search_queries", []),
             str(candidate.get("topic") or ""),
         ]
         return list(
