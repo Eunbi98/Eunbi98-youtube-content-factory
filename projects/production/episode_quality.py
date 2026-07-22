@@ -13,6 +13,11 @@ if str(DIRECTOR_DIR) not in sys.path:
     sys.path.insert(0, str(DIRECTOR_DIR))
 
 from episode_spec import EpisodeSpecError, load_episode_spec  # noqa: E402
+from projects.production.metadata_style import (  # noqa: E402
+    MetadataStyleError,
+    collect_reference_titles,
+    validate_metadata_style,
+)
 
 
 class EpisodeQualityError(ValueError):
@@ -86,6 +91,16 @@ class EpisodeQualityService:
             raise EpisodeQualityError("마지막 Scene은 댓글을 유도하는 질문이어야 합니다.")
 
         self._validate_metadata(metadata_payload)
+        try:
+            validate_metadata_style(
+                metadata_payload,
+                reference_titles=collect_reference_titles(
+                    job_payload,
+                    evidence_payload,
+                ),
+            )
+        except MetadataStyleError as exc:
+            raise EpisodeQualityError(str(exc)) from exc
         allowed_source_urls = {
             str(item.get("source_url") or "").strip()
             for item in evidence_payload.get("items", [])
