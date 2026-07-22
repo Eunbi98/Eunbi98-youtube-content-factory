@@ -7,6 +7,7 @@ from typing import Callable, Iterable
 from .news_source import GoogleNewsTopicSource, TopicSource
 from .topic_catalog import (
     ARCHIVE_TOPICS,
+    ARCHIVE_RESEARCH_TERMS,
     BRAND_EXCLUDE_KEYWORDS,
     CATEGORY_KEYWORDS,
     CATEGORY_LABELS,
@@ -579,7 +580,19 @@ class AutoTopicFinder:
         if not left_tokens or not right_tokens:
             return left == right
         overlap = len(left_tokens & right_tokens)
-        return overlap / min(len(left_tokens), len(right_tokens)) >= 0.55
+        ratio = overlap / min(len(left_tokens), len(right_tokens))
+        if ratio >= 0.55:
+            return True
+        left_distinctive = cls._match_tokens(left)
+        right_distinctive = cls._match_tokens(right)
+        if not left_distinctive or not right_distinctive:
+            return False
+        distinctive_overlap = len(left_distinctive & right_distinctive)
+        distinctive_ratio = distinctive_overlap / min(
+            len(left_distinctive),
+            len(right_distinctive),
+        )
+        return distinctive_overlap >= 3 and distinctive_ratio >= 0.35
 
     @staticmethod
     def _tokens(text: str) -> set[str]:
@@ -653,6 +666,14 @@ class AutoTopicFinder:
     @staticmethod
     def _search_queries(category: str, topic: str) -> list[str]:
         label = CATEGORY_LABELS[category]
+        research_term = ARCHIVE_RESEARCH_TERMS.get(topic)
+        if research_term:
+            return [
+                research_term,
+                f"{research_term} research review evidence",
+                topic,
+                f"{research_term} Wikimedia Commons NASA museum images",
+            ]
         return [
             topic,
             f"{topic} 공식 연구 기관 자료",

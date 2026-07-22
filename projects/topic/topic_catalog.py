@@ -343,3 +343,32 @@ FALLBACK_TOPICS = {
 # 외부 위키는 아이디어 발견에만 사용하고, 실제 영상 조사는 공식·학술 자료로
 # 다시 검증합니다. 현재 검수된 상시 관심 후보를 아카이브의 첫 데이터로 사용합니다.
 ARCHIVE_TOPICS = FALLBACK_TOPICS
+
+
+# 검수된 아카이브 주제를 공개 영문 자료·학술 색인·이미지 저장소에서
+# 바로 찾을 수 있도록 주제별 핵심 영문 검색어를 함께 보관합니다.
+ARCHIVE_RESEARCH_TERMS = {
+    "안티키테라 장치는 어떻게 시대를 앞섰을까": "Antikythera mechanism ancient Greek astronomical computer",
+    "나스카 라인은 누가 무엇을 위해 만들었을까": "Nazca Lines purpose archaeology Peru",
+    "디아틀로프 고개 사건의 가장 현실적인 설명": "Dyatlov Pass incident scientific avalanche explanation",
+    "로어노크 식민지 사람들은 어디로 사라졌을까": "Roanoke Colony disappearance archaeology",
+    "사하라의 거대한 눈은 어떻게 만들어졌을까": "Richat Structure formation geology",
+    "지구 생명체는 왜 잠을 자야 할까": "sleep evolution biological function",
+    "공룡을 멸종시킨 날 지구에서는 무슨 일이 있었을까": "Chicxulub impact dinosaur extinction evidence",
+    "문어의 지능은 왜 독립적으로 진화했을까": "octopus intelligence cephalopod cognition evolution",
+    "지구 내부에는 얼마나 많은 물이 숨어 있을까": "water in Earth mantle ringwoodite",
+    "지구 자기장이 뒤집히면 어떤 일이 생길까": "geomagnetic reversal effects evidence",
+    "로마 콘크리트는 왜 2천 년을 버틸까": "Roman concrete durability self healing lime clasts",
+    "폼페이 최후의 하루에는 무슨 일이 있었을까": "Pompeii eruption 79 CE archaeology",
+    "괴베클리 테페는 인류 역사를 어떻게 바꿨을까": "Gobekli Tepe archaeology Neolithic",
+    "진시황 병마용에는 왜 서로 다른 얼굴이 있을까": "Terracotta Army individual faces archaeology",
+    "바이킹은 콜럼버스보다 먼저 아메리카에 갔을까": "Norse settlement North America L'Anse aux Meadows",
+    "고대인은 스톤헨지의 돌을 어떻게 옮겼을까": "Stonehenge stone transport archaeology",
+    "마야 문명은 왜 거대한 도시를 버렸을까": "Classic Maya collapse drought archaeology",
+    "목성의 위성 유로파 바다에 생명체가 있을까": "Europa subsurface ocean astrobiology",
+    "화성은 어떻게 물을 잃어버렸을까": "Mars atmospheric water loss MAVEN",
+    "중성자별 한 숟가락은 얼마나 무거울까": "neutron star density mass",
+    "태양이 갑자기 사라지면 지구는 언제 알게 될까": "Sun light travel time Earth gravity thought experiment",
+    "달 뒷면은 왜 지구에서 볼 수 없을까": "Moon tidal locking far side",
+    "떠돌이 행성에는 생명체가 살 수 있을까": "rogue planet habitability astrobiology",
+}

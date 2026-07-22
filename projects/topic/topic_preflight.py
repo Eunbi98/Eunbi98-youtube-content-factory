@@ -39,7 +39,7 @@ class CandidatePreflightService:
         media_providers: dict[str, Any] | None = None,
         minimum_media_candidates: int = 5,
         minimum_media_queries: int = 1,
-        maximum_candidates_checked: int = 5,
+        maximum_candidates_checked: int = 10,
     ) -> None:
         self._source_collector = source_collector or PublicSourceCollector(
             timeout_seconds=8.0

@@ -239,6 +239,13 @@ class TopicFinderTests(unittest.TestCase):
         self.assertTrue(
             all(candidate.source_count == 0 for candidate in result.candidates)
         )
+        self.assertTrue(
+            any(
+                "Antikythera mechanism" in query
+                for candidate in result.candidates
+                for query in candidate.search_queries
+            )
+        )
         self.assertIn("미스터리 아카이브", result.candidates[0].reasons[0])
 
     def test_mixed_mode_keeps_trend_and_archive_quota(self) -> None:
