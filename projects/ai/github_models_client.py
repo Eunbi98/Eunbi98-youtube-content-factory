@@ -31,7 +31,11 @@ class GithubModelsClient:
         self._transport = transport or self._request
 
     @classmethod
-    def from_environment(cls) -> "GithubModelsClient":
+    def from_environment(
+        cls,
+        *,
+        timeout_seconds: float = 240.0,
+    ) -> "GithubModelsClient":
         token = (
             os.getenv("GITHUB_MODELS_TOKEN", "").strip()
             or os.getenv("GITHUB_TOKEN", "").strip()
@@ -44,6 +48,7 @@ class GithubModelsClient:
         return cls(
             token=token,
             model=os.getenv("GITHUB_MODELS_MODEL", "openai/gpt-4.1"),
+            timeout_seconds=timeout_seconds,
         )
 
     @property

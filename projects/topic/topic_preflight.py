@@ -46,10 +46,10 @@ class CandidatePreflightService:
         media_providers: dict[str, Any] | None = None,
         minimum_media_candidates: int = 5,
         minimum_media_queries: int = 2,
-        maximum_candidates_checked: int = 8,
+        maximum_candidates_checked: int = 5,
     ) -> None:
         self._evidence_provider = evidence_provider or GithubModelsEvidenceProvider(
-            client=GithubModelsClient.from_environment(),
+            client=GithubModelsClient.from_environment(timeout_seconds=60.0),
             source_collector=PublicSourceCollector(timeout_seconds=8.0),
         )
         self._evidence_service = evidence_service or EvidenceService()
