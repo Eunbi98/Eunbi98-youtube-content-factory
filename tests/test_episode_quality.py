@@ -70,7 +70,7 @@ def _spec() -> dict:
 
 def _metadata() -> dict:
     return {
-        "title": "화성의 검은 돌은 어디에서 왔을까? #쇼츠 #shorts",
+        "title": "화성의 검은 돌은 어디에서 왔을까?",
         "description": (
             "화성에서 발견된 검은 돌을 알고 계셨나요?\n\n"
             "탐사 로버가 낯선 암석을 촬영했습니다.\n\n"
@@ -82,7 +82,7 @@ def _metadata() -> dict:
             "화성의 검은 돌은 어디에서 왔다고 생각하시나요?\n\n"
             "댓글로 여러분의 추리를 알려주세요!"
         ),
-        "tags": ["1", "2", "3", "4", "5"],
+        "tags": ["1", "2", "3", "쇼츠", "shorts"],
         "sources": [
             "https://source-a.example/a",
             "https://source-b.example/b",
@@ -163,9 +163,7 @@ class EpisodeQualityTests(unittest.TestCase):
 
     def test_copied_news_title_is_rejected(self) -> None:
         metadata = _metadata()
-        metadata["title"] = (
-            "국내 연구진, 화성에서 검은 돌 발견 #쇼츠 #shorts"
-        )
+        metadata["title"] = "국내 연구진, 화성에서 검은 돌 발견"
         with tempfile.TemporaryDirectory() as temp_dir:
             directory = Path(temp_dir)
             spec_path = self._write_spec(directory, _spec())
@@ -173,6 +171,21 @@ class EpisodeQualityTests(unittest.TestCase):
                 EpisodeQualityError,
                 "기사 또는 선택 주제 제목과 너무 유사",
             ):
+                EpisodeQualityService().validate_and_advance(
+                    job_payload=_job(),
+                    evidence_payload=_evidence(),
+                    episode_spec_path=spec_path,
+                    metadata_payload=metadata,
+                    metadata_path=directory / "metadata.json",
+                )
+
+    def test_title_with_hashtag_is_rejected(self) -> None:
+        metadata = _metadata()
+        metadata["title"] += " #쇼츠 #shorts"
+        with tempfile.TemporaryDirectory() as temp_dir:
+            directory = Path(temp_dir)
+            spec_path = self._write_spec(directory, _spec())
+            with self.assertRaisesRegex(EpisodeQualityError, "해시태그"):
                 EpisodeQualityService().validate_and_advance(
                     job_payload=_job(),
                     evidence_payload=_evidence(),
