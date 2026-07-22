@@ -4,6 +4,8 @@ import json
 import os
 from typing import Any, Callable
 
+from projects.production.metadata_style import METADATA_STYLE_INSTRUCTIONS
+
 
 class EpisodeProviderError(RuntimeError):
     """Episode/Metadata 생성 Provider 요청 또는 응답 오류."""
@@ -202,7 +204,9 @@ class OpenAIEpisodeProvider:
             "Metadata must include an accurate title, description, 5 to 15 tags, "
             "a pinned comment that repeats the ending question, and at least 3 "
             "distinct source URLs copied exactly from evidence. Do not include "
-            "unsupported sensational claims. Return JSON only through the schema."
+            "unsupported sensational claims. "
+            + METADATA_STYLE_INSTRUCTIONS
+            + " Return JSON only through the schema."
         )
         return {
             "model": self._model,
