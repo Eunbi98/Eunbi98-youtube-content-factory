@@ -1,0 +1,111 @@
+{
+  "version": "1.0",
+  "jobId": "ep019-20260722T013255Z",
+  "episodeId": "ep019",
+  "category": "science",
+  "status": "episode_ready",
+  "createdAt": "2026-07-22T01:32:55.358581+00:00",
+  "selectedTopic": {
+    "rank": 1,
+    "category": "science",
+    "topic": "국내 연구진, 뇌 노폐물 배출 경로 ‘지주막 소창’ 발견…치매 치료 새 가능성",
+    "angle": "국내 연구진, 뇌 노폐물 배출 경로 ‘지주막 소창’ 발견…치매 치료 새 가능성이 우리의 상식을 어떻게 바꿀까?",
+    "score": 96.0,
+    "reasons": [
+      "최근 7일 이내 보도",
+      "과학 핵심 키워드 3개 포함",
+      "제목 훅으로 만들기 좋은 발견·의문 요소",
+      "영상 자료로 표현하기 쉬운 주제",
+      "서로 다른 출처 3곳에서 다룸",
+      "채널 브랜드 적합도 통과"
+    ],
+    "searchQueries": [
+      "국내 연구진, 뇌 노폐물 배출 경로 ‘지주막 소창’ 발견…치매 치료 새 가능성",
+      "국내 연구진, 뇌 노폐물 배출 경로 ‘지주막 소창’ 발견…치매 치료 새 가능성 최신 연구 공식 발표",
+      "국내 연구진, 뇌 노폐물 배출 경로 ‘지주막 소창’ 발견…치매 치료 새 가능성 사실 확인 반박",
+      "국내 연구진, 뇌 노폐물 배출 경로 ‘지주막 소창’ 발견…치매 치료 새 가능성 과학 사진 영상 자료"
+    ],
+    "sourceCount": 3,
+    "sources": [
+      {
+        "title": "국내 연구진, 뇌 노폐물 배출 경로 ‘지주막 소창’ 발견…치매 치료 새 가능성 - sisaworld.kr",
+        "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE5tYWN4YnlBREpMVU5CRmdFQ1FJUkFGUVNtbDh0bHVodjJZb3lEMlFOd3FBb0k0NkxkSHJ5TmdBREhiQ2NxVzhwZGozWFJUZ0FJbnNtdnpvRTNzTVdvYzM3SXRfc0doc3N5RkE?oc=5",
+        "source": "sisaworld.kr",
+        "published_at": "2026-07-22T01:14:23+00:00"
+      },
+      {
+        "title": "국내 연구진, 뇌 노폐물 배출 '숨은 통로' 첫 발견…치매 치료 새 가능성 - SBS Biz",
+        "url": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE5ZckdPZ2RWc2NxNkJ5QUlmSkgtZHZIbUNjYzg4MjhsTGJtdmd3YUhLVEVLNEFnM0J6ZGtJX1hDYjBJQTZGXzk5S2d4STNObHlpNzNfMjBGSnY?oc=5",
+        "source": "SBS Biz",
+        "published_at": "2026-07-21T21:35:00+00:00"
+      },
+      {
+        "title": "국내 연구진, 뇌 노폐물 배출 '숨은 통로' 첫 발견…치매 치료 새 가능성 - supple.kr",
+        "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTFBLMkRZeWdJRkkyaHJXdlB6LUZaUnZRT3NpVmdpaVNXR0dWYmFhVV8wOVR6T2lQMkVsSFJSWVZsbnBaTFlBT3dnekplZzdfSElwZlBGd0RDalg4UDJD?oc=5",
+        "source": "supple.kr",
+        "published_at": "2026-07-21T21:37:23+00:00"
+      }
+    ]
+  },
+  "researchPlan": {
+    "topic": "국내 연구진, 뇌 노폐물 배출 경로 ‘지주막 소창’ 발견…치매 치료 새 가능성",
+    "angle": "국내 연구진, 뇌 노폐물 배출 경로 ‘지주막 소창’ 발견…치매 치료 새 가능성이 우리의 상식을 어떻게 바꿀까?",
+    "questions": [
+      "무엇이 언제 어디에서 발견되거나 발표됐는가?",
+      "확인 가능한 핵심 사실과 숫자는 무엇인가?",
+      "연구 결과와 아직 검증되지 않은 해석은 무엇인가?",
+      "반대 설명이나 한계는 무엇인가?",
+      "영상으로 보여줄 수 있는 장소·유물·관측 자료는 무엇인가?",
+      "시청자가 댓글로 답하고 싶어질 마지막 질문은 무엇인가?"
+    ],
+    "queries": [
+      "국내 연구진, 뇌 노폐물 배출 경로 ‘지주막 소창’ 발견…치매 치료 새 가능성",
+      "국내 연구진, 뇌 노폐물 배출 경로 ‘지주막 소창’ 발견…치매 치료 새 가능성 최신 연구 공식 발표",
+      "국내 연구진, 뇌 노폐물 배출 경로 ‘지주막 소창’ 발견…치매 치료 새 가능성 사실 확인 반박",
+      "국내 연구진, 뇌 노폐물 배출 경로 ‘지주막 소창’ 발견…치매 치료 새 가능성 과학 사진 영상 자료",
+      "국내 연구진, 뇌 노폐물 배출 경로 ‘지주막 소창’ 발견…치매 치료 새 가능성 official source",
+      "국내 연구진, 뇌 노폐물 배출 경로 ‘지주막 소창’ 발견…치매 치료 새 가능성 research paper",
+      "국내 연구진, 뇌 노폐물 배출 경로 ‘지주막 소창’ 발견…치매 치료 새 가능성 fact check",
+      "국내 연구진, 뇌 노폐물 배출 경로 ‘지주막 소창’ 발견…치매 치료 새 가능성 image archive"
+    ],
+    "sourcePolicy": {
+      "minimumSources": 3,
+      "requiredTiers": [
+        "official_or_academic",
+        "reference",
+        "news"
+      ],
+      "requireCounterpoint": true,
+      "rejectUnverifiedFacts": true
+    },
+    "sourceSeeds": [
+      {
+        "title": "국내 연구진, 뇌 노폐물 배출 경로 ‘지주막 소창’ 발견…치매 치료 새 가능성 - sisaworld.kr",
+        "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE5tYWN4YnlBREpMVU5CRmdFQ1FJUkFGUVNtbDh0bHVodjJZb3lEMlFOd3FBb0k0NkxkSHJ5TmdBREhiQ2NxVzhwZGozWFJUZ0FJbnNtdnpvRTNzTVdvYzM3SXRfc0doc3N5RkE?oc=5",
+        "source": "sisaworld.kr",
+        "published_at": "2026-07-22T01:14:23+00:00"
+      },
+      {
+        "title": "국내 연구진, 뇌 노폐물 배출 '숨은 통로' 첫 발견…치매 치료 새 가능성 - SBS Biz",
+        "url": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE5ZckdPZ2RWc2NxNkJ5QUlmSkgtZHZIbUNjYzg4MjhsTGJtdmd3YUhLVEVLNEFnM0J6ZGtJX1hDYjBJQTZGXzk5S2d4STNObHlpNzNfMjBGSnY?oc=5",
+        "source": "SBS Biz",
+        "published_at": "2026-07-21T21:35:00+00:00"
+      },
+      {
+        "title": "국내 연구진, 뇌 노폐물 배출 '숨은 통로' 첫 발견…치매 치료 새 가능성 - supple.kr",
+        "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTFBLMkRZeWdJRkkyaHJXdlB6LUZaUnZRT3NpVmdpaVNXR0dWYmFhVV8wOVR6T2lQMkVsSFJSWVZsbnBaTFlBT3dnekplZzdfSElwZlBGd0RDalg4UDJD?oc=5",
+        "source": "supple.kr",
+        "published_at": "2026-07-21T21:37:23+00:00"
+      }
+    ]
+  },
+  "artifacts": {
+    "evidence": "projects/episodes/ep019/evidence.json",
+    "episodeSpec": "projects/episodes/ep019/episode.json",
+    "timeline": null,
+    "video": null,
+    "metadata": "projects/episodes/ep019/metadata.json"
+  },
+  "nextAction": "build_timeline",
+  "updatedAt": "2026-07-22T01:33:29.964826+00:00"
+}

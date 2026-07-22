@@ -1,0 +1,154 @@
+{
+  "topic": "국내 연구진, 뇌 노폐물 배출 경로 ‘지주막 소창’ 발견…치매 치료 새 가능성",
+  "items": [
+    {
+      "id": "evidence_18dfa89db866",
+      "title": "Lymphatic Clearance of the Brain: Perivascular, Paravascular and Significance for Neurodegenerative Diseases",
+      "claim": "뇌 노폐물 배출 경로의 발견은 치매 등 신경퇴행성 질환 치료에 새로운 가능성을 제시하지만, 실제 임상 적용이나 치료 효과에 대한 검증은 추가 연구가 필요하다.",
+      "source_name": "Cellular and Molecular Neurobiology",
+      "source_url": "https://doi.org/10.1007/s10571-015-0273-8",
+      "source_tier": "academic",
+      "evidence_type": "counterpoint",
+      "published_at": "2016",
+      "keywords": [
+        "치매",
+        "신경퇴행성 질환",
+        "임상 적용",
+        "추가 연구"
+      ],
+      "reliability_score": 0.95,
+      "interest_score": 1.0,
+      "visual_score": 0.7,
+      "total_score": 0.915
+    },
+    {
+      "id": "evidence_5e2833ab45eb",
+      "title": "Cerebrospinal fluid outflow: a review of the historical and contemporary evidence for arachnoid villi, perineural routes, and dural lymphatics",
+      "claim": "뇌 노폐물 배출 경로에 대한 해석은 아직 논란이 있으며, 경막 림프관과 신경 주위 경로 등 다양한 경로가 존재할 수 있다는 점에서 완전한 해부학적·생리학적 그림은 아직 밝혀지지 않았다.",
+      "source_name": "Cellular and Molecular Life Sciences",
+      "source_url": "https://doi.org/10.1007/s00018-020-03706-5",
+      "source_tier": "academic",
+      "evidence_type": "counterpoint",
+      "published_at": "2021",
+      "keywords": [
+        "경막 림프관",
+        "신경 주위 경로",
+        "논란",
+        "한계"
+      ],
+      "reliability_score": 0.95,
+      "interest_score": 0.95,
+      "visual_score": 0.45,
+      "total_score": 0.85
+    },
+    {
+      "id": "evidence_eaa6b34e23f5",
+      "title": "A dural lymphatic vascular system that drains brain interstitial fluid and macromolecules",
+      "claim": "최근 연구에서는 두개강 내 경막(두개골 안쪽의 막)에 림프관이 존재하며, 이 경막 림프관이 뇌척수액과 뇌간질액을 흡수해 목 림프절로 운반하는 역할을 한다고 밝혀졌다.",
+      "source_name": "The Journal of Experimental Medicine",
+      "source_url": "https://doi.org/10.1084/jem.20142290",
+      "source_tier": "academic",
+      "evidence_type": "fact",
+      "published_at": "2015",
+      "keywords": [
+        "경막 림프관",
+        "뇌척수액",
+        "뇌간질액",
+        "목 림프절"
+      ],
+      "reliability_score": 0.95,
+      "interest_score": 0.8,
+      "visual_score": 0.45,
+      "total_score": 0.805
+    },
+    {
+      "id": "evidence_16f6a74d2502",
+      "title": "Google News",
+      "claim": "2026년 7월, 국내 연구진이 뇌 노폐물 배출 경로로 '지주막 소창'을 발견했다고 발표했다.",
+      "source_name": "SBS Biz",
+      "source_url": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE5ZckdPZ2RWc2NxNkJ5QUlmSkgtZHZIbUNjYzg4MjhsTGJtdmd3YUhLVEVLNEFnM0J6ZGtJX1hDYjBJQTZGXzk5S2d4STNObHlpNzNfMjBGSnY?oc=5&hl=en-US&gl=US&ceid=US:en",
+      "source_tier": "news",
+      "evidence_type": "timeline",
+      "published_at": "2026-07-21T21:35:00+00:00",
+      "keywords": [
+        "국내 연구진",
+        "지주막 소창",
+        "발견",
+        "2026년 7월"
+      ],
+      "reliability_score": 0.7,
+      "interest_score": 0.85,
+      "visual_score": 0.7,
+      "total_score": 0.745
+    },
+    {
+      "id": "evidence_13060aab15f7",
+      "title": "Glymphatic system",
+      "claim": "뇌의 노폐물 배출 경로로는 기존에 글림파틱 시스템(뇌의 대사성 노폐물 제거 경로)이 알려져 있었으며, 뇌척수액(CSF)이 뇌혈관 주변을 따라 흐르며 노폐물을 제거한다.",
+      "source_name": "Wikipedia",
+      "source_url": "https://en.wikipedia.org/wiki/Glymphatic_system",
+      "source_tier": "reference",
+      "evidence_type": "fact",
+      "published_at": null,
+      "keywords": [
+        "글림파틱 시스템",
+        "뇌척수액",
+        "노폐물 제거"
+      ],
+      "reliability_score": 0.8,
+      "interest_score": 0.8,
+      "visual_score": 0.45,
+      "total_score": 0.73
+    }
+  ],
+  "rejected_count": 0,
+  "duplicate_count": 0,
+  "status": "verified",
+  "summary": "2026년 7월 국내 연구진이 뇌 노폐물 배출 경로로 '지주막 소창'을 발견했다고 발표했다. 기존에는 글림파틱 시스템과 경막 림프관이 뇌 노폐물 제거에 중요한 역할을 하는 것으로 알려져 있었으며, 최근 연구에서 경막 림프관이 뇌척수액과 뇌간질액을 흡수해 목 림프절로 운반하는 경로가 밝혀졌다. 하지만 뇌 노폐물 배출 경로에 대한 해석은 아직 논란이 있으며, 다양한 경로가 존재할 수 있다는 점에서 완전한 해부학적·생리학적 그림은 밝혀지지 않았다. 또한 치매 등 신경퇴행성 질환 치료에 새로운 가능성을 제시하지만, 실제 임상 적용이나 치료 효과에 대한 검증은 추가 연구가 필요하다.",
+  "uncertainties": [
+    "지주막 소창의 정확한 구조와 기능에 대한 추가 검증 필요",
+    "임상적 치료 효과에 대한 직접적 증거 부족",
+    "경막 림프관과 신경 주위 경로 등 다양한 경로의 상호작용 미확인"
+  ],
+  "citations": [
+    {
+      "title": "Google News",
+      "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE5tYWN4YnlBREpMVU5CRmdFQ1FJUkFGUVNtbDh0bHVodjJZb3lEMlFOd3FBb0k0NkxkSHJ5TmdBREhiQ2NxVzhwZGozWFJUZ0FJbnNtdnpvRTNzTVdvYzM3SXRfc0doc3N5RkE?oc=5&hl=en-US&gl=US&ceid=US:en"
+    },
+    {
+      "title": "Google News",
+      "url": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE5ZckdPZ2RWc2NxNkJ5QUlmSkgtZHZIbUNjYzg4MjhsTGJtdmd3YUhLVEVLNEFnM0J6ZGtJX1hDYjBJQTZGXzk5S2d4STNObHlpNzNfMjBGSnY?oc=5&hl=en-US&gl=US&ceid=US:en"
+    },
+    {
+      "title": "Google News",
+      "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTFBLMkRZeWdJRkkyaHJXdlB6LUZaUnZRT3NpVmdpaVNXR0dWYmFhVV8wOVR6T2lQMkVsSFJSWVZsbnBaTFlBT3dnekplZzdfSElwZlBGd0RDalg4UDJD?oc=5&hl=en-US&gl=US&ceid=US:en"
+    },
+    {
+      "title": "Glymphatic system",
+      "url": "https://en.wikipedia.org/wiki/Glymphatic_system"
+    },
+    {
+      "title": "Cerebrospinal fluid",
+      "url": "https://en.wikipedia.org/wiki/Cerebrospinal_fluid"
+    },
+    {
+      "title": "A dural lymphatic vascular system that drains brain interstitial fluid and macromolecules",
+      "url": "https://doi.org/10.1084/jem.20142290"
+    },
+    {
+      "title": "Lymphatic Clearance of the Brain: Perivascular, Paravascular and Significance for Neurodegenerative Diseases",
+      "url": "https://doi.org/10.1007/s10571-015-0273-8"
+    },
+    {
+      "title": "Cerebrospinal fluid outflow: a review of the historical and contemporary evidence for arachnoid villi, perineural routes, and dural lymphatics",
+      "url": "https://doi.org/10.1007/s00018-020-03706-5"
+    },
+    {
+      "title": "Cerebral Arterial Pulsation Drives Paravascular CSF–Interstitial Fluid Exchange in the Murine Brain",
+      "url": "https://doi.org/10.1523/jneurosci.1592-13.2013"
+    }
+  ],
+  "provider": "github_models_public_sources",
+  "model": "openai/gpt-4.1",
+  "verified_at": "2026-07-22T01:33:16.379656+00:00"
+}
