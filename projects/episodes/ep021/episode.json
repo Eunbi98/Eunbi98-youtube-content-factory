@@ -1,0 +1,57 @@
+{
+  "version": "1.0",
+  "episodeId": "ep021",
+  "channel": "mystery",
+  "mediaSource": "wikimedia_commons",
+  "title": "2천 년 전 만든\n최초의 컴퓨터",
+  "theme": {
+    "backgroundColor": "#080B10",
+    "titleColor": "#7CFFB2",
+    "captionColor": "#FFFFFF",
+    "accentColor": "#D9A441"
+  },
+  "scenes": [
+    {
+      "type": "hook",
+      "title": "2천 년 전에도\n컴퓨터가 있었습니다",
+      "narration": "2천 년 전 고대 그리스에는 전기도 없이 천체의 움직임을 계산하는 기계가 있었습니다.",
+      "keywords": ["Antikythera shipwreck sponge divers", "Antikythera mechanism discovery 1901"],
+      "evidenceIds": ["namuseum_antikythera", "ucl_antikythera"]
+    },
+    {
+      "type": "answer",
+      "title": "난파선에서 나온\n녹슨 금속 조각",
+      "narration": "1901년, 안티키테라섬 앞바다 난파선에서 건져 올린 녹슨 청동 덩어리 속에서 톱니바퀴가 발견됐습니다.",
+      "keywords": ["Antikythera mechanism fragment museum", "Antikythera bronze gears"],
+      "evidenceIds": ["namuseum_antikythera"]
+    },
+    {
+      "type": "story",
+      "title": "남은 건 3분의 1\n그 안에 30개 기어",
+      "narration": "현재 남은 것은 82개 조각, 원래 기계의 약 3분의 1뿐이지만 청동 기어 30개가 살아남았습니다.",
+      "keywords": ["Antikythera mechanism gears reconstruction", "Antikythera 30 gears"],
+      "evidenceIds": ["ucl_paper_2021"]
+    },
+    {
+      "type": "fact",
+      "title": "손잡이를 돌리면\n하늘이 움직였습니다",
+      "narration": "손잡이를 돌리면 태양과 달, 다섯 행성의 위치는 물론 일식과 월식 시기까지 표시할 수 있었습니다.",
+      "keywords": ["Antikythera mechanism model front", "Antikythera planetary display"],
+      "evidenceIds": ["ucl_antikythera", "ucl_paper_2021"]
+    },
+    {
+      "type": "fact",
+      "title": "엑스레이가 밝혀낸\n고대의 설계도",
+      "narration": "연구진은 3차원 엑스레이로 부식된 내부와 숨은 글자를 읽어 기계의 작동 방식을 복원했습니다.",
+      "keywords": ["Antikythera mechanism x ray tomography", "Antikythera rear dial eclipse"],
+      "evidenceIds": ["ucl_antikythera", "ucl_paper_2021"]
+    },
+    {
+      "type": "ending",
+      "title": "하지만 제작자는\n아직도 모릅니다",
+      "narration": "누가 이런 정밀한 기계를 만들었는지는 여전히 밝혀지지 않았습니다. 고대 기술은 어디까지 발전했던 걸까요?",
+      "keywords": ["Antikythera mechanism reconstruction", "Antikythera island Greece"],
+      "evidenceIds": ["namuseum_antikythera", "ucl_paper_2021"]
+    }
+  ]
+}

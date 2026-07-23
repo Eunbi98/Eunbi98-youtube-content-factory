@@ -1,0 +1,43 @@
+{
+  "episodeId": "ep021",
+  "license": "Wikimedia Commons file-specific open licenses",
+  "credit": "Wikimedia Commons contributors; UCL Antikythera Research Team",
+  "reason": "장면별로 공개 라이선스가 확인되는 안티키테라 기계 자료를 직접 선정함",
+  "researchSources": [
+    "https://www.namuseum.gr/en/temporary_exhibition/to-nayagio-ton-antikythiron-to-ploio-oi-thisayroi-o-michanismos/",
+    "https://www.ucl.ac.uk/news/2021/mar/experts-recreate-mechanical-cosmos-worlds-first-computer",
+    "https://discovery.ucl.ac.uk/id/eprint/10124374/"
+  ],
+  "scenes": [
+    {
+      "sceneId": "scene_001",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Anticythera_shipwreck._Standard_diving_dress.jpg",
+      "description": "안티키테라 난파선 조사에 사용된 표준 잠수복"
+    },
+    {
+      "sceneId": "scene_002",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Antikythera_Mechanism_-_National_Archaeological_Museum,_Athens_by_Joy_of_Museum.jpg",
+      "description": "아테네 국립고고학박물관의 안티키테라 기계 조각"
+    },
+    {
+      "sceneId": "scene_003",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:41598_2021_84310_Fig4_HTML.jpg",
+      "description": "UCL 연구진의 기어 구조 복원도"
+    },
+    {
+      "sceneId": "scene_004",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Antikythera_model_front_panel_Mogi_Vicentini_2007.JPG",
+      "description": "안티키테라 기계 전면 복원 모형"
+    },
+    {
+      "sceneId": "scene_005",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:NAMA_Machine_d%27Anticyth%C3%A8re_4.jpg",
+      "description": "기계 후면 다이얼과 기어 구조"
+    },
+    {
+      "sceneId": "scene_006",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Antikythera_mechanism_back_view,_1st-2nd_century_BC,_Greece_(transparent_model).jpg",
+      "description": "투명 복원 모형에서 보이는 내부 기어"
+    }
+  ]
+}
