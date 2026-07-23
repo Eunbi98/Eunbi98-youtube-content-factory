@@ -1,0 +1,57 @@
+{
+  "version": "1.0",
+  "episodeId": "ep022",
+  "channel": "mystery",
+  "mediaSource": "wikimedia_commons",
+  "title": "용도를 모르는\n로마의 12면체",
+  "theme": {
+    "backgroundColor": "#080B10",
+    "titleColor": "#7CFFB2",
+    "captionColor": "#FFFFFF",
+    "accentColor": "#D9A441"
+  },
+  "scenes": [
+    {
+      "type": "hook",
+      "title": "로마가 남긴\n정체불명의 물건",
+      "narration": "약 천칠백 년 전 로마인들은 이 이상한 청동 12면체를 만들었습니다.",
+      "keywords": ["Roman dodecahedron bronze artifact", "Roman dodecahedron museum"],
+      "evidenceIds": ["british_museum", "commons_category"]
+    },
+    {
+      "type": "answer",
+      "title": "면마다 구멍 크기가\n전부 다릅니다",
+      "narration": "속은 비어 있고, 열두 면의 둥근 구멍은 크기가 모두 다르며 꼭짓점마다 작은 돌기가 달려 있습니다.",
+      "keywords": ["Roman dodecahedron holes close up", "bronze dodecahedron different holes"],
+      "evidenceIds": ["british_museum", "commons_bronze"]
+    },
+    {
+      "type": "story",
+      "title": "그런데 사용법이\n한 줄도 없습니다",
+      "narration": "여러 유물이 발견됐지만 로마 시대 기록에는 이름도 사용법도 남아 있지 않습니다.",
+      "keywords": ["Roman dodecahedron museum collection", "Roman dodecahedrons display"],
+      "evidenceIds": ["commons_bronze", "portable_antiquities"]
+    },
+    {
+      "type": "fact",
+      "title": "장갑을 뜨는\n도구였을까요?",
+      "narration": "구멍에 실을 걸어 장갑을 뜨는 도구였다는 가설이 있지만, 이를 입증할 고대 기록은 없습니다.",
+      "keywords": ["Roman dodecahedron knitting theory replica", "Roman dodecahedron experiment"],
+      "evidenceIds": ["commons_category"]
+    },
+    {
+      "type": "fact",
+      "title": "측정기와 달력이라는\n가설도 있습니다",
+      "narration": "구멍을 통해 거리를 재거나 겨울 곡물의 파종 시기를 정했다는 주장도 나왔습니다.",
+      "keywords": ["Roman dodecahedron measuring theory", "Roman dodecahedron sowing calendar theory"],
+      "evidenceIds": ["commons_tongeren"]
+    },
+    {
+      "type": "ending",
+      "title": "정답은 아직\n발견되지 않았습니다",
+      "narration": "하지만 어떤 가설도 확정되지는 않았습니다. 여러분은 이 물건이 어디에 쓰였다고 생각하시나요?",
+      "keywords": ["Roman dodecahedron artifact multiple views", "Roman dodecahedron mystery"],
+      "evidenceIds": ["british_museum", "commons_category"]
+    }
+  ]
+}

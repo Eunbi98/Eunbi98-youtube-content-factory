@@ -1,0 +1,520 @@
+{
+  "version": "2.0",
+  "episodeId": "ep022",
+  "timelinePath": "/workspace/scratch/1c302ab6fdc2/factory/projects/episodes/ep022/timeline.json",
+  "sceneCount": 6,
+  "scenes": [
+    {
+      "sceneId": "scene_001",
+      "title": "로마가 남긴 정체불명의 물건",
+      "narration": "약 천칠백 년 전 로마인들은 이 이상한 청동 12면체를 만들었습니다.",
+      "sourceKeywords": [
+        "Roman dodecahedron bronze artifact",
+        "Roman dodecahedron museum",
+        "Roman dodecahedron bronze artifact wide view",
+        "Roman dodecahedron bronze artifact landscape",
+        "Roman dodecahedron museum wide view",
+        "Roman dodecahedron museum landscape",
+        "Roman dodecahedron bronze artifact close up",
+        "Roman dodecahedron bronze artifact detailed view"
+      ],
+      "entities": [
+        "로마",
+        "Roman dodecahedron bronze artifact Roman dodecahedron museum Roman",
+        "ronze artifact wide view Roman dodecahedron bronze artifact",
+        "ahedron museum wide view Roman dodecahedron museum landscape",
+        "ronze artifact close up Roman dodecahedron bronze artifact"
+      ],
+      "primaryQuery": "Roman dodecahedron bronze artifact",
+      "queries": [
+        {
+          "query": "Roman dodecahedron bronze artifact",
+          "intent": "primary",
+          "priority": 1,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Roman dodecahedron museum",
+          "intent": "primary",
+          "priority": 2,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Roman dodecahedron bronze artifact wide view",
+          "intent": "wide",
+          "priority": 3,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Roman dodecahedron bronze artifact close up",
+          "intent": "detail",
+          "priority": 4,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Roman dodecahedron bronze artifact detailed view",
+          "intent": "detail",
+          "priority": 5,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Roman dodecahedron bronze artifact landscape",
+          "intent": "wide",
+          "priority": 6,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Roman dodecahedron museum wide view",
+          "intent": "wide",
+          "priority": 7,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Roman dodecahedron museum landscape",
+          "intent": "wide",
+          "priority": 8,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Roman dodecahedron museum close up",
+          "intent": "detail",
+          "priority": 9,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Roman dodecahedron museum detailed view",
+          "intent": "detail",
+          "priority": 10,
+          "mediaKind": "any"
+        }
+      ]
+    },
+    {
+      "sceneId": "scene_002",
+      "title": "면마다 구멍 크기가 전부 다릅니다",
+      "narration": "속은 비어 있고 열두 면의 둥근 구멍은 크기가 모두 다르며 꼭짓점마다 작은 돌기가 달려 있습니다.",
+      "sourceKeywords": [
+        "Roman dodecahedron holes",
+        "bronze dodecahedron different holes",
+        "Roman dodecahedron holes close up",
+        "lunar landscape",
+        "Roman dodecahedron holes wide view",
+        "Roman dodecahedron holes landscape",
+        "bronze dodecahedron different holes wide view",
+        "bronze dodecahedron different holes landscape"
+      ],
+      "entities": [
+        "달",
+        "Roman dodecahedron holes bronze dodecahedron different holes Roman",
+        "oles close up lunar landscape Roman dodecahedron holes",
+        "holes landscape bronze dodecahedron different holes wide view",
+        "ron different holes landscape"
+      ],
+      "primaryQuery": "bronze dodecahedron different holes",
+      "queries": [
+        {
+          "query": "bronze dodecahedron different holes",
+          "intent": "primary",
+          "priority": 1,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Roman dodecahedron holes",
+          "intent": "primary",
+          "priority": 2,
+          "mediaKind": "any"
+        },
+        {
+          "query": "bronze dodecahedron different holes wide view",
+          "intent": "wide",
+          "priority": 3,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Roman dodecahedron holes close up",
+          "intent": "detail",
+          "priority": 4,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Roman dodecahedron holes wide view",
+          "intent": "wide",
+          "priority": 5,
+          "mediaKind": "any"
+        },
+        {
+          "query": "bronze dodecahedron different holes landscape",
+          "intent": "wide",
+          "priority": 6,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Roman dodecahedron holes landscape",
+          "intent": "wide",
+          "priority": 7,
+          "mediaKind": "any"
+        },
+        {
+          "query": "lunar landscape",
+          "intent": "wide",
+          "priority": 8,
+          "mediaKind": "any"
+        },
+        {
+          "query": "bronze dodecahedron different holes close up",
+          "intent": "detail",
+          "priority": 9,
+          "mediaKind": "any"
+        },
+        {
+          "query": "bronze dodecahedron different holes detailed view",
+          "intent": "detail",
+          "priority": 10,
+          "mediaKind": "any"
+        }
+      ]
+    },
+    {
+      "sceneId": "scene_003",
+      "title": "그런데 사용법이 한 줄도 없습니다",
+      "narration": "여러 유물이 발견됐지만 로마 시대 기록에는 이름도 사용법도 남아 있지 않습니다.",
+      "sourceKeywords": [
+        "Roman dodecahedron museum collection",
+        "Roman dodecahedrons display",
+        "Roman dodecahedron museum collection wide view",
+        "Roman dodecahedron museum collection landscape",
+        "Roman dodecahedrons display wide view",
+        "Roman dodecahedrons display landscape",
+        "Roman dodecahedron museum collection close up",
+        "Roman dodecahedron museum collection detailed view"
+      ],
+      "entities": [
+        "로마",
+        "Roman dodecahedron museum collection Roman dodecahedrons display Roman",
+        "museum collection wide view Roman dodecahedron museum collection",
+        "dodecahedrons display wide view Roman dodecahedrons display landscape",
+        "decahedron museum collection close up Roman dodecahedron museum",
+        "ed view"
+      ],
+      "primaryQuery": "Roman dodecahedron museum collection",
+      "queries": [
+        {
+          "query": "Roman dodecahedron museum collection",
+          "intent": "primary",
+          "priority": 1,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Roman dodecahedrons display",
+          "intent": "primary",
+          "priority": 2,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Roman dodecahedron museum collection wide view",
+          "intent": "wide",
+          "priority": 3,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Roman dodecahedron museum collection close up",
+          "intent": "detail",
+          "priority": 4,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Roman dodecahedron museum collection detailed view",
+          "intent": "detail",
+          "priority": 5,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Roman dodecahedron museum collection landscape",
+          "intent": "wide",
+          "priority": 6,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Roman dodecahedrons display wide view",
+          "intent": "wide",
+          "priority": 7,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Roman dodecahedrons display landscape",
+          "intent": "wide",
+          "priority": 8,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Roman dodecahedrons display close up",
+          "intent": "detail",
+          "priority": 9,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Roman dodecahedrons display detailed view",
+          "intent": "detail",
+          "priority": 10,
+          "mediaKind": "any"
+        }
+      ]
+    },
+    {
+      "sceneId": "scene_004",
+      "title": "장갑을 뜨는 도구였을까요",
+      "narration": "구멍에 실을 걸어 장갑을 뜨는 도구였다는 가설이 있지만 이를 입증할 고대 기록은 없습니다.",
+      "sourceKeywords": [
+        "Roman dodecahedron knitting theory replica",
+        "Roman dodecahedron experiment",
+        "Roman dodecahedron knitting theory replica wide view",
+        "Roman dodecahedron knitting theory replica landscape",
+        "Roman dodecahedron experiment wide view",
+        "Roman dodecahedron experiment landscape",
+        "Roman dodecahedron knitting theory replica close up",
+        "Roman dodecahedron knitting theory replica detailed view"
+      ],
+      "entities": [
+        "Roman dodecahedron knitting theory replica Roman dodecahedron experiment",
+        "decahedron knitting theory replica wide view Roman dodecahedron",
+        "eplica landscape Roman dodecahedron experiment wide view Roman",
+        "iment landscape Roman dodecahedron knitting theory replica close",
+        "edron knitting theory replica detailed view"
+      ],
+      "primaryQuery": "Roman dodecahedron knitting theory replica",
+      "queries": [
+        {
+          "query": "Roman dodecahedron knitting theory replica",
+          "intent": "primary",
+          "priority": 1,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Roman dodecahedron experiment",
+          "intent": "primary",
+          "priority": 2,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Roman dodecahedron knitting theory replica landscape",
+          "intent": "wide",
+          "priority": 3,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Roman dodecahedron experiment wide view",
+          "intent": "wide",
+          "priority": 4,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Roman dodecahedron experiment landscape",
+          "intent": "wide",
+          "priority": 5,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Roman dodecahedron knitting theory replica wide view",
+          "intent": "wide",
+          "priority": 6,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Roman dodecahedron knitting theory replica close up",
+          "intent": "detail",
+          "priority": 7,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Roman dodecahedron knitting theory replica detailed view",
+          "intent": "detail",
+          "priority": 8,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Roman dodecahedron experiment close up",
+          "intent": "detail",
+          "priority": 9,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Roman dodecahedron experiment detailed view",
+          "intent": "detail",
+          "priority": 10,
+          "mediaKind": "any"
+        }
+      ]
+    },
+    {
+      "sceneId": "scene_005",
+      "title": "측정기와 달력이라는 가설도 있습니다",
+      "narration": "구멍을 통해 거리를 재거나 겨울 곡물의 파종 시기를 정했다는 주장도 나왔습니다.",
+      "sourceKeywords": [
+        "Roman dodecahedron sowing calendar theory",
+        "Roman dodecahedron measuring theory",
+        "lunar landscape",
+        "Roman dodecahedron sowing calendar theory wide view",
+        "Roman dodecahedron sowing calendar theory landscape",
+        "Roman dodecahedron measuring theory wide view",
+        "Roman dodecahedron measuring theory landscape",
+        "Roman dodecahedron sowing calendar theory close up"
+      ],
+      "entities": [
+        "달",
+        "Roman dodecahedron sowing calendar theory Roman dodecahedron measuring",
+        "ar landscape Roman dodecahedron sowing calendar theory wide",
+        "sowing calendar theory landscape Roman dodecahedron measuring theory",
+        "Roman dodecahedron measuring theory landscape Roman dodecahedron sowing",
+        "theory close up"
+      ],
+      "primaryQuery": "Roman dodecahedron sowing calendar theory",
+      "queries": [
+        {
+          "query": "Roman dodecahedron sowing calendar theory",
+          "intent": "primary",
+          "priority": 1,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Roman dodecahedron measuring theory",
+          "intent": "primary",
+          "priority": 2,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Roman dodecahedron sowing calendar theory landscape",
+          "intent": "wide",
+          "priority": 3,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Roman dodecahedron measuring theory wide view",
+          "intent": "wide",
+          "priority": 4,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Roman dodecahedron measuring theory landscape",
+          "intent": "wide",
+          "priority": 5,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Roman dodecahedron sowing calendar theory wide view",
+          "intent": "wide",
+          "priority": 6,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Roman dodecahedron sowing calendar theory close up",
+          "intent": "detail",
+          "priority": 7,
+          "mediaKind": "any"
+        },
+        {
+          "query": "lunar landscape",
+          "intent": "wide",
+          "priority": 8,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Roman dodecahedron sowing calendar theory detailed view",
+          "intent": "detail",
+          "priority": 9,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Roman dodecahedron measuring theory close up",
+          "intent": "detail",
+          "priority": 10,
+          "mediaKind": "any"
+        }
+      ]
+    },
+    {
+      "sceneId": "scene_006",
+      "title": "정답은 아직 발견되지 않았습니다",
+      "narration": "하지만 어떤 가설도 확정되지는 않았습니다. 여러분은 이 물건이 어디에 쓰였다고 생각하시나요",
+      "sourceKeywords": [
+        "Roman dodecahedron artifact multiple views",
+        "Roman dodecahedron mystery",
+        "Roman dodecahedron artifact multiple views wide view",
+        "Roman dodecahedron artifact multiple views landscape",
+        "Roman dodecahedron mystery wide view",
+        "Roman dodecahedron mystery landscape",
+        "Roman dodecahedron artifact multiple views close up",
+        "Roman dodecahedron artifact multiple views detailed view"
+      ],
+      "entities": [
+        "Roman dodecahedron artifact multiple views Roman dodecahedron mystery",
+        "ahedron artifact multiple views wide view Roman dodecahedron",
+        "ews landscape Roman dodecahedron mystery wide view Roman",
+        "dscape Roman dodecahedron artifact multiple views close up",
+        "ifact multiple views detailed view"
+      ],
+      "primaryQuery": "Roman dodecahedron artifact multiple views",
+      "queries": [
+        {
+          "query": "Roman dodecahedron artifact multiple views",
+          "intent": "primary",
+          "priority": 1,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Roman dodecahedron mystery",
+          "intent": "primary",
+          "priority": 2,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Roman dodecahedron artifact multiple views landscape",
+          "intent": "wide",
+          "priority": 3,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Roman dodecahedron mystery wide view",
+          "intent": "wide",
+          "priority": 4,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Roman dodecahedron mystery landscape",
+          "intent": "wide",
+          "priority": 5,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Roman dodecahedron artifact multiple views wide view",
+          "intent": "wide",
+          "priority": 6,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Roman dodecahedron artifact multiple views close up",
+          "intent": "detail",
+          "priority": 7,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Roman dodecahedron artifact multiple views detailed view",
+          "intent": "detail",
+          "priority": 8,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Roman dodecahedron mystery close up",
+          "intent": "detail",
+          "priority": 9,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Roman dodecahedron mystery detailed view",
+          "intent": "detail",
+          "priority": 10,
+          "mediaKind": "any"
+        }
+      ]
+    }
+  ]
+}
