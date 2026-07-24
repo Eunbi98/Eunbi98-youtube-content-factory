@@ -1,0 +1,57 @@
+{
+  "version": "1.0",
+  "episodeId": "ep023",
+  "channel": "mystery",
+  "mediaSource": "eso",
+  "title": "행성보다 큰\n달이 발견됐다?",
+  "theme": {
+    "backgroundColor": "#080B10",
+    "titleColor": "#7CFFB2",
+    "captionColor": "#FFFFFF",
+    "accentColor": "#6FA8FF"
+  },
+  "scenes": [
+    {
+      "type": "hook",
+      "title": "태양계 밖에서\n달이 발견됐을까요?",
+      "narration": "천문학자들이 태양계 밖에서 달처럼 움직이는 정체불명의 천체를 발견했습니다.",
+      "keywords": ["CD-35 2722 exomoon artist impression", "ESO exosatellite brown dwarf"],
+      "evidenceIds": ["eso_release", "nature_paper"]
+    },
+    {
+      "type": "answer",
+      "title": "그런데 행성이 아니라\n갈색왜성을 돕니다",
+      "narration": "이 천체는 행성이 아니라 별과 행성의 중간인 갈색왜성 주위를 돌고 있습니다.",
+      "keywords": ["brown dwarf orbit diagram", "CD-35 2722 system illustration"],
+      "evidenceIds": ["eso_release", "eso_image"]
+    },
+    {
+      "type": "story",
+      "title": "질량은 목성의\n약 구십 퍼센트",
+      "narration": "최소 질량은 목성의 약 구십 퍼센트이며, 갈색왜성을 약 백칠십 일마다 한 바퀴 돕니다.",
+      "keywords": ["Jupiter size comparison brown dwarf", "exosatellite orbit 170 days"],
+      "evidenceIds": ["nature_paper"]
+    },
+    {
+      "type": "fact",
+      "title": "달처럼 돌지만\n크기는 행성급입니다",
+      "narration": "공전 방식만 보면 달이지만, 크기와 질량은 우리가 아는 어떤 달보다 훨씬 큽니다.",
+      "keywords": ["giant exomoon concept art", "Jupiter mass moon illustration"],
+      "evidenceIds": ["eso_image", "nature_paper"]
+    },
+    {
+      "type": "fact",
+      "title": "그래서 이름조차\n정하기 어렵습니다",
+      "narration": "연구진은 외계 위성이라는 뜻의 엑소새틀라이트라고 부르지만, 외계달인지 행성인지는 아직 논쟁 중입니다.",
+      "keywords": ["exomoon classification diagram", "brown dwarf satellite system"],
+      "evidenceIds": ["eso_release", "nature_paper"]
+    },
+    {
+      "type": "ending",
+      "title": "우주의 분류법이\n흔들리고 있습니다",
+      "narration": "이 발견이 확인된다면 최초의 확실한 외계달에 가장 가까운 사례가 됩니다. 여러분은 이 천체를 달이라고 부르시겠나요?",
+      "keywords": ["CD-35 2722 animation", "first exomoon candidate illustration"],
+      "evidenceIds": ["eso_video", "nature_paper"]
+    }
+  ]
+}
