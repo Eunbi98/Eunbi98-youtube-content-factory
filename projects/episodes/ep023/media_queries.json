@@ -1,0 +1,533 @@
+{
+  "version": "2.0",
+  "episodeId": "ep023",
+  "timelinePath": "C:\\Users\\user\\Desktop\\Eunbi98-youtube-content-factory\\projects\\episodes\\ep023\\timeline.json",
+  "sceneCount": 6,
+  "scenes": [
+    {
+      "sceneId": "scene_001",
+      "title": "태양계 밖에서 달이 발견됐을까요",
+      "narration": "천문학자들이 태양계 밖에서 달처럼 움직이는 정체불명의 천체를 발견했습니다.",
+      "sourceKeywords": [
+        "CD-35 exomoon artist impression",
+        "ESO exosatellite brown dwarf",
+        "lunar landscape",
+        "CD-35 exomoon artist impression wide view",
+        "CD-35 exomoon artist impression landscape",
+        "ESO exosatellite brown dwarf wide view",
+        "ESO exosatellite brown dwarf landscape",
+        "CD-35 exomoon artist impression close up",
+        "CD-35 exomoon artist impression detailed view",
+        "ESO exosatellite brown dwarf close up"
+      ],
+      "entities": [
+        "달",
+        "CD-35 exomoon artist impression ESO exosatellite brown dwarf",
+        "exomoon artist impression wide view CD-35 exomoon artist",
+        "SO exosatellite brown dwarf wide view ESO exosatellite",
+        "exomoon artist impression close up CD-35 exomoon artist",
+        "ESO exosatellite brown dwarf close up"
+      ],
+      "primaryQuery": "CD-35 exomoon artist impression",
+      "queries": [
+        {
+          "query": "CD-35 exomoon artist impression",
+          "intent": "primary",
+          "priority": 1,
+          "mediaKind": "any"
+        },
+        {
+          "query": "ESO exosatellite brown dwarf",
+          "intent": "primary",
+          "priority": 2,
+          "mediaKind": "any"
+        },
+        {
+          "query": "CD-35 exomoon artist impression wide view",
+          "intent": "wide",
+          "priority": 3,
+          "mediaKind": "any"
+        },
+        {
+          "query": "ESO exosatellite brown dwarf wide view",
+          "intent": "wide",
+          "priority": 4,
+          "mediaKind": "any"
+        },
+        {
+          "query": "CD-35 exomoon artist impression close up",
+          "intent": "detail",
+          "priority": 5,
+          "mediaKind": "any"
+        },
+        {
+          "query": "CD-35 exomoon artist impression detailed view",
+          "intent": "detail",
+          "priority": 6,
+          "mediaKind": "any"
+        },
+        {
+          "query": "ESO exosatellite brown dwarf close up",
+          "intent": "detail",
+          "priority": 7,
+          "mediaKind": "any"
+        },
+        {
+          "query": "CD-35 exomoon artist impression landscape",
+          "intent": "wide",
+          "priority": 8,
+          "mediaKind": "any"
+        },
+        {
+          "query": "ESO exosatellite brown dwarf landscape",
+          "intent": "wide",
+          "priority": 9,
+          "mediaKind": "any"
+        },
+        {
+          "query": "lunar landscape",
+          "intent": "wide",
+          "priority": 10,
+          "mediaKind": "any"
+        }
+      ]
+    },
+    {
+      "sceneId": "scene_002",
+      "title": "그런데 행성이 아니라 갈색왜성을 돕니다",
+      "narration": "이 천체는 행성이 아니라 별과 행성의 중간인 갈색왜성 주위를 돌고 있습니다.",
+      "sourceKeywords": [
+        "brown dwarf orbit",
+        "CD-35 system illustration",
+        "brown dwarf orbit diagram",
+        "brown dwarf orbit wide view",
+        "brown dwarf orbit landscape",
+        "CD-35 system illustration wide view",
+        "CD-35 system illustration landscape",
+        "brown dwarf orbit close up",
+        "brown dwarf orbit detailed view",
+        "CD-35 system illustration close up"
+      ],
+      "entities": [
+        "brown dwarf orbit CD-35 system illustration brown dwarf",
+        "orbit wide view brown dwarf orbit landscape CD-35",
+        "D-35 system illustration landscape brown dwarf orbit close",
+        "etailed view CD-35 system illustration close up"
+      ],
+      "primaryQuery": "brown dwarf orbit",
+      "queries": [
+        {
+          "query": "brown dwarf orbit",
+          "intent": "primary",
+          "priority": 1,
+          "mediaKind": "any"
+        },
+        {
+          "query": "CD-35 system illustration",
+          "intent": "primary",
+          "priority": 2,
+          "mediaKind": "any"
+        },
+        {
+          "query": "brown dwarf orbit wide view",
+          "intent": "wide",
+          "priority": 3,
+          "mediaKind": "any"
+        },
+        {
+          "query": "CD-35 system illustration wide view",
+          "intent": "wide",
+          "priority": 4,
+          "mediaKind": "any"
+        },
+        {
+          "query": "brown dwarf orbit close up",
+          "intent": "detail",
+          "priority": 5,
+          "mediaKind": "any"
+        },
+        {
+          "query": "brown dwarf orbit detailed view",
+          "intent": "detail",
+          "priority": 6,
+          "mediaKind": "any"
+        },
+        {
+          "query": "CD-35 system illustration close up",
+          "intent": "detail",
+          "priority": 7,
+          "mediaKind": "any"
+        },
+        {
+          "query": "brown dwarf orbit diagram",
+          "intent": "scientific",
+          "priority": 8,
+          "mediaKind": "image"
+        },
+        {
+          "query": "brown dwarf orbit landscape",
+          "intent": "wide",
+          "priority": 9,
+          "mediaKind": "any"
+        },
+        {
+          "query": "CD-35 system illustration landscape",
+          "intent": "wide",
+          "priority": 10,
+          "mediaKind": "any"
+        }
+      ]
+    },
+    {
+      "sceneId": "scene_003",
+      "title": "질량은 목성의 약 구십 퍼센트",
+      "narration": "최소 질량은 목성의 약 구십 퍼센트이며 갈색왜성을 약 백칠십 일마다 한 바퀴 돕니다.",
+      "sourceKeywords": [
+        "Jupiter size comparison brown dwarf",
+        "exosatellite orbit days",
+        "Jupiter size comparison brown dwarf wide view",
+        "Jupiter size comparison brown dwarf landscape",
+        "exosatellite orbit days wide view",
+        "exosatellite orbit days landscape",
+        "Jupiter size comparison brown dwarf close up",
+        "Jupiter size comparison brown dwarf detailed view",
+        "exosatellite orbit days close up",
+        "exosatellite orbit days detailed view"
+      ],
+      "entities": [
+        "Jupiter size comparison brown dwarf exosatellite orbit days",
+        "brown dwarf wide view Jupiter size comparison brown",
+        "te orbit days wide view exosatellite orbit days",
+        "brown dwarf close up Jupiter size comparison brown",
+        "te orbit days close up exosatellite orbit days"
+      ],
+      "primaryQuery": "Jupiter size comparison brown dwarf",
+      "queries": [
+        {
+          "query": "Jupiter size comparison brown dwarf",
+          "intent": "primary",
+          "priority": 1,
+          "mediaKind": "any"
+        },
+        {
+          "query": "exosatellite orbit days",
+          "intent": "primary",
+          "priority": 2,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Jupiter size comparison brown dwarf landscape",
+          "intent": "wide",
+          "priority": 3,
+          "mediaKind": "any"
+        },
+        {
+          "query": "exosatellite orbit days wide view",
+          "intent": "wide",
+          "priority": 4,
+          "mediaKind": "any"
+        },
+        {
+          "query": "exosatellite orbit days close up",
+          "intent": "detail",
+          "priority": 5,
+          "mediaKind": "any"
+        },
+        {
+          "query": "exosatellite orbit days detailed view",
+          "intent": "detail",
+          "priority": 6,
+          "mediaKind": "any"
+        },
+        {
+          "query": "exosatellite orbit days landscape",
+          "intent": "wide",
+          "priority": 7,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Jupiter size comparison brown dwarf wide view",
+          "intent": "wide",
+          "priority": 8,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Jupiter size comparison brown dwarf close up",
+          "intent": "detail",
+          "priority": 9,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Jupiter size comparison brown dwarf detailed view",
+          "intent": "detail",
+          "priority": 10,
+          "mediaKind": "any"
+        }
+      ]
+    },
+    {
+      "sceneId": "scene_004",
+      "title": "달처럼 돌지만 크기는 행성급입니다",
+      "narration": "공전 방식만 보면 달이지만 크기와 질량은 우리가 아는 어떤 달보다 훨씬 큽니다.",
+      "sourceKeywords": [
+        "giant exomoon concept art",
+        "Jupiter mass moon illustration",
+        "lunar landscape",
+        "giant exomoon concept art wide view",
+        "giant exomoon concept art landscape",
+        "Jupiter mass moon illustration wide view",
+        "Jupiter mass moon illustration landscape",
+        "giant exomoon concept art close up",
+        "giant exomoon concept art detailed view",
+        "Jupiter mass moon illustration close up"
+      ],
+      "entities": [
+        "달",
+        "giant exomoon concept art Jupiter mass moon illustration",
+        "omoon concept art wide view giant exomoon concept",
+        "illustration wide view Jupiter mass moon illustration landscape",
+        "cept art close up giant exomoon concept art",
+        "tration close up"
+      ],
+      "primaryQuery": "giant exomoon concept art",
+      "queries": [
+        {
+          "query": "giant exomoon concept art",
+          "intent": "primary",
+          "priority": 1,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Jupiter mass moon illustration",
+          "intent": "primary",
+          "priority": 2,
+          "mediaKind": "any"
+        },
+        {
+          "query": "giant exomoon concept art wide view",
+          "intent": "wide",
+          "priority": 3,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Jupiter mass moon illustration wide view",
+          "intent": "wide",
+          "priority": 4,
+          "mediaKind": "any"
+        },
+        {
+          "query": "giant exomoon concept art close up",
+          "intent": "detail",
+          "priority": 5,
+          "mediaKind": "any"
+        },
+        {
+          "query": "giant exomoon concept art detailed view",
+          "intent": "detail",
+          "priority": 6,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Jupiter mass moon illustration close up",
+          "intent": "detail",
+          "priority": 7,
+          "mediaKind": "any"
+        },
+        {
+          "query": "giant exomoon concept art landscape",
+          "intent": "wide",
+          "priority": 8,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Jupiter mass moon illustration landscape",
+          "intent": "wide",
+          "priority": 9,
+          "mediaKind": "any"
+        },
+        {
+          "query": "lunar landscape",
+          "intent": "wide",
+          "priority": 10,
+          "mediaKind": "any"
+        }
+      ]
+    },
+    {
+      "sceneId": "scene_005",
+      "title": "그래서 이름조차 정하기 어렵습니다",
+      "narration": "연구진은 외계 위성이라는 뜻의 엑소새틀라이트라고 부르지만 외계달인지 행성인지는 아직 논쟁 중입니다.",
+      "sourceKeywords": [
+        "brown dwarf satellite system",
+        "exomoon classification",
+        "exomoon classification diagram",
+        "lunar landscape",
+        "brown dwarf satellite system wide view",
+        "brown dwarf satellite system landscape",
+        "exomoon classification wide view",
+        "exomoon classification landscape",
+        "brown dwarf satellite system close up",
+        "brown dwarf satellite system detailed view"
+      ],
+      "entities": [
+        "달",
+        "brown dwarf satellite system exomoon classification exomoon classification",
+        "lunar landscape brown dwarf satellite system wide view",
+        "stem landscape exomoon classification wide view exomoon classification",
+        "brown dwarf satellite system close up brown dwarf"
+      ],
+      "primaryQuery": "brown dwarf satellite system",
+      "queries": [
+        {
+          "query": "brown dwarf satellite system",
+          "intent": "primary",
+          "priority": 1,
+          "mediaKind": "any"
+        },
+        {
+          "query": "exomoon classification",
+          "intent": "primary",
+          "priority": 2,
+          "mediaKind": "any"
+        },
+        {
+          "query": "brown dwarf satellite system wide view",
+          "intent": "wide",
+          "priority": 3,
+          "mediaKind": "any"
+        },
+        {
+          "query": "brown dwarf satellite system close up",
+          "intent": "detail",
+          "priority": 4,
+          "mediaKind": "any"
+        },
+        {
+          "query": "brown dwarf satellite system detailed view",
+          "intent": "detail",
+          "priority": 5,
+          "mediaKind": "any"
+        },
+        {
+          "query": "brown dwarf satellite system landscape",
+          "intent": "wide",
+          "priority": 6,
+          "mediaKind": "any"
+        },
+        {
+          "query": "exomoon classification wide view",
+          "intent": "wide",
+          "priority": 7,
+          "mediaKind": "any"
+        },
+        {
+          "query": "exomoon classification diagram",
+          "intent": "scientific",
+          "priority": 8,
+          "mediaKind": "image"
+        },
+        {
+          "query": "exomoon classification landscape",
+          "intent": "wide",
+          "priority": 9,
+          "mediaKind": "any"
+        },
+        {
+          "query": "lunar landscape",
+          "intent": "wide",
+          "priority": 10,
+          "mediaKind": "any"
+        }
+      ]
+    },
+    {
+      "sceneId": "scene_006",
+      "title": "우주의 분류법이 흔들리고 있습니다",
+      "narration": "이 발견이 확인된다면 최초의 확실한 외계달에 가장 가까운 사례가 됩니다. 여러분은 이 천체를 달이라고 부르시겠나요",
+      "sourceKeywords": [
+        "first exomoon candidate illustration",
+        "NASA Moon mission",
+        "lunar landscape",
+        "first exomoon candidate illustration wide view",
+        "first exomoon candidate illustration landscape",
+        "NASA Moon mission wide view",
+        "NASA Moon mission landscape",
+        "first exomoon candidate illustration close up",
+        "first exomoon candidate illustration detailed view",
+        "NASA Moon mission close up"
+      ],
+      "entities": [
+        "우주",
+        "달",
+        "first exomoon candidate illustration NASA Moon mission lunar",
+        "oon candidate illustration wide view first exomoon candidate",
+        "pe NASA Moon mission wide view NASA Moon",
+        "illustration close up first exomoon candidate illustration detailed",
+        "oon mission close up"
+      ],
+      "primaryQuery": "first exomoon candidate illustration",
+      "queries": [
+        {
+          "query": "first exomoon candidate illustration",
+          "intent": "primary",
+          "priority": 1,
+          "mediaKind": "any"
+        },
+        {
+          "query": "NASA Moon mission",
+          "intent": "primary",
+          "priority": 2,
+          "mediaKind": "any"
+        },
+        {
+          "query": "first exomoon candidate illustration wide view",
+          "intent": "wide",
+          "priority": 3,
+          "mediaKind": "any"
+        },
+        {
+          "query": "first exomoon candidate illustration close up",
+          "intent": "detail",
+          "priority": 4,
+          "mediaKind": "any"
+        },
+        {
+          "query": "first exomoon candidate illustration detailed view",
+          "intent": "detail",
+          "priority": 5,
+          "mediaKind": "any"
+        },
+        {
+          "query": "first exomoon candidate illustration landscape",
+          "intent": "wide",
+          "priority": 6,
+          "mediaKind": "any"
+        },
+        {
+          "query": "NASA Moon mission wide view",
+          "intent": "wide",
+          "priority": 7,
+          "mediaKind": "any"
+        },
+        {
+          "query": "NASA Moon mission close up",
+          "intent": "detail",
+          "priority": 8,
+          "mediaKind": "any"
+        },
+        {
+          "query": "NASA Moon mission landscape",
+          "intent": "wide",
+          "priority": 9,
+          "mediaKind": "any"
+        },
+        {
+          "query": "lunar landscape",
+          "intent": "wide",
+          "priority": 10,
+          "mediaKind": "any"
+        }
+      ]
+    }
+  ]
+}
