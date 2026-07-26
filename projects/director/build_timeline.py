@@ -1,4 +1,4 @@
-﻿from story_compiler import StoryCompiler
+from story_compiler import StoryCompiler
 from story_graph import (
     Answer,
     Ending,

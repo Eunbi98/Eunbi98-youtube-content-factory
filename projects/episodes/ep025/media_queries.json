@@ -1,0 +1,444 @@
+{
+  "version": "2.0",
+  "episodeId": "ep025",
+  "timelinePath": "C:\\Users\\qkrdm\\OneDrive\\바탕 화면\\youtube-content-factory\\projects\\episodes\\ep025\\timeline.json",
+  "sceneCount": 5,
+  "scenes": [
+    {
+      "sceneId": "scene_001",
+      "title": "사하라 사막 아래에 거대한 강이 있었다",
+      "narration": "지금은 끝없는 사막인 사하라 아래에 거대한 강이 있었다는 사실 알고 계셨나요",
+      "sourceKeywords": [
+        "Sahara Desert aerial sand dunes",
+        "Sahara desert satellite view",
+        "Sahara desert drone landscape",
+        "desert aerial view",
+        "desert landscape",
+        "Sahara Desert aerial sand dunes wide view",
+        "Sahara Desert aerial sand dunes landscape",
+        "Sahara desert satellite view wide view",
+        "Sahara desert satellite view landscape",
+        "Sahara Desert aerial sand dunes close up"
+      ],
+      "entities": [
+        "사막",
+        "Sahara Desert aerial sand dunes Sahara desert satellite",
+        "landscape desert aerial view desert landscape Sahara Desert",
+        "view Sahara Desert aerial sand dunes landscape Sahara",
+        "view Sahara desert satellite view landscape Sahara Desert",
+        "se up"
+      ],
+      "primaryQuery": "Sahara Desert aerial sand dunes",
+      "queries": [
+        {
+          "query": "Sahara Desert aerial sand dunes",
+          "intent": "primary",
+          "priority": 1,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Sahara desert satellite view",
+          "intent": "primary",
+          "priority": 2,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Sahara Desert aerial sand dunes landscape",
+          "intent": "wide",
+          "priority": 3,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Sahara desert satellite view wide view",
+          "intent": "wide",
+          "priority": 4,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Sahara desert satellite view landscape",
+          "intent": "wide",
+          "priority": 5,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Sahara desert drone landscape",
+          "intent": "wide",
+          "priority": 6,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Sahara Desert aerial sand dunes wide view",
+          "intent": "wide",
+          "priority": 7,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Sahara Desert aerial sand dunes close up",
+          "intent": "detail",
+          "priority": 8,
+          "mediaKind": "any"
+        },
+        {
+          "query": "desert aerial view",
+          "intent": "aerial",
+          "priority": 9,
+          "mediaKind": "any"
+        },
+        {
+          "query": "desert landscape",
+          "intent": "wide",
+          "priority": 10,
+          "mediaKind": "any"
+        }
+      ]
+    },
+    {
+      "sceneId": "scene_002",
+      "title": "모래 아래에서 발견된 고대 강의 흔적",
+      "narration": "과학자들은 위성 레이더를 이용해 모래 아래 숨겨진 거대한 강의 흔적을 발견했습니다.",
+      "sourceKeywords": [
+        "Sahara desert satellite",
+        "Sahara desert",
+        "Sahara desert satellite map",
+        "Sahara desert map",
+        "Sahara desert satellite wide view",
+        "Sahara desert satellite landscape",
+        "Sahara desert wide view",
+        "Sahara desert landscape",
+        "Sahara desert satellite close up",
+        "Sahara desert satellite detailed view"
+      ],
+      "entities": [
+        "Sahara desert satellite Sahara desert Sahara desert satellite",
+        "ap Sahara desert satellite wide view Sahara desert",
+        "ert wide view Sahara desert landscape Sahara desert",
+        "ert satellite detailed view"
+      ],
+      "primaryQuery": "Sahara desert satellite",
+      "queries": [
+        {
+          "query": "Sahara desert satellite",
+          "intent": "primary",
+          "priority": 1,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Sahara desert",
+          "intent": "primary",
+          "priority": 2,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Sahara desert satellite wide view",
+          "intent": "wide",
+          "priority": 3,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Sahara desert satellite close up",
+          "intent": "detail",
+          "priority": 4,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Sahara desert satellite detailed view",
+          "intent": "detail",
+          "priority": 5,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Sahara desert satellite map",
+          "intent": "map",
+          "priority": 6,
+          "mediaKind": "image"
+        },
+        {
+          "query": "Sahara desert satellite landscape",
+          "intent": "wide",
+          "priority": 7,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Sahara desert wide view",
+          "intent": "wide",
+          "priority": 8,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Sahara desert map",
+          "intent": "map",
+          "priority": 9,
+          "mediaKind": "image"
+        },
+        {
+          "query": "Sahara desert landscape",
+          "intent": "wide",
+          "priority": 10,
+          "mediaKind": "any"
+        }
+      ]
+    },
+    {
+      "sceneId": "scene_003",
+      "title": "사하라는 한때 푸른 초원이었습니다",
+      "narration": "약 오천 년에서 만 년 전 지금의 사하라는 초원과 강이 흐르는 풍요로운 땅이었습니다.",
+      "sourceKeywords": [
+        "ancient Sahara grassland lake",
+        "African humid period",
+        "African humid period landscape",
+        "ancient Sahara grassland lake wide view",
+        "ancient Sahara grassland lake landscape",
+        "African humid period wide view",
+        "ancient Sahara grassland lake close up",
+        "ancient Sahara grassland lake detailed view",
+        "African humid period close up",
+        "African humid period detailed view"
+      ],
+      "entities": [
+        "ancient Sahara grassland lake African humid period African",
+        "ancient Sahara grassland lake wide view ancient Sahara",
+        "frican humid period wide view ancient Sahara grassland",
+        "ra grassland lake detailed view African humid period",
+        "detailed view"
+      ],
+      "primaryQuery": "ancient Sahara grassland lake",
+      "queries": [
+        {
+          "query": "ancient Sahara grassland lake",
+          "intent": "primary",
+          "priority": 1,
+          "mediaKind": "any"
+        },
+        {
+          "query": "African humid period",
+          "intent": "primary",
+          "priority": 2,
+          "mediaKind": "any"
+        },
+        {
+          "query": "ancient Sahara grassland lake wide view",
+          "intent": "wide",
+          "priority": 3,
+          "mediaKind": "any"
+        },
+        {
+          "query": "ancient Sahara grassland lake close up",
+          "intent": "detail",
+          "priority": 4,
+          "mediaKind": "any"
+        },
+        {
+          "query": "ancient Sahara grassland lake detailed view",
+          "intent": "detail",
+          "priority": 5,
+          "mediaKind": "any"
+        },
+        {
+          "query": "ancient Sahara grassland lake landscape",
+          "intent": "wide",
+          "priority": 6,
+          "mediaKind": "any"
+        },
+        {
+          "query": "African humid period wide view",
+          "intent": "wide",
+          "priority": 7,
+          "mediaKind": "any"
+        },
+        {
+          "query": "African humid period close up",
+          "intent": "detail",
+          "priority": 8,
+          "mediaKind": "any"
+        },
+        {
+          "query": "African humid period detailed view",
+          "intent": "detail",
+          "priority": 9,
+          "mediaKind": "any"
+        },
+        {
+          "query": "African humid period landscape",
+          "intent": "wide",
+          "priority": 10,
+          "mediaKind": "any"
+        }
+      ]
+    },
+    {
+      "sceneId": "scene_004",
+      "title": "강은 인류의 이동 통로였습니다",
+      "narration": "이 강은 초기 인류가 이동하고 정착하는 중요한 길이었을 것으로 추정되고 있습니다.",
+      "sourceKeywords": [
+        "ancient human migration North Africa",
+        "prehistoric Sahara river",
+        "prehistoric people Sahara river",
+        "early humans African landscape",
+        "ancient human migration North Africa wide view",
+        "ancient human migration North Africa landscape",
+        "prehistoric Sahara river wide view",
+        "prehistoric Sahara river landscape",
+        "ancient human migration North Africa close up",
+        "ancient human migration North Africa detailed view"
+      ],
+      "entities": [
+        "ancient human migration North Africa prehistoric Sahara river",
+        "Sahara river early humans African landscape ancient human",
+        "wide view ancient human migration North Africa landscape",
+        "wide view prehistoric Sahara river landscape ancient human",
+        "close up ancient human migration North Africa detailed"
+      ],
+      "primaryQuery": "ancient human migration North Africa",
+      "queries": [
+        {
+          "query": "ancient human migration North Africa",
+          "intent": "primary",
+          "priority": 1,
+          "mediaKind": "any"
+        },
+        {
+          "query": "prehistoric Sahara river",
+          "intent": "primary",
+          "priority": 2,
+          "mediaKind": "any"
+        },
+        {
+          "query": "ancient human migration North Africa landscape",
+          "intent": "wide",
+          "priority": 3,
+          "mediaKind": "any"
+        },
+        {
+          "query": "prehistoric Sahara river wide view",
+          "intent": "wide",
+          "priority": 4,
+          "mediaKind": "any"
+        },
+        {
+          "query": "prehistoric people Sahara river",
+          "intent": "people",
+          "priority": 5,
+          "mediaKind": "any"
+        },
+        {
+          "query": "early humans African landscape",
+          "intent": "wide",
+          "priority": 6,
+          "mediaKind": "any"
+        },
+        {
+          "query": "prehistoric Sahara river landscape",
+          "intent": "wide",
+          "priority": 7,
+          "mediaKind": "any"
+        },
+        {
+          "query": "ancient human migration North Africa wide view",
+          "intent": "wide",
+          "priority": 8,
+          "mediaKind": "any"
+        },
+        {
+          "query": "ancient human migration North Africa close up",
+          "intent": "detail",
+          "priority": 9,
+          "mediaKind": "any"
+        },
+        {
+          "query": "ancient human migration North Africa detailed view",
+          "intent": "detail",
+          "priority": 10,
+          "mediaKind": "any"
+        }
+      ]
+    },
+    {
+      "sceneId": "scene_005",
+      "title": "사막 아래에는 아직도 과거가 숨어 있습니다",
+      "narration": "오늘도 사하라의 모래 아래에는 우리가 아직 발견하지 못한 과거의 흔적이 숨어 있을지 모릅니다.",
+      "sourceKeywords": [
+        "Sahara Desert ancient comparison",
+        "Sahara desert aerial sunset",
+        "Sahara Desert ancient landscape comparison",
+        "desert aerial view",
+        "desert landscape",
+        "Sahara Desert ancient comparison wide view",
+        "Sahara Desert ancient comparison landscape",
+        "Sahara desert aerial sunset wide view",
+        "Sahara desert aerial sunset landscape",
+        "Sahara Desert ancient comparison close up"
+      ],
+      "entities": [
+        "사막",
+        "Sahara Desert ancient comparison Sahara desert aerial sunset",
+        "landscape comparison desert aerial view desert landscape Sahara",
+        "comparison wide view Sahara Desert ancient comparison landscape",
+        "ial sunset wide view Sahara desert aerial sunset",
+        "comparison close up"
+      ],
+      "primaryQuery": "Sahara Desert ancient comparison",
+      "queries": [
+        {
+          "query": "Sahara Desert ancient comparison",
+          "intent": "primary",
+          "priority": 1,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Sahara desert aerial sunset",
+          "intent": "primary",
+          "priority": 2,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Sahara Desert ancient comparison wide view",
+          "intent": "wide",
+          "priority": 3,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Sahara desert aerial sunset wide view",
+          "intent": "wide",
+          "priority": 4,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Sahara Desert ancient comparison close up",
+          "intent": "detail",
+          "priority": 5,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Sahara Desert ancient landscape comparison",
+          "intent": "wide",
+          "priority": 6,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Sahara Desert ancient comparison landscape",
+          "intent": "wide",
+          "priority": 7,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Sahara desert aerial sunset landscape",
+          "intent": "wide",
+          "priority": 8,
+          "mediaKind": "any"
+        },
+        {
+          "query": "desert aerial view",
+          "intent": "aerial",
+          "priority": 9,
+          "mediaKind": "any"
+        },
+        {
+          "query": "desert landscape",
+          "intent": "wide",
+          "priority": 10,
+          "mediaKind": "any"
+        }
+      ]
+    }
+  ]
+}
