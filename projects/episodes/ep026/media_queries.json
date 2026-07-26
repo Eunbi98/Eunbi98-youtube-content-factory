@@ -1,0 +1,734 @@
+{
+  "version": "2.0",
+  "episodeId": "ep026",
+  "timelinePath": "C:\\Users\\qkrdm\\OneDrive\\바탕 화면\\youtube-content-factory\\projects\\episodes\\ep026\\timeline.json",
+  "sceneCount": 7,
+  "scenes": [
+    {
+      "sceneId": "scene_001",
+      "title": "비행기 창문에 구멍이 있는 이유",
+      "narration": "비행기 창문을 자세히 보면 아래쪽에 작은 구멍이 있습니다.",
+      "sourceKeywords": [
+        "airplane passenger window close up inside cabin",
+        "aircraft cabin window close up",
+        "commercial airplane passenger window",
+        "plane window interior close up",
+        "airliner cabin window passenger seat",
+        "airplane passenger window bleed hole close up",
+        "aircraft window tiny hole close up",
+        "airplane window breather hole",
+        "Sahara Desert aerial sand dunes",
+        "Sahara desert satellite view",
+        "Sahara desert drone landscape",
+        "desert aerial view",
+        "desert landscape",
+        "Sahara Desert aerial sand dunes wide view",
+        "Sahara Desert aerial sand dunes landscape",
+        "Sahara desert satellite view wide view",
+        "Sahara desert satellite view landscape",
+        "Sahara Desert aerial sand dunes close up",
+        "aircraft window tiny hole"
+      ],
+      "entities": [
+        "airplane passenger window close up inside cabin aircraft",
+        "mmercial airplane passenger window plane window interior close",
+        "window passenger seat airplane passenger window bleed hole",
+        "ow tiny hole close up airplane window breather",
+        "es Sahara desert satellite view Sahara desert drone",
+        "desert landscape Sahara Desert aerial sand dunes wide",
+        "dunes landscape Sahara desert satellite view wide view",
+        "view landscape Sahara Desert aerial sand dunes close",
+        "le"
+      ],
+      "primaryQuery": "aircraft window tiny hole",
+      "queries": [
+        {
+          "query": "aircraft window tiny hole",
+          "intent": "primary",
+          "priority": 1,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Sahara Desert aerial sand dunes",
+          "intent": "primary",
+          "priority": 2,
+          "mediaKind": "any"
+        },
+        {
+          "query": "aircraft window tiny hole close up",
+          "intent": "detail",
+          "priority": 3,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Sahara Desert aerial sand dunes landscape",
+          "intent": "wide",
+          "priority": 4,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Sahara desert satellite view wide view",
+          "intent": "wide",
+          "priority": 5,
+          "mediaKind": "any"
+        },
+        {
+          "query": "aircraft cabin window close up",
+          "intent": "detail",
+          "priority": 6,
+          "mediaKind": "any"
+        },
+        {
+          "query": "plane window interior close up",
+          "intent": "detail",
+          "priority": 7,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Sahara desert satellite view landscape",
+          "intent": "wide",
+          "priority": 8,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Sahara desert drone landscape",
+          "intent": "wide",
+          "priority": 9,
+          "mediaKind": "any"
+        },
+        {
+          "query": "airplane passenger window close up inside cabin",
+          "intent": "detail",
+          "priority": 10,
+          "mediaKind": "any"
+        }
+      ]
+    },
+    {
+      "sceneId": "scene_002",
+      "title": "비행기 창문에 구멍이 있는 이유",
+      "narration": "혹시 창문이 깨진 것은 아닐까 불안해할 필요는 없습니다.",
+      "sourceKeywords": [
+        "airplane cabin passenger looking through window",
+        "aircraft passenger seat window interior",
+        "commercial airplane cabin window",
+        "passenger beside airplane window",
+        "plane interior window seat",
+        "passenger looking at airplane window close up",
+        "airplane cabin window passenger seat",
+        "commercial airplane window interior",
+        "Sahara desert satellite",
+        "Sahara desert",
+        "Sahara desert satellite map",
+        "Sahara desert map",
+        "Sahara desert satellite wide view",
+        "Sahara desert satellite landscape",
+        "Sahara desert wide view",
+        "Sahara desert landscape",
+        "Sahara desert satellite close up",
+        "Sahara desert satellite detailed view",
+        "passenger looking airplane window",
+        "passenger looking airplane window close up"
+      ],
+      "entities": [
+        "airplane cabin passenger looking through window aircraft passenger",
+        "terior commercial airplane cabin window passenger beside airplane",
+        "terior window seat passenger looking airplane window close",
+        "indow passenger seat commercial airplane window interior Sahara",
+        "Sahara desert Sahara desert satellite map Sahara desert",
+        "te wide view Sahara desert satellite landscape Sahara",
+        "ert landscape Sahara desert satellite close up Sahara",
+        "iew passenger looking airplane window passenger looking airplane"
+      ],
+      "primaryQuery": "airplane cabin passenger looking through window",
+      "queries": [
+        {
+          "query": "airplane cabin passenger looking through window",
+          "intent": "primary",
+          "priority": 1,
+          "mediaKind": "any"
+        },
+        {
+          "query": "passenger looking airplane window",
+          "intent": "primary",
+          "priority": 2,
+          "mediaKind": "any"
+        },
+        {
+          "query": "passenger looking airplane window close up",
+          "intent": "detail",
+          "priority": 3,
+          "mediaKind": "any"
+        },
+        {
+          "query": "aircraft passenger seat window interior",
+          "intent": "interior",
+          "priority": 4,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Sahara desert satellite wide view",
+          "intent": "wide",
+          "priority": 5,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Sahara desert satellite close up",
+          "intent": "detail",
+          "priority": 6,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Sahara desert satellite detailed view",
+          "intent": "detail",
+          "priority": 7,
+          "mediaKind": "any"
+        },
+        {
+          "query": "plane interior window seat",
+          "intent": "interior",
+          "priority": 8,
+          "mediaKind": "any"
+        },
+        {
+          "query": "commercial airplane window interior",
+          "intent": "interior",
+          "priority": 9,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Sahara desert satellite map",
+          "intent": "map",
+          "priority": 10,
+          "mediaKind": "image"
+        }
+      ]
+    },
+    {
+      "sceneId": "scene_003",
+      "title": "비행기 창문에 구멍이 있는 이유",
+      "narration": "비행기 창문은 보통 여러 겹으로 만들어지고 이 구멍은 중간 창에 있습니다.",
+      "sourceKeywords": [
+        "commercial aircraft passenger window close up",
+        "airplane window frame inside cabin",
+        "airliner passenger window interior",
+        "aircraft cabin window detail",
+        "plane window frame close up",
+        "airplane passenger window close up inside cabin",
+        "commercial aircraft cabin window close up",
+        "airplane window from passenger seat",
+        "aircraft passenger window interior",
+        "plane cabin window close up",
+        "aircraft passenger window multiple panes diagram",
+        "airplane window layers cross section",
+        "aircraft window pane structure",
+        "ancient Sahara grassland lake",
+        "African humid period",
+        "African humid period landscape",
+        "ancient Sahara grassland lake wide view",
+        "ancient Sahara grassland lake landscape",
+        "African humid period wide view",
+        "ancient Sahara grassland lake close up",
+        "ancient Sahara grassland lake detailed view",
+        "African humid period close up",
+        "African humid period detailed view",
+        "commercial aircraft cabin window",
+        "aircraft passenger window multiple panes",
+        "commercial aircraft passenger window"
+      ],
+      "entities": [
+        "commercial aircraft passenger window close up airplane window",
+        "airliner passenger window interior aircraft cabin window detail",
+        "close up airplane passenger window close up inside",
+        "bin window close up airplane window passenger seat",
+        "interior plane cabin window close up aircraft passenger",
+        "gram airplane window layers cross section aircraft window",
+        "Sahara grassland lake African humid period African humid",
+        "Sahara grassland lake wide view ancient Sahara grassland",
+        "umid period wide view ancient Sahara grassland lake",
+        "land lake detailed view African humid period close",
+        "ed view commercial aircraft cabin window aircraft passenger",
+        "commercial aircraft passenger window"
+      ],
+      "primaryQuery": "commercial aircraft passenger window",
+      "queries": [
+        {
+          "query": "commercial aircraft passenger window",
+          "intent": "primary",
+          "priority": 1,
+          "mediaKind": "any"
+        },
+        {
+          "query": "commercial aircraft cabin window",
+          "intent": "primary",
+          "priority": 2,
+          "mediaKind": "any"
+        },
+        {
+          "query": "commercial aircraft passenger window close up",
+          "intent": "detail",
+          "priority": 3,
+          "mediaKind": "any"
+        },
+        {
+          "query": "commercial aircraft cabin window close up",
+          "intent": "detail",
+          "priority": 4,
+          "mediaKind": "any"
+        },
+        {
+          "query": "aircraft passenger window multiple panes diagram",
+          "intent": "scientific",
+          "priority": 5,
+          "mediaKind": "image"
+        },
+        {
+          "query": "ancient Sahara grassland lake wide view",
+          "intent": "wide",
+          "priority": 6,
+          "mediaKind": "any"
+        },
+        {
+          "query": "ancient Sahara grassland lake close up",
+          "intent": "detail",
+          "priority": 7,
+          "mediaKind": "any"
+        },
+        {
+          "query": "ancient Sahara grassland lake detailed view",
+          "intent": "detail",
+          "priority": 8,
+          "mediaKind": "any"
+        },
+        {
+          "query": "airplane window frame inside cabin",
+          "intent": "interior",
+          "priority": 9,
+          "mediaKind": "any"
+        },
+        {
+          "query": "plane window frame close up",
+          "intent": "detail",
+          "priority": 10,
+          "mediaKind": "any"
+        }
+      ]
+    },
+    {
+      "sceneId": "scene_004",
+      "title": "비행기 창문에 구멍이 있는 이유",
+      "narration": "비행기가 높이 올라가면 기내와 바깥의 공기 압력 차이가 크게 벌어집니다.",
+      "sourceKeywords": [
+        "commercial airplane flying above clouds",
+        "airliner cruising above clouds",
+        "passenger jet high altitude sky",
+        "commercial aircraft exterior clouds",
+        "airplane flight above cloud layer",
+        "commercial airplane flying high altitude exterior",
+        "passenger aircraft above clouds",
+        "airliner cruising altitude sky",
+        "ancient human migration North Africa",
+        "prehistoric Sahara river",
+        "prehistoric people Sahara river",
+        "early humans African landscape",
+        "ancient human migration North Africa wide view",
+        "ancient human migration North Africa landscape",
+        "prehistoric Sahara river wide view",
+        "prehistoric Sahara river landscape",
+        "ancient human migration North Africa close up",
+        "ancient human migration North Africa detailed view"
+      ],
+      "entities": [
+        "벌",
+        "commercial airplane flying above clouds airliner cruising above",
+        "jet high altitude sky commercial aircraft exterior clouds",
+        "loud layer commercial airplane flying high altitude exterior",
+        "bove clouds airliner cruising altitude sky ancient human",
+        "rehistoric Sahara river prehistoric people Sahara river early",
+        "scape ancient human migration North Africa wide view",
+        "Africa landscape prehistoric Sahara river wide view prehistoric",
+        "ndscape ancient human migration North Africa close up",
+        "th Africa detailed view"
+      ],
+      "primaryQuery": "commercial airplane flying high altitude exterior",
+      "queries": [
+        {
+          "query": "commercial airplane flying high altitude exterior",
+          "intent": "primary",
+          "priority": 1,
+          "mediaKind": "any"
+        },
+        {
+          "query": "ancient human migration North Africa",
+          "intent": "primary",
+          "priority": 2,
+          "mediaKind": "any"
+        },
+        {
+          "query": "ancient human migration North Africa landscape",
+          "intent": "wide",
+          "priority": 3,
+          "mediaKind": "any"
+        },
+        {
+          "query": "prehistoric Sahara river wide view",
+          "intent": "wide",
+          "priority": 4,
+          "mediaKind": "any"
+        },
+        {
+          "query": "prehistoric people Sahara river",
+          "intent": "people",
+          "priority": 5,
+          "mediaKind": "any"
+        },
+        {
+          "query": "early humans African landscape",
+          "intent": "wide",
+          "priority": 6,
+          "mediaKind": "any"
+        },
+        {
+          "query": "prehistoric Sahara river landscape",
+          "intent": "wide",
+          "priority": 7,
+          "mediaKind": "any"
+        },
+        {
+          "query": "ancient human migration North Africa wide view",
+          "intent": "wide",
+          "priority": 8,
+          "mediaKind": "any"
+        },
+        {
+          "query": "ancient human migration North Africa close up",
+          "intent": "detail",
+          "priority": 9,
+          "mediaKind": "any"
+        },
+        {
+          "query": "ancient human migration North Africa detailed view",
+          "intent": "detail",
+          "priority": 10,
+          "mediaKind": "any"
+        }
+      ]
+    },
+    {
+      "sceneId": "scene_005",
+      "title": "비행기 창문에 구멍이 있는 이유",
+      "narration": "작은 구멍은 창문 사이의 압력을 조절해 바깥쪽 창이 압력을 견디게 합니다.",
+      "sourceKeywords": [
+        "airplane passenger window close up cabin",
+        "commercial airplane window interior",
+        "aircraft window passenger seat close up",
+        "airliner cabin window detail",
+        "plane passenger window frame",
+        "airplane window close up passenger cabin",
+        "aircraft passenger window close up",
+        "airplane cabin window above clouds",
+        "plane window from passenger seat",
+        "airplane window pressure layers animation",
+        "aircraft window cabin pressure diagram",
+        "airplane window bleed hole pressure explanation",
+        "Sahara Desert ancient comparison",
+        "Sahara desert aerial sunset",
+        "Sahara Desert ancient landscape comparison",
+        "desert aerial view",
+        "desert landscape",
+        "Sahara Desert ancient comparison wide view",
+        "Sahara Desert ancient comparison landscape",
+        "Sahara desert aerial sunset wide view",
+        "Sahara desert aerial sunset landscape",
+        "Sahara Desert ancient comparison close up",
+        "airplane window passenger cabin",
+        "airplane passenger window cabin",
+        "aircraft window passenger seat"
+      ],
+      "entities": [
+        "airplane passenger window close up cabin commercial airplane",
+        "raft window passenger seat close up airliner cabin",
+        "window frame airplane window close up passenger cabin",
+        "lose up airplane cabin window above clouds plane",
+        "ane window pressure layers animation aircraft window cabin",
+        "ane window bleed hole pressure explanation Sahara Desert",
+        "desert aerial sunset Sahara Desert ancient landscape comparison",
+        "iew desert landscape Sahara Desert ancient comparison wide",
+        "ient comparison landscape Sahara desert aerial sunset wide",
+        "ial sunset landscape Sahara Desert ancient comparison close",
+        "ssenger cabin airplane passenger window cabin aircraft window"
+      ],
+      "primaryQuery": "airplane passenger window cabin",
+      "queries": [
+        {
+          "query": "airplane passenger window cabin",
+          "intent": "primary",
+          "priority": 1,
+          "mediaKind": "any"
+        },
+        {
+          "query": "aircraft window passenger seat",
+          "intent": "primary",
+          "priority": 2,
+          "mediaKind": "any"
+        },
+        {
+          "query": "airplane passenger window close up cabin",
+          "intent": "detail",
+          "priority": 3,
+          "mediaKind": "any"
+        },
+        {
+          "query": "aircraft window passenger seat close up",
+          "intent": "detail",
+          "priority": 4,
+          "mediaKind": "any"
+        },
+        {
+          "query": "airplane window close up passenger cabin",
+          "intent": "detail",
+          "priority": 5,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Sahara Desert ancient comparison wide view",
+          "intent": "wide",
+          "priority": 6,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Sahara desert aerial sunset wide view",
+          "intent": "wide",
+          "priority": 7,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Sahara Desert ancient comparison close up",
+          "intent": "detail",
+          "priority": 8,
+          "mediaKind": "any"
+        },
+        {
+          "query": "aircraft passenger window close up",
+          "intent": "detail",
+          "priority": 9,
+          "mediaKind": "any"
+        },
+        {
+          "query": "aircraft window cabin pressure diagram",
+          "intent": "scientific",
+          "priority": 10,
+          "mediaKind": "image"
+        }
+      ]
+    },
+    {
+      "sceneId": "scene_006",
+      "title": "비행기 창문에 구멍이 있는 이유",
+      "narration": "또한 창문 사이의 습기를 배출해 김이나 성에가 생기는 것도 줄여줍니다.",
+      "sourceKeywords": [
+        "airplane window cloud view close up",
+        "aircraft passenger window clouds",
+        "plane window view from cabin",
+        "commercial flight window sky",
+        "airliner window above clouds",
+        "airplane window clouds close up",
+        "aircraft window passenger view",
+        "plane window above clouds",
+        "airplane cabin window close up",
+        "commercial flight window view",
+        "airplane window condensation frost close up",
+        "aircraft window fog condensation",
+        "airplane window ice crystals close up",
+        "Sahara Desert ancient comparison",
+        "Sahara desert aerial sunset",
+        "Sahara Desert ancient landscape comparison",
+        "desert aerial view",
+        "desert landscape",
+        "Sahara Desert ancient comparison wide view",
+        "Sahara Desert ancient comparison landscape",
+        "Sahara desert aerial sunset wide view",
+        "Sahara desert aerial sunset landscape",
+        "Sahara Desert ancient comparison close up",
+        "airplane window condensation frost",
+        "airplane window ice crystals",
+        "airplane window cloud view"
+      ],
+      "entities": [
+        "airplane window cloud view close up aircraft passenger",
+        "view cabin commercial flight window sky airliner window",
+        "window clouds close up aircraft window passenger view",
+        "airplane cabin window close up commercial flight window",
+        "ensation frost close up aircraft window fog condensation",
+        "tals close up Sahara Desert ancient comparison Sahara",
+        "Desert ancient landscape comparison desert aerial view desert",
+        "sert ancient comparison wide view Sahara Desert ancient",
+        "ra desert aerial sunset wide view Sahara desert",
+        "sert ancient comparison close up airplane window condensation",
+        "ow ice crystals airplane window cloud view"
+      ],
+      "primaryQuery": "airplane window cloud view",
+      "queries": [
+        {
+          "query": "airplane window cloud view",
+          "intent": "primary",
+          "priority": 1,
+          "mediaKind": "any"
+        },
+        {
+          "query": "airplane window condensation frost",
+          "intent": "primary",
+          "priority": 2,
+          "mediaKind": "any"
+        },
+        {
+          "query": "airplane window cloud view close up",
+          "intent": "detail",
+          "priority": 3,
+          "mediaKind": "any"
+        },
+        {
+          "query": "airplane window condensation frost close up",
+          "intent": "detail",
+          "priority": 4,
+          "mediaKind": "any"
+        },
+        {
+          "query": "airplane window ice crystals close up",
+          "intent": "detail",
+          "priority": 5,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Sahara Desert ancient comparison wide view",
+          "intent": "wide",
+          "priority": 6,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Sahara desert aerial sunset wide view",
+          "intent": "wide",
+          "priority": 7,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Sahara Desert ancient comparison close up",
+          "intent": "detail",
+          "priority": 8,
+          "mediaKind": "any"
+        },
+        {
+          "query": "airplane window clouds close up",
+          "intent": "detail",
+          "priority": 9,
+          "mediaKind": "any"
+        },
+        {
+          "query": "airplane cabin window close up",
+          "intent": "detail",
+          "priority": 10,
+          "mediaKind": "any"
+        }
+      ]
+    },
+    {
+      "sceneId": "scene_007",
+      "title": "비행기 창문에 구멍이 있는 이유",
+      "narration": "결국 작은 구멍 하나가 안전과 시야를 동시에 지키고 있었던 것입니다.",
+      "sourceKeywords": [
+        "airplane wing through passenger window",
+        "aircraft wing view from window seat",
+        "commercial airplane window wing clouds",
+        "plane window view wing sunset",
+        "airliner wing above clouds passenger view",
+        "clear airplane window view clouds passenger cabin",
+        "airplane window wing view above clouds",
+        "passenger aircraft window clear sky",
+        "Sahara Desert ancient comparison",
+        "Sahara desert aerial sunset",
+        "Sahara Desert ancient landscape comparison",
+        "desert aerial view",
+        "desert landscape",
+        "Sahara Desert ancient comparison wide view",
+        "Sahara Desert ancient comparison landscape",
+        "Sahara desert aerial sunset wide view",
+        "Sahara desert aerial sunset landscape",
+        "Sahara Desert ancient comparison close up"
+      ],
+      "entities": [
+        "airplane wing through passenger window aircraft wing view",
+        "cial airplane window wing clouds plane window view",
+        "clouds passenger view clear airplane window view clouds",
+        "window wing view above clouds passenger aircraft window",
+        "ancient comparison Sahara desert aerial sunset Sahara Desert",
+        "mparison desert aerial view desert landscape Sahara Desert",
+        "view Sahara Desert ancient comparison landscape Sahara desert",
+        "view Sahara desert aerial sunset landscape Sahara Desert",
+        "se up"
+      ],
+      "primaryQuery": "airliner wing above clouds passenger view",
+      "queries": [
+        {
+          "query": "airliner wing above clouds passenger view",
+          "intent": "primary",
+          "priority": 1,
+          "mediaKind": "any"
+        },
+        {
+          "query": "airplane window wing view above clouds",
+          "intent": "primary",
+          "priority": 2,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Sahara Desert ancient comparison wide view",
+          "intent": "wide",
+          "priority": 3,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Sahara desert aerial sunset wide view",
+          "intent": "wide",
+          "priority": 4,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Sahara Desert ancient comparison close up",
+          "intent": "detail",
+          "priority": 5,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Sahara Desert ancient landscape comparison",
+          "intent": "wide",
+          "priority": 6,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Sahara Desert ancient comparison landscape",
+          "intent": "wide",
+          "priority": 7,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Sahara desert aerial sunset landscape",
+          "intent": "wide",
+          "priority": 8,
+          "mediaKind": "any"
+        },
+        {
+          "query": "desert aerial view",
+          "intent": "aerial",
+          "priority": 9,
+          "mediaKind": "any"
+        },
+        {
+          "query": "desert landscape",
+          "intent": "wide",
+          "priority": 10,
+          "mediaKind": "any"
+        }
+      ]
+    }
+  ]
+}

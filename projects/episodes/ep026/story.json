@@ -1,0 +1,143 @@
+{
+  "episode_id": "ep026",
+  "category": "everyday_science",
+  "language": "ko",
+  "title": "비행기 창문에\n구멍이 있는 이유",
+  "youtube_title": "비행기 창문에 작은 구멍이 있는 진짜 이유",
+  "youtube_description": "비행기 창문을 자세히 보면\n아래쪽에 아주 작은 구멍이 있습니다.\n\n깨지거나 잘못 만들어진 것이 아니라\n비행 중 창문 사이의 압력을 조절하는 장치입니다.\n\n이 구멍 덕분에 바깥쪽 창문이\n대부분의 압력 차를 견디게 되고,\n중간 창문은 비상시를 위한 보호층으로 남습니다.\n\n창문 사이의 습기를 배출해\n김과 성에가 생기는 것도 줄여줍니다.\n\n#비행기 #비행기창문 #항공기 #생활상식 #과학 #세계한입\n",
+  "pinned_comment": "비행기 창문의 작은 구멍,\n지금까지 발견한 적 있으셨나요?\n\n다음 비행기에서 꼭 한번 확인해 보세요.\n",
+  "tags": [
+    "비행기",
+    "비행기창문",
+    "항공기",
+    "항공상식",
+    "생활상식",
+    "과학상식",
+    "압력",
+    "기압",
+    "비행",
+    "여행",
+    "세계한입"
+  ],
+  "estimated_duration": 46.0,
+  "scenes": [
+    {
+      "id": "scene_001",
+      "duration": 5.5,
+      "title": "비행기 창문에\n구멍이 있는 이유",
+      "script": "비행기 창문을 자세히 보면 아래쪽에 작은 구멍이 있습니다.",
+      "caption": "비행기 창문을 자세히 보면 아래쪽에 작은 구멍이 있습니다.",
+      "tts": "비행기 창문을 자세히 보면 아래쪽에 작은 구멍이 있습니다.",
+      "media_query": "airplane passenger window close up inside cabin",
+      "media_queries": [
+        "airplane passenger window close up inside cabin",
+        "aircraft cabin window close up",
+        "commercial airplane passenger window",
+        "plane window interior close up",
+        "airliner cabin window passenger seat"
+      ]
+    },
+    {
+      "id": "scene_002",
+      "duration": 6.0,
+      "title": "비행기 창문에\n구멍이 있는 이유",
+      "script": "혹시 창문이 깨진 것은 아닐까 불안해할 필요는 없습니다.",
+      "caption": "혹시 창문이 깨진 것은 아닐까 불안해할 필요는 없습니다.",
+      "tts": "혹시 창문이 깨진 것은 아닐까 불안해할 필요는 없습니다.",
+      "media_query": "airplane cabin passenger looking through window",
+      "media_queries": [
+        "airplane cabin passenger looking through window",
+        "aircraft passenger seat window interior",
+        "commercial airplane cabin window",
+        "passenger beside airplane window",
+        "plane interior window seat"
+      ]
+    },
+    {
+      "id": "scene_003",
+      "duration": 7.0,
+      "title": "비행기 창문에\n구멍이 있는 이유",
+      "script": "비행기 창문은 보통 여러 겹으로 만들어지고, 이 구멍은 중간 창에 있습니다.",
+      "caption": "비행기 창문은 보통 여러 겹으로 만들어지고, 이 구멍은 중간 창에 있습니다.",
+      "tts": "비행기 창문은 보통 여러 겹으로 만들어지고, 이 구멍은 중간 창에 있습니다.",
+      "media_query": "commercial aircraft passenger window close up",
+      "media_queries": [
+        "commercial aircraft passenger window close up",
+        "airplane window frame inside cabin",
+        "airliner passenger window interior",
+        "aircraft cabin window detail",
+        "plane window frame close up"
+      ]
+    },
+    {
+      "id": "scene_004",
+      "duration": 7.0,
+      "title": "비행기 창문에\n구멍이 있는 이유",
+      "script": "비행기가 높이 올라가면 기내와 바깥의 공기 압력 차이가 크게 벌어집니다.",
+      "caption": "비행기가 높이 올라가면 기내와 바깥의 공기 압력 차이가 크게 벌어집니다.",
+      "tts": "비행기가 높이 올라가면 기내와 바깥의 공기 압력 차이가 크게 벌어집니다.",
+      "media_query": "commercial airplane flying above clouds",
+      "media_queries": [
+        "commercial airplane flying above clouds",
+        "airliner cruising above clouds",
+        "passenger jet high altitude sky",
+        "commercial aircraft exterior clouds",
+        "airplane flight above cloud layer"
+      ]
+    },
+    {
+      "id": "scene_005",
+      "duration": 7.5,
+      "title": "비행기 창문에\n구멍이 있는 이유",
+      "script": "작은 구멍은 창문 사이의 압력을 조절해 바깥쪽 창이 압력을 견디게 합니다.",
+      "caption": "작은 구멍은 창문 사이의 압력을 조절해 바깥쪽 창이 압력을 견디게 합니다.",
+      "tts": "작은 구멍은 창문 사이의 압력을 조절해 바깥쪽 창이 압력을 견디게 합니다.",
+      "media_query": "airplane passenger window close up cabin",
+      "media_queries": [
+        "airplane passenger window close up cabin",
+        "commercial airplane window interior",
+        "aircraft window passenger seat close up",
+        "airliner cabin window detail",
+        "plane passenger window frame"
+      ]
+    },
+    {
+      "id": "scene_006",
+      "duration": 7.0,
+      "title": "비행기 창문에\n구멍이 있는 이유",
+      "script": "또한 창문 사이의 습기를 배출해 김이나 성에가 생기는 것도 줄여줍니다.",
+      "caption": "또한 창문 사이의 습기를 배출해 김이나 성에가 생기는 것도 줄여줍니다.",
+      "tts": "또한 창문 사이의 습기를 배출해 김이나 성에가 생기는 것도 줄여줍니다.",
+      "media_query": "airplane window cloud view close up",
+      "media_queries": [
+        "airplane window cloud view close up",
+        "aircraft passenger window clouds",
+        "plane window view from cabin",
+        "commercial flight window sky",
+        "airliner window above clouds"
+      ]
+    },
+    {
+      "id": "scene_007",
+      "duration": 6.0,
+      "title": "비행기 창문에\n구멍이 있는 이유",
+      "script": "결국 작은 구멍 하나가 안전과 시야를 동시에 지키고 있었던 것입니다.",
+      "caption": "결국 작은 구멍 하나가 안전과 시야를 동시에 지키고 있었던 것입니다.",
+      "tts": "결국 작은 구멍 하나가 안전과 시야를 동시에 지키고 있었던 것입니다.",
+      "media_query": "airplane wing through passenger window",
+      "media_queries": [
+        "airplane wing through passenger window",
+        "aircraft wing view from window seat",
+        "commercial airplane window wing clouds",
+        "plane window view wing sunset",
+        "airliner wing above clouds passenger view"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "title": "Why do airplane windows have a hole in them?",
+      "topic": "Aircraft-window bleed hole, pressure equalization and moisture"
+    }
+  ]
+}

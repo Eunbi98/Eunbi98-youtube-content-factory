@@ -26,7 +26,7 @@ export const quizTheme = {
 		top: 150,
 		height: 130,
 		fontSize: 54,
-		fontWeight: 900,
+		fontWeight: 800,
 	},
 
 	card: {
@@ -45,7 +45,7 @@ export const quizTheme = {
 		height: 86,
 		paddingHorizontal: 36,
 		fontSize: 40,
-		fontWeight: 900,
+		fontWeight: 800,
 		borderRadius: 43,
 	},
 
@@ -74,7 +74,7 @@ export const quizTheme = {
 	footer: {
 		bottom: 205,
 		fontSize: 38,
-		fontWeight: 900,
+		fontWeight: 700,
 	},
 
 	intro: {

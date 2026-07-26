@@ -15,19 +15,11 @@ type TitleLayerProps = {
 
 export const TitleLayer: React.FC<
 	TitleLayerProps
-> = ({title}) => {
+> = ({title, color}) => {
     const normalizedTitle = title
         .replace(/\r?\n/g, ' ')
         .replace(/\s+/g, ' ')
         .trim();
-	const compactTitleLength =
-		normalizedTitle.replace(/\s/g, '').length;
-	const titleFontSize =
-		compactTitleLength > 18
-			? 88
-			: compactTitleLength > 14
-				? 100
-				: ep005Theme.title.fontSize;
 	const frame = useCurrentFrame();
 	const {fps} = useVideoConfig();
 
@@ -82,7 +74,7 @@ export const TitleLayer: React.FC<
 					ep005Theme.fontFamily,
 
 				fontSize:
-					titleFontSize,
+					ep005Theme.title.fontSize,
 
 				fontWeight:
 					ep005Theme.title.fontWeight,
@@ -96,10 +88,11 @@ export const TitleLayer: React.FC<
 				textAlign:
 					ep005Theme.title.textAlign,
 
-				overflow: 'visible',
+                           overflow: 'hidden',
                            wordBreak: 'keep-all',
 
 				color:
+					color ??
 					ep005Theme.title.color,
 
 				WebkitTextStroke:
@@ -107,9 +100,11 @@ export const TitleLayer: React.FC<
 
 				paintOrder: 'stroke fill',
 
-				textShadow: '0 4px 0 rgba(0,0,0,0.95), 0 7px 14px rgba(0,0,0,0.85)',
+				textShadow:
+					ep005Theme.title.textShadow,
 
 				whiteSpace: 'pre-wrap',
+				maxHeight: '2.04em',
 
 				opacity,
 
