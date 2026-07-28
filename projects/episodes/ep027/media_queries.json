@@ -1,0 +1,853 @@
+{
+  "version": "2.0",
+  "episodeId": "ep027",
+  "timelinePath": "C:\\Users\\user\\Desktop\\Eunbi98-youtube-content-factory\\projects\\episodes\\ep027\\timeline.json",
+  "sceneCount": 9,
+  "scenes": [
+    {
+      "sceneId": "scene_001",
+      "title": "블랙홀은 모두 은하 중심에 있을까",
+      "narration": "블랙홀은 모두 은하 중심에만 있을까요",
+      "sourceKeywords": [
+        "supermassive",
+        "black",
+        "hole",
+        "galaxy",
+        "space",
+        "NASA",
+        "black hole visualization",
+        "event horizon telescope",
+        "black hole visualization wide view",
+        "black hole visualization landscape",
+        "event horizon telescope wide view",
+        "event horizon telescope landscape",
+        "black hole visualization close up",
+        "black hole visualization detailed view",
+        "event horizon telescope close up",
+        "event horizon telescope detailed view"
+      ],
+      "entities": [
+        "블랙홀",
+        "은하",
+        "supermassive black hole galaxy space NASA black hole",
+        "telescope black hole visualization wide view black hole",
+        "vent horizon telescope wide view event horizon telescope",
+        "ualization close up black hole visualization detailed view",
+        "close up event horizon telescope detailed view"
+      ],
+      "primaryQuery": "black hole visualization",
+      "queries": [
+        {
+          "query": "black hole visualization",
+          "intent": "primary",
+          "priority": 1,
+          "mediaKind": "any"
+        },
+        {
+          "query": "event horizon telescope",
+          "intent": "primary",
+          "priority": 2,
+          "mediaKind": "any"
+        },
+        {
+          "query": "black hole visualization wide view",
+          "intent": "wide",
+          "priority": 3,
+          "mediaKind": "any"
+        },
+        {
+          "query": "event horizon telescope wide view",
+          "intent": "wide",
+          "priority": 4,
+          "mediaKind": "any"
+        },
+        {
+          "query": "black hole visualization close up",
+          "intent": "detail",
+          "priority": 5,
+          "mediaKind": "any"
+        },
+        {
+          "query": "black hole visualization detailed view",
+          "intent": "detail",
+          "priority": 6,
+          "mediaKind": "any"
+        },
+        {
+          "query": "event horizon telescope close up",
+          "intent": "detail",
+          "priority": 7,
+          "mediaKind": "any"
+        },
+        {
+          "query": "event horizon telescope detailed view",
+          "intent": "detail",
+          "priority": 8,
+          "mediaKind": "any"
+        },
+        {
+          "query": "black hole visualization landscape",
+          "intent": "wide",
+          "priority": 9,
+          "mediaKind": "any"
+        },
+        {
+          "query": "event horizon telescope landscape",
+          "intent": "wide",
+          "priority": 10,
+          "mediaKind": "any"
+        }
+      ]
+    },
+    {
+      "sceneId": "scene_002",
+      "title": "예상 밖의 장소에서 발견된 블랙홀",
+      "narration": "최근 NASA가 전혀 예상하지 못한 곳에서 거대한 블랙홀을 발견했습니다.",
+      "sourceKeywords": [
+        "wandering",
+        "black",
+        "hole",
+        "outside",
+        "galaxy",
+        "artist",
+        "concept",
+        "black hole visualization",
+        "event horizon telescope",
+        "black hole visualization wide view",
+        "black hole visualization landscape",
+        "event horizon telescope wide view",
+        "event horizon telescope landscape",
+        "black hole visualization close up",
+        "black hole visualization detailed view",
+        "event horizon telescope close up",
+        "event horizon telescope detailed view"
+      ],
+      "entities": [
+        "블랙홀",
+        "NASA",
+        "wandering black hole outside galaxy artist concept black",
+        "horizon telescope black hole visualization wide view black",
+        "dscape event horizon telescope wide view event horizon",
+        "hole visualization close up black hole visualization detailed",
+        "telescope close up event horizon telescope detailed view"
+      ],
+      "primaryQuery": "black hole visualization",
+      "queries": [
+        {
+          "query": "black hole visualization",
+          "intent": "primary",
+          "priority": 1,
+          "mediaKind": "any"
+        },
+        {
+          "query": "event horizon telescope",
+          "intent": "primary",
+          "priority": 2,
+          "mediaKind": "any"
+        },
+        {
+          "query": "black hole visualization wide view",
+          "intent": "wide",
+          "priority": 3,
+          "mediaKind": "any"
+        },
+        {
+          "query": "event horizon telescope wide view",
+          "intent": "wide",
+          "priority": 4,
+          "mediaKind": "any"
+        },
+        {
+          "query": "black hole visualization close up",
+          "intent": "detail",
+          "priority": 5,
+          "mediaKind": "any"
+        },
+        {
+          "query": "black hole visualization detailed view",
+          "intent": "detail",
+          "priority": 6,
+          "mediaKind": "any"
+        },
+        {
+          "query": "event horizon telescope close up",
+          "intent": "detail",
+          "priority": 7,
+          "mediaKind": "any"
+        },
+        {
+          "query": "event horizon telescope detailed view",
+          "intent": "detail",
+          "priority": 8,
+          "mediaKind": "any"
+        },
+        {
+          "query": "black hole visualization landscape",
+          "intent": "wide",
+          "priority": 9,
+          "mediaKind": "any"
+        },
+        {
+          "query": "event horizon telescope landscape",
+          "intent": "wide",
+          "priority": 10,
+          "mediaKind": "any"
+        }
+      ]
+    },
+    {
+      "sceneId": "scene_003",
+      "title": "은하 중심이 아닌 외곽을 떠돌고 있었다",
+      "narration": "이 블랙홀은 은하 중심이 아니라 은하 외곽을 홀로 떠돌고 있었습니다.",
+      "sourceKeywords": [
+        "galaxy",
+        "outskirts",
+        "wandering",
+        "black",
+        "hole",
+        "illustration",
+        "Milky Way galaxy",
+        "deep space galaxy",
+        "Milky Way galaxy wide view",
+        "Milky Way galaxy landscape",
+        "deep space galaxy wide view",
+        "deep space galaxy landscape",
+        "Milky Way galaxy close up",
+        "Milky Way galaxy detailed view",
+        "deep space galaxy close up",
+        "deep space galaxy detailed view"
+      ],
+      "entities": [
+        "은하",
+        "블랙홀",
+        "galaxy outskirts wandering black hole illustration Milky Way",
+        "laxy Milky Way galaxy wide view Milky Way",
+        "view deep space galaxy landscape Milky Way galaxy",
+        "led view deep space galaxy close up deep"
+      ],
+      "primaryQuery": "Milky Way galaxy",
+      "queries": [
+        {
+          "query": "Milky Way galaxy",
+          "intent": "primary",
+          "priority": 1,
+          "mediaKind": "any"
+        },
+        {
+          "query": "deep space galaxy",
+          "intent": "primary",
+          "priority": 2,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Milky Way galaxy wide view",
+          "intent": "wide",
+          "priority": 3,
+          "mediaKind": "any"
+        },
+        {
+          "query": "deep space galaxy wide view",
+          "intent": "wide",
+          "priority": 4,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Milky Way galaxy close up",
+          "intent": "detail",
+          "priority": 5,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Milky Way galaxy detailed view",
+          "intent": "detail",
+          "priority": 6,
+          "mediaKind": "any"
+        },
+        {
+          "query": "deep space galaxy close up",
+          "intent": "detail",
+          "priority": 7,
+          "mediaKind": "any"
+        },
+        {
+          "query": "deep space galaxy detailed view",
+          "intent": "detail",
+          "priority": 8,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Milky Way galaxy landscape",
+          "intent": "wide",
+          "priority": 9,
+          "mediaKind": "any"
+        },
+        {
+          "query": "deep space galaxy landscape",
+          "intent": "wide",
+          "priority": 10,
+          "mediaKind": "any"
+        }
+      ]
+    },
+    {
+      "sceneId": "scene_004",
+      "title": "빛을 내지 않아 보이지 않았던 존재",
+      "narration": "평소에는 빛을 내지 않아 존재조차 확인하기 어려웠습니다.",
+      "sourceKeywords": [
+        "invisible",
+        "dormant",
+        "black",
+        "hole",
+        "dark",
+        "space",
+        "illustration",
+        "invisible wide view",
+        "invisible landscape",
+        "dormant wide view",
+        "dormant landscape",
+        "invisible close up",
+        "invisible detailed view",
+        "dormant close up",
+        "dormant detailed view"
+      ],
+      "entities": [
+        "invisible dormant black hole dark space illustration invisible",
+        "landscape dormant wide view dormant landscape invisible close",
+        "iled view dormant close up dormant detailed view"
+      ],
+      "primaryQuery": "invisible",
+      "queries": [
+        {
+          "query": "invisible",
+          "intent": "primary",
+          "priority": 1,
+          "mediaKind": "any"
+        },
+        {
+          "query": "dormant",
+          "intent": "primary",
+          "priority": 2,
+          "mediaKind": "any"
+        },
+        {
+          "query": "invisible wide view",
+          "intent": "wide",
+          "priority": 3,
+          "mediaKind": "any"
+        },
+        {
+          "query": "dormant wide view",
+          "intent": "wide",
+          "priority": 4,
+          "mediaKind": "any"
+        },
+        {
+          "query": "invisible close up",
+          "intent": "detail",
+          "priority": 5,
+          "mediaKind": "any"
+        },
+        {
+          "query": "invisible detailed view",
+          "intent": "detail",
+          "priority": 6,
+          "mediaKind": "any"
+        },
+        {
+          "query": "dormant close up",
+          "intent": "detail",
+          "priority": 7,
+          "mediaKind": "any"
+        },
+        {
+          "query": "dormant detailed view",
+          "intent": "detail",
+          "priority": 8,
+          "mediaKind": "any"
+        },
+        {
+          "query": "invisible landscape",
+          "intent": "wide",
+          "priority": 9,
+          "mediaKind": "any"
+        },
+        {
+          "query": "dormant landscape",
+          "intent": "wide",
+          "priority": 10,
+          "mediaKind": "any"
+        }
+      ]
+    },
+    {
+      "sceneId": "scene_005",
+      "title": "별 하나가 너무 가까이 접근했다",
+      "narration": "하지만 근처를 지나던 별 하나가 블랙홀에 너무 가까이 접근했습니다.",
+      "sourceKeywords": [
+        "star",
+        "approaching",
+        "supermassive",
+        "black",
+        "hole",
+        "tidal",
+        "disruption",
+        "black hole visualization",
+        "event horizon telescope",
+        "black hole visualization wide view",
+        "black hole visualization landscape",
+        "event horizon telescope wide view",
+        "event horizon telescope landscape",
+        "black hole visualization close up",
+        "black hole visualization detailed view",
+        "event horizon telescope close up",
+        "event horizon telescope detailed view"
+      ],
+      "entities": [
+        "블랙홀",
+        "star approaching supermassive black hole tidal disruption black",
+        "event horizon telescope black hole visualization wide view",
+        "tion landscape event horizon telescope wide view event",
+        "black hole visualization close up black hole visualization",
+        "horizon telescope close up event horizon telescope detailed"
+      ],
+      "primaryQuery": "black hole visualization",
+      "queries": [
+        {
+          "query": "black hole visualization",
+          "intent": "primary",
+          "priority": 1,
+          "mediaKind": "any"
+        },
+        {
+          "query": "event horizon telescope",
+          "intent": "primary",
+          "priority": 2,
+          "mediaKind": "any"
+        },
+        {
+          "query": "black hole visualization wide view",
+          "intent": "wide",
+          "priority": 3,
+          "mediaKind": "any"
+        },
+        {
+          "query": "event horizon telescope wide view",
+          "intent": "wide",
+          "priority": 4,
+          "mediaKind": "any"
+        },
+        {
+          "query": "black hole visualization close up",
+          "intent": "detail",
+          "priority": 5,
+          "mediaKind": "any"
+        },
+        {
+          "query": "black hole visualization detailed view",
+          "intent": "detail",
+          "priority": 6,
+          "mediaKind": "any"
+        },
+        {
+          "query": "event horizon telescope close up",
+          "intent": "detail",
+          "priority": 7,
+          "mediaKind": "any"
+        },
+        {
+          "query": "event horizon telescope detailed view",
+          "intent": "detail",
+          "priority": 8,
+          "mediaKind": "any"
+        },
+        {
+          "query": "black hole visualization landscape",
+          "intent": "wide",
+          "priority": 9,
+          "mediaKind": "any"
+        },
+        {
+          "query": "event horizon telescope landscape",
+          "intent": "wide",
+          "priority": 10,
+          "mediaKind": "any"
+        }
+      ]
+    },
+    {
+      "sceneId": "scene_006",
+      "title": "강력한 중력이 별을 찢어버렸다",
+      "narration": "강력한 중력은 별을 산산조각 냈고 별의 잔해는 뜨겁게 빛나기 시작했습니다.",
+      "sourceKeywords": [
+        "tidal",
+        "disruption",
+        "event",
+        "star",
+        "shredded",
+        "black",
+        "hole",
+        "NASA",
+        "tidal wide view",
+        "tidal landscape",
+        "disruption wide view",
+        "disruption landscape",
+        "tidal close up",
+        "tidal detailed view",
+        "disruption close up",
+        "disruption detailed view"
+      ],
+      "entities": [
+        "tidal disruption event star shredded black hole NASA",
+        "ape disruption wide view disruption landscape tidal close",
+        "disruption close up disruption detailed view"
+      ],
+      "primaryQuery": "tidal",
+      "queries": [
+        {
+          "query": "tidal",
+          "intent": "primary",
+          "priority": 1,
+          "mediaKind": "any"
+        },
+        {
+          "query": "disruption",
+          "intent": "primary",
+          "priority": 2,
+          "mediaKind": "any"
+        },
+        {
+          "query": "tidal wide view",
+          "intent": "wide",
+          "priority": 3,
+          "mediaKind": "any"
+        },
+        {
+          "query": "disruption wide view",
+          "intent": "wide",
+          "priority": 4,
+          "mediaKind": "any"
+        },
+        {
+          "query": "tidal close up",
+          "intent": "detail",
+          "priority": 5,
+          "mediaKind": "any"
+        },
+        {
+          "query": "tidal detailed view",
+          "intent": "detail",
+          "priority": 6,
+          "mediaKind": "any"
+        },
+        {
+          "query": "disruption close up",
+          "intent": "detail",
+          "priority": 7,
+          "mediaKind": "any"
+        },
+        {
+          "query": "disruption detailed view",
+          "intent": "detail",
+          "priority": 8,
+          "mediaKind": "any"
+        },
+        {
+          "query": "tidal landscape",
+          "intent": "wide",
+          "priority": 9,
+          "mediaKind": "any"
+        },
+        {
+          "query": "disruption landscape",
+          "intent": "wide",
+          "priority": 10,
+          "mediaKind": "any"
+        }
+      ]
+    },
+    {
+      "sceneId": "scene_007",
+      "title": "스위프트 망원경이 그 순간을 포착했다",
+      "narration": "NASA의 스위프트 우주망원경은 이 순간을 포착했습니다.",
+      "sourceKeywords": [
+        "NASA",
+        "Swift",
+        "observatory",
+        "space",
+        "telescope",
+        "illustration",
+        "outer space",
+        "deep space",
+        "outer space wide view",
+        "outer space landscape",
+        "deep space wide view",
+        "deep space landscape",
+        "outer space close up",
+        "outer space detailed view",
+        "deep space close up",
+        "deep space detailed view"
+      ],
+      "entities": [
+        "우주",
+        "NASA",
+        "NASA Swift observatory space telescope illustration outer space",
+        "space wide view outer space landscape deep space",
+        "uter space close up outer space detailed view",
+        "iled view"
+      ],
+      "primaryQuery": "outer space",
+      "queries": [
+        {
+          "query": "outer space",
+          "intent": "primary",
+          "priority": 1,
+          "mediaKind": "any"
+        },
+        {
+          "query": "deep space",
+          "intent": "primary",
+          "priority": 2,
+          "mediaKind": "any"
+        },
+        {
+          "query": "outer space wide view",
+          "intent": "wide",
+          "priority": 3,
+          "mediaKind": "any"
+        },
+        {
+          "query": "deep space wide view",
+          "intent": "wide",
+          "priority": 4,
+          "mediaKind": "any"
+        },
+        {
+          "query": "outer space close up",
+          "intent": "detail",
+          "priority": 5,
+          "mediaKind": "any"
+        },
+        {
+          "query": "outer space detailed view",
+          "intent": "detail",
+          "priority": 6,
+          "mediaKind": "any"
+        },
+        {
+          "query": "deep space close up",
+          "intent": "detail",
+          "priority": 7,
+          "mediaKind": "any"
+        },
+        {
+          "query": "deep space detailed view",
+          "intent": "detail",
+          "priority": 8,
+          "mediaKind": "any"
+        },
+        {
+          "query": "outer space landscape",
+          "intent": "wide",
+          "priority": 9,
+          "mediaKind": "any"
+        },
+        {
+          "query": "deep space landscape",
+          "intent": "wide",
+          "priority": 10,
+          "mediaKind": "any"
+        }
+      ]
+    },
+    {
+      "sceneId": "scene_008",
+      "title": "은하 충돌로 밀려난 블랙홀일 가능성",
+      "narration": "과학자들은 은하끼리 충돌하는 과정에서 블랙홀이 중심 밖으로 밀려났을 가능성을 보고 있습니다.",
+      "sourceKeywords": [
+        "colliding",
+        "galaxies",
+        "supermassive",
+        "black",
+        "hole",
+        "simulation",
+        "Milky Way galaxy",
+        "deep space galaxy",
+        "Milky Way galaxy wide view",
+        "Milky Way galaxy landscape",
+        "deep space galaxy wide view",
+        "deep space galaxy landscape",
+        "Milky Way galaxy close up",
+        "Milky Way galaxy detailed view",
+        "deep space galaxy close up",
+        "deep space galaxy detailed view"
+      ],
+      "entities": [
+        "은하",
+        "블랙홀",
+        "colliding galaxies supermassive black hole simulation Milky Way",
+        "galaxy Milky Way galaxy wide view Milky Way",
+        "de view deep space galaxy landscape Milky Way",
+        "tailed view deep space galaxy close up deep"
+      ],
+      "primaryQuery": "Milky Way galaxy",
+      "queries": [
+        {
+          "query": "Milky Way galaxy",
+          "intent": "primary",
+          "priority": 1,
+          "mediaKind": "any"
+        },
+        {
+          "query": "deep space galaxy",
+          "intent": "primary",
+          "priority": 2,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Milky Way galaxy wide view",
+          "intent": "wide",
+          "priority": 3,
+          "mediaKind": "any"
+        },
+        {
+          "query": "deep space galaxy wide view",
+          "intent": "wide",
+          "priority": 4,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Milky Way galaxy close up",
+          "intent": "detail",
+          "priority": 5,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Milky Way galaxy detailed view",
+          "intent": "detail",
+          "priority": 6,
+          "mediaKind": "any"
+        },
+        {
+          "query": "deep space galaxy close up",
+          "intent": "detail",
+          "priority": 7,
+          "mediaKind": "any"
+        },
+        {
+          "query": "deep space galaxy detailed view",
+          "intent": "detail",
+          "priority": 8,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Milky Way galaxy landscape",
+          "intent": "wide",
+          "priority": 9,
+          "mediaKind": "any"
+        },
+        {
+          "query": "deep space galaxy landscape",
+          "intent": "wide",
+          "priority": 10,
+          "mediaKind": "any"
+        }
+      ]
+    },
+    {
+      "sceneId": "scene_009",
+      "title": "우주에는 얼마나 많은 떠돌이 블랙홀이 있을까",
+      "narration": "우리가 보지 못하는 떠돌이 블랙홀은 우주에 얼마나 더 존재할까요",
+      "sourceKeywords": [
+        "deep",
+        "space",
+        "galaxy",
+        "field",
+        "black",
+        "holes",
+        "universe",
+        "black hole visualization",
+        "event horizon telescope",
+        "black hole visualization wide view",
+        "black hole visualization landscape",
+        "event horizon telescope wide view",
+        "event horizon telescope landscape",
+        "black hole visualization close up",
+        "black hole visualization detailed view",
+        "event horizon telescope close up",
+        "event horizon telescope detailed view"
+      ],
+      "entities": [
+        "우주",
+        "블랙홀",
+        "deep space galaxy field black holes universe black",
+        "telescope black hole visualization wide view black hole",
+        "event horizon telescope wide view event horizon telescope",
+        "visualization close up black hole visualization detailed view",
+        "cope close up event horizon telescope detailed view"
+      ],
+      "primaryQuery": "black hole visualization",
+      "queries": [
+        {
+          "query": "black hole visualization",
+          "intent": "primary",
+          "priority": 1,
+          "mediaKind": "any"
+        },
+        {
+          "query": "event horizon telescope",
+          "intent": "primary",
+          "priority": 2,
+          "mediaKind": "any"
+        },
+        {
+          "query": "black hole visualization wide view",
+          "intent": "wide",
+          "priority": 3,
+          "mediaKind": "any"
+        },
+        {
+          "query": "event horizon telescope wide view",
+          "intent": "wide",
+          "priority": 4,
+          "mediaKind": "any"
+        },
+        {
+          "query": "black hole visualization close up",
+          "intent": "detail",
+          "priority": 5,
+          "mediaKind": "any"
+        },
+        {
+          "query": "black hole visualization detailed view",
+          "intent": "detail",
+          "priority": 6,
+          "mediaKind": "any"
+        },
+        {
+          "query": "event horizon telescope close up",
+          "intent": "detail",
+          "priority": 7,
+          "mediaKind": "any"
+        },
+        {
+          "query": "event horizon telescope detailed view",
+          "intent": "detail",
+          "priority": 8,
+          "mediaKind": "any"
+        },
+        {
+          "query": "black hole visualization landscape",
+          "intent": "wide",
+          "priority": 9,
+          "mediaKind": "any"
+        },
+        {
+          "query": "event horizon telescope landscape",
+          "intent": "wide",
+          "priority": 10,
+          "mediaKind": "any"
+        }
+      ]
+    }
+  ]
+}

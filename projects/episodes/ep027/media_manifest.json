@@ -1,0 +1,114 @@
+{
+  "episode_id": "ep027",
+  "assets_dir": "C:\\Users\\user\\Desktop\\Eunbi98-youtube-content-factory\\projects\\episodes\\ep027\\assets",
+  "items": [
+    {
+      "scene_id": "scene_001",
+      "filename": "scene_001.jpg",
+      "query": "supermassive black hole galaxy space NASA",
+      "providers": [
+        "nasa",
+        "wikimedia",
+        "pexels",
+        "pixabay"
+      ],
+      "required": true
+    },
+    {
+      "scene_id": "scene_002",
+      "filename": "scene_002.jpg",
+      "query": "wandering black hole outside galaxy artist concept",
+      "providers": [
+        "nasa",
+        "wikimedia",
+        "pexels",
+        "pixabay"
+      ],
+      "required": true
+    },
+    {
+      "scene_id": "scene_003",
+      "filename": "scene_003.jpg",
+      "query": "galaxy outskirts wandering black hole illustration",
+      "providers": [
+        "nasa",
+        "wikimedia",
+        "pexels",
+        "pixabay"
+      ],
+      "required": true
+    },
+    {
+      "scene_id": "scene_004",
+      "filename": "scene_004.jpg",
+      "query": "invisible dormant black hole dark space illustration",
+      "providers": [
+        "nasa",
+        "wikimedia",
+        "pexels",
+        "pixabay"
+      ],
+      "required": true
+    },
+    {
+      "scene_id": "scene_005",
+      "filename": "scene_005.jpg",
+      "query": "star approaching supermassive black hole tidal disruption",
+      "providers": [
+        "nasa",
+        "wikimedia",
+        "pexels",
+        "pixabay"
+      ],
+      "required": true
+    },
+    {
+      "scene_id": "scene_006",
+      "filename": "scene_006.jpg",
+      "query": "tidal disruption event star shredded black hole NASA",
+      "providers": [
+        "nasa",
+        "wikimedia",
+        "pexels",
+        "pixabay"
+      ],
+      "required": true
+    },
+    {
+      "scene_id": "scene_007",
+      "filename": "scene_007.jpg",
+      "query": "NASA Swift observatory space telescope illustration",
+      "providers": [
+        "nasa",
+        "wikimedia",
+        "pexels",
+        "pixabay"
+      ],
+      "required": true
+    },
+    {
+      "scene_id": "scene_008",
+      "filename": "scene_008.jpg",
+      "query": "colliding galaxies supermassive black hole simulation",
+      "providers": [
+        "nasa",
+        "wikimedia",
+        "pexels",
+        "pixabay"
+      ],
+      "required": true
+    },
+    {
+      "scene_id": "scene_009",
+      "filename": "scene_009.jpg",
+      "query": "deep space galaxy field black holes universe",
+      "providers": [
+        "nasa",
+        "wikimedia",
+        "pexels",
+        "pixabay"
+      ],
+      "required": true
+    }
+  ]
+}
