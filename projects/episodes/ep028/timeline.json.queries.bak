@@ -1,0 +1,434 @@
+{
+  "episodeId": "ep028",
+  "fps": 30,
+  "width": 1080,
+  "height": 1920,
+  "duration": 47.6,
+  "title": "2천 년을 버틴\n로마 콘크리트의 비밀",
+  "theme": {
+    "backgroundColor": "#17212D",
+    "titleColor": "#7BFEB4",
+    "captionColor": "#FFFFFF",
+    "captionStrokeColor": "#000000",
+    "fontFamily": "Pretendard"
+  },
+  "audio": {
+    "src": "narration.mp3"
+  },
+  "scenes": [
+    {
+      "id": "scene_001",
+      "start": 0.0,
+      "duration": 4.3,
+      "title": "2천 년 된 콘크리트가\n아직도 버티는 이유",
+      "caption": "2천 년 전에 만든 콘크리트가 지금도 무너지지 않고 남아 있습니다.",
+      "narration": "2천 년 전에 만든 콘크리트가 지금도 무너지지 않고 남아 있습니다.",
+      "keywords": [
+        "Roman",
+        "Pantheon",
+        "ancient",
+        "concrete",
+        "dome",
+        "Rome"
+      ],
+      "media": {
+        "type": "image",
+        "src": "scene_001.jpg",
+        "query": "Roman Pantheon ancient concrete dome Rome",
+        "keywords": [
+          "Roman",
+          "Pantheon",
+          "ancient",
+          "concrete",
+          "dome",
+          "Rome"
+        ]
+      },
+      "mediaSearch": {
+        "sourceKeywords": [
+          "Roman",
+          "Pantheon",
+          "ancient",
+          "concrete",
+          "dome",
+          "Rome"
+        ]
+      },
+      "effect": {
+        "type": "zoom-out",
+        "intensity": 0.025
+      },
+      "transition": {
+        "type": "fade",
+        "duration": 0.6
+      }
+    },
+    {
+      "id": "scene_002",
+      "start": 4.3,
+      "duration": 5.0,
+      "title": "판테온과 항구를 만든\n로마의 콘크리트",
+      "caption": "로마인들은 이 콘크리트로 판테온과 수로, 항구와 방파제를 건설했습니다.",
+      "narration": "로마인들은 이 콘크리트로 판테온과 수로, 항구와 방파제를 건설했습니다.",
+      "keywords": [
+        "ancient",
+        "Roman",
+        "aqueduct",
+        "harbor",
+        "concrete",
+        "ruins"
+      ],
+      "media": {
+        "type": "image",
+        "src": "scene_002.jpg",
+        "query": "ancient Roman aqueduct harbor concrete ruins",
+        "keywords": [
+          "ancient",
+          "Roman",
+          "aqueduct",
+          "harbor",
+          "concrete",
+          "ruins"
+        ]
+      },
+      "mediaSearch": {
+        "sourceKeywords": [
+          "ancient",
+          "Roman",
+          "aqueduct",
+          "harbor",
+          "concrete",
+          "ruins"
+        ]
+      },
+      "effect": {
+        "type": "pan-left",
+        "intensity": 0.025
+      },
+      "transition": {
+        "type": "fade",
+        "duration": 0.6
+      }
+    },
+    {
+      "id": "scene_003",
+      "start": 9.3,
+      "duration": 5.0,
+      "title": "첫 번째 비밀은\n화산재",
+      "caption": "오랫동안 가장 중요한 비밀은 석회와 화산재를 섞은 재료라고 알려졌습니다.",
+      "narration": "오랫동안 가장 중요한 비밀은 석회와 화산재를 섞은 재료라고 알려졌습니다.",
+      "keywords": [
+        "Pozzuoli",
+        "volcanic",
+        "ash",
+        "Vesuvius",
+        "Italy"
+      ],
+      "media": {
+        "type": "image",
+        "src": "scene_003.jpg",
+        "query": "Pozzuoli volcanic ash Vesuvius Italy",
+        "keywords": [
+          "Pozzuoli",
+          "volcanic",
+          "ash",
+          "Vesuvius",
+          "Italy"
+        ]
+      },
+      "mediaSearch": {
+        "sourceKeywords": [
+          "Pozzuoli",
+          "volcanic",
+          "ash",
+          "Vesuvius",
+          "Italy"
+        ]
+      },
+      "effect": {
+        "type": "zoom-in",
+        "intensity": 0.025
+      },
+      "transition": {
+        "type": "fade",
+        "duration": 0.6
+      }
+    },
+    {
+      "id": "scene_004",
+      "start": 14.3,
+      "duration": 5.4,
+      "title": "바닷물에 닿을수록\n더 단단해졌다",
+      "caption": "특히 해양 콘크리트는 바닷물과 반응하며 안정적인 광물을 만들어 냈습니다.",
+      "narration": "특히 해양 콘크리트는 바닷물과 반응하며 안정적인 광물을 만들어 냈습니다.",
+      "keywords": [
+        "Roman",
+        "underwater",
+        "concrete",
+        "harbor",
+        "seawater",
+        "ruins"
+      ],
+      "media": {
+        "type": "image",
+        "src": "scene_004.jpg",
+        "query": "Roman underwater concrete harbor seawater ruins",
+        "keywords": [
+          "Roman",
+          "underwater",
+          "concrete",
+          "harbor",
+          "seawater",
+          "ruins"
+        ]
+      },
+      "mediaSearch": {
+        "sourceKeywords": [
+          "Roman",
+          "underwater",
+          "concrete",
+          "harbor",
+          "seawater",
+          "ruins"
+        ]
+      },
+      "effect": {
+        "type": "pan-right",
+        "intensity": 0.025
+      },
+      "transition": {
+        "type": "fade",
+        "duration": 0.6
+      }
+    },
+    {
+      "id": "scene_005",
+      "start": 19.7,
+      "duration": 5.2,
+      "title": "하얀 석회 덩어리는\n실수가 아니었다",
+      "caption": "그런데 연구진은 콘크리트 속 하얀 석회 덩어리가 단순한 제조 실수가 아니라는 사실을 발견했습니다.",
+      "narration": "그런데 연구진은 콘크리트 속 하얀 석회 덩어리가 단순한 제조 실수가 아니라는 사실을 발견했습니다.",
+      "keywords": [
+        "Roman",
+        "concrete",
+        "lime",
+        "clasts",
+        "microscope",
+        "research"
+      ],
+      "media": {
+        "type": "image",
+        "src": "scene_005.jpg",
+        "query": "Roman concrete lime clasts microscope research",
+        "keywords": [
+          "Roman",
+          "concrete",
+          "lime",
+          "clasts",
+          "microscope",
+          "research"
+        ]
+      },
+      "mediaSearch": {
+        "sourceKeywords": [
+          "Roman",
+          "concrete",
+          "lime",
+          "clasts",
+          "microscope",
+          "research"
+        ]
+      },
+      "effect": {
+        "type": "zoom-in",
+        "intensity": 0.025
+      },
+      "transition": {
+        "type": "fade",
+        "duration": 0.6
+      }
+    },
+    {
+      "id": "scene_006",
+      "start": 24.9,
+      "duration": 5.8,
+      "title": "물이 들어오면\n균열을 스스로 메운다",
+      "caption": "금이 생겨 물이 들어오면 석회 성분이 녹아 나와 새로운 광물로 굳으며 틈을 메웁니다.",
+      "narration": "금이 생겨 물이 들어오면 석회 성분이 녹아 나와 새로운 광물로 굳으며 틈을 메웁니다.",
+      "keywords": [
+        "self",
+        "healing",
+        "concrete",
+        "crack",
+        "calcium",
+        "carbonate"
+      ],
+      "media": {
+        "type": "image",
+        "src": "scene_006.jpg",
+        "query": "self healing concrete crack calcium carbonate",
+        "keywords": [
+          "self",
+          "healing",
+          "concrete",
+          "crack",
+          "calcium",
+          "carbonate"
+        ]
+      },
+      "mediaSearch": {
+        "sourceKeywords": [
+          "self",
+          "healing",
+          "concrete",
+          "crack",
+          "calcium",
+          "carbonate"
+        ]
+      },
+      "effect": {
+        "type": "zoom-out",
+        "intensity": 0.025
+      },
+      "transition": {
+        "type": "fade",
+        "duration": 0.6
+      }
+    },
+    {
+      "id": "scene_007",
+      "start": 30.7,
+      "duration": 5.4,
+      "title": "2주 만에 균열이\n다시 막혔다",
+      "caption": "실험에서는 로마 방식으로 만든 콘크리트의 균열이 약 2주 만에 막히는 모습도 확인됐습니다.",
+      "narration": "실험에서는 로마 방식으로 만든 콘크리트의 균열이 약 2주 만에 막히는 모습도 확인됐습니다.",
+      "keywords": [
+        "concrete",
+        "laboratory",
+        "crack",
+        "healing",
+        "experiment"
+      ],
+      "media": {
+        "type": "image",
+        "src": "scene_007.jpg",
+        "query": "concrete laboratory crack healing experiment",
+        "keywords": [
+          "concrete",
+          "laboratory",
+          "crack",
+          "healing",
+          "experiment"
+        ]
+      },
+      "mediaSearch": {
+        "sourceKeywords": [
+          "concrete",
+          "laboratory",
+          "crack",
+          "healing",
+          "experiment"
+        ]
+      },
+      "effect": {
+        "type": "pan-left",
+        "intensity": 0.025
+      },
+      "transition": {
+        "type": "fade",
+        "duration": 0.6
+      }
+    },
+    {
+      "id": "scene_008",
+      "start": 36.1,
+      "duration": 5.5,
+      "title": "비밀은 하나가 아닌\n여러 반응의 조합",
+      "caption": "최근에는 화산재와 석회뿐 아니라 탄산화 작용도 긴 수명에 영향을 주었을 가능성이 연구되고 있습니다.",
+      "narration": "최근에는 화산재와 석회뿐 아니라 탄산화 작용도 긴 수명에 영향을 주었을 가능성이 연구되고 있습니다.",
+      "keywords": [
+        "ancient",
+        "Roman",
+        "concrete",
+        "scientific",
+        "analysis",
+        "laboratory"
+      ],
+      "media": {
+        "type": "image",
+        "src": "scene_008.jpg",
+        "query": "ancient Roman concrete scientific analysis laboratory",
+        "keywords": [
+          "ancient",
+          "Roman",
+          "concrete",
+          "scientific",
+          "analysis",
+          "laboratory"
+        ]
+      },
+      "mediaSearch": {
+        "sourceKeywords": [
+          "ancient",
+          "Roman",
+          "concrete",
+          "scientific",
+          "analysis",
+          "laboratory"
+        ]
+      },
+      "effect": {
+        "type": "zoom-in",
+        "intensity": 0.025
+      },
+      "transition": {
+        "type": "fade",
+        "duration": 0.6
+      }
+    },
+    {
+      "id": "scene_009",
+      "start": 41.6,
+      "duration": 6.0,
+      "title": "현대 콘크리트도\n2천 년을 버틸 수 있을까?",
+      "caption": "고대 로마의 기술은 더 오래가고 스스로 회복하는 현대 콘크리트의 단서가 되고 있습니다.",
+      "narration": "고대 로마의 기술은 더 오래가고 스스로 회복하는 현대 콘크리트의 단서가 되고 있습니다.",
+      "keywords": [
+        "modern",
+        "sustainable",
+        "concrete",
+        "architecture",
+        "future"
+      ],
+      "media": {
+        "type": "image",
+        "src": "scene_009.jpg",
+        "query": "modern sustainable concrete architecture future",
+        "keywords": [
+          "modern",
+          "sustainable",
+          "concrete",
+          "architecture",
+          "future"
+        ]
+      },
+      "mediaSearch": {
+        "sourceKeywords": [
+          "modern",
+          "sustainable",
+          "concrete",
+          "architecture",
+          "future"
+        ]
+      },
+      "effect": {
+        "type": "zoom-out",
+        "intensity": 0.025
+      },
+      "transition": {
+        "type": "fade",
+        "duration": 0.6
+      }
+    }
+  ]
+}

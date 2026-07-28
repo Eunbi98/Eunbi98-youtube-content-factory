@@ -1,0 +1,114 @@
+{
+  "episode_id": "ep028",
+  "assets_dir": "C:\\Users\\user\\Desktop\\Eunbi98-youtube-content-factory\\projects\\episodes\\ep028\\assets",
+  "items": [
+    {
+      "scene_id": "scene_001",
+      "filename": "scene_001.jpg",
+      "query": "Roman Pantheon ancient concrete dome Rome",
+      "providers": [
+        "wikimedia",
+        "pexels",
+        "pixabay",
+        "nasa"
+      ],
+      "required": true
+    },
+    {
+      "scene_id": "scene_002",
+      "filename": "scene_002.jpg",
+      "query": "ancient Roman aqueduct harbor concrete ruins",
+      "providers": [
+        "wikimedia",
+        "pexels",
+        "pixabay",
+        "nasa"
+      ],
+      "required": true
+    },
+    {
+      "scene_id": "scene_003",
+      "filename": "scene_003.jpg",
+      "query": "Pozzuoli volcanic ash Vesuvius Italy",
+      "providers": [
+        "wikimedia",
+        "pexels",
+        "pixabay",
+        "nasa"
+      ],
+      "required": true
+    },
+    {
+      "scene_id": "scene_004",
+      "filename": "scene_004.jpg",
+      "query": "Roman underwater concrete harbor seawater ruins",
+      "providers": [
+        "wikimedia",
+        "pexels",
+        "pixabay",
+        "nasa"
+      ],
+      "required": true
+    },
+    {
+      "scene_id": "scene_005",
+      "filename": "scene_005.jpg",
+      "query": "ancient Roman concrete limestone white mineral texture",
+      "providers": [
+        "wikimedia",
+        "pexels",
+        "pixabay",
+        "nasa"
+      ],
+      "required": true
+    },
+    {
+      "scene_id": "scene_006",
+      "filename": "scene_006.jpg",
+      "query": "self healing concrete crack calcium carbonate",
+      "providers": [
+        "wikimedia",
+        "pexels",
+        "pixabay",
+        "nasa"
+      ],
+      "required": true
+    },
+    {
+      "scene_id": "scene_007",
+      "filename": "scene_007.jpg",
+      "query": "concrete laboratory crack healing experiment",
+      "providers": [
+        "wikimedia",
+        "pexels",
+        "pixabay",
+        "nasa"
+      ],
+      "required": true
+    },
+    {
+      "scene_id": "scene_008",
+      "filename": "scene_008.jpg",
+      "query": "ancient Roman concrete scientific analysis laboratory",
+      "providers": [
+        "wikimedia",
+        "pexels",
+        "pixabay",
+        "nasa"
+      ],
+      "required": true
+    },
+    {
+      "scene_id": "scene_009",
+      "filename": "scene_009.jpg",
+      "query": "modern sustainable concrete architecture future",
+      "providers": [
+        "wikimedia",
+        "pexels",
+        "pixabay",
+        "nasa"
+      ],
+      "required": true
+    }
+  ]
+}
