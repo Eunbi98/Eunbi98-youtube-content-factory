@@ -37,6 +37,14 @@ PRODUCTION_READY_ARCHIVE_TOPICS = {
         "사하라의 거대한 눈은 어떻게 만들어졌을까",
     },
     "science": {
+        "바나나는 왜 냉장고에서 더 빨리 검게 변할까",
+        "양파를 썰면 왜 눈물이 날까",
+        "비 온 뒤 흙냄새는 어디서 생길까",
+        "고양이는 왜 작은 상자에 들어가려 할까",
+        "개는 왜 고개를 갸웃할까",
+        "문어의 팔은 어떻게 따로 판단할까",
+        "철새는 어떻게 길을 잃지 않을까",
+        "나무는 서로 위험 신호를 보낼 수 있을까",
         "지구 생명체는 왜 잠을 자야 할까",
         "공룡을 멸종시킨 날 지구에서는 무슨 일이 있었을까",
         "문어의 지능은 왜 독립적으로 진화했을까",
@@ -432,8 +440,8 @@ class AutoTopicFinder:
                     angle=self._build_angle(category, topic),
                     score=round(82.0 - index * 0.5, 1),
                     reasons=[
-                        "채널 성격과 맞는 미스터리 아카이브 주제",
-                        "공식·학술 자료로 재검증할 상시 관심 후보",
+                        "일상적인 호기심에서 출발하는 상시 관심 주제",
+                        "공식·학술 자료로 검증 가능한 후보",
                         "채널 브랜드 적합도 통과",
                     ],
                     search_queries=search_queries,
@@ -568,7 +576,21 @@ class AutoTopicFinder:
         if not topic_tokens:
             return False
         for existing in excluded_topics:
+            normalized_existing = " ".join(existing.split()).casefold()
+            if (
+                2 <= len(normalized_existing) <= 10
+                and normalized_existing in topic.casefold()
+            ):
+                return True
             existing_tokens = cls._match_tokens(existing)
+            # 고유명사는 영상 제목과 후보 문장이 달라도 같은 소재를
+            # 식별할 수 있습니다. 예: "안티키테라 기계"와
+            # "안티키테라 장치는 어떻게 시대를 앞섰을까".
+            if any(
+                len(token) >= 5 and token in existing_tokens
+                for token in topic_tokens
+            ):
+                return True
             if len(topic_tokens & existing_tokens) >= 3:
                 return True
         return False
@@ -656,12 +678,12 @@ class AutoTopicFinder:
     @staticmethod
     def _build_angle(category: str, topic: str) -> str:
         templates = {
-            "mystery": f"{topic}에서 아직 풀리지 않은 핵심은 무엇일까?",
-            "science": f"{topic}이 우리의 상식을 어떻게 바꿀까?",
-            "history": f"{topic}이 기존 역사 해석을 어떻게 바꿀까?",
-            "space": f"{topic}이 우주에 대해 무엇을 새로 알려줄까?",
+            "mystery": "확인된 사실과 아직 풀리지 않은 부분은 무엇일까",
+            "science": "우리 일상과 생명에 숨어 있는 원리는 무엇일까",
+            "history": "유물과 기록이 실제로 보여주는 것은 무엇일까",
+            "space": "공식 관측으로 확인된 사실은 어디까지일까",
         }
-        return templates[category]
+        return f"{templates[category]}: {topic}"
 
     @staticmethod
     def _search_queries(category: str, topic: str) -> list[str]:
