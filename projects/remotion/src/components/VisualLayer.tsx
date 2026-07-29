@@ -1,7 +1,6 @@
 import React from 'react';
 import {
 	AbsoluteFill,
-	Img,
 	OffthreadVideo,
 	staticFile,
 } from 'remotion';
@@ -70,9 +69,16 @@ export const VisualLayer: React.FC<
 		}
 
 		return (
-			<Img
-				src={staticFile(media.src)}
-				style={mediaStyle}
+			<AbsoluteFill
+				style={{
+					backgroundImage:
+						`url("${staticFile(media.src)}")`,
+					backgroundPosition:
+						media.position ??
+						'center center',
+					backgroundRepeat: 'no-repeat',
+					backgroundSize: 'cover',
+				}}
 			/>
 		);
 	};
