@@ -24,11 +24,15 @@ export const VisualLayer: React.FC<
 	const media = scene.media;
 
 	const mediaStyle: React.CSSProperties = {
+		position: 'absolute',
+		inset: 0,
 		width: '100%',
 		height: '100%',
+		display: 'block',
 
-		objectFit:
-			media?.fit ?? 'cover',
+		// 세로 쇼츠 화면에는 원본 이미지 비율과 관계없이 빈 영역이
+		// 생기지 않도록 항상 프레임 전체를 채웁니다.
+		objectFit: 'cover',
 
 		objectPosition:
 			media?.position ??
