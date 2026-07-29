@@ -99,9 +99,9 @@ class TopicFinderTests(unittest.TestCase):
         ).find(category="science", limit=10)
 
         self.assertEqual("fallback", result.mode)
-        self.assertEqual(5, result.candidate_count)
+        self.assertEqual(10, result.candidate_count)
         self.assertEqual(1, result.candidates[0].rank)
-        self.assertEqual(5, result.candidates[-1].rank)
+        self.assertEqual(10, result.candidates[-1].rank)
         self.assertTrue(all(item.production_ready for item in result.candidates))
         self.assertTrue(all(item.readiness_score == 100 for item in result.candidates))
         self.assertTrue(result.warnings)
@@ -246,7 +246,33 @@ class TopicFinderTests(unittest.TestCase):
                 for query in candidate.search_queries
             )
         )
-        self.assertIn("미스터리 아카이브", result.candidates[0].reasons[0])
+        self.assertIn("상시 관심 주제", result.candidates[0].reasons[0])
+
+    def test_archive_angle_is_a_natural_complete_sentence(self) -> None:
+        result = AutoTopicFinder(
+            source=UnexpectedSource(),
+            now=lambda: NOW,
+        ).find(category="science", limit=1, source_mode="archive")
+
+        self.assertNotIn("할까이", result.candidates[0].angle)
+        self.assertIn(":", result.candidates[0].angle)
+
+    def test_published_subject_alias_is_excluded(self) -> None:
+        result = AutoTopicFinder(
+            source=UnexpectedSource(),
+            now=lambda: NOW,
+        ).find(
+            category="mystery",
+            limit=10,
+            source_mode="archive",
+            excluded_topics=(
+                "안티키테라 기계와 2천년 전 최초의 컴퓨터",
+            ),
+        )
+
+        self.assertFalse(
+            any("안티키테라" in item.topic for item in result.candidates)
+        )
 
     def test_mixed_mode_keeps_trend_and_archive_quota(self) -> None:
         items = [
