@@ -37,8 +37,8 @@ class CandidatePreflightService:
         *,
         source_collector: Any | None = None,
         media_providers: dict[str, Any] | None = None,
-        minimum_media_candidates: int = 5,
-        minimum_media_queries: int = 1,
+        minimum_media_candidates: int = 6,
+        minimum_media_queries: int = 3,
         maximum_candidates_checked: int = 20,
     ) -> None:
         self._source_collector = source_collector or PublicSourceCollector(
@@ -93,6 +93,18 @@ class CandidatePreflightService:
         # 최종 주제를 고릅니다. 최대 검사 범위까지 모두 확인한 뒤 상위 후보만 남깁니다.
         accepted.sort(
             key=lambda item: (
+                int(
+                    (item.get("preflight_media") or {}).get(
+                        "candidateCount",
+                        0,
+                    )
+                ),
+                int(
+                    (item.get("preflight_media") or {}).get(
+                        "successfulQueryCount",
+                        0,
+                    )
+                ),
                 float(item.get("production_score") or 0),
                 float(item.get("score") or 0),
             ),
@@ -246,10 +258,9 @@ class CandidatePreflightService:
             if len(unique) > before:
                 successful_queries += 1
                 used_queries.append(query)
-            if (
-                len(unique) >= self._minimum_media_candidates
-                and successful_queries >= self._minimum_media_queries
-            ):
+            # 후보 화면에는 한 검색어에서 우연히 이미지가 몰린 주제가 아니라,
+            # 최소 세 가지 장면 검색이 실제로 성공한 주제만 노출합니다.
+            if len(unique) >= 12 and successful_queries >= self._minimum_media_queries:
                 break
 
         if len(unique) < self._minimum_media_candidates:
