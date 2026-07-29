@@ -16,6 +16,11 @@ on:
         required: true
         default: "auto"
         type: string
+      episode_package_json:
+        description: "Optional verified episode+metadata JSON prepared outside the workflow"
+        required: false
+        default: ""
+        type: string
 
 permissions:
   contents: write
@@ -141,13 +146,24 @@ jobs:
         env:
           GITHUB_MODELS_TOKEN: ${{ github.token }}
           GITHUB_MODELS_MODEL: ${{ vars.GITHUB_MODELS_MODEL || 'openai/gpt-4.1' }}
-        run: >-
-          python projects/production/build_episode_package.py
-          --job "${{ steps.production.outputs.episode_dir }}/production-job.json"
-          --evidence "${{ steps.production.outputs.episode_dir }}/evidence.json"
-          --episode-spec "${{ steps.production.outputs.episode_dir }}/episode.json"
-          --metadata "${{ steps.production.outputs.episode_dir }}/metadata.json"
-          --job-output "${{ steps.production.outputs.episode_dir }}/production-job.json"
+          EPISODE_PACKAGE_JSON: ${{ inputs.episode_package_json }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          provider_args=()
+          if [[ -n "$EPISODE_PACKAGE_JSON" ]]; then
+            printf '%s' "$EPISODE_PACKAGE_JSON" > /tmp/episode-package.json
+            python -m json.tool /tmp/episode-package.json >/dev/null
+            provider_args=(--provider-result /tmp/episode-package.json)
+          fi
+
+          python projects/production/build_episode_package.py \
+            --job "${{ steps.production.outputs.episode_dir }}/production-job.json" \
+            --evidence "${{ steps.production.outputs.episode_dir }}/evidence.json" \
+            --episode-spec "${{ steps.production.outputs.episode_dir }}/episode.json" \
+            --metadata "${{ steps.production.outputs.episode_dir }}/metadata.json" \
+            --job-output "${{ steps.production.outputs.episode_dir }}/production-job.json" \
+            "${provider_args[@]}"
 
       - name: Save verified episode package to branch
         shell: bash
