@@ -1,0 +1,1222 @@
+{
+  "version": "6.5",
+  "episodeId": "EP029",
+  "title": "양파 썰 때 눈물, 진짜 이유는 무엇일까?",
+  "fps": 30,
+  "width": 1080,
+  "height": 1920,
+  "totalDuration": 45.08,
+  "theme": {
+    "backgroundColor": "#FFFFFF",
+    "titleColor": "#7BFEB4",
+    "captionColor": "#FFFFFF",
+    "accentColor": "#8BC34A"
+  },
+  "scenes": [
+    {
+      "id": "scene_001",
+      "start": 0.0,
+      "duration": 3.97,
+      "title": "양파 썰 때 눈물의 비밀",
+      "narration": "양파만 썰면 왜 이렇게 눈물이 쏟아질까요?",
+      "caption": "양파만 썰면 왜 이렇게 눈물이 쏟아질까요?",
+      "backgroundColor": "#14202B",
+      "keywords": [
+        "onion cutting",
+        "kitchen closeup",
+        "onion cutting wide view",
+        "onion cutting landscape",
+        "kitchen closeup wide view",
+        "kitchen closeup landscape",
+        "onion cutting close up",
+        "onion cutting detailed view"
+      ],
+      "media": {
+        "type": "image",
+        "fit": "cover",
+        "position": "center center",
+        "src": "ep029/scene_001.jpg",
+        "keywords": [
+          "onion cutting",
+          "kitchen closeup",
+          "onion cutting wide view",
+          "onion cutting landscape",
+          "kitchen closeup wide view",
+          "kitchen closeup landscape",
+          "onion cutting close up",
+          "onion cutting detailed view"
+        ]
+      },
+      "cameraMotion": "zoom_in",
+      "transition": "fade",
+      "transitionDuration": 0.3,
+      "overlay": "cinematic",
+      "overlayOpacity": 1.0,
+      "mediaSearch": {
+        "version": "2.0",
+        "primaryQuery": "onion cutting",
+        "sourceKeywords": [
+          "onion cutting",
+          "kitchen closeup",
+          "onion cutting wide view",
+          "onion cutting landscape",
+          "kitchen closeup wide view",
+          "kitchen closeup landscape",
+          "onion cutting close up",
+          "onion cutting detailed view"
+        ],
+        "entities": [
+          "onion cutting kitchen closeup onion cutting wide view",
+          "chen closeup wide view kitchen closeup landscape onion",
+          "ting detailed view"
+        ],
+        "queries": [
+          {
+            "query": "onion cutting",
+            "intent": "primary",
+            "priority": 1,
+            "mediaKind": "any"
+          },
+          {
+            "query": "kitchen closeup",
+            "intent": "primary",
+            "priority": 2,
+            "mediaKind": "any"
+          },
+          {
+            "query": "onion cutting wide view",
+            "intent": "wide",
+            "priority": 3,
+            "mediaKind": "any"
+          },
+          {
+            "query": "kitchen closeup wide view",
+            "intent": "wide",
+            "priority": 4,
+            "mediaKind": "any"
+          },
+          {
+            "query": "onion cutting close up",
+            "intent": "detail",
+            "priority": 5,
+            "mediaKind": "any"
+          },
+          {
+            "query": "onion cutting detailed view",
+            "intent": "detail",
+            "priority": 6,
+            "mediaKind": "any"
+          },
+          {
+            "query": "onion cutting landscape",
+            "intent": "wide",
+            "priority": 7,
+            "mediaKind": "any"
+          },
+          {
+            "query": "kitchen closeup landscape",
+            "intent": "wide",
+            "priority": 8,
+            "mediaKind": "any"
+          },
+          {
+            "query": "kitchen closeup close up",
+            "intent": "detail",
+            "priority": 9,
+            "mediaKind": "any"
+          },
+          {
+            "query": "kitchen closeup detailed view",
+            "intent": "detail",
+            "priority": 10,
+            "mediaKind": "any"
+          }
+        ]
+      },
+      "audioDuration": 3.82,
+      "audio": "ep029/audio/scene_001.mp3",
+      "timing": "ep029/audio/scene_001.timing.json",
+      "wordTimings": [
+        {
+          "text": "양파만",
+          "offset": 0.1,
+          "duration": 0.5,
+          "end": 0.6
+        },
+        {
+          "text": "썰면",
+          "offset": 0.613,
+          "duration": 0.487,
+          "end": 1.1
+        },
+        {
+          "text": "왜",
+          "offset": 1.113,
+          "duration": 0.138,
+          "end": 1.251
+        },
+        {
+          "text": "이렇게",
+          "offset": 1.262,
+          "duration": 0.362,
+          "end": 1.624
+        },
+        {
+          "text": "눈물이",
+          "offset": 1.637,
+          "duration": 0.388,
+          "end": 2.025
+        },
+        {
+          "text": "쏟아질까요",
+          "offset": 2.038,
+          "duration": 0.887,
+          "end": 2.925
+        }
+      ],
+      "wordCount": 6
+    },
+    {
+      "id": "scene_002",
+      "start": 3.97,
+      "duration": 9.49,
+      "title": "눈물의 원인, 신-프로파네티알 S-옥사이드",
+      "narration": "그 이유는 양파를 자를 때 syn-Propanethial S-oxide라는 휘발성 유기황 화합물이 방출되어 눈을 자극하기 때문입니다.",
+      "caption": "그 이유는 양파를 자를 때 syn-Propanethial S-oxide라는 휘발성 유기황 화합물이 방출되어 눈을 자극하기 때문입니다.",
+      "backgroundColor": "#223748",
+      "keywords": [
+        "onion chemical structure",
+        "syn-Propanethial S-oxide",
+        "onion chemical structure wide view",
+        "onion chemical structure landscape",
+        "syn-Propanethial S-oxide wide view",
+        "syn-Propanethial S-oxide landscape",
+        "onion chemical structure close up",
+        "onion chemical structure detailed view"
+      ],
+      "media": {
+        "type": "image",
+        "fit": "cover",
+        "position": "center center",
+        "src": "ep029/scene_002.jpg",
+        "keywords": [
+          "onion chemical structure",
+          "syn-Propanethial S-oxide",
+          "onion chemical structure wide view",
+          "onion chemical structure landscape",
+          "syn-Propanethial S-oxide wide view",
+          "syn-Propanethial S-oxide landscape",
+          "onion chemical structure close up",
+          "onion chemical structure detailed view"
+        ]
+      },
+      "cameraMotion": "pan_right",
+      "transition": "cut",
+      "transitionDuration": 0.2,
+      "overlay": "cinematic",
+      "overlayOpacity": 1.0,
+      "mediaSearch": {
+        "version": "2.0",
+        "primaryQuery": "onion chemical structure",
+        "sourceKeywords": [
+          "onion chemical structure",
+          "syn-Propanethial S-oxide",
+          "onion chemical structure wide view",
+          "onion chemical structure landscape",
+          "syn-Propanethial S-oxide wide view",
+          "syn-Propanethial S-oxide landscape",
+          "onion chemical structure close up",
+          "onion chemical structure detailed view"
+        ],
+        "entities": [
+          "S-",
+          "syn-Propanethial S-oxide",
+          "onion chemical structure syn-Propanethial S-oxide onion chemical structure",
+          "iew onion chemical structure landscape syn-Propanethial S-oxide wide",
+          "panethial S-oxide landscape onion chemical structure close up",
+          "cture detailed view"
+        ],
+        "queries": [
+          {
+            "query": "onion chemical structure",
+            "intent": "primary",
+            "priority": 1,
+            "mediaKind": "any"
+          },
+          {
+            "query": "syn-Propanethial S-oxide",
+            "intent": "primary",
+            "priority": 2,
+            "mediaKind": "any"
+          },
+          {
+            "query": "onion chemical structure wide view",
+            "intent": "wide",
+            "priority": 3,
+            "mediaKind": "any"
+          },
+          {
+            "query": "onion chemical structure close up",
+            "intent": "detail",
+            "priority": 4,
+            "mediaKind": "any"
+          },
+          {
+            "query": "onion chemical structure detailed view",
+            "intent": "detail",
+            "priority": 5,
+            "mediaKind": "any"
+          },
+          {
+            "query": "onion chemical structure landscape",
+            "intent": "wide",
+            "priority": 6,
+            "mediaKind": "any"
+          },
+          {
+            "query": "syn-Propanethial S-oxide wide view",
+            "intent": "wide",
+            "priority": 7,
+            "mediaKind": "any"
+          },
+          {
+            "query": "syn-Propanethial S-oxide landscape",
+            "intent": "wide",
+            "priority": 8,
+            "mediaKind": "any"
+          },
+          {
+            "query": "syn-Propanethial S-oxide close up",
+            "intent": "detail",
+            "priority": 9,
+            "mediaKind": "any"
+          },
+          {
+            "query": "syn-Propanethial S-oxide detailed view",
+            "intent": "detail",
+            "priority": 10,
+            "mediaKind": "any"
+          }
+        ]
+      },
+      "audioDuration": 9.34,
+      "audio": "ep029/audio/scene_002.mp3",
+      "timing": "ep029/audio/scene_002.timing.json",
+      "wordTimings": [
+        {
+          "text": "그",
+          "offset": 0.1,
+          "duration": 0.188,
+          "end": 0.288
+        },
+        {
+          "text": "이유는",
+          "offset": 0.3,
+          "duration": 0.588,
+          "end": 0.888
+        },
+        {
+          "text": "양파를",
+          "offset": 0.9,
+          "duration": 0.487,
+          "end": 1.387
+        },
+        {
+          "text": "자를",
+          "offset": 1.4,
+          "duration": 0.287,
+          "end": 1.687
+        },
+        {
+          "text": "때",
+          "offset": 1.7,
+          "duration": 0.275,
+          "end": 1.975
+        },
+        {
+          "text": "syn-Propanethial",
+          "offset": 1.988,
+          "duration": 1.225,
+          "end": 3.213
+        },
+        {
+          "text": "S-oxide라는",
+          "offset": 3.225,
+          "duration": 0.988,
+          "end": 4.213
+        },
+        {
+          "text": "휘발성",
+          "offset": 4.225,
+          "duration": 0.688,
+          "end": 4.913
+        },
+        {
+          "text": "유기황",
+          "offset": 4.925,
+          "duration": 0.438,
+          "end": 5.363
+        },
+        {
+          "text": "화합물이",
+          "offset": 5.375,
+          "duration": 0.475,
+          "end": 5.85
+        },
+        {
+          "text": "방출되어",
+          "offset": 5.862,
+          "duration": 0.713,
+          "end": 6.575
+        },
+        {
+          "text": "눈을",
+          "offset": 6.588,
+          "duration": 0.425,
+          "end": 7.013
+        },
+        {
+          "text": "자극하기",
+          "offset": 7.025,
+          "duration": 0.625,
+          "end": 7.65
+        },
+        {
+          "text": "때문입니다",
+          "offset": 7.662,
+          "duration": 0.812,
+          "end": 8.474
+        }
+      ],
+      "wordCount": 14
+    },
+    {
+      "id": "scene_003",
+      "start": 13.46,
+      "duration": 7.85,
+      "title": "눈물샘의 반응",
+      "narration": "이 자극 때문에 눈물샘이 반사적으로 작동해서 평소보다 최대 100배까지 많은 눈물을 만들어냅니다.",
+      "caption": "이 자극 때문에 눈물샘이 반사적으로 작동해서 평소보다 최대 100배까지 많은 눈물을 만들어냅니다.",
+      "backgroundColor": "#314A5D",
+      "keywords": [
+        "reflex tears",
+        "tear glands",
+        "reflex tears wide view",
+        "reflex tears landscape",
+        "tear glands wide view",
+        "tear glands landscape",
+        "reflex tears close up",
+        "reflex tears detailed view"
+      ],
+      "media": {
+        "type": "image",
+        "fit": "cover",
+        "position": "center center",
+        "src": "ep029/scene_003.jpg",
+        "keywords": [
+          "reflex tears",
+          "tear glands",
+          "reflex tears wide view",
+          "reflex tears landscape",
+          "tear glands wide view",
+          "tear glands landscape",
+          "reflex tears close up",
+          "reflex tears detailed view"
+        ]
+      },
+      "cameraMotion": "pan_left",
+      "transition": "fade",
+      "transitionDuration": 0.3,
+      "overlay": "cinematic",
+      "overlayOpacity": 1.0,
+      "mediaSearch": {
+        "version": "2.0",
+        "primaryQuery": "reflex tears",
+        "sourceKeywords": [
+          "reflex tears",
+          "tear glands",
+          "reflex tears wide view",
+          "reflex tears landscape",
+          "tear glands wide view",
+          "tear glands landscape",
+          "reflex tears close up",
+          "reflex tears detailed view"
+        ],
+        "entities": [
+          "reflex tears tear glands reflex tears wide view",
+          "wide view tear glands landscape reflex tears close"
+        ],
+        "queries": [
+          {
+            "query": "reflex tears",
+            "intent": "primary",
+            "priority": 1,
+            "mediaKind": "any"
+          },
+          {
+            "query": "tear glands",
+            "intent": "primary",
+            "priority": 2,
+            "mediaKind": "any"
+          },
+          {
+            "query": "reflex tears wide view",
+            "intent": "wide",
+            "priority": 3,
+            "mediaKind": "any"
+          },
+          {
+            "query": "tear glands wide view",
+            "intent": "wide",
+            "priority": 4,
+            "mediaKind": "any"
+          },
+          {
+            "query": "reflex tears close up",
+            "intent": "detail",
+            "priority": 5,
+            "mediaKind": "any"
+          },
+          {
+            "query": "reflex tears detailed view",
+            "intent": "detail",
+            "priority": 6,
+            "mediaKind": "any"
+          },
+          {
+            "query": "reflex tears landscape",
+            "intent": "wide",
+            "priority": 7,
+            "mediaKind": "any"
+          },
+          {
+            "query": "tear glands landscape",
+            "intent": "wide",
+            "priority": 8,
+            "mediaKind": "any"
+          },
+          {
+            "query": "tear glands close up",
+            "intent": "detail",
+            "priority": 9,
+            "mediaKind": "any"
+          },
+          {
+            "query": "tear glands detailed view",
+            "intent": "detail",
+            "priority": 10,
+            "mediaKind": "any"
+          }
+        ]
+      },
+      "audioDuration": 7.7,
+      "audio": "ep029/audio/scene_003.mp3",
+      "timing": "ep029/audio/scene_003.timing.json",
+      "wordTimings": [
+        {
+          "text": "이",
+          "offset": 0.1,
+          "duration": 0.2,
+          "end": 0.3
+        },
+        {
+          "text": "자극",
+          "offset": 0.312,
+          "duration": 0.325,
+          "end": 0.637
+        },
+        {
+          "text": "때문에",
+          "offset": 0.65,
+          "duration": 0.425,
+          "end": 1.075
+        },
+        {
+          "text": "눈물샘이",
+          "offset": 1.087,
+          "duration": 0.675,
+          "end": 1.762
+        },
+        {
+          "text": "반사적으로",
+          "offset": 1.775,
+          "duration": 0.7,
+          "end": 2.475
+        },
+        {
+          "text": "작동해서",
+          "offset": 2.487,
+          "duration": 0.7,
+          "end": 3.187
+        },
+        {
+          "text": "평소보다",
+          "offset": 3.2,
+          "duration": 0.838,
+          "end": 4.038
+        },
+        {
+          "text": "최대",
+          "offset": 4.05,
+          "duration": 0.338,
+          "end": 4.388
+        },
+        {
+          "text": "100배까지",
+          "offset": 4.4,
+          "duration": 0.588,
+          "end": 4.988
+        },
+        {
+          "text": "많은",
+          "offset": 5.0,
+          "duration": 0.312,
+          "end": 5.312
+        },
+        {
+          "text": "눈물을",
+          "offset": 5.325,
+          "duration": 0.475,
+          "end": 5.8
+        },
+        {
+          "text": "만들어냅니다",
+          "offset": 5.812,
+          "duration": 1.025,
+          "end": 6.837
+        }
+      ],
+      "wordCount": 12
+    },
+    {
+      "id": "scene_004",
+      "start": 21.31,
+      "duration": 9.82,
+      "title": "유전자 조절의 효과",
+      "narration": "실제로 양파의 lachrymatory factor synthase 유전자를 억제하면 눈물 유발 물질의 생성이 크게 줄어든다는 연구 결과도 있습니다.",
+      "caption": "실제로 양파의 lachrymatory factor synthase 유전자를 억제하면 눈물 유발 물질의 생성이 크게 줄어든다는 연구 결과도 있습니다.",
+      "backgroundColor": "#1C3040",
+      "keywords": [
+        "lachrymatory factor synthase",
+        "onion gene",
+        "lachrymatory factor synthase wide view",
+        "lachrymatory factor synthase landscape",
+        "onion gene wide view",
+        "onion gene landscape",
+        "lachrymatory factor synthase close up",
+        "lachrymatory factor synthase detailed view"
+      ],
+      "media": {
+        "type": "image",
+        "fit": "cover",
+        "position": "center center",
+        "src": "ep029/scene_004.jpg",
+        "keywords": [
+          "lachrymatory factor synthase",
+          "onion gene",
+          "lachrymatory factor synthase wide view",
+          "lachrymatory factor synthase landscape",
+          "onion gene wide view",
+          "onion gene landscape",
+          "lachrymatory factor synthase close up",
+          "lachrymatory factor synthase detailed view"
+        ]
+      },
+      "cameraMotion": "zoom_in_right",
+      "transition": "slide_left",
+      "transitionDuration": 0.3,
+      "overlay": "vignette",
+      "overlayOpacity": 1.0,
+      "mediaSearch": {
+        "version": "2.0",
+        "primaryQuery": "lachrymatory factor synthase",
+        "sourceKeywords": [
+          "lachrymatory factor synthase",
+          "onion gene",
+          "lachrymatory factor synthase wide view",
+          "lachrymatory factor synthase landscape",
+          "onion gene wide view",
+          "onion gene landscape",
+          "lachrymatory factor synthase close up",
+          "lachrymatory factor synthase detailed view"
+        ],
+        "entities": [
+          "lachrymatory factor synthase",
+          "lachrymatory factor synthase onion gene lachrymatory factor synthase",
+          "chrymatory factor synthase landscape onion gene wide view",
+          "chrymatory factor synthase close up lachrymatory factor synthase"
+        ],
+        "queries": [
+          {
+            "query": "lachrymatory factor synthase",
+            "intent": "primary",
+            "priority": 1,
+            "mediaKind": "any"
+          },
+          {
+            "query": "onion gene",
+            "intent": "primary",
+            "priority": 2,
+            "mediaKind": "any"
+          },
+          {
+            "query": "lachrymatory factor synthase wide view",
+            "intent": "wide",
+            "priority": 3,
+            "mediaKind": "any"
+          },
+          {
+            "query": "lachrymatory factor synthase close up",
+            "intent": "detail",
+            "priority": 4,
+            "mediaKind": "any"
+          },
+          {
+            "query": "lachrymatory factor synthase detailed view",
+            "intent": "detail",
+            "priority": 5,
+            "mediaKind": "any"
+          },
+          {
+            "query": "lachrymatory factor synthase landscape",
+            "intent": "wide",
+            "priority": 6,
+            "mediaKind": "any"
+          },
+          {
+            "query": "onion gene wide view",
+            "intent": "wide",
+            "priority": 7,
+            "mediaKind": "any"
+          },
+          {
+            "query": "onion gene landscape",
+            "intent": "wide",
+            "priority": 8,
+            "mediaKind": "any"
+          },
+          {
+            "query": "onion gene close up",
+            "intent": "detail",
+            "priority": 9,
+            "mediaKind": "any"
+          },
+          {
+            "query": "onion gene detailed view",
+            "intent": "detail",
+            "priority": 10,
+            "mediaKind": "any"
+          }
+        ]
+      },
+      "audioDuration": 9.67,
+      "audio": "ep029/audio/scene_004.mp3",
+      "timing": "ep029/audio/scene_004.timing.json",
+      "wordTimings": [
+        {
+          "text": "실제로",
+          "offset": 0.1,
+          "duration": 0.662,
+          "end": 0.762
+        },
+        {
+          "text": "양파의",
+          "offset": 0.775,
+          "duration": 0.55,
+          "end": 1.325
+        },
+        {
+          "text": "lachrymatory",
+          "offset": 1.337,
+          "duration": 0.85,
+          "end": 2.187
+        },
+        {
+          "text": "factor",
+          "offset": 2.2,
+          "duration": 0.438,
+          "end": 2.638
+        },
+        {
+          "text": "synthase",
+          "offset": 2.65,
+          "duration": 0.625,
+          "end": 3.275
+        },
+        {
+          "text": "유전자를",
+          "offset": 3.288,
+          "duration": 0.55,
+          "end": 3.838
+        },
+        {
+          "text": "억제하면",
+          "offset": 3.85,
+          "duration": 0.613,
+          "end": 4.463
+        },
+        {
+          "text": "눈물",
+          "offset": 4.475,
+          "duration": 0.55,
+          "end": 5.025
+        },
+        {
+          "text": "유발",
+          "offset": 5.037,
+          "duration": 0.263,
+          "end": 5.3
+        },
+        {
+          "text": "물질의",
+          "offset": 5.312,
+          "duration": 0.425,
+          "end": 5.737
+        },
+        {
+          "text": "생성이",
+          "offset": 5.75,
+          "duration": 0.5,
+          "end": 6.25
+        },
+        {
+          "text": "크게",
+          "offset": 6.263,
+          "duration": 0.325,
+          "end": 6.588
+        },
+        {
+          "text": "줄어든다는",
+          "offset": 6.6,
+          "duration": 0.738,
+          "end": 7.338
+        },
+        {
+          "text": "연구",
+          "offset": 7.35,
+          "duration": 0.312,
+          "end": 7.662
+        },
+        {
+          "text": "결과도",
+          "offset": 7.675,
+          "duration": 0.463,
+          "end": 8.138
+        },
+        {
+          "text": "있습니다",
+          "offset": 8.15,
+          "duration": 0.65,
+          "end": 8.8
+        }
+      ],
+      "wordCount": 16
+    },
+    {
+      "id": "scene_005",
+      "start": 31.13,
+      "duration": 7.93,
+      "title": "눈물 속 포도당 변화",
+      "narration": "또한 양파로 인해 흘리는 눈물에는 평소보다 더 많은 포도당이 포함되어 있다는 사실도 밝혀졌습니다.",
+      "caption": "또한 양파로 인해 흘리는 눈물에는 평소보다 더 많은 포도당이 포함되어 있다는 사실도 밝혀졌습니다.",
+      "backgroundColor": "#1C3040",
+      "keywords": [
+        "tear glucose test",
+        "onion tears",
+        "tear glucose test wide view",
+        "tear glucose test landscape",
+        "onion tears wide view",
+        "onion tears landscape",
+        "tear glucose test close up",
+        "tear glucose test detailed view"
+      ],
+      "media": {
+        "type": "image",
+        "fit": "cover",
+        "position": "center center",
+        "src": "ep029/scene_005.jpg",
+        "keywords": [
+          "tear glucose test",
+          "onion tears",
+          "tear glucose test wide view",
+          "tear glucose test landscape",
+          "onion tears wide view",
+          "onion tears landscape",
+          "tear glucose test close up",
+          "tear glucose test detailed view"
+        ]
+      },
+      "cameraMotion": "zoom_in_left",
+      "transition": "slide_left",
+      "transitionDuration": 0.3,
+      "overlay": "vignette",
+      "overlayOpacity": 1.0,
+      "mediaSearch": {
+        "version": "2.0",
+        "primaryQuery": "tear glucose test",
+        "sourceKeywords": [
+          "tear glucose test",
+          "onion tears",
+          "tear glucose test wide view",
+          "tear glucose test landscape",
+          "onion tears wide view",
+          "onion tears landscape",
+          "tear glucose test close up",
+          "tear glucose test detailed view"
+        ],
+        "entities": [
+          "tear glucose test onion tears tear glucose test",
+          "cape onion tears wide view onion tears landscape",
+          "glucose test detailed view"
+        ],
+        "queries": [
+          {
+            "query": "tear glucose test",
+            "intent": "primary",
+            "priority": 1,
+            "mediaKind": "any"
+          },
+          {
+            "query": "onion tears",
+            "intent": "primary",
+            "priority": 2,
+            "mediaKind": "any"
+          },
+          {
+            "query": "tear glucose test wide view",
+            "intent": "wide",
+            "priority": 3,
+            "mediaKind": "any"
+          },
+          {
+            "query": "tear glucose test close up",
+            "intent": "detail",
+            "priority": 4,
+            "mediaKind": "any"
+          },
+          {
+            "query": "tear glucose test detailed view",
+            "intent": "detail",
+            "priority": 5,
+            "mediaKind": "any"
+          },
+          {
+            "query": "tear glucose test landscape",
+            "intent": "wide",
+            "priority": 6,
+            "mediaKind": "any"
+          },
+          {
+            "query": "onion tears wide view",
+            "intent": "wide",
+            "priority": 7,
+            "mediaKind": "any"
+          },
+          {
+            "query": "onion tears landscape",
+            "intent": "wide",
+            "priority": 8,
+            "mediaKind": "any"
+          },
+          {
+            "query": "onion tears close up",
+            "intent": "detail",
+            "priority": 9,
+            "mediaKind": "any"
+          },
+          {
+            "query": "onion tears detailed view",
+            "intent": "detail",
+            "priority": 10,
+            "mediaKind": "any"
+          }
+        ]
+      },
+      "audioDuration": 7.78,
+      "audio": "ep029/audio/scene_005.mp3",
+      "timing": "ep029/audio/scene_005.timing.json",
+      "wordTimings": [
+        {
+          "text": "또한",
+          "offset": 0.1,
+          "duration": 0.525,
+          "end": 0.625
+        },
+        {
+          "text": "양파로",
+          "offset": 0.637,
+          "duration": 0.438,
+          "end": 1.075
+        },
+        {
+          "text": "인해",
+          "offset": 1.087,
+          "duration": 0.275,
+          "end": 1.362
+        },
+        {
+          "text": "흘리는",
+          "offset": 1.375,
+          "duration": 0.388,
+          "end": 1.763
+        },
+        {
+          "text": "눈물에는",
+          "offset": 1.775,
+          "duration": 0.625,
+          "end": 2.4
+        },
+        {
+          "text": "평소보다",
+          "offset": 2.413,
+          "duration": 0.863,
+          "end": 3.276
+        },
+        {
+          "text": "더",
+          "offset": 3.288,
+          "duration": 0.237,
+          "end": 3.525
+        },
+        {
+          "text": "많은",
+          "offset": 3.538,
+          "duration": 0.338,
+          "end": 3.876
+        },
+        {
+          "text": "포도당이",
+          "offset": 3.888,
+          "duration": 0.537,
+          "end": 4.425
+        },
+        {
+          "text": "포함되어",
+          "offset": 4.438,
+          "duration": 0.537,
+          "end": 4.975
+        },
+        {
+          "text": "있다는",
+          "offset": 4.987,
+          "duration": 0.35,
+          "end": 5.337
+        },
+        {
+          "text": "사실도",
+          "offset": 5.35,
+          "duration": 0.512,
+          "end": 5.862
+        },
+        {
+          "text": "밝혀졌습니다",
+          "offset": 5.875,
+          "duration": 1.025,
+          "end": 6.9
+        }
+      ],
+      "wordCount": 13
+    },
+    {
+      "id": "scene_006",
+      "start": 39.06,
+      "duration": 6.02,
+      "title": "여러분의 꿀팁은?",
+      "narration": "그렇다면 여러분은 양파 썰 때 눈물을 줄이기 위해 어떤 방법을 써보셨나요?",
+      "caption": "그렇다면 여러분은 양파 썰 때 눈물을 줄이기 위해 어떤 방법을 써보셨나요?",
+      "backgroundColor": "#101820",
+      "keywords": [
+        "onion kitchen",
+        "tearing up",
+        "onion kitchen wide view",
+        "onion kitchen landscape",
+        "tearing up wide view",
+        "tearing up landscape",
+        "onion kitchen close up",
+        "onion kitchen detailed view"
+      ],
+      "media": {
+        "type": "image",
+        "fit": "cover",
+        "position": "center center",
+        "src": "ep029/scene_006.jpg",
+        "keywords": [
+          "onion kitchen",
+          "tearing up",
+          "onion kitchen wide view",
+          "onion kitchen landscape",
+          "tearing up wide view",
+          "tearing up landscape",
+          "onion kitchen close up",
+          "onion kitchen detailed view"
+        ]
+      },
+      "cameraMotion": "zoom_out",
+      "transition": "fade",
+      "transitionDuration": 0.35,
+      "overlay": "dark",
+      "overlayOpacity": 1.0,
+      "mediaSearch": {
+        "version": "2.0",
+        "primaryQuery": "onion kitchen",
+        "sourceKeywords": [
+          "onion kitchen",
+          "tearing up",
+          "onion kitchen wide view",
+          "onion kitchen landscape",
+          "tearing up wide view",
+          "tearing up landscape",
+          "onion kitchen close up",
+          "onion kitchen detailed view"
+        ],
+        "entities": [
+          "onion kitchen tearing up onion kitchen wide view",
+          "up wide view tearing up landscape onion kitchen",
+          "iew"
+        ],
+        "queries": [
+          {
+            "query": "onion kitchen",
+            "intent": "primary",
+            "priority": 1,
+            "mediaKind": "any"
+          },
+          {
+            "query": "tearing up",
+            "intent": "primary",
+            "priority": 2,
+            "mediaKind": "any"
+          },
+          {
+            "query": "onion kitchen wide view",
+            "intent": "wide",
+            "priority": 3,
+            "mediaKind": "any"
+          },
+          {
+            "query": "tearing up wide view",
+            "intent": "wide",
+            "priority": 4,
+            "mediaKind": "any"
+          },
+          {
+            "query": "onion kitchen close up",
+            "intent": "detail",
+            "priority": 5,
+            "mediaKind": "any"
+          },
+          {
+            "query": "onion kitchen detailed view",
+            "intent": "detail",
+            "priority": 6,
+            "mediaKind": "any"
+          },
+          {
+            "query": "onion kitchen landscape",
+            "intent": "wide",
+            "priority": 7,
+            "mediaKind": "any"
+          },
+          {
+            "query": "tearing up landscape",
+            "intent": "wide",
+            "priority": 8,
+            "mediaKind": "any"
+          },
+          {
+            "query": "tearing up close up",
+            "intent": "detail",
+            "priority": 9,
+            "mediaKind": "any"
+          },
+          {
+            "query": "tearing up detailed view",
+            "intent": "detail",
+            "priority": 10,
+            "mediaKind": "any"
+          }
+        ]
+      },
+      "audioDuration": 6.02,
+      "audio": "ep029/audio/scene_006.mp3",
+      "timing": "ep029/audio/scene_006.timing.json",
+      "wordTimings": [
+        {
+          "text": "그렇다면",
+          "offset": 0.1,
+          "duration": 0.625,
+          "end": 0.725
+        },
+        {
+          "text": "여러분은",
+          "offset": 0.738,
+          "duration": 0.512,
+          "end": 1.25
+        },
+        {
+          "text": "양파",
+          "offset": 1.262,
+          "duration": 0.338,
+          "end": 1.6
+        },
+        {
+          "text": "썰",
+          "offset": 1.613,
+          "duration": 0.225,
+          "end": 1.838
+        },
+        {
+          "text": "때",
+          "offset": 1.85,
+          "duration": 0.225,
+          "end": 2.075
+        },
+        {
+          "text": "눈물을",
+          "offset": 2.087,
+          "duration": 0.45,
+          "end": 2.537
+        },
+        {
+          "text": "줄이기",
+          "offset": 2.55,
+          "duration": 0.388,
+          "end": 2.938
+        },
+        {
+          "text": "위해",
+          "offset": 2.95,
+          "duration": 0.338,
+          "end": 3.288
+        },
+        {
+          "text": "어떤",
+          "offset": 3.3,
+          "duration": 0.525,
+          "end": 3.825
+        },
+        {
+          "text": "방법을",
+          "offset": 3.837,
+          "duration": 0.438,
+          "end": 4.275
+        },
+        {
+          "text": "써보셨나요",
+          "offset": 4.287,
+          "duration": 0.863,
+          "end": 5.15
+        }
+      ],
+      "wordCount": 11
+    }
+  ],
+  "tts": {
+    "provider": "edge",
+    "sceneGapMs": 150,
+    "audioDirectory": "ep029/audio",
+    "synchronized": true,
+    "wordTiming": true,
+    "timingVersion": "1.0"
+  }
+}

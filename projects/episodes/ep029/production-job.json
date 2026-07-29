@@ -3,7 +3,7 @@
   "jobId": "ep029-20260729T080756Z",
   "episodeId": "ep029",
   "category": "science",
-  "status": "episode_ready",
+  "status": "rendered",
   "createdAt": "2026-07-29T08:07:56.798467+00:00",
   "selectedTopic": {
     "rank": 1,
@@ -52,9 +52,9 @@
     "evidence": "projects/episodes/ep029/evidence.json",
     "episodeSpec": "projects/episodes/ep029/episode.json",
     "timeline": null,
-    "video": null,
+    "video": "github-actions://runs/30434249320",
     "metadata": "projects/episodes/ep029/metadata.json"
   },
-  "nextAction": "build_timeline",
-  "updatedAt": "2026-07-29T08:08:36.251041+00:00"
+  "nextAction": "review_video",
+  "updatedAt": "2026-07-29T09:26:07.660746+00:00"
 }

@@ -1,0 +1,509 @@
+{
+  "version": "2.0",
+  "episodeId": "ep029",
+  "timelinePath": "/home/runner/work/Eunbi98-youtube-content-factory/Eunbi98-youtube-content-factory/projects/episodes/ep029/timeline.json",
+  "sceneCount": 6,
+  "scenes": [
+    {
+      "sceneId": "scene_001",
+      "title": "양파 썰 때 눈물의 비밀",
+      "narration": "양파만 썰면 왜 이렇게 눈물이 쏟아질까요",
+      "sourceKeywords": [
+        "onion cutting",
+        "kitchen closeup",
+        "onion cutting wide view",
+        "onion cutting landscape",
+        "kitchen closeup wide view",
+        "kitchen closeup landscape",
+        "onion cutting close up",
+        "onion cutting detailed view"
+      ],
+      "entities": [
+        "onion cutting kitchen closeup onion cutting wide view",
+        "chen closeup wide view kitchen closeup landscape onion",
+        "ting detailed view"
+      ],
+      "primaryQuery": "onion cutting",
+      "queries": [
+        {
+          "query": "onion cutting",
+          "intent": "primary",
+          "priority": 1,
+          "mediaKind": "any"
+        },
+        {
+          "query": "kitchen closeup",
+          "intent": "primary",
+          "priority": 2,
+          "mediaKind": "any"
+        },
+        {
+          "query": "onion cutting wide view",
+          "intent": "wide",
+          "priority": 3,
+          "mediaKind": "any"
+        },
+        {
+          "query": "kitchen closeup wide view",
+          "intent": "wide",
+          "priority": 4,
+          "mediaKind": "any"
+        },
+        {
+          "query": "onion cutting close up",
+          "intent": "detail",
+          "priority": 5,
+          "mediaKind": "any"
+        },
+        {
+          "query": "onion cutting detailed view",
+          "intent": "detail",
+          "priority": 6,
+          "mediaKind": "any"
+        },
+        {
+          "query": "onion cutting landscape",
+          "intent": "wide",
+          "priority": 7,
+          "mediaKind": "any"
+        },
+        {
+          "query": "kitchen closeup landscape",
+          "intent": "wide",
+          "priority": 8,
+          "mediaKind": "any"
+        },
+        {
+          "query": "kitchen closeup close up",
+          "intent": "detail",
+          "priority": 9,
+          "mediaKind": "any"
+        },
+        {
+          "query": "kitchen closeup detailed view",
+          "intent": "detail",
+          "priority": 10,
+          "mediaKind": "any"
+        }
+      ]
+    },
+    {
+      "sceneId": "scene_002",
+      "title": "눈물의 원인 신-프로파네티알 S-옥사이드",
+      "narration": "그 이유는 양파를 자를 때 syn-Propanethial S-oxide라는 휘발성 유기황 화합물이 방출되어 눈을 자극하기 때문입니다.",
+      "sourceKeywords": [
+        "onion chemical structure",
+        "syn-Propanethial S-oxide",
+        "onion chemical structure wide view",
+        "onion chemical structure landscape",
+        "syn-Propanethial S-oxide wide view",
+        "syn-Propanethial S-oxide landscape",
+        "onion chemical structure close up",
+        "onion chemical structure detailed view"
+      ],
+      "entities": [
+        "S-",
+        "syn-Propanethial S-oxide",
+        "onion chemical structure syn-Propanethial S-oxide onion chemical structure",
+        "iew onion chemical structure landscape syn-Propanethial S-oxide wide",
+        "panethial S-oxide landscape onion chemical structure close up",
+        "cture detailed view"
+      ],
+      "primaryQuery": "onion chemical structure",
+      "queries": [
+        {
+          "query": "onion chemical structure",
+          "intent": "primary",
+          "priority": 1,
+          "mediaKind": "any"
+        },
+        {
+          "query": "syn-Propanethial S-oxide",
+          "intent": "primary",
+          "priority": 2,
+          "mediaKind": "any"
+        },
+        {
+          "query": "onion chemical structure wide view",
+          "intent": "wide",
+          "priority": 3,
+          "mediaKind": "any"
+        },
+        {
+          "query": "onion chemical structure close up",
+          "intent": "detail",
+          "priority": 4,
+          "mediaKind": "any"
+        },
+        {
+          "query": "onion chemical structure detailed view",
+          "intent": "detail",
+          "priority": 5,
+          "mediaKind": "any"
+        },
+        {
+          "query": "onion chemical structure landscape",
+          "intent": "wide",
+          "priority": 6,
+          "mediaKind": "any"
+        },
+        {
+          "query": "syn-Propanethial S-oxide wide view",
+          "intent": "wide",
+          "priority": 7,
+          "mediaKind": "any"
+        },
+        {
+          "query": "syn-Propanethial S-oxide landscape",
+          "intent": "wide",
+          "priority": 8,
+          "mediaKind": "any"
+        },
+        {
+          "query": "syn-Propanethial S-oxide close up",
+          "intent": "detail",
+          "priority": 9,
+          "mediaKind": "any"
+        },
+        {
+          "query": "syn-Propanethial S-oxide detailed view",
+          "intent": "detail",
+          "priority": 10,
+          "mediaKind": "any"
+        }
+      ]
+    },
+    {
+      "sceneId": "scene_003",
+      "title": "눈물샘의 반응",
+      "narration": "이 자극 때문에 눈물샘이 반사적으로 작동해서 평소보다 최대 100배까지 많은 눈물을 만들어냅니다.",
+      "sourceKeywords": [
+        "reflex tears",
+        "tear glands",
+        "reflex tears wide view",
+        "reflex tears landscape",
+        "tear glands wide view",
+        "tear glands landscape",
+        "reflex tears close up",
+        "reflex tears detailed view"
+      ],
+      "entities": [
+        "reflex tears tear glands reflex tears wide view",
+        "wide view tear glands landscape reflex tears close"
+      ],
+      "primaryQuery": "reflex tears",
+      "queries": [
+        {
+          "query": "reflex tears",
+          "intent": "primary",
+          "priority": 1,
+          "mediaKind": "any"
+        },
+        {
+          "query": "tear glands",
+          "intent": "primary",
+          "priority": 2,
+          "mediaKind": "any"
+        },
+        {
+          "query": "reflex tears wide view",
+          "intent": "wide",
+          "priority": 3,
+          "mediaKind": "any"
+        },
+        {
+          "query": "tear glands wide view",
+          "intent": "wide",
+          "priority": 4,
+          "mediaKind": "any"
+        },
+        {
+          "query": "reflex tears close up",
+          "intent": "detail",
+          "priority": 5,
+          "mediaKind": "any"
+        },
+        {
+          "query": "reflex tears detailed view",
+          "intent": "detail",
+          "priority": 6,
+          "mediaKind": "any"
+        },
+        {
+          "query": "reflex tears landscape",
+          "intent": "wide",
+          "priority": 7,
+          "mediaKind": "any"
+        },
+        {
+          "query": "tear glands landscape",
+          "intent": "wide",
+          "priority": 8,
+          "mediaKind": "any"
+        },
+        {
+          "query": "tear glands close up",
+          "intent": "detail",
+          "priority": 9,
+          "mediaKind": "any"
+        },
+        {
+          "query": "tear glands detailed view",
+          "intent": "detail",
+          "priority": 10,
+          "mediaKind": "any"
+        }
+      ]
+    },
+    {
+      "sceneId": "scene_004",
+      "title": "유전자 조절의 효과",
+      "narration": "실제로 양파의 lachrymatory factor synthase 유전자를 억제하면 눈물 유발 물질의 생성이 크게 줄어든다는 연구 결과도 있습니다.",
+      "sourceKeywords": [
+        "lachrymatory factor synthase",
+        "onion gene",
+        "lachrymatory factor synthase wide view",
+        "lachrymatory factor synthase landscape",
+        "onion gene wide view",
+        "onion gene landscape",
+        "lachrymatory factor synthase close up",
+        "lachrymatory factor synthase detailed view"
+      ],
+      "entities": [
+        "lachrymatory factor synthase",
+        "lachrymatory factor synthase onion gene lachrymatory factor synthase",
+        "chrymatory factor synthase landscape onion gene wide view",
+        "chrymatory factor synthase close up lachrymatory factor synthase"
+      ],
+      "primaryQuery": "lachrymatory factor synthase",
+      "queries": [
+        {
+          "query": "lachrymatory factor synthase",
+          "intent": "primary",
+          "priority": 1,
+          "mediaKind": "any"
+        },
+        {
+          "query": "onion gene",
+          "intent": "primary",
+          "priority": 2,
+          "mediaKind": "any"
+        },
+        {
+          "query": "lachrymatory factor synthase wide view",
+          "intent": "wide",
+          "priority": 3,
+          "mediaKind": "any"
+        },
+        {
+          "query": "lachrymatory factor synthase close up",
+          "intent": "detail",
+          "priority": 4,
+          "mediaKind": "any"
+        },
+        {
+          "query": "lachrymatory factor synthase detailed view",
+          "intent": "detail",
+          "priority": 5,
+          "mediaKind": "any"
+        },
+        {
+          "query": "lachrymatory factor synthase landscape",
+          "intent": "wide",
+          "priority": 6,
+          "mediaKind": "any"
+        },
+        {
+          "query": "onion gene wide view",
+          "intent": "wide",
+          "priority": 7,
+          "mediaKind": "any"
+        },
+        {
+          "query": "onion gene landscape",
+          "intent": "wide",
+          "priority": 8,
+          "mediaKind": "any"
+        },
+        {
+          "query": "onion gene close up",
+          "intent": "detail",
+          "priority": 9,
+          "mediaKind": "any"
+        },
+        {
+          "query": "onion gene detailed view",
+          "intent": "detail",
+          "priority": 10,
+          "mediaKind": "any"
+        }
+      ]
+    },
+    {
+      "sceneId": "scene_005",
+      "title": "눈물 속 포도당 변화",
+      "narration": "또한 양파로 인해 흘리는 눈물에는 평소보다 더 많은 포도당이 포함되어 있다는 사실도 밝혀졌습니다.",
+      "sourceKeywords": [
+        "tear glucose test",
+        "onion tears",
+        "tear glucose test wide view",
+        "tear glucose test landscape",
+        "onion tears wide view",
+        "onion tears landscape",
+        "tear glucose test close up",
+        "tear glucose test detailed view"
+      ],
+      "entities": [
+        "tear glucose test onion tears tear glucose test",
+        "cape onion tears wide view onion tears landscape",
+        "glucose test detailed view"
+      ],
+      "primaryQuery": "tear glucose test",
+      "queries": [
+        {
+          "query": "tear glucose test",
+          "intent": "primary",
+          "priority": 1,
+          "mediaKind": "any"
+        },
+        {
+          "query": "onion tears",
+          "intent": "primary",
+          "priority": 2,
+          "mediaKind": "any"
+        },
+        {
+          "query": "tear glucose test wide view",
+          "intent": "wide",
+          "priority": 3,
+          "mediaKind": "any"
+        },
+        {
+          "query": "tear glucose test close up",
+          "intent": "detail",
+          "priority": 4,
+          "mediaKind": "any"
+        },
+        {
+          "query": "tear glucose test detailed view",
+          "intent": "detail",
+          "priority": 5,
+          "mediaKind": "any"
+        },
+        {
+          "query": "tear glucose test landscape",
+          "intent": "wide",
+          "priority": 6,
+          "mediaKind": "any"
+        },
+        {
+          "query": "onion tears wide view",
+          "intent": "wide",
+          "priority": 7,
+          "mediaKind": "any"
+        },
+        {
+          "query": "onion tears landscape",
+          "intent": "wide",
+          "priority": 8,
+          "mediaKind": "any"
+        },
+        {
+          "query": "onion tears close up",
+          "intent": "detail",
+          "priority": 9,
+          "mediaKind": "any"
+        },
+        {
+          "query": "onion tears detailed view",
+          "intent": "detail",
+          "priority": 10,
+          "mediaKind": "any"
+        }
+      ]
+    },
+    {
+      "sceneId": "scene_006",
+      "title": "여러분의 꿀팁은",
+      "narration": "그렇다면 여러분은 양파 썰 때 눈물을 줄이기 위해 어떤 방법을 써보셨나요",
+      "sourceKeywords": [
+        "onion kitchen",
+        "tearing up",
+        "onion kitchen wide view",
+        "onion kitchen landscape",
+        "tearing up wide view",
+        "tearing up landscape",
+        "onion kitchen close up",
+        "onion kitchen detailed view"
+      ],
+      "entities": [
+        "onion kitchen tearing up onion kitchen wide view",
+        "up wide view tearing up landscape onion kitchen",
+        "iew"
+      ],
+      "primaryQuery": "onion kitchen",
+      "queries": [
+        {
+          "query": "onion kitchen",
+          "intent": "primary",
+          "priority": 1,
+          "mediaKind": "any"
+        },
+        {
+          "query": "tearing up",
+          "intent": "primary",
+          "priority": 2,
+          "mediaKind": "any"
+        },
+        {
+          "query": "onion kitchen wide view",
+          "intent": "wide",
+          "priority": 3,
+          "mediaKind": "any"
+        },
+        {
+          "query": "tearing up wide view",
+          "intent": "wide",
+          "priority": 4,
+          "mediaKind": "any"
+        },
+        {
+          "query": "onion kitchen close up",
+          "intent": "detail",
+          "priority": 5,
+          "mediaKind": "any"
+        },
+        {
+          "query": "onion kitchen detailed view",
+          "intent": "detail",
+          "priority": 6,
+          "mediaKind": "any"
+        },
+        {
+          "query": "onion kitchen landscape",
+          "intent": "wide",
+          "priority": 7,
+          "mediaKind": "any"
+        },
+        {
+          "query": "tearing up landscape",
+          "intent": "wide",
+          "priority": 8,
+          "mediaKind": "any"
+        },
+        {
+          "query": "tearing up close up",
+          "intent": "detail",
+          "priority": 9,
+          "mediaKind": "any"
+        },
+        {
+          "query": "tearing up detailed view",
+          "intent": "detail",
+          "priority": 10,
+          "mediaKind": "any"
+        }
+      ]
+    }
+  ]
+}
