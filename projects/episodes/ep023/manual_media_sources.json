@@ -1,0 +1,44 @@
+{
+  "episodeId": "ep023",
+  "license": "Wikimedia Commons file-specific open licenses",
+  "credit": "Wikimedia Commons contributors",
+  "reason": "초록색에서 검은색까지 바나나 껍질의 변화와 정상 과육을 서로 다른 장면으로 보여 줄 수 있는 공개 이미지가 충분함",
+  "researchSources": [
+    "https://www.canr.msu.edu/news/all-fruit-and-vegetables-are-not-created-equal-when-it-comes-to-proper-storage-conditions",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC12026267/",
+    "https://nutritionsource.hsph.harvard.edu/food-features/bananas/",
+    "https://commons.wikimedia.org/wiki/Category:Bananas"
+  ],
+  "scenes": [
+    {
+      "sceneId": "scene_001",
+      "sourcePage": "https://commons.wikimedia.org/wiki/Category:Bananas",
+      "description": "검은 반점이 생긴 익은 바나나"
+    },
+    {
+      "sceneId": "scene_002",
+      "sourcePage": "https://commons.wikimedia.org/wiki/Category:Bananas",
+      "description": "열대 환경에서 자라는 바나나 송이"
+    },
+    {
+      "sceneId": "scene_003",
+      "sourcePage": "https://commons.wikimedia.org/wiki/Category:Bananas",
+      "description": "갈변한 바나나 껍질의 근접 사진"
+    },
+    {
+      "sceneId": "scene_004",
+      "sourcePage": "https://commons.wikimedia.org/wiki/Category:Bananas",
+      "description": "초록색·노란색·갈색으로 변하는 숙성 단계"
+    },
+    {
+      "sceneId": "scene_005",
+      "sourcePage": "https://commons.wikimedia.org/wiki/Category:Bananas",
+      "description": "껍질과 달리 정상인 바나나 과육"
+    },
+    {
+      "sceneId": "scene_006",
+      "sourcePage": "https://commons.wikimedia.org/wiki/Category:Bananas",
+      "description": "노랗게 완전히 익은 바나나 송이"
+    }
+  ]
+}
