@@ -26,6 +26,22 @@ DEFAULT_OUTPUT = Path("projects/output/topics/latest.json")
 
 def load_existing_episode_topics(root_dir: Path) -> list[str]:
     topics: list[str] = []
+    published_path = root_dir / "config" / "published_topics.json"
+    try:
+        published_payload = json.loads(
+            published_path.read_text(encoding="utf-8")
+        )
+    except (OSError, json.JSONDecodeError):
+        published_payload = {}
+    if isinstance(published_payload, dict):
+        published_topics = published_payload.get("topics")
+        if isinstance(published_topics, list):
+            topics.extend(
+                str(topic).strip()
+                for topic in published_topics
+                if str(topic).strip()
+            )
+
     episodes_dir = root_dir / "projects" / "episodes"
     for spec_path in sorted(episodes_dir.glob("ep*/episode.json")):
         try:
