@@ -11,9 +11,9 @@ CATEGORY_LABELS = {
 ALL_CATEGORY_LABEL = "전체 자동"
 
 SOURCE_MODE_LABELS = {
-    "mixed": "최신 + 미스터리 아카이브",
+    "mixed": "관심 주제 + 최신 참고",
     "trend": "최신 화제",
-    "archive": "미스터리 아카이브",
+    "archive": "상시 관심 주제",
 }
 
 
@@ -302,6 +302,14 @@ FALLBACK_TOPICS = {
         "버뮤다 삼각지대 실종 기록은 사실일까",
     ),
     "science": (
+        "바나나는 왜 냉장고에서 더 빨리 검게 변할까",
+        "양파를 썰면 왜 눈물이 날까",
+        "비 온 뒤 흙냄새는 어디서 생길까",
+        "고양이는 왜 작은 상자에 들어가려 할까",
+        "개는 왜 고개를 갸웃할까",
+        "문어의 팔은 어떻게 따로 판단할까",
+        "철새는 어떻게 길을 잃지 않을까",
+        "나무는 서로 위험 신호를 보낼 수 있을까",
         "지구 생명체는 왜 잠을 자야 할까",
         "물곰은 어떻게 우주에서도 살아남을까",
         "인간의 뇌는 죽기 직전 무엇을 경험할까",
@@ -348,6 +356,14 @@ ARCHIVE_TOPICS = FALLBACK_TOPICS
 # 검수된 아카이브 주제를 공개 영문 자료·학술 색인·이미지 저장소에서
 # 바로 찾을 수 있도록 주제별 핵심 영문 검색어를 함께 보관합니다.
 ARCHIVE_RESEARCH_TERMS = {
+    "바나나는 왜 냉장고에서 더 빨리 검게 변할까": "banana peel chilling injury browning refrigeration",
+    "양파를 썰면 왜 눈물이 날까": "onion lachrymatory factor tear chemistry",
+    "비 온 뒤 흙냄새는 어디서 생길까": "petrichor geosmin rain smell science",
+    "고양이는 왜 작은 상자에 들어가려 할까": "domestic cat box preference stress study",
+    "개는 왜 고개를 갸웃할까": "dog head tilt cognition study",
+    "문어의 팔은 어떻게 따로 판단할까": "octopus arms distributed nervous system neuroscience",
+    "철새는 어떻게 길을 잃지 않을까": "migratory bird navigation magnetic field science",
+    "나무는 서로 위험 신호를 보낼 수 있을까": "plant volatile warning signals forest ecology",
     "안티키테라 장치는 어떻게 시대를 앞섰을까": "Antikythera mechanism ancient Greek astronomical computer",
     "나스카 라인은 누가 무엇을 위해 만들었을까": "Nazca Lines purpose archaeology Peru",
     "디아틀로프 고개 사건의 가장 현실적인 설명": "Dyatlov Pass incident scientific avalanche explanation",
