@@ -18,6 +18,11 @@ on:
         required: false
         default: ""
         type: string
+      episode_package_json:
+        description: "Optional exact episode+metadata JSON; avoids a second AI generation"
+        required: false
+        default: ""
+        type: string
   push:
     branches:
       - feature/release-5-director-engine
@@ -45,6 +50,7 @@ jobs:
       category: ${{ inputs.category }}
       candidate_json: ${{ inputs.candidate_json }}
       episode_id: ${{ inputs.episode_id }}
+      episode_package_json: ${{ inputs.episode_package_json }}
     secrets: inherit
 
   render:
