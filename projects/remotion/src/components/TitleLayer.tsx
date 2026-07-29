@@ -16,10 +16,13 @@ type TitleLayerProps = {
 export const TitleLayer: React.FC<
 	TitleLayerProps
 > = ({title}) => {
-    const normalizedTitle = title
-        .replace(/\r?\n/g, ' ')
-        .replace(/\s+/g, ' ')
-        .trim();
+	const normalizedTitle = title
+		.split(/\r?\n/)
+		.map((line) =>
+			line.replace(/\s+/g, ' ').trim(),
+		)
+		.filter(Boolean)
+		.join('\n');
 	const compactTitleLength =
 		normalizedTitle.replace(/\s/g, '').length;
 	const titleFontSize =
@@ -107,7 +110,8 @@ export const TitleLayer: React.FC<
 
 				paintOrder: 'stroke fill',
 
-				textShadow: '0 4px 0 rgba(0,0,0,0.95), 0 7px 14px rgba(0,0,0,0.85)',
+				textShadow:
+					ep005Theme.title.textShadow,
 
 				whiteSpace: 'pre-wrap',
 
