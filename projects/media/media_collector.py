@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import re
 import sys
 from dataclasses import replace
 from pathlib import Path
@@ -61,6 +62,69 @@ LIFESTYLE_TERMS = {
     "stress",
     "stressed",
 }
+
+GENERIC_SEARCH_TERMS = {
+    "a",
+    "an",
+    "and",
+    "close",
+    "closeup",
+    "concept",
+    "detailed",
+    "illustration",
+    "image",
+    "of",
+    "photo",
+    "photograph",
+    "scene",
+    "showing",
+    "stock",
+    "the",
+    "view",
+    "with",
+}
+
+
+def fallback_queries(
+    *queries: str,
+) -> list[str]:
+    """Build progressively broader English searches without changing topic."""
+    fallbacks: list[str] = []
+
+    def add(value: str) -> None:
+        normalized = " ".join(value.split()).strip()
+        if normalized and normalized.casefold() not in {
+            item.casefold() for item in fallbacks
+        }:
+            fallbacks.append(normalized)
+
+    for query in queries:
+        words = [
+            word.casefold()
+            for word in re.findall(
+                r"[A-Za-z][A-Za-z0-9'-]*",
+                query,
+            )
+            if word.casefold() not in GENERIC_SEARCH_TERMS
+        ]
+        if not words:
+            continue
+
+        meaningful = [
+            word
+            for word in words
+            if word not in LIFESTYLE_TERMS
+        ] or words
+
+        # Try a focused phrase first, then pairs and single topic terms.
+        add(" ".join(meaningful[:3]))
+        if len(meaningful) >= 2:
+            add(" ".join(meaningful[-2:]))
+        for word in reversed(meaningful):
+            if len(word) >= 4:
+                add(word)
+
+    return fallbacks
 
 
 class MediaCollectorError(RuntimeError):
@@ -316,20 +380,69 @@ class MediaCollector:
                         )
                     )
 
-            ranked = rerank_candidates(
-                query=str(
-                    raw_scene.get(
-                        "primaryQuery",
-                        "",
+            primary_query = str(
+                raw_scene.get(
+                    "primaryQuery",
+                    "",
+                )
+            ).strip()
+
+            if not candidates:
+                original_queries = [
+                    str(item.get("query", "")).strip()
+                    for item in raw_queries[:query_limit]
+                    if isinstance(item, dict)
+                ]
+                recovery_queries = fallback_queries(
+                    primary_query,
+                    *original_queries,
+                )
+
+                for recovery_query in recovery_queries:
+                    print(
+                        f"[RECOVERY] {scene_id}: "
+                        f"{recovery_query}"
                     )
-                ),
+                    for provider_name in (
+                        "openverse",
+                        "wikimedia",
+                        "pixabay",
+                    ):
+                        if (
+                            provider_name == "pixabay"
+                            and self.pixabay is None
+                        ):
+                            continue
+                        candidates.extend(
+                            self._search_provider(
+                                provider_name=provider_name,
+                                query=recovery_query,
+                                limit=candidates_per_query,
+                            )
+                        )
+
+                    if candidates:
+                        break
+
+            ranked = rerank_candidates(
+                query=primary_query,
                 candidates=candidates,
             )
 
             if not ranked:
+                attempted = fallback_queries(
+                    primary_query,
+                    *[
+                        str(item.get("query", "")).strip()
+                        for item in raw_queries[:query_limit]
+                        if isinstance(item, dict)
+                    ],
+                )
+                attempted_text = ", ".join(attempted[:6])
                 raise MediaCollectorError(
-                    f"{scene_id}: 사용할 수 있는 "
-                    "미디어 후보가 없습니다."
+                    f"{scene_id}: 무료 미디어 자동 재검색 후에도 "
+                    "사용할 수 있는 후보가 없습니다. "
+                    f"재검색어: {attempted_text or '없음'}"
                 )
 
             selected: MediaCandidate | None = None
@@ -405,8 +518,8 @@ class MediaCollector:
                     download_errors[:5]
                 )
                 raise MediaCollectorError(
-                    f"{scene_id}: ?? ??? ?? "
-                    "????? ??????.\n"
+                    f"{scene_id}: 미디어 후보 다운로드에 "
+                    "모두 실패했습니다.\n"
                     f"{error_preview}"
                 )
 
