@@ -312,6 +312,7 @@ class MediaCollector:
             candidates: list[
                 MediaCandidate
             ] = []
+            searched_queries: list[str] = []
 
             for raw_query in (
                 raw_queries[:query_limit]
@@ -332,6 +333,7 @@ class MediaCollector:
                 if not query:
                     continue
 
+                searched_queries.append(query)
                 normalized_query_terms = {
                     term.casefold()
                     for term in query.split()
@@ -514,12 +516,83 @@ class MediaCollector:
                 selected is None
                 or local_path is None
             ):
-                error_preview = "\n".join(
-                    download_errors[:5]
+                recovery_queries = fallback_queries(
+                    primary_query,
+                    *searched_queries,
                 )
+                print(
+                    f"[RECOVERY DOWNLOAD] {scene_id}: "
+                    "기존 후보 다운로드 실패, 새 후보 검색"
+                )
+
+                for recovery_query in recovery_queries:
+                    recovery_candidates: list[MediaCandidate] = []
+                    for provider_name in (
+                        "wikimedia",
+                        "openverse",
+                        "pixabay",
+                        "nasa",
+                    ):
+                        if (
+                            provider_name == "pixabay"
+                            and self.pixabay is None
+                        ):
+                            continue
+                        if (
+                            provider_name == "nasa"
+                            and not should_use_nasa(recovery_query)
+                        ):
+                            continue
+                        recovery_candidates.extend(
+                            self._search_provider(
+                                provider_name=provider_name,
+                                query=recovery_query,
+                                limit=candidates_per_query,
+                                bypass_cache=True,
+                                relaxed=True,
+                            )
+                        )
+
+                    for candidate in rerank_candidates(
+                        query=recovery_query,
+                        candidates=recovery_candidates,
+                    ):
+                        identity = (
+                            candidate.provider,
+                            candidate.media_id,
+                        )
+                        if identity in used_media:
+                            continue
+                        try:
+                            local_path = self.downloader.download(
+                                candidate=candidate,
+                                destination_dir=self.assets_dir,
+                                scene_id=scene_id,
+                            )
+                            selected = candidate
+                            used_media.add(identity)
+                            break
+                        except MediaDownloadError as exc:
+                            download_errors.append(
+                                f"{candidate.provider}: "
+                                f"{candidate.title} / {exc}"
+                            )
+                            print(
+                                f"[RECOVERY RETRY] {scene_id}: "
+                                f"{candidate.provider} / {candidate.title}"
+                            )
+
+                    if selected is not None and local_path is not None:
+                        break
+
+            if (
+                selected is None
+                or local_path is None
+            ):
+                error_preview = "\n".join(download_errors[:8])
                 raise MediaCollectorError(
-                    f"{scene_id}: 미디어 후보 다운로드에 "
-                    "모두 실패했습니다.\n"
+                    f"{scene_id}: 기본 검색과 자동 복구 검색의 "
+                    "미디어 후보 다운로드에 모두 실패했습니다.\n"
                     f"{error_preview}"
                 )
 
@@ -554,6 +627,8 @@ class MediaCollector:
         provider_name: str,
         query: str,
         limit: int,
+        bypass_cache: bool = False,
+        relaxed: bool = False,
     ) -> list[MediaCandidate]:
         cache_key = self.cache.build_key(
             provider_name,
@@ -561,8 +636,10 @@ class MediaCollector:
             str(limit),
         )
 
-        cached = self.cache.load_json(
-            cache_key
+        cached = (
+            None
+            if bypass_cache
+            else self.cache.load_json(cache_key)
         )
 
         if cached is not None:
@@ -593,6 +670,9 @@ class MediaCollector:
                 self.wikimedia.search(
                     query=query,
                     limit=limit,
+                    min_width=720 if relaxed else 1080,
+                    min_height=480 if relaxed else 1080,
+                    allow_blocked_title_terms=relaxed,
                 )
             )
         elif provider_name == "nasa":
@@ -604,6 +684,8 @@ class MediaCollector:
             candidates = self.openverse.search(
                 query=query,
                 limit=limit,
+                min_width=720 if relaxed else 640,
+                min_height=480,
             )
         elif (
             provider_name == "pixabay"
