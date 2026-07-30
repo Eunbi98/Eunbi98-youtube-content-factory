@@ -1,0 +1,96 @@
+{
+  "channel": "science",
+  "episodeId": "ep030",
+  "mediaSource": "official cat box behavior, Wikimedia Commons cat in box, museum feline exhibit, scientific illustration cat play",
+  "scenes": [
+    {
+      "evidenceIds": [
+        "evidence_cf517c75df97"
+      ],
+      "keywords": [
+        "cat",
+        "box",
+        "behavior",
+        "curiosity"
+      ],
+      "narration": "고양이는 왜 작은 상자만 보면 꼭 들어가려고 할까요?",
+      "title": "고양이의 상자 사랑, 이유가 뭘까?",
+      "type": "hook"
+    },
+    {
+      "evidenceIds": [
+        "evidence_cf517c75df97"
+      ],
+      "keywords": [
+        "cat",
+        "box",
+        "safety",
+        "instinct"
+      ],
+      "narration": "정확한 이유는 아직 완전히 밝혀지지 않았지만, 고양이의 상자 사랑은 사냥 본능과 놀이 행동, 그리고 환경에 대한 탐색에서 비롯된다고 알려져 있습니다.",
+      "title": "고양이의 본능적 행동",
+      "type": "answer"
+    },
+    {
+      "evidenceIds": [
+        "evidence_cf517c75df97"
+      ],
+      "keywords": [
+        "cat",
+        "play",
+        "exploration",
+        "individual difference"
+      ],
+      "narration": "고양이마다 상자에 들어가는 행동에는 개인차가 있어요. 어떤 고양이는 놀이를 위해, 또 어떤 고양이는 새로운 환경을 탐색하려고 상자에 들어가기도 합니다.",
+      "title": "고양이마다 다른 상자 사랑",
+      "type": "story"
+    },
+    {
+      "evidenceIds": [
+        "evidence_cf517c75df97"
+      ],
+      "keywords": [
+        "cat",
+        "play aggression",
+        "adaptation"
+      ],
+      "narration": "연구에 따르면, 고양이의 상자 행동은 놀이 공격성과 강한 적응력, 그리고 탐색 행동과 관련이 있습니다.",
+      "title": "과학적 해석: 놀이와 적응력",
+      "type": "fact"
+    },
+    {
+      "evidenceIds": [
+        "evidence_cf517c75df97"
+      ],
+      "keywords": [
+        "cat",
+        "safety",
+        "uncertainty"
+      ],
+      "narration": "안전감이나 체온 유지 외에도 다양한 해석이 존재하며, 정확한 원인은 아직 단정할 수 없습니다.",
+      "title": "여러 해석과 불확실성",
+      "type": "fact"
+    },
+    {
+      "evidenceIds": [
+        "evidence_cf517c75df97"
+      ],
+      "keywords": [
+        "cat",
+        "box",
+        "mystery"
+      ],
+      "narration": "여러분의 고양이는 상자에 들어가는 걸 좋아하나요? 왜 그런 행동을 한다고 생각하세요?",
+      "title": "여러분의 생각은?",
+      "type": "ending"
+    }
+  ],
+  "theme": {
+    "accentColor": "#FFB300",
+    "backgroundColor": "#222222",
+    "captionColor": "#FFFFFF",
+    "titleColor": "#7BFEB4"
+  },
+  "title": "고양이는 왜 상자에 집착할까?",
+  "version": "1.0"
+}
