@@ -1,0 +1,501 @@
+{
+  "version": "2.0",
+  "episodeId": "ep030",
+  "timelinePath": "/home/runner/work/Eunbi98-youtube-content-factory/Eunbi98-youtube-content-factory/projects/episodes/ep030/timeline.json",
+  "sceneCount": 6,
+  "scenes": [
+    {
+      "sceneId": "scene_001",
+      "title": "고양이의 상자 사랑 이유가 뭘까",
+      "narration": "고양이는 왜 작은 상자만 보면 꼭 들어가려고 할까요",
+      "sourceKeywords": [
+        "cat",
+        "box",
+        "cat wide view",
+        "cat landscape",
+        "box wide view",
+        "box landscape",
+        "cat close up",
+        "cat detailed view"
+      ],
+      "entities": [
+        "cat box cat wide view cat landscape box",
+        "detailed view"
+      ],
+      "primaryQuery": "cat",
+      "queries": [
+        {
+          "query": "cat",
+          "intent": "primary",
+          "priority": 1,
+          "mediaKind": "any"
+        },
+        {
+          "query": "box",
+          "intent": "primary",
+          "priority": 2,
+          "mediaKind": "any"
+        },
+        {
+          "query": "cat wide view",
+          "intent": "wide",
+          "priority": 3,
+          "mediaKind": "any"
+        },
+        {
+          "query": "box wide view",
+          "intent": "wide",
+          "priority": 4,
+          "mediaKind": "any"
+        },
+        {
+          "query": "cat close up",
+          "intent": "detail",
+          "priority": 5,
+          "mediaKind": "any"
+        },
+        {
+          "query": "cat detailed view",
+          "intent": "detail",
+          "priority": 6,
+          "mediaKind": "any"
+        },
+        {
+          "query": "cat landscape",
+          "intent": "wide",
+          "priority": 7,
+          "mediaKind": "any"
+        },
+        {
+          "query": "box landscape",
+          "intent": "wide",
+          "priority": 8,
+          "mediaKind": "any"
+        },
+        {
+          "query": "box close up",
+          "intent": "detail",
+          "priority": 9,
+          "mediaKind": "any"
+        },
+        {
+          "query": "box detailed view",
+          "intent": "detail",
+          "priority": 10,
+          "mediaKind": "any"
+        }
+      ]
+    },
+    {
+      "sceneId": "scene_002",
+      "title": "고양이의 본능적 행동",
+      "narration": "정확한 이유는 아직 완전히 밝혀지지 않았지만 고양이의 상자 사랑은 사냥 본능과 놀이 행동 그리고 환경에 대한 탐색에서 비롯된다고 알려져 있습니다.",
+      "sourceKeywords": [
+        "cat",
+        "box",
+        "cat wide view",
+        "cat landscape",
+        "box wide view",
+        "box landscape",
+        "cat close up",
+        "cat detailed view"
+      ],
+      "entities": [
+        "cat box cat wide view cat landscape box",
+        "detailed view"
+      ],
+      "primaryQuery": "cat",
+      "queries": [
+        {
+          "query": "cat",
+          "intent": "primary",
+          "priority": 1,
+          "mediaKind": "any"
+        },
+        {
+          "query": "box",
+          "intent": "primary",
+          "priority": 2,
+          "mediaKind": "any"
+        },
+        {
+          "query": "cat wide view",
+          "intent": "wide",
+          "priority": 3,
+          "mediaKind": "any"
+        },
+        {
+          "query": "box wide view",
+          "intent": "wide",
+          "priority": 4,
+          "mediaKind": "any"
+        },
+        {
+          "query": "cat close up",
+          "intent": "detail",
+          "priority": 5,
+          "mediaKind": "any"
+        },
+        {
+          "query": "cat detailed view",
+          "intent": "detail",
+          "priority": 6,
+          "mediaKind": "any"
+        },
+        {
+          "query": "cat landscape",
+          "intent": "wide",
+          "priority": 7,
+          "mediaKind": "any"
+        },
+        {
+          "query": "box landscape",
+          "intent": "wide",
+          "priority": 8,
+          "mediaKind": "any"
+        },
+        {
+          "query": "box close up",
+          "intent": "detail",
+          "priority": 9,
+          "mediaKind": "any"
+        },
+        {
+          "query": "box detailed view",
+          "intent": "detail",
+          "priority": 10,
+          "mediaKind": "any"
+        }
+      ]
+    },
+    {
+      "sceneId": "scene_003",
+      "title": "고양이마다 다른 상자 사랑",
+      "narration": "고양이마다 상자에 들어가는 행동에는 개인차가 있어요. 어떤 고양이는 놀이를 위해 또 어떤 고양이는 새로운 환경을 탐색하려고 상자에 들어가기도 합니다.",
+      "sourceKeywords": [
+        "individual difference",
+        "cat",
+        "individual difference wide view",
+        "individual difference landscape",
+        "cat wide view",
+        "cat landscape",
+        "individual difference close up",
+        "individual difference detailed view"
+      ],
+      "entities": [
+        "individual difference cat individual difference wide view individual",
+        "andscape cat wide view cat landscape individual difference",
+        "fference detailed view"
+      ],
+      "primaryQuery": "individual difference",
+      "queries": [
+        {
+          "query": "individual difference",
+          "intent": "primary",
+          "priority": 1,
+          "mediaKind": "any"
+        },
+        {
+          "query": "cat",
+          "intent": "primary",
+          "priority": 2,
+          "mediaKind": "any"
+        },
+        {
+          "query": "individual difference wide view",
+          "intent": "wide",
+          "priority": 3,
+          "mediaKind": "any"
+        },
+        {
+          "query": "individual difference close up",
+          "intent": "detail",
+          "priority": 4,
+          "mediaKind": "any"
+        },
+        {
+          "query": "individual difference detailed view",
+          "intent": "detail",
+          "priority": 5,
+          "mediaKind": "any"
+        },
+        {
+          "query": "individual difference landscape",
+          "intent": "wide",
+          "priority": 6,
+          "mediaKind": "any"
+        },
+        {
+          "query": "cat wide view",
+          "intent": "wide",
+          "priority": 7,
+          "mediaKind": "any"
+        },
+        {
+          "query": "cat landscape",
+          "intent": "wide",
+          "priority": 8,
+          "mediaKind": "any"
+        },
+        {
+          "query": "cat close up",
+          "intent": "detail",
+          "priority": 9,
+          "mediaKind": "any"
+        },
+        {
+          "query": "cat detailed view",
+          "intent": "detail",
+          "priority": 10,
+          "mediaKind": "any"
+        }
+      ]
+    },
+    {
+      "sceneId": "scene_004",
+      "title": "과학적 해석 놀이와 적응력",
+      "narration": "연구에 따르면 고양이의 상자 행동은 놀이 공격성과 강한 적응력 그리고 탐색 행동과 관련이 있습니다.",
+      "sourceKeywords": [
+        "play aggression",
+        "cat",
+        "play aggression wide view",
+        "play aggression landscape",
+        "cat wide view",
+        "cat landscape",
+        "play aggression close up",
+        "play aggression detailed view"
+      ],
+      "entities": [
+        "play aggression cat play aggression wide view play",
+        "view cat landscape play aggression close up play"
+      ],
+      "primaryQuery": "play aggression",
+      "queries": [
+        {
+          "query": "play aggression",
+          "intent": "primary",
+          "priority": 1,
+          "mediaKind": "any"
+        },
+        {
+          "query": "cat",
+          "intent": "primary",
+          "priority": 2,
+          "mediaKind": "any"
+        },
+        {
+          "query": "play aggression wide view",
+          "intent": "wide",
+          "priority": 3,
+          "mediaKind": "any"
+        },
+        {
+          "query": "play aggression close up",
+          "intent": "detail",
+          "priority": 4,
+          "mediaKind": "any"
+        },
+        {
+          "query": "play aggression detailed view",
+          "intent": "detail",
+          "priority": 5,
+          "mediaKind": "any"
+        },
+        {
+          "query": "play aggression landscape",
+          "intent": "wide",
+          "priority": 6,
+          "mediaKind": "any"
+        },
+        {
+          "query": "cat wide view",
+          "intent": "wide",
+          "priority": 7,
+          "mediaKind": "any"
+        },
+        {
+          "query": "cat landscape",
+          "intent": "wide",
+          "priority": 8,
+          "mediaKind": "any"
+        },
+        {
+          "query": "cat close up",
+          "intent": "detail",
+          "priority": 9,
+          "mediaKind": "any"
+        },
+        {
+          "query": "cat detailed view",
+          "intent": "detail",
+          "priority": 10,
+          "mediaKind": "any"
+        }
+      ]
+    },
+    {
+      "sceneId": "scene_005",
+      "title": "여러 해석과 불확실성",
+      "narration": "안전감이나 체온 유지 외에도 다양한 해석이 존재하며 정확한 원인은 아직 단정할 수 없습니다.",
+      "sourceKeywords": [
+        "cat",
+        "safety",
+        "cat wide view",
+        "cat landscape",
+        "safety wide view",
+        "safety landscape",
+        "cat close up",
+        "cat detailed view"
+      ],
+      "entities": [
+        "cat safety cat wide view cat landscape safety",
+        "up cat detailed view"
+      ],
+      "primaryQuery": "cat",
+      "queries": [
+        {
+          "query": "cat",
+          "intent": "primary",
+          "priority": 1,
+          "mediaKind": "any"
+        },
+        {
+          "query": "safety",
+          "intent": "primary",
+          "priority": 2,
+          "mediaKind": "any"
+        },
+        {
+          "query": "cat wide view",
+          "intent": "wide",
+          "priority": 3,
+          "mediaKind": "any"
+        },
+        {
+          "query": "safety wide view",
+          "intent": "wide",
+          "priority": 4,
+          "mediaKind": "any"
+        },
+        {
+          "query": "cat close up",
+          "intent": "detail",
+          "priority": 5,
+          "mediaKind": "any"
+        },
+        {
+          "query": "cat detailed view",
+          "intent": "detail",
+          "priority": 6,
+          "mediaKind": "any"
+        },
+        {
+          "query": "cat landscape",
+          "intent": "wide",
+          "priority": 7,
+          "mediaKind": "any"
+        },
+        {
+          "query": "safety landscape",
+          "intent": "wide",
+          "priority": 8,
+          "mediaKind": "any"
+        },
+        {
+          "query": "safety close up",
+          "intent": "detail",
+          "priority": 9,
+          "mediaKind": "any"
+        },
+        {
+          "query": "safety detailed view",
+          "intent": "detail",
+          "priority": 10,
+          "mediaKind": "any"
+        }
+      ]
+    },
+    {
+      "sceneId": "scene_006",
+      "title": "여러분의 생각은",
+      "narration": "여러분의 고양이는 상자에 들어가는 걸 좋아하나요 왜 그런 행동을 한다고 생각하세요",
+      "sourceKeywords": [
+        "cat",
+        "box",
+        "cat wide view",
+        "cat landscape",
+        "box wide view",
+        "box landscape",
+        "cat close up",
+        "cat detailed view"
+      ],
+      "entities": [
+        "cat box cat wide view cat landscape box",
+        "detailed view"
+      ],
+      "primaryQuery": "cat",
+      "queries": [
+        {
+          "query": "cat",
+          "intent": "primary",
+          "priority": 1,
+          "mediaKind": "any"
+        },
+        {
+          "query": "box",
+          "intent": "primary",
+          "priority": 2,
+          "mediaKind": "any"
+        },
+        {
+          "query": "cat wide view",
+          "intent": "wide",
+          "priority": 3,
+          "mediaKind": "any"
+        },
+        {
+          "query": "box wide view",
+          "intent": "wide",
+          "priority": 4,
+          "mediaKind": "any"
+        },
+        {
+          "query": "cat close up",
+          "intent": "detail",
+          "priority": 5,
+          "mediaKind": "any"
+        },
+        {
+          "query": "cat detailed view",
+          "intent": "detail",
+          "priority": 6,
+          "mediaKind": "any"
+        },
+        {
+          "query": "cat landscape",
+          "intent": "wide",
+          "priority": 7,
+          "mediaKind": "any"
+        },
+        {
+          "query": "box landscape",
+          "intent": "wide",
+          "priority": 8,
+          "mediaKind": "any"
+        },
+        {
+          "query": "box close up",
+          "intent": "detail",
+          "priority": 9,
+          "mediaKind": "any"
+        },
+        {
+          "query": "box detailed view",
+          "intent": "detail",
+          "priority": 10,
+          "mediaKind": "any"
+        }
+      ]
+    }
+  ]
+}
