@@ -24,6 +24,7 @@ from projects.research.github_models_evidence_provider import (  # noqa: E402
     EvidenceProviderError,
     GithubModelsEvidenceProvider,
 )
+from projects.research.source_identity import source_identities  # noqa: E402
 
 
 def _job() -> dict:
@@ -255,6 +256,74 @@ class EvidenceProviderTests(unittest.TestCase):
             "Retry once",
             captured[2]["messages"][0]["content"],
         )
+
+    def test_provider_recovers_from_two_invalid_model_selections(self) -> None:
+        invalid = _provider_result()
+        invalid["items"] = [
+            {
+                **invalid["items"][2],
+                "source_url": "https://example.com/first",
+            },
+            {
+                **invalid["items"][2],
+                "source_url": "https://example.com/second",
+            },
+        ]
+        source_documents = _source_documents()
+        source_documents.extend(
+            [
+                {
+                    "id": "invalid_1",
+                    "title": invalid["items"][0]["title"],
+                    "source_name": invalid["items"][0]["source_name"],
+                    "source_url": invalid["items"][0]["source_url"],
+                    "source_tier": invalid["items"][0]["source_tier"],
+                    "published_at": invalid["items"][0]["published_at"],
+                    "text": invalid["items"][0]["claim"],
+                },
+                {
+                    "id": "invalid_2",
+                    "title": invalid["items"][1]["title"],
+                    "source_name": invalid["items"][1]["source_name"],
+                    "source_url": invalid["items"][1]["source_url"],
+                    "source_tier": invalid["items"][1]["source_tier"],
+                    "published_at": invalid["items"][1]["published_at"],
+                    "text": invalid["items"][1]["claim"],
+                },
+            ]
+        )
+
+        class RecoverySourceCollector:
+            def collect(
+                self,
+                _: dict,
+                *,
+                search_queries: list[str] | None = None,
+            ) -> list[dict[str, str]]:
+                if not search_queries:
+                    raise AssertionError("English search queries were not provided")
+                return source_documents
+
+        def transport(payload: dict) -> dict:
+            name = payload["response_format"]["json_schema"]["name"]
+            if name == "factory_research_queries":
+                return _model_response(payload, _provider_result())
+            return _model_response(payload, invalid)
+
+        result = GithubModelsEvidenceProvider(
+            client=GithubModelsClient(token="test-token", transport=transport),
+            source_collector=RecoverySourceCollector(),
+        ).collect(_job())
+
+        self.assertEqual("complete", result["status"])
+        self.assertGreaterEqual(len(source_identities(result["items"])), 2)
+        self.assertTrue(
+            any(
+                item["source_tier"] in {"official", "academic"}
+                for item in result["items"]
+            )
+        )
+        self.assertTrue(result["uncertainties"])
 
     def test_environment_key_is_required(self) -> None:
         with patch.dict(os.environ, {}, clear=True):
