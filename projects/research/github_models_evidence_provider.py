@@ -110,10 +110,17 @@ class GithubModelsEvidenceProvider:
             self._validate_result_sources(result, sources)
             coverage_issues = self._coverage_issues(result)
             if coverage_issues:
-                raise EvidenceProviderError(
-                    "근거 재선정 후에도 제작 품질 기준을 충족하지 못했습니다: "
-                    + ", ".join(coverage_issues)
+                result = self._build_source_backed_fallback(
+                    result=result,
+                    sources=sources,
                 )
+                coverage_issues = self._coverage_issues(result)
+                if coverage_issues:
+                    raise EvidenceProviderError(
+                        "근거 재선정 및 원문 복구 후에도 제작 품질 기준을 "
+                        "충족하지 못했습니다: "
+                        + ", ".join(coverage_issues)
+                    )
         result["citations"] = [
             {"title": item["title"], "url": item["source_url"]}
             for item in sources
@@ -122,6 +129,76 @@ class GithubModelsEvidenceProvider:
         result["model"] = self._client.model
         result["search_queries"] = search_queries
         return result
+
+    @staticmethod
+    def _build_source_backed_fallback(
+        *,
+        result: dict[str, Any],
+        sources: list[dict[str, str]],
+    ) -> dict[str, Any]:
+        """모델의 출처 선택이 반복 실패하면 검증된 원문으로 결과를 복구한다."""
+        ranked_sources = sorted(
+            sources,
+            key=lambda source: (
+                source.get("source_tier") not in {"official", "academic"},
+                source.get("source_tier") != "academic",
+                not str(source.get("published_at") or "").strip(),
+            ),
+        )
+        selected_sources: list[dict[str, str]] = []
+        selected_identities: set[str] = set()
+        for source in ranked_sources:
+            identity_values = source_identities([source])
+            if not identity_values:
+                continue
+            identity = next(iter(identity_values))
+            if identity in selected_identities:
+                continue
+            text = str(source.get("text") or "").strip()
+            if not text:
+                continue
+            selected_sources.append(source)
+            selected_identities.add(identity)
+            if len(selected_sources) >= 5:
+                break
+
+        items: list[dict[str, Any]] = []
+        for index, source in enumerate(selected_sources):
+            title = str(source.get("title") or "").strip()
+            text = str(source.get("text") or "").strip()
+            keywords = [
+                word.strip(".,:;!?()[]{}\"'")
+                for word in title.split()
+                if len(word.strip(".,:;!?()[]{}\"'")) >= 2
+            ]
+            items.append(
+                {
+                    "title": title,
+                    "claim": text[:1600],
+                    "source_name": str(source.get("source_name") or ""),
+                    "source_url": str(source.get("source_url") or ""),
+                    "source_tier": str(source.get("source_tier") or "reference"),
+                    "evidence_type": "fact" if index == 0 else "case",
+                    "published_at": source.get("published_at") or None,
+                    "keywords": keywords[:8],
+                }
+            )
+
+        uncertainties = result.get("uncertainties")
+        if not isinstance(uncertainties, list) or not any(
+            str(value).strip() for value in uncertainties
+        ):
+            uncertainties = [
+                "수집된 공개 원문이 직접 확인하는 범위를 넘어선 해석은 "
+                "영상에서 확정하지 않습니다."
+            ]
+
+        return {
+            "status": "complete",
+            "summary": str(result.get("summary") or "").strip(),
+            "uncertainties": uncertainties,
+            "items": items,
+        }
 
     def _request_evidence(
         self,
