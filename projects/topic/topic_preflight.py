@@ -1,11 +1,15 @@
 from __future__ import annotations
 
 import argparse
+import hashlib
 import json
 import sys
 from collections import Counter
 from pathlib import Path
+from tempfile import TemporaryDirectory
 from typing import Any
+
+from PIL import Image, UnidentifiedImageError
 
 
 ROOT_DIR = Path(__file__).resolve().parents[2]
@@ -24,6 +28,7 @@ from projects.research.public_source_collector import (  # noqa: E402
     PublicSourceError,
 )
 from projects.research.source_identity import source_identities  # noqa: E402
+from downloader import MediaDownloadError, MediaDownloader  # noqa: E402
 from provider_models import MediaCandidate  # noqa: E402
 
 
@@ -37,6 +42,7 @@ class CandidatePreflightService:
         *,
         source_collector: Any | None = None,
         media_providers: dict[str, Any] | None = None,
+        media_downloader: Any | None = None,
         minimum_media_candidates: int = 6,
         minimum_media_queries: int = 3,
         maximum_candidates_checked: int = 20,
@@ -55,6 +61,9 @@ class CandidatePreflightService:
                 "nasa": NasaProvider(timeout_seconds=8.0),
             }
         self._media_providers = media_providers
+        self._media_downloader = media_downloader or MediaDownloader(
+            timeout_seconds=15.0
+        )
         self._minimum_media_candidates = minimum_media_candidates
         self._minimum_media_queries = minimum_media_queries
         self._maximum_candidates_checked = maximum_candidates_checked
@@ -113,41 +122,6 @@ class CandidatePreflightService:
         accepted = accepted[:limit]
         verified_count = len(accepted)
 
-        # 외부 자료 서비스가 일시적으로 응답하지 않아 전 후보가 탈락해도
-        # 대시보드를 빈 화면으로 만들지 않습니다. 원래 생성된 후보를
-        # 검증 보류 상태로 되돌려 보여주고, 실제 제작 단계의 복구 수집기가
-        # 자료와 미디어를 다시 확인하도록 합니다.
-        if not accepted:
-            rejection_reasons = {
-                item["topic"]: item["reason"]
-                for item in rejected
-            }
-            for raw_candidate in raw_candidates:
-                if len(accepted) >= limit:
-                    break
-                if not isinstance(raw_candidate, dict):
-                    continue
-                topic = str(raw_candidate.get("topic") or "").strip()
-                category = str(raw_candidate.get("category") or "").strip().lower()
-                if not topic or category not in ProductionJobPlanner.SUPPORTED_CATEGORIES:
-                    continue
-                fallback = dict(raw_candidate)
-                fallback["production_ready"] = False
-                fallback["readiness_score"] = 0
-                fallback["preflight_status"] = "deferred"
-                fallback["preflight_failure_reason"] = rejection_reasons.get(
-                    topic,
-                    "사전 검증 결과를 확보하지 못했습니다.",
-                )
-                checks = [
-                    str(value)
-                    for value in fallback.get("readiness_checks", [])
-                    if str(value).strip()
-                ]
-                checks.append("자료와 이미지 검증은 제작 단계에서 자동 재시도")
-                fallback["readiness_checks"] = list(dict.fromkeys(checks))
-                accepted.append(fallback)
-
         for rank, candidate in enumerate(accepted, start=1):
             candidate["rank"] = rank
 
@@ -155,11 +129,7 @@ class CandidatePreflightService:
         result["candidates"] = accepted
         result["candidate_count"] = len(accepted)
         result["verified_candidate_count"] = verified_count
-        result["mode"] = (
-            f"{payload.get('mode') or 'unknown'}+preflight"
-            if verified_count
-            else f"{payload.get('mode') or 'unknown'}+preflight-fallback"
-        )
+        result["mode"] = f"{payload.get('mode') or 'unknown'}+preflight"
         result["preflight"] = {
             "checked": checked,
             "accepted": verified_count,
@@ -183,11 +153,6 @@ class CandidatePreflightService:
         if rejected:
             warnings.append(
                 f"자료·이미지 사전 검증에서 후보 {len(rejected)}개를 제외했습니다."
-            )
-        if not verified_count and accepted:
-            warnings.append(
-                "사전 검증 서비스 응답 부족으로 원래 후보를 표시했습니다. "
-                "제작 단계에서 자료와 이미지를 다시 검증합니다."
             )
         result["warnings"] = warnings
         return result
@@ -272,53 +237,87 @@ class CandidatePreflightService:
         category: str,
         queries: list[str],
     ) -> dict[str, Any]:
-        unique: dict[tuple[str, str], MediaCandidate] = {}
-        media_queries: dict[tuple[str, str], str] = {}
-        successful_queries = 0
+        verified: list[tuple[MediaCandidate, str, str, int]] = []
+        verified_hashes: set[str] = set()
+        successful_query_names: set[str] = set()
         provider_counts: Counter[str] = Counter()
-        used_queries: list[str] = []
-
-        for query in queries[:4]:
-            before = len(unique)
-            provider_names = ["openverse", "wikimedia"]
-            if category == "space":
-                provider_names.append("nasa")
-            for provider_name in provider_names:
-                provider = self._media_providers.get(provider_name)
-                if provider is None:
-                    continue
-                try:
-                    candidates = provider.search(query=query, limit=12)
-                except Exception:
-                    continue
-                for media in candidates:
-                    if not isinstance(media, MediaCandidate):
-                        continue
-                    if media.width < 720 or media.height < 720:
-                        continue
-                    key = (media.provider, media.media_id)
-                    if key in unique:
-                        continue
-                    unique[key] = media
-                    media_queries[key] = query
-                    provider_counts[media.provider] += 1
-            if len(unique) > before:
-                successful_queries += 1
-                used_queries.append(query)
-            # 후보 화면에는 한 검색어에서 우연히 이미지가 몰린 주제가 아니라,
-            # 최소 세 가지 장면 검색이 실제로 성공한 주제만 노출합니다.
-            if len(unique) >= 12 and successful_queries >= self._minimum_media_queries:
-                break
-
-        if len(unique) < self._minimum_media_candidates:
-            raise TopicPreflightError(
-                "저작권 사용 가능한 이미지 후보를 충분히 확보하지 못했습니다. "
-                f"확보: {len(unique)}개, 필요: {self._minimum_media_candidates}개"
+        seen_candidates: set[tuple[str, str]] = set()
+        per_query_target = max(
+            4,
+            (
+                self._minimum_media_candidates
+                + self._minimum_media_queries
+                - 1
             )
-        if successful_queries < self._minimum_media_queries:
+            // self._minimum_media_queries,
+        )
+
+        with TemporaryDirectory(prefix="topic-preflight-") as temporary_dir:
+            destination_dir = Path(temporary_dir)
+            for query_index, query in enumerate(queries[:6], start=1):
+                downloaded_for_query = 0
+                provider_names = ["openverse", "wikimedia"]
+                if category == "space":
+                    provider_names.append("nasa")
+                for provider_name in provider_names:
+                    provider = self._media_providers.get(provider_name)
+                    if provider is None:
+                        continue
+                    try:
+                        candidates = provider.search(query=query, limit=12)
+                    except Exception:
+                        continue
+                    for media in candidates:
+                        if not isinstance(media, MediaCandidate):
+                            continue
+                        key = (media.provider, media.media_id)
+                        if key in seen_candidates:
+                            continue
+                        seen_candidates.add(key)
+                        if media.width < 720 or media.height < 720:
+                            continue
+                        try:
+                            downloaded = self._media_downloader.download(
+                                candidate=media,
+                                destination_dir=destination_dir,
+                                scene_id=(
+                                    f"query_{query_index:02d}_"
+                                    f"asset_{len(verified) + 1:02d}"
+                                ),
+                            )
+                            actual_width, actual_height, digest, file_size = (
+                                self._validate_downloaded_image(downloaded)
+                            )
+                        except (MediaDownloadError, OSError, ValueError):
+                            continue
+                        if actual_width < 720 or actual_height < 720:
+                            continue
+                        if digest in verified_hashes:
+                            continue
+                        verified_hashes.add(digest)
+                        verified.append((media, query, digest, file_size))
+                        provider_counts[media.provider] += 1
+                        downloaded_for_query += 1
+                        successful_query_names.add(query)
+                        if downloaded_for_query >= per_query_target:
+                            break
+                    if downloaded_for_query >= per_query_target:
+                        break
+                if (
+                    len(verified) >= self._minimum_media_candidates
+                    and len(successful_query_names) >= self._minimum_media_queries
+                ):
+                    break
+
+        if len(verified) < self._minimum_media_candidates:
+            raise TopicPreflightError(
+                "실제 다운로드 가능한 고유 이미지를 충분히 확보하지 못했습니다. "
+                f"확보: {len(verified)}개, 필요: {self._minimum_media_candidates}개"
+            )
+        if len(successful_query_names) < self._minimum_media_queries:
             raise TopicPreflightError(
                 "서로 다른 장면용 이미지 검색어가 부족합니다. "
-                f"성공 검색어: {successful_queries}개"
+                f"성공 검색어: {len(successful_query_names)}개"
             )
 
         samples = [
@@ -330,18 +329,37 @@ class CandidatePreflightService:
                 "license": media.license_name,
                 "width": media.width,
                 "height": media.height,
-                "query": media_queries[(media.provider, media.media_id)],
+                "query": query,
+                "downloadVerified": True,
+                "sha256": digest,
+                "fileSize": file_size,
             }
-            for media in list(unique.values())[:12]
+            for media, query, digest, file_size in verified[:12]
         ]
         return {
             "status": "verified",
-            "candidateCount": len(unique),
-            "successfulQueryCount": successful_queries,
-            "queries": used_queries,
+            "candidateCount": len(verified),
+            "downloadedCount": len(verified),
+            "successfulQueryCount": len(successful_query_names),
+            "queries": list(successful_query_names),
             "providers": dict(provider_counts),
             "samples": samples,
         }
+
+    @staticmethod
+    def _validate_downloaded_image(file_path: Path) -> tuple[int, int, str, int]:
+        try:
+            with Image.open(file_path) as image:
+                image.verify()
+            with Image.open(file_path) as image:
+                width, height = image.size
+        except (UnidentifiedImageError, OSError) as exc:
+            raise ValueError("다운로드 파일이 정상 이미지가 아닙니다.") from exc
+        file_size = file_path.stat().st_size
+        if file_size <= 0:
+            raise ValueError("다운로드 이미지 파일이 비어 있습니다.")
+        digest = hashlib.sha256(file_path.read_bytes()).hexdigest()
+        return width, height, digest, file_size
 
     @staticmethod
     def _media_queries(
