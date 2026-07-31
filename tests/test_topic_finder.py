@@ -106,6 +106,46 @@ class TopicFinderTests(unittest.TestCase):
         self.assertTrue(all(item.readiness_score == 100 for item in result.candidates))
         self.assertTrue(result.warnings)
 
+    def test_archive_candidates_rotate_each_korea_calendar_day(self) -> None:
+        first_day = datetime(2026, 7, 31, 0, 0, tzinfo=timezone.utc)
+        next_day = datetime(2026, 8, 1, 0, 0, tzinfo=timezone.utc)
+
+        first_result = AutoTopicFinder(
+            source=UnexpectedSource(),
+            now=lambda: first_day,
+        ).find(category="science", limit=5, source_mode="archive")
+        next_result = AutoTopicFinder(
+            source=UnexpectedSource(),
+            now=lambda: next_day,
+        ).find(category="science", limit=5, source_mode="archive")
+
+        self.assertNotEqual(
+            [item.topic for item in first_result.candidates],
+            [item.topic for item in next_result.candidates],
+        )
+
+    def test_archive_rotation_uses_korea_date_boundary(self) -> None:
+        before_midnight_kst = datetime(
+            2026, 7, 31, 14, 59, tzinfo=timezone.utc
+        )
+        after_midnight_kst = datetime(
+            2026, 7, 31, 15, 0, tzinfo=timezone.utc
+        )
+
+        before_result = AutoTopicFinder(
+            source=UnexpectedSource(),
+            now=lambda: before_midnight_kst,
+        ).find(category="history", limit=5, source_mode="archive")
+        after_result = AutoTopicFinder(
+            source=UnexpectedSource(),
+            now=lambda: after_midnight_kst,
+        ).find(category="history", limit=5, source_mode="archive")
+
+        self.assertNotEqual(
+            [item.topic for item in before_result.candidates],
+            [item.topic for item in after_result.candidates],
+        )
+
     def test_partial_live_results_are_filled_from_catalog(self) -> None:
         items = [
             TopicSourceItem(

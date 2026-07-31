@@ -1,7 +1,7 @@
 from __future__ import annotations
 
 import re
-from datetime import datetime, timezone
+from datetime import datetime, timedelta, timezone
 from typing import Callable, Iterable
 
 from .news_source import GoogleNewsTopicSource, TopicSource
@@ -69,6 +69,8 @@ PRODUCTION_READY_ARCHIVE_TOPICS = {
         "떠돌이 행성에는 생명체가 살 수 있을까",
     },
 }
+
+KOREA_TIMEZONE = timezone(timedelta(hours=9))
 
 
 class AutoTopicFinder:
@@ -411,11 +413,22 @@ class AutoTopicFinder:
         limit: int,
     ) -> list[TopicCandidate]:
         results: list[TopicCandidate] = []
-        for index, topic in enumerate(ARCHIVE_TOPICS[category]):
+        eligible_topics = [
+            topic
+            for topic in ARCHIVE_TOPICS[category]
+            if topic in PRODUCTION_READY_ARCHIVE_TOPICS[category]
+        ]
+        if eligible_topics:
+            korea_date = self._as_utc(self._now()).astimezone(KOREA_TIMEZONE).date()
+            daily_offset = korea_date.toordinal() % len(eligible_topics)
+            eligible_topics = (
+                eligible_topics[daily_offset:] + eligible_topics[:daily_offset]
+            )
+
+        for index, topic in enumerate(eligible_topics):
             if (
                 topic in existing_topics
                 or self._is_already_covered(topic, excluded_topics)
-                or topic not in PRODUCTION_READY_ARCHIVE_TOPICS[category]
             ):
                 continue
             search_queries = self._search_queries(category, topic)
