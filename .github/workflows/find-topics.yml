@@ -128,7 +128,8 @@ jobs:
             echo "- Source mode: ${{ steps.inputs.outputs.source_mode }}"
             echo "- Mode: $(jq -r '.mode' '${{ steps.inputs.outputs.output }}')"
             echo "- Preflight checked: $(jq -r '.preflight.checked' '${{ steps.inputs.outputs.output }}')"
-            echo "- Production-ready: $(jq -r '.candidate_count' '${{ steps.inputs.outputs.output }}')"
+            echo "- Displayed candidates: $(jq -r '.candidate_count' '${{ steps.inputs.outputs.output }}')
+            echo "- Production-ready: $(jq -r '.preflight.accepted' '${{ steps.inputs.outputs.output }}')""
             echo
             jq -r '.candidates[] | "\(.rank). [\(.score)] \(.topic)"' \
               "${{ steps.inputs.outputs.output }}"
