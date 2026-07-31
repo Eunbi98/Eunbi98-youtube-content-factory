@@ -147,7 +147,12 @@ class TopicPreflightTests(unittest.TestCase):
             limit=5,
         )
 
-        self.assertEqual(0, result["candidate_count"])
+        self.assertEqual(1, result["candidate_count"])
+        self.assertEqual(0, result["verified_candidate_count"])
+        self.assertEqual(0, result["preflight"]["accepted"])
+        self.assertEqual(1, result["preflight"]["displayed"])
+        self.assertFalse(result["candidates"][0]["production_ready"])
+        self.assertEqual("deferred", result["candidates"][0]["preflight_status"])
         self.assertEqual(1, len(result["preflight"]["rejected"]))
 
     def test_distinct_doi_works_count_as_independent_sources(self) -> None:
@@ -181,7 +186,9 @@ class TopicPreflightTests(unittest.TestCase):
             limit=5,
         )
 
-        self.assertEqual(0, result["candidate_count"])
+        self.assertEqual(1, result["candidate_count"])
+        self.assertEqual(0, result["verified_candidate_count"])
+        self.assertFalse(result["candidates"][0]["production_ready"])
         self.assertIn("이미지", result["preflight"]["rejected"][0]["reason"])
 
     def test_result_stops_at_requested_limit(self) -> None:
@@ -236,6 +243,8 @@ class TopicPreflightTests(unittest.TestCase):
         )
 
         self.assertEqual(3, result["preflight"]["checked"])
+        self.assertEqual(5, result["candidate_count"])
+        self.assertEqual(0, result["verified_candidate_count"])
         self.assertEqual(3, len(result["preflight"]["rejected"]))
 
 
