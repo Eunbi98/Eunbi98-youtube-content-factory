@@ -111,6 +111,42 @@ class CandidatePreflightService:
             reverse=True,
         )
         accepted = accepted[:limit]
+        verified_count = len(accepted)
+
+        # 외부 자료 서비스가 일시적으로 응답하지 않아 전 후보가 탈락해도
+        # 대시보드를 빈 화면으로 만들지 않습니다. 원래 생성된 후보를
+        # 검증 보류 상태로 되돌려 보여주고, 실제 제작 단계의 복구 수집기가
+        # 자료와 미디어를 다시 확인하도록 합니다.
+        if not accepted:
+            rejection_reasons = {
+                item["topic"]: item["reason"]
+                for item in rejected
+            }
+            for raw_candidate in raw_candidates:
+                if len(accepted) >= limit:
+                    break
+                if not isinstance(raw_candidate, dict):
+                    continue
+                topic = str(raw_candidate.get("topic") or "").strip()
+                category = str(raw_candidate.get("category") or "").strip().lower()
+                if not topic or category not in ProductionJobPlanner.SUPPORTED_CATEGORIES:
+                    continue
+                fallback = dict(raw_candidate)
+                fallback["production_ready"] = False
+                fallback["readiness_score"] = 0
+                fallback["preflight_status"] = "deferred"
+                fallback["preflight_failure_reason"] = rejection_reasons.get(
+                    topic,
+                    "사전 검증 결과를 확보하지 못했습니다.",
+                )
+                checks = [
+                    str(value)
+                    for value in fallback.get("readiness_checks", [])
+                    if str(value).strip()
+                ]
+                checks.append("자료와 이미지 검증은 제작 단계에서 자동 재시도")
+                fallback["readiness_checks"] = list(dict.fromkeys(checks))
+                accepted.append(fallback)
 
         for rank, candidate in enumerate(accepted, start=1):
             candidate["rank"] = rank
@@ -118,10 +154,16 @@ class CandidatePreflightService:
         result = dict(payload)
         result["candidates"] = accepted
         result["candidate_count"] = len(accepted)
-        result["mode"] = f"{payload.get('mode') or 'unknown'}+preflight"
+        result["verified_candidate_count"] = verified_count
+        result["mode"] = (
+            f"{payload.get('mode') or 'unknown'}+preflight"
+            if verified_count
+            else f"{payload.get('mode') or 'unknown'}+preflight-fallback"
+        )
         result["preflight"] = {
             "checked": checked,
-            "accepted": len(accepted),
+            "accepted": verified_count,
+            "displayed": len(accepted),
             "rejected": rejected,
             "evidencePolicy": {
                 "minimumDomains": 2,
@@ -141,6 +183,11 @@ class CandidatePreflightService:
         if rejected:
             warnings.append(
                 f"자료·이미지 사전 검증에서 후보 {len(rejected)}개를 제외했습니다."
+            )
+        if not verified_count and accepted:
+            warnings.append(
+                "사전 검증 서비스 응답 부족으로 원래 후보를 표시했습니다. "
+                "제작 단계에서 자료와 이미지를 다시 검증합니다."
             )
         result["warnings"] = warnings
         return result
