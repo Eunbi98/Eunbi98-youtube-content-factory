@@ -2,7 +2,10 @@ from __future__ import annotations
 
 import sys
 import unittest
+import hashlib
 from pathlib import Path
+
+from PIL import Image
 
 
 ROOT_DIR = Path(__file__).resolve().parents[1]
@@ -106,6 +109,36 @@ class FakeMediaProvider:
         ]
 
 
+class FakeMediaDownloader:
+    def download(
+        self,
+        *,
+        candidate: MediaCandidate,
+        destination_dir: Path,
+        scene_id: str,
+    ) -> Path:
+        destination_dir.mkdir(parents=True, exist_ok=True)
+        destination = destination_dir / f"{scene_id}.jpg"
+        color = hashlib.sha256(candidate.media_id.encode("utf-8")).digest()
+        Image.new(
+            "RGB",
+            (800, 800),
+            (color[0], color[1], color[2]),
+        ).save(destination, format="JPEG")
+        return destination
+
+
+class FailingMediaDownloader(FakeMediaDownloader):
+    def download(
+        self,
+        *,
+        candidate: MediaCandidate,
+        destination_dir: Path,
+        scene_id: str,
+    ) -> Path:
+        raise OSError("download blocked")
+
+
 class TopicPreflightTests(unittest.TestCase):
     def _service(
         self,
@@ -118,6 +151,7 @@ class TopicPreflightTests(unittest.TestCase):
             media_providers={
                 "openverse": FakeMediaProvider("openverse", media_count),
             },
+            media_downloader=FakeMediaDownloader(),
             minimum_media_candidates=5,
             minimum_media_queries=2,
         )
@@ -147,12 +181,11 @@ class TopicPreflightTests(unittest.TestCase):
             limit=5,
         )
 
-        self.assertEqual(1, result["candidate_count"])
+        self.assertEqual(0, result["candidate_count"])
         self.assertEqual(0, result["verified_candidate_count"])
         self.assertEqual(0, result["preflight"]["accepted"])
-        self.assertEqual(1, result["preflight"]["displayed"])
-        self.assertFalse(result["candidates"][0]["production_ready"])
-        self.assertEqual("deferred", result["candidates"][0]["preflight_status"])
+        self.assertEqual(0, result["preflight"]["displayed"])
+        self.assertEqual([], result["candidates"])
         self.assertEqual(1, len(result["preflight"]["rejected"]))
 
     def test_distinct_doi_works_count_as_independent_sources(self) -> None:
@@ -186,10 +219,26 @@ class TopicPreflightTests(unittest.TestCase):
             limit=5,
         )
 
-        self.assertEqual(1, result["candidate_count"])
+        self.assertEqual(0, result["candidate_count"])
         self.assertEqual(0, result["verified_candidate_count"])
-        self.assertFalse(result["candidates"][0]["production_ready"])
         self.assertIn("이미지", result["preflight"]["rejected"][0]["reason"])
+
+    def test_download_failure_removes_candidate_from_result(self) -> None:
+        service = CandidatePreflightService(
+            source_collector=FakeSourceCollector(),
+            media_providers={"openverse": FakeMediaProvider("openverse", 4)},
+            media_downloader=FailingMediaDownloader(),
+            minimum_media_candidates=5,
+            minimum_media_queries=2,
+        )
+
+        result = service.filter_payload(
+            {"category": "space", "mode": "live", "candidates": [_candidate()]},
+            limit=5,
+        )
+
+        self.assertEqual([], result["candidates"])
+        self.assertIn("실제 다운로드", result["preflight"]["rejected"][0]["reason"])
 
     def test_result_stops_at_requested_limit(self) -> None:
         candidates = [_candidate(f"화성 다각형 지형 {index}") for index in range(4)]
@@ -216,6 +265,7 @@ class TopicPreflightTests(unittest.TestCase):
         service = CandidatePreflightService(
             source_collector=FakeSourceCollector(),
             media_providers={"openverse": VariableMediaProvider("openverse", 3)},
+            media_downloader=FakeMediaDownloader(),
             minimum_media_candidates=5,
             minimum_media_queries=2,
         )
@@ -243,7 +293,7 @@ class TopicPreflightTests(unittest.TestCase):
         )
 
         self.assertEqual(3, result["preflight"]["checked"])
-        self.assertEqual(5, result["candidate_count"])
+        self.assertEqual(0, result["candidate_count"])
         self.assertEqual(0, result["verified_candidate_count"])
         self.assertEqual(3, len(result["preflight"]["rejected"]))
 
