@@ -146,6 +146,23 @@ class TopicFinderTests(unittest.TestCase):
             [item.topic for item in after_result.candidates],
         )
 
+    def test_archive_candidates_rotate_on_each_refresh(self) -> None:
+        first_result = AutoTopicFinder(
+            source=UnexpectedSource(),
+            now=lambda: NOW,
+            rotation_index=101,
+        ).find(category="science", limit=5, source_mode="archive")
+        next_result = AutoTopicFinder(
+            source=UnexpectedSource(),
+            now=lambda: NOW,
+            rotation_index=102,
+        ).find(category="science", limit=5, source_mode="archive")
+
+        self.assertNotEqual(
+            [item.topic for item in first_result.candidates],
+            [item.topic for item in next_result.candidates],
+        )
+
     def test_partial_live_results_are_filled_from_catalog(self) -> None:
         items = [
             TopicSourceItem(

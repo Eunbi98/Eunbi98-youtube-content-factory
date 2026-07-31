@@ -79,9 +79,11 @@ class AutoTopicFinder:
         *,
         source: TopicSource | None = None,
         now: Callable[[], datetime] | None = None,
+        rotation_index: int = 0,
     ) -> None:
         self._source = source or GoogleNewsTopicSource()
         self._now = now or (lambda: datetime.now(timezone.utc))
+        self._rotation_index = rotation_index
 
     @property
     def categories(self) -> tuple[str, ...]:
@@ -420,7 +422,9 @@ class AutoTopicFinder:
         ]
         if eligible_topics:
             korea_date = self._as_utc(self._now()).astimezone(KOREA_TIMEZONE).date()
-            daily_offset = korea_date.toordinal() % len(eligible_topics)
+            daily_offset = (
+                korea_date.toordinal() + self._rotation_index
+            ) % len(eligible_topics)
             eligible_topics = (
                 eligible_topics[daily_offset:] + eligible_topics[:daily_offset]
             )

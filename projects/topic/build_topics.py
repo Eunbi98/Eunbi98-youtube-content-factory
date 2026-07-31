@@ -95,13 +95,19 @@ def parse_args() -> argparse.Namespace:
         default=DEFAULT_OUTPUT,
         help=f"결과 JSON 경로 (기본값: {DEFAULT_OUTPUT})",
     )
+    parser.add_argument(
+        "--rotation-index",
+        type=int,
+        default=0,
+        help="같은 날 반복 실행 시 아카이브 후보를 회전할 값",
+    )
     return parser.parse_args()
 
 
 def main() -> int:
     args = parse_args()
     try:
-        result = AutoTopicFinder().find(
+        result = AutoTopicFinder(rotation_index=args.rotation_index).find(
             category=args.category,
             limit=args.limit,
             excluded_topics=load_existing_episode_topics(ROOT_DIR),

@@ -108,6 +108,7 @@ jobs:
           --category "${{ steps.inputs.outputs.category }}"
           --source-mode "${{ steps.inputs.outputs.source_mode }}"
           --limit "${{ steps.inputs.outputs.pool_limit }}"
+          --rotation-index "${{ github.run_number }}"
           --output "${{ steps.inputs.outputs.output }}"
 
       - name: Collect sources and media before selecting topics
