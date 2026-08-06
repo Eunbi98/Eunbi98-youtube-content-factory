@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import argparse
+import shutil
 import sys
 from pathlib import Path
 
@@ -60,6 +61,37 @@ def parse_args() -> argparse.Namespace:
     return parser.parse_args()
 
 
+def purge_stale_generated_files(episode_id: str) -> None:
+    episode_dir = ROOT_DIR / "projects" / "episodes" / episode_id
+
+    directories = [
+        episode_dir / "tts",
+        episode_dir / "audio",
+        ROOT_DIR / "projects" / "tts" / episode_id,
+        ROOT_DIR / "projects" / "remotion" / "public" / episode_id,
+    ]
+    for directory in directories:
+        if directory.exists():
+            shutil.rmtree(directory, ignore_errors=True)
+            print(f"[캐시 삭제] {directory}")
+
+    files = [
+        episode_dir / "timeline.json",
+        episode_dir / "media_queries.json",
+        ROOT_DIR / "projects" / "output" / f"{episode_id}.mp4",
+    ]
+    for file_path in files:
+        if file_path.exists():
+            file_path.unlink()
+            print(f"[캐시 삭제] {file_path}")
+
+    for pattern in ("*timing*.json", "*tts*.json", "*audio*.json"):
+        for file_path in episode_dir.rglob(pattern):
+            if file_path.is_file():
+                file_path.unlink()
+                print(f"[캐시 삭제] {file_path}")
+
+
 def _run_factory(
     *,
     paths: FactoryPaths,
@@ -83,6 +115,9 @@ def main() -> int:
     except ValueError as exc:
         print(f"[실패] {exc}")
         return 2
+
+    if args.rebuild_timeline:
+        purge_stale_generated_files(episode_id)
 
     paths = FactoryPaths.create(root_dir=ROOT_DIR, episode_id=episode_id)
 
