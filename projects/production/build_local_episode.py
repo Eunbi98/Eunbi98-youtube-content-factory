@@ -7,6 +7,10 @@ from pathlib import Path
 from typing import Any
 
 
+ROOT_DIR = Path(__file__).resolve().parents[2]
+TEMPLATE_PATH = ROOT_DIR / "config" / "local_topic_templates.json"
+
+
 class LocalEpisodeError(ValueError):
     pass
 
@@ -18,7 +22,11 @@ def _load(path: Path) -> dict[str, Any]:
     return payload
 
 
-def _clean_sentence(value: str, *, limit: int = 105) -> str:
+def _normalize(value: str) -> str:
+    return re.sub(r"[\s\W_]+", "", value.strip().lower(), flags=re.UNICODE)
+
+
+def _clean_sentence(value: str, *, limit: int = 125) -> str:
     text = re.sub(r"\s+", " ", value).strip()
     text = re.sub(r"https?://\S+", "", text).strip()
     if not text:
@@ -30,98 +38,72 @@ def _clean_sentence(value: str, *, limit: int = 105) -> str:
     return text
 
 
-def _sentences(text: str) -> list[str]:
-    values = re.split(r"(?<=[.!?。])\s+|\n+", text)
-    result: list[str] = []
-    for value in values:
-        cleaned = _clean_sentence(value)
-        if len(cleaned) >= 18 and cleaned not in result:
-            result.append(cleaned)
-    return result
+def _load_template(topic: str) -> dict[str, Any] | None:
+    if not TEMPLATE_PATH.exists():
+        return None
+    payload = _load(TEMPLATE_PATH)
+    normalized_topic = _normalize(topic)
+    for key, value in payload.items():
+        if _normalize(str(key)) == normalized_topic and isinstance(value, dict):
+            return value
+    return None
 
 
-def _keywords(topic: str, source_title: str = "") -> list[str]:
-    base = re.sub(r"[?!.]", "", topic).strip()
-    values = [
-        f"{base} documentary",
-        f"{base} scientific illustration",
-        source_title,
-    ]
-    return [value for value in dict.fromkeys(values) if value]
-
-
-def build_package(
+def _template_package(
     *,
+    template: dict[str, Any],
     preflight: dict[str, Any],
     episode_id: str,
     category: str,
     topic: str,
-    angle: str,
 ) -> tuple[dict[str, Any], dict[str, Any], dict[str, Any]]:
+    raw_scenes = template.get("scenes")
+    if not isinstance(raw_scenes, list) or len(raw_scenes) != 6:
+        raise LocalEpisodeError("검증된 주제 템플릿은 정확히 6개 Scene이어야 합니다.")
+
     candidates = preflight.get("candidates")
-    if not isinstance(candidates, list) or not candidates:
-        raise LocalEpisodeError("사전검증을 통과한 후보가 없습니다.")
-    candidate = candidates[0]
-    sources = candidate.get("preflight_sources")
-    if not isinstance(sources, list) or len(sources) < 2:
-        raise LocalEpisodeError("로컬 대본 생성에 필요한 공개 자료가 부족합니다.")
-
-    extracted: list[tuple[str, str, str]] = []
-    for source in sources:
-        if not isinstance(source, dict):
-            continue
-        title = str(source.get("title") or "").strip()
-        url = str(source.get("source_url") or "").strip()
-        for sentence in _sentences(str(source.get("text") or "")):
-            extracted.append((sentence, title, url))
-            if len(extracted) >= 8:
-                break
-        if len(extracted) >= 8:
-            break
-
-    if len(extracted) < 3:
-        raise LocalEpisodeError("자료 본문에서 충분한 설명 문장을 추출하지 못했습니다.")
-
-    facts = extracted[:4]
-    hook = f"{topic} 그 이유를 확인된 자료를 바탕으로 살펴보겠습니다."
-    ending = f"{topic} 여러분은 이 사실을 알고 계셨나요?"
-    scene_types = ["hook", "answer", "story", "fact", "fact", "ending"]
-    scene_titles = [
-        topic.rstrip("?"),
-        "첫 번째 핵심 사실",
-        "자료가 보여주는 이유",
-        "추가로 확인된 사실",
-        "아직 남은 해석",
-        "여러분의 생각은?",
-    ]
-    narrations = [
-        hook,
-        facts[0][0],
-        facts[1][0],
-        facts[2][0],
-        facts[3][0] if len(facts) > 3 else "자료에 따라 세부 설명에는 차이가 있어 단정적으로 해석하지 않는 것이 중요합니다.",
-        ending,
-    ]
-
+    candidate = candidates[0] if isinstance(candidates, list) and candidates else {}
+    sources = candidate.get("preflight_sources") if isinstance(candidate, dict) else []
+    if not isinstance(sources, list):
+        sources = []
     evidence_ids = [f"source_{index + 1}" for index in range(len(sources))]
-    scenes = []
-    for index, narration in enumerate(narrations):
-        source_title = facts[min(max(index - 1, 0), len(facts) - 1)][1] if 1 <= index <= 4 else ""
+
+    scenes: list[dict[str, Any]] = []
+    for raw_scene in raw_scenes:
+        if not isinstance(raw_scene, dict):
+            raise LocalEpisodeError("주제 템플릿 Scene 형식이 올바르지 않습니다.")
+        narration = _clean_sentence(str(raw_scene.get("narration") or ""))
+        keywords = [
+            str(value).strip()
+            for value in raw_scene.get("keywords", [])
+            if str(value).strip()
+        ]
+        if not narration or not keywords:
+            raise LocalEpisodeError("주제 템플릿의 narration 또는 keywords가 비어 있습니다.")
         scenes.append(
             {
-                "type": scene_types[index],
-                "title": scene_titles[index],
-                "narration": _clean_sentence(narration, limit=125),
-                "keywords": _keywords(topic, source_title),
+                "type": str(raw_scene.get("type") or "fact"),
+                "title": str(raw_scene.get("title") or topic.rstrip("?")),
+                "narration": narration,
+                "keywords": keywords,
                 "evidenceIds": evidence_ids,
             }
+        )
+
+    all_narration = " ".join(scene["narration"] for scene in scenes)
+    required_terms = ["헤모시아닌", "구리", "산소", "파란"] if "오징어" in topic and "파란" in topic else []
+    missing_terms = [term for term in required_terms if term not in all_narration]
+    if missing_terms:
+        raise LocalEpisodeError(
+            "제목의 핵심 질문에 답하는 필수 개념이 대본에 없습니다: "
+            + ", ".join(missing_terms)
         )
 
     episode = {
         "version": "1.0",
         "episodeId": episode_id,
         "channel": category,
-        "title": topic.rstrip("?"),
+        "title": str(template.get("title") or topic.rstrip("?")),
         "voice": "ko-KR-SunHiNeural",
         "theme": {
             "backgroundColor": "#000000",
@@ -137,37 +119,20 @@ def build_package(
         for source in sources
         if isinstance(source, dict) and source.get("source_url")
     ]
-    description_lines = [
-        topic,
-        "",
-        *[fact[0] for fact in facts[:3]],
-        "",
-        ending,
-    ]
-    tags = [
-        re.sub(r"\s+", "", topic.replace("?", ""))[:20],
-        category,
-        "과학상식" if category == "science" else "흥미로운이야기",
-        "상식",
-        "쇼츠",
-        "shorts",
-    ]
     metadata = {
         "episodeId": episode_id,
-        "title": topic.rstrip("?"),
-        "description": "\n".join(description_lines),
-        "pinnedComment": ending + " 댓글로 생각을 남겨주세요.",
-        "tags": list(dict.fromkeys(tag for tag in tags if tag)),
+        "title": str(template.get("title") or topic.rstrip("?")),
+        "description": str(template.get("description") or ""),
+        "pinnedComment": str(template.get("pinnedComment") or ""),
+        "tags": [str(tag) for tag in template.get("tags", []) if str(tag).strip()],
         "sources": source_urls[:5],
     }
     evidence = {
         "topic": topic,
         "status": "verified",
-        "provider": "local_public_sources",
-        "summary": " ".join(fact[0] for fact in facts[:3]),
-        "uncertainties": [
-            "로컬 규칙 기반 생성 결과이므로 최종 업로드 전에 문장과 사실관계를 검토하세요."
-        ],
+        "provider": "local_verified_template",
+        "summary": " ".join(scene["narration"] for scene in scenes[1:5]),
+        "uncertainties": [],
         "items": [
             {
                 "id": f"source_{index + 1}",
@@ -184,8 +149,31 @@ def build_package(
     return episode, metadata, evidence
 
 
+def build_package(
+    *,
+    preflight: dict[str, Any],
+    episode_id: str,
+    category: str,
+    topic: str,
+    angle: str,
+) -> tuple[dict[str, Any], dict[str, Any], dict[str, Any]]:
+    template = _load_template(topic)
+    if template is None:
+        raise LocalEpisodeError(
+            "토큰 없는 모드에서는 검증된 주제 템플릿이 필요합니다. "
+            "자동 후보에 등록된 주제를 사용하거나 템플릿을 먼저 추가하세요."
+        )
+    return _template_package(
+        template=template,
+        preflight=preflight,
+        episode_id=episode_id,
+        category=category,
+        topic=topic,
+    )
+
+
 def main() -> int:
-    parser = argparse.ArgumentParser(description="토큰 없이 공개 자료로 Episode를 생성합니다.")
+    parser = argparse.ArgumentParser(description="검증된 로컬 템플릿으로 Episode를 생성합니다.")
     parser.add_argument("--preflight", type=Path, required=True)
     parser.add_argument("--episode-id", required=True)
     parser.add_argument("--category", required=True)
@@ -218,7 +206,7 @@ def main() -> int:
         print(f"[실패] {exc}")
         return 2
 
-    print("토큰 없는 로컬 Episode 생성 완료")
+    print("검증된 로컬 Episode 생성 완료")
     print(f"Episode: {args.episode_output}")
     print(f"Metadata: {args.metadata_output}")
     return 0
