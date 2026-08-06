@@ -5,6 +5,7 @@ import json
 import re
 import subprocess
 import sys
+from datetime import datetime, timezone
 from difflib import SequenceMatcher
 from pathlib import Path
 
@@ -59,6 +60,11 @@ def parse_args() -> argparse.Namespace:
         "--allow-similar-topic",
         action="store_true",
         help="기존 주제와 유사해도 강제로 제작합니다.",
+    )
+    parser.add_argument(
+        "--resume",
+        action="store_true",
+        help="기존 에피소드 폴더의 완료 파일을 재사용해 실패 지점부터 계속합니다.",
     )
     return parser.parse_args()
 
@@ -226,65 +232,137 @@ def write_json(path: Path, payload: dict) -> None:
     )
 
 
+def read_json(path: Path) -> dict:
+    payload = json.loads(path.read_text(encoding="utf-8"))
+    if not isinstance(payload, dict):
+        raise ValueError(f"JSON 최상위 값은 객체여야 합니다: {path}")
+    return payload
+
+
+def write_status(episode_dir: Path, *, status: str, detail: str = "") -> None:
+    write_json(
+        episode_dir / "production-status.json",
+        {
+            "status": status,
+            "detail": detail,
+            "updatedAt": datetime.now(timezone.utc).isoformat(),
+        },
+    )
+
+
+def remember_published_topic(topic: str) -> None:
+    path = ROOT_DIR / "config" / "published_topics.json"
+    payload = {"topics": []}
+    if path.exists():
+        try:
+            payload = read_json(path)
+        except (OSError, json.JSONDecodeError, ValueError):
+            payload = {"topics": []}
+    topics = payload.get("topics")
+    if not isinstance(topics, list):
+        topics = []
+    normalized_existing = {normalize_topic(str(value)) for value in topics}
+    if normalize_topic(topic) not in normalized_existing:
+        topics.append(topic.strip())
+    payload["topics"] = topics
+    write_json(path, payload)
+
+
+def validate_mp4(path: Path) -> None:
+    if not path.exists():
+        raise RuntimeError(f"렌더 완료 후 MP4가 생성되지 않았습니다: {path}")
+    if path.stat().st_size < 10_000:
+        raise RuntimeError(
+            f"생성된 MP4 용량이 비정상적으로 작습니다: {path.stat().st_size} bytes"
+        )
+
+
 def main() -> int:
     args = parse_args()
+    episode_id = ""
+    episode_dir: Path | None = None
 
     try:
-        duplicate_result = check_duplicate_topic(
-            args.topic,
-            allow_similar=args.allow_similar_topic,
-        )
-        verified_payload = run_topic_preflight(
-            build_candidate(args.topic, args.category, args.angle)
-        )
         episode_id = resolve_episode_id(args.episode)
         episode_dir = ROOT_DIR / "projects" / "episodes" / episode_id
-        if episode_dir.exists():
-            raise RuntimeError(f"이미 존재하는 에피소드입니다: {episode_id}")
-        episode_dir.mkdir(parents=True)
-
         preflight_path = episode_dir / "preflight.json"
         evidence_path = episode_dir / "evidence.json"
         episode_path = episode_dir / "episode.json"
         metadata_path = episode_dir / "metadata.json"
-        verified_payload["duplicateCheck"] = duplicate_result
-        write_json(preflight_path, verified_payload)
+        mp4_path = ROOT_DIR / "projects" / "output" / f"{episode_id}.mp4"
 
-        run_step(
-            "토큰 없는 로컬 대본과 메타데이터 생성",
-            [
-                sys.executable,
-                "projects/production/build_local_episode.py",
-                "--preflight",
-                str(preflight_path),
-                "--episode-id",
-                episode_id,
-                "--category",
-                args.category,
-                "--topic",
+        if episode_dir.exists() and not args.resume:
+            raise RuntimeError(
+                f"이미 존재하는 에피소드입니다: {episode_id}. "
+                "실패 지점부터 계속하려면 --resume을 사용하세요."
+            )
+        episode_dir.mkdir(parents=True, exist_ok=True)
+        write_status(episode_dir, status="started")
+
+        if args.resume and preflight_path.exists():
+            print(f"[재사용] {preflight_path}")
+            verified_payload = read_json(preflight_path)
+        else:
+            duplicate_result = check_duplicate_topic(
                 args.topic,
-                "--angle",
-                args.angle,
-                "--episode-output",
-                str(episode_path),
-                "--metadata-output",
-                str(metadata_path),
-                "--evidence-output",
-                str(evidence_path),
-            ],
-        )
+                allow_similar=args.allow_similar_topic,
+            )
+            verified_payload = run_topic_preflight(
+                build_candidate(args.topic, args.category, args.angle)
+            )
+            verified_payload["duplicateCheck"] = duplicate_result
+            write_json(preflight_path, verified_payload)
+        write_status(episode_dir, status="preflight_ready")
+
+        package_ready = episode_path.exists() and metadata_path.exists() and evidence_path.exists()
+        if args.resume and package_ready:
+            print("[재사용] episode.json, metadata.json, evidence.json")
+        else:
+            run_step(
+                "토큰 없는 로컬 대본과 메타데이터 생성",
+                [
+                    sys.executable,
+                    "projects/production/build_local_episode.py",
+                    "--preflight",
+                    str(preflight_path),
+                    "--episode-id",
+                    episode_id,
+                    "--category",
+                    args.category,
+                    "--topic",
+                    args.topic,
+                    "--angle",
+                    args.angle,
+                    "--episode-output",
+                    str(episode_path),
+                    "--metadata-output",
+                    str(metadata_path),
+                    "--evidence-output",
+                    str(evidence_path),
+                ],
+            )
+        write_status(episode_dir, status="package_ready")
 
         if not args.prepare_only:
-            factory_command = [
-                sys.executable,
-                "factory_runner.py",
-                "--episode",
-                episode_id,
-                "--rebuild-timeline",
-            ]
-            if args.skip_typecheck:
-                factory_command.append("--skip-typecheck")
-            run_step("미디어 수집과 MP4 렌더", factory_command)
+            if args.resume and mp4_path.exists():
+                validate_mp4(mp4_path)
+                print(f"[재사용] {mp4_path}")
+            else:
+                factory_command = [
+                    sys.executable,
+                    "factory_runner.py",
+                    "--episode",
+                    episode_id,
+                    "--rebuild-timeline",
+                ]
+                if args.skip_typecheck:
+                    factory_command.append("--skip-typecheck")
+                run_step("미디어 수집과 MP4 렌더", factory_command)
+                validate_mp4(mp4_path)
+            remember_published_topic(args.topic)
+            write_status(episode_dir, status="completed", detail=str(mp4_path))
+        else:
+            write_status(episode_dir, status="prepared")
 
     except (
         OSError,
@@ -293,7 +371,17 @@ def main() -> int:
         json.JSONDecodeError,
         TopicPreflightError,
     ) as exc:
+        if episode_dir is not None and episode_dir.exists():
+            try:
+                write_status(episode_dir, status="failed", detail=str(exc))
+            except OSError:
+                pass
         print(f"\n[제작 실패] {exc}")
+        if episode_id:
+            print(
+                "재실행: py produce_video.py "
+                f"\"{args.topic}\" --episode {episode_id} --resume"
+            )
         return 1
 
     print("\n" + "=" * 62)
@@ -305,7 +393,7 @@ def main() -> int:
     print(f"Episode: {episode_path}")
     print(f"Metadata: {metadata_path}")
     if not args.prepare_only:
-        print(f"MP4: {ROOT_DIR / 'projects' / 'output' / f'{episode_id}.mp4'}")
+        print(f"MP4: {mp4_path}")
     print("=" * 62)
     return 0
 
