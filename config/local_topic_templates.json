@@ -1,0 +1,47 @@
+{
+  "오징어의 피는 왜 파란색일까?": {
+    "category": "science",
+    "title": "오징어의 피는 왜 파란색일까?",
+    "scenes": [
+      {
+        "type": "hook",
+        "title": "오징어의 피는 파란색",
+        "narration": "오징어의 피는 사람처럼 빨간색이 아니라 파란색입니다. 도대체 무엇이 색을 바꾸는 걸까요?",
+        "keywords": ["squid underwater close up", "squid swimming ocean"]
+      },
+      {
+        "type": "answer",
+        "title": "정답은 헤모시아닌",
+        "narration": "그 이유는 산소를 운반하는 단백질이 헤모글로빈이 아니라 헤모시아닌이기 때문입니다.",
+        "keywords": ["hemocyanin molecule illustration", "cephalopod blue blood diagram"]
+      },
+      {
+        "type": "story",
+        "title": "철 대신 구리",
+        "narration": "사람의 헤모글로빈은 철을 포함해 산소와 결합하면 붉게 보이지만, 헤모시아닌은 구리를 포함합니다.",
+        "keywords": ["hemoglobin iron oxygen illustration", "hemocyanin copper oxygen diagram"]
+      },
+      {
+        "type": "fact",
+        "title": "산소와 만나면 파란색",
+        "narration": "헤모시아닌 속 구리가 산소와 결합하면 푸른색을 띠기 때문에 오징어의 피도 파랗게 보입니다.",
+        "keywords": ["oxygenated hemocyanin blue illustration", "blue blood cephalopod science"]
+      },
+      {
+        "type": "fact",
+        "title": "차가운 바다에 유리",
+        "narration": "헤모시아닌은 차갑고 산소가 적은 바닷물에서도 산소를 운반하는 데 유리해 오징어와 문어 같은 두족류에 적합합니다.",
+        "keywords": ["squid deep cold ocean", "cephalopod underwater documentary"]
+      },
+      {
+        "type": "ending",
+        "title": "구리가 만든 푸른 피",
+        "narration": "결국 오징어의 피가 파란 이유는 철이 아닌 구리를 이용해 산소를 운반하기 때문입니다. 알고 계셨나요?",
+        "keywords": ["squid close up underwater", "squid ocean documentary"]
+      }
+    ],
+    "description": "오징어의 피는 왜 파란색일까요?\n\n사람은 철을 포함한 헤모글로빈으로 산소를 운반하지만, 오징어는 구리를 포함한 헤모시아닌을 사용합니다. 헤모시아닌 속 구리가 산소와 결합하면 푸른색을 띠기 때문에 오징어의 피도 파랗게 보입니다.\n\n헤모시아닌은 차갑고 산소가 적은 바닷속에서도 산소를 운반하는 데 유리합니다.\n\n오징어의 피가 파란색이라는 사실을 알고 계셨나요?",
+    "pinnedComment": "오징어와 문어의 피가 파란색이라는 사실을 알고 계셨나요? 다음에 궁금한 해양생물의 비밀을 댓글로 남겨주세요.",
+    "tags": ["오징어", "오징어피", "파란피", "헤모시아닌", "해양생물", "과학상식", "동물상식", "쇼츠", "shorts"]
+  }
+}
