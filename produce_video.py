@@ -2,11 +2,9 @@ from __future__ import annotations
 
 import argparse
 import json
-import os
 import re
 import subprocess
 import sys
-import tempfile
 from difflib import SequenceMatcher
 from pathlib import Path
 
@@ -26,7 +24,7 @@ from projects.topic.topic_preflight import (  # noqa: E402
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(
         description=(
-            "주제 한 문장으로 중복검사, 자료·미디어 사전검증, 조사, 대본, "
+            "주제 한 문장으로 중복검사, 자료·미디어 사전검증, 로컬 대본 생성, "
             "TTS, 자막, Remotion 렌더까지 실행합니다."
         )
     )
@@ -86,13 +84,6 @@ def resolve_episode_id(raw_episode: str) -> str:
     from projects.production.select_topic import next_episode_id
 
     return next_episode_id(ROOT_DIR)
-
-
-def require_generation_environment() -> None:
-    if not os.getenv("GITHUB_MODELS_TOKEN"):
-        raise RuntimeError(
-            "GITHUB_MODELS_TOKEN이 없습니다. GitHub Models 토큰을 환경 변수로 설정하세요."
-        )
 
 
 def normalize_topic(value: str) -> str:
@@ -179,7 +170,7 @@ def build_candidate(topic: str, category: str, angle: str) -> dict:
         raise ValueError("주제가 비어 있습니다.")
     return {
         "category": category,
-        "mode": "direct-topic",
+        "mode": "direct-topic-local",
         "candidates": [
             {
                 "rank": 1,
@@ -239,7 +230,6 @@ def main() -> int:
     args = parse_args()
 
     try:
-        require_generation_environment()
         duplicate_result = check_duplicate_topic(
             args.topic,
             allow_similar=args.allow_similar_topic,
@@ -254,60 +244,33 @@ def main() -> int:
         episode_dir.mkdir(parents=True)
 
         preflight_path = episode_dir / "preflight.json"
-        job_path = episode_dir / "production-job.json"
         evidence_path = episode_dir / "evidence.json"
         episode_path = episode_dir / "episode.json"
         metadata_path = episode_dir / "metadata.json"
         verified_payload["duplicateCheck"] = duplicate_result
         write_json(preflight_path, verified_payload)
 
-        with tempfile.TemporaryDirectory(prefix="factory-topic-") as temp_dir:
-            candidate_path = Path(temp_dir) / "candidate.json"
-            write_json(candidate_path, verified_payload)
-            run_step(
-                "제작 작업 생성",
-                [
-                    sys.executable,
-                    "projects/production/select_topic.py",
-                    "--candidates",
-                    str(candidate_path),
-                    "--rank",
-                    "1",
-                    "--episode",
-                    episode_id,
-                    "--output",
-                    str(job_path),
-                ],
-            )
-
         run_step(
-            "근거 자료 수집과 검증",
+            "토큰 없는 로컬 대본과 메타데이터 생성",
             [
                 sys.executable,
-                "projects/research/collect_evidence.py",
-                "--job",
-                str(job_path),
-                "--output",
-                str(evidence_path),
-                "--job-output",
-                str(job_path),
-            ],
-        )
-        run_step(
-            "대본과 업로드 메타데이터 생성",
-            [
-                sys.executable,
-                "projects/production/build_episode_package.py",
-                "--job",
-                str(job_path),
-                "--evidence",
-                str(evidence_path),
-                "--episode-spec",
+                "projects/production/build_local_episode.py",
+                "--preflight",
+                str(preflight_path),
+                "--episode-id",
+                episode_id,
+                "--category",
+                args.category,
+                "--topic",
+                args.topic,
+                "--angle",
+                args.angle,
+                "--episode-output",
                 str(episode_path),
-                "--metadata",
+                "--metadata-output",
                 str(metadata_path),
-                "--job-output",
-                str(job_path),
+                "--evidence-output",
+                str(evidence_path),
             ],
         )
 
@@ -335,6 +298,7 @@ def main() -> int:
 
     print("\n" + "=" * 62)
     print("영상 제작 완료" if not args.prepare_only else "영상 패키지 준비 완료")
+    print("생성 방식: local_public_sources (GitHub 토큰 불필요)")
     print(f"에피소드: {episode_id}")
     print(f"주제: {args.topic.strip()}")
     print(f"Preflight: {preflight_path}")
