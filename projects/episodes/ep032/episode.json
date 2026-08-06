@@ -1,0 +1,70 @@
+{
+  "version": "1.0",
+  "episodeId": "ep032",
+  "channel": "science",
+  "title": "문어의 심장은 왜 3개일까?",
+  "voice": "ko-KR-SunHiNeural",
+  "mediaSource": "NOAA octopus underwater, Wikimedia Commons octopus anatomy, cephalopod circulatory system scientific illustration, octopus crawling seabed",
+  "theme": {
+    "backgroundColor": "#000000",
+    "titleColor": "#7CFFB2",
+    "captionColor": "#FFFFFF",
+    "accentColor": "#7CFFB2"
+  },
+  "scenes": [
+    {
+      "type": "hook",
+      "title": "심장이 무려 3개",
+      "narration": "문어는 심장이 무려 세 개나 있습니다. 도대체 왜 이렇게 많은 심장이 필요할까요?",
+      "keywords": [
+        "octopus underwater close up",
+        "octopus swimming ocean"
+      ]
+    },
+    {
+      "type": "answer",
+      "title": "두 개는 아가미 담당",
+      "narration": "두 개의 아가미 심장은 산소가 부족한 혈액을 각각의 아가미로 보내는 역할을 합니다.",
+      "keywords": [
+        "octopus gills anatomy diagram",
+        "cephalopod branchial hearts illustration"
+      ]
+    },
+    {
+      "type": "story",
+      "title": "한 개는 온몸 담당",
+      "narration": "아가미에서 산소를 얻은 혈액은 나머지 한 개인 온몸 심장을 거쳐 몸 전체로 퍼집니다.",
+      "keywords": [
+        "octopus circulatory system animation",
+        "cephalopod systemic heart diagram"
+      ]
+    },
+    {
+      "type": "fact",
+      "title": "차가운 바다의 푸른 피",
+      "narration": "문어의 푸른 피는 구리를 포함한 헤모시아닌으로 산소를 운반합니다. 하지만 산소 운반 효율이 낮아 강력한 순환 구조가 필요합니다.",
+      "keywords": [
+        "octopus blue blood hemocyanin illustration",
+        "cephalopod hemocyanin scientific diagram"
+      ]
+    },
+    {
+      "type": "fact",
+      "title": "헤엄치면 더 힘든 이유",
+      "narration": "문어가 빠르게 헤엄칠 때는 온몸 심장의 박동이 크게 줄어 쉽게 지칩니다. 그래서 평소에는 바닥을 기어 다니는 편입니다.",
+      "keywords": [
+        "octopus jet propulsion swimming",
+        "octopus crawling seabed"
+      ]
+    },
+    {
+      "type": "ending",
+      "title": "역할을 나눈 세 심장",
+      "narration": "결국 세 개의 심장은 아가미와 온몸에 혈액을 나눠 보내기 위한 구조입니다. 문어의 심장이 세 개라는 사실을 알고 계셨나요?",
+      "keywords": [
+        "octopus close up underwater",
+        "octopus crawling coral reef"
+      ]
+    }
+  ]
+}
