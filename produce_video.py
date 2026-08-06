@@ -3,9 +3,11 @@ from __future__ import annotations
 import argparse
 import json
 import os
+import re
 import subprocess
 import sys
 import tempfile
+from difflib import SequenceMatcher
 from pathlib import Path
 
 
@@ -15,18 +17,17 @@ SUPPORTED_CATEGORIES = ("science", "mystery", "history", "space")
 if str(ROOT_DIR) not in sys.path:
     sys.path.insert(0, str(ROOT_DIR))
 
-from projects.production.topic_preflight import (  # noqa: E402
+from projects.topic.topic_preflight import (  # noqa: E402
+    CandidatePreflightService,
     TopicPreflightError,
-    TopicPreflightResult,
-    TopicPreflightService,
 )
 
 
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(
         description=(
-            "주제 한 문장으로 사전검사, 조사, 대본, 미디어 수집, TTS, "
-            "자막, Remotion 렌더까지 실행합니다."
+            "주제 한 문장으로 중복검사, 자료·미디어 사전검증, 조사, 대본, "
+            "TTS, 자막, Remotion 렌더까지 실행합니다."
         )
     )
     parser.add_argument("topic", help="제작할 영상 주제")
@@ -59,7 +60,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument(
         "--allow-similar-topic",
         action="store_true",
-        help="중복 유사도 검사를 통과시키고 강제로 제작합니다.",
+        help="기존 주제와 유사해도 강제로 제작합니다.",
     )
     return parser.parse_args()
 
@@ -94,46 +95,91 @@ def require_generation_environment() -> None:
         )
 
 
-def run_preflight(args: argparse.Namespace) -> TopicPreflightResult:
-    threshold = 1.01 if args.allow_similar_topic else 0.72
-    service = TopicPreflightService(
-        root_dir=ROOT_DIR,
-        duplicate_threshold=threshold,
-    )
-    print("\n" + "=" * 62)
-    print("[단계] 주제와 제작 환경 사전검사")
-    print("=" * 62)
-    result = service.inspect(
-        topic=args.topic,
-        category=args.category,
-        render=not args.prepare_only,
-    )
-    print(f"주제: {result.topic}")
-    if result.nearest_match:
-        print(
-            "가장 가까운 기존 주제: "
-            f"{result.nearest_match.topic} "
-            f"({result.nearest_match.similarity:.0%})"
+def normalize_topic(value: str) -> str:
+    normalized = re.sub(r"[\s\W_]+", "", value.strip().lower(), flags=re.UNICODE)
+    replacements = {
+        "세개": "3개",
+        "두개": "2개",
+        "한개": "1개",
+        "진짜이유": "이유",
+        "이유는무엇일까": "이유",
+        "왜그럴까": "왜",
+    }
+    for old, new in replacements.items():
+        normalized = normalized.replace(old, new)
+    return normalized
+
+
+def known_topics() -> list[tuple[str, str]]:
+    topics: list[tuple[str, str]] = []
+    published_path = ROOT_DIR / "config" / "published_topics.json"
+    if published_path.exists():
+        try:
+            payload = json.loads(published_path.read_text(encoding="utf-8"))
+            for value in payload.get("topics", []):
+                topic = str(value).strip()
+                if topic:
+                    topics.append((topic, "config/published_topics.json"))
+        except (OSError, json.JSONDecodeError, AttributeError):
+            pass
+
+    for episode_path in (ROOT_DIR / "projects" / "episodes").glob("ep*/episode.json"):
+        try:
+            payload = json.loads(episode_path.read_text(encoding="utf-8"))
+        except (OSError, json.JSONDecodeError):
+            continue
+        title = str(payload.get("title") or "").strip()
+        if title:
+            topics.append((title, str(episode_path.relative_to(ROOT_DIR))))
+    return topics
+
+
+def check_duplicate_topic(topic: str, *, allow_similar: bool) -> dict:
+    normalized = normalize_topic(topic)
+    if len(normalized) < 5:
+        raise ValueError(
+            "주제가 너무 짧거나 모호합니다. 질문 형태의 구체적인 주제를 입력하세요."
         )
-    provider_text = ", ".join(result.available_media_providers) or "없음"
-    print(f"사용 가능한 미디어 공급자: {provider_text}")
-    for warning in result.warnings:
-        print(f"[경고] {warning}")
-    print("사전검사 통과")
-    return result
+
+    nearest: dict | None = None
+    for previous_topic, source in known_topics():
+        previous_normalized = normalize_topic(previous_topic)
+        if not previous_normalized:
+            continue
+        ratio = SequenceMatcher(None, normalized, previous_normalized).ratio()
+        containment = 0.0
+        if normalized in previous_normalized or previous_normalized in normalized:
+            containment = min(len(normalized), len(previous_normalized)) / max(
+                len(normalized), len(previous_normalized)
+            )
+        similarity = max(ratio, containment)
+        if nearest is None or similarity > nearest["similarity"]:
+            nearest = {
+                "topic": previous_topic,
+                "source": source,
+                "similarity": similarity,
+            }
+
+    threshold = 0.72
+    if nearest and nearest["similarity"] >= threshold and not allow_similar:
+        raise ValueError(
+            "이미 제작했거나 매우 유사한 주제입니다: "
+            f"'{nearest['topic']}' ({nearest['similarity']:.0%})"
+        )
+    return {
+        "status": "passed",
+        "threshold": threshold,
+        "nearestMatch": nearest,
+    }
 
 
-def build_candidate(
-    topic: str,
-    category: str,
-    angle: str,
-    preflight: TopicPreflightResult,
-) -> dict:
+def build_candidate(topic: str, category: str, angle: str) -> dict:
     normalized_topic = topic.strip()
     if not normalized_topic:
         raise ValueError("주제가 비어 있습니다.")
     return {
         "category": category,
+        "mode": "direct-topic",
         "candidates": [
             {
                 "rank": 1,
@@ -141,22 +187,44 @@ def build_candidate(
                 "topic": normalized_topic,
                 "angle": angle.strip(),
                 "score": 100,
-                "reasons": [
-                    "사용자가 직접 선택한 주제",
-                    "중복 및 제작 환경 사전검사 통과",
+                "reasons": ["사용자가 직접 선택한 주제"],
+                "search_queries": [
+                    normalized_topic,
+                    f"{normalized_topic} official source",
+                    f"{normalized_topic} research paper",
+                    f"{normalized_topic} fact check",
+                    f"{normalized_topic} image archive",
                 ],
-                "search_queries": preflight.research_queries,
-                "source_count": 0,
-                "sources": [],
-                "preflight_sources": [],
-                "preflight_media": {
-                    "status": "passed",
-                    "queries": preflight.media_queries,
-                    "providers": preflight.available_media_providers,
-                },
+                "production_ready": True,
+                "readiness_score": 100,
+                "readiness_checks": ["사용자 직접 선택 주제"],
             }
         ],
     }
+
+
+def run_topic_preflight(candidate_payload: dict) -> dict:
+    print("\n" + "=" * 62)
+    print("[단계] 출처와 미디어 실제 사전검증")
+    print("=" * 62)
+    result = CandidatePreflightService().filter_payload(candidate_payload, limit=1)
+    candidates = result.get("candidates")
+    if not isinstance(candidates, list) or not candidates:
+        rejected = (result.get("preflight") or {}).get("rejected") or []
+        reason = rejected[0].get("reason") if rejected else "검증 가능한 자료나 이미지 부족"
+        raise TopicPreflightError(f"주제 사전검증 실패: {reason}")
+
+    candidate = candidates[0]
+    source_count = int((candidate.get("source_preflight") or {}).get("documentCount", 0))
+    domain_count = int((candidate.get("source_preflight") or {}).get("domainCount", 0))
+    media_count = int((candidate.get("preflight_media") or {}).get("candidateCount", 0))
+    query_count = int(
+        (candidate.get("preflight_media") or {}).get("successfulQueryCount", 0)
+    )
+    print(f"검증 자료: {source_count}건 / 독립 출처: {domain_count}곳")
+    print(f"다운로드 가능한 이미지: {media_count}개 / 검색어: {query_count}개")
+    print("사전검증 통과")
+    return result
 
 
 def write_json(path: Path, payload: dict) -> None:
@@ -172,7 +240,13 @@ def main() -> int:
 
     try:
         require_generation_environment()
-        preflight = run_preflight(args)
+        duplicate_result = check_duplicate_topic(
+            args.topic,
+            allow_similar=args.allow_similar_topic,
+        )
+        verified_payload = run_topic_preflight(
+            build_candidate(args.topic, args.category, args.angle)
+        )
         episode_id = resolve_episode_id(args.episode)
         episode_dir = ROOT_DIR / "projects" / "episodes" / episode_id
         if episode_dir.exists():
@@ -184,18 +258,12 @@ def main() -> int:
         evidence_path = episode_dir / "evidence.json"
         episode_path = episode_dir / "episode.json"
         metadata_path = episode_dir / "metadata.json"
-        write_json(preflight_path, preflight.to_dict())
+        verified_payload["duplicateCheck"] = duplicate_result
+        write_json(preflight_path, verified_payload)
 
-        candidate = build_candidate(
-            args.topic,
-            args.category,
-            args.angle,
-            preflight,
-        )
         with tempfile.TemporaryDirectory(prefix="factory-topic-") as temp_dir:
             candidate_path = Path(temp_dir) / "candidate.json"
-            write_json(candidate_path, candidate)
-
+            write_json(candidate_path, verified_payload)
             run_step(
                 "제작 작업 생성",
                 [
