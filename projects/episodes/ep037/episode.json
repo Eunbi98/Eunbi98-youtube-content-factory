@@ -1,0 +1,76 @@
+{
+  "version": "1.0",
+  "episodeId": "ep037",
+  "channel": "science",
+  "title": "비 온 뒤 나는 그 냄새, 정체는 뭘까?",
+  "voice": "ko-KR-SunHiNeural",
+  "mediaSource": "rain falling on dry soil close up, wet earth after rain, raindrops hitting ground, petrichor nature real photo",
+  "theme": {
+    "backgroundColor": "#000000",
+    "titleColor": "#7CFFB2",
+    "captionColor": "#FFFFFF",
+    "accentColor": "#7CFFB2"
+  },
+  "scenes": [
+    {
+      "type": "hook",
+      "title": "비 냄새가 따로 있다?",
+      "narration": "비가 막 내리기 시작하면 흙에서 특유의 냄새가 올라옵니다. 그런데 이 냄새는 사실 빗물 자체의 냄새가 아닙니다.",
+      "keywords": [
+        "light rain falling on dry soil close up",
+        "first rain on dry ground real photo",
+        "wet earth rain nature close up"
+      ]
+    },
+    {
+      "type": "answer",
+      "title": "이름은 페트리코르",
+      "narration": "마른 땅에 비가 내릴 때 느껴지는 특유의 흙냄새를 페트리코르라고 부릅니다.",
+      "keywords": [
+        "rain on dry soil earthy smell real photo",
+        "wet soil after first rain close up",
+        "rainy ground nature macro"
+      ]
+    },
+    {
+      "type": "story",
+      "title": "흙과 식물이 냄새를 만든다",
+      "narration": "마른 땅에는 식물이 남긴 기름 성분과 흙 속 미생물이 만든 향기 성분이 쌓여 있습니다.",
+      "keywords": [
+        "dry soil plants after rain close up",
+        "forest floor wet soil rain real photo",
+        "soil microorganisms nature concept real photo"
+      ]
+    },
+    {
+      "type": "fact",
+      "title": "빗방울이 향을 공중으로",
+      "narration": "빗방울이 마른 흙에 떨어지면 작은 공기방울이 생겼다가 터지면서 아주 미세한 물방울을 공중으로 뿜어냅니다.",
+      "keywords": [
+        "raindrop hitting soil macro photography",
+        "rain splash dry ground close up",
+        "water droplet hitting porous surface macro"
+      ]
+    },
+    {
+      "type": "fact",
+      "title": "가벼운 비에서 더 잘 퍼진다",
+      "narration": "이 미세한 물방울이 흙의 향기 성분을 함께 실어 나릅니다. 연구에서는 폭우보다 약한 비에서 이런 입자가 더 잘 만들어졌습니다.",
+      "keywords": [
+        "light rain on soil close up real photo",
+        "gentle rain wet ground nature",
+        "raindrops on earth macro photography"
+      ]
+    },
+    {
+      "type": "ending",
+      "title": "비 냄새는 땅에서 온다",
+      "narration": "결국 우리가 좋아하는 비 온 뒤 냄새는 하늘에서 내려온 냄새가 아니라, 빗방울이 땅속 향을 공기 중으로 꺼내 올린 것입니다. 이 냄새 좋아하시나요?",
+      "keywords": [
+        "wet earth after rain nature real photo",
+        "rain stopped wet ground outdoors",
+        "fresh rain forest soil close up"
+      ]
+    }
+  ]
+}
