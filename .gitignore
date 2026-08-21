@@ -51,3 +51,6 @@ config/api_keys.json
 .deps/
 projects/episodes/*/timeline.json.queries.bak
 EP*_upload_metadata.txt
+projects/episodes/*/assets/
+projects/episodes/*/media_manifest_v7.json
+projects/episodes/*/media_queries.json
