@@ -1,0 +1,76 @@
+{
+  "version": "1.0",
+  "episodeId": "ep038",
+  "channel": "science",
+  "title": "샤워 후 거울에 왜 김이 서릴까?",
+  "voice": "ko-KR-SunHiNeural",
+  "mediaSource": "steamy bathroom mirror after hot shower, condensation on mirror, water droplets bathroom glass real photo",
+  "theme": {
+    "backgroundColor": "#000000",
+    "titleColor": "#7CFFB2",
+    "captionColor": "#FFFFFF",
+    "accentColor": "#7CFFB2"
+  },
+  "scenes": [
+    {
+      "type": "hook",
+      "title": "거울이 갑자기 뿌예지는 이유",
+      "narration": "뜨거운 물로 샤워하고 나오면 멀쩡하던 거울이 금세 뿌옇게 변합니다. 수증기가 거울에 붙어서일까요?",
+      "keywords": [
+        "steamy bathroom mirror after shower real photo",
+        "fogged bathroom mirror close up",
+        "bathroom mirror steam condensation"
+      ]
+    },
+    {
+      "type": "answer",
+      "title": "정체는 아주 작은 물방울",
+      "narration": "거울을 덮은 뿌연 김의 정체는 기체 상태의 수증기가 아니라, 거울 표면에 맺힌 아주 작은 물방울입니다.",
+      "keywords": [
+        "tiny water droplets on mirror macro",
+        "condensation droplets bathroom mirror",
+        "fogged glass water droplets close up"
+      ]
+    },
+    {
+      "type": "story",
+      "title": "따뜻한 공기가 물을 품는다",
+      "narration": "뜨거운 샤워를 하면 욕실 공기가 따뜻해지고, 공기 속에는 많은 수증기가 섞이게 됩니다.",
+      "keywords": [
+        "hot shower steam bathroom real photo",
+        "steamy bathroom shower",
+        "warm shower steam indoors"
+      ]
+    },
+    {
+      "type": "fact",
+      "title": "차가운 거울을 만나면",
+      "narration": "이 따뜻하고 습한 공기가 상대적으로 차가운 거울 표면을 만나면 식으면서 수증기의 일부가 액체 물로 변합니다.",
+      "keywords": [
+        "condensation forming on cold mirror",
+        "water droplets forming on bathroom glass",
+        "foggy mirror condensation close up"
+      ]
+    },
+    {
+      "type": "fact",
+      "title": "물방울이 빛을 흩뜨린다",
+      "narration": "수많은 작은 물방울은 거울에 들어오는 빛을 여러 방향으로 흩뜨립니다. 그래서 선명한 반사 대신 하얗고 뿌옇게 보입니다.",
+      "keywords": [
+        "fogged mirror light reflection real photo",
+        "condensation droplets on glass macro",
+        "steamed mirror blurry reflection"
+      ]
+    },
+    {
+      "type": "ending",
+      "title": "닦지 않고 없애는 방법",
+      "narration": "환풍기를 켜거나 문을 열어 습기를 낮추면 물방울이 다시 증발하면서 거울은 맑아집니다. 샤워할 때 거울 김 때문에 불편했던 적 있나요?",
+      "keywords": [
+        "clear bathroom mirror after steam",
+        "bathroom ventilation mirror real photo",
+        "clean bathroom mirror after shower"
+      ]
+    }
+  ]
+}
