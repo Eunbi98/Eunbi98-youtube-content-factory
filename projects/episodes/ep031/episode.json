@@ -1,0 +1,99 @@
+﻿{
+    "channel":  "science",
+    "episodeId":  "ep031",
+    "mediaSource":  "mosquito behavior research, mosquito carbon dioxide detection, human body odor and mosquito attraction, mosquito blood type study",
+    "scenes":  [
+                   {
+                       "evidenceIds":  [
+
+                                       ],
+                       "keywords":  [
+                                        "mosquito macro photography",
+                                        "mosquito flying close up",
+                                        "mosquito silhouette",
+                                        "mosquito scientific illustration"
+                                    ],
+                       "narration":  "같은 장소에 함께 있어도 유독 나만 모기에게 계속 물리는 것처럼 느껴질 때가 있습니다. 정말 모기는 사람을 골라 무는 걸까요?",
+                       "title":  "모기는 왜 나만 물릴까?",
+                       "type":  "hook"
+                   },
+                   {
+                       "evidenceIds":  [
+
+                                       ],
+                       "keywords":  [
+                                        "mosquito carbon dioxide detection illustration",
+                                        "human breathing carbon dioxide infographic",
+                                        "mosquito sensory system diagram",
+                                        "carbon dioxide molecules illustration"
+                                    ],
+                       "narration":  "정답은 그렇습니다. 모기는 사람이 내쉬는 이산화탄소를 감지해 먹잇감이 가까이에 있다는 사실을 알아냅니다.",
+                       "title":  "숨결을 따라오는 모기",
+                       "type":  "answer"
+                   },
+                   {
+                       "evidenceIds":  [
+
+                                       ],
+                       "keywords":  [
+                                        "human body odor infographic",
+                                        "mosquito smell detection illustration",
+                                        "human silhouette scent illustration",
+                                        "mosquito olfactory system diagram"
+                                    ],
+                       "narration":  "또한 사람마다 다른 피부 냄새와 체취도 중요한 기준입니다. 특정 냄새 성분이 많이 나는 사람은 모기에게 더 쉽게 발견될 수 있습니다.",
+                       "title":  "사람마다 다른 체취",
+                       "type":  "story"
+                   },
+                   {
+                       "evidenceIds":  [
+
+                                       ],
+                       "keywords":  [
+                                        "body heat thermal camera clothed person",
+                                        "exercise silhouette infographic",
+                                        "mosquito heat detection illustration",
+                                        "human temperature infographic"
+                                    ],
+                       "narration":  "운동을 했거나 체온이 높고 땀을 많이 흘린 사람도 모기의 표적이 되기 쉽습니다. 열과 땀 속 성분이 모기를 끌어들이기 때문입니다.",
+                       "title":  "체온과 땀도 신호가 된다",
+                       "type":  "fact"
+                   },
+                   {
+                       "evidenceIds":  [
+
+                                       ],
+                       "keywords":  [
+                                        "blood type O A infographic",
+                                        "red blood cells illustration",
+                                        "blood type comparison diagram",
+                                        "medical blood illustration"
+                                    ],
+                       "narration":  "일부 연구에서는 O형이 A형보다 모기에게 더 자주 선택되는 경향이 관찰됐습니다. 하지만 혈액형만으로 모기에 물릴 가능성을 단정할 수는 없습니다.",
+                       "title":  "혈액형도 영향을 줄까?",
+                       "type":  "fact"
+                   },
+                   {
+                       "evidenceIds":  [
+
+                                       ],
+                       "keywords":  [
+                                        "mosquito flying macro",
+                                        "mosquito scientific illustration",
+                                        "carbon dioxide body heat infographic",
+                                        "mosquito detection infographic"
+                                    ],
+                       "narration":  "결국 모기는 피 자체보다 이산화탄소와 체취 그리고 체온 같은 신호를 따라 사람을 찾습니다. 여러분은 모기에게 자주 물리는 편인가요?",
+                       "title":  "모기가 사람을 고르는 기준",
+                       "type":  "ending"
+                   }
+               ],
+    "theme":  {
+                  "accentColor":  "#FFB300",
+                  "backgroundColor":  "#222222",
+                  "captionColor":  "#FFFFFF",
+                  "titleColor":  "#7BFEB4"
+              },
+    "title":  "모기는 왜 나만 물릴까?",
+    "version":  "1.0"
+}
