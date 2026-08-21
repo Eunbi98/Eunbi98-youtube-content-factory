@@ -1,0 +1,76 @@
+{
+  "version": "1.0",
+  "episodeId": "ep040",
+  "channel": "science",
+  "title": "탄산음료는 왜 흔들면 넘칠까?",
+  "voice": "ko-KR-SunHiNeural",
+  "mediaSource": "shaken soda bottle opening foam, carbonated drink bubbles, soda bottle fizz overflow real photo",
+  "theme": {
+    "backgroundColor": "#000000",
+    "titleColor": "#7CFFB2",
+    "captionColor": "#FFFFFF",
+    "accentColor": "#7CFFB2"
+  },
+  "scenes": [
+    {
+      "type": "hook",
+      "title": "왜 흔들면 폭발하듯 넘칠까?",
+      "narration": "탄산음료를 세게 흔든 뒤 바로 열면 거품이 한꺼번에 솟구칩니다. 병 안의 압력이 갑자기 더 세져서일까요?",
+      "keywords": [
+        "shaken soda bottle opening foam real photo",
+        "soda bottle fizz overflow close up",
+        "carbonated drink foam explosion"
+      ]
+    },
+    {
+      "type": "answer",
+      "title": "핵심은 기포가 많아지는 것",
+      "narration": "흔들었다고 병 전체의 압력이 크게 늘어나는 것은 아닙니다. 대신 액체 안에 이산화탄소가 빠져나올 작은 기포들이 훨씬 많이 생깁니다.",
+      "keywords": [
+        "carbonated drink bubbles bottle close up",
+        "soda bubbles macro real photo",
+        "fizzy drink bubbles inside bottle"
+      ]
+    },
+    {
+      "type": "story",
+      "title": "탄산은 압력 때문에 녹아 있다",
+      "narration": "탄산음료 안의 이산화탄소는 병이 닫힌 상태의 높은 압력 덕분에 액체 속에 많이 녹아 있습니다.",
+      "keywords": [
+        "sealed soda bottle carbonated drink real photo",
+        "carbonated beverage bottle bubbles",
+        "soda bottle close up kitchen"
+      ]
+    },
+    {
+      "type": "fact",
+      "title": "흔들면 기포 씨앗이 생긴다",
+      "narration": "병을 흔들면 액체와 공기가 섞이고 벽면 곳곳에 작은 기포가 생깁니다. 이 기포들은 이산화탄소가 빠져나오기 쉬운 출발점이 됩니다.",
+      "keywords": [
+        "shaking soda bottle bubbles real photo",
+        "soda bottle foam bubbles inside",
+        "carbonated drink agitation bubbles"
+      ]
+    },
+    {
+      "type": "fact",
+      "title": "뚜껑을 열면 압력이 떨어진다",
+      "narration": "뚜껑을 여는 순간 병 안 압력이 급격히 낮아지면서 녹아 있던 이산화탄소가 수많은 기포로 빠르게 모여들고 거품이 커집니다.",
+      "keywords": [
+        "opening soda bottle fizz close up",
+        "carbonated drink pressure release foam",
+        "soda cap opening bubbles real photo"
+      ]
+    },
+    {
+      "type": "ending",
+      "title": "넘치는 건 압력보다 기포 때문",
+      "narration": "결국 흔든 탄산음료가 넘치는 핵심은 압력이 더 세져서가 아니라, 이산화탄소가 빠져나올 기포가 많아졌기 때문입니다. 흔든 뒤 바로 열어본 적 있나요?",
+      "keywords": [
+        "soda foam overflowing bottle real photo",
+        "fizzy drink spill close up",
+        "carbonated beverage foam bottle"
+      ]
+    }
+  ]
+}
