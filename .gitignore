@@ -32,10 +32,6 @@ Thumbs.db
 
 # Generated outputs
 output/
-# Generated outputs
-output/
-
-output/
 
 # Generated timelines
 projects/episodes/*/timeline.json
@@ -53,3 +49,5 @@ projects/episodes/*/timeline.json.bak
 config/api_keys.json
 .venv/
 .deps/
+projects/episodes/*/timeline.json.queries.bak
+EP*_upload_metadata.txt
