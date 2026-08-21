@@ -1,0 +1,76 @@
+{
+  "version": "1.0",
+  "episodeId": "ep039",
+  "channel": "science",
+  "title": "빵을 냉장고에 넣으면 왜 더 빨리 딱딱해질까?",
+  "voice": "ko-KR-SunHiNeural",
+  "mediaSource": "bread loaf refrigerator storage, stale bread slices, fresh bread kitchen real photo",
+  "theme": {
+    "backgroundColor": "#000000",
+    "titleColor": "#7CFFB2",
+    "captionColor": "#FFFFFF",
+    "accentColor": "#7CFFB2"
+  },
+  "scenes": [
+    {
+      "type": "hook",
+      "title": "냉장고가 빵을 더 빨리 굳힌다?",
+      "narration": "남은 빵을 오래 두려고 냉장고에 넣었는데 오히려 더 빨리 딱딱해진 적 있나요? 우연이 아닙니다.",
+      "keywords": [
+        "bread loaf inside refrigerator real photo",
+        "bread slices refrigerator shelf",
+        "stale bread kitchen close up"
+      ]
+    },
+    {
+      "type": "answer",
+      "title": "핵심은 전분의 노화",
+      "narration": "빵이 굳는 핵심 원인은 단순히 수분이 마르는 것만이 아닙니다. 빵 속 전분 구조가 다시 정돈되는 전분 노화가 큰 역할을 합니다.",
+      "keywords": [
+        "bread crumb close up real photo",
+        "stale bread texture macro",
+        "bread slice crumb structure"
+      ]
+    },
+    {
+      "type": "story",
+      "title": "구울 때 전분이 부드러워진다",
+      "narration": "빵을 구울 때 전분은 물과 열을 만나 부드럽고 촉촉한 구조로 바뀝니다. 그래서 갓 구운 빵은 말랑합니다.",
+      "keywords": [
+        "fresh baked bread steaming real photo",
+        "soft bread crumb close up",
+        "fresh bread loaf kitchen"
+      ]
+    },
+    {
+      "type": "fact",
+      "title": "식으면 다시 정렬된다",
+      "narration": "빵이 식기 시작하면 전분 분자들이 다시 서로 정렬하고 결정 구조를 만들면서 빵은 점점 단단해집니다.",
+      "keywords": [
+        "stale bread slices hard texture real photo",
+        "dry bread close up kitchen",
+        "old bread loaf sliced"
+      ]
+    },
+    {
+      "type": "fact",
+      "title": "냉장 온도에서 더 빨라진다",
+      "narration": "냉장고처럼 차갑지만 얼지는 않는 온도에서는 이런 변화가 빠르게 진행될 수 있어 빵이 상온보다 빨리 퍽퍽해질 수 있습니다.",
+      "keywords": [
+        "bread stored in refrigerator real photo",
+        "refrigerated bread slices kitchen",
+        "bread refrigerator shelf close up"
+      ]
+    },
+    {
+      "type": "ending",
+      "title": "오래 둘 거면 냉동",
+      "narration": "빵을 오래 보관하려면 냉장보다 냉동이 낫습니다. 먹을 만큼 나눠 얼렸다가 데우면 식감을 훨씬 잘 지킬 수 있습니다. 빵을 냉장 보관하고 있었나요?",
+      "keywords": [
+        "bread slices freezer storage real photo",
+        "frozen bread bag freezer",
+        "toasted bread after freezing kitchen"
+      ]
+    }
+  ]
+}
