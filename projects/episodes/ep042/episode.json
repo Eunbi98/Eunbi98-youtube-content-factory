@@ -1,0 +1,76 @@
+{
+  "version": "1.0",
+  "episodeId": "ep042",
+  "channel": "science",
+  "title": "거울은 왜 좌우만 바뀌어 보일까?",
+  "voice": "ko-KR-SunHiNeural",
+  "mediaSource": "person looking in mirror reflection, mirror left right illusion, hand touching mirror real photo",
+  "theme": {
+    "backgroundColor": "#000000",
+    "titleColor": "#7CFFB2",
+    "captionColor": "#FFFFFF",
+    "accentColor": "#7CFFB2"
+  },
+  "scenes": [
+    {
+      "type": "hook",
+      "title": "거울은 정말 좌우를 바꿀까?",
+      "narration": "거울을 보면 오른손을 들었는데 거울 속 사람은 왼손을 든 것처럼 보입니다. 그런데 이상하게 위아래는 그대로입니다. 왜 좌우만 바뀌는 걸까요?",
+      "keywords": [
+        "person raising hand in mirror real photo",
+        "mirror reflection hand left right",
+        "person standing in front of mirror"
+      ]
+    },
+    {
+      "type": "answer",
+      "title": "사실 좌우를 바꾸지 않는다",
+      "narration": "결론부터 말하면 거울은 좌우를 바꾸지 않습니다. 거울이 실제로 뒤집는 방향은 거울을 향한 앞뒤 방향입니다.",
+      "keywords": [
+        "person facing mirror reflection real photo",
+        "mirror reflection front view person",
+        "hand touching mirror close up"
+      ]
+    },
+    {
+      "type": "story",
+      "title": "왼쪽은 그대로 왼쪽이다",
+      "narration": "거울 앞에서 왼쪽에 있는 물건은 거울 속에서도 왼쪽에 보이고, 머리는 위에 발은 아래에 그대로 있습니다. 좌우와 위아래 위치 자체는 바뀌지 않습니다.",
+      "keywords": [
+        "person mirror objects left right real photo",
+        "mirror reflection room symmetrical",
+        "standing person mirror full body"
+      ]
+    },
+    {
+      "type": "fact",
+      "title": "앞과 뒤가 뒤집힌다",
+      "narration": "내 코는 거울 쪽을 향하지만 거울 속 코는 나를 향합니다. 즉 거울에서 멀어지는 방향과 가까워지는 방향이 서로 반대로 보이는 겁니다.",
+      "keywords": [
+        "face close to mirror side view real photo",
+        "person nose near mirror reflection",
+        "hand pressing against mirror reflection"
+      ]
+    },
+    {
+      "type": "fact",
+      "title": "우리가 몸을 돌려 비교해서 헷갈린다",
+      "narration": "우리는 거울 속 사람을 나와 마주 선 또 다른 사람처럼 생각합니다. 누군가와 마주 보려면 몸을 좌우로 반 바퀴 돌리기 때문에 오른쪽과 왼쪽이 바뀐 것처럼 느껴집니다.",
+      "keywords": [
+        "two people facing each other left right hands real photo",
+        "person facing mirror comparison",
+        "mirror reflection person opposite hand"
+      ]
+    },
+    {
+      "type": "ending",
+      "title": "거울은 좌우가 아니라 앞뒤를 뒤집는다",
+      "narration": "그래서 거울이 좌우만 바꾼다는 말은 정확하지 않습니다. 거울은 앞뒤 방향을 반사하고, 우리 뇌가 그것을 좌우 반전처럼 해석하는 겁니다. 거울을 다시 보면 조금 다르게 보일 겁니다.",
+      "keywords": [
+        "person looking at mirror reflection real photo",
+        "mirror hand reflection close up",
+        "full body mirror reflection indoors"
+      ]
+    }
+  ]
+}
