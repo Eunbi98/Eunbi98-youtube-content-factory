@@ -1,0 +1,76 @@
+{
+  "version": "1.0",
+  "episodeId": "ep041",
+  "channel": "science",
+  "title": "같은 온도인데 금속은 왜 나무보다 차갑게 느껴질까?",
+  "voice": "ko-KR-SunHiNeural",
+  "mediaSource": "hand touching metal and wood surface comparison, metal table wooden table same room temperature real photo, thermal conductivity everyday objects",
+  "theme": {
+    "backgroundColor": "#000000",
+    "titleColor": "#7CFFB2",
+    "captionColor": "#FFFFFF",
+    "accentColor": "#7CFFB2"
+  },
+  "scenes": [
+    {
+      "type": "hook",
+      "title": "같은 방에 있었는데 왜 금속만 차갑지?",
+      "narration": "같은 방에 오래 둔 금속과 나무를 만져보면 금속이 훨씬 차갑게 느껴집니다. 그런데 실제 온도는 거의 같을 수 있습니다.",
+      "keywords": [
+        "hand touching metal and wood side by side real photo",
+        "metal surface wooden surface comparison hand",
+        "metal chair wood chair indoor real photo"
+      ]
+    },
+    {
+      "type": "answer",
+      "title": "우리가 느끼는 건 온도보다 열의 이동",
+      "narration": "손은 물체의 온도 자체를 직접 읽는 온도계가 아닙니다. 피부에서 열이 얼마나 빠르게 빠져나가는지를 크게 느낍니다.",
+      "keywords": [
+        "hand touching metal surface close up real photo",
+        "human hand metal table indoor",
+        "finger touching wooden surface close up"
+      ]
+    },
+    {
+      "type": "story",
+      "title": "손이 물체보다 더 따뜻하다",
+      "narration": "실내에서는 보통 손의 피부가 금속이나 나무보다 따뜻합니다. 그래서 손을 대는 순간 열은 손에서 물체 쪽으로 이동합니다.",
+      "keywords": [
+        "hand on metal table close up real photo",
+        "hand touching wood table indoor",
+        "warm hand touching cool object"
+      ]
+    },
+    {
+      "type": "fact",
+      "title": "금속은 열을 빠르게 가져간다",
+      "narration": "금속은 열전도율이 높아서 접촉한 부분의 열을 빠르게 주변으로 퍼뜨립니다. 그만큼 손에서도 열이 계속 빠르게 빠져나갑니다.",
+      "keywords": [
+        "metal spoon hand close up real photo",
+        "metal countertop hand touching",
+        "steel surface hand indoor close up"
+      ]
+    },
+    {
+      "type": "fact",
+      "title": "나무는 열 이동이 느리다",
+      "narration": "반대로 나무는 열전도율이 낮아 접촉면이 금방 따뜻해지고 열이 멀리 퍼지는 속도도 느립니다. 그래서 손의 열 손실이 적습니다.",
+      "keywords": [
+        "hand touching wooden table close up real photo",
+        "wood surface warm touch hand",
+        "wooden spoon hand kitchen real photo"
+      ]
+    },
+    {
+      "type": "ending",
+      "title": "차가움의 정체는 열전도율",
+      "narration": "결국 같은 온도라도 금속이 더 차갑게 느껴지는 이유는 손의 열을 더 빨리 빼앗아가기 때문입니다. 다음에 금속과 나무를 동시에 만져보세요.",
+      "keywords": [
+        "hand touching metal and wood comparison real photo",
+        "metal wood objects side by side indoor",
+        "finger touching steel and wooden surfaces"
+      ]
+    }
+  ]
+}
