@@ -1,0 +1,76 @@
+{
+  "version": "1.0",
+  "episodeId": "ep043",
+  "channel": "science",
+  "title": "잔디밭에 나타난 완벽한 버섯 원, 누가 만든 걸까?",
+  "voice": "ko-KR-SunHiNeural",
+  "mediaSource": "fairy ring mushrooms grass lawn circle real photo, mushroom ring in field aerial view, circular mushrooms lawn nature real photo",
+  "theme": {
+    "backgroundColor": "#000000",
+    "titleColor": "#7CFFB2",
+    "captionColor": "#FFFFFF",
+    "accentColor": "#7CFFB2"
+  },
+  "scenes": [
+    {
+      "type": "hook",
+      "title": "누가 버섯을 원으로 심어놓은 걸까?",
+      "narration": "잔디밭에 버섯이 거의 완벽한 원을 만들며 자라는 경우가 있습니다. 누가 일부러 심어놓은 것처럼 보이죠.",
+      "keywords": [
+        "fairy ring mushrooms lawn real photo",
+        "perfect mushroom circle grass field",
+        "mushroom ring aerial view lawn"
+      ]
+    },
+    {
+      "type": "answer",
+      "title": "정답은 땅속에 숨어 있다",
+      "narration": "비밀은 버섯 자체가 아니라 땅속에 퍼져 있는 균사입니다. 이 균사가 중심에서 바깥쪽으로 자라며 원을 넓혀갑니다.",
+      "keywords": [
+        "fungal mycelium underground illustration photo reference",
+        "mushroom mycelium soil close up",
+        "fungus roots soil mushroom real photo"
+      ]
+    },
+    {
+      "type": "story",
+      "title": "균사는 사방으로 퍼진다",
+      "narration": "한 지점에서 시작한 균사는 먹이를 찾으며 사방으로 비슷한 속도로 퍼집니다. 그래서 성장 경계가 점점 둥근 형태가 됩니다.",
+      "keywords": [
+        "mushroom ring expanding grass real photo",
+        "circular fungal growth lawn",
+        "fairy ring grass field close up"
+      ]
+    },
+    {
+      "type": "fact",
+      "title": "버섯은 가장자리에서 나온다",
+      "narration": "가운데쪽의 영양분이 줄어들면 활발히 자라는 부분은 바깥쪽으로 이동합니다. 그리고 그 가장자리에서 버섯이 올라옵니다.",
+      "keywords": [
+        "mushrooms growing around circle edge lawn",
+        "fairy ring mushrooms edge grass",
+        "circular mushroom formation field real photo"
+      ]
+    },
+    {
+      "type": "fact",
+      "title": "원은 해마다 더 커질 수 있다",
+      "narration": "조건이 맞으면 균사는 계속 바깥으로 퍼지기 때문에 버섯 원도 해마다 조금씩 커질 수 있습니다.",
+      "keywords": [
+        "large fairy ring mushrooms field real photo",
+        "wide mushroom circle grass landscape",
+        "old fairy ring lawn aerial"
+      ]
+    },
+    {
+      "type": "ending",
+      "title": "마법진이 아니라 균사의 성장 흔적",
+      "narration": "결국 버섯 원은 누가 만든 표시가 아니라 땅속 균사가 퍼져나간 흔적입니다. 그래서 영어로는 페어리 링이라고도 부릅니다.",
+      "keywords": [
+        "fairy ring mushrooms sunset field real photo",
+        "mushroom circle lawn dramatic real photo",
+        "fairy ring nature grass mushrooms"
+      ]
+    }
+  ]
+}
