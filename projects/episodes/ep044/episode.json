@@ -1,0 +1,76 @@
+{
+  "version": "1.0",
+  "episodeId": "ep044",
+  "channel": "science",
+  "title": "왜 어떤 사람만 모기에 유독 잘 물릴까?",
+  "voice": "ko-KR-SunHiNeural",
+  "mediaSource": "mosquito landing on human skin, people outdoors mosquitoes, mosquito bite close up real photo",
+  "theme": {
+    "backgroundColor": "#000000",
+    "titleColor": "#7CFFB2",
+    "captionColor": "#FFFFFF",
+    "accentColor": "#7CFFB2"
+  },
+  "scenes": [
+    {
+      "type": "hook",
+      "title": "같이 있어도 왜 나만 물릴까?",
+      "narration": "같은 곳에 있는데 유독 한 사람만 모기에 계속 물릴 때가 있습니다. 정말 모기가 사람을 가려서 무는 걸까요?",
+      "keywords": [
+        "mosquito biting human arm close up real photo",
+        "mosquito landing on skin macro",
+        "people outdoors mosquito bites"
+      ]
+    },
+    {
+      "type": "answer",
+      "title": "모기는 사람 냄새를 구별한다",
+      "narration": "연구에 따르면 모기는 사람마다 다른 피부 냄새를 구별하고, 특정 사람에게 훨씬 더 강하게 끌릴 수 있습니다.",
+      "keywords": [
+        "mosquito near human skin macro real photo",
+        "mosquito antenna close up",
+        "human skin mosquito attraction"
+      ]
+    },
+    {
+      "type": "story",
+      "title": "차이는 피부의 화학 성분",
+      "narration": "특히 모기에 잘 물리는 사람의 피부에서는 카복실산이라는 냄새 성분이 더 많이 발견됐습니다.",
+      "keywords": [
+        "human skin close up real photo",
+        "sweat skin macro human arm",
+        "mosquito human scent concept real photo"
+      ]
+    },
+    {
+      "type": "fact",
+      "title": "모기는 여러 단서를 함께 본다",
+      "narration": "모기는 피부 냄새뿐 아니라 우리가 내뿜는 이산화탄소와 체온 같은 단서도 함께 이용해 사람을 찾습니다.",
+      "keywords": [
+        "mosquito flying toward person outdoors",
+        "human breathing outdoors mosquito concept",
+        "mosquito infrared human body heat concept"
+      ]
+    },
+    {
+      "type": "fact",
+      "title": "모기 자석은 오래 유지되기도 한다",
+      "narration": "흥미롭게도 사람별 모기 선호 차이는 몇 달에서 몇 년 동안 비교적 안정적으로 유지된 연구 결과도 있습니다.",
+      "keywords": [
+        "mosquito bite marks human arm real photo",
+        "person scratching mosquito bite arm",
+        "mosquito on forearm close up"
+      ]
+    },
+    {
+      "type": "ending",
+      "title": "진짜 차이는 피부 냄새일 수 있다",
+      "narration": "결국 모기에 유독 잘 물리는 건 단순한 기분 탓이 아닐 수 있습니다. 사람마다 다른 피부 냄새가 모기에게는 꽤 중요한 신호입니다.",
+      "keywords": [
+        "mosquito landing on human arm macro real photo",
+        "mosquito bite human skin close up",
+        "person swatting mosquito outdoors"
+      ]
+    }
+  ]
+}
