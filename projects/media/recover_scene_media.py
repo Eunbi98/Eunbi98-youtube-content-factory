@@ -45,6 +45,13 @@ def recover_missing_scene_media(*, timeline_path: Path, assets_dir: Path) -> lis
     if not isinstance(scenes, list):
         raise SceneMediaRecoveryError("Timeline scenes가 배열이 아닙니다.")
 
+    raw_episode_id = timeline.get("episodeId")
+    episode_id = (
+        raw_episode_id.strip()
+        if isinstance(raw_episode_id, str) and raw_episode_id.strip()
+        else assets_dir.parent.name
+    )
+
     valid: list[tuple[int, Path]] = []
     missing: list[int] = []
     for index, scene in enumerate(scenes):
@@ -74,7 +81,7 @@ def recover_missing_scene_media(*, timeline_path: Path, assets_dir: Path) -> lis
         shutil.copy2(source, destination)
         scene["media"] = {
             "type": "video" if extension in {".mp4", ".mov", ".webm"} else "image",
-            "src": f"assets/{destination.name}",
+            "src": f"{episode_id}/{destination.name}",
             "fit": "cover",
             "fallback": True,
             "fallbackSource": source.name,
