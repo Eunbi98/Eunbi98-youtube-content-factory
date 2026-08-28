@@ -1,0 +1,76 @@
+{
+  "version": "1.0",
+  "episodeId": "ep048",
+  "channel": "science",
+  "title": "강아지는 주인이 눈을 깜빡이면 따라 깜빡인다?",
+  "voice": "ko-KR-SunHiNeural",
+  "mediaSource": "dog blinking at owner close up, dog human eye contact, pet communication research, dog facial expression",
+  "theme": {
+    "backgroundColor": "#0C0C0C",
+    "titleColor": "#F2E8CF",
+    "captionColor": "#FFFFFF",
+    "accentColor": "#F2E8CF"
+  },
+  "scenes": [
+    {
+      "type": "hook",
+      "title": "강아지가 당신 눈을 따라 깜빡인다면?",
+      "narration": "강아지가 주인의 눈 깜빡임을 보고 더 자주 눈을 깜빡인다는 연구 결과가 나왔습니다. 단순한 반사 행동이 아닐 가능성도 제기됐습니다.",
+      "keywords": [
+        "dog blinking owner close up real photo",
+        "dog eye contact human face",
+        "pet dog facial expression close up"
+      ]
+    },
+    {
+      "type": "answer",
+      "title": "주인이 깜빡일 때만 반응했다",
+      "narration": "연구진은 서른다섯 마리의 강아지에게 주인과 낯선 사람의 영상을 보여줬습니다. 주인이 눈을 깜빡이는 영상을 볼 때 강아지의 눈 깜빡임 횟수가 늘었습니다.",
+      "keywords": [
+        "dog watching owner video experiment",
+        "dog behavior research human face video",
+        "pet cognition experiment dog screen"
+      ]
+    },
+    {
+      "type": "story",
+      "title": "낯선 사람에게는 달랐다",
+      "narration": "흥미로운 점은 낯선 사람이 눈을 깜빡였을 때는 같은 변화가 나타나지 않았다는 겁니다. 즉 단순히 움직이는 눈을 따라 한 것만은 아닐 수 있습니다.",
+      "keywords": [
+        "dog looking at stranger face",
+        "dog human interaction experiment",
+        "dog attentive face close up"
+      ]
+    },
+    {
+      "type": "fact",
+      "title": "눈 깜빡임에도 사회적 의미가 있을까",
+      "narration": "눈 깜빡임은 원래 눈을 보호하는 생리 현상입니다. 하지만 연구진은 사람과 강아지 사이에서는 이 행동이 관심이나 친밀감을 나타내는 사회적 신호로도 작용할 가능성을 보고 있습니다.",
+      "keywords": [
+        "dog owner bonding eye contact",
+        "dog blinking communication close up",
+        "human dog social interaction face"
+      ]
+    },
+    {
+      "type": "fact",
+      "title": "사랑한다는 뜻으로 단정할 수는 없다",
+      "narration": "다만 강아지가 눈을 깜빡였다고 해서 곧바로 사랑의 표현이라고 해석할 수는 없습니다. 연구진도 의도적인 의사소통인지까지는 아직 확인되지 않았다고 설명합니다.",
+      "keywords": [
+        "dog calm eye contact owner",
+        "dog facial behavior research",
+        "dog blinking close up neutral"
+      ]
+    },
+    {
+      "type": "ending",
+      "title": "강아지는 생각보다 작은 신호도 읽는다",
+      "narration": "강아지는 목소리나 손짓뿐 아니라 우리가 무심코 하는 눈 깜빡임까지 구분하고 있을지 모릅니다. 다음에 눈이 마주친다면 천천히 한번 깜빡여 보세요.",
+      "keywords": [
+        "dog owner eye contact warm close up",
+        "pet dog blinking at human",
+        "dog human bond cinematic close up"
+      ]
+    }
+  ]
+}
