@@ -1,0 +1,76 @@
+{
+  "version": "1.0",
+  "episodeId": "ep049",
+  "channel": "science",
+  "title": "190년 된 DNA가 찾아낸 숨은 천산갑 종",
+  "voice": "ko-KR-SunHiNeural",
+  "mediaSource": "pangolin close up scales, Himalayan pangolin Nepal India, museum pangolin specimen DNA research",
+  "theme": {
+    "backgroundColor": "#0B0D0C",
+    "titleColor": "#E8D7A8",
+    "captionColor": "#FFFFFF",
+    "accentColor": "#E8D7A8"
+  },
+  "scenes": [
+    {
+      "type": "hook",
+      "title": "190년 전 표본이 새 종을 찾아냈다",
+      "narration": "박물관에 거의 190년 동안 보관돼 있던 천산갑 표본의 DNA가, 지금까지 제대로 구분되지 않았던 숨은 종의 정체를 밝혀냈습니다.",
+      "keywords": [
+        "pangolin museum specimen real photo",
+        "pangolin close up scales wildlife",
+        "historical zoology specimen museum pangolin"
+      ]
+    },
+    {
+      "type": "answer",
+      "title": "1836년 표본에서 DNA를 읽었다",
+      "narration": "연구진은 1836년에 수집된 역사적 천산갑 표본에서 DNA를 추출했습니다. 그리고 그 유전정보를 네팔과 북인도에서 발견된 현대 개체들과 비교했습니다.",
+      "keywords": [
+        "pangolin museum specimen research",
+        "DNA laboratory museum specimen animal",
+        "natural history museum pangolin collection"
+      ]
+    },
+    {
+      "type": "story",
+      "title": "현대 개체와 정확히 연결됐다",
+      "narration": "비교 결과 히말라야 지역의 개체들이 바로 이 오래된 표본과 같은 계통이라는 사실이 확인됐습니다. 예전에 따로 이름 붙였던 개체들도 같은 종으로 정리됐습니다.",
+      "keywords": [
+        "Himalayan pangolin Nepal wildlife",
+        "pangolin India forest real photo",
+        "Asian pangolin walking wildlife"
+      ]
+    },
+    {
+      "type": "fact",
+      "title": "이름은 마니스 아우리타",
+      "narration": "이 종의 학명은 마니스 아우리타입니다. 한때 중국천산갑의 아종 정도로 여겨졌지만, 유전체와 형태 분석을 통해 별도의 종으로 다시 인정됐습니다.",
+      "keywords": [
+        "Manis aurita pangolin real photo",
+        "Himalayan pangolin close up",
+        "Asian pangolin scales detailed"
+      ]
+    },
+    {
+      "type": "fact",
+      "title": "새 종 구분이 중요한 이유",
+      "narration": "천산갑은 세계에서 가장 심하게 불법 거래되는 포유류 가운데 하나입니다. 종을 정확히 구분하면 압수된 비늘이 어느 지역과 종에서 왔는지 추적하는 데 도움이 될 수 있습니다.",
+      "keywords": [
+        "pangolin conservation wildlife rescue",
+        "pangolin scales close up conservation",
+        "pangolin wildlife protection real photo"
+      ]
+    },
+    {
+      "type": "ending",
+      "title": "박물관 서랍 속 DNA가 생명을 지킬 수도 있다",
+      "narration": "거의 두 세기 전에 수집된 표본 하나가 오늘날 멸종 위기 동물을 구분하는 열쇠가 됐습니다. 오래된 박물관 표본이 미래의 보전 연구에 다시 쓰이고 있는 겁니다.",
+      "keywords": [
+        "pangolin conservation close up wildlife",
+        "museum natural history specimen research",
+        "pangolin forest cinematic real photo"
+      ]
+    }
+  ]
+}
