@@ -1,0 +1,76 @@
+{
+  "version": "1.0",
+  "episodeId": "ep046",
+  "channel": "history",
+  "title": "스톤헨지보다 1,000년 오래된 거대 유적이 발견됐다",
+  "voice": "ko-KR-SunHiNeural",
+  "mediaSource": "Chleby Czech Republic Neolithic circular enclosure archaeological excavation, prehistoric ritual sanctuary aerial view, ancient astronomical monument reconstruction",
+  "theme": {
+    "backgroundColor": "#0B0A08",
+    "titleColor": "#F4D58D",
+    "captionColor": "#FFFFFF",
+    "accentColor": "#F4D58D"
+  },
+  "scenes": [
+    {
+      "type": "hook",
+      "title": "스톤헨지보다 1,000년 먼저 만들었다",
+      "narration": "체코에서 스톤헨지보다 약 천 년이나 오래된 거대한 선사시대 유적이 확인됐습니다. 무려 6천5백 년 전 사람들이 만든 구조물입니다.",
+      "keywords": [
+        "Chleby Czech Republic archaeological excavation aerial view",
+        "Neolithic circular enclosure Czech Republic real photo",
+        "prehistoric monument excavation field aerial"
+      ]
+    },
+    {
+      "type": "answer",
+      "title": "지름 230미터의 거대한 원",
+      "narration": "체코 중부 흘레비 지역의 이 유적은 지름 약 230미터의 거의 원형 구조입니다. 둘레에는 깊이 2.5미터가 넘는 도랑까지 만들어져 있었습니다.",
+      "keywords": [
+        "Chleby Neolithic enclosure aerial view",
+        "circular archaeological earthwork aerial real photo",
+        "prehistoric ditch excavation Czech Republic"
+      ]
+    },
+    {
+      "type": "story",
+      "title": "12개의 입구는 우연이 아니었다",
+      "narration": "더 놀라운 건 둘레에 난 열두 개의 입구입니다. 연구진은 입구 배치를 분석한 결과, 단순히 편하게 드나들기 위해 만든 배열이 아니라고 봤습니다.",
+      "keywords": [
+        "archaeological site plan circular enclosure twelve entrances",
+        "ground penetrating radar circular prehistoric enclosure",
+        "Neolithic enclosure reconstruction top view"
+      ]
+    },
+    {
+      "type": "fact",
+      "title": "태양과 달을 관측한 거대한 장치",
+      "narration": "입구와 관측 지점의 방향은 하지의 일출과 동지의 일몰, 그리고 달의 중요한 움직임과 연결됩니다. 일종의 거대한 천문 관측 기준점이었던 셈입니다.",
+      "keywords": [
+        "prehistoric solar alignment monument sunrise reconstruction",
+        "ancient circular enclosure solstice sunrise concept",
+        "Neolithic astronomy sun moon monument reconstruction"
+      ]
+    },
+    {
+      "type": "fact",
+      "title": "의식 장소였다는 흔적도 남았다",
+      "narration": "현장에서는 황소의 두개골과 뿔도 발견됐습니다. 연구진은 당시 농경 사회에서 황소가 중요한 상징이었던 만큼, 이곳이 의식과 천문 관측이 결합된 장소였을 가능성을 보고 있습니다.",
+      "keywords": [
+        "Neolithic bull skull archaeology museum",
+        "prehistoric ritual bull horns archaeological find",
+        "Neolithic farming ritual reconstruction Europe"
+      ]
+    },
+    {
+      "type": "ending",
+      "title": "돌이 없어도 거대한 천문 유적이었다",
+      "narration": "스톤헨지처럼 거대한 돌기둥은 남아 있지 않지만, 6천5백 년 전 사람들은 이미 태양과 달의 주기를 읽도록 거대한 공간을 설계했습니다. 우리가 생각한 선사시대보다 훨씬 정교했을지도 모릅니다.",
+      "keywords": [
+        "prehistoric circular sanctuary reconstruction sunset",
+        "Neolithic astronomical enclosure aerial reconstruction",
+        "ancient European ritual landscape cinematic reconstruction"
+      ]
+    }
+  ]
+}
