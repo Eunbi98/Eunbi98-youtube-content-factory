@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import argparse
+import os
 import shutil
 import sys
 from pathlib import Path
@@ -23,6 +24,18 @@ from recover_scene_media import (  # noqa: E402
 from runner_factory_core import FactoryCore, FactoryExecutionError  # noqa: E402
 
 
+LANGUAGE_SETTINGS = {
+    "ko": {
+        "language": "ko-KR",
+        "voice": "ko-KR-SunHiNeural",
+    },
+    "en": {
+        "language": "en-US",
+        "voice": "en-US-JennyNeural",
+    },
+}
+
+
 def normalize_episode_id(raw_episode: str) -> str:
     episode = raw_episode.strip().lower()
     number_text = episode[2:] if episode.startswith("ep") else episode
@@ -38,6 +51,12 @@ def parse_args() -> argparse.Namespace:
         description="Director, Timeline, Assets, Remotion 통합 Factory Runner"
     )
     parser.add_argument("--episode", required=True, help="예: ep008")
+    parser.add_argument(
+        "--lang",
+        choices=tuple(LANGUAGE_SETTINGS),
+        default="ko",
+        help="제작 언어. 기본값 ko, 영어판은 en",
+    )
     parser.add_argument(
         "--rebuild-timeline",
         action="store_true",
@@ -92,6 +111,54 @@ def purge_stale_generated_files(episode_id: str) -> None:
                 print(f"[캐시 삭제] {file_path}")
 
 
+def _prepare_english_variant(base_episode_id: str) -> str:
+    source_dir = ROOT_DIR / "projects" / "episodes" / base_episode_id
+    english_spec = source_dir / "episode.en.json"
+
+    if not english_spec.exists():
+        raise ValueError(
+            "영어판 episode 파일이 없습니다.\n"
+            f"필요 파일: {english_spec}\n"
+            "먼저 해당 에피소드의 episode.en.json을 추가해 주세요."
+        )
+
+    variant_id = f"{base_episode_id}_en"
+    variant_dir = ROOT_DIR / "projects" / "episodes" / variant_id
+    variant_dir.mkdir(parents=True, exist_ok=True)
+
+    shutil.copy2(english_spec, variant_dir / "episode.json")
+
+    source_assets = source_dir / "assets"
+    variant_assets = variant_dir / "assets"
+    if source_assets.exists():
+        shutil.copytree(
+            source_assets,
+            variant_assets,
+            dirs_exist_ok=True,
+        )
+        print(
+            f"[영어판] 한국어판 미디어 재사용: "
+            f"{source_assets} -> {variant_assets}"
+        )
+    else:
+        print(
+            "[영어판] 한국어판 assets가 없어 "
+            "영어판에서 미디어를 새로 수집합니다."
+        )
+
+    return variant_id
+
+
+def _configure_language(lang: str) -> None:
+    settings = LANGUAGE_SETTINGS[lang]
+    os.environ["YCF_TTS_LANGUAGE"] = settings["language"]
+    os.environ["YCF_TTS_VOICE"] = settings["voice"]
+    print(
+        f"[언어] {lang} / "
+        f"{settings['language']} / {settings['voice']}"
+    )
+
+
 def _run_factory(
     *,
     paths: FactoryPaths,
@@ -111,13 +178,28 @@ def _run_factory(
 def main() -> int:
     args = parse_args()
     try:
-        episode_id = normalize_episode_id(args.episode)
+        base_episode_id = normalize_episode_id(args.episode)
+        episode_id = (
+            _prepare_english_variant(base_episode_id)
+            if args.lang == "en"
+            else base_episode_id
+        )
+        _configure_language(args.lang)
     except ValueError as exc:
         print(f"[실패] {exc}")
         return 2
 
     if args.rebuild_timeline:
         purge_stale_generated_files(episode_id)
+
+    # rebuild가 작업 폴더의 생성 파일만 제거하므로 영어 스펙과
+    # 한국어판 assets 재사용 상태를 다시 보장합니다.
+    if args.lang == "en":
+        try:
+            episode_id = _prepare_english_variant(base_episode_id)
+        except ValueError as exc:
+            print(f"[실패] {exc}")
+            return 2
 
     paths = FactoryPaths.create(root_dir=ROOT_DIR, episode_id=episode_id)
 
