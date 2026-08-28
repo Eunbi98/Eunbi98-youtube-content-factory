@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import argparse
+import json
 import os
 import shutil
 import sys
@@ -35,6 +36,8 @@ LANGUAGE_SETTINGS = {
     },
 }
 
+ENGLISH_EPISODE_OFFSET = 1000
+
 
 def normalize_episode_id(raw_episode: str) -> str:
     episode = raw_episode.strip().lower()
@@ -44,6 +47,11 @@ def normalize_episode_id(raw_episode: str) -> str:
             "에피소드 형식이 올바르지 않습니다. 예: ep008 또는 008"
         )
     return f"ep{int(number_text):03d}"
+
+
+def english_episode_id(base_episode_id: str) -> str:
+    number = int(base_episode_id[2:])
+    return f"ep{number + ENGLISH_EPISODE_OFFSET:03d}"
 
 
 def parse_args() -> argparse.Namespace:
@@ -122,11 +130,25 @@ def _prepare_english_variant(base_episode_id: str) -> str:
             "먼저 해당 에피소드의 episode.en.json을 추가해 주세요."
         )
 
-    variant_id = f"{base_episode_id}_en"
+    variant_id = english_episode_id(base_episode_id)
     variant_dir = ROOT_DIR / "projects" / "episodes" / variant_id
     variant_dir.mkdir(parents=True, exist_ok=True)
 
-    shutil.copy2(english_spec, variant_dir / "episode.json")
+    try:
+        spec_data = json.loads(english_spec.read_text(encoding="utf-8-sig"))
+    except (OSError, json.JSONDecodeError) as exc:
+        raise ValueError(f"영어판 episode 파일을 읽지 못했습니다: {exc}") from exc
+
+    if not isinstance(spec_data, dict):
+        raise ValueError("영어판 episode 파일의 최상위 값은 객체여야 합니다.")
+
+    # 원본 파일에는 base EP 번호를 써도 되고 내부 영어 EP 번호를 써도 됩니다.
+    # 실행 시에는 Remotion과 Director가 사용하는 숫자형 variant ID로 통일합니다.
+    spec_data["episodeId"] = variant_id
+    (variant_dir / "episode.json").write_text(
+        json.dumps(spec_data, ensure_ascii=False, indent=2) + "\n",
+        encoding="utf-8",
+    )
 
     source_assets = source_dir / "assets"
     variant_assets = variant_dir / "assets"
@@ -146,6 +168,7 @@ def _prepare_english_variant(base_episode_id: str) -> str:
             "영어판에서 미디어를 새로 수집합니다."
         )
 
+    print(f"[영어판] 내부 에피소드 ID: {variant_id}")
     return variant_id
 
 
