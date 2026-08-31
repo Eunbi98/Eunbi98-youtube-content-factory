@@ -1,0 +1,76 @@
+{
+  "version": "1.0",
+  "episodeId": "ep050",
+  "channel": "science",
+  "title": "물고기 떼는 모두를 보고 움직이는 게 아니었다?",
+  "voice": "ko-KR-SunHiNeural",
+  "mediaSource": "glassfish school synchronized swimming, transparent fish schooling, fish behavior experiment virtual reality",
+  "theme": {
+    "backgroundColor": "#071018",
+    "titleColor": "#A8E6FF",
+    "captionColor": "#FFFFFF",
+    "accentColor": "#62D6FF"
+  },
+  "scenes": [
+    {
+      "type": "hook",
+      "title": "수백 마리가 동시에 꺾는 이유",
+      "narration": "수백 마리 물고기가 한 몸처럼 방향을 바꾸는 모습, 어떻게 가능한 걸까요? 최근 연구는 우리가 생각했던 방식과 꽤 다른 답을 내놨습니다.",
+      "keywords": [
+        "glassfish school synchronized swimming underwater real photo",
+        "schooling fish turning together underwater",
+        "transparent fish school blue water"
+      ]
+    },
+    {
+      "type": "answer",
+      "title": "전체를 보는 게 아니었다",
+      "narration": "기존에는 물고기가 주변 여러 마리의 평균 방향을 읽고 움직인다고 생각했습니다. 그런데 글라스피시는 한 번에 가까운 한 마리를 골라 그 움직임을 따라 하는 것으로 나타났습니다.",
+      "keywords": [
+        "glassfish close up schooling fish",
+        "small transparent fish group swimming",
+        "fish school neighbor interaction"
+      ]
+    },
+    {
+      "type": "story",
+      "title": "한 마리씩 순간적으로 복사한다",
+      "narration": "한 물고기가 방향 전환을 마치는 순간, 주변 물고기에게 짧은 반응 기회가 생깁니다. 성체 글라스피시는 이때 매우 빠르게 방향을 맞추며 연쇄적인 움직임을 만듭니다.",
+      "keywords": [
+        "fish school synchronized turn underwater",
+        "glassfish swimming formation close up",
+        "schooling fish rapid direction change"
+      ]
+    },
+    {
+      "type": "fact",
+      "title": "가상 물고기로도 확인했다",
+      "narration": "연구진은 가상현실 환경에서 실제 글라스피시 앞에 가짜 물고기를 보여줬습니다. 가상 물고기의 방향을 바꾸자 실제 물고기도 연구진의 예측대로 반응했습니다.",
+      "keywords": [
+        "fish behavior virtual reality experiment",
+        "laboratory fish tracking experiment screen",
+        "fish neuroscience behavior research aquarium"
+      ]
+    },
+    {
+      "type": "fact",
+      "title": "단순한 규칙이 거대한 떼를 만든다",
+      "narration": "중요한 점은 복잡한 지휘자가 필요하지 않다는 겁니다. 각각의 물고기가 한 이웃의 행동에 빠르게 반응하는 단순한 규칙만으로도 거대한 떼의 움직임이 만들어질 수 있습니다.",
+      "keywords": [
+        "large fish school coordinated movement underwater",
+        "schooling fish swarm ocean cinematic",
+        "fish collective behavior underwater"
+      ]
+    },
+    {
+      "type": "ending",
+      "title": "한 마리를 따라 했더니 모두가 움직였다",
+      "narration": "수백 마리가 동시에 같은 결정을 내리는 것처럼 보이지만, 실제로는 아주 작은 일대일 반응이 이어진 결과일 수 있습니다. 거대한 집단 행동의 시작은 의외로 단순했습니다.",
+      "keywords": [
+        "glassfish school underwater cinematic",
+        "school of fish synchronized swimming wide shot",
+        "transparent fish collective movement"
+      ]
+    }
+  ]
+}
