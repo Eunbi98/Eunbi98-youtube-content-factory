@@ -1,0 +1,76 @@
+{
+  "version": "1.0",
+  "episodeId": "ep051",
+  "channel": "science",
+  "title": "An 80-Million-Year-Old Shark Graveyard Was Found in the Egyptian Desert",
+  "voice": "en-US-JennyNeural",
+  "mediaSource": "Egypt Western Desert shark fossil teeth, Abu Tartur Plateau desert, Cretaceous shark fossils, ancient tropical sea North Africa",
+  "theme": {
+    "backgroundColor": "#0A0F14",
+    "titleColor": "#D8C49A",
+    "captionColor": "#FFFFFF",
+    "accentColor": "#D8C49A"
+  },
+  "scenes": [
+    {
+      "type": "hook",
+      "title": "Shark teeth were found in the middle of a desert",
+      "narration": "In Egypt's nearly waterless Western Desert, scientists found a cluster of fossil shark teeth dating back roughly 80 million years. The researchers described the site as a shark graveyard.",
+      "keywords": [
+        "Egypt Western Desert real photo",
+        "shark fossil tooth desert archaeology",
+        "Abu Tartur Plateau Egypt desert"
+      ]
+    },
+    {
+      "type": "answer",
+      "title": "The find included 14 fossil teeth",
+      "narration": "Researchers analyzed 14 fossil shark teeth from phosphate-rich rocks on Egypt's Abu Tartur Plateau. The new study identified at least five extinct shark species in the assemblage.",
+      "keywords": [
+        "fossil shark teeth close up museum",
+        "Cretaceous shark teeth fossils",
+        "paleontology fossil teeth research"
+      ]
+    },
+    {
+      "type": "story",
+      "title": "Today's desert was once a tropical sea",
+      "narration": "During the Late Cretaceous, when these fossils were deposited, what is now western Egypt was covered by a warm tropical sea. Higher sea levels submerged large parts of North Africa.",
+      "keywords": [
+        "Cretaceous tropical sea illustration Egypt",
+        "ancient ocean North Africa reconstruction",
+        "prehistoric sea sharks cinematic"
+      ]
+    },
+    {
+      "type": "fact",
+      "title": "At least seven shark species are known from the area",
+      "narration": "Combining the new finds with earlier records, scientists now know of at least seven shark species from this part of the formation. That points to a rich marine ecosystem capable of supporting many large predators.",
+      "keywords": [
+        "prehistoric sharks diverse species",
+        "ancient shark ocean reconstruction",
+        "Cretaceous marine ecosystem sharks"
+      ]
+    },
+    {
+      "type": "fact",
+      "title": "One may be the first record of its kind in Africa",
+      "narration": "A shark related to today's goblin shark, Scapanorhynchus raphiodon, may represent the first fossil record of that taxon in Africa. Several other species were also reported from Egypt for the first time.",
+      "keywords": [
+        "goblin shark close up real photo",
+        "Scapanorhynchus fossil tooth",
+        "prehistoric goblin shark reconstruction"
+      ]
+    },
+    {
+      "type": "ending",
+      "title": "The desert still remembers an ancient ocean",
+      "narration": "Today the region is sand and rock, but beneath it are traces of a sea where sharks once swam. Fossils can preserve the story of an environment long after the landscape has completely changed.",
+      "keywords": [
+        "Egypt desert landscape cinematic",
+        "shark fossil teeth in rock close up",
+        "ancient sea to desert transformation"
+      ]
+    }
+  ]
+}
