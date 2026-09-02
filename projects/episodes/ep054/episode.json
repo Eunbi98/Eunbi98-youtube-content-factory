@@ -1,0 +1,76 @@
+{
+  "version": "1.0",
+  "episodeId": "ep054",
+  "channel": "science",
+  "title": "암흑물질을 처음 잡았을지도 모르는 단 한 번의 신호",
+  "voice": "ko-KR-SunHiNeural",
+  "mediaSource": "LUX-ZEPLIN detector underground laboratory South Dakota dark matter galaxy liquid xenon science experiment",
+  "theme": {
+    "backgroundColor": "#090B12",
+    "titleColor": "#9ED0FF",
+    "captionColor": "#FFFFFF",
+    "accentColor": "#9ED0FF"
+  },
+  "scenes": [
+    {
+      "type": "hook",
+      "title": "암흑물질을 처음 잡았을지도 모른다",
+      "narration": "우주의 대부분을 차지하지만 한 번도 직접 본 적 없는 암흑물질. 그런데 지하 1.5킬로미터 실험실에서 정체불명의 입자 신호 하나가 포착됐습니다.",
+      "keywords": [
+        "dark matter galaxy visualization",
+        "LUX ZEPLIN detector underground",
+        "Sanford Underground Research Facility science"
+      ]
+    },
+    {
+      "type": "answer",
+      "title": "단 한 번의 충돌 신호",
+      "narration": "LUX-ZEPLIN 실험에서 액체 제논 내부에 아주 희미한 빛과 원자핵 반동이 동시에 기록됐습니다. 연구진은 기존 배경 신호만으로는 이 사건을 설명하지 못했습니다.",
+      "keywords": [
+        "liquid xenon detector dark matter",
+        "particle detector photomultiplier tubes",
+        "dark matter experiment laboratory"
+      ]
+    },
+    {
+      "type": "story",
+      "title": "혹시 WIMP였을까",
+      "narration": "이 신호는 오랫동안 암흑물질 후보로 거론된 WIMP가 원자핵과 충돌했을 때 예상되는 모습과 비슷했습니다. 만약 맞다면 암흑물질을 직접 본 첫 사례가 될 수 있습니다.",
+      "keywords": [
+        "WIMP dark matter illustration",
+        "particle collision visualization",
+        "dark matter physics experiment"
+      ]
+    },
+    {
+      "type": "fact",
+      "title": "하지만 아직 발견은 아니다",
+      "narration": "문제는 신호가 단 한 건뿐이라는 점입니다. 과학계에서 발견으로 인정받으려면 우연일 가능성이 극도로 낮다는 통계적 기준을 넘어야 합니다.",
+      "keywords": [
+        "scientists analyzing particle data",
+        "physics data analysis laboratory",
+        "particle detector control room"
+      ]
+    },
+    {
+      "type": "fact",
+      "title": "왜 이렇게 찾기 어려울까",
+      "narration": "암흑물질은 빛을 내지도 반사하지도 않습니다. 우리는 은하의 회전이나 중력 효과를 통해 존재를 추정할 뿐, 정체가 무엇인지는 아직 모릅니다.",
+      "keywords": [
+        "dark matter galaxy gravitational lensing",
+        "spiral galaxy dark matter halo",
+        "galaxy rotation dark matter visualization"
+      ]
+    },
+    {
+      "type": "ending",
+      "title": "우주의 85퍼센트가 풀릴까",
+      "narration": "암흑물질은 우주 물질의 약 85퍼센트를 차지하는 것으로 추정됩니다. 이번 한 번의 신호가 진짜인지 확인된다면 현대 물리학의 가장 큰 수수께끼 하나가 풀릴지도 모릅니다.",
+      "keywords": [
+        "dark matter universe visualization",
+        "LUX ZEPLIN detector science",
+        "deep underground physics laboratory"
+      ]
+    }
+  ]
+}
