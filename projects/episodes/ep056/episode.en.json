@@ -1,0 +1,76 @@
+{
+  "version": "1.0",
+  "episodeId": "ep056",
+  "channel": "history",
+  "title": "A 1,600-Year-Old Man Was Found Inside a Giant Roman Jar",
+  "voice": "en-US-JennyNeural",
+  "mediaSource": "Roman dolium storage jar archaeology Bulgaria Deultum ruins ancient skeleton excavation",
+  "theme": {
+    "backgroundColor": "#0D0B09",
+    "titleColor": "#E0C59A",
+    "captionColor": "#FFFFFF",
+    "accentColor": "#E0C59A"
+  },
+  "scenes": [
+    {
+      "type": "hook",
+      "title": "A person was found inside a giant Roman jar",
+      "narration": "At the ancient Roman city of Deultum in Bulgaria, archaeologists found human remains inside a massive storage jar dating back about sixteen hundred years.",
+      "keywords": [
+        "Roman dolium archaeology excavation Bulgaria",
+        "ancient Roman storage jar ruins",
+        "Deultum Bulgaria archaeology real photo"
+      ]
+    },
+    {
+      "type": "answer",
+      "title": "It was not a normal burial",
+      "narration": "The remains were not found in a cemetery, but inside a defensive structure near the city's western gate. Researchers think the individual may have been a young man.",
+      "keywords": [
+        "Roman city gate ruins Bulgaria",
+        "Deultum archaeological site western gate",
+        "late Roman fortress excavation"
+      ]
+    },
+    {
+      "type": "story",
+      "title": "The area showed signs of violent destruction",
+      "narration": "Ash, collapsed bricks, and melted glass were found around the jar, suggesting an intense fire and possibly an attack on the city.",
+      "keywords": [
+        "burned Roman ruins archaeology",
+        "Roman fire destruction excavation",
+        "ancient city attack ruins"
+      ]
+    },
+    {
+      "type": "fact",
+      "title": "Did he hide inside the jar?",
+      "narration": "Researchers are considering whether the man climbed into the giant vessel to hide during an attack by groups such as Germanic tribes or the Huns.",
+      "keywords": [
+        "Roman dolium large storage jar museum",
+        "late Roman invasion reconstruction archaeology",
+        "ancient Roman civilian hiding illustration"
+      ]
+    },
+    {
+      "type": "fact",
+      "title": "He may never have escaped",
+      "narration": "The position of the skeleton does not clearly suggest an attempt to climb out. Smoke, heat, and fire around the structure may have trapped him inside.",
+      "keywords": [
+        "Roman storage jar interior archaeology",
+        "ancient skeleton excavation jar",
+        "archaeological human remains Roman site"
+      ]
+    },
+    {
+      "type": "ending",
+      "title": "A storage jar may have become a final refuge",
+      "narration": "An ordinary Roman storage jar may have become one person's last hiding place. Sixteen centuries later, archaeology is revealing that final moment again.",
+      "keywords": [
+        "Roman dolium ruins cinematic",
+        "ancient Roman archaeology sunset ruins",
+        "Deultum Bulgaria archaeological site"
+      ]
+    }
+  ]
+}
