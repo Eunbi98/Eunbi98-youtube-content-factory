@@ -1,0 +1,17 @@
+{
+  "version": "1.0",
+  "episodeId": "ep061",
+  "channel": "history",
+  "title": "An Ancient Wine-Making Site Was Found Beside an Egyptian Temple",
+  "voice": "en-US-JennyNeural",
+  "mediaSource": "Sekhmet Temple Memphis Egypt excavation wine press mud brick houses archaeology",
+  "theme": {"backgroundColor":"#0D0B08","titleColor":"#E7C98A","captionColor":"#FFFFFF","accentColor":"#E7C98A"},
+  "scenes": [
+    {"type":"hook","title":"Was wine being made beside an Egyptian temple?","narration":"Near the Temple of Sekhmet in ancient Memphis, archaeologists found homes and a structure that may have been used to make wine.","keywords":["Sekhmet Temple Memphis excavation real photo","Mit Rahina archaeology Egypt","ancient Memphis archaeological site"]},
+    {"type":"answer","title":"Mud-brick houses and courtyards emerged","narration":"A joint Egyptian-Chinese team uncovered a residential area near the temple with multiple mud-brick houses and courtyards.","keywords":["ancient Egyptian mud brick houses excavation","Memphis Egypt residential complex archaeology","Mit Rahina mud brick ruins"]},
+    {"type":"story","title":"A limestone structure moved liquid downward","narration":"Nearby, archaeologists found a limestone installation with an upper basin sloping toward an opening and a lower basin designed to collect liquid.","keywords":["ancient Egyptian wine press excavation","limestone wine press archaeology Egypt","ancient wine production structure"]},
+    {"type":"fact","title":"Researchers think it may be a wine press","narration":"Because of its shape and drainage system, researchers believe the installation may have been used to press grapes and collect juice for wine production.","keywords":["ancient Egyptian wine making reconstruction","wine press ancient Egypt","grape pressing archaeology"]},
+    {"type":"fact","title":"Daily life continued beside the temple","narration":"Pottery, amulets, small figurines, and written fragments were also found, showing that the area was not only religious but also a place where people lived and worked.","keywords":["Egyptian faience amulets excavation","ancient Egyptian pottery artifacts","Sekhmet temple artifacts archaeology"]},
+    {"type":"ending","title":"A temple neighborhood comes back to life","narration":"The discovery reveals more than monumental architecture. Homes and production spaces show the everyday life that continued right beside one of ancient Memphis's sacred places.","keywords":["ancient Memphis ruins sunset","Sekhmet Temple archaeology Egypt","Memphis ancient city reconstruction"]}
+  ]
+}
