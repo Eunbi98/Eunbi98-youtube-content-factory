@@ -1,0 +1,17 @@
+{
+  "version": "1.0",
+  "episodeId": "ep058",
+  "channel": "science",
+  "title": "양자 세계에서도 아인슈타인의 중력이 통했다",
+  "voice": "ko-KR-SunHiNeural",
+  "mediaSource": "quantum atom free fall gravity experiment atom chip Einstein equivalence principle",
+  "theme": {"backgroundColor":"#090B12","titleColor":"#C8D8FF","captionColor":"#FFFFFF","accentColor":"#C8D8FF"},
+  "scenes": [
+    {"type":"hook","title":"양자 세계에서도 중력은 똑같이 작동할까","narration":"아인슈타인의 중력 이론은 거대한 천체에서는 잘 맞습니다. 그렇다면 파동처럼 행동하는 원자에도 같은 법칙이 통할까요?","keywords":["quantum atom gravity illustration","atom interferometer laboratory","Einstein gravity experiment"]},
+    {"type":"answer","title":"떨어지는 원자의 양자 상태를 측정했다","narration":"국제 연구진은 자유낙하하는 원자의 양자 위상이 중력 때문에 어떻게 변하는지 정밀하게 측정했습니다.","keywords":["atom chip experiment real photo","quantum atom free fall lab","atomic interferometry laboratory"]},
+    {"type":"story","title":"결과는 아인슈타인 예측과 맞았다","narration":"측정된 변화는 아인슈타인의 등가원리를 양자 물체에 적용했을 때의 예측과 일치했습니다.","keywords":["Einstein equivalence principle illustration","quantum gravity atom experiment","falling atoms laboratory"]},
+    {"type":"fact","title":"자유낙하하면 중력이 사라지는 것처럼 보인다","narration":"등가원리에 따르면 자유낙하하는 관찰자는 주변에서 중력을 느끼지 못합니다. 이번 실험은 그 원리가 양자 상태에서도 일관되게 나타난다는 것을 보여줬습니다.","keywords":["free fall gravity illustration elevator","equivalence principle physics diagram","quantum wave atom illustration"]},
+    {"type":"fact","title":"하지만 양자중력을 발견한 건 아니다","narration":"이번 결과가 중력 자체가 양자적이라는 뜻은 아닙니다. 다만 양자역학과 아인슈타인 중력이 만나는 경계를 직접 시험했다는 의미가 있습니다.","keywords":["quantum mechanics gravity concept","physics laboratory atom chip","quantum wave gravity research"]},
+    {"type":"ending","title":"100년 된 이론이 더 작은 세계까지 버텼다","narration":"아인슈타인의 등가원리는 원자처럼 작은 양자 물체에서도 이번 시험을 통과했습니다. 다음 목표는 더 무거운 물체로 같은 경계를 시험하는 것입니다.","keywords":["Einstein portrait physics concept","nanodiamond quantum experiment","quantum gravity future experiment"]}
+  ]
+}
