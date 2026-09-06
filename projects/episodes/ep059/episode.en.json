@@ -1,0 +1,17 @@
+{
+  "version": "1.0",
+  "episodeId": "ep059",
+  "channel": "science",
+  "title": "One of Earth's Driest Deserts Was Covered in Snow",
+  "voice": "en-US-JennyNeural",
+  "mediaSource": "Atacama Desert snow August 2026 satellite Chile rare snowfall ALMA",
+  "theme": {"backgroundColor":"#10131A","titleColor":"#E9F4FF","captionColor":"#FFFFFF","accentColor":"#E9F4FF"},
+  "scenes": [
+    {"type":"hook","title":"The desert suddenly turned white","narration":"In August 2026, parts of the Atacama Desert, one of the driest regions on Earth, were blanketed in snow.","keywords":["Atacama Desert snow satellite 2026","Chile desert snow real photo","Atacama snow landscape"]},
+    {"type":"answer","title":"Back-to-back storms brought the snow","narration":"A series of winter storms spread snow beyond the Andes and into parts of the desert that rarely see widespread snowfall.","keywords":["Atacama winter storm snow","Chile desert snow satellite before after","Andes Atacama snowfall"]},
+    {"type":"story","title":"Snow reached close to the Pacific","narration":"NASA satellite images showed snow stretching west from the Andes, across the hyper-arid desert, and close to the Pacific coast.","keywords":["NASA Atacama snow satellite August 19 2026","northern Chile snow satellite","Atacama coast snow"]},
+    {"type":"fact","title":"Major observatories had to stop","narration":"Snow and strong winds forced the ALMA radio telescope array to suspend observations and place its antennas into protective survival mode.","keywords":["ALMA observatory snow real photo","ALMA antennas snow Chile","Atacama observatory winter storm"]},
+    {"type":"fact","title":"Some places also saw extreme rain","narration":"Parts of northern Chile received extraordinary rainfall, with one coastal location getting roughly ten times its normal annual total in only three days.","keywords":["Chile Atacama rain storm","Taltal Chile storm","Atacama desert wet weather"]},
+    {"type":"ending","title":"Even the driest places can change fast","narration":"The Atacama is famous for extreme dryness, but the right atmospheric setup can transform it quickly. Satellites captured the dramatic change from brown desert to white snow.","keywords":["Atacama snow before after satellite","Chile desert white snow","Atacama rare weather satellite"]}
+  ]
+}
