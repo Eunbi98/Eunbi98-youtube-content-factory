@@ -1,0 +1,17 @@
+{
+  "version": "1.0",
+  "episodeId": "ep060",
+  "channel": "science",
+  "title": "Meteorite Dust Preserved a Magnetic Record from the Birth of the Sun",
+  "voice": "en-US-JennyNeural",
+  "mediaSource": "primitive meteorite magnetic field early solar system Antarctica CAI grains laboratory",
+  "theme": {"backgroundColor":"#0A0A0F","titleColor":"#FFD9A8","captionColor":"#FFFFFF","accentColor":"#FFD9A8"},
+  "scenes": [
+    {"type":"hook","title":"Meteorite dust preserved the solar system's first magnetism","narration":"Tiny grains inside a primitive Antarctic meteorite preserved traces of a magnetic field from the very beginning of the solar system.","keywords":["primitive meteorite Antarctica real photo","meteorite sample laboratory","early solar system meteorite grain"]},
+    {"type":"answer","title":"The material formed in the first 200,000 years","narration":"The team studied calcium-aluminum-rich inclusions, some of the oldest known solids, formed within roughly the first two hundred thousand years of solar system history.","keywords":["CAI meteorite inclusion microscope","calcium aluminum rich inclusion meteorite","meteorite thin section microscopy"]},
+    {"type":"story","title":"Tiny minerals remembered an ancient field","narration":"Magnetic minerals inside the grains locked in information about the magnetic field around them and preserved that record for billions of years.","keywords":["magnetic mineral microscope meteorite","paleomagnetism laboratory meteorite","meteorite grain magnetic analysis"]},
+    {"type":"fact","title":"The field may have been stronger than Earth's","narration":"Measurements suggest the early solar system's magnetic field may have been roughly three to twelve times stronger than Earth's magnetic field today.","keywords":["solar nebula magnetic field illustration","early sun magnetic field concept","protoplanetary disk magnetism"]},
+    {"type":"fact","title":"Gravity may not have worked alone","narration":"Scientists have long emphasized gravity in forming the Sun. The new evidence suggests magnetism also helped move gas and dust through the young solar nebula.","keywords":["protoplanetary disk forming sun illustration","solar nebula gas dust magnetic field","young sun disk astronomy"]},
+    {"type":"ending","title":"A meteorite fragment remembers the Sun's birth","narration":"A tiny rock that eventually fell to Earth may still carry a record from 4.6 billion years ago. The Sun's birth may have been shaped by both gravity and magnetism.","keywords":["meteorite in hand laboratory","early solar system illustration","sun formation protoplanetary disk"]}
+  ]
+}
