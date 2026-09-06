@@ -1,0 +1,17 @@
+{
+  "version": "1.0",
+  "episodeId": "ep060",
+  "channel": "science",
+  "title": "운석 먼지 속에서 발견된 태양 탄생 전 자기장",
+  "voice": "ko-KR-SunHiNeural",
+  "mediaSource": "primitive meteorite magnetic field early solar system Antarctica CAI grains laboratory",
+  "theme": {"backgroundColor":"#0A0A0F","titleColor":"#FFD9A8","captionColor":"#FFFFFF","accentColor":"#FFD9A8"},
+  "scenes": [
+    {"type":"hook","title":"운석 먼지가 태양 탄생 전 기록을 갖고 있었다","narration":"남극에서 발견된 운석 속 미세한 알갱이에서 태양계가 막 만들어지던 시기의 자기장 흔적이 발견됐습니다.","keywords":["primitive meteorite Antarctica real photo","meteorite sample laboratory","early solar system meteorite grain"]},
+    {"type":"answer","title":"태양계 첫 20만 년의 물질이었다","narration":"연구진이 분석한 칼슘 알루미늄 풍부 포유물은 태양계가 생긴 뒤 첫 이십만 년 안에 만들어진 가장 오래된 물질 중 하나입니다.","keywords":["CAI meteorite inclusion microscope","calcium aluminum rich inclusion meteorite","meteorite thin section microscopy"]},
+    {"type":"story","title":"미세한 광물이 자기장을 기억했다","narration":"이 알갱이 속 자성 광물은 만들어질 당시 주변 자기장의 세기를 기록한 채 수십억 년 동안 그 흔적을 보존했습니다.","keywords":["magnetic mineral microscope meteorite","paleomagnetism laboratory meteorite","meteorite grain magnetic analysis"]},
+    {"type":"fact","title":"당시 자기장은 지구보다 더 강했다","narration":"측정 결과 초기 태양계 자기장은 오늘날 지구 자기장보다 약 세 배에서 열두 배 강했을 가능성이 제시됐습니다.","keywords":["solar nebula magnetic field illustration","early sun magnetic field concept","protoplanetary disk magnetism"]},
+    {"type":"fact","title":"중력만으로 태양이 만들어진 게 아닐 수도","narration":"과학자들은 오랫동안 중력이 가스와 먼지를 모았다고 봤지만, 이번 결과는 자기장도 물질을 태양 쪽으로 이동시키는 데 중요한 역할을 했을 가능성을 보여줍니다.","keywords":["protoplanetary disk forming sun illustration","solar nebula gas dust magnetic field","young sun disk astronomy"]},
+    {"type":"ending","title":"작은 운석 조각이 태양의 탄생을 기억한다","narration":"지구에 떨어진 작은 운석 속 광물이 사십육억 년 전 태양이 만들어지던 환경을 기록하고 있었습니다. 태양계의 시작은 중력과 자기장이 함께 만든 과정이었을지도 모릅니다.","keywords":["meteorite in hand laboratory","early solar system illustration","sun formation protoplanetary disk"]}
+  ]
+}
