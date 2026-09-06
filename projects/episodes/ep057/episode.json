@@ -1,0 +1,17 @@
+{
+  "version": "1.0",
+  "episodeId": "ep057",
+  "channel": "science",
+  "title": "다이아몬드가 휘어지면 전기가 생긴다?",
+  "voice": "ko-KR-SunHiNeural",
+  "mediaSource": "ultrathin diamond membrane piezoelectric flexible diamond research laboratory",
+  "theme": {"backgroundColor":"#0B0D10","titleColor":"#BFE9FF","captionColor":"#FFFFFF","accentColor":"#BFE9FF"},
+  "scenes": [
+    {"type":"hook","title":"다이아몬드가 전기를 만든다?","narration":"다이아몬드는 오랫동안 전기를 만드는 압전 소재가 아니라고 알려져 왔습니다. 그런데 아주 얇게 만들자 이야기가 달라졌습니다.","keywords":["diamond membrane laboratory real photo","thin diamond film research","diamond material microscopy"]},
+    {"type":"answer","title":"초박막 다이아몬드를 휘었더니","narration":"홍콩대 연구진은 매우 얇고 유연한 다결정 다이아몬드 막을 만든 뒤 구부리는 실험을 했습니다. 그 결과 안정적인 전압 신호가 측정됐습니다.","keywords":["flexible diamond membrane experiment","diamond film bending laboratory","piezoelectric measurement lab"]},
+    {"type":"story","title":"100년 넘은 상식을 뒤집었다","narration":"다이아몬드는 결정 구조 때문에 압전 효과가 없다고 여겨졌습니다. 하지만 초박막에서는 결정립 경계의 비대칭성이 전하 분리를 만들 수 있었습니다.","keywords":["polycrystalline diamond microscope","diamond grain boundary microscopy","diamond crystal structure research"]},
+    {"type":"fact","title":"딱딱한데도 휘어졌다","narration":"핵심은 다이아몬드를 극도로 얇게 만든 것입니다. 두꺼운 다이아몬드는 단단하지만, 마이크로미터 수준의 막은 크게 휘어질 수 있습니다.","keywords":["ultrathin diamond sheet","flexible diamond film","micron diamond membrane"]},
+    {"type":"fact","title":"센서와 의료기기에 쓸 수도 있다","narration":"연구진은 이 특성이 초소형 센서나 전자기기, 자체 전원형 의료기기 같은 분야에 활용될 가능성을 보고 있습니다.","keywords":["MEMS sensor laboratory","medical implant sensor concept","microelectromechanical system research"]},
+    {"type":"ending","title":"보석이 아니라 전자소자가 될지도","narration":"다이아몬드는 가장 단단한 재료 중 하나지만, 얇게 만들면 전기를 만드는 새로운 기능까지 보여줬습니다. 익숙한 재료의 성질이 크기에 따라 완전히 달라진 겁니다.","keywords":["diamond technology research","diamond electronics laboratory","diamond membrane close up"]}
+  ]
+}
