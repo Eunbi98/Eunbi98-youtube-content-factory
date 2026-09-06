@@ -1,0 +1,17 @@
+{
+  "version": "1.0",
+  "episodeId": "ep058",
+  "channel": "science",
+  "title": "Einstein's Gravity Just Passed a Quantum Test",
+  "voice": "en-US-JennyNeural",
+  "mediaSource": "quantum atom free fall gravity experiment atom chip Einstein equivalence principle",
+  "theme": {"backgroundColor":"#090B12","titleColor":"#C8D8FF","captionColor":"#FFFFFF","accentColor":"#C8D8FF"},
+  "scenes": [
+    {"type":"hook","title":"Does Einstein's gravity work in the quantum world?","narration":"Einstein's gravity works extremely well for planets and stars. But does the same principle still hold for atoms that behave like quantum waves?","keywords":["quantum atom gravity illustration","atom interferometer laboratory","Einstein gravity experiment"]},
+    {"type":"answer","title":"Scientists measured falling quantum atoms","narration":"An international team measured how the quantum phase of freely falling atoms changed under gravity with high precision.","keywords":["atom chip experiment real photo","quantum atom free fall lab","atomic interferometry laboratory"]},
+    {"type":"story","title":"The result matched Einstein's prediction","narration":"The observed shift matched what Einstein's equivalence principle predicts when it is applied to a quantum object.","keywords":["Einstein equivalence principle illustration","quantum gravity atom experiment","falling atoms laboratory"]},
+    {"type":"fact","title":"Free fall can make gravity seem to disappear","narration":"The equivalence principle says that an observer in free fall should locally feel weightless. This experiment found that the same idea remains consistent with quantum behavior.","keywords":["free fall gravity illustration elevator","equivalence principle physics diagram","quantum wave atom illustration"]},
+    {"type":"fact","title":"This is not quantum gravity yet","narration":"The result does not prove that gravity itself is quantum. But it directly tests the boundary where quantum mechanics and Einstein's theory meet.","keywords":["quantum mechanics gravity concept","physics laboratory atom chip","quantum wave gravity research"]},
+    {"type":"ending","title":"A century-old idea survived a smaller world","narration":"Einstein's equivalence principle passed this test even for tiny quantum objects. The next challenge is to repeat similar tests with much heavier systems.","keywords":["Einstein portrait physics concept","nanodiamond quantum experiment","quantum gravity future experiment"]}
+  ]
+}
