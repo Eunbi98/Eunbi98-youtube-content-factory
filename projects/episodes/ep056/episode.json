@@ -1,0 +1,76 @@
+{
+  "version": "1.0",
+  "episodeId": "ep056",
+  "channel": "history",
+  "title": "1,600년 전 거대한 항아리 안에서 발견된 사람",
+  "voice": "ko-KR-SunHiNeural",
+  "mediaSource": "Roman dolium storage jar archaeology Bulgaria Deultum ruins ancient skeleton excavation",
+  "theme": {
+    "backgroundColor": "#0D0B09",
+    "titleColor": "#E0C59A",
+    "captionColor": "#FFFFFF",
+    "accentColor": "#E0C59A"
+  },
+  "scenes": [
+    {
+      "type": "hook",
+      "title": "거대한 로마 항아리 안에서 사람이 나왔다",
+      "narration": "불가리아의 고대 로마 도시 데울툼에서 약 천육백 년 전 사람의 유골이 거대한 저장 항아리 안에서 발견됐습니다.",
+      "keywords": [
+        "Roman dolium archaeology excavation Bulgaria",
+        "ancient Roman storage jar ruins",
+        "Deultum Bulgaria archaeology real photo"
+      ]
+    },
+    {
+      "type": "answer",
+      "title": "무덤이 아니라 성문 옆이었다",
+      "narration": "유골은 정식 무덤이 아니라 도시 서쪽 성문 근처의 방어시설 안에서 나왔습니다. 연구진은 젊은 남성이었을 가능성을 보고 있습니다.",
+      "keywords": [
+        "Roman city gate ruins Bulgaria",
+        "Deultum archaeological site western gate",
+        "late Roman fortress excavation"
+      ]
+    },
+    {
+      "type": "story",
+      "title": "주변에는 화재와 파괴 흔적이 가득했다",
+      "narration": "항아리 주변에서는 재와 무너진 벽돌, 녹아버린 유리 등 강한 화재의 흔적이 발견됐습니다. 도시가 공격받던 순간이었을 가능성이 제기됩니다.",
+      "keywords": [
+        "burned Roman ruins archaeology",
+        "Roman fire destruction excavation",
+        "ancient city attack ruins"
+      ]
+    },
+    {
+      "type": "fact",
+      "title": "공격을 피해 항아리에 숨었을까",
+      "narration": "연구진은 이 남성이 게르만족이나 훈족의 공격을 피해 큰 항아리 안으로 몸을 숨겼을 가능성을 검토하고 있습니다.",
+      "keywords": [
+        "Roman dolium large storage jar museum",
+        "late Roman invasion reconstruction archaeology",
+        "ancient Roman civilian hiding illustration"
+      ]
+    },
+    {
+      "type": "fact",
+      "title": "하지만 끝내 빠져나오지 못했다",
+      "narration": "유골의 자세에서는 탈출을 시도한 흔적이 뚜렷하지 않았습니다. 주변 화재로 연기와 열기가 퍼지면서 항아리 안에서 숨졌을 가능성도 있습니다.",
+      "keywords": [
+        "Roman storage jar interior archaeology",
+        "ancient skeleton excavation jar",
+        "archaeological human remains Roman site"
+      ]
+    },
+    {
+      "type": "ending",
+      "title": "항아리 하나가 남긴 마지막 순간",
+      "narration": "평범한 저장용 항아리가 누군가에게는 마지막 피난처였을지도 모릅니다. 천육백 년이 지나 그 순간이 다시 모습을 드러낸 겁니다.",
+      "keywords": [
+        "Roman dolium ruins cinematic",
+        "ancient Roman archaeology sunset ruins",
+        "Deultum Bulgaria archaeological site"
+      ]
+    }
+  ]
+}
