@@ -1,0 +1,17 @@
+{
+  "version": "1.0",
+  "episodeId": "ep059",
+  "channel": "science",
+  "title": "지구에서 가장 건조한 사막에 폭설이 내렸다",
+  "voice": "ko-KR-SunHiNeural",
+  "mediaSource": "Atacama Desert snow August 2026 satellite Chile rare snowfall ALMA",
+  "theme": {"backgroundColor":"#10131A","titleColor":"#E9F4FF","captionColor":"#FFFFFF","accentColor":"#E9F4FF"},
+  "scenes": [
+    {"type":"hook","title":"사막 한가운데가 하얗게 변했다","narration":"지구에서 가장 건조한 지역 중 하나인 아타카마 사막이 2026년 8월, 눈으로 뒤덮였습니다.","keywords":["Atacama Desert snow satellite 2026","Chile desert snow real photo","Atacama snow landscape"]},
+    {"type":"answer","title":"한 번이 아니라 연속으로 눈이 왔다","narration":"8월에 연달아 겨울 폭풍이 지나가면서 안데스 산맥뿐 아니라 평소 눈이 거의 없는 사막 중심부까지 눈이 퍼졌습니다.","keywords":["Atacama winter storm snow","Chile desert snow satellite before after","Andes Atacama snowfall"]},
+    {"type":"story","title":"눈이 태평양 근처까지 내려왔다","narration":"NASA 위성 영상에서는 눈이 안데스에서 서쪽으로 뻗어 태평양 연안 가까이까지 이어진 모습이 확인됐습니다.","keywords":["NASA Atacama snow satellite August 19 2026","northern Chile snow satellite","Atacama coast snow"]},
+    {"type":"fact","title":"세계 최고 천문대도 멈췄다","narration":"강풍과 눈 때문에 아타카마의 ALMA 전파망원경은 관측을 중단하고 안테나를 보호 모드로 전환했습니다.","keywords":["ALMA observatory snow real photo","ALMA antennas snow Chile","Atacama observatory winter storm"]},
+    {"type":"fact","title":"비도 평소보다 압도적으로 많았다","narration":"칠레 북부 해안 일부 지역에는 사흘 동안 평년 연간 강수량의 약 열 배에 해당하는 비가 내리기도 했습니다.","keywords":["Chile Atacama rain storm","Taltal Chile storm","Atacama desert wet weather"]},
+    {"type":"ending","title":"세상에서 가장 마른 곳도 갑자기 바뀐다","narration":"아타카마는 극도로 건조하지만 대기 조건이 겹치면 눈과 비가 넓게 퍼질 수 있습니다. 위성은 그 극적인 변화를 한눈에 기록했습니다.","keywords":["Atacama snow before after satellite","Chile desert white snow","Atacama rare weather satellite"]}
+  ]
+}
