@@ -1,0 +1,17 @@
+{
+  "version": "1.0",
+  "episodeId": "ep063",
+  "channel": "history",
+  "title": "Ancient Rome's Painted City Is Finally Open",
+  "voice": "en-US-JennyNeural",
+  "mediaSource": "ancient Rome Painted City fresco Great Mosaic Baths of Trajan",
+  "theme": {"backgroundColor":"#0D0B09","titleColor":"#E3C28F","captionColor":"#FFFFFF","accentColor":"#E3C28F"},
+  "scenes": [
+    {"type":"hook","title":"A giant city was painted on a Roman wall","narration":"Near the Colosseum, one of ancient Rome's largest known fresco and mosaic complexes has opened to the public for the first time.","keywords":["Painted City Rome fresco Baths of Trajan","Great Mosaic Rome archaeology","Trajan Baths fresco real photo"]},
+    {"type":"answer","title":"It took about 30 years to open","narration":"The artworks were discovered during excavations in the 1990s, but preservation and restoration kept them closed for decades.","keywords":["Baths of Trajan excavation fresco","Rome archaeological restoration mosaic","ancient Roman fresco restoration"]},
+    {"type":"story","title":"The wall shows an entire seaside city","narration":"The fresco depicts walls, buildings, theaters, and temples in a maritime city viewed almost like a map from above.","keywords":["Roman fresco maritime city","ancient Roman city wall painting","Roman city fresco buildings temples"]},
+    {"type":"fact","title":"The mosaic rises about 15 meters","narration":"The accompanying Great Mosaic reaches roughly 15 meters high, revealing the huge scale of Roman decorative art.","keywords":["Great Mosaic Rome 15 meter","Roman monumental mosaic","Trajan Baths mosaic"]},
+    {"type":"fact","title":"Roman baths were more than baths","narration":"The Baths of Trajan also included spaces such as a grand library, showing that bath complexes served as major social and cultural centers.","keywords":["Baths of Trajan ruins Rome","Roman baths library reconstruction","ancient Roman bath complex"]},
+    {"type":"ending","title":"A 2,000-year-old city view is visible again","narration":"Buildings alone cannot show us everything about Roman urban life. This wall painting preserves a rare visual record of how an ancient city was imagined.","keywords":["ancient Rome fresco panoramic","Roman mosaic archaeology Rome","Baths of Trajan sunset"]}
+  ]
+}
