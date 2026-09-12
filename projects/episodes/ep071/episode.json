@@ -1,0 +1,10 @@
+{
+  "version":"1.0","episodeId":"ep071","channel":"history","title":"700년 전 휴대용 노트가 화장실에서 발견됐다","voice":"ko-KR-SunHiNeural","mediaSource":"medieval wax tablet notebook latrine Paderborn Germany archaeology","theme":{"backgroundColor":"#0D0B09","titleColor":"#D9C7A1","captionColor":"#FFFFFF","accentColor":"#D9C7A1"},"scenes":[
+    {"type":"hook","title":"700년 전 노트가 화장실에서 나왔다","narration":"독일 파더보른의 중세 화장실을 발굴하던 고고학자들이 손바닥 크기의 휴대용 노트를 발견했습니다.","keywords":["medieval wax tablet Paderborn archaeology","wood notebook latrine excavation","medieval notebook Germany"]},
+    {"type":"answer","title":"크기는 요즘 스마트폰 정도였다","narration":"이 노트는 나무판 열 장에 밀랍을 입힌 형태로, 반복해서 글을 쓰고 지울 수 있는 중세식 메모장이었습니다.","keywords":["medieval wax tablet notebook","wood wax writing tablet","ancient reusable notebook"]},
+    {"type":"story","title":"화장실이 오히려 유물을 보존했다","narration":"밀폐되고 매우 습한 화장실 내부 환경 덕분에 나무와 밀랍이 수백 년 동안 썩지 않고 남을 수 있었습니다.","keywords":["medieval latrine excavation Germany","waterlogged archaeology wood preservation","Paderborn archaeology latrine"]},
+    {"type":"fact","title":"안에는 라틴어 글씨가 남아 있었다","narration":"아직 전체 해독은 진행 중이지만 연구진은 밀랍판의 글이 라틴어이며 일부는 반복해서 쓰는 연습 문장일 가능성을 확인했습니다.","keywords":["Latin wax tablet writing","medieval Latin handwriting tablet","wax tablet inscription"]},
+    {"type":"fact","title":"주인은 부유한 사람이었을 가능성이 있다","narration":"노트와 함께 비단 조각도 발견돼 상인이나 성직자처럼 경제적으로 여유 있는 사람이 사용했을 가능성이 제기됩니다.","keywords":["medieval silk archaeology Germany","wealthy medieval merchant artifacts","medieval monastery Paderborn"]},
+    {"type":"ending","title":"누군가 떨어뜨린 메모장이 700년 뒤 돌아왔다","narration":"당시에는 잃어버린 물건이었겠지만 밀폐된 화장실 덕분에 현대에는 중세인의 일상을 보여주는 귀중한 기록이 됐습니다.","keywords":["medieval wax tablet museum","Paderborn medieval archaeology","ancient notebook close up"]}
+  ]
+}
