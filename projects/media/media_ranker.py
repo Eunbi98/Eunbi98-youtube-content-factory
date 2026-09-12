@@ -49,6 +49,14 @@ SPACE_TERMS = {
     "astronaut",
 }
 
+LANDSCAPE_HINTS = {
+    "landscape",
+    "widescreen",
+    "wide",
+    "16:9",
+    "horizontal",
+}
+
 
 def tokenize(text: str) -> set[str]:
     return {
@@ -81,6 +89,11 @@ def rerank_candidates(
         for term in SPACE_TERMS
     )
 
+    wants_landscape = any(
+        term in query_text
+        for term in LANDSCAPE_HINTS
+    )
+
     ranked: list[MediaCandidate] = []
 
     for candidate in candidates:
@@ -103,10 +116,21 @@ def rerank_candidates(
 
         score += matched * 18.0
 
-        if candidate.orientation == "portrait":
-            score += 18.0
-        elif candidate.orientation == "square":
-            score += 7.0
+        if wants_landscape:
+            if candidate.orientation == "landscape":
+                score += 42.0
+            elif candidate.orientation == "square":
+                score += 4.0
+            elif candidate.orientation == "portrait":
+                score -= 30.0
+
+            if candidate.width >= 1600 and candidate.width > candidate.height:
+                score += 15.0
+        else:
+            if candidate.orientation == "portrait":
+                score += 18.0
+            elif candidate.orientation == "square":
+                score += 7.0
 
         if (
             candidate.width >= 1080
