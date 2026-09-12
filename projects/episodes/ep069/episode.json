@@ -1,0 +1,10 @@
+{
+  "version":"1.0","episodeId":"ep069","channel":"science","title":"유성 먼지가 만든 라디오 신호를 튕기는 구름","voice":"ko-KR-SunHiNeural","mediaSource":"NASA sporadic E metallic clouds radio signals sounding rocket","theme":{"backgroundColor":"#0A0E14","titleColor":"#CFE8FF","captionColor":"#FFFFFF","accentColor":"#CFE8FF"},"scenes":[
+    {"type":"hook","title":"하늘에 보이지 않는 금속 구름이 있다","narration":"지구 상공에는 유성이 타고 남긴 금속 성분으로 만들어지는 얇은 층이 있습니다. 눈에는 안 보이지만 라디오 신호를 크게 흔들 수 있습니다.","keywords":["sporadic E layer NASA illustration","meteor metal ionosphere cloud","radio signal ionosphere"]},
+    {"type":"answer","title":"유성 먼지가 증발해 대기층을 만든다","narration":"대기권으로 들어온 유성이 타면서 남긴 금속 입자들이 높은 고도에 모여 일시적인 스포라딕 E층을 형성합니다.","keywords":["meteor ablation ionosphere","metal ions upper atmosphere","sporadic E layer diagram"]},
+    {"type":"story","title":"라디오 신호가 예상치 못한 방향으로 튄다","narration":"이 층이 생기면 장거리 무선 신호가 마치 거울에 반사되듯 튕겨 나가 통신 품질이 갑자기 달라질 수 있습니다.","keywords":["radio wave reflection ionosphere","sporadic E radio propagation","radio communication atmosphere"]},
+    {"type":"fact","title":"NASA는 탐사선 5개를 동시에 통과시켰다","narration":"NASA 연구진은 하나의 로켓에서 여러 센서를 분리해 같은 층의 서로 다른 지점을 동시에 측정했습니다.","keywords":["NASA sounding rocket launch Wallops","dropsonde sounding rocket sensors","NASA ionosphere experiment"]},
+    {"type":"fact","title":"생각보다 훨씬 복잡한 구조였다","narration":"여러 지점을 동시에 비교하자 이 금속층이 단순한 얇은 막이 아니라 위치에 따라 전기적 특성이 크게 달라지는 구조임이 드러났습니다.","keywords":["ionosphere electric field illustration","sporadic E layer structure","upper atmosphere science"]},
+    {"type":"ending","title":"유성의 흔적이 지상 통신까지 건드린다","narration":"우주에서 떨어진 미세한 금속 성분이 지구 상공에 모여 우리가 쓰는 라디오 신호의 길을 바꿀 수 있습니다.","keywords":["meteor atmosphere Earth","radio signal Earth space","ionosphere NASA cinematic"]}
+  ]
+}
