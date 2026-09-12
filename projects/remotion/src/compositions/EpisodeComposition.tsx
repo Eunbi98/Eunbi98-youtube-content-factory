@@ -12,6 +12,10 @@ import {
 } from '../components/SceneRenderer';
 
 import {
+	LongformSceneRenderer,
+} from '../components/LongformSceneRenderer';
+
+import {
 	ResponsiveTitleLayer,
 } from '../components/ResponsiveTitleLayer';
 
@@ -51,6 +55,7 @@ export const EpisodeComposition: React.FC<EpisodeCompositionProps> = ({
 	timeline,
 }) => {
 	const fps = timeline.fps;
+	const isLongform = timeline.width > timeline.height;
 	const backgroundColor =
 		timeline.theme?.backgroundColor ?? ep005Theme.backgroundColor;
 	const titleColor = timeline.theme?.titleColor ?? ep005Theme.titleColor;
@@ -85,15 +90,25 @@ export const EpisodeComposition: React.FC<EpisodeCompositionProps> = ({
 						durationInFrames={durationInFrames}
 						name={scene.id}
 					>
-						<SceneRenderer
-							scene={scene}
-							previousScene={previousScene}
-							durationInFrames={durationInFrames}
-							transitionDurationInFrames={transitionDuration}
-							isFirstScene={index === 0}
-							isLastScene={index === timeline.scenes.length - 1}
-							captionColor={captionColor}
-						/>
+						{isLongform ? (
+							<LongformSceneRenderer
+								scene={scene}
+								durationInFrames={durationInFrames}
+								captionColor={captionColor}
+								index={index}
+								totalScenes={timeline.scenes.length}
+							/>
+						) : (
+							<SceneRenderer
+								scene={scene}
+								previousScene={previousScene}
+								durationInFrames={durationInFrames}
+								transitionDurationInFrames={transitionDuration}
+								isFirstScene={index === 0}
+								isLastScene={index === timeline.scenes.length - 1}
+								captionColor={captionColor}
+							/>
+						)}
 
 						{scene.audio ? (
 							<Audio src={staticFile(scene.audio)} />
@@ -102,10 +117,12 @@ export const EpisodeComposition: React.FC<EpisodeCompositionProps> = ({
 				);
 			})}
 
-			<ResponsiveTitleLayer
-				title={timeline.title}
-				color={titleColor}
-			/>
+			{!isLongform ? (
+				<ResponsiveTitleLayer
+					title={timeline.title}
+					color={titleColor}
+				/>
+			) : null}
 		</AbsoluteFill>
 	);
 };
