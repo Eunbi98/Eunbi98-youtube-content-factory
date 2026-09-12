@@ -1,0 +1,10 @@
+{
+  "version":"1.0","episodeId":"ep070","channel":"science","title":"지구 핵 바로 위에서 이상 구조 6개가 발견됐다","voice":"ko-KR-SunHiNeural","mediaSource":"Earth core mantle boundary deep learning seismic structures 2026","theme":{"backgroundColor":"#120D0A","titleColor":"#FFC9A8","captionColor":"#FFFFFF","accentColor":"#FFC9A8"},"scenes":[
+    {"type":"hook","title":"지구 2,900km 아래에서 이상 구조가 발견됐다","narration":"과학자들이 지진파와 딥러닝을 이용해 지구 핵과 맨틀이 만나는 경계에서 특이한 구조 여섯 곳을 찾아냈습니다.","keywords":["Earth core mantle boundary illustration","deep Earth seismic waves","core mantle boundary science"]},
+    {"type":"answer","title":"직접 갈 수 없어 지진파를 읽었다","narration":"핵과 맨틀의 경계는 약 이천구백 킬로미터 아래에 있어 직접 관측할 수 없습니다. 대신 지진파가 지나가는 방식을 분석했습니다.","keywords":["seismic waves Earth interior diagram","earthquake waves mantle core","deep Earth tomography"]},
+    {"type":"story","title":"30년치 데이터를 딥러닝으로 분석했다","narration":"연구진은 수십 년 동안 기록된 특정 지진파 신호를 딥러닝으로 분석해 사람이 놓치기 쉬운 미세한 패턴을 찾았습니다.","keywords":["seismic data deep learning","earthquake seismogram AI","geophysics machine learning"]},
+    {"type":"fact","title":"이상 구조는 여섯 지역에서 나타났다","narration":"분석 결과 핵-맨틀 경계의 여러 지역에서 주변과 다른 밀도나 조성을 가질 가능성이 있는 여섯 구조가 확인됐습니다.","keywords":["core mantle boundary anomalies map","deep mantle structures illustration","Earth interior anomaly"]},
+    {"type":"fact","title":"지구 내부가 생각보다 더 복잡하다","narration":"이런 구조는 맨틀 흐름이나 오래된 지각 조각, 지구 내부의 화학적 차이와 관련됐을 가능성이 있습니다.","keywords":["mantle convection illustration","subducted slab deep mantle","Earth interior geology"]},
+    {"type":"ending","title":"지구 내부도 아직 미지의 세계다","narration":"우리는 우주를 망원경으로 보지만 발밑 수천 킬로미터의 세계도 직접 본 적이 없습니다. 지진파가 그 내부 지도를 조금씩 그리고 있습니다.","keywords":["Earth cutaway core mantle","deep Earth cinematic","planet interior science"]}
+  ]
+}
