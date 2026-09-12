@@ -66,6 +66,10 @@ export const ResponsiveCaptionLayer: React.FC<Props> = ({
 	const frame = useCurrentFrame();
 	const {width, height} = useVideoConfig();
 	const isLandscape = width > height;
+	const pages = useMemo(
+		() => splitLongformCaption(caption ?? ''),
+		[caption],
+	);
 
 	if (!isLandscape) {
 		return (
@@ -77,11 +81,6 @@ export const ResponsiveCaptionLayer: React.FC<Props> = ({
 			/>
 		);
 	}
-
-	const pages = useMemo(
-		() => splitLongformCaption(caption ?? ''),
-		[caption],
-	);
 
 	if (pages.length === 0) return null;
 
