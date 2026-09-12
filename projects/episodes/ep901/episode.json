@@ -5,7 +5,10 @@
   "format": "longform",
   "title": "우주에서 발견된 이상한 현상 7가지",
   "voice": "ko-KR-SunHiNeural",
-  "mediaSource": "Mars blue sunset beehive rocks intergalactic black hole giant moon dark matter Saturn decagon NASA astronomy",
+  "fps": 30,
+  "width": 1920,
+  "height": 1080,
+  "mediaSource": "Mars blue sunset beehive rocks intergalactic black hole giant moon dark matter Saturn decagon NASA astronomy wide landscape 16:9",
   "theme": {
     "backgroundColor": "#090B12",
     "titleColor": "#E7D2A1",
@@ -13,101 +16,21 @@
     "accentColor": "#E7D2A1"
   },
   "scenes": [
-    {
-      "type": "hook",
-      "title": "우주는 생각보다 훨씬 이상하다",
-      "narration": "우리는 우주를 꽤 많이 이해했다고 생각하지만 실제로는 아직 설명하기 어려운 현상이 계속 발견되고 있습니다. 오늘은 최근까지도 사람들을 놀라게 한 우주에서 발견된 이상한 현상 일곱 가지를 한 번에 정리해보겠습니다.",
-      "keywords": ["deep space stars galaxy cinematic", "mysterious universe concept", "NASA deep space image"]
-    },
-    {
-      "type": "story",
-      "title": "첫 번째 화성의 거대한 벌집과 검은 돌",
-      "narration": "화성 표면에서는 벌집처럼 보이는 육각형 무늬 지형과 주변과 유난히 대비되는 검은 돌들이 함께 관측된 적이 있습니다. 겉으로 보면 마치 누군가 인공적으로 배열한 것처럼 보여 많은 사람들의 관심을 끌었습니다.",
-      "keywords": ["Mars surface hexagonal terrain real photo", "Mars black rocks close up", "Martian landscape wide shot"]
-    },
-    {
-      "type": "fact",
-      "title": "왜 화성의 지형은 그렇게 보일까",
-      "narration": "과학자들은 이런 무늬가 과거의 물과 얼음 반복적인 수축과 팽창 같은 지질 작용으로 생겼을 가능성을 봅니다. 하지만 이미지로만 보면 너무 규칙적으로 느껴져서 화성이 왜 늘 사람들에게 미스터리의 행성으로 남는지 잘 보여주는 사례이기도 합니다.",
-      "keywords": ["Mars geology illustration", "Martian cracks polygon ground", "Mars rover terrain close view"]
-    },
-    {
-      "type": "story",
-      "title": "두 번째 화성의 노을은 파랗다",
-      "narration": "지구에서는 해 질 무렵 하늘이 붉게 물드는 것이 익숙하지만 화성에서는 반대로 태양 주변이 푸르게 보일 수 있습니다. 처음 들으면 낯설지만 화성 대기의 구조와 먼지 입자 크기가 지구와 다르기 때문에 가능한 현상입니다.",
-      "keywords": ["Mars blue sunset NASA", "Martian sky sunset rover", "Mars horizon evening"]
-    },
-    {
-      "type": "fact",
-      "title": "같은 노을인데 왜 색이 반대일까",
-      "narration": "화성 대기에는 아주 미세한 먼지가 많고 그 먼지는 붉은 빛보다 푸른빛을 전방으로 더 잘 산란시키는 경향이 있습니다. 그 결과 해 질 무렵 태양 근처에만 푸른 빛 테두리가 생기며 우리가 지구에서 보던 노을과는 완전히 다른 풍경이 나타납니다.",
-      "keywords": ["Mars atmosphere dust scattering illustration", "blue sunset explanation Mars", "Mars dust sky science graphic"]
-    },
-    {
-      "type": "story",
-      "title": "세 번째 우주는 왜 완전히 조용할까",
-      "narration": "영화 속 우주전투 장면에서는 거대한 폭발음이 들리지만 실제 우주는 거의 완전히 조용합니다. 아무리 큰 충돌이 일어나도 진공 상태인 우주에서는 우리가 귀로 들을 수 있는 소리가 전달되지 않기 때문입니다.",
-      "keywords": ["outer space silent vacuum concept", "astronaut in space cinematic", "space explosion without sound concept"]
-    },
-    {
-      "type": "fact",
-      "title": "소리는 공기나 물 같은 매질이 필요하다",
-      "narration": "소리는 진동이 공기나 물질을 통해 이동할 때 들립니다. 하지만 우주는 대부분 진공이라서 폭발이 일어나도 그 진동을 전달할 매질이 거의 없습니다. 우리가 우주를 조용하다고 말하는 이유는 우주가 텅 비어서라기보다 소리를 실어 나를 통로가 부족하기 때문입니다.",
-      "keywords": ["sound needs medium science illustration", "vacuum no sound explanation", "space vacuum educational graphic"]
-    },
-    {
-      "type": "story",
-      "title": "네 번째 은하 밖을 떠도는 블랙홀",
-      "narration": "블랙홀은 보통 은하 중심이나 별이 진화한 자리에서 발견될 것 같지만 어떤 경우에는 은하 바깥을 떠도는 블랙홀 후보도 관측됩니다. 이런 천체는 주변 별빛이나 가스 흐름을 비정상적으로 왜곡시키며 자신의 존재를 드러냅니다.",
-      "keywords": ["intergalactic black hole concept", "rogue black hole space illustration", "black hole ejected from galaxy"]
-    },
-    {
-      "type": "fact",
-      "title": "블랙홀은 어떻게 은하 밖으로 튕겨 나갈까",
-      "narration": "과학자들은 거대한 블랙홀끼리 충돌하거나 중력 상호작용이 극단적으로 일어날 경우 블랙홀이 은하 바깥으로 밀려날 수 있다고 봅니다. 만약 이런 해석이 맞다면 블랙홀은 단지 모든 것을 빨아들이는 존재가 아니라 우주 공간을 떠돌 수 있는 고립된 천체이기도 한 셈입니다.",
-      "keywords": ["black hole merger recoil illustration", "gravitational slingshot black hole concept", "wandering black hole cinematic"]
-    },
-    {
-      "type": "story",
-      "title": "다섯 번째 행성보다 큰 달",
-      "narration": "우리는 보통 행성이 달보다 훨씬 크다고 생각합니다. 하지만 우주에는 어떤 행성보다도 비슷하거나 경우에 따라서는 더 크게 느껴질 정도로 거대한 위성들이 있습니다. 이런 시스템은 우리가 익숙한 태양계 상식을 흔듭니다.",
-      "keywords": ["giant moon bigger than planet concept", "exomoon comparison illustration", "planet and moon size comparison"]
-    },
-    {
-      "type": "fact",
-      "title": "왜 이런 구조가 이상하게 느껴질까",
-      "narration": "태양계에서는 위성이 행성보다 훨씬 작은 경우가 일반적이기 때문에 큰 위성이 작은 행성을 도는 그림은 직관에 잘 맞지 않습니다. 하지만 우주는 우리가 익숙한 예시보다 훨씬 다양한 구조를 보여주고 있고 그래서 행성과 위성의 경계가 어디까지인지 다시 생각하게 만듭니다.",
-      "keywords": ["moon planet ratio comparison graphic", "large exomoon astronomy concept", "strange planetary system illustration"]
-    },
-    {
-      "type": "story",
-      "title": "여섯 번째 암흑물질의 단 한 번의 신호",
-      "narration": "우주의 대부분을 차지한다고 여겨지지만 정체를 모르는 암흑물질은 과학자들이 오랫동안 찾고 있는 대상입니다. 최근 초고감도 실험에서 기존 배경 신호만으로 설명하기 어려운 단 한 번의 상호작용이 기록되면서 다시 큰 관심이 모였습니다.",
-      "keywords": ["dark matter detector laboratory", "LUX ZEPLIN dark matter experiment", "particle signal science concept"]
-    },
-    {
-      "type": "fact",
-      "title": "하지만 아직 발견이라고 부를 수는 없다",
-      "narration": "과학에서는 단 한 번의 신호만으로 새로운 입자를 발견했다고 말하지 않습니다. 우연한 잡음일 가능성을 배제하려면 같은 패턴이 반복해서 나타나야 하기 때문입니다. 그래도 이 한 번의 신호는 어쩌면 인류가 처음으로 암흑물질의 흔적에 아주 가까이 갔을지도 모른다는 기대를 남겼습니다.",
-      "keywords": ["dark matter signal visualization", "particle physics detector underground", "science experiment mysterious event"]
-    },
-    {
-      "type": "story",
-      "title": "일곱 번째 토성 남극의 10각형",
-      "narration": "토성 북극에는 유명한 육각형 대기 구조가 있습니다. 그런데 최근에는 남극에서 열 개의 변을 가진 거대한 대기 파동이 관측되며 또 한 번 사람들을 놀라게 했습니다.",
-      "keywords": ["Saturn south pole decagon NASA", "Saturn atmosphere south pole", "Hubble Saturn south pole"]
-    },
-    {
-      "type": "fact",
-      "title": "북극 육각형과 닮았지만 또 다르다",
-      "narration": "북극 육각형도 오래전부터 유명했지만 남극 십각형은 형성 방식과 변화 양상이 다를 수 있다는 점에서 더 흥미롭습니다. 과학자들은 빠른 제트기류와 대기파의 상호작용을 의심하고 있지만 왜 정확히 열 개의 변이 나타나는지는 아직 명확하지 않습니다.",
-      "keywords": ["Saturn north hexagon vs south decagon", "Saturn jet stream illustration", "gas giant atmospheric wave concept"]
-    },
-    {
-      "type": "ending",
-      "title": "우주는 답보다 질문이 더 많은 곳이다",
-      "narration": "오늘 살펴본 일곱 가지 현상은 모두 공통점이 있습니다. 우리가 이미 많은 것을 안다고 생각하는 순간에도 우주는 늘 새로운 질문을 던진다는 점입니다. 화성의 낯선 풍경 소리 없는 진공 떠도는 블랙홀 거대한 위성 암흑물질의 신호 토성의 기하학적인 대기까지 우주를 이해한다는 것은 정답을 모으는 일이라기보다 더 좋은 질문을 계속 만들어가는 과정일지도 모릅니다.",
-      "keywords": ["deep universe montage", "space mystery collage", "cosmos cinematic ending"]
-    }
+    {"type":"hook","title":"우주는 생각보다 훨씬 이상하다","narration":"우리는 우주를 꽤 많이 이해했다고 생각하지만 실제로는 아직 설명하기 어려운 현상이 계속 발견되고 있습니다. 오늘은 최근까지도 사람들을 놀라게 한 우주에서 발견된 이상한 현상 일곱 가지를 한 번에 정리해보겠습니다.","keywords":["deep space stars galaxy cinematic wide landscape 16:9","mysterious universe concept widescreen","NASA deep space image horizontal"]},
+    {"type":"story","title":"첫 번째 화성의 거대한 벌집과 검은 돌","narration":"화성 표면에서는 벌집처럼 보이는 육각형 무늬 지형과 주변과 유난히 대비되는 검은 돌들이 함께 관측된 적이 있습니다. 겉으로 보면 마치 누군가 인공적으로 배열한 것처럼 보여 많은 사람들의 관심을 끌었습니다.","keywords":["Mars surface hexagonal terrain real photo wide landscape 16:9","Mars black rocks horizontal","Martian landscape wide shot"]},
+    {"type":"fact","title":"왜 화성의 지형은 그렇게 보일까","narration":"과학자들은 이런 무늬가 과거의 물과 얼음 반복적인 수축과 팽창 같은 지질 작용으로 생겼을 가능성을 봅니다. 하지만 이미지로만 보면 너무 규칙적으로 느껴져서 화성이 왜 늘 사람들에게 미스터리의 행성으로 남는지 잘 보여주는 사례이기도 합니다.","keywords":["Mars geology illustration wide landscape 16:9","Martian cracks polygon ground horizontal","Mars rover terrain wide view"]},
+    {"type":"story","title":"두 번째 화성의 노을은 파랗다","narration":"지구에서는 해 질 무렵 하늘이 붉게 물드는 것이 익숙하지만 화성에서는 반대로 태양 주변이 푸르게 보일 수 있습니다. 처음 들으면 낯설지만 화성 대기의 구조와 먼지 입자 크기가 지구와 다르기 때문에 가능한 현상입니다.","keywords":["Mars blue sunset NASA wide landscape 16:9","Martian sky sunset rover horizontal","Mars horizon evening widescreen"]},
+    {"type":"fact","title":"같은 노을인데 왜 색이 반대일까","narration":"화성 대기에는 아주 미세한 먼지가 많고 그 먼지는 붉은 빛보다 푸른빛을 전방으로 더 잘 산란시키는 경향이 있습니다. 그 결과 해 질 무렵 태양 근처에만 푸른 빛 테두리가 생기며 우리가 지구에서 보던 노을과는 완전히 다른 풍경이 나타납니다.","keywords":["Mars atmosphere dust scattering illustration wide landscape 16:9","blue sunset explanation Mars widescreen","Mars dust sky science graphic horizontal"]},
+    {"type":"story","title":"세 번째 우주는 왜 완전히 조용할까","narration":"영화 속 우주전투 장면에서는 거대한 폭발음이 들리지만 실제 우주는 거의 완전히 조용합니다. 아무리 큰 충돌이 일어나도 진공 상태인 우주에서는 우리가 귀로 들을 수 있는 소리가 전달되지 않기 때문입니다.","keywords":["outer space silent vacuum concept wide landscape 16:9","astronaut in space cinematic widescreen","space explosion without sound horizontal"]},
+    {"type":"fact","title":"소리는 공기나 물 같은 매질이 필요하다","narration":"소리는 진동이 공기나 물질을 통해 이동할 때 들립니다. 하지만 우주는 대부분 진공이라서 폭발이 일어나도 그 진동을 전달할 매질이 거의 없습니다. 우리가 우주를 조용하다고 말하는 이유는 우주가 텅 비어서라기보다 소리를 실어 나를 통로가 부족하기 때문입니다.","keywords":["sound needs medium science illustration wide landscape 16:9","vacuum no sound explanation widescreen","space vacuum educational graphic horizontal"]},
+    {"type":"story","title":"네 번째 은하 밖을 떠도는 블랙홀","narration":"블랙홀은 보통 은하 중심이나 별이 진화한 자리에서 발견될 것 같지만 어떤 경우에는 은하 바깥을 떠도는 블랙홀 후보도 관측됩니다. 이런 천체는 주변 별빛이나 가스 흐름을 비정상적으로 왜곡시키며 자신의 존재를 드러냅니다.","keywords":["intergalactic black hole concept wide landscape 16:9","rogue black hole space illustration widescreen","black hole ejected from galaxy horizontal"]},
+    {"type":"fact","title":"블랙홀은 어떻게 은하 밖으로 튕겨 나갈까","narration":"과학자들은 거대한 블랙홀끼리 충돌하거나 중력 상호작용이 극단적으로 일어날 경우 블랙홀이 은하 바깥으로 밀려날 수 있다고 봅니다. 만약 이런 해석이 맞다면 블랙홀은 단지 모든 것을 빨아들이는 존재가 아니라 우주 공간을 떠돌 수 있는 고립된 천체이기도 한 셈입니다.","keywords":["black hole merger recoil illustration wide landscape 16:9","gravitational slingshot black hole widescreen","wandering black hole cinematic horizontal"]},
+    {"type":"story","title":"다섯 번째 행성보다 큰 달","narration":"우리는 보통 행성이 달보다 훨씬 크다고 생각합니다. 하지만 우주에는 어떤 행성보다도 비슷하거나 경우에 따라서는 더 크게 느껴질 정도로 거대한 위성들이 있습니다. 이런 시스템은 우리가 익숙한 태양계 상식을 흔듭니다.","keywords":["giant moon bigger than planet concept wide landscape 16:9","exomoon comparison illustration widescreen","planet and moon size comparison horizontal"]},
+    {"type":"fact","title":"왜 이런 구조가 이상하게 느껴질까","narration":"태양계에서는 위성이 행성보다 훨씬 작은 경우가 일반적이기 때문에 큰 위성이 작은 행성을 도는 그림은 직관에 잘 맞지 않습니다. 하지만 우주는 우리가 익숙한 예시보다 훨씬 다양한 구조를 보여주고 있고 그래서 행성과 위성의 경계가 어디까지인지 다시 생각하게 만듭니다.","keywords":["moon planet ratio comparison graphic wide landscape 16:9","large exomoon astronomy concept widescreen","strange planetary system illustration horizontal"]},
+    {"type":"story","title":"여섯 번째 암흑물질의 단 한 번의 신호","narration":"우주의 대부분을 차지한다고 여겨지지만 정체를 모르는 암흑물질은 과학자들이 오랫동안 찾고 있는 대상입니다. 최근 초고감도 실험에서 기존 배경 신호만으로 설명하기 어려운 단 한 번의 상호작용이 기록되면서 다시 큰 관심이 모였습니다.","keywords":["dark matter detector laboratory wide landscape 16:9","LUX ZEPLIN dark matter experiment widescreen","particle signal science concept horizontal"]},
+    {"type":"fact","title":"하지만 아직 발견이라고 부를 수는 없다","narration":"과학에서는 단 한 번의 신호만으로 새로운 입자를 발견했다고 말하지 않습니다. 우연한 잡음일 가능성을 배제하려면 같은 패턴이 반복해서 나타나야 하기 때문입니다. 그래도 이 한 번의 신호는 어쩌면 인류가 처음으로 암흑물질의 흔적에 아주 가까이 갔을지도 모른다는 기대를 남겼습니다.","keywords":["dark matter signal visualization wide landscape 16:9","particle physics detector underground widescreen","science experiment mysterious event horizontal"]},
+    {"type":"story","title":"일곱 번째 토성 남극의 10각형","narration":"토성 북극에는 유명한 육각형 대기 구조가 있습니다. 그런데 최근에는 남극에서 열 개의 변을 가진 거대한 대기 파동이 관측되며 또 한 번 사람들을 놀라게 했습니다.","keywords":["Saturn south pole decagon NASA wide landscape 16:9","Saturn atmosphere south pole widescreen","Hubble Saturn south pole horizontal"]},
+    {"type":"fact","title":"북극 육각형과 닮았지만 또 다르다","narration":"북극 육각형도 오래전부터 유명했지만 남극 십각형은 형성 방식과 변화 양상이 다를 수 있다는 점에서 더 흥미롭습니다. 과학자들은 빠른 제트기류와 대기파의 상호작용을 의심하고 있지만 왜 정확히 열 개의 변이 나타나는지는 아직 명확하지 않습니다.","keywords":["Saturn north hexagon vs south decagon wide landscape 16:9","Saturn jet stream illustration widescreen","gas giant atmospheric wave concept horizontal"]},
+    {"type":"ending","title":"우주는 답보다 질문이 더 많은 곳이다","narration":"오늘 살펴본 일곱 가지 현상은 모두 공통점이 있습니다. 우리가 이미 많은 것을 안다고 생각하는 순간에도 우주는 늘 새로운 질문을 던진다는 점입니다. 화성의 낯선 풍경 소리 없는 진공 떠도는 블랙홀 거대한 위성 암흑물질의 신호 토성의 기하학적인 대기까지 우주를 이해한다는 것은 정답을 모으는 일이라기보다 더 좋은 질문을 계속 만들어가는 과정일지도 모릅니다.","keywords":["deep universe montage wide landscape 16:9","space mystery collage widescreen","cosmos cinematic ending horizontal"]}
   ]
 }
