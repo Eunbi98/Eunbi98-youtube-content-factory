@@ -1,0 +1,10 @@
+{
+  "version":"1.0","episodeId":"ep075","channel":"science","title":"캠핑장 찾다가 충돌구를 발견한 아마추어 천문가","voice":"ko-KR-SunHiNeural","mediaSource":"Quebec accidental impact crater satellite maps amateur astronomer NASA Earth Observatory","theme":{"backgroundColor":"#0B1012","titleColor":"#9FD9E6","captionColor":"#FFFFFF","accentColor":"#9FD9E6"},"scenes":[
+    {"type":"hook","title":"캠핑장을 찾다가 충돌구를 발견했다","narration":"캐나다 퀘벡에서 한 아마추어 천문가가 온라인 위성지도로 캠핑할 장소를 찾다가 이상한 원형 지형을 발견했습니다.","keywords":["Quebec impact crater satellite image","Canada crater aerial view","amateur astronomer satellite map crater"]},
+    {"type":"answer","title":"그 원형 지형은 실제 충돌구였다","narration":"단순한 호수나 지질 구조처럼 보였던 곳은 조사 결과 천체 충돌로 만들어진 충돌구로 확인됐습니다.","keywords":["meteor impact crater Quebec","Canadian impact crater landscape","impact structure satellite image"]},
+    {"type":"story","title":"발견은 현장이 아니라 화면에서 시작됐다","narration":"첫 단서는 탐사 장비가 아니라 누구나 볼 수 있는 온라인 위성 이미지였습니다. 지형의 둥근 윤곽이 발견자의 눈에 들어온 겁니다.","keywords":["satellite map circular crater Canada","remote sensing crater discovery","Google satellite crater landscape"]},
+    {"type":"fact","title":"위성 이미지는 숨은 지질 구조를 찾는 도구다","narration":"우주에서 본 지표는 숲이나 호수 때문에 현장에서 놓치기 쉬운 원형 구조와 지질 패턴을 한눈에 비교하게 해줍니다.","keywords":["Landsat impact crater satellite","remote sensing geology crater","satellite geology Canada"]},
+    {"type":"fact","title":"전문가가 아닌 사람도 발견에 참여할 수 있다","narration":"이 사례는 공개 위성자료가 연구자뿐 아니라 일반인의 관찰에서도 새로운 과학적 발견으로 이어질 수 있다는 점을 보여줍니다.","keywords":["citizen science satellite imagery","amateur astronomy discovery","NASA Earth Observatory crater"]},
+    {"type":"ending","title":"평범한 지도 확대가 과학적 발견이 됐다","narration":"다음 여행지를 찾으려고 지도를 보다가 수천 년 또는 그보다 오래된 충돌의 흔적을 발견할 수도 있는 시대가 된 겁니다.","keywords":["Quebec landscape satellite crater","Canada remote wilderness aerial","impact crater Earth from space"]}
+  ]
+}
