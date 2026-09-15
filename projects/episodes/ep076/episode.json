@@ -1,0 +1,10 @@
+{
+  "version":"1.0","episodeId":"ep076","channel":"technology","title":"휘어지고 투명한 ‘빛으로 계산하는 칩’이 나왔다","voice":"ko-KR-SunHiNeural","mediaSource":"MIT flexible transparent silicon photonics chip wearable AR display","theme":{"backgroundColor":"#081015","titleColor":"#9BD8FF","captionColor":"#FFFFFF","accentColor":"#9BD8FF"},"scenes":[
+    {"type":"hook","title":"컴퓨터 칩이 투명하고 휘어진다면?","narration":"MIT 연구진이 빛으로 정보를 처리하는 실리콘 포토닉 칩을 휘어지고 투명하게 만들 수 있는 제작 기술을 공개했습니다.","keywords":["MIT flexible transparent photonic chip","silicon photonics flexible transparent","transparent chip laboratory"]},
+    {"type":"answer","title":"전기가 아니라 빛으로 데이터를 처리한다","narration":"실리콘 포토닉스는 전기 신호 대신 빛을 이용해 칩 안에서 정보를 전달하고 처리하는 기술입니다.","keywords":["silicon photonics chip light","photonic integrated circuit","optical computing chip"]},
+    {"type":"story","title":"기존 칩은 대부분 단단하고 불투명했다","narration":"기존 실리콘 포토닉 칩은 성능은 뛰어나도 딱딱하고 불투명해서 몸이나 곡면에 붙이는 기기에 쓰기 어려웠습니다.","keywords":["rigid silicon photonic chip","semiconductor wafer photonics","photonic chip close up"]},
+    {"type":"fact","title":"이번 방식은 많은 소자를 한꺼번에 만들 수 있다","narration":"연구진은 소수의 실험용 장치가 아니라 여러 광학 소자를 확장 가능한 공정으로 제작할 수 있다는 점을 강조했습니다.","keywords":["flexible photonics fabrication wafer","transparent photonic circuit flexible","MIT photonics fabrication"]},
+    {"type":"fact","title":"몸에 붙는 센서와 투명 AR 화면에 연결될 수 있다","narration":"이 기술이 발전하면 피부에 밀착되는 건강 모니터나 헬멧 곡면을 따라가는 투명 증강현실 디스플레이 같은 장치에 활용될 수 있습니다.","keywords":["transparent AR display helmet","flexible wearable health sensor","transparent wearable photonics"]},
+    {"type":"ending","title":"칩도 이제 단단한 네모판일 필요가 없어진다","narration":"성능뿐 아니라 형태까지 자유로워지면 미래의 컴퓨터 칩은 옷이나 피부, 투명한 표면 속에 자연스럽게 들어갈 수도 있습니다.","keywords":["future flexible transparent electronics","wearable photonics concept","transparent technology display"]}
+  ]
+}
