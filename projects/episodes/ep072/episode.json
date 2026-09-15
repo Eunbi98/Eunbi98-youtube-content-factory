@@ -1,0 +1,10 @@
+{
+  "version":"1.0","episodeId":"ep072","channel":"history","title":"번개 맞은 곳을 신성시한 로마인의 비밀 표식","voice":"ko-KR-SunHiNeural","mediaSource":"Hadrian Villa lightning inscription Fulgur Submanium Roman ritual archaeology","theme":{"backgroundColor":"#100C0A","titleColor":"#E0C58B","captionColor":"#FFFFFF","accentColor":"#E0C58B"},"scenes":[
+    {"type":"hook","title":"로마인은 번개 맞은 곳을 그냥 두지 않았다","narration":"이탈리아 하드리아누스 빌라에서 번개가 떨어진 장소를 표시한 것으로 보이는 고대 로마의 대리석 비문이 발견됐습니다.","keywords":["Hadrian Villa lightning inscription archaeology","Villa Adriana Roman inscription","Roman lightning ritual marble"]},
+    {"type":"answer","title":"비문에는 밤의 번개 신이 적혀 있었다","narration":"대리석에는 밤의 번개와 관련된 로마 신 수마누스를 가리키는 문구가 새겨져 있었습니다.","keywords":["Fulgur Submanium inscription","Summanus Roman god lightning","Roman marble inscription Tivoli"]},
+    {"type":"story","title":"번개 맞은 물건은 신성한 것으로 여겼다","narration":"로마인들은 번개에 맞은 장소나 물건을 신이 인간 세계에 개입한 흔적으로 보고 특별한 의식을 치르기도 했습니다.","keywords":["ancient Roman lightning ritual","Roman religion sacred lightning","fulgur conditum ritual"]},
+    {"type":"fact","title":"맞은 물건을 땅에 묻는 의식도 있었다","narration":"연구자들은 이번 비문이 번개에 맞은 물건을 묻고 그 장소를 종교적으로 구분하는 의식과 관련됐을 가능성을 제시합니다.","keywords":["Roman fulgur conditum archaeology","buried lightning struck objects Rome","ancient Roman ritual site"]},
+    {"type":"fact","title":"2000년 전 현장 규칙을 보여주는 표식","narration":"단순한 글자가 아니라 번개라는 자연현상을 로마 사회가 어떻게 해석하고 공간까지 바꿨는지 보여주는 직접적인 흔적입니다.","keywords":["Hadrian Villa archaeology amphitheater","Villa Adriana ruins Tivoli","Roman religious archaeology"]},
+    {"type":"ending","title":"번개 한 번이 장소의 의미를 바꿨다","narration":"오늘날에는 기상현상이지만 고대 로마에서는 번개가 떨어진 순간 평범한 장소가 신성한 공간으로 바뀔 수도 있었습니다.","keywords":["Hadrian Villa sunset ruins","ancient Rome lightning concept","Villa Adriana aerial"]}
+  ]
+}
