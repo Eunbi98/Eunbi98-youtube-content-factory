@@ -1,0 +1,10 @@
+{
+  "version":"1.0","episodeId":"ep080","channel":"technology","title":"자연계 어떤 물질보다도 열을 막는 초단열 신소재가 나왔다","voice":"ko-KR-SunHiNeural","mediaSource":"NC State new thermal insulator dense material low thermal conductivity thin film","theme":{"backgroundColor":"#0B0D12","titleColor":"#A9C8FF","captionColor":"#FFFFFF","accentColor":"#A9C8FF"},"scenes":[
+    {"type":"hook","title":"단단한데 열은 거의 통과하지 않는 물질이 나왔다","narration":"연구진이 자연에서 발견되는 어떤 조밀한 물질보다도 낮은 수준의 열전도율에 접근한 새로운 단열 소재를 개발했습니다.","keywords":["new thermal insulator material NC State","ultralow thermal conductivity dense material","thin film thermal insulation"]},
+    {"type":"answer","title":"보통 단단한 물질은 열도 잘 전달한다","narration":"일반적으로 구조가 단단하고 촘촘한 재료는 열을 잘 전달하지만 단열재는 부드럽거나 내부에 빈 공간이 많은 경우가 많습니다.","keywords":["thermal conductivity material comparison","rigid material heat conduction","thermal insulation material science"]},
+    {"type":"story","title":"이번 소재는 두 조건을 동시에 노렸다","narration":"새 소재는 높은 강성을 유지하면서도 열의 이동을 극도로 방해하도록 설계돼 기존의 상반된 특성을 한 물질에 결합했습니다.","keywords":["stiff thermal insulator material","nanostructured thermal insulation","materials science thermal barrier"]},
+    {"type":"fact","title":"얇은 막으로도 만들 수 있다","narration":"연구진은 이 소재를 큰 면적의 얇은 필름 형태로 제작할 수 있어 실제 장치에 적용할 가능성도 강조했습니다.","keywords":["printable thin film thermal insulator","large area thermal barrier film","advanced materials thin film"]},
+    {"type":"fact","title":"전자기기부터 우주까지 활용 후보가 넓다","narration":"열을 막으면서 구조적 강도까지 필요한 전자기기, 조리도구, 항공우주 분야에서 활용될 가능성이 있습니다.","keywords":["electronics thermal insulation film","spacecraft thermal barrier material","advanced thermal management"]},
+    {"type":"ending","title":"단열재는 꼭 두껍고 푹신할 필요가 없을지도 모른다","narration":"단단하고 얇은 물질이 열까지 극도로 잘 막을 수 있다면 미래의 단열 설계 자체가 달라질 수 있습니다.","keywords":["future thermal insulation technology","thin rigid thermal barrier","advanced insulating material"]}
+  ]
+}
