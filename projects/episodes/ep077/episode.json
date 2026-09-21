@@ -1,0 +1,10 @@
+{
+  "version":"1.0","episodeId":"ep077","channel":"history","title":"2천 년 전 불탄 두루마리를 읽으려고 과학자들이 직접 태웠다","voice":"ko-KR-SunHiNeural","mediaSource":"Herculaneum carbonized scroll papyrus X ray CT Berkeley lead ink","theme":{"backgroundColor":"#100C09","titleColor":"#E4C892","captionColor":"#FFFFFF","accentColor":"#E4C892"},"scenes":[
+    {"type":"hook","title":"2천 년 전 불탄 책을 읽기 위해 새 책을 태웠다","narration":"과학자들이 베수비오 화산에 타버린 고대 두루마리를 읽는 방법을 시험하려고 현대의 파피루스를 직접 만들어 불태웠습니다.","keywords":["Herculaneum carbonized scroll","burned papyrus experiment Berkeley","ancient scroll X ray CT"]},
+    {"type":"answer","title":"문제는 펼치는 순간 부서진다는 것","narration":"서기 79년 화산재에 묻힌 헤르쿨라네움 두루마리는 너무 약해 실제로 펼치면 검은 재처럼 부서질 수 있습니다.","keywords":["Herculaneum scroll carbonized","Villa of the Papyri scrolls","charred ancient papyrus"]},
+    {"type":"story","title":"그래서 똑같은 조건을 다시 만들었다","narration":"연구진은 실제 파피루스와 전통 잉크를 준비해 글을 쓴 뒤 산소가 거의 없는 고온 환경에서 두루마리를 탄화시켰습니다.","keywords":["papyrus carbonization experiment","reed pen papyrus ink","burned scroll laboratory"]},
+    {"type":"fact","title":"잉크 속 납이 X선에서 훨씬 밝게 보였다","narration":"잉크에 아주 적은 양의 납이 있으면 탄 파피루스보다 X선을 훨씬 강하게 흡수해 글자가 선명하게 드러나는 것을 확인했습니다.","keywords":["X ray tomography papyrus lead ink","CT scan carbonized scroll letters","lead ink ancient manuscript"]},
+    {"type":"fact","title":"실제 고대 두루마리에도 납이 있을 수 있다","narration":"일부 고대 파피루스에서 납이나 구리가 들어간 잉크가 확인된 만큼 헤르쿨라네움 두루마리 중에도 같은 방식으로 읽을 수 있는 문서가 있을 가능성이 있습니다.","keywords":["ancient papyrus XRF lead copper ink","Herculaneum virtual unrolling","ancient manuscript CT scan"]},
+    {"type":"ending","title":"불타서 사라진 줄 알았던 책이 다시 읽힐 수도 있다","narration":"두루마리를 펼치지 않고도 글자를 찾을 수 있다면 화산재 속에 봉인된 고대의 책들이 다시 읽히는 날이 올지도 모릅니다.","keywords":["Herculaneum scroll virtual unrolling","ancient library papyrus reconstruction","carbonized scroll reading"]}
+  ]
+}
