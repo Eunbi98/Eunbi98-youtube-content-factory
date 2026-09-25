@@ -1,0 +1,10 @@
+{
+  "version":"1.0","episodeId":"ep085","channel":"culture","title":"성벽 안에 도시를 만든 조선의 계획도시 수원","voice":"ko-KR-SunHiNeural","mediaSource":"Suwon Hwaseong Fortress planned city Jeongjo walls 5.74 km UNESCO","theme":{"backgroundColor":"#10100D","titleColor":"#E2D5A7","captionColor":"#FFFFFF","accentColor":"#E2D5A7"},"scenes":[
+    {"type":"hook","title":"조선은 성만 쌓은 게 아니라 도시를 새로 설계했다","narration":"수원화성은 단순한 방어용 성곽이 아니라 정조가 새로운 도시 기반을 만들기 위해 계획한 거대한 도시 프로젝트였습니다.","keywords":["Suwon Hwaseong Fortress aerial","Hwaseong Fortress Suwon city","Korea fortress city"]},
+    {"type":"answer","title":"성벽 길이만 약 5.74킬로미터","narration":"유네스코 자료에 따르면 수원화성 성벽은 약 5.74킬로미터에 이르며 수원 도심의 중심부를 둘러싸도록 조성됐습니다.","keywords":["Hwaseong Fortress wall aerial","Suwon fortress wall length","Hwaseong UNESCO Korea"]},
+    {"type":"story","title":"동서양의 축성 기술을 함께 활용했다","narration":"정조 시대의 기술자들은 기존 조선식 성곽에 당시 알려진 동아시아와 서양의 군사기술을 참고해 다양한 방어시설을 배치했습니다.","keywords":["Hwaseong fortress architecture","Hwaseong artillery tower gate","Jeong Yak yong Hwaseong technology"]},
+    {"type":"fact","title":"성 안에는 왕이 머무는 행궁도 있었다","narration":"성곽 안에는 화성행궁이 조성돼 정조가 수원을 방문할 때 머물렀고 도시의 행정과 왕실 행사의 중심 역할을 했습니다.","keywords":["Hwaseong Haenggung palace","Suwon royal palace courtyard","Hwaseong temporary palace"]},
+    {"type":"fact","title":"지금은 성곽과 현대 도시가 바로 붙어 있다","narration":"오늘날 수원화성 주변에는 행궁동과 상업지역, 주거지가 이어져 있어 18세기 성곽과 현대 도시 생활을 한 화면에서 볼 수 있습니다.","keywords":["Suwon Hwaseong modern city","Haenggung dong street fortress","Hwaseong night city"]},
+    {"type":"ending","title":"200년 전 계획도시가 지금도 수원 중심에 남아 있다","narration":"수원화성은 옛 성벽만 보존된 유적이 아니라 지금도 사람들이 사는 도시 구조 속에 살아 있는 세계유산입니다.","keywords":["Suwon Hwaseong sunset","Hwaseong fortress city panorama","Suwon UNESCO fortress"]}
+  ]
+}
