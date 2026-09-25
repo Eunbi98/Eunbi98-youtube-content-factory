@@ -1,0 +1,10 @@
+{
+  "version":"1.0","episodeId":"ep086","channel":"culture","title":"재개발 계획이 있던 산동네가 벽화마을로 바뀐 이유","voice":"ko-KR-SunHiNeural","mediaSource":"Tongyeong Dongpirang mural village redevelopment urban regeneration Korea","theme":{"backgroundColor":"#101418","titleColor":"#FFD5B5","captionColor":"#FFFFFF","accentColor":"#FFD5B5"},"scenes":[
+    {"type":"hook","title":"철거 이야기가 나오던 산동네가 통영 대표 명소가 됐다","narration":"통영 동피랑은 한때 재개발 계획이 발표됐던 산비탈 마을이었지만 지금은 벽화로 유명한 도시재생 공간이 됐습니다.","keywords":["Dongpirang mural village Tongyeong","Tongyeong hillside village","Dongpirang colorful murals"]},
+    {"type":"answer","title":"2007년 벽화 프로젝트가 시작됐다","narration":"재개발 계획이 알려진 뒤 지역의 가치를 다시 보자는 움직임과 함께 주민과 예술가들이 마을 곳곳에 벽화를 그리기 시작했습니다.","keywords":["Dongpirang 2007 mural project","Tongyeong urban regeneration murals","Dongpirang artists residents"]},
+    {"type":"story","title":"좁은 골목과 집 벽이 그대로 전시장이 됐다","narration":"새 건물을 세우는 대신 기존 주택의 벽과 계단, 골목 자체를 작품 공간으로 활용하면서 동네 풍경이 관광 자원이 됐습니다.","keywords":["Dongpirang alley murals","Tongyeong wall painting village","Dongpirang stairs art"]},
+    {"type":"fact","title":"벽화는 한 번 그리고 끝나는 것도 아니다","narration":"동피랑에서는 두 해에 한 번 벽화축제를 열어 오래된 그림을 다시 그리고 새로운 작품으로 마을의 모습을 계속 바꿉니다.","keywords":["Dongpirang mural festival","Tongyeong mural repainting","Dongpirang art festival"]},
+    {"type":"fact","title":"지금도 약 80가구가 사는 생활 공간이다","narration":"관광객이 많이 찾지만 동피랑은 주민들이 실제로 생활하는 마을이기 때문에 골목을 둘러볼 때 생활 공간에 대한 배려가 필요합니다.","keywords":["Dongpirang residents village","Tongyeong residential mural village","Dongpirang street life"]},
+    {"type":"ending","title":"벽화가 도시를 새로 짓는 대신 기존 동네를 다시 보게 했다","narration":"동피랑은 낡은 동네를 없애는 대신 이미 있던 골목과 삶의 흔적을 문화로 바꾸는 도시재생의 한 방식을 보여줍니다.","keywords":["Dongpirang sunset Tongyeong","Dongpirang village panorama","Tongyeong urban regeneration"]}
+  ]
+}
