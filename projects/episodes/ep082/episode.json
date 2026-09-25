@@ -1,0 +1,10 @@
+{
+  "version":"1.0","episodeId":"ep082","channel":"culture","title":"서울 한복판의 고가도로가 다시 강으로 돌아간 이유","voice":"ko-KR-SunHiNeural","mediaSource":"Seoul Cheonggyecheon before after elevated highway restoration stream","theme":{"backgroundColor":"#0A1114","titleColor":"#A8E4E8","captionColor":"#FFFFFF","accentColor":"#A8E4E8"},"scenes":[
+    {"type":"hook","title":"서울 한복판의 고가도로 아래에 원래 강이 있었다","narration":"지금은 사람들이 산책하는 청계천이지만 수십 년 동안 이곳은 도로와 고가도로 아래에 가려져 있었습니다.","keywords":["Cheonggyecheon before restoration elevated highway","Seoul Cheonggyecheon old road","Cheonggyecheon covered stream history"]},
+    {"type":"answer","title":"도시가 커지면서 물길을 덮어 도로를 만들었다","narration":"서울이 빠르게 성장하던 시기 청계천은 단계적으로 복개됐고 그 위로 도로와 고가도로가 놓이면서 자동차 중심의 도심 공간으로 바뀌었습니다.","keywords":["Cheonggyecheon covered road 1970s Seoul","Cheonggye elevated highway historical","Seoul urban development Cheonggyecheon"]},
+    {"type":"story","title":"2003년 고가도로를 철거하기 시작했다","narration":"노후 구조물의 안전 문제와 도심 환경 개선 논의가 이어지면서 서울시는 2003년부터 고가도로를 철거하고 물길을 다시 드러내는 복원사업을 진행했습니다.","keywords":["Cheonggyecheon restoration construction 2003","Seoul elevated highway demolition","Cheonggyecheon restoration before after"]},
+    {"type":"fact","title":"2005년 다시 물이 흐르는 공간이 됐다","narration":"복원사업은 2005년에 마무리됐고 자동차가 지나던 공간은 산책로와 수변공간으로 바뀌었습니다.","keywords":["Cheonggyecheon stream Seoul walking","Cheonggyecheon 2005 restoration","Seoul urban stream night"]},
+    {"type":"fact","title":"도시의 온도와 바람길에도 변화가 생겼다","narration":"서울시설공단 자료에 따르면 복원 이후 일부 구간에서 풍속이 증가하고 주변 열환경이 완화되는 효과도 관찰됐습니다.","keywords":["Cheonggyecheon urban heat island","Cheonggyecheon stream ecology Seoul","Seoul waterway cooling city"]},
+    {"type":"ending","title":"도로가 다시 물길이 된 서울의 대표적인 도시 변화","narration":"청계천은 한 도시가 자동차를 위해 덮었던 공간을 다시 사람과 물을 위한 장소로 바꾼 사례가 됐습니다.","keywords":["Cheonggyecheon Seoul cityscape","Cheonggyecheon night city","Seoul stream urban restoration"]}
+  ]
+}
