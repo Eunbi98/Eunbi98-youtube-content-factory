@@ -1,0 +1,10 @@
+{
+  "version":"1.0","episodeId":"ep084","channel":"culture","title":"전주 도심에 한옥 700채가 모여 있는 이유","voice":"ko-KR-SunHiNeural","mediaSource":"Jeonju Hanok Village urban hanok 735 houses history preservation","theme":{"backgroundColor":"#12100C","titleColor":"#E3C9A1","captionColor":"#FFFFFF","accentColor":"#E3C9A1"},"scenes":[
+    {"type":"hook","title":"현대 도시 한가운데 한옥이 700채 넘게 모여 있다","narration":"전주 풍남동과 교동 일대에는 지금도 700채가 넘는 한옥이 한꺼번에 모여 있어 도심 전체가 전통 지붕으로 이어지는 풍경을 만듭니다.","keywords":["Jeonju Hanok Village aerial","Jeonju hanok rooftops","Korea traditional houses city"]},
+    {"type":"answer","title":"이 마을은 조선시대 그대로 남은 동네가 아니다","narration":"현재의 한옥 밀집지는 1910년대부터 형성되기 시작해 근대 도시 변화 속에서 한국식 주거가 모여 만들어진 공간입니다.","keywords":["Jeonju Hanok Village historical","Jeonju 1910 hanok houses","Korean modern hanok history"]},
+    {"type":"story","title":"1977년부터 보존지구로 관리됐다","narration":"도시 개발이 빨라지던 시기 전주는 교동과 풍남동 일대를 한옥보존지구로 지정했고 이후 건축 높이와 경관을 관리하기 시작했습니다.","keywords":["Jeonju hanok preservation district","Jeonju old town streets","Jeonju traditional architecture"]},
+    {"type":"fact","title":"현재 공식 집계로 한옥은 735동","narration":"전주시 자료에 따르면 한옥마을에는 947동의 건축물이 있고 그중 735동이 한옥으로 분류됩니다.","keywords":["Jeonju Hanok Village houses","Jeonju traditional roof aerial","Jeonju hanok street"]},
+    {"type":"fact","title":"한옥뿐 아니라 여러 전통문화가 한 공간에 모였다","narration":"경기전과 향교 같은 문화유산뿐 아니라 한식, 한지, 한복과 같은 생활문화가 밀집해 있어 도시 전체가 하나의 문화 공간처럼 작동합니다.","keywords":["Jeonju hanbok hanok village","Jeonju traditional culture","Jeonju Gyeonggijeon hanok"]},
+    {"type":"ending","title":"전통처럼 보이지만 사실 근대 도시가 만든 풍경","narration":"전주한옥마을은 오래된 건물을 모아놓은 곳이 아니라 100년 넘는 도시 변화와 보존 정책이 함께 만든 살아있는 주거문화 공간입니다.","keywords":["Jeonju Hanok Village panorama","Jeonju hanok sunset","Jeonju old and modern city"]}
+  ]
+}
