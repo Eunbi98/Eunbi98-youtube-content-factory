@@ -136,7 +136,7 @@ def render_episode(
             "--codec",
             "h264",
             "--crf",
-            "14",
+            "10",
         ],
         cwd=remotion_dir,
         step_name="Remotion 렌더",
