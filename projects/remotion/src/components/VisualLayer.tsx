@@ -28,11 +28,7 @@ export const VisualLayer: React.FC<
 		width: '100%',
 		height: '100%',
 		display: 'block',
-
-		// 세로 쇼츠 화면에는 원본 이미지 비율과 관계없이 빈 영역이
-		// 생기지 않도록 항상 프레임 전체를 채웁니다.
 		objectFit: 'cover',
-
 		objectPosition:
 			media?.position ??
 			'center center',
@@ -50,7 +46,6 @@ export const VisualLayer: React.FC<
 						backgroundColor:
 							scene.backgroundColor ??
 							'#111111',
-
 						backgroundImage:
 							'radial-gradient(circle at center, rgba(255,255,255,0.12), rgba(0,0,0,0) 60%)',
 					}}
@@ -83,36 +78,37 @@ export const VisualLayer: React.FC<
 		);
 	};
 
+	const visual = renderMedia();
+	const isVideo = media?.type === 'video';
+
 	return (
 		<div
 			style={{
 				position: 'absolute',
-
 				top: ep005Theme.visual.top,
 				bottom: ep005Theme.visual.bottom,
 				left: ep005Theme.visual.left,
 				right: ep005Theme.visual.right,
-
 				overflow: 'hidden',
-
 				backgroundColor:
 					scene.backgroundColor ??
 					'#111111',
-
 				zIndex: 10,
 			}}
 		>
-			<KenBurns
-				durationInFrames={
-					durationInFrames
-				}
-				motion={
-					scene.cameraMotion ??
-					'static'
-				}
-			>
-				{renderMedia()}
-			</KenBurns>
+			{isVideo ? (
+				visual
+			) : (
+				<KenBurns
+					durationInFrames={durationInFrames}
+					motion={
+						scene.cameraMotion ??
+						'static'
+					}
+				>
+					{visual}
+				</KenBurns>
+			)}
 		</div>
 	);
 };
