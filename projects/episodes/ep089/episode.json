@@ -1,0 +1,106 @@
+{
+  "version": "1.0",
+  "episodeId": "ep089",
+  "channel": "science",
+  "title": "숲도 없던 지구에 1m짜리 전갈이 살았다",
+  "voice": "ko-KR-SunHiNeural",
+  "mediaSource": "Praearcturus gigas giant scorpion 415 million years Devonian Natural History Museum",
+  "theme": {
+    "backgroundColor": "#11100E",
+    "titleColor": "#E7C77D",
+    "captionColor": "#FFFFFF",
+    "accentColor": "#E7C77D"
+  },
+  "scenes": [
+    {
+      "type": "hook",
+      "title": "1m짜리 전갈이 지구를 돌아다녔다",
+      "narration": "약 4억 1천5백만 년 전, 지금의 영국과 웨일스에는 길이가 약 1미터에 이르는 거대한 전갈이 살았습니다.",
+      "media": {
+        "type": "video",
+        "src": "ep089/scene_001.mp4",
+        "fit": "cover",
+        "position": "center center"
+      },
+      "keywords": [
+        "Praearcturus gigas reconstruction",
+        "giant Devonian scorpion"
+      ]
+    },
+    {
+      "type": "answer",
+      "title": "이름은 프라에아르크투루스 기가스",
+      "narration": "이 생물의 이름은 프라에아르크투루스 기가스. 최근 재분석 결과 지금까지 알려진 전갈 가운데 가장 큰 종으로 확인됐습니다.",
+      "media": {
+        "type": "image",
+        "src": "ep089/scene_002.jpg",
+        "fit": "cover",
+        "position": "center center"
+      },
+      "keywords": [
+        "Praearcturus gigas Natural History Museum",
+        "Praearcturus gigas life reconstruction"
+      ]
+    },
+    {
+      "type": "story",
+      "title": "집게만 16cm가 넘었다",
+      "narration": "몸길이는 약 1미터였고, 집게는 16센티미터가 넘었습니다. 현대의 가장 큰 전갈보다 훨씬 거대한 크기입니다.",
+      "media": {
+        "type": "image",
+        "src": "ep089/scene_003.jpg",
+        "fit": "cover",
+        "position": "center center"
+      },
+      "keywords": [
+        "Praearcturus gigas fossil pincers",
+        "giant scorpion 16 centimeter pincers fossil"
+      ]
+    },
+    {
+      "type": "fact",
+      "title": "숲이 생기기 전의 지구였다",
+      "narration": "더 놀라운 건 이 전갈이 살던 시기에는 오늘날 같은 거대한 숲이 아직 지구에 널리 퍼지기 전이었다는 점입니다.",
+      "media": {
+        "type": "image",
+        "src": "ep089/scene_004.jpg",
+        "fit": "cover",
+        "position": "center center"
+      },
+      "keywords": [
+        "Early Devonian landscape reconstruction",
+        "Devonian floodplain before forests"
+      ]
+    },
+    {
+      "type": "fact",
+      "title": "화석은 150년 넘게 박물관에 있었다",
+      "narration": "더 흥미로운 점은 이 화석이 새로 발견된 것이 아니라 1870년대부터 박물관에 보관돼 있었다는 사실입니다. 현대 분석 기술로 정체가 다시 밝혀진 겁니다.",
+      "media": {
+        "type": "image",
+        "src": "ep089/scene_005.jpg",
+        "fit": "cover",
+        "position": "center center"
+      },
+      "keywords": [
+        "Natural History Museum fossil collection Praearcturus",
+        "Praearcturus gigas fossil specimen"
+      ]
+    },
+    {
+      "type": "ending",
+      "title": "가장 거대한 전갈은 숲보다 먼저 등장했다",
+      "narration": "우리가 아는 거대한 곤충의 시대보다 훨씬 전부터, 지구에는 이미 1미터급 절지동물 포식자가 존재하고 있었습니다.",
+      "media": {
+        "type": "image",
+        "src": "ep089/scene_006.jpg",
+        "fit": "cover",
+        "position": "center center"
+      },
+      "keywords": [
+        "Praearcturus gigas reconstruction floodplain",
+        "giant prehistoric scorpion Devonian"
+      ]
+    }
+  ]
+}
