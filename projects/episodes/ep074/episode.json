@@ -1,0 +1,10 @@
+{
+  "version":"1.0","episodeId":"ep074","channel":"science","title":"자외선으로 드러난 1억2500만 년 전 악어의 위장무늬","voice":"ko-KR-SunHiNeural","mediaSource":"Montsecosuchus depereti fossil UV camouflage crocodile Spain","theme":{"backgroundColor":"#0D0D0A","titleColor":"#D8E08A","captionColor":"#FFFFFF","accentColor":"#D8E08A"},"scenes":[
+    {"type":"hook","title":"1억2500만 년 전 악어의 무늬가 남아 있었다","narration":"스페인에서 발견된 고대 악어 친척 화석을 자외선으로 비추자 꼬리에 줄무늬처럼 보이는 패턴이 나타났습니다.","keywords":["Montsecosuchus depereti fossil UV","fossil crocodile ultraviolet Spain","ancient crocodile fossil skin"]},
+    {"type":"answer","title":"눈으로는 잘 보이지 않던 피부 흔적이었다","narration":"보통 빛에서는 잘 드러나지 않던 피부와 연조직 흔적이 자외선 아래에서 선명해지며 새로운 정보가 확인됐습니다.","keywords":["UV fossil imaging crocodile","ultraviolet paleontology fossil skin","fossil soft tissue UV"]},
+    {"type":"story","title":"꼬리에는 밝고 어두운 띠가 반복됐다","narration":"연구진은 꼬리 부분에서 밝고 어두운 띠가 번갈아 나타나는 패턴을 확인했고, 생전의 위장무늬였을 가능성을 제시했습니다.","keywords":["crocodile tail banding fossil","ancient crocodile camouflage illustration","crocodylomorph skin pattern"]},
+    {"type":"fact","title":"감각기관과 호흡 구조 흔적도 남았다","narration":"화석에는 피부뿐 아니라 감각기관으로 추정되는 구조와 호흡에 관련된 연조직 흔적도 보존돼 있었습니다.","keywords":["crocodylomorph fossil soft tissue","ancient crocodile sensory organs fossil","fossil respiratory soft tissue"]},
+    {"type":"fact","title":"악어 친척의 가장 오래된 색 패턴일 수도 있다","narration":"이 해석이 맞다면 악어형류에서 확인된 가장 오래된 체색 패턴 가운데 하나가 될 수 있지만, 실제 색깔 자체가 그대로 남은 것은 아닙니다.","keywords":["prehistoric crocodile coloration reconstruction","crocodylomorph camouflage reconstruction","fossil color pattern science"]},
+    {"type":"ending","title":"자외선이 화석 속 보이지 않던 정보를 꺼냈다","narration":"돌처럼 굳은 화석도 다른 파장의 빛으로 보면 수억 년 전 피부와 생활 방식에 대한 새로운 단서를 보여줄 수 있습니다.","keywords":["UV paleontology laboratory","fossil under ultraviolet light","paleontology imaging fossil"]}
+  ]
+}

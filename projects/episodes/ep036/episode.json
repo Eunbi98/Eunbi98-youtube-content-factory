@@ -1,0 +1,76 @@
+{
+  "version": "1.0",
+  "episodeId": "ep036",
+  "channel": "science",
+  "title": "냉장고 뒤는 왜 따뜻할까?",
+  "voice": "ko-KR-SunHiNeural",
+  "mediaSource": "refrigerator appliance condenser coils compressor heat exchange real photo",
+  "theme": {
+    "backgroundColor": "#000000",
+    "titleColor": "#7CFFB2",
+    "captionColor": "#FFFFFF",
+    "accentColor": "#7CFFB2"
+  },
+  "scenes": [
+    {
+      "type": "hook",
+      "title": "냉장고 뒤가 뜨거운 이유",
+      "narration": "냉장고 안은 차가운데, 왜 뒤쪽은 오히려 따뜻할까요? 고장 난 게 아니라 정상입니다.",
+      "keywords": [
+        "refrigerator back warm real photo",
+        "refrigerator appliance rear panel",
+        "refrigerator kitchen close up"
+      ]
+    },
+    {
+      "type": "answer",
+      "title": "열을 밖으로 빼내는 중",
+      "narration": "냉장고는 내부의 열을 없애는 기계가 아니라, 그 열을 밖으로 옮기는 기계입니다.",
+      "keywords": [
+        "refrigerator heat transfer real photo",
+        "refrigerator cooling system appliance",
+        "refrigerator condenser rear"
+      ]
+    },
+    {
+      "type": "story",
+      "title": "냉매가 열을 운반",
+      "narration": "냉장고 안의 냉매는 내부에서 열을 흡수한 뒤, 뒤쪽 배관으로 이동해 그 열을 방출합니다.",
+      "keywords": [
+        "refrigerator refrigerant coils real photo",
+        "refrigerator condenser coil rear",
+        "refrigerator cooling pipes appliance"
+      ]
+    },
+    {
+      "type": "fact",
+      "title": "압축기도 열을 만든다",
+      "narration": "냉매를 순환시키는 압축기도 작동하면서 열을 냅니다. 그래서 냉장고 뒤쪽은 더 따뜻해질 수 있습니다.",
+      "keywords": [
+        "refrigerator compressor real photo",
+        "refrigerator compressor back appliance",
+        "refrigerator motor compressor close up"
+      ]
+    },
+    {
+      "type": "fact",
+      "title": "벽에 너무 붙이면 안 되는 이유",
+      "narration": "이 열이 빠져나가지 못하면 냉장고는 더 오래 작동해야 합니다. 그래서 뒤쪽에 통풍 공간을 두는 것이 중요합니다.",
+      "keywords": [
+        "refrigerator ventilation gap wall real photo",
+        "refrigerator back clearance kitchen",
+        "refrigerator rear airflow appliance"
+      ]
+    },
+    {
+      "type": "ending",
+      "title": "차갑게 만들수록 뒤는 따뜻",
+      "narration": "결국 냉장고 뒤가 따뜻한 것은 안의 열을 밖으로 버리고 있다는 증거입니다. 집 냉장고 뒤를 만져본 적 있나요?",
+      "keywords": [
+        "refrigerator back warm appliance real photo",
+        "refrigerator condenser rear kitchen",
+        "refrigerator appliance close up"
+      ]
+    }
+  ]
+}

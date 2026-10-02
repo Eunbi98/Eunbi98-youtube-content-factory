@@ -1,0 +1,76 @@
+{
+  "version": "1.0",
+  "episodeId": "ep051",
+  "channel": "science",
+  "title": "이집트 사막에서 발견된 8천만 년 전 상어 무덤",
+  "voice": "ko-KR-SunHiNeural",
+  "mediaSource": "Egypt Western Desert shark fossil teeth, Abu Tartur Plateau desert, Cretaceous shark fossils, ancient tropical sea North Africa",
+  "theme": {
+    "backgroundColor": "#0A0F14",
+    "titleColor": "#D8C49A",
+    "captionColor": "#FFFFFF",
+    "accentColor": "#D8C49A"
+  },
+  "scenes": [
+    {
+      "type": "hook",
+      "title": "사막 한가운데서 상어 이빨이 나왔다",
+      "narration": "물이 거의 없는 이집트 서부 사막에서 약 8천만 년 전 상어들의 화석 이빨이 한꺼번에 발견됐습니다. 연구진은 이곳을 상어 무덤이라고 표현했습니다.",
+      "keywords": [
+        "Egypt Western Desert real photo",
+        "shark fossil tooth desert archaeology",
+        "Abu Tartur Plateau Egypt desert"
+      ]
+    },
+    {
+      "type": "answer",
+      "title": "발견된 건 14개의 상어 이빨",
+      "narration": "연구진은 이집트 아부타르투르 고원의 인산염 지층에서 상어 이빨 화석 14개를 분석했습니다. 이번 연구에서 최소 다섯 종류의 멸종 상어가 확인됐습니다.",
+      "keywords": [
+        "fossil shark teeth close up museum",
+        "Cretaceous shark teeth fossils",
+        "paleontology fossil teeth research"
+      ]
+    },
+    {
+      "type": "story",
+      "title": "지금의 사막은 한때 바다였다",
+      "narration": "이 화석들이 쌓이던 백악기 후기에 지금의 이집트 서부 사막은 따뜻한 열대 바다였습니다. 당시 해수면이 높아 북아프리카의 넓은 지역이 바닷물에 잠겨 있었습니다.",
+      "keywords": [
+        "Cretaceous tropical sea illustration Egypt",
+        "ancient ocean North Africa reconstruction",
+        "prehistoric sea sharks cinematic"
+      ]
+    },
+    {
+      "type": "fact",
+      "title": "최소 7종의 상어가 살았다",
+      "narration": "이번에 확인된 종들과 이전 기록을 합치면 이 지역에서는 최소 일곱 종류의 상어가 확인됩니다. 그만큼 당시 바다가 다양한 포식자를 먹여 살릴 만큼 풍부했다는 뜻입니다.",
+      "keywords": [
+        "prehistoric sharks diverse species",
+        "ancient shark ocean reconstruction",
+        "Cretaceous marine ecosystem sharks"
+      ]
+    },
+    {
+      "type": "fact",
+      "title": "아프리카에서 처음 확인된 흔적도 있었다",
+      "narration": "특히 고블린상어와 가까운 계통인 스카파노린쿠스 라피오돈의 흔적은 아프리카에서 처음 확인된 기록일 가능성이 제시됐습니다. 일부 종은 이집트에서도 처음 보고됐습니다.",
+      "keywords": [
+        "goblin shark close up real photo",
+        "Scapanorhynchus fossil tooth",
+        "prehistoric goblin shark reconstruction"
+      ]
+    },
+    {
+      "type": "ending",
+      "title": "사막의 돌이 옛 바다를 기억하고 있다",
+      "narration": "오늘날 모래와 바위뿐인 사막 아래에는 한때 상어들이 헤엄치던 바다의 흔적이 남아 있습니다. 지형은 완전히 바뀌어도 화석은 수천만 년 전 환경을 그대로 기록합니다.",
+      "keywords": [
+        "Egypt desert landscape cinematic",
+        "shark fossil teeth in rock close up",
+        "ancient sea to desert transformation"
+      ]
+    }
+  ]
+}

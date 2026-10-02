@@ -1,0 +1,169 @@
+{
+  "topic": "고양이는 왜 작은 상자에 들어가려 할까?",
+  "items": [
+    {
+      "id": "evidence_cf517c75df97",
+      "title": "An Analysis of the Influence of Alcohol on Experimental Neuroses in Cats*",
+      "claim": "Control Observations: Twenty-one cats were taught first to obtain food by opening a box, then to respond to various conditional signals and finally to solve difficult problems involving the passage of barriers and the manipulation of switches to secure their reward. Alcoholic intoxication disintegrated their adaptative patterns to a varying degree, particularly affecting those that were most complex and recently learned.. Normal animals, however, showed complete restitution of function on recovery from intoxication, little habituation to alcohol, and no consistent signs of developing a preference for the drug. Neuroses and Alcohol: The animals were subjected to special experimental procedures that induced and reinforced motivational conflicts between hunger and fear. Under such circumstances, they developed “experimental neuroses,” characterized by pervasive inhibitions of normal goalresponses, hypersensitivities and aversions to stimuli associated with the conflictful field, loss of group dominance, and marked and persistent aberrations of somatic and motor function. The administration of small doses of alcohol again disintegrated these relatively complex “neurotic” patterns and permitted relatively simple goal-oriented responses to supervene. A significant number of animals who repeatedly experienced such relief from neurotic tensions developed a definite preference for alcoholic drinks; i. e., showed evidences of addiction to alcohol. However, as their re-exploratory behavior while mildly intoxicated partially resolved conflicts, this addiction diminished until nearly no",
+      "source_name": "Psychosomatic Medicine",
+      "source_url": "https://doi.org/10.1097/00006842-194601000-00004",
+      "source_tier": "academic",
+      "evidence_type": "case",
+      "published_at": "1946",
+      "keywords": [
+        "An",
+        "Analysis",
+        "of",
+        "the",
+        "Influence",
+        "Alcohol",
+        "on"
+      ],
+      "reliability_score": 0.95,
+      "interest_score": 1.0,
+      "visual_score": 0.45,
+      "total_score": 0.865
+    },
+    {
+      "id": "evidence_27cf1f23221b",
+      "title": "Do Consumers Expect Companies to be Socially Responsible? The Impact of Corporate Social Responsibility on Buying Behavior",
+      "claim": "Companies are facing increasing pressure to both maintain profitability and behave in socially responsible ways, yet researchers have provided little information on how corporate social responsibility impacts profitability. This paper reports the findings from in‐depth interviews of consumers to determine their views concerning the social responsibilities of companies. A typology of consumers whose purchasing behavior ranges from unresponsive to highly responsive to corporate social responsibility was developed from the analysis.",
+      "source_name": "Journal of Consumer Affairs",
+      "source_url": "https://doi.org/10.1111/j.1745-6606.2001.tb00102.x",
+      "source_tier": "academic",
+      "evidence_type": "case",
+      "published_at": "2001",
+      "keywords": [
+        "Do",
+        "Consumers",
+        "Expect",
+        "Companies",
+        "to",
+        "be",
+        "Socially",
+        "Responsible"
+      ],
+      "reliability_score": 0.95,
+      "interest_score": 0.95,
+      "visual_score": 0.45,
+      "total_score": 0.85
+    },
+    {
+      "id": "evidence_10a3e76e13ae",
+      "title": "An integrative review of sensory marketing: Engaging the senses to affect perception, judgment and behavior",
+      "claim": "Abstract I define “sensory marketing” as “ marketing that engages the consumers' senses and affects their perception, judgment and behavior. ” From a managerial perspective, sensory marketing can be used to create subconscious triggers that characterize consumer perceptions of abstract notions of the product (e.g., its sophistication or quality). Given the gamut of explicit marketing appeals made to consumers every day, subconscious triggers which appeal to the basic senses may be a more efficient way to engage consumers. Also, these sensory triggers may result in consumers' self‐generation of (desirable) brand attributes, rather than those verbally provided by the advertiser. The understanding of these sensory triggers implies an understanding of sensation and perception as it applies to consumer behavior—this is the research perspective of sensory marketing. This review article presents an overview of research on sensory perception. The review also points out areas where little research has been done, so that each additional paper has a greater chance of making a bigger difference and sparking further research. It is quite apparent from the review that there still remains tremendous need for research within the domain of sensory marketing—research that can be very impactful.",
+      "source_name": "Journal of Consumer Psychology",
+      "source_url": "https://doi.org/10.1016/j.jcps.2011.08.003",
+      "source_tier": "academic",
+      "evidence_type": "case",
+      "published_at": "2011",
+      "keywords": [
+        "An",
+        "integrative",
+        "review",
+        "of",
+        "sensory",
+        "marketing",
+        "Engaging",
+        "the"
+      ],
+      "reliability_score": 0.95,
+      "interest_score": 0.95,
+      "visual_score": 0.45,
+      "total_score": 0.85
+    },
+    {
+      "id": "evidence_ae9e3578238b",
+      "title": "Interpreting Black-Box Models: A Review on Explainable Artificial Intelligence",
+      "claim": "Abstract Recent years have seen a tremendous growth in Artificial Intelligence (AI)-based methodological development in a broad range of domains. In this rapidly evolving field, large number of methods are being reported using machine learning (ML) and Deep Learning (DL) models. Majority of these models are inherently complex and lacks explanations of the decision making process causing these models to be termed as 'Black-Box'. One of the major bottlenecks to adopt such models in mission-critical application domains, such as banking, e-commerce, healthcare, and public services and safety, is the difficulty in interpreting them. Due to the rapid proleferation of these AI models, explaining their learning and decision making process are getting harder which require transparency and easy predictability. Aiming to collate the current state-of-the-art in interpreting the black-box models, this study provides a comprehensive analysis of the explainable AI (XAI) models. To reduce false negative and false positive outcomes of these back-box models, finding flaws in them is still difficult and inefficient. In this paper, the development of XAI is reviewed meticulously through careful selection and analysis of the current state-of-the-art of XAI research. It also provides a comprehensive and in-depth evaluation of the XAI frameworks and their efficacy to serve as a starting point of XAI for applied and theoretical researchers. Towards the end, it highlights emerging and critical issues pertaining to XAI research to showcase major, model-specific trends for better explanation, enhance",
+      "source_name": "Cognitive Computation",
+      "source_url": "https://doi.org/10.1007/s12559-023-10179-8",
+      "source_tier": "academic",
+      "evidence_type": "fact",
+      "published_at": "2023",
+      "keywords": [
+        "Interpreting",
+        "Black-Box",
+        "Models",
+        "Review",
+        "on",
+        "Explainable",
+        "Artificial",
+        "Intelligence"
+      ],
+      "reliability_score": 0.95,
+      "interest_score": 0.75,
+      "visual_score": 0.45,
+      "total_score": 0.79
+    },
+    {
+      "id": "evidence_8d955463323a",
+      "title": "마라도",
+      "claim": "마라도(馬羅島)는 대한민국의 최남단에 있는 섬으로, 행정구역상 제주특별자치도 서귀포시 대정읍 마라리에 속해 있다. 현재 문화재청 마라도 천연보호구역으로 지정되어 있다. 제주도의 모슬포항으로부터 남쪽으로 11 km 떨어진 마라도는 남해에 위치하며, 면적이 0.3 km2인 타원형의 섬으로, 인구는 2014년 9월 하순을 기준으로 139명이다. 주변 일대는 천연기념물 제423호로 지정되어 보호하고 있다. 마라도는 가파도와 같이 대정읍에 속하고 있다. 1981년 4월 1일 가파리에서 행정리(마라리)가 분리되었지만, 법정리는 여전히 대정읍 가파리에 속한다. 본래는 울창한 원시림이 덮여 있는 무인도였으나, 1883년(고종 20년)에 모슬포에 거주하던 김(金)·나(羅)·한(韓)씨 등 영세 농어민 4 ~ 5세대가 당시 제주목사 심현택으로부터 개간 허가를 얻어 화전을 시작하여 삼림이 전부 불에 타서 사라졌다고 전해지고 있다.",
+      "source_name": "한국어 위키백과",
+      "source_url": "https://ko.wikipedia.org/wiki/%EB%A7%88%EB%9D%BC%EB%8F%84",
+      "source_tier": "reference",
+      "evidence_type": "case",
+      "published_at": null,
+      "keywords": [
+        "마라도"
+      ],
+      "reliability_score": 0.8,
+      "interest_score": 0.95,
+      "visual_score": 0.45,
+      "total_score": 0.775
+    }
+  ],
+  "rejected_count": 0,
+  "duplicate_count": 0,
+  "status": "verified",
+  "summary": "고양이가 작은 상자에 들어가려는 행동은 사냥 본능과 관련된 놀이 행동(play aggression)과 강한 적응력, 탐색 행동에서 비롯될 수 있다. 또한 고양이마다 행동 패턴이 다르기 때문에 상자에 들어가는 이유는 개인차가 있으며, 안전감이나 체온 유지 외에도 놀이, 사냥, 환경 탐색 등 다양한 해석이 존재한다.",
+  "uncertainties": [
+    "고양이의 상자 사랑이 안전감과 체온 유지 때문이라는 해석은 공식 연구로 단정되지 않았으며, 놀이와 사냥 본능 등 다양한 원인이 복합적으로 작용할 수 있다."
+  ],
+  "citations": [
+    {
+      "title": "마라도",
+      "url": "https://ko.wikipedia.org/wiki/%EB%A7%88%EB%9D%BC%EB%8F%84"
+    },
+    {
+      "title": "톰과 제리: 체이스",
+      "url": "https://ko.wikipedia.org/wiki/%ED%86%B0%EA%B3%BC_%EC%A0%9C%EB%A6%AC:_%EC%B2%B4%EC%9D%B4%EC%8A%A4"
+    },
+    {
+      "title": "Cat",
+      "url": "https://en.wikipedia.org/wiki/Cat"
+    },
+    {
+      "title": "Cat play and toys",
+      "url": "https://en.wikipedia.org/wiki/Cat_play_and_toys"
+    },
+    {
+      "title": "Cat behavior",
+      "url": "https://en.wikipedia.org/wiki/Cat_behavior"
+    },
+    {
+      "title": "Interpreting Black-Box Models: A Review on Explainable Artificial Intelligence",
+      "url": "https://doi.org/10.1007/s12559-023-10179-8"
+    },
+    {
+      "title": "Do Consumers Expect Companies to be Socially Responsible? The Impact of Corporate Social Responsibility on Buying Behavior",
+      "url": "https://doi.org/10.1111/j.1745-6606.2001.tb00102.x"
+    },
+    {
+      "title": "An Analysis of the Influence of Alcohol on Experimental Neuroses in Cats*",
+      "url": "https://doi.org/10.1097/00006842-194601000-00004"
+    },
+    {
+      "title": "An integrative review of sensory marketing: Engaging the senses to affect perception, judgment and behavior",
+      "url": "https://doi.org/10.1016/j.jcps.2011.08.003"
+    },
+    {
+      "title": "Marado - Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Marado"
+    }
+  ],
+  "provider": "github_models_public_sources",
+  "model": "openai/gpt-4.1",
+  "verified_at": "2026-07-30T02:21:46.075913+00:00"
+}

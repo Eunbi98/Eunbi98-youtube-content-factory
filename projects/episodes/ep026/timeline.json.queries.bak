@@ -1,0 +1,986 @@
+{
+  "version": "6.5",
+  "episodeId": "ep026",
+  "title": "비행기 창문에\n구멍이 있는 이유",
+  "fps": 30,
+  "width": 1080,
+  "height": 1920,
+  "totalDuration": 46.0,
+  "theme": {
+    "backgroundColor": "#17212D",
+    "titleColor": "#7BFEB4",
+    "captionColor": "#FFFFFF",
+    "accentColor": "#7BFEB4"
+  },
+  "scenes": [
+    {
+      "id": "scene_001",
+      "start": 0.0,
+      "duration": 5.5,
+      "title": "비행기 창문에\n구멍이 있는 이유",
+      "narration": "비행기 창문을 자세히 보면 아래쪽에 작은 구멍이 있습니다.",
+      "caption": "비행기 창문을 자세히 보면 아래쪽에 작은 구멍이 있습니다.",
+      "backgroundColor": "#14202B",
+      "keywords": [
+        "airplane passenger window bleed hole close up",
+        "aircraft window tiny hole close up",
+        "airplane window breather hole"
+      ],
+      "media": {
+        "type": "image",
+        "fit": "cover",
+        "position": "center center",
+        "src": "scene_001.jpg",
+        "keywords": [
+          "airplane passenger window bleed hole close up",
+          "aircraft window tiny hole close up",
+          "airplane window breather hole"
+        ]
+      },
+      "cameraMotion": "zoom_in",
+      "transition": "fade",
+      "transitionDuration": 0.3,
+      "overlay": "cinematic",
+      "overlayOpacity": 1.0,
+      "mediaSearch": {
+        "version": "2.0",
+        "primaryQuery": "Sahara Desert aerial sand dunes",
+        "sourceKeywords": [
+          "Sahara Desert aerial sand dunes",
+          "Sahara desert satellite view",
+          "Sahara desert drone landscape",
+          "desert aerial view",
+          "desert landscape",
+          "Sahara Desert aerial sand dunes wide view",
+          "Sahara Desert aerial sand dunes landscape",
+          "Sahara desert satellite view wide view",
+          "Sahara desert satellite view landscape",
+          "Sahara Desert aerial sand dunes close up"
+        ],
+        "entities": [
+          "사막",
+          "Sahara Desert aerial sand dunes Sahara desert satellite",
+          "landscape desert aerial view desert landscape Sahara Desert",
+          "view Sahara Desert aerial sand dunes landscape Sahara",
+          "view Sahara desert satellite view landscape Sahara Desert",
+          "se up"
+        ],
+        "queries": [
+          "airplane passenger window bleed hole close up",
+          "aircraft window tiny hole close up",
+          "airplane window breather hole"
+        ]
+      },
+      "audioDuration": 6.38,
+      "audio": "ep026/audio/scene_001.mp3",
+      "timing": "ep026/audio/scene_001.timing.json",
+      "wordTimings": [
+        {
+          "text": "비행기 창문을 자세히 보면 아래쪽에 작은 구멍이 있습니다.",
+          "offset": 0.1,
+          "duration": 5.5,
+          "end": 0.612
+        },
+        {
+          "text": "비행기 창문을 자세히 보면 아래쪽에 작은 구멍이 있습니다.",
+          "offset": 0.625,
+          "duration": 5.5,
+          "end": 1.075
+        },
+        {
+          "text": "비행기 창문을 자세히 보면 아래쪽에 작은 구멍이 있습니다.",
+          "offset": 1.087,
+          "duration": 5.5,
+          "end": 1.512
+        },
+        {
+          "text": "비행기 창문을 자세히 보면 아래쪽에 작은 구멍이 있습니다.",
+          "offset": 1.525,
+          "duration": 5.5,
+          "end": 1.963
+        },
+        {
+          "text": "비행기 창문을 자세히 보면 아래쪽에 작은 구멍이 있습니다.",
+          "offset": 1.975,
+          "duration": 5.5,
+          "end": 2.337
+        },
+        {
+          "text": "비행기 창문을 자세히 보면 아래쪽에 작은 구멍이 있습니다.",
+          "offset": 2.35,
+          "duration": 5.5,
+          "end": 2.85
+        },
+        {
+          "text": "비행기 창문을 자세히 보면 아래쪽에 작은 구멍이 있습니다.",
+          "offset": 2.862,
+          "duration": 5.5,
+          "end": 3.149
+        },
+        {
+          "text": "비행기 창문을 자세히 보면 아래쪽에 작은 구멍이 있습니다.",
+          "offset": 3.163,
+          "duration": 5.5,
+          "end": 3.7
+        },
+        {
+          "text": "비행기 창문을 자세히 보면 아래쪽에 작은 구멍이 있습니다.",
+          "offset": 3.712,
+          "duration": 5.5,
+          "end": 4.237
+        },
+        {
+          "text": "비행기 창문을 자세히 보면 아래쪽에 작은 구멍이 있습니다.",
+          "offset": 4.438,
+          "duration": 5.5,
+          "end": 4.763
+        },
+        {
+          "text": "비행기 창문을 자세히 보면 아래쪽에 작은 구멍이 있습니다.",
+          "offset": 4.775,
+          "duration": 5.5,
+          "end": 5.513
+        }
+      ],
+      "wordCount": 11
+    },
+    {
+      "id": "scene_002",
+      "start": 5.5,
+      "duration": 6.0,
+      "title": "비행기 창문에\n구멍이 있는 이유",
+      "narration": "혹시 창문이 깨진 것은 아닐까 불안해할 필요는 없습니다.",
+      "caption": "혹시 창문이 깨진 것은 아닐까 불안해할 필요는 없습니다.",
+      "backgroundColor": "#223748",
+      "keywords": [
+        "passenger looking at airplane window close up",
+        "airplane cabin window passenger seat",
+        "commercial airplane window interior"
+      ],
+      "media": {
+        "type": "image",
+        "fit": "cover",
+        "position": "center center",
+        "src": "scene_002.jpg",
+        "keywords": [
+          "passenger looking at airplane window close up",
+          "airplane cabin window passenger seat",
+          "commercial airplane window interior"
+        ]
+      },
+      "cameraMotion": "pan_right",
+      "transition": "cut",
+      "transitionDuration": 0.2,
+      "overlay": "cinematic",
+      "overlayOpacity": 1.0,
+      "mediaSearch": {
+        "version": "2.0",
+        "primaryQuery": "Sahara desert satellite",
+        "sourceKeywords": [
+          "Sahara desert satellite",
+          "Sahara desert",
+          "Sahara desert satellite map",
+          "Sahara desert map",
+          "Sahara desert satellite wide view",
+          "Sahara desert satellite landscape",
+          "Sahara desert wide view",
+          "Sahara desert landscape",
+          "Sahara desert satellite close up",
+          "Sahara desert satellite detailed view"
+        ],
+        "entities": [
+          "Sahara desert satellite Sahara desert Sahara desert satellite",
+          "ap Sahara desert satellite wide view Sahara desert",
+          "ert wide view Sahara desert landscape Sahara desert",
+          "ert satellite detailed view"
+        ],
+        "queries": [
+          "passenger looking at airplane window close up",
+          "airplane cabin window passenger seat",
+          "commercial airplane window interior"
+        ]
+      },
+      "audioDuration": 6.67,
+      "audio": "ep026/audio/scene_002.mp3",
+      "timing": "ep026/audio/scene_002.timing.json",
+      "wordTimings": [
+        {
+          "text": "혹시 창문이 깨진 것은 아닐까 불안해할 필요는 없습니다.",
+          "offset": 0.1,
+          "duration": 6.0,
+          "end": 0.987
+        },
+        {
+          "text": "혹시 창문이 깨진 것은 아닐까 불안해할 필요는 없습니다.",
+          "offset": 1.0,
+          "duration": 6.0,
+          "end": 1.375
+        },
+        {
+          "text": "혹시 창문이 깨진 것은 아닐까 불안해할 필요는 없습니다.",
+          "offset": 1.387,
+          "duration": 6.0,
+          "end": 1.837
+        },
+        {
+          "text": "혹시 창문이 깨진 것은 아닐까 불안해할 필요는 없습니다.",
+          "offset": 1.85,
+          "duration": 6.0,
+          "end": 2.262
+        },
+        {
+          "text": "혹시 창문이 깨진 것은 아닐까 불안해할 필요는 없습니다.",
+          "offset": 2.275,
+          "duration": 6.0,
+          "end": 2.562
+        },
+        {
+          "text": "혹시 창문이 깨진 것은 아닐까 불안해할 필요는 없습니다.",
+          "offset": 2.575,
+          "duration": 6.0,
+          "end": 2.812
+        },
+        {
+          "text": "혹시 창문이 깨진 것은 아닐까 불안해할 필요는 없습니다.",
+          "offset": 2.825,
+          "duration": 6.0,
+          "end": 3.413
+        },
+        {
+          "text": "혹시 창문이 깨진 것은 아닐까 불안해할 필요는 없습니다.",
+          "offset": 3.425,
+          "duration": 6.0,
+          "end": 3.925
+        },
+        {
+          "text": "혹시 창문이 깨진 것은 아닐까 불안해할 필요는 없습니다.",
+          "offset": 3.938,
+          "duration": 6.0,
+          "end": 4.263
+        },
+        {
+          "text": "혹시 창문이 깨진 것은 아닐까 불안해할 필요는 없습니다.",
+          "offset": 4.275,
+          "duration": 6.0,
+          "end": 4.775
+        },
+        {
+          "text": "혹시 창문이 깨진 것은 아닐까 불안해할 필요는 없습니다.",
+          "offset": 4.787,
+          "duration": 6.0,
+          "end": 5.799
+        }
+      ],
+      "wordCount": 11
+    },
+    {
+      "id": "scene_003",
+      "start": 11.5,
+      "duration": 7.0,
+      "title": "비행기 창문에\n구멍이 있는 이유",
+      "narration": "비행기 창문은 보통 여러 겹으로 만들어지고, 이 구멍은 중간 창에 있습니다.",
+      "caption": "비행기 창문은 보통 여러 겹으로 만들어지고, 이 구멍은 중간 창에 있습니다.",
+      "backgroundColor": "#314A5D",
+      "keywords": [
+        "aircraft passenger window multiple panes diagram",
+        "airplane window layers cross section",
+        "aircraft window pane structure"
+      ],
+      "media": {
+        "type": "image",
+        "fit": "cover",
+        "position": "center center",
+        "src": "scene_003.jpg",
+        "keywords": [
+          "aircraft passenger window multiple panes diagram",
+          "airplane window layers cross section",
+          "aircraft window pane structure"
+        ]
+      },
+      "cameraMotion": "pan_left",
+      "transition": "fade",
+      "transitionDuration": 0.3,
+      "overlay": "cinematic",
+      "overlayOpacity": 1.0,
+      "mediaSearch": {
+        "version": "2.0",
+        "primaryQuery": "ancient Sahara grassland lake",
+        "sourceKeywords": [
+          "ancient Sahara grassland lake",
+          "African humid period",
+          "African humid period landscape",
+          "ancient Sahara grassland lake wide view",
+          "ancient Sahara grassland lake landscape",
+          "African humid period wide view",
+          "ancient Sahara grassland lake close up",
+          "ancient Sahara grassland lake detailed view",
+          "African humid period close up",
+          "African humid period detailed view"
+        ],
+        "entities": [
+          "ancient Sahara grassland lake African humid period African",
+          "ancient Sahara grassland lake wide view ancient Sahara",
+          "frican humid period wide view ancient Sahara grassland",
+          "ra grassland lake detailed view African humid period",
+          "detailed view"
+        ],
+        "queries": [
+          "aircraft passenger window multiple panes diagram",
+          "airplane window layers cross section",
+          "aircraft window pane structure"
+        ]
+      },
+      "audioDuration": 6.84,
+      "audio": "ep026/audio/scene_003.mp3",
+      "timing": "ep026/audio/scene_003.timing.json",
+      "wordTimings": [
+        {
+          "text": "비행기 창문은 보통 여러 겹으로 만들어지고, 이 구멍은 중간 창에 있습니다.",
+          "offset": 0.1,
+          "duration": 7.0,
+          "end": 0.375
+        },
+        {
+          "text": "비행기 창문은 보통 여러 겹으로 만들어지고, 이 구멍은 중간 창에 있습니다.",
+          "offset": 0.388,
+          "duration": 7.0,
+          "end": 0.7
+        },
+        {
+          "text": "비행기 창문은 보통 여러 겹으로 만들어지고, 이 구멍은 중간 창에 있습니다.",
+          "offset": 0.713,
+          "duration": 7.0,
+          "end": 1.125
+        },
+        {
+          "text": "비행기 창문은 보통 여러 겹으로 만들어지고, 이 구멍은 중간 창에 있습니다.",
+          "offset": 1.137,
+          "duration": 7.0,
+          "end": 1.3
+        },
+        {
+          "text": "비행기 창문은 보통 여러 겹으로 만들어지고, 이 구멍은 중간 창에 있습니다.",
+          "offset": 1.312,
+          "duration": 7.0,
+          "end": 1.524
+        },
+        {
+          "text": "비행기 창문은 보통 여러 겹으로 만들어지고, 이 구멍은 중간 창에 있습니다.",
+          "offset": 1.538,
+          "duration": 7.0,
+          "end": 1.888
+        },
+        {
+          "text": "비행기 창문은 보통 여러 겹으로 만들어지고, 이 구멍은 중간 창에 있습니다.",
+          "offset": 2.15,
+          "duration": 7.0,
+          "end": 2.538
+        },
+        {
+          "text": "비행기 창문은 보통 여러 겹으로 만들어지고, 이 구멍은 중간 창에 있습니다.",
+          "offset": 2.55,
+          "duration": 7.0,
+          "end": 3.062
+        },
+        {
+          "text": "비행기 창문은 보통 여러 겹으로 만들어지고, 이 구멍은 중간 창에 있습니다.",
+          "offset": 3.075,
+          "duration": 7.0,
+          "end": 3.625
+        },
+        {
+          "text": "비행기 창문은 보통 여러 겹으로 만들어지고, 이 구멍은 중간 창에 있습니다.",
+          "offset": 3.638,
+          "duration": 7.0,
+          "end": 4.013
+        },
+        {
+          "text": "비행기 창문은 보통 여러 겹으로 만들어지고, 이 구멍은 중간 창에 있습니다.",
+          "offset": 4.025,
+          "duration": 7.0,
+          "end": 4.425
+        },
+        {
+          "text": "비행기 창문은 보통 여러 겹으로 만들어지고, 이 구멍은 중간 창에 있습니다.",
+          "offset": 4.438,
+          "duration": 7.0,
+          "end": 5.038
+        },
+        {
+          "text": "비행기 창문은 보통 여러 겹으로 만들어지고, 이 구멍은 중간 창에 있습니다.",
+          "offset": 5.05,
+          "duration": 7.0,
+          "end": 5.962
+        }
+      ],
+      "wordCount": 13
+    },
+    {
+      "id": "scene_004",
+      "start": 18.5,
+      "duration": 7.0,
+      "title": "비행기 창문에\n구멍이 있는 이유",
+      "narration": "비행기가 높이 올라가면 기내와 바깥의 공기 압력 차이가 크게 벌어집니다.",
+      "caption": "비행기가 높이 올라가면 기내와 바깥의 공기 압력 차이가 크게 벌어집니다.",
+      "backgroundColor": "#1C3040",
+      "keywords": [
+        "commercial airplane flying high altitude exterior",
+        "passenger aircraft above clouds",
+        "airliner cruising altitude sky"
+      ],
+      "media": {
+        "type": "image",
+        "fit": "cover",
+        "position": "center center",
+        "src": "scene_004.jpg",
+        "keywords": [
+          "commercial airplane flying high altitude exterior",
+          "passenger aircraft above clouds",
+          "airliner cruising altitude sky"
+        ]
+      },
+      "cameraMotion": "zoom_in_right",
+      "transition": "slide_left",
+      "transitionDuration": 0.3,
+      "overlay": "vignette",
+      "overlayOpacity": 1.0,
+      "mediaSearch": {
+        "version": "2.0",
+        "primaryQuery": "ancient human migration North Africa",
+        "sourceKeywords": [
+          "ancient human migration North Africa",
+          "prehistoric Sahara river",
+          "prehistoric people Sahara river",
+          "early humans African landscape",
+          "ancient human migration North Africa wide view",
+          "ancient human migration North Africa landscape",
+          "prehistoric Sahara river wide view",
+          "prehistoric Sahara river landscape",
+          "ancient human migration North Africa close up",
+          "ancient human migration North Africa detailed view"
+        ],
+        "entities": [
+          "ancient human migration North Africa prehistoric Sahara river",
+          "Sahara river early humans African landscape ancient human",
+          "wide view ancient human migration North Africa landscape",
+          "wide view prehistoric Sahara river landscape ancient human",
+          "close up ancient human migration North Africa detailed"
+        ],
+        "queries": [
+          "commercial airplane flying high altitude exterior",
+          "passenger aircraft above clouds",
+          "airliner cruising altitude sky"
+        ]
+      },
+      "audioDuration": 6.29,
+      "audio": "ep026/audio/scene_004.mp3",
+      "timing": "ep026/audio/scene_004.timing.json",
+      "wordTimings": [
+        {
+          "text": "비행기가 높이 올라가면 기내와 바깥의 공기 압력 차이가 크게 벌어집니다.",
+          "offset": 0.1,
+          "duration": 7.0,
+          "end": 0.25
+        },
+        {
+          "text": "비행기가 높이 올라가면 기내와 바깥의 공기 압력 차이가 크게 벌어집니다.",
+          "offset": 0.263,
+          "duration": 7.0,
+          "end": 0.613
+        },
+        {
+          "text": "비행기가 높이 올라가면 기내와 바깥의 공기 압력 차이가 크게 벌어집니다.",
+          "offset": 0.625,
+          "duration": 7.0,
+          "end": 0.963
+        },
+        {
+          "text": "비행기가 높이 올라가면 기내와 바깥의 공기 압력 차이가 크게 벌어집니다.",
+          "offset": 0.975,
+          "duration": 7.0,
+          "end": 1.375
+        },
+        {
+          "text": "비행기가 높이 올라가면 기내와 바깥의 공기 압력 차이가 크게 벌어집니다.",
+          "offset": 1.387,
+          "duration": 7.0,
+          "end": 1.949
+        },
+        {
+          "text": "비행기가 높이 올라가면 기내와 바깥의 공기 압력 차이가 크게 벌어집니다.",
+          "offset": 1.962,
+          "duration": 7.0,
+          "end": 2.675
+        },
+        {
+          "text": "비행기가 높이 올라가면 기내와 바깥의 공기 압력 차이가 크게 벌어집니다.",
+          "offset": 2.688,
+          "duration": 7.0,
+          "end": 3.138
+        },
+        {
+          "text": "비행기가 높이 올라가면 기내와 바깥의 공기 압력 차이가 크게 벌어집니다.",
+          "offset": 3.15,
+          "duration": 7.0,
+          "end": 3.65
+        },
+        {
+          "text": "비행기가 높이 올라가면 기내와 바깥의 공기 압력 차이가 크게 벌어집니다.",
+          "offset": 3.663,
+          "duration": 7.0,
+          "end": 4.15
+        },
+        {
+          "text": "비행기가 높이 올라가면 기내와 바깥의 공기 압력 차이가 크게 벌어집니다.",
+          "offset": 4.162,
+          "duration": 7.0,
+          "end": 4.75
+        },
+        {
+          "text": "비행기가 높이 올라가면 기내와 바깥의 공기 압력 차이가 크게 벌어집니다.",
+          "offset": 4.763,
+          "duration": 7.0,
+          "end": 5.413
+        }
+      ],
+      "wordCount": 11
+    },
+    {
+      "id": "scene_005",
+      "start": 25.5,
+      "duration": 7.5,
+      "title": "비행기 창문에\n구멍이 있는 이유",
+      "narration": "작은 구멍은 창문 사이의 압력을 조절해 바깥쪽 창이 압력을 견디게 합니다.",
+      "caption": "작은 구멍은 창문 사이의 압력을 조절해 바깥쪽 창이 압력을 견디게 합니다.",
+      "backgroundColor": "#101820",
+      "keywords": [
+        "airplane window pressure layers animation",
+        "aircraft window cabin pressure diagram",
+        "airplane window bleed hole pressure explanation"
+      ],
+      "media": {
+        "type": "image",
+        "fit": "cover",
+        "position": "center center",
+        "src": "scene_005.jpg",
+        "keywords": [
+          "airplane window pressure layers animation",
+          "aircraft window cabin pressure diagram",
+          "airplane window bleed hole pressure explanation"
+        ]
+      },
+      "cameraMotion": "zoom_out",
+      "transition": "fade",
+      "transitionDuration": 0.35,
+      "overlay": "dark",
+      "overlayOpacity": 1.0,
+      "mediaSearch": {
+        "version": "2.0",
+        "primaryQuery": "Sahara Desert ancient comparison",
+        "sourceKeywords": [
+          "Sahara Desert ancient comparison",
+          "Sahara desert aerial sunset",
+          "Sahara Desert ancient landscape comparison",
+          "desert aerial view",
+          "desert landscape",
+          "Sahara Desert ancient comparison wide view",
+          "Sahara Desert ancient comparison landscape",
+          "Sahara desert aerial sunset wide view",
+          "Sahara desert aerial sunset landscape",
+          "Sahara Desert ancient comparison close up"
+        ],
+        "entities": [
+          "사막",
+          "Sahara Desert ancient comparison Sahara desert aerial sunset",
+          "landscape comparison desert aerial view desert landscape Sahara",
+          "comparison wide view Sahara Desert ancient comparison landscape",
+          "ial sunset wide view Sahara desert aerial sunset",
+          "comparison close up"
+        ],
+        "queries": [
+          "airplane window pressure layers animation",
+          "aircraft window cabin pressure diagram",
+          "airplane window bleed hole pressure explanation"
+        ]
+      },
+      "audioDuration": 7.15,
+      "audio": "ep026/audio/scene_005.mp3",
+      "timing": "ep026/audio/scene_005.timing.json",
+      "wordTimings": [
+        {
+          "text": "작은 구멍은 창문 사이의 압력을 조절해 바깥쪽 창이 압력을 견디게 합니다.",
+          "offset": 0.1,
+          "duration": 7.5,
+          "end": 0.575
+        },
+        {
+          "text": "작은 구멍은 창문 사이의 압력을 조절해 바깥쪽 창이 압력을 견디게 합니다.",
+          "offset": 0.588,
+          "duration": 7.5,
+          "end": 1.1
+        },
+        {
+          "text": "작은 구멍은 창문 사이의 압력을 조절해 바깥쪽 창이 압력을 견디게 합니다.",
+          "offset": 1.113,
+          "duration": 7.5,
+          "end": 1.388
+        },
+        {
+          "text": "작은 구멍은 창문 사이의 압력을 조절해 바깥쪽 창이 압력을 견디게 합니다.",
+          "offset": 1.4,
+          "duration": 7.5,
+          "end": 2.0
+        },
+        {
+          "text": "작은 구멍은 창문 사이의 압력을 조절해 바깥쪽 창이 압력을 견디게 합니다.",
+          "offset": 2.013,
+          "duration": 7.5,
+          "end": 2.601
+        },
+        {
+          "text": "작은 구멍은 창문 사이의 압력을 조절해 바깥쪽 창이 압력을 견디게 합니다.",
+          "offset": 2.612,
+          "duration": 7.5,
+          "end": 2.937
+        },
+        {
+          "text": "작은 구멍은 창문 사이의 압력을 조절해 바깥쪽 창이 압력을 견디게 합니다.",
+          "offset": 2.95,
+          "duration": 7.5,
+          "end": 3.487
+        },
+        {
+          "text": "작은 구멍은 창문 사이의 압력을 조절해 바깥쪽 창이 압력을 견디게 합니다.",
+          "offset": 3.5,
+          "duration": 7.5,
+          "end": 3.862
+        },
+        {
+          "text": "작은 구멍은 창문 사이의 압력을 조절해 바깥쪽 창이 압력을 견디게 합니다.",
+          "offset": 3.875,
+          "duration": 7.5,
+          "end": 4.338
+        },
+        {
+          "text": "작은 구멍은 창문 사이의 압력을 조절해 바깥쪽 창이 압력을 견디게 합니다.",
+          "offset": 4.35,
+          "duration": 7.5,
+          "end": 4.8
+        },
+        {
+          "text": "작은 구멍은 창문 사이의 압력을 조절해 바깥쪽 창이 압력을 견디게 합니다.",
+          "offset": 4.812,
+          "duration": 7.5,
+          "end": 5.075
+        },
+        {
+          "text": "작은 구멍은 창문 사이의 압력을 조절해 바깥쪽 창이 압력을 견디게 합니다.",
+          "offset": 5.088,
+          "duration": 7.5,
+          "end": 5.575
+        },
+        {
+          "text": "작은 구멍은 창문 사이의 압력을 조절해 바깥쪽 창이 압력을 견디게 합니다.",
+          "offset": 5.588,
+          "duration": 7.5,
+          "end": 6.288
+        }
+      ],
+      "wordCount": 13
+    },
+    {
+      "id": "scene_006",
+      "start": 33.0,
+      "duration": 7.0,
+      "title": "비행기 창문에\n구멍이 있는 이유",
+      "narration": "또한 창문 사이의 습기를 배출해 김이나 성에가 생기는 것도 줄여줍니다.",
+      "caption": "또한 창문 사이의 습기를 배출해 김이나 성에가 생기는 것도 줄여줍니다.",
+      "backgroundColor": "#101820",
+      "keywords": [
+        "airplane window condensation frost close up",
+        "aircraft window fog condensation",
+        "airplane window ice crystals close up"
+      ],
+      "media": {
+        "type": "image",
+        "fit": "cover",
+        "position": "center center",
+        "src": "scene_005.jpg",
+        "keywords": [
+          "airplane window condensation frost close up",
+          "aircraft window fog condensation",
+          "airplane window ice crystals close up"
+        ]
+      },
+      "cameraMotion": "zoom_out",
+      "transition": "fade",
+      "transitionDuration": 0.35,
+      "overlay": "dark",
+      "overlayOpacity": 1.0,
+      "mediaSearch": {
+        "version": "2.0",
+        "primaryQuery": "Sahara Desert ancient comparison",
+        "sourceKeywords": [
+          "Sahara Desert ancient comparison",
+          "Sahara desert aerial sunset",
+          "Sahara Desert ancient landscape comparison",
+          "desert aerial view",
+          "desert landscape",
+          "Sahara Desert ancient comparison wide view",
+          "Sahara Desert ancient comparison landscape",
+          "Sahara desert aerial sunset wide view",
+          "Sahara desert aerial sunset landscape",
+          "Sahara Desert ancient comparison close up"
+        ],
+        "entities": [
+          "사막",
+          "Sahara Desert ancient comparison Sahara desert aerial sunset",
+          "landscape comparison desert aerial view desert landscape Sahara",
+          "comparison wide view Sahara Desert ancient comparison landscape",
+          "ial sunset wide view Sahara desert aerial sunset",
+          "comparison close up"
+        ],
+        "queries": [
+          "airplane window condensation frost close up",
+          "aircraft window fog condensation",
+          "airplane window ice crystals close up"
+        ]
+      },
+      "audioDuration": 7.15,
+      "audio": "ep026/audio/scene_005.mp3",
+      "timing": "ep026/audio/scene_005.timing.json",
+      "wordTimings": [
+        {
+          "text": "또한 창문 사이의 습기를 배출해 김이나 성에가 생기는 것도 줄여줍니다.",
+          "offset": 0.1,
+          "duration": 7.0,
+          "end": 0.575
+        },
+        {
+          "text": "또한 창문 사이의 습기를 배출해 김이나 성에가 생기는 것도 줄여줍니다.",
+          "offset": 0.588,
+          "duration": 7.0,
+          "end": 1.1
+        },
+        {
+          "text": "또한 창문 사이의 습기를 배출해 김이나 성에가 생기는 것도 줄여줍니다.",
+          "offset": 1.113,
+          "duration": 7.0,
+          "end": 1.388
+        },
+        {
+          "text": "또한 창문 사이의 습기를 배출해 김이나 성에가 생기는 것도 줄여줍니다.",
+          "offset": 1.4,
+          "duration": 7.0,
+          "end": 2.0
+        },
+        {
+          "text": "또한 창문 사이의 습기를 배출해 김이나 성에가 생기는 것도 줄여줍니다.",
+          "offset": 2.013,
+          "duration": 7.0,
+          "end": 2.601
+        },
+        {
+          "text": "또한 창문 사이의 습기를 배출해 김이나 성에가 생기는 것도 줄여줍니다.",
+          "offset": 2.612,
+          "duration": 7.0,
+          "end": 2.937
+        },
+        {
+          "text": "또한 창문 사이의 습기를 배출해 김이나 성에가 생기는 것도 줄여줍니다.",
+          "offset": 2.95,
+          "duration": 7.0,
+          "end": 3.487
+        },
+        {
+          "text": "또한 창문 사이의 습기를 배출해 김이나 성에가 생기는 것도 줄여줍니다.",
+          "offset": 3.5,
+          "duration": 7.0,
+          "end": 3.862
+        },
+        {
+          "text": "또한 창문 사이의 습기를 배출해 김이나 성에가 생기는 것도 줄여줍니다.",
+          "offset": 3.875,
+          "duration": 7.0,
+          "end": 4.338
+        },
+        {
+          "text": "또한 창문 사이의 습기를 배출해 김이나 성에가 생기는 것도 줄여줍니다.",
+          "offset": 4.35,
+          "duration": 7.0,
+          "end": 4.8
+        },
+        {
+          "text": "또한 창문 사이의 습기를 배출해 김이나 성에가 생기는 것도 줄여줍니다.",
+          "offset": 4.812,
+          "duration": 7.0,
+          "end": 5.075
+        },
+        {
+          "text": "또한 창문 사이의 습기를 배출해 김이나 성에가 생기는 것도 줄여줍니다.",
+          "offset": 5.088,
+          "duration": 7.0,
+          "end": 5.575
+        },
+        {
+          "text": "또한 창문 사이의 습기를 배출해 김이나 성에가 생기는 것도 줄여줍니다.",
+          "offset": 5.588,
+          "duration": 7.0,
+          "end": 6.288
+        }
+      ],
+      "wordCount": 13
+    },
+    {
+      "id": "scene_007",
+      "start": 40.0,
+      "duration": 6.0,
+      "title": "비행기 창문에\n구멍이 있는 이유",
+      "narration": "결국 작은 구멍 하나가 안전과 시야를 동시에 지키고 있었던 것입니다.",
+      "caption": "결국 작은 구멍 하나가 안전과 시야를 동시에 지키고 있었던 것입니다.",
+      "backgroundColor": "#101820",
+      "keywords": [
+        "clear airplane window view clouds passenger cabin",
+        "airplane window wing view above clouds",
+        "passenger aircraft window clear sky"
+      ],
+      "media": {
+        "type": "image",
+        "fit": "cover",
+        "position": "center center",
+        "src": "scene_005.jpg",
+        "keywords": [
+          "clear airplane window view clouds passenger cabin",
+          "airplane window wing view above clouds",
+          "passenger aircraft window clear sky"
+        ]
+      },
+      "cameraMotion": "zoom_out",
+      "transition": "fade",
+      "transitionDuration": 0.35,
+      "overlay": "dark",
+      "overlayOpacity": 1.0,
+      "mediaSearch": {
+        "version": "2.0",
+        "primaryQuery": "Sahara Desert ancient comparison",
+        "sourceKeywords": [
+          "Sahara Desert ancient comparison",
+          "Sahara desert aerial sunset",
+          "Sahara Desert ancient landscape comparison",
+          "desert aerial view",
+          "desert landscape",
+          "Sahara Desert ancient comparison wide view",
+          "Sahara Desert ancient comparison landscape",
+          "Sahara desert aerial sunset wide view",
+          "Sahara desert aerial sunset landscape",
+          "Sahara Desert ancient comparison close up"
+        ],
+        "entities": [
+          "사막",
+          "Sahara Desert ancient comparison Sahara desert aerial sunset",
+          "landscape comparison desert aerial view desert landscape Sahara",
+          "comparison wide view Sahara Desert ancient comparison landscape",
+          "ial sunset wide view Sahara desert aerial sunset",
+          "comparison close up"
+        ],
+        "queries": [
+          "clear airplane window view clouds passenger cabin",
+          "airplane window wing view above clouds",
+          "passenger aircraft window clear sky"
+        ]
+      },
+      "audioDuration": 7.15,
+      "audio": "ep026/audio/scene_005.mp3",
+      "timing": "ep026/audio/scene_005.timing.json",
+      "wordTimings": [
+        {
+          "text": "결국 작은 구멍 하나가 안전과 시야를 동시에 지키고 있었던 것입니다.",
+          "offset": 0.1,
+          "duration": 6.0,
+          "end": 0.575
+        },
+        {
+          "text": "결국 작은 구멍 하나가 안전과 시야를 동시에 지키고 있었던 것입니다.",
+          "offset": 0.588,
+          "duration": 6.0,
+          "end": 1.1
+        },
+        {
+          "text": "결국 작은 구멍 하나가 안전과 시야를 동시에 지키고 있었던 것입니다.",
+          "offset": 1.113,
+          "duration": 6.0,
+          "end": 1.388
+        },
+        {
+          "text": "결국 작은 구멍 하나가 안전과 시야를 동시에 지키고 있었던 것입니다.",
+          "offset": 1.4,
+          "duration": 6.0,
+          "end": 2.0
+        },
+        {
+          "text": "결국 작은 구멍 하나가 안전과 시야를 동시에 지키고 있었던 것입니다.",
+          "offset": 2.013,
+          "duration": 6.0,
+          "end": 2.601
+        },
+        {
+          "text": "결국 작은 구멍 하나가 안전과 시야를 동시에 지키고 있었던 것입니다.",
+          "offset": 2.612,
+          "duration": 6.0,
+          "end": 2.937
+        },
+        {
+          "text": "결국 작은 구멍 하나가 안전과 시야를 동시에 지키고 있었던 것입니다.",
+          "offset": 2.95,
+          "duration": 6.0,
+          "end": 3.487
+        },
+        {
+          "text": "결국 작은 구멍 하나가 안전과 시야를 동시에 지키고 있었던 것입니다.",
+          "offset": 3.5,
+          "duration": 6.0,
+          "end": 3.862
+        },
+        {
+          "text": "결국 작은 구멍 하나가 안전과 시야를 동시에 지키고 있었던 것입니다.",
+          "offset": 3.875,
+          "duration": 6.0,
+          "end": 4.338
+        },
+        {
+          "text": "결국 작은 구멍 하나가 안전과 시야를 동시에 지키고 있었던 것입니다.",
+          "offset": 4.35,
+          "duration": 6.0,
+          "end": 4.8
+        },
+        {
+          "text": "결국 작은 구멍 하나가 안전과 시야를 동시에 지키고 있었던 것입니다.",
+          "offset": 4.812,
+          "duration": 6.0,
+          "end": 5.075
+        },
+        {
+          "text": "결국 작은 구멍 하나가 안전과 시야를 동시에 지키고 있었던 것입니다.",
+          "offset": 5.088,
+          "duration": 6.0,
+          "end": 5.575
+        },
+        {
+          "text": "결국 작은 구멍 하나가 안전과 시야를 동시에 지키고 있었던 것입니다.",
+          "offset": 5.588,
+          "duration": 6.0,
+          "end": 6.288
+        }
+      ],
+      "wordCount": 13
+    }
+  ],
+  "tts": {
+    "provider": "edge",
+    "sceneGapMs": 150,
+    "audioDirectory": "ep026/audio",
+    "synchronized": true,
+    "wordTiming": true,
+    "timingVersion": "1.0"
+  }
+}

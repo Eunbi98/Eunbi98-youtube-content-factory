@@ -1,0 +1,62 @@
+{
+  "sceneId": "scene_001",
+  "title": "땅속에 도시 전체가 숨겨져 있다면?",
+  "narration": "수백 년 동안 아무도 몰랐던 도시가 땅속에서 발견된다면 믿으시겠습니까?",
+  "sourceKeywords": [
+    "lost underground city",
+    "ancient ruins mystery"
+  ],
+  "primaryQuery": "lost underground city",
+  "queries": [
+    {
+      "query": "lost underground city",
+      "intent": "primary",
+      "priority": 1
+    },
+    {
+      "query": "ancient ruins mystery",
+      "intent": "primary",
+      "priority": 2
+    },
+    {
+      "query": "lost underground city vertical",
+      "intent": "portrait",
+      "priority": 3
+    },
+    {
+      "query": "lost underground city portrait",
+      "intent": "portrait",
+      "priority": 4
+    },
+    {
+      "query": "ancient ruins mystery vertical",
+      "intent": "portrait",
+      "priority": 5
+    },
+    {
+      "query": "ancient ruins mystery portrait",
+      "intent": "portrait",
+      "priority": 6
+    },
+    {
+      "query": "lost underground city cinematic wide shot",
+      "intent": "wide",
+      "priority": 7
+    },
+    {
+      "query": "ancient ruins mystery cinematic wide shot",
+      "intent": "wide",
+      "priority": 8
+    },
+    {
+      "query": "lost underground city close up detail",
+      "intent": "detail",
+      "priority": 9
+    },
+    {
+      "query": "ancient ruins mystery close up detail",
+      "intent": "detail",
+      "priority": 10
+    }
+  ]
+}

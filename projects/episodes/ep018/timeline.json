@@ -1,0 +1,1433 @@
+{
+  "version": "6.5",
+  "episodeId": "EP018",
+  "title": "우주는 왜 완전히 조용할까? 소리와 빛의 차이",
+  "fps": 30,
+  "width": 1080,
+  "height": 1920,
+  "totalDuration": 63.48,
+  "theme": {
+    "backgroundColor": "#000000",
+    "titleColor": "#7BFEB4",
+    "captionColor": "#FFFFFF",
+    "accentColor": "#1a237e"
+  },
+  "scenes": [
+    {
+      "id": "scene_001",
+      "start": 0.0,
+      "duration": 5.29,
+      "title": "Hook",
+      "narration": "우주에서는 아무 소리도 들리지 않는다는 사실, 알고 계셨나요?",
+      "caption": "우주에서는 아무 소리도 들리지 않는다는 사실, 알고 계셨나요?",
+      "backgroundColor": "#14202B",
+      "keywords": [
+        "NASA space vacuum",
+        "space silence",
+        "NASA space vacuum wide view",
+        "NASA space vacuum landscape",
+        "space silence wide view",
+        "space silence landscape",
+        "NASA space vacuum close up",
+        "NASA space vacuum detailed view"
+      ],
+      "media": {
+        "type": "image",
+        "fit": "cover",
+        "position": "center center",
+        "src": "ep018/scene_001.jpg",
+        "keywords": [
+          "NASA space vacuum",
+          "space silence",
+          "NASA space vacuum wide view",
+          "NASA space vacuum landscape",
+          "space silence wide view",
+          "space silence landscape",
+          "NASA space vacuum close up",
+          "NASA space vacuum detailed view"
+        ]
+      },
+      "cameraMotion": "zoom_in",
+      "transition": "fade",
+      "transitionDuration": 0.3,
+      "overlay": "cinematic",
+      "overlayOpacity": 1.0,
+      "mediaSearch": {
+        "version": "2.0",
+        "primaryQuery": "NASA space vacuum",
+        "sourceKeywords": [
+          "NASA space vacuum",
+          "space silence",
+          "NASA space vacuum wide view",
+          "NASA space vacuum landscape",
+          "space silence wide view",
+          "space silence landscape",
+          "NASA space vacuum close up",
+          "NASA space vacuum detailed view"
+        ],
+        "entities": [
+          "우주",
+          "Hook",
+          "NASA space vacuum space silence NASA space vacuum",
+          "dscape space silence wide view space silence landscape",
+          "NASA space vacuum detailed view"
+        ],
+        "queries": [
+          {
+            "query": "NASA space vacuum",
+            "intent": "primary",
+            "priority": 1,
+            "mediaKind": "any"
+          },
+          {
+            "query": "space silence",
+            "intent": "primary",
+            "priority": 2,
+            "mediaKind": "any"
+          },
+          {
+            "query": "NASA space vacuum wide view",
+            "intent": "wide",
+            "priority": 3,
+            "mediaKind": "any"
+          },
+          {
+            "query": "NASA space vacuum close up",
+            "intent": "detail",
+            "priority": 4,
+            "mediaKind": "any"
+          },
+          {
+            "query": "NASA space vacuum detailed view",
+            "intent": "detail",
+            "priority": 5,
+            "mediaKind": "any"
+          },
+          {
+            "query": "NASA space vacuum landscape",
+            "intent": "wide",
+            "priority": 6,
+            "mediaKind": "any"
+          },
+          {
+            "query": "space silence wide view",
+            "intent": "wide",
+            "priority": 7,
+            "mediaKind": "any"
+          },
+          {
+            "query": "space silence landscape",
+            "intent": "wide",
+            "priority": 8,
+            "mediaKind": "any"
+          },
+          {
+            "query": "space silence close up",
+            "intent": "detail",
+            "priority": 9,
+            "mediaKind": "any"
+          },
+          {
+            "query": "space silence detailed view",
+            "intent": "detail",
+            "priority": 10,
+            "mediaKind": "any"
+          }
+        ]
+      },
+      "audioDuration": 5.14,
+      "audio": "ep018/audio/scene_001.mp3",
+      "timing": "ep018/audio/scene_001.timing.json",
+      "wordTimings": [
+        {
+          "text": "우주에서는",
+          "offset": 0.1,
+          "duration": 0.775,
+          "end": 0.875
+        },
+        {
+          "text": "아무",
+          "offset": 0.887,
+          "duration": 0.237,
+          "end": 1.124
+        },
+        {
+          "text": "소리도",
+          "offset": 1.137,
+          "duration": 0.388,
+          "end": 1.525
+        },
+        {
+          "text": "들리지",
+          "offset": 1.538,
+          "duration": 0.412,
+          "end": 1.95
+        },
+        {
+          "text": "않는다는",
+          "offset": 1.962,
+          "duration": 0.5,
+          "end": 2.462
+        },
+        {
+          "text": "사실",
+          "offset": 2.475,
+          "duration": 0.525,
+          "end": 3.0
+        },
+        {
+          "text": "알고",
+          "offset": 3.175,
+          "duration": 0.338,
+          "end": 3.513
+        },
+        {
+          "text": "계셨나요",
+          "offset": 3.525,
+          "duration": 0.738,
+          "end": 4.263
+        }
+      ],
+      "wordCount": 8
+    },
+    {
+      "id": "scene_002",
+      "start": 5.29,
+      "duration": 10.49,
+      "title": "Answer",
+      "narration": "소리가 전달되려면 압력 변화가 전파될 수 있는 매질이 필요한데, 우주는 거의 완전한 진공 상태라서 소리가 전혀 전달되지 않습니다.",
+      "caption": "소리가 전달되려면 압력 변화가 전파될 수 있는 매질이 필요한데, 우주는 거의 완전한 진공 상태라서 소리가 전혀 전달되지 않습니다.",
+      "backgroundColor": "#223748",
+      "keywords": [
+        "sound transmission space",
+        "no sound universe",
+        "lunar landscape",
+        "sound transmission space wide view",
+        "sound transmission space landscape",
+        "no sound universe wide view",
+        "no sound universe landscape",
+        "sound transmission space close up"
+      ],
+      "media": {
+        "type": "image",
+        "fit": "cover",
+        "position": "center center",
+        "src": "ep018/scene_002.jpg",
+        "keywords": [
+          "sound transmission space",
+          "no sound universe",
+          "lunar landscape",
+          "sound transmission space wide view",
+          "sound transmission space landscape",
+          "no sound universe wide view",
+          "no sound universe landscape",
+          "sound transmission space close up"
+        ]
+      },
+      "cameraMotion": "pan_right",
+      "transition": "cut",
+      "transitionDuration": 0.2,
+      "overlay": "cinematic",
+      "overlayOpacity": 1.0,
+      "mediaSearch": {
+        "version": "2.0",
+        "primaryQuery": "sound transmission space",
+        "sourceKeywords": [
+          "sound transmission space",
+          "no sound universe",
+          "lunar landscape",
+          "sound transmission space wide view",
+          "sound transmission space landscape",
+          "no sound universe wide view",
+          "no sound universe landscape",
+          "sound transmission space close up"
+        ],
+        "entities": [
+          "달",
+          "우주",
+          "Answer",
+          "sound transmission space no sound universe lunar landscape",
+          "ce wide view sound transmission space landscape no",
+          "und universe landscape sound transmission space close up"
+        ],
+        "queries": [
+          {
+            "query": "sound transmission space",
+            "intent": "primary",
+            "priority": 1,
+            "mediaKind": "any"
+          },
+          {
+            "query": "no sound universe",
+            "intent": "primary",
+            "priority": 2,
+            "mediaKind": "any"
+          },
+          {
+            "query": "sound transmission space wide view",
+            "intent": "wide",
+            "priority": 3,
+            "mediaKind": "any"
+          },
+          {
+            "query": "no sound universe wide view",
+            "intent": "wide",
+            "priority": 4,
+            "mediaKind": "any"
+          },
+          {
+            "query": "sound transmission space close up",
+            "intent": "detail",
+            "priority": 5,
+            "mediaKind": "any"
+          },
+          {
+            "query": "sound transmission space landscape",
+            "intent": "wide",
+            "priority": 6,
+            "mediaKind": "any"
+          },
+          {
+            "query": "no sound universe landscape",
+            "intent": "wide",
+            "priority": 7,
+            "mediaKind": "any"
+          },
+          {
+            "query": "lunar landscape",
+            "intent": "wide",
+            "priority": 8,
+            "mediaKind": "any"
+          },
+          {
+            "query": "sound transmission space detailed view",
+            "intent": "detail",
+            "priority": 9,
+            "mediaKind": "any"
+          },
+          {
+            "query": "no sound universe close up",
+            "intent": "detail",
+            "priority": 10,
+            "mediaKind": "any"
+          }
+        ]
+      },
+      "audioDuration": 10.34,
+      "audio": "ep018/audio/scene_002.mp3",
+      "timing": "ep018/audio/scene_002.timing.json",
+      "wordTimings": [
+        {
+          "text": "소리가",
+          "offset": 0.1,
+          "duration": 0.45,
+          "end": 0.55
+        },
+        {
+          "text": "전달되려면",
+          "offset": 0.562,
+          "duration": 0.938,
+          "end": 1.5
+        },
+        {
+          "text": "압력",
+          "offset": 1.512,
+          "duration": 0.35,
+          "end": 1.862
+        },
+        {
+          "text": "변화가",
+          "offset": 1.875,
+          "duration": 0.425,
+          "end": 2.3
+        },
+        {
+          "text": "전파될",
+          "offset": 2.312,
+          "duration": 0.475,
+          "end": 2.787
+        },
+        {
+          "text": "수",
+          "offset": 2.8,
+          "duration": 0.15,
+          "end": 2.95
+        },
+        {
+          "text": "있는",
+          "offset": 2.962,
+          "duration": 0.312,
+          "end": 3.274
+        },
+        {
+          "text": "매질이",
+          "offset": 3.288,
+          "duration": 0.412,
+          "end": 3.7
+        },
+        {
+          "text": "필요한데",
+          "offset": 3.712,
+          "duration": 0.75,
+          "end": 4.462
+        },
+        {
+          "text": "우주는",
+          "offset": 4.725,
+          "duration": 0.512,
+          "end": 5.237
+        },
+        {
+          "text": "거의",
+          "offset": 5.25,
+          "duration": 0.4,
+          "end": 5.65
+        },
+        {
+          "text": "완전한",
+          "offset": 5.662,
+          "duration": 0.55,
+          "end": 6.212
+        },
+        {
+          "text": "진공",
+          "offset": 6.225,
+          "duration": 0.362,
+          "end": 6.587
+        },
+        {
+          "text": "상태라서",
+          "offset": 6.6,
+          "duration": 0.662,
+          "end": 7.262
+        },
+        {
+          "text": "소리가",
+          "offset": 7.275,
+          "duration": 0.5,
+          "end": 7.775
+        },
+        {
+          "text": "전혀",
+          "offset": 7.787,
+          "duration": 0.362,
+          "end": 8.149
+        },
+        {
+          "text": "전달되지",
+          "offset": 8.162,
+          "duration": 0.625,
+          "end": 8.787
+        },
+        {
+          "text": "않습니다",
+          "offset": 8.8,
+          "duration": 0.675,
+          "end": 9.475
+        }
+      ],
+      "wordCount": 18
+    },
+    {
+      "id": "scene_003",
+      "start": 15.78,
+      "duration": 13.54,
+      "title": "Story",
+      "narration": "인간의 귀는 20Hz에서 20kHz 사이의 소리를 감지할 수 있지만, 우주에서는 이런 주파수의 소리가 전달될 매질이 존재하지 않으니, 우주에서는 아무리 큰 소리도 들리지 않죠.",
+      "caption": "인간의 귀는 20Hz에서 20kHz 사이의 소리를 감지할 수 있지만, 우주에서는 이런 주파수의 소리가 전달될 매질이 존재하지 않으니, 우주에서는 아무리 큰 소리도 들리지 않죠.",
+      "backgroundColor": "#314A5D",
+      "keywords": [
+        "human hearing range",
+        "sound frequency vacuum",
+        "lunar landscape",
+        "human hearing range wide view",
+        "human hearing range landscape",
+        "sound frequency vacuum wide view",
+        "sound frequency vacuum landscape",
+        "human hearing range close up"
+      ],
+      "media": {
+        "type": "image",
+        "fit": "cover",
+        "position": "center center",
+        "src": "ep018/scene_003.jpg",
+        "keywords": [
+          "human hearing range",
+          "sound frequency vacuum",
+          "lunar landscape",
+          "human hearing range wide view",
+          "human hearing range landscape",
+          "sound frequency vacuum wide view",
+          "sound frequency vacuum landscape",
+          "human hearing range close up"
+        ]
+      },
+      "cameraMotion": "pan_left",
+      "transition": "fade",
+      "transitionDuration": 0.3,
+      "overlay": "cinematic",
+      "overlayOpacity": 1.0,
+      "mediaSearch": {
+        "version": "2.0",
+        "primaryQuery": "human hearing range",
+        "sourceKeywords": [
+          "human hearing range",
+          "sound frequency vacuum",
+          "lunar landscape",
+          "human hearing range wide view",
+          "human hearing range landscape",
+          "sound frequency vacuum wide view",
+          "sound frequency vacuum landscape",
+          "human hearing range close up"
+        ],
+        "entities": [
+          "우주",
+          "달",
+          "Story",
+          "Hz",
+          "kHz",
+          "human hearing range sound frequency vacuum lunar landscape",
+          "de view human hearing range landscape sound frequency",
+          "uency vacuum landscape human hearing range close up"
+        ],
+        "queries": [
+          {
+            "query": "human hearing range",
+            "intent": "primary",
+            "priority": 1,
+            "mediaKind": "any"
+          },
+          {
+            "query": "sound frequency vacuum",
+            "intent": "primary",
+            "priority": 2,
+            "mediaKind": "any"
+          },
+          {
+            "query": "human hearing range wide view",
+            "intent": "wide",
+            "priority": 3,
+            "mediaKind": "any"
+          },
+          {
+            "query": "sound frequency vacuum wide view",
+            "intent": "wide",
+            "priority": 4,
+            "mediaKind": "any"
+          },
+          {
+            "query": "human hearing range close up",
+            "intent": "detail",
+            "priority": 5,
+            "mediaKind": "any"
+          },
+          {
+            "query": "human hearing range landscape",
+            "intent": "wide",
+            "priority": 6,
+            "mediaKind": "any"
+          },
+          {
+            "query": "sound frequency vacuum landscape",
+            "intent": "wide",
+            "priority": 7,
+            "mediaKind": "any"
+          },
+          {
+            "query": "lunar landscape",
+            "intent": "wide",
+            "priority": 8,
+            "mediaKind": "any"
+          },
+          {
+            "query": "human hearing range detailed view",
+            "intent": "detail",
+            "priority": 9,
+            "mediaKind": "any"
+          },
+          {
+            "query": "sound frequency vacuum close up",
+            "intent": "detail",
+            "priority": 10,
+            "mediaKind": "any"
+          }
+        ]
+      },
+      "audioDuration": 13.39,
+      "audio": "ep018/audio/scene_003.mp3",
+      "timing": "ep018/audio/scene_003.timing.json",
+      "wordTimings": [
+        {
+          "text": "인간의",
+          "offset": 0.1,
+          "duration": 0.463,
+          "end": 0.563
+        },
+        {
+          "text": "귀는",
+          "offset": 0.575,
+          "duration": 0.325,
+          "end": 0.9
+        },
+        {
+          "text": "20Hz에서",
+          "offset": 0.912,
+          "duration": 1.025,
+          "end": 1.937
+        },
+        {
+          "text": "20kHz",
+          "offset": 1.95,
+          "duration": 0.975,
+          "end": 2.925
+        },
+        {
+          "text": "사이의",
+          "offset": 2.938,
+          "duration": 0.35,
+          "end": 3.288
+        },
+        {
+          "text": "소리를",
+          "offset": 3.3,
+          "duration": 0.362,
+          "end": 3.662
+        },
+        {
+          "text": "감지할",
+          "offset": 3.675,
+          "duration": 0.5,
+          "end": 4.175
+        },
+        {
+          "text": "수",
+          "offset": 4.188,
+          "duration": 0.138,
+          "end": 4.326
+        },
+        {
+          "text": "있지만",
+          "offset": 4.338,
+          "duration": 0.6,
+          "end": 4.938
+        },
+        {
+          "text": "우주에서는",
+          "offset": 5.188,
+          "duration": 0.925,
+          "end": 6.113
+        },
+        {
+          "text": "이런",
+          "offset": 6.125,
+          "duration": 0.312,
+          "end": 6.437
+        },
+        {
+          "text": "주파수의",
+          "offset": 6.45,
+          "duration": 0.537,
+          "end": 6.987
+        },
+        {
+          "text": "소리가",
+          "offset": 7.0,
+          "duration": 0.388,
+          "end": 7.388
+        },
+        {
+          "text": "전달될",
+          "offset": 7.4,
+          "duration": 0.525,
+          "end": 7.925
+        },
+        {
+          "text": "매질이",
+          "offset": 7.938,
+          "duration": 0.362,
+          "end": 8.3
+        },
+        {
+          "text": "존재하지",
+          "offset": 8.312,
+          "duration": 0.55,
+          "end": 8.862
+        },
+        {
+          "text": "않으니",
+          "offset": 8.875,
+          "duration": 0.487,
+          "end": 9.362
+        },
+        {
+          "text": "우주에서는",
+          "offset": 9.625,
+          "duration": 0.912,
+          "end": 10.537
+        },
+        {
+          "text": "아무리",
+          "offset": 10.55,
+          "duration": 0.375,
+          "end": 10.925
+        },
+        {
+          "text": "큰",
+          "offset": 10.938,
+          "duration": 0.212,
+          "end": 11.15
+        },
+        {
+          "text": "소리도",
+          "offset": 11.162,
+          "duration": 0.4,
+          "end": 11.562
+        },
+        {
+          "text": "들리지",
+          "offset": 11.575,
+          "duration": 0.4,
+          "end": 11.975
+        },
+        {
+          "text": "않죠",
+          "offset": 11.988,
+          "duration": 0.537,
+          "end": 12.525
+        }
+      ],
+      "wordCount": 23
+    },
+    {
+      "id": "scene_004",
+      "start": 29.32,
+      "duration": 9.65,
+      "title": "Fact",
+      "narration": "아인슈타인의 상대성 이론에 따르면 빛은 진공에서도 이동할 수 있지만, 소리는 반드시 매질이 필요하다는 점에서 차이가 있습니다.",
+      "caption": "아인슈타인의 상대성 이론에 따르면 빛은 진공에서도 이동할 수 있지만, 소리는 반드시 매질이 필요하다는 점에서 차이가 있습니다.",
+      "backgroundColor": "#1C3040",
+      "keywords": [
+        "Einstein relativity",
+        "light vacuum",
+        "Einstein relativity wide view",
+        "Einstein relativity landscape",
+        "light vacuum wide view",
+        "light vacuum landscape",
+        "Einstein relativity close up",
+        "Einstein relativity detailed view"
+      ],
+      "media": {
+        "type": "image",
+        "fit": "cover",
+        "position": "center center",
+        "src": "ep018/scene_004.jpg",
+        "keywords": [
+          "Einstein relativity",
+          "light vacuum",
+          "Einstein relativity wide view",
+          "Einstein relativity landscape",
+          "light vacuum wide view",
+          "light vacuum landscape",
+          "Einstein relativity close up",
+          "Einstein relativity detailed view"
+        ]
+      },
+      "cameraMotion": "zoom_in_right",
+      "transition": "slide_left",
+      "transitionDuration": 0.3,
+      "overlay": "vignette",
+      "overlayOpacity": 1.0,
+      "mediaSearch": {
+        "version": "2.0",
+        "primaryQuery": "Einstein relativity",
+        "sourceKeywords": [
+          "Einstein relativity",
+          "light vacuum",
+          "Einstein relativity wide view",
+          "Einstein relativity landscape",
+          "light vacuum wide view",
+          "light vacuum landscape",
+          "Einstein relativity close up",
+          "Einstein relativity detailed view"
+        ],
+        "entities": [
+          "Fact",
+          "Einstein relativity light vacuum Einstein relativity wide view",
+          "landscape light vacuum wide view light vacuum landscape",
+          "se up Einstein relativity detailed view"
+        ],
+        "queries": [
+          {
+            "query": "Einstein relativity",
+            "intent": "primary",
+            "priority": 1,
+            "mediaKind": "any"
+          },
+          {
+            "query": "light vacuum",
+            "intent": "primary",
+            "priority": 2,
+            "mediaKind": "any"
+          },
+          {
+            "query": "Einstein relativity wide view",
+            "intent": "wide",
+            "priority": 3,
+            "mediaKind": "any"
+          },
+          {
+            "query": "light vacuum wide view",
+            "intent": "wide",
+            "priority": 4,
+            "mediaKind": "any"
+          },
+          {
+            "query": "Einstein relativity close up",
+            "intent": "detail",
+            "priority": 5,
+            "mediaKind": "any"
+          },
+          {
+            "query": "Einstein relativity detailed view",
+            "intent": "detail",
+            "priority": 6,
+            "mediaKind": "any"
+          },
+          {
+            "query": "Einstein relativity landscape",
+            "intent": "wide",
+            "priority": 7,
+            "mediaKind": "any"
+          },
+          {
+            "query": "light vacuum landscape",
+            "intent": "wide",
+            "priority": 8,
+            "mediaKind": "any"
+          },
+          {
+            "query": "light vacuum close up",
+            "intent": "detail",
+            "priority": 9,
+            "mediaKind": "any"
+          },
+          {
+            "query": "light vacuum detailed view",
+            "intent": "detail",
+            "priority": 10,
+            "mediaKind": "any"
+          }
+        ]
+      },
+      "audioDuration": 9.5,
+      "audio": "ep018/audio/scene_004.mp3",
+      "timing": "ep018/audio/scene_004.timing.json",
+      "wordTimings": [
+        {
+          "text": "아인슈타인의",
+          "offset": 0.1,
+          "duration": 0.812,
+          "end": 0.912
+        },
+        {
+          "text": "상대성",
+          "offset": 0.925,
+          "duration": 0.512,
+          "end": 1.437
+        },
+        {
+          "text": "이론에",
+          "offset": 1.45,
+          "duration": 0.287,
+          "end": 1.737
+        },
+        {
+          "text": "따르면",
+          "offset": 1.75,
+          "duration": 0.475,
+          "end": 2.225
+        },
+        {
+          "text": "빛은",
+          "offset": 2.237,
+          "duration": 0.662,
+          "end": 2.899
+        },
+        {
+          "text": "진공에서도",
+          "offset": 2.913,
+          "duration": 0.7,
+          "end": 3.613
+        },
+        {
+          "text": "이동할",
+          "offset": 3.625,
+          "duration": 0.4,
+          "end": 4.025
+        },
+        {
+          "text": "수",
+          "offset": 4.037,
+          "duration": 0.15,
+          "end": 4.187
+        },
+        {
+          "text": "있지만",
+          "offset": 4.2,
+          "duration": 0.575,
+          "end": 4.775
+        },
+        {
+          "text": "소리는",
+          "offset": 5.013,
+          "duration": 0.525,
+          "end": 5.538
+        },
+        {
+          "text": "반드시",
+          "offset": 5.55,
+          "duration": 0.537,
+          "end": 6.087
+        },
+        {
+          "text": "매질이",
+          "offset": 6.1,
+          "duration": 0.388,
+          "end": 6.488
+        },
+        {
+          "text": "필요하다는",
+          "offset": 6.5,
+          "duration": 0.575,
+          "end": 7.075
+        },
+        {
+          "text": "점에서",
+          "offset": 7.088,
+          "duration": 0.425,
+          "end": 7.513
+        },
+        {
+          "text": "차이가",
+          "offset": 7.525,
+          "duration": 0.412,
+          "end": 7.937
+        },
+        {
+          "text": "있습니다",
+          "offset": 7.95,
+          "duration": 0.675,
+          "end": 8.625
+        }
+      ],
+      "wordCount": 16
+    },
+    {
+      "id": "scene_005",
+      "start": 38.97,
+      "duration": 17.91,
+      "title": "Fact",
+      "narration": "빛과 같은 전자기파는 진공에서도 전파되지만, 소리는 매질이 없으면 전파되지 못합니다. 그래서 우주에서는 빛은 볼 수 있지만 소리는 들을 수 없습니다. 다만, 전자기파 등 다른 형태의 에너지는 우주에 존재합니다.",
+      "caption": "빛과 같은 전자기파는 진공에서도 전파되지만, 소리는 매질이 없으면 전파되지 못합니다. 그래서 우주에서는 빛은 볼 수 있지만 소리는 들을 수 없습니다. 다만, 전자기파 등 다른 형태의 에너지는 우주에 존재합니다.",
+      "backgroundColor": "#1C3040",
+      "keywords": [
+        "electromagnetic waves space",
+        "light vs sound",
+        "electromagnetic waves space wide view",
+        "electromagnetic waves space landscape",
+        "light vs sound wide view",
+        "light vs sound landscape",
+        "electromagnetic waves space close up",
+        "electromagnetic waves space detailed view"
+      ],
+      "media": {
+        "type": "image",
+        "fit": "cover",
+        "position": "center center",
+        "src": "ep018/scene_005.jpg",
+        "keywords": [
+          "electromagnetic waves space",
+          "light vs sound",
+          "electromagnetic waves space wide view",
+          "electromagnetic waves space landscape",
+          "light vs sound wide view",
+          "light vs sound landscape",
+          "electromagnetic waves space close up",
+          "electromagnetic waves space detailed view"
+        ]
+      },
+      "cameraMotion": "zoom_in_left",
+      "transition": "slide_left",
+      "transitionDuration": 0.3,
+      "overlay": "vignette",
+      "overlayOpacity": 1.0,
+      "mediaSearch": {
+        "version": "2.0",
+        "primaryQuery": "electromagnetic waves space",
+        "sourceKeywords": [
+          "electromagnetic waves space",
+          "light vs sound",
+          "electromagnetic waves space wide view",
+          "electromagnetic waves space landscape",
+          "light vs sound wide view",
+          "light vs sound landscape",
+          "electromagnetic waves space close up",
+          "electromagnetic waves space detailed view"
+        ],
+        "entities": [
+          "우주",
+          "Fact",
+          "electromagnetic waves space light vs sound electromagnetic waves",
+          "electromagnetic waves space landscape light vs sound wide",
+          "dscape electromagnetic waves space close up electromagnetic waves",
+          "view"
+        ],
+        "queries": [
+          {
+            "query": "electromagnetic waves space",
+            "intent": "primary",
+            "priority": 1,
+            "mediaKind": "any"
+          },
+          {
+            "query": "light vs sound",
+            "intent": "primary",
+            "priority": 2,
+            "mediaKind": "any"
+          },
+          {
+            "query": "electromagnetic waves space wide view",
+            "intent": "wide",
+            "priority": 3,
+            "mediaKind": "any"
+          },
+          {
+            "query": "light vs sound wide view",
+            "intent": "wide",
+            "priority": 4,
+            "mediaKind": "any"
+          },
+          {
+            "query": "electromagnetic waves space close up",
+            "intent": "detail",
+            "priority": 5,
+            "mediaKind": "any"
+          },
+          {
+            "query": "electromagnetic waves space detailed view",
+            "intent": "detail",
+            "priority": 6,
+            "mediaKind": "any"
+          },
+          {
+            "query": "electromagnetic waves space landscape",
+            "intent": "wide",
+            "priority": 7,
+            "mediaKind": "any"
+          },
+          {
+            "query": "light vs sound landscape",
+            "intent": "wide",
+            "priority": 8,
+            "mediaKind": "any"
+          },
+          {
+            "query": "light vs sound close up",
+            "intent": "detail",
+            "priority": 9,
+            "mediaKind": "any"
+          },
+          {
+            "query": "light vs sound detailed view",
+            "intent": "detail",
+            "priority": 10,
+            "mediaKind": "any"
+          }
+        ]
+      },
+      "audioDuration": 17.76,
+      "audio": "ep018/audio/scene_005.mp3",
+      "timing": "ep018/audio/scene_005.timing.json",
+      "wordTimings": [
+        {
+          "text": "빛과",
+          "offset": 0.1,
+          "duration": 0.338,
+          "end": 0.438
+        },
+        {
+          "text": "같은",
+          "offset": 0.45,
+          "duration": 0.287,
+          "end": 0.737
+        },
+        {
+          "text": "전자기파는",
+          "offset": 0.75,
+          "duration": 0.738,
+          "end": 1.488
+        },
+        {
+          "text": "진공에서도",
+          "offset": 1.5,
+          "duration": 0.725,
+          "end": 2.225
+        },
+        {
+          "text": "전파되지만",
+          "offset": 2.237,
+          "duration": 0.95,
+          "end": 3.187
+        },
+        {
+          "text": "소리는",
+          "offset": 3.413,
+          "duration": 0.463,
+          "end": 3.876
+        },
+        {
+          "text": "매질이",
+          "offset": 3.888,
+          "duration": 0.362,
+          "end": 4.25
+        },
+        {
+          "text": "없으면",
+          "offset": 4.263,
+          "duration": 0.487,
+          "end": 4.75
+        },
+        {
+          "text": "전파되지",
+          "offset": 4.763,
+          "duration": 0.625,
+          "end": 5.388
+        },
+        {
+          "text": "못합니다",
+          "offset": 5.4,
+          "duration": 0.713,
+          "end": 6.113
+        },
+        {
+          "text": "그래서",
+          "offset": 6.987,
+          "duration": 0.425,
+          "end": 7.412
+        },
+        {
+          "text": "우주에서는",
+          "offset": 7.425,
+          "duration": 0.775,
+          "end": 8.2
+        },
+        {
+          "text": "빛은",
+          "offset": 8.213,
+          "duration": 0.512,
+          "end": 8.725
+        },
+        {
+          "text": "볼",
+          "offset": 8.738,
+          "duration": 0.188,
+          "end": 8.926
+        },
+        {
+          "text": "수",
+          "offset": 8.938,
+          "duration": 0.15,
+          "end": 9.088
+        },
+        {
+          "text": "있지만",
+          "offset": 9.1,
+          "duration": 0.525,
+          "end": 9.625
+        },
+        {
+          "text": "소리는",
+          "offset": 9.637,
+          "duration": 0.738,
+          "end": 10.375
+        },
+        {
+          "text": "들을",
+          "offset": 10.387,
+          "duration": 0.3,
+          "end": 10.687
+        },
+        {
+          "text": "수",
+          "offset": 10.7,
+          "duration": 0.15,
+          "end": 10.85
+        },
+        {
+          "text": "없습니다",
+          "offset": 10.863,
+          "duration": 0.725,
+          "end": 11.588
+        },
+        {
+          "text": "다만",
+          "offset": 12.463,
+          "duration": 0.562,
+          "end": 13.025
+        },
+        {
+          "text": "전자기파",
+          "offset": 13.213,
+          "duration": 0.613,
+          "end": 13.826
+        },
+        {
+          "text": "등",
+          "offset": 13.838,
+          "duration": 0.237,
+          "end": 14.075
+        },
+        {
+          "text": "다른",
+          "offset": 14.088,
+          "duration": 0.362,
+          "end": 14.45
+        },
+        {
+          "text": "형태의",
+          "offset": 14.463,
+          "duration": 0.487,
+          "end": 14.95
+        },
+        {
+          "text": "에너지는",
+          "offset": 14.963,
+          "duration": 0.625,
+          "end": 15.588
+        },
+        {
+          "text": "우주에",
+          "offset": 15.6,
+          "duration": 0.45,
+          "end": 16.05
+        },
+        {
+          "text": "존재합니다",
+          "offset": 16.062,
+          "duration": 0.825,
+          "end": 16.887
+        }
+      ],
+      "wordCount": 28
+    },
+    {
+      "id": "scene_006",
+      "start": 56.88,
+      "duration": 6.6,
+      "title": "Ending",
+      "narration": "그렇다면 우주에서 소리 대신 어떤 에너지가 우리에게 새로운 정보를 줄 수 있을까요?",
+      "caption": "그렇다면 우주에서 소리 대신 어떤 에너지가 우리에게 새로운 정보를 줄 수 있을까요?",
+      "backgroundColor": "#101820",
+      "keywords": [
+        "space silence mystery",
+        "space science question",
+        "space silence mystery wide view",
+        "space silence mystery landscape",
+        "space science question wide view",
+        "space science question landscape",
+        "space silence mystery close up",
+        "space silence mystery detailed view"
+      ],
+      "media": {
+        "type": "image",
+        "fit": "cover",
+        "position": "center center",
+        "src": "ep018/scene_006.jpg",
+        "keywords": [
+          "space silence mystery",
+          "space science question",
+          "space silence mystery wide view",
+          "space silence mystery landscape",
+          "space science question wide view",
+          "space science question landscape",
+          "space silence mystery close up",
+          "space silence mystery detailed view"
+        ]
+      },
+      "cameraMotion": "zoom_out",
+      "transition": "fade",
+      "transitionDuration": 0.35,
+      "overlay": "dark",
+      "overlayOpacity": 1.0,
+      "mediaSearch": {
+        "version": "2.0",
+        "primaryQuery": "space silence mystery",
+        "sourceKeywords": [
+          "space silence mystery",
+          "space science question",
+          "space silence mystery wide view",
+          "space silence mystery landscape",
+          "space science question wide view",
+          "space science question landscape",
+          "space silence mystery close up",
+          "space silence mystery detailed view"
+        ],
+        "entities": [
+          "우주",
+          "Ending",
+          "space silence mystery space science question space silence",
+          "silence mystery landscape space science question wide view",
+          "landscape space silence mystery close up space silence"
+        ],
+        "queries": [
+          {
+            "query": "space silence mystery",
+            "intent": "primary",
+            "priority": 1,
+            "mediaKind": "any"
+          },
+          {
+            "query": "space science question",
+            "intent": "primary",
+            "priority": 2,
+            "mediaKind": "any"
+          },
+          {
+            "query": "space silence mystery wide view",
+            "intent": "wide",
+            "priority": 3,
+            "mediaKind": "any"
+          },
+          {
+            "query": "space science question wide view",
+            "intent": "wide",
+            "priority": 4,
+            "mediaKind": "any"
+          },
+          {
+            "query": "space silence mystery close up",
+            "intent": "detail",
+            "priority": 5,
+            "mediaKind": "any"
+          },
+          {
+            "query": "space silence mystery detailed view",
+            "intent": "detail",
+            "priority": 6,
+            "mediaKind": "any"
+          },
+          {
+            "query": "space silence mystery landscape",
+            "intent": "wide",
+            "priority": 7,
+            "mediaKind": "any"
+          },
+          {
+            "query": "space science question landscape",
+            "intent": "wide",
+            "priority": 8,
+            "mediaKind": "any"
+          },
+          {
+            "query": "space science question close up",
+            "intent": "detail",
+            "priority": 9,
+            "mediaKind": "any"
+          },
+          {
+            "query": "space science question detailed view",
+            "intent": "detail",
+            "priority": 10,
+            "mediaKind": "any"
+          }
+        ]
+      },
+      "audioDuration": 6.6,
+      "audio": "ep018/audio/scene_006.mp3",
+      "timing": "ep018/audio/scene_006.timing.json",
+      "wordTimings": [
+        {
+          "text": "그렇다면",
+          "offset": 0.1,
+          "duration": 0.675,
+          "end": 0.775
+        },
+        {
+          "text": "우주에서",
+          "offset": 0.787,
+          "duration": 0.688,
+          "end": 1.475
+        },
+        {
+          "text": "소리",
+          "offset": 1.488,
+          "duration": 0.225,
+          "end": 1.713
+        },
+        {
+          "text": "대신",
+          "offset": 1.725,
+          "duration": 0.388,
+          "end": 2.113
+        },
+        {
+          "text": "어떤",
+          "offset": 2.125,
+          "duration": 0.412,
+          "end": 2.537
+        },
+        {
+          "text": "에너지가",
+          "offset": 2.55,
+          "duration": 0.588,
+          "end": 3.138
+        },
+        {
+          "text": "우리에게",
+          "offset": 3.15,
+          "duration": 0.637,
+          "end": 3.787
+        },
+        {
+          "text": "새로운",
+          "offset": 3.8,
+          "duration": 0.4,
+          "end": 4.2
+        },
+        {
+          "text": "정보를",
+          "offset": 4.213,
+          "duration": 0.438,
+          "end": 4.651
+        },
+        {
+          "text": "줄",
+          "offset": 4.662,
+          "duration": 0.175,
+          "end": 4.837
+        },
+        {
+          "text": "수",
+          "offset": 4.85,
+          "duration": 0.15,
+          "end": 5.0
+        },
+        {
+          "text": "있을까요",
+          "offset": 5.013,
+          "duration": 0.713,
+          "end": 5.726
+        }
+      ],
+      "wordCount": 12
+    }
+  ],
+  "tts": {
+    "provider": "edge",
+    "sceneGapMs": 150,
+    "audioDirectory": "ep018/audio",
+    "synchronized": true,
+    "wordTiming": true,
+    "timingVersion": "1.0"
+  }
+}

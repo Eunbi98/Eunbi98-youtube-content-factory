@@ -1,0 +1,9 @@
+{
+  "version":"1.0","episodeId":"ep064","channel":"history","title":"3,800년 전 봉인 편지를 뜯지 않고 읽었다","voice":"ko-KR-SunHiNeural","mediaSource":"Assyrian cuneiform sealed clay envelope CT scan Kanesh letter","theme":{"backgroundColor":"#0D0B09","titleColor":"#D8C3A5","captionColor":"#FFFFFF","accentColor":"#D8C3A5"},"scenes":[
+    {"type":"hook","title":"봉인된 편지를 깨지 않고 읽었다","narration":"고대 아시리아의 점토 편지는 보통 겉봉투를 부숴야 안의 글을 읽을 수 있었습니다. 그런데 이번에는 스캔만으로 내용을 확인했습니다.","keywords":["sealed cuneiform clay envelope scan","Kanesh Assyrian tablet CT scan","ancient cuneiform envelope"]},
+    {"type":"answer","title":"3,800년 된 메시지가 나타났다","narration":"연구진은 비파괴 스캔 기술을 이용해 튀르키예의 고대 도시 카네시에서 나온 봉인 편지 내부 문자를 복원했습니다.","keywords":["Kanesh cuneiform tablets museum","Assyrian clay tablet scan","ancient Anatolia archaeology"]},
+    {"type":"story","title":"한 여성의 불만이 적혀 있었다","narration":"그중 한 편지는 안나안나라는 여성이 남편에게 보낸 것으로, 남편이 받아야 할 은을 대신 돌려받으려다 거절당한 상황을 토로하고 있었습니다.","keywords":["Assyrian merchant letter clay tablet","ancient Mesopotamian correspondence","cuneiform letter woman merchant"]},
+    {"type":"fact","title":"봉투까지 유물이라 함부로 깨기 어렵다","narration":"점토 봉투에는 인장과 거래 흔적이 남아 있어 내부 문서를 보기 위해 깨뜨리면 중요한 정보가 사라질 수 있습니다.","keywords":["clay envelope seal cuneiform","Assyrian cylinder seal tablet","ancient sealed tablet archaeology"]},
+    {"type":"fact","title":"이제 닫힌 문서도 읽을 수 있다","narration":"새 스캔 방식은 보존 상태를 유지한 채 내부 글씨를 읽을 수 있어 다른 봉인 점토문서 연구에도 활용될 수 있습니다.","keywords":["CT scan archaeology tablet","digital archaeology cuneiform","non destructive imaging artifact"]},
+    {"type":"ending","title":"3,800년 전 사적인 대화가 다시 열렸다","narration":"깨지지 않은 점토 봉투 안에서 가족과 돈 이야기가 그대로 남아 있었습니다. 기술이 고대인의 일상적인 목소리까지 되살린 겁니다.","keywords":["cuneiform tablet close up","ancient letter archaeology","Kanesh tablets cinematic"]}
+  ]}

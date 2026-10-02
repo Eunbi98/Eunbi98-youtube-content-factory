@@ -1,0 +1,41 @@
+{
+  "source_id": "national_geographic_information_institute",
+  "facts": [
+    {
+      "id": "ngii_elementary_001",
+      "level": "elementary",
+      "category": "geography",
+      "fact": "대한민국에서 가장 높은 산은 제주도의 한라산이다.",
+      "answer": "한라산",
+      "explanation": "한라산 정상의 높이는 해발 1,947미터이다.",
+      "source_url": "https://www.ngii.go.kr/",
+      "verified_at": "2026-07-14",
+      "evergreen": true,
+      "tags": ["hallasan", "jeju", "mountain"]
+    },
+    {
+      "id": "ngii_middle_001",
+      "level": "middle",
+      "category": "geography",
+      "fact": "위도는 적도를 기준으로 북쪽과 남쪽의 위치를 나타내는 값이다.",
+      "answer": "위도",
+      "explanation": "적도는 위도 0도이며 북극과 남극은 각각 위도 90도에 해당한다.",
+      "source_url": "https://www.ngii.go.kr/",
+      "verified_at": "2026-07-14",
+      "evergreen": true,
+      "tags": ["latitude", "equator", "map"]
+    },
+    {
+      "id": "ngii_high_001",
+      "level": "high",
+      "category": "geography",
+      "fact": "지도에서 실제 지표면의 거리를 일정 비율로 줄여 나타낸 정도를 축척이라고 한다.",
+      "answer": "축척",
+      "explanation": "축척은 분수식, 비례식, 막대식 등으로 표시할 수 있다.",
+      "source_url": "https://www.ngii.go.kr/",
+      "verified_at": "2026-07-14",
+      "evergreen": true,
+      "tags": ["map", "scale", "geography"]
+    }
+  ]
+}

@@ -1,0 +1,779 @@
+from __future__ import annotations
+
+import re
+from datetime import datetime, timedelta, timezone
+from typing import Callable, Iterable
+
+from .news_source import GoogleNewsTopicSource, TopicSource
+from .topic_catalog import (
+    ARCHIVE_TOPICS,
+    ARCHIVE_RESEARCH_TERMS,
+    BRAND_EXCLUDE_KEYWORDS,
+    CATEGORY_KEYWORDS,
+    CATEGORY_LABELS,
+    CHANNEL_FIT_KEYWORDS,
+    EXCLUDE_KEYWORDS,
+    HOOK_KEYWORDS,
+    LOW_QUALITY_SOURCE_KEYWORDS,
+    SENSATIONAL_KEYWORDS,
+    SOURCE_MODE_LABELS,
+    TOPIC_MATCH_STOPWORDS,
+    TRUSTED_SOURCE_KEYWORDS,
+    VISUAL_KEYWORDS,
+)
+from .topic_models import TopicCandidate, TopicFinderResult, TopicSourceItem
+
+
+class TopicFinderError(ValueError):
+    """Auto Topic Finder 입력 또는 실행 오류."""
+
+
+PRODUCTION_READY_ARCHIVE_TOPICS = {
+    "mystery": {
+        "안티키테라 장치는 어떻게 시대를 앞섰을까",
+        "나스카 라인은 누가 무엇을 위해 만들었을까",
+        "디아틀로프 고개 사건의 가장 현실적인 설명",
+        "로어노크 식민지 사람들은 어디로 사라졌을까",
+        "사하라의 거대한 눈은 어떻게 만들어졌을까",
+    },
+    "science": {
+        "바나나는 왜 냉장고에서 더 빨리 검게 변할까",
+        "양파를 썰면 왜 눈물이 날까",
+        "비 온 뒤 흙냄새는 어디서 생길까",
+        "고양이는 왜 작은 상자에 들어가려 할까",
+        "개는 왜 고개를 갸웃할까",
+        "문어의 팔은 어떻게 따로 판단할까",
+        "철새는 어떻게 길을 잃지 않을까",
+        "나무는 서로 위험 신호를 보낼 수 있을까",
+        "지구 생명체는 왜 잠을 자야 할까",
+        "공룡을 멸종시킨 날 지구에서는 무슨 일이 있었을까",
+        "문어의 지능은 왜 독립적으로 진화했을까",
+        "지구 내부에는 얼마나 많은 물이 숨어 있을까",
+        "지구 자기장이 뒤집히면 어떤 일이 생길까",
+    },
+    "history": {
+        "로마 콘크리트는 왜 2천 년을 버틸까",
+        "폼페이 최후의 하루에는 무슨 일이 있었을까",
+        "괴베클리 테페는 인류 역사를 어떻게 바꿨을까",
+        "진시황 병마용에는 왜 서로 다른 얼굴이 있을까",
+        "바이킹은 콜럼버스보다 먼저 아메리카에 갔을까",
+        "고대인은 스톤헨지의 돌을 어떻게 옮겼을까",
+        "마야 문명은 왜 거대한 도시를 버렸을까",
+    },
+    "space": {
+        "목성의 위성 유로파 바다에 생명체가 있을까",
+        "화성은 어떻게 물을 잃어버렸을까",
+        "중성자별 한 숟가락은 얼마나 무거울까",
+        "태양이 갑자기 사라지면 지구는 언제 알게 될까",
+        "달 뒷면은 왜 지구에서 볼 수 없을까",
+        "떠돌이 행성에는 생명체가 살 수 있을까",
+    },
+}
+
+KOREA_TIMEZONE = timezone(timedelta(hours=9))
+
+
+class AutoTopicFinder:
+    def __init__(
+        self,
+        *,
+        source: TopicSource | None = None,
+        now: Callable[[], datetime] | None = None,
+        rotation_index: int = 0,
+    ) -> None:
+        self._source = source or GoogleNewsTopicSource()
+        self._now = now or (lambda: datetime.now(timezone.utc))
+        self._rotation_index = rotation_index
+
+    @property
+    def categories(self) -> tuple[str, ...]:
+        return tuple(CATEGORY_LABELS)
+
+    def find(
+        self,
+        *,
+        category: str,
+        limit: int = 10,
+        excluded_topics: Iterable[str] = (),
+        source_mode: str = "trend",
+    ) -> TopicFinderResult:
+        normalized_category = category.strip().lower()
+        normalized_mode = source_mode.strip().lower()
+        if normalized_category != "all" and normalized_category not in CATEGORY_LABELS:
+            supported = ", ".join(("all", *CATEGORY_LABELS))
+            raise TopicFinderError(
+                "지원하지 않는 카테고리입니다. "
+                f"요청: {category}, 지원: {supported}"
+            )
+        if limit < 1 or limit > 20:
+            raise TopicFinderError("후보 개수는 1개 이상 20개 이하여야 합니다.")
+        if normalized_mode not in SOURCE_MODE_LABELS:
+            supported = ", ".join(SOURCE_MODE_LABELS)
+            raise TopicFinderError(
+                "지원하지 않는 수집 모드입니다. "
+                f"요청: {source_mode}, 지원: {supported}"
+            )
+
+        excluded_topic_texts = tuple(excluded_topics)
+        if normalized_category == "all":
+            return self._find_all(
+                limit=limit,
+                excluded_topics=excluded_topic_texts,
+                source_mode=normalized_mode,
+            )
+
+        warnings: list[str] = []
+        source_items: list[TopicSourceItem] = []
+        if normalized_mode != "archive":
+            try:
+                source_items = self._source.fetch(
+                    category=normalized_category,
+                    limit=max(limit * 6, 30),
+                )
+            except Exception as exc:  # 외부 뉴스 장애는 아카이브로 복구합니다.
+                warnings.append(f"실시간 뉴스 수집 실패: {exc}")
+
+        live_candidates = self._build_live_candidates(
+            category=normalized_category,
+            items=source_items,
+            excluded_topics=excluded_topic_texts,
+        )
+        if normalized_mode == "archive":
+            selected = self._build_archive_candidates(
+                category=normalized_category,
+                existing_topics=set(),
+                excluded_topics=excluded_topic_texts,
+                limit=limit,
+            )
+            mode = "archive"
+        elif normalized_mode == "mixed":
+            archive_target = (limit * 3 + 4) // 5
+            trend_target = limit - archive_target
+            selected = live_candidates[:trend_target]
+            selected.extend(
+                self._build_archive_candidates(
+                    category=normalized_category,
+                    existing_topics={item.topic for item in selected},
+                    excluded_topics=excluded_topic_texts,
+                    limit=archive_target,
+                )
+            )
+            if len(selected) < limit:
+                missing = limit - len(selected)
+                selected.extend(
+                    live_candidates[trend_target : trend_target + missing]
+                )
+            mode = "mixed" if live_candidates and any(
+                item.source_count == 0 for item in selected
+            ) else ("live" if live_candidates else "archive")
+        else:
+            selected = live_candidates[:limit]
+            used_fallback = len(selected) < limit
+            if used_fallback:
+                selected.extend(
+                    self._build_archive_candidates(
+                        category=normalized_category,
+                        existing_topics={item.topic for item in selected},
+                        excluded_topics=excluded_topic_texts,
+                        limit=limit - len(selected),
+                    )
+                )
+            if live_candidates and used_fallback:
+                mode = "hybrid"
+            elif live_candidates:
+                mode = "live"
+            else:
+                mode = "fallback"
+
+        selected.sort(
+            key=lambda item: (item.score, item.source_count, item.topic),
+            reverse=True,
+        )
+        selected = selected[:limit]
+
+        ranked = self._rank(selected)
+
+        generated_at = self._as_utc(self._now()).isoformat()
+        return TopicFinderResult(
+            category=normalized_category,
+            generated_at=generated_at,
+            mode=mode,
+            candidate_count=len(ranked),
+            candidates=ranked,
+            warnings=warnings,
+        )
+
+    def _find_all(
+        self,
+        *,
+        limit: int,
+        excluded_topics: tuple[str, ...],
+        source_mode: str,
+    ) -> TopicFinderResult:
+        candidates: list[TopicCandidate] = []
+        warnings: list[str] = []
+        per_category_limit = max(5, limit)
+        for category in CATEGORY_LABELS:
+            result = self.find(
+                category=category,
+                limit=per_category_limit,
+                excluded_topics=excluded_topics,
+                source_mode=source_mode,
+            )
+            warnings.extend(result.warnings)
+            for candidate in result.candidates:
+                if any(
+                    self._is_similar(candidate.topic, item.topic)
+                    for item in candidates
+                ):
+                    continue
+                candidates.append(candidate)
+
+        candidates.sort(
+            key=lambda item: (item.score, item.source_count, item.topic),
+            reverse=True,
+        )
+        if source_mode == "mixed":
+            archive_target = (limit * 3 + 4) // 5
+            trend_target = limit - archive_target
+            live_candidates = [item for item in candidates if item.source_count > 0]
+            archive_candidates = [item for item in candidates if item.source_count == 0]
+            selected = live_candidates[:trend_target] + archive_candidates[:archive_target]
+            if len(selected) < limit:
+                selected_topics = {item.topic for item in selected}
+                missing = limit - len(selected)
+                selected.extend(
+                    [
+                        item
+                        for item in candidates
+                        if item.topic not in selected_topics
+                    ][:missing]
+                )
+            selected.sort(
+                key=lambda item: (item.score, item.source_count, item.topic),
+                reverse=True,
+            )
+        else:
+            selected = candidates
+        ranked = self._rank(selected[:limit])
+        has_live = any(item.source_count > 0 for item in ranked)
+        has_archive = any(item.source_count == 0 for item in ranked)
+        if source_mode == "mixed":
+            result_mode = (
+                "mixed"
+                if has_live and has_archive
+                else ("live" if has_live else "archive")
+            )
+        elif source_mode == "trend" and has_archive:
+            result_mode = "hybrid" if has_live else "fallback"
+        else:
+            result_mode = source_mode
+        return TopicFinderResult(
+            category="all",
+            generated_at=self._as_utc(self._now()).isoformat(),
+            mode=result_mode,
+            candidate_count=len(ranked),
+            candidates=ranked,
+            warnings=list(dict.fromkeys(warnings)),
+        )
+
+    @staticmethod
+    def _rank(items: list[TopicCandidate]) -> list[TopicCandidate]:
+        return [
+            TopicCandidate(
+                rank=index,
+                category=item.category,
+                topic=item.topic,
+                angle=item.angle,
+                score=item.score,
+                reasons=item.reasons,
+                search_queries=item.search_queries,
+                source_count=item.source_count,
+                sources=item.sources,
+                production_ready=item.production_ready,
+                readiness_score=item.readiness_score,
+                readiness_checks=item.readiness_checks,
+            )
+            for index, item in enumerate(items, start=1)
+        ]
+
+    def _build_live_candidates(
+        self,
+        *,
+        category: str,
+        items: list[TopicSourceItem],
+        excluded_topics: tuple[str, ...],
+    ) -> list[TopicCandidate]:
+        groups: list[list[TopicSourceItem]] = []
+        for item in items:
+            topic = self._clean_title(item.title)
+            if (
+                not topic
+                or self._is_low_quality_source(item.source)
+                or self._is_excluded(topic)
+                or self._is_brand_excluded(topic)
+                or not self._is_channel_fit(category, topic)
+                or not self._is_story_worthy(topic)
+                or self._is_already_covered(topic, excluded_topics)
+            ):
+                continue
+
+            target_group = next(
+                (
+                    group
+                    for group in groups
+                    if self._is_similar(
+                        topic,
+                        self._clean_title(group[0].title),
+                    )
+                ),
+                None,
+            )
+            if target_group is None:
+                groups.append([item])
+            else:
+                target_group.append(item)
+
+        candidates: list[TopicCandidate] = []
+        for group in groups:
+            representative = max(
+                group,
+                key=lambda item: self._base_score(
+                    category=category,
+                    topic=self._clean_title(item.title),
+                    published_at=item.published_at,
+                )[0],
+            )
+            topic = self._clean_title(representative.title)
+            base_score, reasons = self._base_score(
+                category=category,
+                topic=topic,
+                published_at=representative.published_at,
+            )
+            source_count = len({item.source for item in group})
+            if source_count > 1:
+                base_score += min(12, (source_count - 1) * 4)
+                reasons.append(f"서로 다른 출처 {source_count}곳에서 다룸")
+
+            trusted_source_count = sum(
+                1 for item in group if self._is_trusted_source(item.source)
+            )
+            if trusted_source_count:
+                base_score += min(10, trusted_source_count * 5)
+                reasons.append("신뢰도 높은 언론·과학 출처에서 다룸")
+
+            if self._keyword_hits(topic, SENSATIONAL_KEYWORDS):
+                base_score -= 8
+                reasons.append("과장형 제목 표현 감점")
+
+            reasons.append("채널 브랜드 적합도 통과")
+
+            search_queries = self._search_queries(category, topic)
+            production_ready, readiness_score, readiness_checks = (
+                self._production_readiness(
+                    category=category,
+                    topic=topic,
+                    score=base_score,
+                    source_count=source_count,
+                    trusted_source_count=trusted_source_count,
+                    search_queries=search_queries,
+                    archive=False,
+                )
+            )
+            if not production_ready:
+                continue
+
+            candidates.append(
+                TopicCandidate(
+                    rank=0,
+                    category=category,
+                    topic=topic,
+                    angle=self._build_angle(category, topic),
+                    score=round(min(100.0, base_score), 1),
+                    reasons=reasons,
+                    search_queries=search_queries,
+                    source_count=source_count,
+                    sources=group[:5],
+                    production_ready=True,
+                    readiness_score=readiness_score,
+                    readiness_checks=readiness_checks,
+                )
+            )
+
+        candidates.sort(
+            key=lambda item: (item.score, item.source_count, item.topic),
+            reverse=True,
+        )
+        return candidates
+
+    def _build_archive_candidates(
+        self,
+        *,
+        category: str,
+        existing_topics: set[str],
+        excluded_topics: tuple[str, ...],
+        limit: int,
+    ) -> list[TopicCandidate]:
+        results: list[TopicCandidate] = []
+        eligible_topics = [
+            topic
+            for topic in ARCHIVE_TOPICS[category]
+            if topic in PRODUCTION_READY_ARCHIVE_TOPICS[category]
+        ]
+        if eligible_topics:
+            korea_date = self._as_utc(self._now()).astimezone(KOREA_TIMEZONE).date()
+            daily_offset = (
+                korea_date.toordinal() + self._rotation_index
+            ) % len(eligible_topics)
+            eligible_topics = (
+                eligible_topics[daily_offset:] + eligible_topics[:daily_offset]
+            )
+
+        for index, topic in enumerate(eligible_topics):
+            if (
+                topic in existing_topics
+                or self._is_already_covered(topic, excluded_topics)
+            ):
+                continue
+            search_queries = self._search_queries(category, topic)
+            production_ready, readiness_score, readiness_checks = (
+                self._production_readiness(
+                    category=category,
+                    topic=topic,
+                    score=82.0 - index * 0.5,
+                    source_count=0,
+                    trusted_source_count=0,
+                    search_queries=search_queries,
+                    archive=True,
+                )
+            )
+            if not production_ready:
+                continue
+            results.append(
+                TopicCandidate(
+                    rank=0,
+                    category=category,
+                    topic=topic,
+                    angle=self._build_angle(category, topic),
+                    score=round(82.0 - index * 0.5, 1),
+                    reasons=[
+                        "일상적인 호기심에서 출발하는 상시 관심 주제",
+                        "공식·학술 자료로 검증 가능한 후보",
+                        "채널 브랜드 적합도 통과",
+                    ],
+                    search_queries=search_queries,
+                    production_ready=True,
+                    readiness_score=readiness_score,
+                    readiness_checks=readiness_checks,
+                )
+            )
+            if len(results) >= limit:
+                break
+        return results
+
+    def _base_score(
+        self,
+        *,
+        category: str,
+        topic: str,
+        published_at: str | None,
+    ) -> tuple[float, list[str]]:
+        score = 42.0
+        reasons: list[str] = []
+
+        recency_score = self._recency_score(published_at)
+        score += recency_score
+        if recency_score >= 15:
+            reasons.append("최근 7일 이내 보도")
+
+        category_hits = self._keyword_hits(topic, CATEGORY_KEYWORDS[category])
+        if category_hits:
+            score += min(20, category_hits * 5)
+            reasons.append(
+                f"{CATEGORY_LABELS[category]} 핵심 키워드 {category_hits}개 포함"
+            )
+
+        hook_hits = self._keyword_hits(topic, HOOK_KEYWORDS)
+        if hook_hits:
+            score += min(12, hook_hits * 4)
+            reasons.append("제목 훅으로 만들기 좋은 발견·의문 요소")
+
+        visual_hits = self._keyword_hits(topic, VISUAL_KEYWORDS)
+        if visual_hits:
+            score += min(8, visual_hits * 2)
+            reasons.append("영상 자료로 표현하기 쉬운 주제")
+
+        if not reasons:
+            reasons.append("최근 뉴스에서 수집된 카테고리 관련 주제")
+        return score, reasons
+
+    def _recency_score(self, published_at: str | None) -> float:
+        if not published_at:
+            return 4.0
+        try:
+            published = datetime.fromisoformat(published_at.replace("Z", "+00:00"))
+        except ValueError:
+            return 4.0
+
+        age = self._as_utc(self._now()) - self._as_utc(published)
+        hours = max(0.0, age.total_seconds() / 3600)
+        if hours <= 24:
+            return 25.0
+        if hours <= 72:
+            return 21.0
+        if hours <= 168:
+            return 16.0
+        if hours <= 336:
+            return 9.0
+        return 3.0
+
+    @staticmethod
+    def _clean_title(raw_title: str) -> str:
+        title = " ".join(raw_title.strip().split())
+        parts = title.rsplit(" - ", 1)
+        if len(parts) == 2 and len(parts[0]) >= 8:
+            title = parts[0]
+        return title.strip(" '\"“”‘’")[:120]
+
+    @staticmethod
+    def _keyword_hits(text: str, keywords: set[str]) -> int:
+        lowered = text.casefold()
+        return sum(1 for keyword in keywords if keyword.casefold() in lowered)
+
+    @staticmethod
+    def _is_excluded(topic: str) -> bool:
+        lowered = topic.casefold()
+        return any(keyword.casefold() in lowered for keyword in EXCLUDE_KEYWORDS)
+
+    @staticmethod
+    def _is_brand_excluded(topic: str) -> bool:
+        lowered = topic.casefold()
+        return any(
+            keyword.casefold() in lowered for keyword in BRAND_EXCLUDE_KEYWORDS
+        )
+
+    @classmethod
+    def _is_story_worthy(cls, topic: str) -> bool:
+        return bool(
+            cls._keyword_hits(topic, HOOK_KEYWORDS)
+            or cls._keyword_hits(topic, VISUAL_KEYWORDS)
+        )
+
+    @staticmethod
+    def _is_channel_fit(category: str, topic: str) -> bool:
+        lowered = topic.casefold()
+        return any(
+            keyword.casefold() in lowered
+            for keyword in CHANNEL_FIT_KEYWORDS[category]
+        )
+
+    @staticmethod
+    def _is_low_quality_source(source: str) -> bool:
+        lowered = source.casefold()
+        return any(
+            keyword.casefold() in lowered
+            for keyword in LOW_QUALITY_SOURCE_KEYWORDS
+        )
+
+    @staticmethod
+    def _is_trusted_source(source: str) -> bool:
+        lowered = source.casefold()
+        return any(
+            keyword.casefold() in lowered
+            for keyword in TRUSTED_SOURCE_KEYWORDS
+        )
+
+    @classmethod
+    def _is_already_covered(
+        cls,
+        topic: str,
+        excluded_topics: tuple[str, ...],
+    ) -> bool:
+        topic_tokens = cls._match_tokens(topic)
+        if not topic_tokens:
+            return False
+        for existing in excluded_topics:
+            normalized_existing = " ".join(existing.split()).casefold()
+            if (
+                2 <= len(normalized_existing) <= 10
+                and normalized_existing in topic.casefold()
+            ):
+                return True
+            existing_tokens = cls._match_tokens(existing)
+            # 고유명사는 영상 제목과 후보 문장이 달라도 같은 소재를
+            # 식별할 수 있습니다. 예: "안티키테라 기계"와
+            # "안티키테라 장치는 어떻게 시대를 앞섰을까".
+            if any(
+                len(token) >= 5 and token in existing_tokens
+                for token in topic_tokens
+            ):
+                return True
+            if len(topic_tokens & existing_tokens) >= 3:
+                return True
+        return False
+
+    @classmethod
+    def _is_similar(cls, left: str, right: str) -> bool:
+        left_tokens = cls._tokens(left)
+        right_tokens = cls._tokens(right)
+        if not left_tokens or not right_tokens:
+            return left == right
+        overlap = len(left_tokens & right_tokens)
+        ratio = overlap / min(len(left_tokens), len(right_tokens))
+        if ratio >= 0.55:
+            return True
+        left_distinctive = cls._match_tokens(left)
+        right_distinctive = cls._match_tokens(right)
+        if not left_distinctive or not right_distinctive:
+            return False
+        distinctive_overlap = len(left_distinctive & right_distinctive)
+        distinctive_ratio = distinctive_overlap / min(
+            len(left_distinctive),
+            len(right_distinctive),
+        )
+        return distinctive_overlap >= 3 and distinctive_ratio >= 0.35
+
+    @staticmethod
+    def _tokens(text: str) -> set[str]:
+        stopwords = {
+            "관련",
+            "대한",
+            "통해",
+            "에서",
+            "으로",
+            "한다",
+            "했다",
+            "밝혀",
+            "뉴스",
+        }
+        return {
+            AutoTopicFinder._strip_korean_suffix(token.casefold())
+            for token in re.findall(r"[가-힣A-Za-z0-9]{2,}", text)
+            if token.casefold() not in stopwords
+        }
+
+    @classmethod
+    def _match_tokens(cls, text: str) -> set[str]:
+        return {
+            token
+            for token in cls._tokens(text)
+            if token not in TOPIC_MATCH_STOPWORDS and len(token) >= 2
+        }
+
+    @staticmethod
+    def _strip_korean_suffix(token: str) -> str:
+        suffixes = (
+            "에서는",
+            "에게서",
+            "으로는",
+            "이라는",
+            "에서",
+            "에게",
+            "으로",
+            "에는",
+            "까지",
+            "부터",
+            "처럼",
+            "보다",
+            "의",
+            "은",
+            "는",
+            "이",
+            "가",
+            "을",
+            "를",
+            "에",
+            "도",
+            "와",
+            "과",
+        )
+        for suffix in suffixes:
+            if token.endswith(suffix) and len(token) >= len(suffix) + 2:
+                return token[: -len(suffix)]
+        return token
+
+    @staticmethod
+    def _build_angle(category: str, topic: str) -> str:
+        templates = {
+            "mystery": "확인된 사실과 아직 풀리지 않은 부분은 무엇일까",
+            "science": "우리 일상과 생명에 숨어 있는 원리는 무엇일까",
+            "history": "유물과 기록이 실제로 보여주는 것은 무엇일까",
+            "space": "공식 관측으로 확인된 사실은 어디까지일까",
+        }
+        return f"{templates[category]}: {topic}"
+
+    @staticmethod
+    def _search_queries(category: str, topic: str) -> list[str]:
+        label = CATEGORY_LABELS[category]
+        research_term = ARCHIVE_RESEARCH_TERMS.get(topic)
+        if research_term:
+            return [
+                research_term,
+                f"{research_term} research review evidence",
+                topic,
+                f"{research_term} Wikimedia Commons NASA museum images",
+            ]
+        return [
+            topic,
+            f"{topic} 공식 연구 기관 자료",
+            f"{topic} 학술 논문 박물관 NASA",
+            f"{topic} {label} Wikimedia Commons 사진 영상",
+        ]
+
+    @classmethod
+    def _production_readiness(
+        cls,
+        *,
+        category: str,
+        topic: str,
+        score: float,
+        source_count: int,
+        trusted_source_count: int,
+        search_queries: list[str],
+        archive: bool,
+    ) -> tuple[bool, int, list[str]]:
+        evidence_ready = archive or source_count >= 2 or trusted_source_count >= 1
+        visual_ready = bool(
+            archive
+            or cls._keyword_hits(topic, VISUAL_KEYWORDS)
+            or category in {"history", "space"}
+            or any(
+                keyword in topic
+                for keyword in ("문어", "자기장", "콘크리트", "스톤헨지")
+            )
+        )
+        short_ready = archive or (
+            10 <= len(topic) <= 100 and cls._is_story_worthy(topic)
+        )
+        queries_ready = len(search_queries) >= 4 and all(
+            len(query.strip()) >= 8 for query in search_queries
+        )
+        score_ready = score >= 72
+
+        checks: list[str] = []
+        if evidence_ready:
+            checks.append("공식·학술 근거 확보 가능")
+        if visual_ready:
+            checks.append("씬별 이미지 수집 가능")
+        if short_ready:
+            checks.append("30초 쇼츠 구성 가능")
+        if queries_ready:
+            checks.append("미디어 검색어 사전 생성")
+        if score_ready:
+            checks.append("주제 품질 기준 통과")
+
+        readiness_score = (
+            (30 if evidence_ready else 0)
+            + (25 if visual_ready else 0)
+            + (20 if short_ready else 0)
+            + (15 if queries_ready else 0)
+            + (10 if score_ready else 0)
+        )
+        return readiness_score == 100, readiness_score, checks
+
+    @staticmethod
+    def _as_utc(value: datetime) -> datetime:
+        if value.tzinfo is None:
+            return value.replace(tzinfo=timezone.utc)
+        return value.astimezone(timezone.utc)
+    SOURCE_MODE_LABELS,

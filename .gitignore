@@ -32,7 +32,25 @@ Thumbs.db
 
 # Generated outputs
 output/
-# Generated outputs
-output/
 
-output/
+# Generated timelines
+projects/episodes/*/timeline.json
+
+# Temporary render assets
+projects/remotion/public/assets/temp/
+
+# Render output
+projects/remotion/output/
+# Generated episode runtime files
+projects/episodes/*/audio/
+projects/remotion/public/ep*/
+projects/episodes/*/timeline.json.bak
+
+config/api_keys.json
+.venv/
+.deps/
+projects/episodes/*/timeline.json.queries.bak
+EP*_upload_metadata.txt
+projects/episodes/*/assets/
+projects/episodes/*/media_manifest_v7.json
+projects/episodes/*/media_queries.json

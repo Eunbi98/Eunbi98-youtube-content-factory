@@ -1,0 +1,732 @@
+﻿# Factory Runner Source Check
+
+
+===== projects\director\build_factory_timeline.py =====
+
+from __future__ import annotations
+
+from build_timeline import build_ep008_story
+from factory_core import FactoryCore
+from timeline_schema import save_timeline
+
+
+def build_ep008_with_factory() -> None:
+    """
+    EP008 Story瑜?FactoryCore ??踰덉쓽 ?몄텧濡?
+    Timeline?쇰줈 蹂?섑븯怨???ν빀?덈떎.
+    """
+
+    story = build_ep008_story()
+
+    factory = FactoryCore()
+
+    result = factory.build_with_result(
+        story
+    )
+
+    output_path = (
+        "projects/episodes/ep008/"
+        "timeline.json"
+    )
+
+    save_timeline(
+        result.timeline,
+        output_path,
+    )
+
+    print(
+        "EP008 Factory Core ?ㅽ뻾 ?꾨즺"
+    )
+    print(
+        f"Scene ?? {result.scene_count}"
+    )
+    print(
+        "?꾩껜 湲몄씠: "
+        f"{result.total_duration}珥?
+    )
+    print(
+        f"異쒕젰 寃쎈줈: {output_path}"
+    )
+
+
+if __name__ == "__main__":
+    build_ep008_with_factory()
+
+
+
+===== projects\director\factory_core.py =====
+
+from __future__ import annotations
+
+from dataclasses import dataclass
+from typing import Optional
+
+from duration_planner import DurationPlanner
+from story_compiler import StoryCompiler
+from story_graph import Story
+from timeline_scheduler import TimelineScheduler
+from timeline_schema import Timeline
+
+
+@dataclass(frozen=True)
+class FactoryBuildResult:
+    """
+    Factory Core 鍮뚮뱶 寃곌낵?낅땲??
+
+    timeline:
+        Remotion Renderer???꾨떖??理쒖쥌 Timeline
+
+    scene_count:
+        ?앹꽦??Scene ??
+
+    total_duration:
+        理쒖쥌 Timeline ?꾩껜 湲몄씠
+    """
+
+    timeline: Timeline
+    scene_count: int
+    total_duration: float
+
+
+class FactoryCore:
+    """
+    Story瑜?理쒖쥌 Timeline?쇰줈 蹂?섑븯??Factory Core 吏꾩엯?먯엯?덈떎.
+
+    ?몃? 肄붾뱶? Plugin? DurationPlanner, TimelineScheduler,
+    StoryCompiler???대? ?ㅽ뻾 ?쒖꽌瑜????꾩슂媛 ?놁뒿?덈떎.
+
+    ?ъ슜 ??
+
+        timeline = FactoryCore().build(story)
+
+    ?대? 泥섎━:
+
+        Story
+        -> DurationPlanner
+        -> TimelineScheduler
+        -> StoryCompiler
+        -> Timeline
+
+    FactoryCore???λⅤ瑜??뚯? ?딆뒿?덈떎.
+    ?λⅤ蹂?Story ?앹꽦 梨낆엫? Plugin???덉뒿?덈떎.
+    """
+
+    def __init__(
+        self,
+        *,
+        duration_planner: Optional[
+            DurationPlanner
+        ] = None,
+        timeline_scheduler: Optional[
+            TimelineScheduler
+        ] = None,
+    ) -> None:
+        self._duration_planner = (
+            duration_planner
+        )
+
+        self._timeline_scheduler = (
+            timeline_scheduler
+            or TimelineScheduler()
+        )
+
+    def build(
+        self,
+        story: Story,
+    ) -> Timeline:
+        """
+        Story瑜?寃利앺븯怨?理쒖쥌 Timeline???앹꽦?⑸땲??
+        """
+
+        compiler = StoryCompiler(
+            duration_planner=(
+                self._duration_planner
+            ),
+            timeline_scheduler=(
+                self._timeline_scheduler
+            ),
+        )
+
+        return compiler.compile(story)
+
+    def build_with_result(
+        self,
+        story: Story,
+    ) -> FactoryBuildResult:
+        """
+        Timeline怨?鍮뚮뱶 ?붿빟 ?뺣낫瑜??④퍡 諛섑솚?⑸땲??
+        """
+
+        timeline = self.build(story)
+
+        return FactoryBuildResult(
+            timeline=timeline,
+            scene_count=len(
+                timeline.scenes
+            ),
+            total_duration=(
+                timeline.duration
+            ),
+        )
+
+
+
+===== projects\director\build_timeline.py =====
+
+from story_compiler import StoryCompiler
+from story_graph import (
+    Answer,
+    Ending,
+    Fact,
+    Hook,
+    Narrative,
+    Story,
+    StoryMedia,
+)
+from timeline_schema import (
+    Timeline,
+    save_timeline,
+)
+
+
+def build_ep008_story() -> Story:
+    return Story(
+        episode_id="ep008",
+        title="?щ씪吏??꾩떆??n?대뼸寃?諛쒓껄?좉퉴?",
+        fps=30,
+        width=1080,
+        height=1920,
+        background_color="#000000",
+        title_color="#7CFFB2",
+        caption_color="#FFFFFF",
+        accent_color="#7CFFB2",
+        beats=[
+            Hook(
+                title=(
+                    "?낆냽???꾩떆 ?꾩껜媛 "
+                    "?④꺼???덈떎硫?"
+                ),
+                narration=(
+                    "?섎갚 ???숈븞 ?꾨Т??紐곕옄??"
+                    "?꾩떆媛 ?낆냽?먯꽌 諛쒓껄?쒕떎硫?"
+                    "誘우쑝?쒓쿋?듬땲源?"
+                ),
+                subtitle=(
+                    "?낆냽???꾩떆 ?꾩껜媛\n"
+                    "?④꺼???덈떎硫?"
+                ),
+                duration=5,
+                media=StoryMedia(
+                    type="image",
+                    src=(
+                        "assets/ep008/"
+                        "scene_001.jpg"
+                    ),
+                ),
+                keywords=[
+                    "lost underground city",
+                    "ancient ruins mystery",
+                ],
+            ),
+            Answer(
+                title=(
+                    "?ㅼ젣濡??щ씪吏??꾩떆??"
+                    "怨꾩냽 諛쒓껄?⑸땲??
+                ),
+                narration=(
+                    "?щ쭑怨?諛由? ?꾨? ?꾩떆 ?꾨옒?먯꽌??"
+                    "?ㅻ옯?숈븞 ?딇엺 ?좎쟻??諛쒓껄?섍퀬 "
+                    "?덉뒿?덈떎."
+                ),
+                subtitle=(
+                    "?щ씪吏??꾩떆??吏湲덈룄\n"
+                    "諛쒓껄?섍퀬 ?덉뒿?덈떎"
+                ),
+                duration=7,
+                media=StoryMedia(
+                    type="image",
+                    src=(
+                        "assets/ep008/"
+                        "scene_002.jpg"
+                    ),
+                ),
+                keywords=[
+                    "archaeological discovery",
+                    "buried ancient city",
+                ],
+            ),
+            Narrative(
+                title=(
+                    "?숆낵 ?앸Ъ??紐⑤뱺 ?붿쟻??"
+                    "媛먯떠 踰꾨┰?덈떎"
+                ),
+                narration=(
+                    "?꾩떆媛 踰꾨젮吏????ㅻ옖 ?쒓컙??"
+                    "吏?섎㈃ 嫄대Ъ? 臾대꼫吏怨??숆낵 "
+                    "?앸Ъ??洹??꾨? ??뒿?덈떎."
+                ),
+                subtitle=(
+                    "?쒓컙???꾩떆???붿쟻??n"
+                    "?꾩쟾????뼱 踰꾨┰?덈떎"
+                ),
+                duration=7,
+                media=StoryMedia(
+                    type="image",
+                    src=(
+                        "assets/ep008/"
+                        "scene_003.jpg"
+                    ),
+                ),
+                keywords=[
+                    "ruins covered by jungle",
+                    "lost city landscape",
+                ],
+            ),
+            Fact(
+                title=(
+                    "?덉씠??????꾨옒源뚯? "
+                    "蹂????덉뒿?덈떎"
+                ),
+                narration=(
+                    "理쒓렐?먮뒗 ?쇱씠?ㅻ씪???덉씠? 湲곗닠濡?"
+                    "?몄갹?????꾨옒 ?④꺼吏?嫄대Ъ怨?"
+                    "?꾨줈???뺥깭源뚯? 李얠븘?낅땲??"
+                ),
+                subtitle=(
+                    "?덉씠?濡????꾨옒??n"
+                    "?꾩떆瑜?李얠븘?낅땲??
+                ),
+                duration=8,
+                media=StoryMedia(
+                    type="image",
+                    src=(
+                        "assets/ep008/"
+                        "scene_004.jpg"
+                    ),
+                ),
+                keywords=[
+                    "lidar archaeology",
+                    "jungle city scan",
+                ],
+            ),
+            Ending(
+                title=(
+                    "?꾩쭅 諛쒓껄?섏? ?딆? ?꾩떆媛 "
+                    "?⑥븘 ?덉쓣吏??紐⑤쫭?덈떎"
+                ),
+                narration=(
+                    "?곕━媛 嫄룸뒗 ???꾨옒?먮룄 ?꾩쭅 "
+                    "諛쒓껄?섏? ?딆? ??궗媛 ?⑥뼱 ?덉쓣吏 "
+                    "紐⑤쫭?덈떎."
+                ),
+                subtitle=(
+                    "?곕━ 諛쒕컩?먮룄 ?щ씪吏?n"
+                    "?꾩떆媛 ?덉쓣源뚯슂?"
+                ),
+                duration=6,
+                media=StoryMedia(
+                    type="image",
+                    src=(
+                        "assets/ep008/"
+                        "scene_005.jpg"
+                    ),
+                ),
+                keywords=[
+                    "hidden history",
+                    "undiscovered ancient city",
+                ],
+            ),
+        ],
+    )
+
+
+def build_ep008() -> Timeline:
+    story = build_ep008_story()
+
+    compiler = StoryCompiler()
+
+    return compiler.compile(story)
+
+
+if __name__ == "__main__":
+    timeline = build_ep008()
+
+    output_path = (
+        "projects/episodes/ep008/"
+        "timeline.json"
+    )
+
+    save_timeline(
+        timeline,
+        output_path,
+    )
+
+    print(
+        "EP008 Story Compiler ?ㅽ뻾 ?꾨즺"
+    )
+    print(
+        f"Scene ?? {len(timeline.scenes)}"
+    )
+    print(
+        f"?꾩껜 湲몄씠: {timeline.duration}珥?
+    )
+    print(
+        f"異쒕젰 寃쎈줈: {output_path}"
+    )
+
+
+===== projects\remotion\src\Root.tsx =====
+
+import React from 'react';
+import {
+	CalculateMetadataFunction,
+	Composition,
+	staticFile,
+} from 'remotion';
+
+import {
+	EpisodeComposition,
+	type EpisodeCompositionProps,
+} from './compositions/EpisodeComposition';
+
+import type {EpisodeTimeline} from './types/timeline';
+import {validateTimeline} from './utils/timeline';
+
+
+const fallbackTimeline: EpisodeTimeline = {
+	episodeId: 'LOADING',
+	title: 'Timeline Loading',
+	fps: 30,
+	width: 1080,
+	height: 1920,
+	totalDuration: 1,
+	theme: {
+		backgroundColor: '#000000',
+		titleColor: '#7CFFB2',
+		captionColor: '#FFFFFF',
+		accentColor: '#7CFFB2',
+	},
+	scenes: [
+		{
+			id: 'scene_loading',
+			start: 0,
+			duration: 1,
+			caption: 'Timeline loading...',
+			backgroundColor: '#000000',
+			media: {
+				type: 'color',
+			},
+			cameraMotion: 'static',
+			transition: 'fade',
+			transitionDuration: 0.3,
+			overlay: 'none',
+		},
+	],
+};
+
+
+const calculateMetadata: CalculateMetadataFunction<
+	EpisodeCompositionProps
+> = async ({abortSignal}) => {
+	const response = await fetch(
+		staticFile('timeline.json'),
+		{
+			signal: abortSignal,
+			cache: 'no-store',
+		},
+	);
+
+	if (!response.ok) {
+		throw new Error(
+			`Failed to load timeline.json: ${response.status} ${response.statusText}`,
+		);
+	}
+
+	const rawTimeline: unknown =
+		await response.json();
+
+	const timeline =
+		validateTimeline(rawTimeline);
+
+	return {
+		durationInFrames: Math.max(
+			1,
+			Math.ceil(
+				timeline.totalDuration *
+					timeline.fps,
+			),
+		),
+		fps: timeline.fps,
+		width: timeline.width,
+		height: timeline.height,
+		props: {
+			timeline,
+		},
+	};
+};
+
+
+const CompatibleEpisodeComposition =
+	EpisodeComposition as React.ComponentType<
+		EpisodeCompositionProps
+	>;
+
+
+export const RemotionRoot: React.FC = () => {
+	return (
+		<Composition
+			id="Episode"
+			component={
+				CompatibleEpisodeComposition
+			}
+			durationInFrames={
+				fallbackTimeline.totalDuration *
+				fallbackTimeline.fps
+			}
+			fps={fallbackTimeline.fps}
+			width={fallbackTimeline.width}
+			height={fallbackTimeline.height}
+			defaultProps={{
+				timeline: fallbackTimeline,
+			}}
+			calculateMetadata={
+				calculateMetadata
+			}
+		/>
+	);
+};
+
+
+
+===== projects\remotion\src\compositions\EpisodeComposition.tsx =====
+
+import React from 'react';
+import {
+	AbsoluteFill,
+	Sequence,
+} from 'remotion';
+
+import {SceneRenderer} from '../components/SceneRenderer';
+import {TitleLayer} from '../components/TitleLayer';
+import {ep005Theme} from '../theme/ep005Theme';
+import type {EpisodeTimeline} from '../types/timeline';
+import {
+	getSceneDurationFrames,
+	getSceneStartFrame,
+	secondsToFrames,
+} from '../utils/timeline';
+
+export type EpisodeCompositionProps = {
+	timeline: EpisodeTimeline;
+};
+
+export const EpisodeComposition: React.FC<
+	EpisodeCompositionProps
+> = ({timeline}) => {
+	const fps = timeline.fps;
+
+	const backgroundColor =
+		timeline.theme?.backgroundColor ??
+		ep005Theme.backgroundColor;
+
+	const titleColor =
+		timeline.theme?.titleColor ??
+		ep005Theme.titleColor;
+
+	const captionColor =
+		timeline.theme?.captionColor ??
+		ep005Theme.captionColor;
+
+	return (
+		<AbsoluteFill
+			style={{
+				backgroundColor,
+				fontFamily: ep005Theme.fontFamily,
+				overflow: 'hidden',
+			}}
+		>
+			{/* ?λ㈃ ?덉씠??*/}
+			{timeline.scenes.map((scene, index) => {
+				const from =
+					getSceneStartFrame(scene, fps);
+
+				const durationInFrames =
+					getSceneDurationFrames(
+						scene,
+						fps,
+					);
+
+				const transitionDuration =
+					secondsToFrames(
+						scene.transitionDuration ??
+							0.25,
+						fps,
+					);
+
+				return (
+					<Sequence
+						key={scene.id}
+						from={from}
+						durationInFrames={
+							durationInFrames
+						}
+						name={scene.id}
+					>
+						<SceneRenderer
+							scene={scene}
+							durationInFrames={
+								durationInFrames
+							}
+							transitionDurationInFrames={
+								transitionDuration
+							}
+							isFirstScene={
+								index === 0
+							}
+							isLastScene={
+								index ===
+								timeline.scenes
+									.length -
+									1
+							}
+							captionColor={
+								captionColor
+							}
+						/>
+					</Sequence>
+				);
+			})}
+
+			{/* ?쒕ぉ? ??긽 ?λ㈃ ?꾩뿉 ?쒖떆 */}
+			<TitleLayer
+				title={timeline.title}
+				color={titleColor}
+			/>
+		</AbsoluteFill>
+	);
+};
+
+
+===== projects\remotion\src\index.ts =====
+
+import {registerRoot} from 'remotion';
+
+import {RemotionRoot} from './Root';
+
+registerRoot(RemotionRoot);
+
+
+===== projects\episodes\ep007\timeline.json =====
+
+{
+  "episodeId": "EP007",
+  "title": "怨쇨굅????n?ㅼ떆 諛쒓껄?좉퉴?",
+  "fps": 30,
+  "width": 1080,
+  "height": 1920,
+  "totalDuration": 34,
+  "theme": {
+    "backgroundColor": "#000000",
+    "titleColor": "#7CFFB2",
+    "captionColor": "#FFFFFF",
+    "accentColor": "#7CFFB2"
+  },
+  "scenes": [
+    {
+      "id": "scene_001",
+      "start": 0,
+      "duration": 5,
+      "title": "?щ엺? ??怨쇨굅瑜??뚰뿤移좉퉴?",
+      "caption": "??怨쇨굅瑜?n?뚰뿤移좉퉴?",
+      "backgroundColor": "#14202B",
+      "media": {
+        "type": "image",
+        "fit": "cover",
+        "position": "center center",
+        "src": "assets/ep007/scene_001.jpg"
+      },
+      "cameraMotion": "zoom_in",
+      "transition": "fade",
+      "transitionDuration": 0.3,
+      "overlay": "cinematic",
+      "overlayOpacity": 1.0
+    },
+    {
+      "id": "scene_002",
+      "start": 5,
+      "duration": 7,
+      "title": "?듭? ?⑥닚???멸린?ъ씠 ?꾨떃?덈떎",
+      "caption": "吏湲덉쓽 ?곕━瑜??뚭린\n?꾪빐?쒖엯?덈떎",
+      "backgroundColor": "#223748",
+      "media": {
+        "type": "image",
+        "fit": "cover",
+        "position": "center center",
+        "src": "assets/ep007/scene_002.jpg"
+      },
+      "cameraMotion": "pan_right",
+      "transition": "cut",
+      "transitionDuration": 0.2,
+      "overlay": "cinematic",
+      "overlayOpacity": 1.0
+    },
+    {
+      "id": "scene_003",
+      "start": 12,
+      "duration": 8,
+      "title": "?묒? ?붿쟻????궗瑜?諛붽퓠?덈떎",
+      "caption": "?묒? 議곌컖 ?섎굹媛\n??궗瑜?諛붽퓠?덈떎",
+      "backgroundColor": "#314A5D",
+      "media": {
+        "type": "image",
+        "fit": "cover",
+        "position": "center center",
+        "src": "assets/ep007/scene_003.jpg"
+      },
+      "cameraMotion": "pan_left",
+      "transition": "fade",
+      "transitionDuration": 0.3,
+      "overlay": "cinematic",
+      "overlayOpacity": 1.0
+    },
+    {
+      "id": "scene_004",
+      "start": 20,
+      "duration": 8,
+      "title": "湲곗닠? 怨쇨굅瑜??ㅼ떆 蹂댁씠寃??⑸땲??,
+      "caption": "AI? 3D媛\n怨쇨굅瑜?蹂듭썝?⑸땲??,
+      "backgroundColor": "#1C3040",
+      "media": {
+        "type": "image",
+        "fit": "cover",
+        "position": "center center",
+        "src": "assets/ep007/scene_004.jpg"
+      },
+      "cameraMotion": "zoom_in_right",
+      "transition": "slide_left",
+      "transitionDuration": 0.3,
+      "overlay": "vignette",
+      "overlayOpacity": 1.0
+    },
+    {
+      "id": "scene_005",
+      "start": 28,
+      "duration": 6,
+      "title": "怨쇨굅???앸궃 ?댁빞湲곌? ?꾨떃?덈떎",
+      "caption": "?대뼡 ??궗瑜?n?ㅼ떆 蹂닿퀬 ?띕굹??",
+      "backgroundColor": "#101820",
+      "media": {
+        "type": "image",
+        "fit": "cover",
+        "position": "center center",
+        "src": "assets/ep007/scene_005.jpg"
+      },
+      "cameraMotion": "zoom_out",
+      "transition": "fade",
+      "transitionDuration": 0.35,
+      "overlay": "dark",
+      "overlayOpacity": 1.0
+    }
+  ]
+}
+

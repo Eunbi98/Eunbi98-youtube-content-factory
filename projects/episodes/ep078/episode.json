@@ -1,0 +1,10 @@
+{
+  "version":"1.0","episodeId":"ep078","channel":"history","title":"눈에 안 보이던 3천 년 전 배 23척이 레이저로 나타났다","voice":"ko-KR-SunHiNeural","mediaSource":"Kition Cyprus Bronze Age temple ship graffiti laser scan archaeology","theme":{"backgroundColor":"#0B1012","titleColor":"#B9D7D7","captionColor":"#FFFFFF","accentColor":"#B9D7D7"},"scenes":[
+    {"type":"hook","title":"사라진 줄 알았던 배 그림이 벽에서 다시 나타났다","narration":"키프로스의 고대 신전 벽을 고해상도 레이저로 스캔했더니 육안으로 거의 보이지 않던 배 그림 23개가 새로 드러났습니다.","keywords":["Kition Cyprus ship graffiti laser scan","Bronze Age temple ship carving","ancient Cyprus ships archaeology"]},
+    {"type":"answer","title":"연구진은 원래 배를 찾고 있던 것도 아니었다","narration":"목적은 신전 석조 구조를 3차원으로 기록하는 것이었지만 표면의 미세한 홈을 분석하다가 예상 밖의 선박 그림들을 발견했습니다.","keywords":["3D laser scan Kition temple","archaeology laser scanning wall","Kition Kathari temple blocks"]},
+    {"type":"story","title":"그림은 거의 선 몇 개만 남아 있었다","narration":"수천 년의 풍화로 흔적이 희미해졌지만 3차원 데이터에서 빛의 방향을 바꾸자 배의 선체와 돛을 나타낸 선들이 다시 구분됐습니다.","keywords":["ancient ship graffiti 3D scan","weathered stone carving ship","Cyprus temple wall graffiti"]},
+    {"type":"fact","title":"한 번에 그린 함대가 아니었다","narration":"분석 결과 배 그림들은 한 시기에 만들어진 것이 아니라 최대 약 300년에 걸쳐 여러 세대가 계속 추가한 것으로 보입니다.","keywords":["Late Bronze Age Cyprus ship graffiti","Kition ships reconstruction","ancient Mediterranean ship carving"]},
+    {"type":"fact","title":"청동기 붕괴 전후에도 같은 전통이 이어졌다","narration":"그림 속에는 서로 다른 시대와 형태의 배들이 섞여 있어 주변 지역이 큰 변화를 겪던 시기에도 해양 문화가 이어졌음을 보여줍니다.","keywords":["Bronze Age collapse Cyprus ships","Levantine merchant ship ancient","ancient Mediterranean seafaring Cyprus"]},
+    {"type":"ending","title":"레이저가 3천 년 전 항구의 풍경을 되살렸다","narration":"희미한 낙서처럼 남은 몇 줄의 선이 당시 사람들이 매일 보던 배와 바다의 모습을 기록한 흔적일 수 있습니다.","keywords":["Kition ancient harbor reconstruction","Cyprus Bronze Age seafaring","ancient ship graffiti temple"]}
+  ]
+}

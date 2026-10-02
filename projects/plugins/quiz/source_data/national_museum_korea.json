@@ -1,0 +1,41 @@
+{
+  "source_id": "national_museum_korea",
+  "facts": [
+    {
+      "id": "museum_elementary_001",
+      "level": "elementary",
+      "category": "history",
+      "fact": "훈민정음은 조선의 세종이 백성을 위해 만든 문자 체계이다.",
+      "answer": "세종",
+      "explanation": "훈민정음은 1443년에 창제되고 1446년에 반포되었다.",
+      "source_url": "https://www.museum.go.kr/",
+      "verified_at": "2026-07-14",
+      "evergreen": true,
+      "tags": ["hangul", "sejong", "joseon"]
+    },
+    {
+      "id": "museum_middle_001",
+      "level": "middle",
+      "category": "history",
+      "fact": "고려청자의 대표적인 장식 기법 중 무늬를 파고 다른 색의 흙을 메우는 방법은 상감 기법이다.",
+      "answer": "상감 기법",
+      "explanation": "상감청자는 고려 도자 문화를 대표하며 무늬와 바탕색의 대비가 특징이다.",
+      "source_url": "https://www.museum.go.kr/",
+      "verified_at": "2026-07-14",
+      "evergreen": true,
+      "tags": ["goryeo", "celadon", "sanggam"]
+    },
+    {
+      "id": "museum_high_001",
+      "level": "high",
+      "category": "culture",
+      "fact": "금속활자로 인쇄된 현존 세계 최고(最古)의 책으로 널리 알려진 것은 직지이다.",
+      "answer": "직지",
+      "explanation": "직지는 1377년 청주 흥덕사에서 금속활자로 인쇄되었다.",
+      "source_url": "https://www.museum.go.kr/",
+      "verified_at": "2026-07-14",
+      "evergreen": true,
+      "tags": ["jikji", "printing", "goryeo"]
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "version": "1.0",
+  "episodeId": "ep057",
+  "channel": "science",
+  "title": "Can Bending Diamond Generate Electricity?",
+  "voice": "en-US-JennyNeural",
+  "mediaSource": "ultrathin diamond membrane piezoelectric flexible diamond research laboratory",
+  "theme": {"backgroundColor":"#0B0D10","titleColor":"#BFE9FF","captionColor":"#FFFFFF","accentColor":"#BFE9FF"},
+  "scenes": [
+    {"type":"hook","title":"Can diamond generate electricity?","narration":"For more than a century, diamond was considered a material without a piezoelectric effect. But when scientists made it extremely thin, that assumption changed.","keywords":["diamond membrane laboratory real photo","thin diamond film research","diamond material microscopy"]},
+    {"type":"answer","title":"They bent an ultrathin diamond film","narration":"Researchers at the University of Hong Kong created flexible polycrystalline diamond membranes and bent them. The membranes produced stable voltage signals.","keywords":["flexible diamond membrane experiment","diamond film bending laboratory","piezoelectric measurement lab"]},
+    {"type":"story","title":"A century-old assumption was challenged","narration":"Diamond was thought to lack piezoelectricity because of its crystal structure. In ultrathin films, however, asymmetric grain boundaries can separate electrical charge.","keywords":["polycrystalline diamond microscope","diamond grain boundary microscopy","diamond crystal structure research"]},
+    {"type":"fact","title":"Hard material, flexible membrane","narration":"The key is thickness. Bulk diamond is extremely rigid, but a membrane only micrometers thick can bend far more than a normal piece of diamond.","keywords":["ultrathin diamond sheet","flexible diamond film","micron diamond membrane"]},
+    {"type":"fact","title":"It could power tiny devices","narration":"Researchers say the effect could eventually be useful in microsensors, electronics, and even self-powered medical devices.","keywords":["MEMS sensor laboratory","medical implant sensor concept","microelectromechanical system research"]},
+    {"type":"ending","title":"Diamond may become more than a gemstone","narration":"One of the hardest materials we know can reveal completely new behavior when made thin enough. The same material can act very differently at a different scale.","keywords":["diamond technology research","diamond electronics laboratory","diamond membrane close up"]}
+  ]
+}

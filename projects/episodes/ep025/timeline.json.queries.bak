@@ -1,0 +1,217 @@
+{
+  "version": "6.5",
+  "episodeId": "EP025",
+  "title": "사하라 사막 아래에\n거대한 강이 있었다?",
+  "fps": 30,
+  "width": 1080,
+  "height": 1920,
+  "totalDuration": 32.733,
+  "theme": {
+    "backgroundColor": "#17212D",
+    "titleColor": "#7BFEB4",
+    "captionColor": "#FFFFFF",
+    "accentColor": "#7BFEB4"
+  },
+  "scenes": [
+    {
+      "id": "scene_001",
+      "start": 0.0,
+      "duration": 6.0,
+      "title": "사하라 사막 아래에\n거대한 강이 있었다?",
+      "narration": "지금은 끝없는 사막인 사하라 아래에 거대한 강이 있었다는 사실, 알고 계셨나요?",
+      "caption": "지금은 끝없는 사막인 사하라 아래에 거대한 강이 있었다는 사실, 알고 계셨나요?",
+      "backgroundColor": "#14202B",
+      "keywords": [
+        "Sahara Desert aerial sand dunes",
+        "Sahara desert satellite view",
+        "Sahara desert drone landscape",
+        "desert aerial view",
+        "desert landscape",
+        "Sahara Desert aerial sand dunes wide view",
+        "Sahara Desert aerial sand dunes landscape",
+        "Sahara desert satellite view wide view"
+      ],
+      "media": {
+        "type": "image",
+        "fit": "cover",
+        "position": "center center",
+        "src": "assets/ep025/scene_001.jpg",
+        "keywords": [
+          "Sahara Desert aerial sand dunes",
+          "Sahara desert satellite view",
+          "Sahara desert drone landscape",
+          "desert aerial view",
+          "desert landscape",
+          "Sahara Desert aerial sand dunes wide view",
+          "Sahara Desert aerial sand dunes landscape",
+          "Sahara desert satellite view wide view"
+        ]
+      },
+      "cameraMotion": "zoom_in",
+      "transition": "fade",
+      "transitionDuration": 0.3,
+      "overlay": "cinematic",
+      "overlayOpacity": 1.0
+    },
+    {
+      "id": "scene_002",
+      "start": 6.0,
+      "duration": 6.6,
+      "title": "모래 아래에서 발견된\n고대 강의 흔적",
+      "narration": "과학자들은 위성 레이더를 이용해 모래 아래 숨겨진 거대한 강의 흔적을 발견했습니다.",
+      "caption": "과학자들은 위성 레이더를 이용해 모래 아래 숨겨진 거대한 강의 흔적을 발견했습니다.",
+      "backgroundColor": "#223748",
+      "keywords": [
+        "ancient river Sahara satellite radar",
+        "Sahara buried river satellite",
+        "Sahara buried river satellite map",
+        "ancient river Sahara satellite radar wide view",
+        "ancient river Sahara satellite radar landscape",
+        "Sahara buried river satellite wide view",
+        "Sahara buried river satellite landscape",
+        "ancient river Sahara satellite radar close up"
+      ],
+      "media": {
+        "type": "image",
+        "fit": "cover",
+        "position": "center center",
+        "src": "assets/ep025/scene_002.jpg",
+        "keywords": [
+          "ancient river Sahara satellite radar",
+          "Sahara buried river satellite",
+          "Sahara buried river satellite map",
+          "ancient river Sahara satellite radar wide view",
+          "ancient river Sahara satellite radar landscape",
+          "Sahara buried river satellite wide view",
+          "Sahara buried river satellite landscape",
+          "ancient river Sahara satellite radar close up"
+        ]
+      },
+      "cameraMotion": "pan_right",
+      "transition": "cut",
+      "transitionDuration": 0.2,
+      "overlay": "cinematic",
+      "overlayOpacity": 1.0
+    },
+    {
+      "id": "scene_003",
+      "start": 12.6,
+      "duration": 6.7,
+      "title": "사하라는 한때\n푸른 초원이었습니다",
+      "narration": "약 오천 년에서 만 년 전, 지금의 사하라는 초원과 강이 흐르는 풍요로운 땅이었습니다.",
+      "caption": "약 오천 년에서 만 년 전, 지금의 사하라는 초원과 강이 흐르는 풍요로운 땅이었습니다.",
+      "backgroundColor": "#314A5D",
+      "keywords": [
+        "ancient Sahara grassland lake",
+        "African humid period",
+        "African humid period landscape",
+        "ancient Sahara grassland lake wide view",
+        "ancient Sahara grassland lake landscape",
+        "African humid period wide view",
+        "ancient Sahara grassland lake close up",
+        "ancient Sahara grassland lake detailed view"
+      ],
+      "media": {
+        "type": "image",
+        "fit": "cover",
+        "position": "center center",
+        "src": "assets/ep025/scene_003.jpg",
+        "keywords": [
+          "ancient Sahara grassland lake",
+          "African humid period",
+          "African humid period landscape",
+          "ancient Sahara grassland lake wide view",
+          "ancient Sahara grassland lake landscape",
+          "African humid period wide view",
+          "ancient Sahara grassland lake close up",
+          "ancient Sahara grassland lake detailed view"
+        ]
+      },
+      "cameraMotion": "pan_left",
+      "transition": "fade",
+      "transitionDuration": 0.3,
+      "overlay": "cinematic",
+      "overlayOpacity": 1.0
+    },
+    {
+      "id": "scene_004",
+      "start": 19.3,
+      "duration": 6.433,
+      "title": "강은 인류의\n이동 통로였습니다",
+      "narration": "이 강은 초기 인류가 이동하고 정착하는 중요한 길이었을 것으로 추정되고 있습니다.",
+      "caption": "이 강은 초기 인류가 이동하고 정착하는 중요한 길이었을 것으로 추정되고 있습니다.",
+      "backgroundColor": "#1C3040",
+      "keywords": [
+        "ancient human migration North Africa",
+        "prehistoric Sahara river",
+        "prehistoric people Sahara river",
+        "early humans African landscape",
+        "ancient human migration North Africa wide view",
+        "ancient human migration North Africa landscape",
+        "prehistoric Sahara river wide view",
+        "prehistoric Sahara river landscape"
+      ],
+      "media": {
+        "type": "image",
+        "fit": "cover",
+        "position": "center center",
+        "src": "assets/ep025/scene_004.jpg",
+        "keywords": [
+          "ancient human migration North Africa",
+          "prehistoric Sahara river",
+          "prehistoric people Sahara river",
+          "early humans African landscape",
+          "ancient human migration North Africa wide view",
+          "ancient human migration North Africa landscape",
+          "prehistoric Sahara river wide view",
+          "prehistoric Sahara river landscape"
+        ]
+      },
+      "cameraMotion": "zoom_in_right",
+      "transition": "slide_left",
+      "transitionDuration": 0.3,
+      "overlay": "vignette",
+      "overlayOpacity": 1.0
+    },
+    {
+      "id": "scene_005",
+      "start": 25.733,
+      "duration": 7.0,
+      "title": "사막 아래에는 아직도\n과거가 숨어 있습니다",
+      "narration": "오늘도 사하라의 모래 아래에는 우리가 아직 발견하지 못한 과거의 흔적이 숨어 있을지 모릅니다.",
+      "caption": "오늘도 사하라의 모래 아래에는 우리가 아직 발견하지 못한 과거의 흔적이 숨어 있을지 모릅니다.",
+      "backgroundColor": "#101820",
+      "keywords": [
+        "Sahara Desert ancient comparison",
+        "Sahara desert aerial sunset",
+        "Sahara Desert ancient landscape comparison",
+        "desert aerial view",
+        "desert landscape",
+        "Sahara Desert ancient comparison wide view",
+        "Sahara Desert ancient comparison landscape",
+        "Sahara desert aerial sunset wide view"
+      ],
+      "media": {
+        "type": "image",
+        "fit": "cover",
+        "position": "center center",
+        "src": "assets/ep025/scene_005.jpg",
+        "keywords": [
+          "Sahara Desert ancient comparison",
+          "Sahara desert aerial sunset",
+          "Sahara Desert ancient landscape comparison",
+          "desert aerial view",
+          "desert landscape",
+          "Sahara Desert ancient comparison wide view",
+          "Sahara Desert ancient comparison landscape",
+          "Sahara desert aerial sunset wide view"
+        ]
+      },
+      "cameraMotion": "zoom_out",
+      "transition": "fade",
+      "transitionDuration": 0.35,
+      "overlay": "dark",
+      "overlayOpacity": 1.0
+    }
+  ]
+}

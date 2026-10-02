@@ -1,0 +1,10 @@
+{
+  "version":"1.0","episodeId":"ep068","channel":"science","title":"살아있는 박테리아로 트랜지스터를 만들었다","voice":"ko-KR-SunHiNeural","mediaSource":"MIT living bacterial transistors circuit board 2026","theme":{"backgroundColor":"#0B120D","titleColor":"#BFE8C8","captionColor":"#FFFFFF","accentColor":"#BFE8C8"},"scenes":[
+    {"type":"hook","title":"컴퓨터 회로를 박테리아로 만들었다","narration":"MIT 연구진이 박테리아를 전자회로의 트랜지스터처럼 작동하도록 설계해 살아있는 회로를 만들었습니다.","keywords":["MIT living bacterial transistors","bacteria circuit board petri dish","synthetic biology circuit bacteria"]},
+    {"type":"answer","title":"전류 대신 화학 신호를 켜고 끈다","narration":"전자 트랜지스터가 전류를 제어하듯 이 박테리아는 특정 분자를 감지하고 다른 화학 신호의 흐름을 켜거나 끕니다.","keywords":["bacterial transistor illustration","chemical signaling bacteria circuit","synthetic biology transistor"]},
+    {"type":"story","title":"박테리아 군집을 배선처럼 연결했다","narration":"연구진은 서로 다른 박테리아 군집을 일정 간격으로 배치해 신호가 다음 군집으로 전달되도록 했습니다.","keywords":["printed bacteria colonies circuit","petri dish bacterial circuit grid","living circuit synthetic biology"]},
+    {"type":"fact","title":"간단한 계산도 수행했다","narration":"이 살아있는 회로는 여러 입력을 조합해 계산하거나 신호를 특정 방향으로 보내는 기능을 수행했습니다.","keywords":["bacteria computing circuit","biological logic gate bacteria","synthetic biology computing"]},
+    {"type":"fact","title":"식물과 환경 센서에 쓸 수도 있다","narration":"연구진은 미래에 이런 회로를 식물 표면이나 뿌리에 배치해 주변 환경을 감지하고 반응시키는 활용을 기대하고 있습니다.","keywords":["plant biosensor bacteria","living sensor plant roots","engineered microbes agriculture"]},
+    {"type":"ending","title":"컴퓨터와 생명체의 경계가 흐려진다","narration":"실리콘 칩 대신 살아있는 세포가 정보를 처리하는 회로가 실제로 만들어졌습니다. 생물학 자체가 새로운 컴퓨팅 재료가 되고 있습니다.","keywords":["living computer bacteria concept","bioelectronics synthetic biology","bacterial circuit board"]}
+  ]
+}

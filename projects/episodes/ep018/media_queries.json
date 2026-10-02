@@ -1,0 +1,522 @@
+{
+  "version": "2.0",
+  "episodeId": "ep018",
+  "timelinePath": "/home/runner/work/Eunbi98-youtube-content-factory/Eunbi98-youtube-content-factory/projects/episodes/ep018/timeline.json",
+  "sceneCount": 6,
+  "scenes": [
+    {
+      "sceneId": "scene_001",
+      "title": "Hook",
+      "narration": "우주에서는 아무 소리도 들리지 않는다는 사실 알고 계셨나요",
+      "sourceKeywords": [
+        "NASA space vacuum",
+        "space silence",
+        "NASA space vacuum wide view",
+        "NASA space vacuum landscape",
+        "space silence wide view",
+        "space silence landscape",
+        "NASA space vacuum close up",
+        "NASA space vacuum detailed view"
+      ],
+      "entities": [
+        "우주",
+        "Hook",
+        "NASA space vacuum space silence NASA space vacuum",
+        "dscape space silence wide view space silence landscape",
+        "NASA space vacuum detailed view"
+      ],
+      "primaryQuery": "NASA space vacuum",
+      "queries": [
+        {
+          "query": "NASA space vacuum",
+          "intent": "primary",
+          "priority": 1,
+          "mediaKind": "any"
+        },
+        {
+          "query": "space silence",
+          "intent": "primary",
+          "priority": 2,
+          "mediaKind": "any"
+        },
+        {
+          "query": "NASA space vacuum wide view",
+          "intent": "wide",
+          "priority": 3,
+          "mediaKind": "any"
+        },
+        {
+          "query": "NASA space vacuum close up",
+          "intent": "detail",
+          "priority": 4,
+          "mediaKind": "any"
+        },
+        {
+          "query": "NASA space vacuum detailed view",
+          "intent": "detail",
+          "priority": 5,
+          "mediaKind": "any"
+        },
+        {
+          "query": "NASA space vacuum landscape",
+          "intent": "wide",
+          "priority": 6,
+          "mediaKind": "any"
+        },
+        {
+          "query": "space silence wide view",
+          "intent": "wide",
+          "priority": 7,
+          "mediaKind": "any"
+        },
+        {
+          "query": "space silence landscape",
+          "intent": "wide",
+          "priority": 8,
+          "mediaKind": "any"
+        },
+        {
+          "query": "space silence close up",
+          "intent": "detail",
+          "priority": 9,
+          "mediaKind": "any"
+        },
+        {
+          "query": "space silence detailed view",
+          "intent": "detail",
+          "priority": 10,
+          "mediaKind": "any"
+        }
+      ]
+    },
+    {
+      "sceneId": "scene_002",
+      "title": "Answer",
+      "narration": "소리가 전달되려면 압력 변화가 전파될 수 있는 매질이 필요한데 우주는 거의 완전한 진공 상태라서 소리가 전혀 전달되지 않습니다.",
+      "sourceKeywords": [
+        "sound transmission space",
+        "no sound universe",
+        "lunar landscape",
+        "sound transmission space wide view",
+        "sound transmission space landscape",
+        "no sound universe wide view",
+        "no sound universe landscape",
+        "sound transmission space close up"
+      ],
+      "entities": [
+        "달",
+        "우주",
+        "Answer",
+        "sound transmission space no sound universe lunar landscape",
+        "ce wide view sound transmission space landscape no",
+        "und universe landscape sound transmission space close up"
+      ],
+      "primaryQuery": "sound transmission space",
+      "queries": [
+        {
+          "query": "sound transmission space",
+          "intent": "primary",
+          "priority": 1,
+          "mediaKind": "any"
+        },
+        {
+          "query": "no sound universe",
+          "intent": "primary",
+          "priority": 2,
+          "mediaKind": "any"
+        },
+        {
+          "query": "sound transmission space wide view",
+          "intent": "wide",
+          "priority": 3,
+          "mediaKind": "any"
+        },
+        {
+          "query": "no sound universe wide view",
+          "intent": "wide",
+          "priority": 4,
+          "mediaKind": "any"
+        },
+        {
+          "query": "sound transmission space close up",
+          "intent": "detail",
+          "priority": 5,
+          "mediaKind": "any"
+        },
+        {
+          "query": "sound transmission space landscape",
+          "intent": "wide",
+          "priority": 6,
+          "mediaKind": "any"
+        },
+        {
+          "query": "no sound universe landscape",
+          "intent": "wide",
+          "priority": 7,
+          "mediaKind": "any"
+        },
+        {
+          "query": "lunar landscape",
+          "intent": "wide",
+          "priority": 8,
+          "mediaKind": "any"
+        },
+        {
+          "query": "sound transmission space detailed view",
+          "intent": "detail",
+          "priority": 9,
+          "mediaKind": "any"
+        },
+        {
+          "query": "no sound universe close up",
+          "intent": "detail",
+          "priority": 10,
+          "mediaKind": "any"
+        }
+      ]
+    },
+    {
+      "sceneId": "scene_003",
+      "title": "Story",
+      "narration": "인간의 귀는 20Hz에서 20kHz 사이의 소리를 감지할 수 있지만 우주에서는 이런 주파수의 소리가 전달될 매질이 존재하지 않으니 우주에서는 아무리 큰 소리도 들리지 않죠.",
+      "sourceKeywords": [
+        "human hearing range",
+        "sound frequency vacuum",
+        "lunar landscape",
+        "human hearing range wide view",
+        "human hearing range landscape",
+        "sound frequency vacuum wide view",
+        "sound frequency vacuum landscape",
+        "human hearing range close up"
+      ],
+      "entities": [
+        "우주",
+        "달",
+        "Story",
+        "Hz",
+        "kHz",
+        "human hearing range sound frequency vacuum lunar landscape",
+        "de view human hearing range landscape sound frequency",
+        "uency vacuum landscape human hearing range close up"
+      ],
+      "primaryQuery": "human hearing range",
+      "queries": [
+        {
+          "query": "human hearing range",
+          "intent": "primary",
+          "priority": 1,
+          "mediaKind": "any"
+        },
+        {
+          "query": "sound frequency vacuum",
+          "intent": "primary",
+          "priority": 2,
+          "mediaKind": "any"
+        },
+        {
+          "query": "human hearing range wide view",
+          "intent": "wide",
+          "priority": 3,
+          "mediaKind": "any"
+        },
+        {
+          "query": "sound frequency vacuum wide view",
+          "intent": "wide",
+          "priority": 4,
+          "mediaKind": "any"
+        },
+        {
+          "query": "human hearing range close up",
+          "intent": "detail",
+          "priority": 5,
+          "mediaKind": "any"
+        },
+        {
+          "query": "human hearing range landscape",
+          "intent": "wide",
+          "priority": 6,
+          "mediaKind": "any"
+        },
+        {
+          "query": "sound frequency vacuum landscape",
+          "intent": "wide",
+          "priority": 7,
+          "mediaKind": "any"
+        },
+        {
+          "query": "lunar landscape",
+          "intent": "wide",
+          "priority": 8,
+          "mediaKind": "any"
+        },
+        {
+          "query": "human hearing range detailed view",
+          "intent": "detail",
+          "priority": 9,
+          "mediaKind": "any"
+        },
+        {
+          "query": "sound frequency vacuum close up",
+          "intent": "detail",
+          "priority": 10,
+          "mediaKind": "any"
+        }
+      ]
+    },
+    {
+      "sceneId": "scene_004",
+      "title": "Fact",
+      "narration": "아인슈타인의 상대성 이론에 따르면 빛은 진공에서도 이동할 수 있지만 소리는 반드시 매질이 필요하다는 점에서 차이가 있습니다.",
+      "sourceKeywords": [
+        "Einstein relativity",
+        "light vacuum",
+        "Einstein relativity wide view",
+        "Einstein relativity landscape",
+        "light vacuum wide view",
+        "light vacuum landscape",
+        "Einstein relativity close up",
+        "Einstein relativity detailed view"
+      ],
+      "entities": [
+        "Fact",
+        "Einstein relativity light vacuum Einstein relativity wide view",
+        "landscape light vacuum wide view light vacuum landscape",
+        "se up Einstein relativity detailed view"
+      ],
+      "primaryQuery": "Einstein relativity",
+      "queries": [
+        {
+          "query": "Einstein relativity",
+          "intent": "primary",
+          "priority": 1,
+          "mediaKind": "any"
+        },
+        {
+          "query": "light vacuum",
+          "intent": "primary",
+          "priority": 2,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Einstein relativity wide view",
+          "intent": "wide",
+          "priority": 3,
+          "mediaKind": "any"
+        },
+        {
+          "query": "light vacuum wide view",
+          "intent": "wide",
+          "priority": 4,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Einstein relativity close up",
+          "intent": "detail",
+          "priority": 5,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Einstein relativity detailed view",
+          "intent": "detail",
+          "priority": 6,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Einstein relativity landscape",
+          "intent": "wide",
+          "priority": 7,
+          "mediaKind": "any"
+        },
+        {
+          "query": "light vacuum landscape",
+          "intent": "wide",
+          "priority": 8,
+          "mediaKind": "any"
+        },
+        {
+          "query": "light vacuum close up",
+          "intent": "detail",
+          "priority": 9,
+          "mediaKind": "any"
+        },
+        {
+          "query": "light vacuum detailed view",
+          "intent": "detail",
+          "priority": 10,
+          "mediaKind": "any"
+        }
+      ]
+    },
+    {
+      "sceneId": "scene_005",
+      "title": "Fact",
+      "narration": "빛과 같은 전자기파는 진공에서도 전파되지만 소리는 매질이 없으면 전파되지 못합니다. 그래서 우주에서는 빛은 볼 수 있지만 소리는 들을 수 없습니다. 다만 전자기파 등 다른 형태의 에너지는 우주에 존재합니다.",
+      "sourceKeywords": [
+        "electromagnetic waves space",
+        "light vs sound",
+        "electromagnetic waves space wide view",
+        "electromagnetic waves space landscape",
+        "light vs sound wide view",
+        "light vs sound landscape",
+        "electromagnetic waves space close up",
+        "electromagnetic waves space detailed view"
+      ],
+      "entities": [
+        "우주",
+        "Fact",
+        "electromagnetic waves space light vs sound electromagnetic waves",
+        "electromagnetic waves space landscape light vs sound wide",
+        "dscape electromagnetic waves space close up electromagnetic waves",
+        "view"
+      ],
+      "primaryQuery": "electromagnetic waves space",
+      "queries": [
+        {
+          "query": "electromagnetic waves space",
+          "intent": "primary",
+          "priority": 1,
+          "mediaKind": "any"
+        },
+        {
+          "query": "light vs sound",
+          "intent": "primary",
+          "priority": 2,
+          "mediaKind": "any"
+        },
+        {
+          "query": "electromagnetic waves space wide view",
+          "intent": "wide",
+          "priority": 3,
+          "mediaKind": "any"
+        },
+        {
+          "query": "light vs sound wide view",
+          "intent": "wide",
+          "priority": 4,
+          "mediaKind": "any"
+        },
+        {
+          "query": "electromagnetic waves space close up",
+          "intent": "detail",
+          "priority": 5,
+          "mediaKind": "any"
+        },
+        {
+          "query": "electromagnetic waves space detailed view",
+          "intent": "detail",
+          "priority": 6,
+          "mediaKind": "any"
+        },
+        {
+          "query": "electromagnetic waves space landscape",
+          "intent": "wide",
+          "priority": 7,
+          "mediaKind": "any"
+        },
+        {
+          "query": "light vs sound landscape",
+          "intent": "wide",
+          "priority": 8,
+          "mediaKind": "any"
+        },
+        {
+          "query": "light vs sound close up",
+          "intent": "detail",
+          "priority": 9,
+          "mediaKind": "any"
+        },
+        {
+          "query": "light vs sound detailed view",
+          "intent": "detail",
+          "priority": 10,
+          "mediaKind": "any"
+        }
+      ]
+    },
+    {
+      "sceneId": "scene_006",
+      "title": "Ending",
+      "narration": "그렇다면 우주에서 소리 대신 어떤 에너지가 우리에게 새로운 정보를 줄 수 있을까요",
+      "sourceKeywords": [
+        "space silence mystery",
+        "space science question",
+        "space silence mystery wide view",
+        "space silence mystery landscape",
+        "space science question wide view",
+        "space science question landscape",
+        "space silence mystery close up",
+        "space silence mystery detailed view"
+      ],
+      "entities": [
+        "우주",
+        "Ending",
+        "space silence mystery space science question space silence",
+        "silence mystery landscape space science question wide view",
+        "landscape space silence mystery close up space silence"
+      ],
+      "primaryQuery": "space silence mystery",
+      "queries": [
+        {
+          "query": "space silence mystery",
+          "intent": "primary",
+          "priority": 1,
+          "mediaKind": "any"
+        },
+        {
+          "query": "space science question",
+          "intent": "primary",
+          "priority": 2,
+          "mediaKind": "any"
+        },
+        {
+          "query": "space silence mystery wide view",
+          "intent": "wide",
+          "priority": 3,
+          "mediaKind": "any"
+        },
+        {
+          "query": "space science question wide view",
+          "intent": "wide",
+          "priority": 4,
+          "mediaKind": "any"
+        },
+        {
+          "query": "space silence mystery close up",
+          "intent": "detail",
+          "priority": 5,
+          "mediaKind": "any"
+        },
+        {
+          "query": "space silence mystery detailed view",
+          "intent": "detail",
+          "priority": 6,
+          "mediaKind": "any"
+        },
+        {
+          "query": "space silence mystery landscape",
+          "intent": "wide",
+          "priority": 7,
+          "mediaKind": "any"
+        },
+        {
+          "query": "space science question landscape",
+          "intent": "wide",
+          "priority": 8,
+          "mediaKind": "any"
+        },
+        {
+          "query": "space science question close up",
+          "intent": "detail",
+          "priority": 9,
+          "mediaKind": "any"
+        },
+        {
+          "query": "space science question detailed view",
+          "intent": "detail",
+          "priority": 10,
+          "mediaKind": "any"
+        }
+      ]
+    }
+  ]
+}

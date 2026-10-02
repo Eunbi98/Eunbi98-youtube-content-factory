@@ -1,0 +1,129 @@
+import React from 'react';
+import {
+	interpolate,
+	spring,
+	useCurrentFrame,
+	useVideoConfig,
+} from 'remotion';
+
+import {ep005Theme} from '../theme/ep005Theme';
+
+type TitleLayerProps = {
+	title: string;
+	color?: string;
+};
+
+export const TitleLayer: React.FC<
+	TitleLayerProps
+> = ({title, color}) => {
+    const normalizedTitle = title
+        .replace(/\r?\n/g, ' ')
+        .replace(/\s+/g, ' ')
+        .trim();
+	const frame = useCurrentFrame();
+	const {fps} = useVideoConfig();
+
+	const entrance = spring({
+		frame,
+		fps,
+		config: {
+			damping: 18,
+			stiffness: 180,
+			mass: 0.8,
+		},
+		durationInFrames: 18,
+	});
+
+	const opacity = interpolate(
+		frame,
+		[0, 7],
+		[0, 1],
+		{
+			extrapolateLeft: 'clamp',
+			extrapolateRight: 'clamp',
+		},
+	);
+
+	const scale = interpolate(
+		entrance,
+		[0, 1],
+		[0.92, 1],
+	);
+
+	const translateY = interpolate(
+		entrance,
+		[0, 1],
+		[26, 0],
+	);
+
+	return (
+		<div
+			style={{
+				position: 'absolute',
+
+				top: ep005Theme.title.top,
+				left: ep005Theme.title.left,
+				right: ep005Theme.title.right,
+				height: ep005Theme.title.height,
+
+				display: 'flex',
+				alignItems: 'flex-start',
+				justifyContent: 'center',
+
+				fontFamily:
+					ep005Theme.fontFamily,
+
+				fontSize:
+					ep005Theme.title.fontSize,
+
+				fontWeight:
+					ep005Theme.title.fontWeight,
+
+				lineHeight:
+					ep005Theme.title.lineHeight,
+
+				letterSpacing:
+					ep005Theme.title.letterSpacing,
+
+				textAlign:
+					ep005Theme.title.textAlign,
+
+                           overflow: 'hidden',
+                           wordBreak: 'keep-all',
+
+				color:
+					color ??
+					ep005Theme.title.color,
+
+				WebkitTextStroke:
+					ep005Theme.title.textStroke,
+
+				paintOrder: 'stroke fill',
+
+				textShadow:
+					ep005Theme.title.textShadow,
+
+				whiteSpace: 'pre-wrap',
+				maxHeight: '2.04em',
+
+				opacity,
+
+				transform: [
+					`translateY(${translateY}px)`,
+					`scale(${scale})`,
+				].join(' '),
+
+				transformOrigin:
+					'center top',
+
+				willChange:
+					'transform, opacity',
+
+				zIndex: 30,
+				pointerEvents: 'none',
+			}}
+		>
+			{normalizedTitle}
+		</div>
+	);
+};

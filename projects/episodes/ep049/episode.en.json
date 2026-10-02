@@ -1,0 +1,76 @@
+{
+  "version": "1.0",
+  "episodeId": "ep049",
+  "channel": "science",
+  "title": "190-Year-Old DNA Revealed a Hidden Pangolin Species",
+  "voice": "en-US-JennyNeural",
+  "mediaSource": "pangolin close up scales, Himalayan pangolin Nepal India, museum pangolin specimen DNA research",
+  "theme": {
+    "backgroundColor": "#0B0D0C",
+    "titleColor": "#E8D7A8",
+    "captionColor": "#FFFFFF",
+    "accentColor": "#E8D7A8"
+  },
+  "scenes": [
+    {
+      "type": "hook",
+      "title": "A 190-year-old specimen revealed a hidden species",
+      "narration": "DNA from a pangolin specimen kept in a museum for nearly 190 years has helped reveal the identity of a species that had been hiding in plain sight.",
+      "keywords": [
+        "pangolin museum specimen real photo",
+        "pangolin close up scales wildlife",
+        "historical zoology specimen museum pangolin"
+      ]
+    },
+    {
+      "type": "answer",
+      "title": "Scientists read DNA from an 1836 specimen",
+      "narration": "Researchers extracted DNA from a historic pangolin specimen collected in 1836 and compared it with modern animals found in Nepal and northern India.",
+      "keywords": [
+        "pangolin museum specimen research",
+        "DNA laboratory museum specimen animal",
+        "natural history museum pangolin collection"
+      ]
+    },
+    {
+      "type": "story",
+      "title": "The modern animals matched it",
+      "narration": "The comparison showed that pangolins from the Himalayan region belonged to the same lineage as the old museum specimen, resolving a long-running classification puzzle.",
+      "keywords": [
+        "Himalayan pangolin Nepal wildlife",
+        "pangolin India forest real photo",
+        "Asian pangolin walking wildlife"
+      ]
+    },
+    {
+      "type": "fact",
+      "title": "Its name is Manis aurita",
+      "narration": "The species is called Manis aurita. It was once treated as a subspecies of the Chinese pangolin, but genetic and anatomical evidence now support recognizing it as a distinct species.",
+      "keywords": [
+        "Manis aurita pangolin real photo",
+        "Himalayan pangolin close up",
+        "Asian pangolin scales detailed"
+      ]
+    },
+    {
+      "type": "fact",
+      "title": "Why identifying the species matters",
+      "narration": "Pangolins are among the world's most heavily trafficked mammals. Knowing exactly which species is involved can help trace seized scales back to the animals and regions being targeted.",
+      "keywords": [
+        "pangolin conservation wildlife rescue",
+        "pangolin scales close up conservation",
+        "pangolin wildlife protection real photo"
+      ]
+    },
+    {
+      "type": "ending",
+      "title": "Old museum DNA may help protect living animals",
+      "narration": "A specimen collected almost two centuries ago has become a modern conservation tool. Museum collections can still hold clues that help protect species alive today.",
+      "keywords": [
+        "pangolin conservation close up wildlife",
+        "museum natural history specimen research",
+        "pangolin forest cinematic real photo"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+프로젝트 최상위 폴더에서 ZIP을 풀고 동일 경로에 덮어씁니다.
+
+검사:
+py -m py_compile projects\plugins\quiz\question_models.py projects\plugins\quiz\question_generator.py projects\plugins\quiz\build_question_pool.py
+
+생성:
+py projects\plugins\quiz\build_question_pool.py --level elementary --minimum-quality 70 --limit 20
+py projects\plugins\quiz\build_question_pool.py --level middle --minimum-quality 70 --limit 20
+py projects\plugins\quiz\build_question_pool.py --level high --minimum-quality 70 --limit 20
+py projects\plugins\quiz\build_question_pool.py --level current --minimum-quality 70 --limit 20
+
+Git:
+git add projects/plugins/quiz/question_models.py projects/plugins/quiz/question_generator.py projects/plugins/quiz/build_question_pool.py CHANGELOG.md apply.txt
+git commit -m "feat(release-8.4.2): add quiz question generator"
+git push origin feature/release-5-director-engine

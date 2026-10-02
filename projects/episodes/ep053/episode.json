@@ -1,0 +1,76 @@
+{
+  "version": "1.0",
+  "episodeId": "ep053",
+  "channel": "science",
+  "title": "1200만 년 전 뼈를 부수는 개가 남긴 흔적",
+  "voice": "ko-KR-SunHiNeural",
+  "mediaSource": "Ashfall Fossil Beds Nebraska prehistoric dog tracks, Borophaginae reconstruction, fossil rhino horse camel bones tooth marks",
+  "theme": {
+    "backgroundColor": "#0B0C0D",
+    "titleColor": "#E8D2A8",
+    "captionColor": "#FFFFFF",
+    "accentColor": "#E8D2A8"
+  },
+  "scenes": [
+    {
+      "type": "hook",
+      "title": "1200만 년 전 발자국의 정체",
+      "narration": "미국 네브래스카의 화산재 지층에서 늑대만 한 고대 포식자의 발자국이 발견됐습니다. 그런데 이 동물은 평범한 개가 아니었습니다.",
+      "keywords": [
+        "Ashfall Fossil Beds animal tracks Nebraska",
+        "prehistoric canine footprints fossil",
+        "Borophaginae reconstruction prehistoric dog"
+      ]
+    },
+    {
+      "type": "answer",
+      "title": "별명은 뼈를 부수는 개",
+      "narration": "이 흔적의 주인으로 지목된 동물은 보로파기네입니다. 개과 동물의 오래된 친척으로, 강한 턱과 이빨 때문에 뼈를 부수는 개라는 별명으로 알려져 있습니다.",
+      "keywords": [
+        "Borophaginae bone crushing dog reconstruction",
+        "prehistoric dog skull fossil",
+        "ancient canid powerful jaws illustration"
+      ]
+    },
+    {
+      "type": "story",
+      "title": "코뿔소 뼈에도 이빨 자국이 있었다",
+      "narration": "현장에서는 고대 코뿔소와 말, 낙타 뼈에서 이 포식자의 치아와 맞는 것으로 보이는 이빨 자국도 발견됐습니다.",
+      "keywords": [
+        "Ashfall Fossil Beds rhino skeleton",
+        "fossil bone bite marks prehistoric predator",
+        "Nebraska Ashfall fossil rhino horse camel"
+      ]
+    },
+    {
+      "type": "fact",
+      "title": "그런데 정작 뼈는 없었다",
+      "narration": "흥미로운 점은 발자국과 먹이 흔적은 남아 있는데 정작 보로파기네의 골격은 이곳에서 발견되지 않았다는 겁니다.",
+      "keywords": [
+        "Ashfall Fossil Beds excavation Nebraska",
+        "prehistoric animal footprints fossil layer",
+        "paleontology dig fossil tracks"
+      ]
+    },
+    {
+      "type": "fact",
+      "title": "재난 뒤 찾아온 포식자였을까",
+      "narration": "연구진은 이들이 화산재에 갇힌 동물들이 죽은 뒤 현장에 나타나 사체를 먹고, 자신들은 재난 지역을 빠져나갔을 가능성을 생각하고 있습니다.",
+      "keywords": [
+        "prehistoric scavenger dog reconstruction",
+        "Miocene predator feeding fossil scene",
+        "Ashfall Fossil Beds prehistoric landscape"
+      ]
+    },
+    {
+      "type": "ending",
+      "title": "사라진 포식자는 흔적만 남겼다",
+      "narration": "1200만 년 전 포식자는 몸 대신 발자국과 이빨 자국만 남겼습니다. 작은 흔적 몇 개가 당시 먹이사슬을 다시 보여주고 있는 겁니다.",
+      "keywords": [
+        "prehistoric dog tracks fossil cinematic",
+        "Borophaginae ancient predator reconstruction",
+        "Ashfall Fossil Beds Nebraska landscape"
+      ]
+    }
+  ]
+}

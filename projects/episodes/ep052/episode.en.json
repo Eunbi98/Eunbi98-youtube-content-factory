@@ -1,0 +1,76 @@
+{
+  "version": "1.0",
+  "episodeId": "ep052",
+  "channel": "science",
+  "title": "A Real-Life Dragon Was Found in Thailand",
+  "voice": "en-US-JennyNeural",
+  "mediaSource": "mountain horned dragon Thailand lizard close up, Acanthosaura syrax, spiny lizard rainforest",
+  "theme": {
+    "backgroundColor": "#0B0D0C",
+    "titleColor": "#D8E9A8",
+    "captionColor": "#FFFFFF",
+    "accentColor": "#D8E9A8"
+  },
+  "scenes": [
+    {
+      "type": "hook",
+      "title": "A real-life dragon was found in Thailand",
+      "narration": "A new lizard species with horn-like spines along its neck and back has been discovered in the mountains of Thailand. Its appearance has already earned it comparisons to a real-life dragon.",
+      "keywords": [
+        "mountain horned dragon Thailand close up real photo",
+        "spiny lizard rainforest Thailand",
+        "horned lizard tropical forest macro"
+      ]
+    },
+    {
+      "type": "answer",
+      "title": "Its name is Acanthosaura syrax",
+      "narration": "The new species is called Acanthosaura syrax. Researchers identified it in high-elevation forests inside Mae Wong National Park in western Thailand.",
+      "keywords": [
+        "Acanthosaura syrax Thailand lizard",
+        "Mae Wong National Park lizard",
+        "mountain horned dragon real photo"
+      ]
+    },
+    {
+      "type": "story",
+      "title": "It lives above 1,300 meters",
+      "narration": "The lizard was found in evergreen forest more than about thirteen hundred meters above sea level. So far, it appears to live within a very narrow range in Thailand's mountain forests.",
+      "keywords": [
+        "Thailand mountain evergreen forest lizard",
+        "high elevation forest Thailand reptile",
+        "Acanthosaura forest branch close up"
+      ]
+    },
+    {
+      "type": "fact",
+      "title": "The spines are its standout feature",
+      "narration": "Mountain horned dragons are known for sharp crests that run along the neck and back. This species also has a yellowish body and distinctive spines that help separate it from its close relatives.",
+      "keywords": [
+        "mountain horned dragon spines close up",
+        "Acanthosaura lizard crest macro",
+        "spiny agamid lizard Thailand"
+      ]
+    },
+    {
+      "type": "fact",
+      "title": "Even its name comes from a dragon",
+      "narration": "Researchers named the species syrax after Syrax, the dragon from House of the Dragon. The name fits an animal that already looks like something from fantasy.",
+      "keywords": [
+        "horned dragon lizard portrait",
+        "yellow mountain horned dragon close up",
+        "fantasy looking lizard real animal"
+      ]
+    },
+    {
+      "type": "ending",
+      "title": "This tiny dragon may help protect its forest",
+      "narration": "Because the species seems limited to a small area of high mountain forest, habitat changes could threaten it. Researchers hope this tiny dragon can become a symbol for protecting its rare ecosystem.",
+      "keywords": [
+        "mountain horned dragon conservation Thailand",
+        "lizard rainforest conservation real photo",
+        "Thailand forest reptile cinematic close up"
+      ]
+    }
+  ]
+}

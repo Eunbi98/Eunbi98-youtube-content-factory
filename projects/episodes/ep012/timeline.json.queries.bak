@@ -1,0 +1,217 @@
+{
+  "version": "6.5",
+  "episodeId": "EP012",
+  "title": "지구에서 가장 조용한\n장소",
+  "fps": 30,
+  "width": 1080,
+  "height": 1920,
+  "totalDuration": 29.2,
+  "theme": {
+    "backgroundColor": "#000000",
+    "titleColor": "#7CFFB2",
+    "captionColor": "#FFFFFF",
+    "accentColor": "#7CFFB2"
+  },
+  "scenes": [
+    {
+      "id": "scene_001",
+      "start": 0.0,
+      "duration": 4.733,
+      "title": "지구에서 가장 조용한\n곳에서는?",
+      "narration": "지구에서 가장 조용한 곳에 들어가면 무슨 소리가 들릴까요?",
+      "caption": "지구에서 가장 조용한 곳에 들어가면 무슨 소리가 들릴까요?",
+      "backgroundColor": "#14202B",
+      "keywords": [
+        "silent room",
+        "quiet room",
+        "silent room wide view",
+        "silent room landscape",
+        "quiet room wide view",
+        "quiet room landscape",
+        "silent room close up",
+        "silent room detailed view"
+      ],
+      "media": {
+        "type": "image",
+        "fit": "cover",
+        "position": "center center",
+        "src": "ep012/scene_001.jpg",
+        "keywords": [
+          "silent room",
+          "quiet room",
+          "silent room wide view",
+          "silent room landscape",
+          "quiet room wide view",
+          "quiet room landscape",
+          "silent room close up",
+          "silent room detailed view"
+        ]
+      },
+      "cameraMotion": "zoom_in",
+      "transition": "fade",
+      "transitionDuration": 0.3,
+      "overlay": "cinematic",
+      "overlayOpacity": 1.0
+    },
+    {
+      "id": "scene_002",
+      "start": 4.733,
+      "duration": 4.833,
+      "title": "미국의 특별한\n무향실",
+      "narration": "정답은 미국 오르필드 연구소에 있는 특별한 무향실입니다.",
+      "caption": "정답은 미국 오르필드 연구소에 있는 특별한 무향실입니다.",
+      "backgroundColor": "#223748",
+      "keywords": [
+        "anechoic chamber",
+        "soundproof room",
+        "anechoic chamber wide view",
+        "anechoic chamber landscape",
+        "soundproof room wide view",
+        "soundproof room landscape",
+        "anechoic chamber close up",
+        "anechoic chamber detailed view"
+      ],
+      "media": {
+        "type": "image",
+        "fit": "cover",
+        "position": "center center",
+        "src": "ep012/scene_002.jpg",
+        "keywords": [
+          "anechoic chamber",
+          "soundproof room",
+          "anechoic chamber wide view",
+          "anechoic chamber landscape",
+          "soundproof room wide view",
+          "soundproof room landscape",
+          "anechoic chamber close up",
+          "anechoic chamber detailed view"
+        ]
+      },
+      "cameraMotion": "pan_right",
+      "transition": "cut",
+      "transitionDuration": 0.2,
+      "overlay": "cinematic",
+      "overlayOpacity": 1.0
+    },
+    {
+      "id": "scene_003",
+      "start": 9.566,
+      "duration": 5.567,
+      "title": "마이너스 24.9\n데시벨",
+      "narration": "이곳의 배경 소음은 마이너스 24.9데시벨로 측정됐습니다.",
+      "caption": "이곳의 배경 소음은 마이너스 24.9데시벨로 측정됐습니다.",
+      "backgroundColor": "#314A5D",
+      "keywords": [
+        "sound absorbing wall",
+        "acoustic foam",
+        "sound absorbing wall wide view",
+        "sound absorbing wall landscape",
+        "acoustic foam wide view",
+        "acoustic foam landscape",
+        "sound absorbing wall close up",
+        "sound absorbing wall detailed view"
+      ],
+      "media": {
+        "type": "image",
+        "fit": "cover",
+        "position": "center center",
+        "src": "ep012/scene_003.jpg",
+        "keywords": [
+          "sound absorbing wall",
+          "acoustic foam",
+          "sound absorbing wall wide view",
+          "sound absorbing wall landscape",
+          "acoustic foam wide view",
+          "acoustic foam landscape",
+          "sound absorbing wall close up",
+          "sound absorbing wall detailed view"
+        ]
+      },
+      "cameraMotion": "pan_left",
+      "transition": "fade",
+      "transitionDuration": 0.3,
+      "overlay": "cinematic",
+      "overlayOpacity": 1.0
+    },
+    {
+      "id": "scene_004",
+      "start": 15.133,
+      "duration": 7.067,
+      "title": "몸속 소리가\n들리기 시작합니다",
+      "narration": "주변 소리가 사라지면 심장박동과 호흡처럼 평소에는 묻히던 몸의 소리가 들리기 시작합니다.",
+      "caption": "주변 소리가 사라지면 심장박동과 호흡처럼 평소에는 묻히던 몸의 소리가 들리기 시작합니다.",
+      "backgroundColor": "#1C3040",
+      "keywords": [
+        "human breathing",
+        "person listening",
+        "human breathing wide view",
+        "human breathing landscape",
+        "person listening wide view",
+        "person listening landscape",
+        "human breathing close up",
+        "human breathing detailed view"
+      ],
+      "media": {
+        "type": "image",
+        "fit": "cover",
+        "position": "center center",
+        "src": "ep012/scene_004.jpg",
+        "keywords": [
+          "human breathing",
+          "person listening",
+          "human breathing wide view",
+          "human breathing landscape",
+          "person listening wide view",
+          "person listening landscape",
+          "human breathing close up",
+          "human breathing detailed view"
+        ]
+      },
+      "cameraMotion": "zoom_in_right",
+      "transition": "slide_left",
+      "transitionDuration": 0.3,
+      "overlay": "vignette",
+      "overlayOpacity": 1.0
+    },
+    {
+      "id": "scene_005",
+      "start": 22.2,
+      "duration": 7.0,
+      "title": "여러분은 얼마나\n머물 수 있나요?",
+      "narration": "완벽한 침묵 속에서 들리는 것은 결국 자기 몸의 소리입니다. 여러분은 얼마나 오래 머물 수 있을까요?",
+      "caption": "완벽한 침묵 속에서 들리는 것은 결국 자기 몸의 소리입니다. 여러분은 얼마나 오래 머물 수 있을까요?",
+      "backgroundColor": "#101820",
+      "keywords": [
+        "person alone room",
+        "person silence",
+        "person alone room wide view",
+        "person alone room landscape",
+        "person silence wide view",
+        "person silence landscape",
+        "person alone room close up",
+        "person alone room detailed view"
+      ],
+      "media": {
+        "type": "image",
+        "fit": "cover",
+        "position": "center center",
+        "src": "ep012/scene_005.jpg",
+        "keywords": [
+          "person alone room",
+          "person silence",
+          "person alone room wide view",
+          "person alone room landscape",
+          "person silence wide view",
+          "person silence landscape",
+          "person alone room close up",
+          "person alone room detailed view"
+        ]
+      },
+      "cameraMotion": "zoom_out",
+      "transition": "fade",
+      "transitionDuration": 0.35,
+      "overlay": "dark",
+      "overlayOpacity": 1.0
+    }
+  ]
+}

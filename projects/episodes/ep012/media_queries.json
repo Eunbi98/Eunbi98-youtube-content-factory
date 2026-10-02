@@ -1,0 +1,437 @@
+{
+  "version": "2.0",
+  "episodeId": "ep012",
+  "timelinePath": "C:\\Users\\qkrdm\\OneDrive\\바탕 화면\\youtube-content-factory\\projects\\episodes\\ep012\\timeline.json",
+  "sceneCount": 5,
+  "scenes": [
+    {
+      "sceneId": "scene_001",
+      "title": "지구에서 가장 조용한 곳에서는",
+      "narration": "지구에서 가장 조용한 곳은 어디일까요",
+      "sourceKeywords": [
+        "silent room",
+        "quiet room",
+        "silent room wide view",
+        "silent room landscape",
+        "quiet room wide view",
+        "quiet room landscape",
+        "silent room close up",
+        "silent room detailed view",
+        "quiet room close up",
+        "quiet room detailed view"
+      ],
+      "entities": [
+        "silent room quiet room silent room wide view",
+        "view quiet room landscape silent room close up",
+        "room close up quiet room detailed view"
+      ],
+      "primaryQuery": "silent room",
+      "queries": [
+        {
+          "query": "silent room",
+          "intent": "primary",
+          "priority": 1,
+          "mediaKind": "any"
+        },
+        {
+          "query": "quiet room",
+          "intent": "primary",
+          "priority": 2,
+          "mediaKind": "any"
+        },
+        {
+          "query": "silent room wide view",
+          "intent": "wide",
+          "priority": 3,
+          "mediaKind": "any"
+        },
+        {
+          "query": "quiet room wide view",
+          "intent": "wide",
+          "priority": 4,
+          "mediaKind": "any"
+        },
+        {
+          "query": "silent room close up",
+          "intent": "detail",
+          "priority": 5,
+          "mediaKind": "any"
+        },
+        {
+          "query": "silent room detailed view",
+          "intent": "detail",
+          "priority": 6,
+          "mediaKind": "any"
+        },
+        {
+          "query": "quiet room close up",
+          "intent": "detail",
+          "priority": 7,
+          "mediaKind": "any"
+        },
+        {
+          "query": "quiet room detailed view",
+          "intent": "detail",
+          "priority": 8,
+          "mediaKind": "any"
+        },
+        {
+          "query": "silent room landscape",
+          "intent": "wide",
+          "priority": 9,
+          "mediaKind": "any"
+        },
+        {
+          "query": "quiet room landscape",
+          "intent": "wide",
+          "priority": 10,
+          "mediaKind": "any"
+        }
+      ]
+    },
+    {
+      "sceneId": "scene_002",
+      "title": "미국의 특별한 무향실",
+      "narration": "정답은 미국 오르필드 연구소에 있는 특별한 무향실입니다.",
+      "sourceKeywords": [
+        "anechoic chamber",
+        "soundproof room",
+        "anechoic chamber wide view",
+        "anechoic chamber landscape",
+        "soundproof room wide view",
+        "soundproof room landscape",
+        "anechoic chamber close up",
+        "anechoic chamber detailed view",
+        "soundproof room close up",
+        "soundproof room detailed view"
+      ],
+      "entities": [
+        "anechoic chamber soundproof room anechoic chamber wide view",
+        "scape soundproof room wide view soundproof room landscape",
+        "up anechoic chamber detailed view soundproof room close",
+        "ed view"
+      ],
+      "primaryQuery": "anechoic chamber",
+      "queries": [
+        {
+          "query": "anechoic chamber",
+          "intent": "primary",
+          "priority": 1,
+          "mediaKind": "any"
+        },
+        {
+          "query": "soundproof room",
+          "intent": "primary",
+          "priority": 2,
+          "mediaKind": "any"
+        },
+        {
+          "query": "anechoic chamber wide view",
+          "intent": "wide",
+          "priority": 3,
+          "mediaKind": "any"
+        },
+        {
+          "query": "soundproof room wide view",
+          "intent": "wide",
+          "priority": 4,
+          "mediaKind": "any"
+        },
+        {
+          "query": "anechoic chamber close up",
+          "intent": "detail",
+          "priority": 5,
+          "mediaKind": "any"
+        },
+        {
+          "query": "anechoic chamber detailed view",
+          "intent": "detail",
+          "priority": 6,
+          "mediaKind": "any"
+        },
+        {
+          "query": "soundproof room close up",
+          "intent": "detail",
+          "priority": 7,
+          "mediaKind": "any"
+        },
+        {
+          "query": "soundproof room detailed view",
+          "intent": "detail",
+          "priority": 8,
+          "mediaKind": "any"
+        },
+        {
+          "query": "anechoic chamber landscape",
+          "intent": "wide",
+          "priority": 9,
+          "mediaKind": "any"
+        },
+        {
+          "query": "soundproof room landscape",
+          "intent": "wide",
+          "priority": 10,
+          "mediaKind": "any"
+        }
+      ]
+    },
+    {
+      "sceneId": "scene_003",
+      "title": "마이너스 24.9 데시벨",
+      "narration": "이곳의 배경 소음은 마이너스 24.9데시벨로 측정됐습니다.",
+      "sourceKeywords": [
+        "sound absorbing wall",
+        "acoustic foam",
+        "sound absorbing wall wide view",
+        "sound absorbing wall landscape",
+        "acoustic foam wide view",
+        "acoustic foam landscape",
+        "sound absorbing wall close up",
+        "sound absorbing wall detailed view",
+        "acoustic foam close up",
+        "acoustic foam detailed view"
+      ],
+      "entities": [
+        "sound absorbing wall acoustic foam sound absorbing wall",
+        "wall landscape acoustic foam wide view acoustic foam",
+        "ll close up sound absorbing wall detailed view",
+        "am detailed view"
+      ],
+      "primaryQuery": "sound absorbing wall",
+      "queries": [
+        {
+          "query": "sound absorbing wall",
+          "intent": "primary",
+          "priority": 1,
+          "mediaKind": "any"
+        },
+        {
+          "query": "acoustic foam",
+          "intent": "primary",
+          "priority": 2,
+          "mediaKind": "any"
+        },
+        {
+          "query": "sound absorbing wall wide view",
+          "intent": "wide",
+          "priority": 3,
+          "mediaKind": "any"
+        },
+        {
+          "query": "sound absorbing wall close up",
+          "intent": "detail",
+          "priority": 4,
+          "mediaKind": "any"
+        },
+        {
+          "query": "sound absorbing wall detailed view",
+          "intent": "detail",
+          "priority": 5,
+          "mediaKind": "any"
+        },
+        {
+          "query": "sound absorbing wall landscape",
+          "intent": "wide",
+          "priority": 6,
+          "mediaKind": "any"
+        },
+        {
+          "query": "acoustic foam wide view",
+          "intent": "wide",
+          "priority": 7,
+          "mediaKind": "any"
+        },
+        {
+          "query": "acoustic foam close up",
+          "intent": "detail",
+          "priority": 8,
+          "mediaKind": "any"
+        },
+        {
+          "query": "acoustic foam detailed view",
+          "intent": "detail",
+          "priority": 9,
+          "mediaKind": "any"
+        },
+        {
+          "query": "acoustic foam landscape",
+          "intent": "wide",
+          "priority": 10,
+          "mediaKind": "any"
+        }
+      ]
+    },
+    {
+      "sceneId": "scene_004",
+      "title": "몸속 소리가 들리기 시작합니다",
+      "narration": "주변 소리가 사라지면 심장박동과 호흡처럼 평소에는 묻히던 몸의 소리가 들리기 시작합니다.",
+      "sourceKeywords": [
+        "human breathing",
+        "person listening",
+        "human breathing wide view",
+        "human breathing landscape",
+        "person listening wide view",
+        "person listening landscape",
+        "human breathing close up",
+        "human breathing detailed view",
+        "person listening close up",
+        "person listening detailed view"
+      ],
+      "entities": [
+        "human breathing person listening human breathing wide view",
+        "ape person listening wide view person listening landscape",
+        "human breathing detailed view person listening close up",
+        "ed view"
+      ],
+      "primaryQuery": "human breathing",
+      "queries": [
+        {
+          "query": "human breathing",
+          "intent": "primary",
+          "priority": 1,
+          "mediaKind": "any"
+        },
+        {
+          "query": "person listening",
+          "intent": "primary",
+          "priority": 2,
+          "mediaKind": "any"
+        },
+        {
+          "query": "human breathing wide view",
+          "intent": "wide",
+          "priority": 3,
+          "mediaKind": "any"
+        },
+        {
+          "query": "person listening wide view",
+          "intent": "wide",
+          "priority": 4,
+          "mediaKind": "any"
+        },
+        {
+          "query": "human breathing close up",
+          "intent": "detail",
+          "priority": 5,
+          "mediaKind": "any"
+        },
+        {
+          "query": "human breathing detailed view",
+          "intent": "detail",
+          "priority": 6,
+          "mediaKind": "any"
+        },
+        {
+          "query": "person listening close up",
+          "intent": "detail",
+          "priority": 7,
+          "mediaKind": "any"
+        },
+        {
+          "query": "person listening detailed view",
+          "intent": "detail",
+          "priority": 8,
+          "mediaKind": "any"
+        },
+        {
+          "query": "human breathing landscape",
+          "intent": "wide",
+          "priority": 9,
+          "mediaKind": "any"
+        },
+        {
+          "query": "person listening landscape",
+          "intent": "wide",
+          "priority": 10,
+          "mediaKind": "any"
+        }
+      ]
+    },
+    {
+      "sceneId": "scene_005",
+      "title": "여러분은 얼마나 머물 수 있나요",
+      "narration": "완벽한 침묵 속에서 들리는 것은 결국 자기 몸의 소리입니다. 여러분은 얼마나 오래 머물 수 있을까요",
+      "sourceKeywords": [
+        "person alone room",
+        "person silence",
+        "person alone room wide view",
+        "person alone room landscape",
+        "person silence wide view",
+        "person silence landscape",
+        "person alone room close up",
+        "person alone room detailed view",
+        "person silence close up",
+        "person silence detailed view"
+      ],
+      "entities": [
+        "person alone room person silence person alone room",
+        "ndscape person silence wide view person silence landscape",
+        "up person alone room detailed view person silence",
+        "view"
+      ],
+      "primaryQuery": "person alone room",
+      "queries": [
+        {
+          "query": "person alone room",
+          "intent": "primary",
+          "priority": 1,
+          "mediaKind": "any"
+        },
+        {
+          "query": "person silence",
+          "intent": "primary",
+          "priority": 2,
+          "mediaKind": "any"
+        },
+        {
+          "query": "person alone room wide view",
+          "intent": "wide",
+          "priority": 3,
+          "mediaKind": "any"
+        },
+        {
+          "query": "person alone room close up",
+          "intent": "detail",
+          "priority": 4,
+          "mediaKind": "any"
+        },
+        {
+          "query": "person alone room detailed view",
+          "intent": "detail",
+          "priority": 5,
+          "mediaKind": "any"
+        },
+        {
+          "query": "person alone room landscape",
+          "intent": "wide",
+          "priority": 6,
+          "mediaKind": "any"
+        },
+        {
+          "query": "person silence wide view",
+          "intent": "wide",
+          "priority": 7,
+          "mediaKind": "any"
+        },
+        {
+          "query": "person silence close up",
+          "intent": "detail",
+          "priority": 8,
+          "mediaKind": "any"
+        },
+        {
+          "query": "person silence detailed view",
+          "intent": "detail",
+          "priority": 9,
+          "mediaKind": "any"
+        },
+        {
+          "query": "person silence landscape",
+          "intent": "wide",
+          "priority": 10,
+          "mediaKind": "any"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "version":"1.0","episodeId":"ep067","channel":"science","title":"지금까지 없던 수수께끼 X선 천체가 발견됐다","voice":"ko-KR-SunHiNeural","mediaSource":"Chandra mysterious X-ray objects ultraviolet galaxies 2026 NASA","theme":{"backgroundColor":"#090B12","titleColor":"#C7DBFF","captionColor":"#FFFFFF","accentColor":"#C7DBFF"},"scenes":[
+    {"type":"hook","title":"천문학자들이 처음 보는 천체가 나타났다","narration":"NASA 찬드라 X선 우주망원경이 기존 분류로 설명하기 어려운 새로운 종류의 천체들을 발견했습니다.","keywords":["Chandra mysterious X-ray objects NASA 2026","galaxy X-ray sources Chandra","NASA Chandra galaxy image"]},
+    {"type":"answer","title":"X선은 약한데 자외선은 매우 강했다","narration":"이 천체들은 예상보다 낮은 에너지의 X선을 내면서도 자외선에서는 매우 밝게 빛나는 특이한 조합을 보였습니다.","keywords":["X-ray ultraviolet astronomy illustration","Chandra ultraviolet galaxy source","mysterious compact object astronomy"]},
+    {"type":"story","title":"한두 개가 아니라 여러 은하에서 나왔다","narration":"연구진은 M101을 포함한 여러 은하에서 비슷하게 행동하는 천체들을 확인해 우연한 한 사례가 아니라 새로운 집단일 가능성을 제시했습니다.","keywords":["M101 Chandra X-ray NASA","Pinwheel Galaxy Chandra","galaxy compact X-ray sources"]},
+    {"type":"fact","title":"정체는 아직 확정되지 않았다","narration":"백색왜성이나 중성자별 같은 천체가 관련됐을 가능성이 있지만 현재 모델만으로는 관측 특징을 완전히 설명하지 못합니다.","keywords":["white dwarf neutron star illustration","compact star X-ray concept","NASA stellar remnant illustration"]},
+    {"type":"fact","title":"두 오래된 우주 미스터리와 연결될 수도","narration":"연구진은 이 천체들이 특정 은하의 강한 자외선과 특이한 X선 방출을 동시에 설명하는 실마리가 될 수 있다고 보고 있습니다.","keywords":["ultraviolet galaxy astronomy","X-ray galaxy science","Chandra deep space observation"]},
+    {"type":"ending","title":"우주에는 아직 이름도 없는 천체가 있다","narration":"천문학자들이 이미 많은 천체를 분류했지만 이번 발견은 기존 목록에 없는 새로운 부류가 아직 남아 있음을 보여줍니다.","keywords":["Chandra space telescope illustration","mysterious galaxy object","deep space X-ray astronomy"]}
+  ]
+}

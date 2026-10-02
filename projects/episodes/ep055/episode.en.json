@@ -1,0 +1,76 @@
+{
+  "version": "1.0",
+  "episodeId": "ep055",
+  "channel": "history",
+  "title": "A 2,000-Year-Old Gold Ring in Thailand Had an Indian Inscription",
+  "voice": "en-US-JennyNeural",
+  "mediaSource": "ancient gold ring Brahmi inscription Thailand burial archaeology trade network India Southeast Asia",
+  "theme": {
+    "backgroundColor": "#0D0A07",
+    "titleColor": "#F2D37A",
+    "captionColor": "#FFFFFF",
+    "accentColor": "#F2D37A"
+  },
+  "scenes": [
+    {
+      "type": "hook",
+      "title": "An Indian inscription was found in a Thai grave",
+      "narration": "A gold ring found in a roughly 2,000-year-old grave in Thailand carried a surprise. Its inscription was written not in a local script, but in ancient Indian Brahmi.",
+      "keywords": [
+        "ancient gold ring archaeology Thailand",
+        "Brahmi inscription gold ring",
+        "archaeological gold ring close up"
+      ]
+    },
+    {
+      "type": "answer",
+      "title": "It came from the Don Yai Thong site",
+      "narration": "The ring was uncovered at a burial site called Don Yai Thong in Thailand's Phetchaburi Province. Other ornaments and traces of long-distance exchange were found in the area as well.",
+      "keywords": [
+        "Thailand archaeological burial excavation",
+        "Phetchaburi archaeology site Thailand",
+        "ancient burial excavation Southeast Asia"
+      ]
+    },
+    {
+      "type": "story",
+      "title": "The inscription may identify its owner",
+      "narration": "The Brahmi inscription reads pusarakhitasa, interpreted as meaning a person protected by Pushya. It may have functioned like a personal name or identifying phrase.",
+      "keywords": [
+        "Brahmi inscription ancient India script",
+        "ancient Indian writing inscription close up",
+        "gold ring inscription archaeology"
+      ]
+    },
+    {
+      "type": "fact",
+      "title": "Ancient Thailand was already connected internationally",
+      "narration": "Researchers say the find supports evidence that communities in this part of Thailand were linked to trade networks stretching between India and Vietnam around 2,000 years ago.",
+      "keywords": [
+        "ancient trade route India Southeast Asia map",
+        "ancient maritime trade Southeast Asia",
+        "archaeology ancient trade network"
+      ]
+    },
+    {
+      "type": "fact",
+      "title": "Its owner may have been connected to trade",
+      "narration": "Experts have suggested that the ring's owner may have belonged to a merchant-related social group. That would fit with the broader evidence for active long-distance exchange in the region.",
+      "keywords": [
+        "ancient merchant India Southeast Asia artifact",
+        "ancient trade goods archaeology Thailand",
+        "gold jewelry ancient merchant archaeology"
+      ]
+    },
+    {
+      "type": "ending",
+      "title": "One tiny ring reveals an ancient network",
+      "narration": "Modern borders make these places feel far apart, but people, goods, and ideas were already moving across South and Southeast Asia two millennia ago. One small ring preserves that connection.",
+      "keywords": [
+        "ancient gold ring museum close up",
+        "Southeast Asia ancient trade archaeology",
+        "ancient trade routes Asia historical map"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,491 @@
+{
+  "version": "2.0",
+  "episodeId": "ep010",
+  "timelinePath": "C:\\Users\\user\\Desktop\\Eunbi98-youtube-content-factory\\projects\\episodes\\ep010\\timeline.json",
+  "sceneCount": 5,
+  "scenes": [
+    {
+      "sceneId": "scene_001",
+      "title": "왜 이 나무들은 모두 휘어 있을까요",
+      "narration": "왜 이 숲의 나무들은 모두 같은 방향으로 휘어 있을까요",
+      "sourceKeywords": [
+        "Krzywy Las curved pine trees",
+        "crooked forest wide view",
+        "Krzywy Las curved pine trees wide view",
+        "Krzywy Las curved pine trees landscape",
+        "crooked forest wide view wide view",
+        "crooked forest wide view landscape",
+        "Krzywy Las curved pine trees close up",
+        "Krzywy Las curved pine trees detailed view",
+        "Krzywy Las curved pine trees landscape wide view",
+        "Krzywy Las curved pine trees landscape landscape",
+        "crooked forest wide view wide view wide view",
+        "crooked forest wide view wide view landscape",
+        "Krzywy Las curved pine trees landscape close up",
+        "Krzywy Las curved pine trees landscape detailed view",
+        "crooked forest wide view wide view close up",
+        "crooked forest wide view wide view detailed view",
+        "crooked forest"
+      ],
+      "entities": [
+        "Krzywy Las curved pine trees crooked forest wide",
+        "wide view Krzywy Las curved pine trees landscape",
+        "view crooked forest wide view landscape Krzywy Las",
+        "ywy Las curved pine trees detailed view Krzywy",
+        "de view Krzywy Las curved pine trees landscape",
+        "wide view wide view crooked forest wide view",
+        "pine trees landscape close up Krzywy Las curved",
+        "iew crooked forest wide view wide view close",
+        "detailed view crooked forest"
+      ],
+      "primaryQuery": "Krzywy Las curved pine trees",
+      "queries": [
+        {
+          "query": "Krzywy Las curved pine trees",
+          "intent": "primary",
+          "priority": 1,
+          "mediaKind": "any"
+        },
+        {
+          "query": "crooked forest",
+          "intent": "primary",
+          "priority": 2,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Krzywy Las curved pine trees landscape",
+          "intent": "wide",
+          "priority": 3,
+          "mediaKind": "any"
+        },
+        {
+          "query": "crooked forest wide view wide view",
+          "intent": "wide",
+          "priority": 4,
+          "mediaKind": "any"
+        },
+        {
+          "query": "crooked forest wide view landscape",
+          "intent": "wide",
+          "priority": 5,
+          "mediaKind": "any"
+        },
+        {
+          "query": "crooked forest wide view",
+          "intent": "wide",
+          "priority": 6,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Krzywy Las curved pine trees wide view",
+          "intent": "wide",
+          "priority": 7,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Krzywy Las curved pine trees close up",
+          "intent": "detail",
+          "priority": 8,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Krzywy Las curved pine trees detailed view",
+          "intent": "detail",
+          "priority": 9,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Krzywy Las curved pine trees landscape wide view",
+          "intent": "wide",
+          "priority": 10,
+          "mediaKind": "any"
+        }
+      ]
+    },
+    {
+      "sceneId": "scene_002",
+      "title": "폴란드의 휘어진 숲",
+      "narration": "이곳은 폴란드의 휘어진 숲입니다. 약 사백 그루의 소나무가 비슷한 모양으로 휘어 있습니다.",
+      "sourceKeywords": [
+        "curved pine trees Poland close up",
+        "Crooked Forest Gryfino Poland",
+        "curved pine trees Poland close up wide view",
+        "curved pine trees Poland close up landscape",
+        "Crooked Forest Gryfino Poland wide view",
+        "Crooked Forest Gryfino Poland landscape",
+        "curved pine trees Poland close up close up",
+        "curved pine trees Poland close up detailed view",
+        "Crooked Forest Gryfino Poland wide view wide view",
+        "Crooked Forest Gryfino Poland wide view landscape",
+        "Crooked Forest Gryfino Poland wide view close up",
+        "Crooked Forest Gryfino Poland wide view detailed view",
+        "curved pine trees Poland"
+      ],
+      "entities": [
+        "curved pine trees Poland close up Crooked Forest",
+        "Poland close up wide view curved pine trees",
+        "est Gryfino Poland wide view Crooked Forest Gryfino",
+        "trees Poland close up close up curved pine",
+        "ooked Forest Gryfino Poland wide view wide view",
+        "view landscape Crooked Forest Gryfino Poland wide view",
+        "Gryfino Poland wide view detailed view curved pine"
+      ],
+      "primaryQuery": "curved pine trees Poland",
+      "queries": [
+        {
+          "query": "curved pine trees Poland",
+          "intent": "primary",
+          "priority": 1,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Crooked Forest Gryfino Poland",
+          "intent": "primary",
+          "priority": 2,
+          "mediaKind": "any"
+        },
+        {
+          "query": "curved pine trees Poland close up",
+          "intent": "detail",
+          "priority": 3,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Crooked Forest Gryfino Poland wide view",
+          "intent": "wide",
+          "priority": 4,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Crooked Forest Gryfino Poland landscape",
+          "intent": "wide",
+          "priority": 5,
+          "mediaKind": "any"
+        },
+        {
+          "query": "curved pine trees Poland close up wide view",
+          "intent": "wide",
+          "priority": 6,
+          "mediaKind": "any"
+        },
+        {
+          "query": "curved pine trees Poland close up landscape",
+          "intent": "wide",
+          "priority": 7,
+          "mediaKind": "any"
+        },
+        {
+          "query": "curved pine trees Poland close up close up",
+          "intent": "detail",
+          "priority": 8,
+          "mediaKind": "any"
+        },
+        {
+          "query": "curved pine trees Poland close up detailed view",
+          "intent": "detail",
+          "priority": 9,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Crooked Forest Gryfino Poland wide view wide view",
+          "intent": "wide",
+          "priority": 10,
+          "mediaKind": "any"
+        }
+      ]
+    },
+    {
+      "sceneId": "scene_003",
+      "title": "사람이 일부러 구부렸을까",
+      "narration": "가장 유명한 가설은 사람이 곡선 목재를 얻기 위해 어린 나무를 일부러 구부렸다는 것입니다.",
+      "sourceKeywords": [
+        "Crooked Forest bent tree trunks",
+        "curved pine trunk Poland",
+        "Crooked Forest bent tree trunks wide view",
+        "Crooked Forest bent tree trunks landscape",
+        "curved pine trunk Poland wide view",
+        "curved pine trunk Poland landscape",
+        "Crooked Forest bent tree trunks close up",
+        "Crooked Forest bent tree trunks detailed view",
+        "Crooked Forest bent tree trunks landscape wide view",
+        "Crooked Forest bent tree trunks landscape landscape",
+        "curved pine trunk Poland wide view wide view",
+        "curved pine trunk Poland wide view landscape",
+        "Crooked Forest bent tree trunks landscape close up",
+        "Crooked Forest bent tree trunks landscape detailed view",
+        "curved pine trunk Poland wide view close up",
+        "curved pine trunk Poland wide view detailed view"
+      ],
+      "entities": [
+        "Crooked Forest bent tree trunks curved pine trunk",
+        "trunks wide view Crooked Forest bent tree trunks",
+        "nd wide view curved pine trunk Poland landscape",
+        "lose up Crooked Forest bent tree trunks detailed",
+        "unks landscape wide view Crooked Forest bent tree",
+        "ed pine trunk Poland wide view wide view",
+        "cape Crooked Forest bent tree trunks landscape close",
+        "trunks landscape detailed view curved pine trunk Poland",
+        "pine trunk Poland wide view detailed view"
+      ],
+      "primaryQuery": "Crooked Forest bent tree trunks",
+      "queries": [
+        {
+          "query": "Crooked Forest bent tree trunks",
+          "intent": "primary",
+          "priority": 1,
+          "mediaKind": "any"
+        },
+        {
+          "query": "curved pine trunk Poland",
+          "intent": "primary",
+          "priority": 2,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Crooked Forest bent tree trunks landscape",
+          "intent": "wide",
+          "priority": 3,
+          "mediaKind": "any"
+        },
+        {
+          "query": "curved pine trunk Poland wide view",
+          "intent": "wide",
+          "priority": 4,
+          "mediaKind": "any"
+        },
+        {
+          "query": "curved pine trunk Poland landscape",
+          "intent": "wide",
+          "priority": 5,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Crooked Forest bent tree trunks wide view",
+          "intent": "wide",
+          "priority": 6,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Crooked Forest bent tree trunks close up",
+          "intent": "detail",
+          "priority": 7,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Crooked Forest bent tree trunks detailed view",
+          "intent": "detail",
+          "priority": 8,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Crooked Forest bent tree trunks landscape wide view",
+          "intent": "wide",
+          "priority": 9,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Crooked Forest bent tree trunks landscape landscape",
+          "intent": "wide",
+          "priority": 10,
+          "mediaKind": "any"
+        }
+      ]
+    },
+    {
+      "sceneId": "scene_004",
+      "title": "다른 가설도 있지만 증거는 없습니다",
+      "narration": "폭설과 강한 바람 전쟁 당시 차량 때문이라는 주장도 있지만 확실한 증거는 없습니다.",
+      "sourceKeywords": [
+        "Crooked Forest winter Poland",
+        "Krzywy Las forest landscape",
+        "Crooked Forest winter Poland wide view",
+        "Crooked Forest winter Poland landscape",
+        "Krzywy Las forest landscape wide view",
+        "Krzywy Las forest landscape landscape",
+        "Crooked Forest winter Poland close up",
+        "Crooked Forest winter Poland detailed view",
+        "Crooked Forest winter Poland wide view wide view",
+        "Crooked Forest winter Poland wide view landscape",
+        "Krzywy Las forest landscape wide view wide view",
+        "Krzywy Las forest landscape wide view landscape",
+        "Crooked Forest winter Poland wide view close up",
+        "Crooked Forest winter Poland wide view detailed view",
+        "Krzywy Las forest landscape wide view close up",
+        "Krzywy Las forest landscape wide view detailed view",
+        "Krzywy Las forest"
+      ],
+      "entities": [
+        "Crooked Forest winter Poland Krzywy Las forest landscape",
+        "land wide view Crooked Forest winter Poland landscape",
+        "wide view Krzywy Las forest landscape landscape Crooked",
+        "up Crooked Forest winter Poland detailed view Crooked",
+        "view wide view Crooked Forest winter Poland wide",
+        "landscape wide view wide view Krzywy Las forest",
+        "oked Forest winter Poland wide view close up",
+        "ew detailed view Krzywy Las forest landscape wide",
+        "landscape wide view detailed view Krzywy Las forest"
+      ],
+      "primaryQuery": "Crooked Forest winter Poland",
+      "queries": [
+        {
+          "query": "Crooked Forest winter Poland",
+          "intent": "primary",
+          "priority": 1,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Krzywy Las forest",
+          "intent": "primary",
+          "priority": 2,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Crooked Forest winter Poland wide view",
+          "intent": "wide",
+          "priority": 3,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Krzywy Las forest landscape wide view",
+          "intent": "wide",
+          "priority": 4,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Crooked Forest winter Poland close up",
+          "intent": "detail",
+          "priority": 5,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Crooked Forest winter Poland detailed view",
+          "intent": "detail",
+          "priority": 6,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Crooked Forest winter Poland landscape",
+          "intent": "wide",
+          "priority": 7,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Krzywy Las forest landscape landscape",
+          "intent": "wide",
+          "priority": 8,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Krzywy Las forest landscape",
+          "intent": "wide",
+          "priority": 9,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Crooked Forest winter Poland wide view wide view",
+          "intent": "wide",
+          "priority": 10,
+          "mediaKind": "any"
+        }
+      ]
+    },
+    {
+      "sceneId": "scene_005",
+      "title": "아직 풀리지 않은 숲의 미스터리",
+      "narration": "정확한 원인은 아직 밝혀지지 않았습니다. 여러분은 사람이 만든 숲이라고 생각하시나요 자연이 만든 현상이라고 생각하시나요",
+      "sourceKeywords": [
+        "Crooked Forest Poland mysterious",
+        "Krzywy Las forest wide",
+        "Crooked Forest Poland mysterious wide view",
+        "Crooked Forest Poland mysterious landscape",
+        "Krzywy Las forest wide wide view",
+        "Krzywy Las forest wide landscape",
+        "Crooked Forest Poland mysterious close up",
+        "Crooked Forest Poland mysterious detailed view",
+        "Crooked Forest Poland mysterious wide view wide view",
+        "Crooked Forest Poland mysterious wide view landscape",
+        "Krzywy Las forest wide wide view wide view",
+        "Krzywy Las forest wide wide view landscape",
+        "Crooked Forest Poland mysterious wide view close up",
+        "Crooked Forest Poland mysterious wide view detailed view",
+        "Krzywy Las forest wide wide view close up",
+        "Krzywy Las forest wide wide view detailed view"
+      ],
+      "entities": [
+        "미스터리",
+        "Crooked Forest Poland mysterious Krzywy Las forest wide",
+        "terious wide view Crooked Forest Poland mysterious landscape",
+        "de wide view Krzywy Las forest wide landscape",
+        "ose up Crooked Forest Poland mysterious detailed view",
+        "rious wide view wide view Crooked Forest Poland",
+        "zywy Las forest wide wide view wide view",
+        "pe Crooked Forest Poland mysterious wide view close",
+        "erious wide view detailed view Krzywy Las forest",
+        "forest wide wide view detailed view"
+      ],
+      "primaryQuery": "Crooked Forest Poland mysterious",
+      "queries": [
+        {
+          "query": "Crooked Forest Poland mysterious",
+          "intent": "primary",
+          "priority": 1,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Krzywy Las forest wide",
+          "intent": "primary",
+          "priority": 2,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Crooked Forest Poland mysterious wide view",
+          "intent": "wide",
+          "priority": 3,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Krzywy Las forest wide wide view",
+          "intent": "wide",
+          "priority": 4,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Crooked Forest Poland mysterious close up",
+          "intent": "detail",
+          "priority": 5,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Crooked Forest Poland mysterious detailed view",
+          "intent": "detail",
+          "priority": 6,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Crooked Forest Poland mysterious landscape",
+          "intent": "wide",
+          "priority": 7,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Krzywy Las forest wide landscape",
+          "intent": "wide",
+          "priority": 8,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Crooked Forest Poland mysterious wide view wide view",
+          "intent": "wide",
+          "priority": 9,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Crooked Forest Poland mysterious wide view landscape",
+          "intent": "wide",
+          "priority": 10,
+          "mediaKind": "any"
+        }
+      ]
+    }
+  ]
+}

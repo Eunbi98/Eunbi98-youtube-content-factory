@@ -1,0 +1,217 @@
+{
+  "version": "6.5",
+  "episodeId": "EP024",
+  "title": "3000년이 지나도\n먹을 수 있는 음식",
+  "fps": 30,
+  "width": 1080,
+  "height": 1920,
+  "totalDuration": 27.4,
+  "theme": {
+    "backgroundColor": "#17212D",
+    "titleColor": "#7BFEB4",
+    "captionColor": "#FFFFFF",
+    "accentColor": "#7BFEB4"
+  },
+  "scenes": [
+    {
+      "id": "scene_001",
+      "start": 0.0,
+      "duration": 4.233,
+      "title": "3000년이 지나도\n먹을 수 있는 음식",
+      "narration": "3000년이 지나도 먹을 수 있는 음식이 있을까요?",
+      "caption": "3000년이 지나도 먹을 수 있는 음식이 있을까요?",
+      "backgroundColor": "#14202B",
+      "keywords": [
+        "golden honey macro",
+        "honey dripping slow motion",
+        "golden honey macro close up",
+        "golden honey macro wide view",
+        "golden honey macro landscape",
+        "honey dripping slow motion wide view",
+        "honey dripping slow motion landscape",
+        "golden honey macro detailed view"
+      ],
+      "media": {
+        "type": "image",
+        "fit": "cover",
+        "position": "center center",
+        "src": "ep024/scene_001.jpg",
+        "keywords": [
+          "golden honey macro",
+          "honey dripping slow motion",
+          "golden honey macro close up",
+          "golden honey macro wide view",
+          "golden honey macro landscape",
+          "honey dripping slow motion wide view",
+          "honey dripping slow motion landscape",
+          "golden honey macro detailed view"
+        ]
+      },
+      "cameraMotion": "zoom_in",
+      "transition": "fade",
+      "transitionDuration": 0.3,
+      "overlay": "cinematic",
+      "overlayOpacity": 1.0
+    },
+    {
+      "id": "scene_002",
+      "start": 4.233,
+      "duration": 4.0,
+      "title": "정답은 꿀",
+      "narration": "놀랍게도 있습니다. 바로 꿀입니다.",
+      "caption": "놀랍게도 있습니다. 바로 꿀입니다.",
+      "backgroundColor": "#223748",
+      "keywords": [
+        "pouring honey",
+        "glass jar honey",
+        "pouring honey close up",
+        "pouring honey wide view",
+        "pouring honey landscape",
+        "glass jar honey wide view",
+        "glass jar honey landscape",
+        "pouring honey detailed view"
+      ],
+      "media": {
+        "type": "image",
+        "fit": "cover",
+        "position": "center center",
+        "src": "ep024/scene_002.jpg",
+        "keywords": [
+          "pouring honey",
+          "glass jar honey",
+          "pouring honey close up",
+          "pouring honey wide view",
+          "pouring honey landscape",
+          "glass jar honey wide view",
+          "glass jar honey landscape",
+          "pouring honey detailed view"
+        ]
+      },
+      "cameraMotion": "pan_right",
+      "transition": "cut",
+      "transitionDuration": 0.2,
+      "overlay": "cinematic",
+      "overlayOpacity": 1.0
+    },
+    {
+      "id": "scene_003",
+      "start": 8.233,
+      "duration": 5.4,
+      "title": "고대 이집트의 꿀",
+      "narration": "고대 이집트 무덤에서는 수천 년이 지난 꿀이 발견된 적도 있습니다.",
+      "caption": "고대 이집트 무덤에서는 수천 년이 지난 꿀이 발견된 적도 있습니다.",
+      "backgroundColor": "#314A5D",
+      "keywords": [
+        "ancient egyptian tomb artifact",
+        "ancient egypt pottery jar",
+        "Egypt desert landscape",
+        "ancient egyptian tomb artifact wide view",
+        "ancient egyptian tomb artifact landscape",
+        "ancient egypt pottery jar wide view",
+        "ancient egypt pottery jar landscape",
+        "ancient egyptian tomb artifact close up"
+      ],
+      "media": {
+        "type": "image",
+        "fit": "cover",
+        "position": "center center",
+        "src": "ep024/scene_003.jpg",
+        "keywords": [
+          "ancient egyptian tomb artifact",
+          "ancient egypt pottery jar",
+          "Egypt desert landscape",
+          "ancient egyptian tomb artifact wide view",
+          "ancient egyptian tomb artifact landscape",
+          "ancient egypt pottery jar wide view",
+          "ancient egypt pottery jar landscape",
+          "ancient egyptian tomb artifact close up"
+        ]
+      },
+      "cameraMotion": "pan_left",
+      "transition": "fade",
+      "transitionDuration": 0.3,
+      "overlay": "cinematic",
+      "overlayOpacity": 1.0
+    },
+    {
+      "id": "scene_004",
+      "start": 13.633,
+      "duration": 6.767,
+      "title": "왜 썩지 않을까?",
+      "narration": "꿀은 수분이 매우 적고 산성이며 천연 항균 작용까지 있어 미생물이 번식하기 어렵습니다.",
+      "caption": "꿀은 수분이 매우 적고 산성이며 천연 항균 작용까지 있어 미생물이 번식하기 어렵습니다.",
+      "backgroundColor": "#1C3040",
+      "keywords": [
+        "bee honeycomb",
+        "honeycomb macro photography",
+        "bee honeycomb close up",
+        "bee honeycomb wide view",
+        "bee honeycomb landscape",
+        "honeycomb macro photography wide view",
+        "honeycomb macro photography landscape",
+        "bee honeycomb detailed view"
+      ],
+      "media": {
+        "type": "image",
+        "fit": "cover",
+        "position": "center center",
+        "src": "ep024/scene_004.jpg",
+        "keywords": [
+          "bee honeycomb",
+          "honeycomb macro photography",
+          "bee honeycomb close up",
+          "bee honeycomb wide view",
+          "bee honeycomb landscape",
+          "honeycomb macro photography wide view",
+          "honeycomb macro photography landscape",
+          "bee honeycomb detailed view"
+        ]
+      },
+      "cameraMotion": "zoom_in_right",
+      "transition": "slide_left",
+      "transitionDuration": 0.3,
+      "overlay": "vignette",
+      "overlayOpacity": 1.0
+    },
+    {
+      "id": "scene_005",
+      "start": 20.4,
+      "duration": 7.0,
+      "title": "상하지 않는 음식",
+      "narration": "그래서 제대로 밀봉해 보관한 꿀은 매우 오랫동안 유지될 수 있습니다. 여러분은 알고 계셨나요?",
+      "caption": "그래서 제대로 밀봉해 보관한 꿀은 매우 오랫동안 유지될 수 있습니다. 여러분은 알고 계셨나요?",
+      "backgroundColor": "#101820",
+      "keywords": [
+        "sealed honey jar sunlight",
+        "natural honey jar table",
+        "sealed honey jar sunlight wide view",
+        "sealed honey jar sunlight landscape",
+        "natural honey jar table wide view",
+        "natural honey jar table landscape",
+        "sealed honey jar sunlight close up",
+        "sealed honey jar sunlight detailed view"
+      ],
+      "media": {
+        "type": "image",
+        "fit": "cover",
+        "position": "center center",
+        "src": "ep024/scene_005.jpg",
+        "keywords": [
+          "sealed honey jar sunlight",
+          "natural honey jar table",
+          "sealed honey jar sunlight wide view",
+          "sealed honey jar sunlight landscape",
+          "natural honey jar table wide view",
+          "natural honey jar table landscape",
+          "sealed honey jar sunlight close up",
+          "sealed honey jar sunlight detailed view"
+        ]
+      },
+      "cameraMotion": "zoom_out",
+      "transition": "fade",
+      "transitionDuration": 0.35,
+      "overlay": "dark",
+      "overlayOpacity": 1.0
+    }
+  ]
+}

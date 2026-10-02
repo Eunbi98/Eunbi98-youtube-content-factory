@@ -1,0 +1,97 @@
+{
+  "episodeId": "ep024",
+  "title": "3000년이 지나도\n먹을 수 있는 음식",
+  "fps": 30,
+  "width": 1080,
+  "height": 1920,
+  "voice": null,
+  "bgm": null,
+  "theme": {
+    "backgroundColor": "#17212D",
+    "titleColor": "#7BFEB4",
+    "captionColor": "#FFFFFF",
+    "accentColor": "#7BFEB4"
+  },
+  "scenes": [
+    {
+      "type": "hook",
+      "title": "3000년이 지나도\n먹을 수 있는 음식",
+      "narration": "3000년이 지나도 먹을 수 있는 음식이 있을까요?",
+      "keywords": [
+        "golden honey macro close up",
+        "honey dripping slow motion",
+        "ancient preserved food"
+      ],
+      "media": {
+        "type": "image",
+        "src": "ep024/scene_001.jpg",
+        "fit": "cover",
+        "position": "center center"
+      }
+    },
+    {
+      "type": "answer",
+      "title": "정답은 꿀",
+      "narration": "놀랍게도 있습니다. 바로 꿀입니다.",
+      "keywords": [
+        "glass jar of honey",
+        "pouring honey close up",
+        "golden honey jar"
+      ],
+      "media": {
+        "type": "image",
+        "src": "ep024/scene_002.jpg",
+        "fit": "cover",
+        "position": "center center"
+      }
+    },
+    {
+      "type": "story",
+      "title": "고대 이집트의 꿀",
+      "narration": "고대 이집트 무덤에서는 수천 년이 지난 꿀이 발견된 적도 있습니다.",
+      "keywords": [
+        "ancient egyptian tomb artifact",
+        "ancient egypt pottery jar",
+        "egypt archaeological excavation"
+      ],
+      "media": {
+        "type": "image",
+        "src": "ep024/scene_003.jpg",
+        "fit": "cover",
+        "position": "center center"
+      }
+    },
+    {
+      "type": "fact",
+      "title": "왜 썩지 않을까?",
+      "narration": "꿀은 수분이 매우 적고 산성이며 천연 항균 작용까지 있어 미생물이 번식하기 어렵습니다.",
+      "keywords": [
+        "honeycomb macro photography",
+        "bee honeycomb close up",
+        "honey scientific background"
+      ],
+      "media": {
+        "type": "image",
+        "src": "ep024/scene_004.jpg",
+        "fit": "cover",
+        "position": "center center"
+      }
+    },
+    {
+      "type": "ending",
+      "title": "상하지 않는 음식",
+      "narration": "그래서 제대로 밀봉해 보관한 꿀은 매우 오랫동안 유지될 수 있습니다. 여러분은 알고 계셨나요?",
+      "keywords": [
+        "sealed honey jar sunlight",
+        "natural honey jar table",
+        "beekeeper holding honey"
+      ],
+      "media": {
+        "type": "image",
+        "src": "ep024/scene_005.jpg",
+        "fit": "cover",
+        "position": "center center"
+      }
+    }
+  ]
+}

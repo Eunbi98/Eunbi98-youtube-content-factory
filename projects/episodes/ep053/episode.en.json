@@ -1,0 +1,76 @@
+{
+  "version": "1.0",
+  "episodeId": "ep053",
+  "channel": "science",
+  "title": "The Bone-Crushing Dogs That Left Only Tracks",
+  "voice": "en-US-JennyNeural",
+  "mediaSource": "Ashfall Fossil Beds Nebraska prehistoric dog tracks, Borophaginae reconstruction, fossil rhino horse camel bones tooth marks",
+  "theme": {
+    "backgroundColor": "#0B0C0D",
+    "titleColor": "#E8D2A8",
+    "captionColor": "#FFFFFF",
+    "accentColor": "#E8D2A8"
+  },
+  "scenes": [
+    {
+      "type": "hook",
+      "title": "Tracks from 12 million years ago",
+      "narration": "At Nebraska's Ashfall Fossil Beds, researchers found tracks from a wolf-sized prehistoric predator. But this animal was no ordinary dog.",
+      "keywords": [
+        "Ashfall Fossil Beds animal tracks Nebraska",
+        "prehistoric canine footprints fossil",
+        "Borophaginae reconstruction prehistoric dog"
+      ]
+    },
+    {
+      "type": "answer",
+      "title": "They were called bone-crushing dogs",
+      "narration": "The likely track makers belonged to Borophaginae, an extinct branch of the dog family famous for powerful jaws and teeth built to crack bones.",
+      "keywords": [
+        "Borophaginae bone crushing dog reconstruction",
+        "prehistoric dog skull fossil",
+        "ancient canid powerful jaws illustration"
+      ]
+    },
+    {
+      "type": "story",
+      "title": "Their bite marks were there too",
+      "narration": "Scientists also found tooth marks on the bones of ancient rhinos, horses, and camels that appear to match these predators' teeth.",
+      "keywords": [
+        "Ashfall Fossil Beds rhino skeleton",
+        "fossil bone bite marks prehistoric predator",
+        "Nebraska Ashfall fossil rhino horse camel"
+      ]
+    },
+    {
+      "type": "fact",
+      "title": "But their skeletons are missing",
+      "narration": "The strange part is that tracks and feeding evidence are present, yet no Borophaginae skeletons have been found at the site.",
+      "keywords": [
+        "Ashfall Fossil Beds excavation Nebraska",
+        "prehistoric animal footprints fossil layer",
+        "paleontology dig fossil tracks"
+      ]
+    },
+    {
+      "type": "fact",
+      "title": "Did they arrive after the disaster?",
+      "narration": "Researchers think the predators may have reached the area after volcanic ash trapped other animals, fed on the carcasses, and then escaped before dying there themselves.",
+      "keywords": [
+        "prehistoric scavenger dog reconstruction",
+        "Miocene predator feeding fossil scene",
+        "Ashfall Fossil Beds prehistoric landscape"
+      ]
+    },
+    {
+      "type": "ending",
+      "title": "A predator known only by its traces",
+      "narration": "Twelve million years later, these predators may be telling their story through footprints and bite marks alone, revealing a lost food web without leaving a body behind.",
+      "keywords": [
+        "prehistoric dog tracks fossil cinematic",
+        "Borophaginae ancient predator reconstruction",
+        "Ashfall Fossil Beds Nebraska landscape"
+      ]
+    }
+  ]
+}

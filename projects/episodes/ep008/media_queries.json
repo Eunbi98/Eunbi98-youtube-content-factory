@@ -1,0 +1,425 @@
+{
+  "version": "2.0",
+  "episodeId": "ep008",
+  "timelinePath": "C:\\Users\\user\\Desktop\\Eunbi98-youtube-content-factory\\projects\\episodes\\ep008\\timeline.json",
+  "sceneCount": 5,
+  "scenes": [
+    {
+      "sceneId": "scene_001",
+      "title": "땅속에 도시 전체가 숨겨져 있다면",
+      "narration": "수백 년 동안 아무도 몰랐던 도시가 땅속에서 발견된다면 믿으시겠습니까",
+      "sourceKeywords": [
+        "lost underground city",
+        "ancient ruins mystery",
+        "lost underground city wide view",
+        "ancient ruins mystery wide view",
+        "lost underground city interior",
+        "lost underground city close up",
+        "ancient ruins mystery interior",
+        "ancient ruins mystery close up"
+      ],
+      "entities": [
+        "lost underground city ancient ruins mystery lost underground",
+        "nt ruins mystery wide view lost underground city",
+        "lose up ancient ruins mystery interior ancient ruins"
+      ],
+      "primaryQuery": "lost underground city wide view",
+      "queries": [
+        {
+          "query": "lost underground city wide view",
+          "intent": "primary",
+          "priority": 1,
+          "mediaKind": "any"
+        },
+        {
+          "query": "ancient ruins mystery wide view",
+          "intent": "primary",
+          "priority": 2,
+          "mediaKind": "any"
+        },
+        {
+          "query": "lost underground city wide view wide view",
+          "intent": "wide",
+          "priority": 3,
+          "mediaKind": "any"
+        },
+        {
+          "query": "lost underground city wide view landscape",
+          "intent": "wide",
+          "priority": 4,
+          "mediaKind": "any"
+        },
+        {
+          "query": "ancient ruins mystery wide view wide view",
+          "intent": "wide",
+          "priority": 5,
+          "mediaKind": "any"
+        },
+        {
+          "query": "ancient ruins mystery wide view landscape",
+          "intent": "wide",
+          "priority": 6,
+          "mediaKind": "any"
+        },
+        {
+          "query": "lost underground city wide view close up",
+          "intent": "detail",
+          "priority": 7,
+          "mediaKind": "any"
+        },
+        {
+          "query": "lost underground city wide view detailed view",
+          "intent": "detail",
+          "priority": 8,
+          "mediaKind": "any"
+        },
+        {
+          "query": "ancient ruins mystery wide view close up",
+          "intent": "detail",
+          "priority": 9,
+          "mediaKind": "any"
+        },
+        {
+          "query": "ancient ruins mystery wide view detailed view",
+          "intent": "detail",
+          "priority": 10,
+          "mediaKind": "any"
+        }
+      ]
+    },
+    {
+      "sceneId": "scene_002",
+      "title": "실제로 사라진 도시는 계속 발견됩니다",
+      "narration": "사막과 밀림 현대 도시 아래에서도 오랫동안 잊힌 유적이 발견되고 있습니다.",
+      "sourceKeywords": [
+        "archaeological discovery",
+        "buried ancient city",
+        "archaeological discovery wide view",
+        "buried ancient city wide view",
+        "archaeological discovery interior",
+        "archaeological discovery close up",
+        "buried ancient city interior",
+        "buried ancient city close up"
+      ],
+      "entities": [
+        "사막",
+        "유적",
+        "archaeological discovery buried ancient city archaeological discovery wide",
+        "uried ancient city wide view archaeological discovery interior",
+        "covery close up buried ancient city interior buried"
+      ],
+      "primaryQuery": "buried ancient city wide view",
+      "queries": [
+        {
+          "query": "buried ancient city wide view",
+          "intent": "primary",
+          "priority": 1,
+          "mediaKind": "any"
+        },
+        {
+          "query": "buried ancient city close up",
+          "intent": "primary",
+          "priority": 2,
+          "mediaKind": "any"
+        },
+        {
+          "query": "buried ancient city wide view wide view",
+          "intent": "wide",
+          "priority": 3,
+          "mediaKind": "any"
+        },
+        {
+          "query": "buried ancient city wide view landscape",
+          "intent": "wide",
+          "priority": 4,
+          "mediaKind": "any"
+        },
+        {
+          "query": "buried ancient city close up wide view",
+          "intent": "wide",
+          "priority": 5,
+          "mediaKind": "any"
+        },
+        {
+          "query": "buried ancient city close up landscape",
+          "intent": "wide",
+          "priority": 6,
+          "mediaKind": "any"
+        },
+        {
+          "query": "buried ancient city wide view close up",
+          "intent": "detail",
+          "priority": 7,
+          "mediaKind": "any"
+        },
+        {
+          "query": "buried ancient city wide view detailed view",
+          "intent": "detail",
+          "priority": 8,
+          "mediaKind": "any"
+        },
+        {
+          "query": "buried ancient city close up close up",
+          "intent": "detail",
+          "priority": 9,
+          "mediaKind": "any"
+        },
+        {
+          "query": "buried ancient city close up detailed view",
+          "intent": "detail",
+          "priority": 10,
+          "mediaKind": "any"
+        }
+      ]
+    },
+    {
+      "sceneId": "scene_003",
+      "title": "흙과 식물이 모든 흔적을 감춰 버립니다",
+      "narration": "도시가 버려진 뒤 오랜 시간이 지나면 건물은 무너지고 흙과 식물이 그 위를 덮습니다.",
+      "sourceKeywords": [
+        "ruins covered by jungle",
+        "lost city landscape",
+        "ruins covered by jungle wide view",
+        "lost city landscape wide view",
+        "ruins covered by jungle interior",
+        "ruins covered by jungle close up",
+        "lost city landscape interior",
+        "lost city landscape close up"
+      ],
+      "entities": [
+        "ruins covered jungle lost city landscape ruins covered",
+        "city landscape wide view ruins covered jungle interior",
+        "le close up lost city landscape interior lost"
+      ],
+      "primaryQuery": "ruins covered jungle wide view",
+      "queries": [
+        {
+          "query": "ruins covered jungle wide view",
+          "intent": "primary",
+          "priority": 1,
+          "mediaKind": "any"
+        },
+        {
+          "query": "lost city landscape wide view",
+          "intent": "primary",
+          "priority": 2,
+          "mediaKind": "any"
+        },
+        {
+          "query": "ruins covered jungle wide view wide view",
+          "intent": "wide",
+          "priority": 3,
+          "mediaKind": "any"
+        },
+        {
+          "query": "ruins covered jungle wide view landscape",
+          "intent": "wide",
+          "priority": 4,
+          "mediaKind": "any"
+        },
+        {
+          "query": "lost city landscape wide view wide view",
+          "intent": "wide",
+          "priority": 5,
+          "mediaKind": "any"
+        },
+        {
+          "query": "lost city landscape wide view landscape",
+          "intent": "wide",
+          "priority": 6,
+          "mediaKind": "any"
+        },
+        {
+          "query": "ruins covered jungle wide view close up",
+          "intent": "detail",
+          "priority": 7,
+          "mediaKind": "any"
+        },
+        {
+          "query": "ruins covered jungle wide view detailed view",
+          "intent": "detail",
+          "priority": 8,
+          "mediaKind": "any"
+        },
+        {
+          "query": "lost city landscape wide view close up",
+          "intent": "detail",
+          "priority": 9,
+          "mediaKind": "any"
+        },
+        {
+          "query": "lost city landscape wide view detailed view",
+          "intent": "detail",
+          "priority": 10,
+          "mediaKind": "any"
+        }
+      ]
+    },
+    {
+      "sceneId": "scene_004",
+      "title": "레이저는 숲 아래까지 볼 수 있습니다",
+      "narration": "최근에는 라이다라는 레이저 기술로 울창한 숲 아래 숨겨진 건물과 도로의 형태까지 찾아냅니다.",
+      "sourceKeywords": [
+        "lidar archaeology",
+        "jungle city scan",
+        "lidar archaeology wide view",
+        "jungle city scan wide view",
+        "lidar archaeology interior",
+        "lidar archaeology close up",
+        "jungle city scan interior",
+        "jungle city scan close up"
+      ],
+      "entities": [
+        "lidar archaeology jungle city scan lidar archaeology wide",
+        "ide view lidar archaeology interior lidar archaeology close",
+        "nterior jungle city scan close up"
+      ],
+      "primaryQuery": "jungle city scan wide view",
+      "queries": [
+        {
+          "query": "jungle city scan wide view",
+          "intent": "primary",
+          "priority": 1,
+          "mediaKind": "any"
+        },
+        {
+          "query": "jungle city scan close up",
+          "intent": "primary",
+          "priority": 2,
+          "mediaKind": "any"
+        },
+        {
+          "query": "jungle city scan wide view wide view",
+          "intent": "wide",
+          "priority": 3,
+          "mediaKind": "any"
+        },
+        {
+          "query": "jungle city scan wide view landscape",
+          "intent": "wide",
+          "priority": 4,
+          "mediaKind": "any"
+        },
+        {
+          "query": "jungle city scan close up wide view",
+          "intent": "wide",
+          "priority": 5,
+          "mediaKind": "any"
+        },
+        {
+          "query": "jungle city scan close up landscape",
+          "intent": "wide",
+          "priority": 6,
+          "mediaKind": "any"
+        },
+        {
+          "query": "jungle city scan wide view close up",
+          "intent": "detail",
+          "priority": 7,
+          "mediaKind": "any"
+        },
+        {
+          "query": "jungle city scan wide view detailed view",
+          "intent": "detail",
+          "priority": 8,
+          "mediaKind": "any"
+        },
+        {
+          "query": "jungle city scan close up close up",
+          "intent": "detail",
+          "priority": 9,
+          "mediaKind": "any"
+        },
+        {
+          "query": "jungle city scan close up detailed view",
+          "intent": "detail",
+          "priority": 10,
+          "mediaKind": "any"
+        }
+      ]
+    },
+    {
+      "sceneId": "scene_005",
+      "title": "아직 발견되지 않은 도시가 남아 있을지도 모릅니다",
+      "narration": "우리가 걷는 땅 아래에도 아직 발견되지 않은 역사가 숨어 있을지 모릅니다.",
+      "sourceKeywords": [
+        "hidden history",
+        "undiscovered ancient city",
+        "hidden history wide view",
+        "undiscovered ancient city wide view",
+        "hidden history interior",
+        "hidden history close up",
+        "undiscovered ancient city interior",
+        "undiscovered ancient city close up"
+      ],
+      "entities": [
+        "hidden history undiscovered ancient city hidden history wide",
+        "cient city wide view hidden history interior hidden",
+        "ancient city interior undiscovered ancient city close up"
+      ],
+      "primaryQuery": "undiscovered ancient city wide view",
+      "queries": [
+        {
+          "query": "undiscovered ancient city wide view",
+          "intent": "primary",
+          "priority": 1,
+          "mediaKind": "any"
+        },
+        {
+          "query": "undiscovered ancient city close up",
+          "intent": "primary",
+          "priority": 2,
+          "mediaKind": "any"
+        },
+        {
+          "query": "undiscovered ancient city wide view wide view",
+          "intent": "wide",
+          "priority": 3,
+          "mediaKind": "any"
+        },
+        {
+          "query": "undiscovered ancient city wide view landscape",
+          "intent": "wide",
+          "priority": 4,
+          "mediaKind": "any"
+        },
+        {
+          "query": "undiscovered ancient city close up wide view",
+          "intent": "wide",
+          "priority": 5,
+          "mediaKind": "any"
+        },
+        {
+          "query": "undiscovered ancient city close up landscape",
+          "intent": "wide",
+          "priority": 6,
+          "mediaKind": "any"
+        },
+        {
+          "query": "undiscovered ancient city wide view close up",
+          "intent": "detail",
+          "priority": 7,
+          "mediaKind": "any"
+        },
+        {
+          "query": "undiscovered ancient city wide view detailed view",
+          "intent": "detail",
+          "priority": 8,
+          "mediaKind": "any"
+        },
+        {
+          "query": "undiscovered ancient city close up close up",
+          "intent": "detail",
+          "priority": 9,
+          "mediaKind": "any"
+        },
+        {
+          "query": "undiscovered ancient city close up detailed view",
+          "intent": "detail",
+          "priority": 10,
+          "mediaKind": "any"
+        }
+      ]
+    }
+  ]
+}

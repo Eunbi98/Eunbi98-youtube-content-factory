@@ -1,0 +1,41 @@
+{
+  "source_id": "national_institute_korean_language",
+  "facts": [
+    {
+      "id": "korean_elementary_001",
+      "level": "elementary",
+      "category": "language",
+      "fact": "뜻이 서로 반대되는 단어의 관계를 반의 관계라고 한다.",
+      "answer": "반의 관계",
+      "explanation": "크다와 작다, 빠르다와 느리다처럼 뜻이 반대되는 단어가 이에 해당한다.",
+      "source_url": "https://www.korean.go.kr/",
+      "verified_at": "2026-07-14",
+      "evergreen": true,
+      "tags": ["korean", "antonym", "language"]
+    },
+    {
+      "id": "korean_middle_001",
+      "level": "middle",
+      "category": "language",
+      "fact": "문장에서 주어의 동작이나 상태를 풀이하는 중심 성분은 서술어이다.",
+      "answer": "서술어",
+      "explanation": "서술어는 동사, 형용사 또는 체언에 서술격 조사가 결합한 형태로 나타날 수 있다.",
+      "source_url": "https://www.korean.go.kr/",
+      "verified_at": "2026-07-14",
+      "evergreen": true,
+      "tags": ["predicate", "grammar", "korean"]
+    },
+    {
+      "id": "korean_high_001",
+      "level": "high",
+      "category": "language",
+      "fact": "두 개 이상의 형태소가 결합해 하나의 단어가 된 것을 복합어라고 한다.",
+      "answer": "복합어",
+      "explanation": "복합어는 어근끼리 결합한 합성어와 어근에 접사가 결합한 파생어로 나뉜다.",
+      "source_url": "https://www.korean.go.kr/",
+      "verified_at": "2026-07-14",
+      "evergreen": true,
+      "tags": ["morpheme", "compound", "grammar"]
+    }
+  ]
+}

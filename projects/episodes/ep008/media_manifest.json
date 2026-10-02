@@ -1,0 +1,52 @@
+{
+  "version": "1.2",
+  "episodeId": "ep008",
+  "providers": [
+    "wikimedia"
+  ],
+  "timelinePath": "C:\\Users\\user\\Desktop\\Eunbi98-youtube-content-factory\\projects\\episodes\\ep008\\timeline.json",
+  "assetsDirectory": "C:\\Users\\user\\Desktop\\Eunbi98-youtube-content-factory\\projects\\episodes\\ep008\\assets",
+  "collectedCount": 1,
+  "reusedCount": 0,
+  "sceneCount": 1,
+  "results": [
+    {
+      "sceneId": "scene_001",
+      "query": "ancient ruins mystery",
+      "searchedQueries": [
+        "lost underground city",
+        "ancient ruins mystery",
+        "lost underground city wide view",
+        "ancient ruins mystery wide view",
+        "lost underground city interior"
+      ],
+      "searchedProviders": [
+        "wikimedia"
+      ],
+      "candidateCount": 9,
+      "outputPath": "C:\\Users\\user\\Desktop\\Eunbi98-youtube-content-factory\\projects\\episodes\\ep008\\assets\\scene_001.jpg",
+      "reused": false,
+      "candidate": {
+        "provider": "wikimedia",
+        "mediaId": "101209830",
+        "mediaKind": "image",
+        "title": "Pompeii Ruins Villa of the Mysteries Fresco (48445480376)",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Pompeii_Ruins_Villa_of_the_Mysteries_Fresco_%2848445480376%29.jpg",
+        "downloadUrl": "https://upload.wikimedia.org/wikipedia/commons/4/4f/Pompeii_Ruins_Villa_of_the_Mysteries_Fresco_%2848445480376%29.jpg",
+        "thumbnailUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Pompeii_Ruins_Villa_of_the_Mysteries_Fresco_%2848445480376%29.jpg/1280px-Pompeii_Ruins_Villa_of_the_Mysteries_Fresco_%2848445480376%29.jpg",
+        "width": 4000,
+        "height": 6000,
+        "aspectRatio": 0.6667,
+        "orientation": "portrait",
+        "durationSeconds": null,
+        "author": "Gary Todd from Xinzheng, China",
+        "authorUrl": null,
+        "licenseName": "Public domain",
+        "licenseUrl": null,
+        "fileExtension": "jpg",
+        "fileSizeBytes": null,
+        "score": 136.0
+      }
+    }
+  ]
+}

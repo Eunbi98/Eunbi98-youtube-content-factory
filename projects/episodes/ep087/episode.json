@@ -1,0 +1,106 @@
+{
+  "version": "1.0",
+  "episodeId": "ep087",
+  "channel": "story",
+  "title": "오래된 집 벽 뒤에는 왜 숨겨진 통로가 있었을까?",
+  "voice": "ko-KR-SunHiNeural",
+  "mediaSource": "old house hidden passage architecture secret corridor mansion service passage",
+  "theme": {
+    "backgroundColor": "#11100E",
+    "titleColor": "#F0C879",
+    "captionColor": "#FFFFFF",
+    "accentColor": "#F0C879"
+  },
+  "scenes": [
+    {
+      "type": "hook",
+      "title": "벽 뒤에서 발견된 통로",
+      "narration": "오래된 집을 수리하다가 벽 뒤에서 좁은 통로가 발견되는 경우가 있습니다.",
+      "media": {
+        "type": "video",
+        "src": "ep087/scene_001.mp4",
+        "fit": "cover",
+        "position": "center center"
+      },
+      "keywords": [
+        "old house hidden passage renovation",
+        "secret corridor behind wall"
+      ]
+    },
+    {
+      "type": "story",
+      "title": "영화 같은 구조가 실제로 있었다",
+      "narration": "영화 같은 이야기 같지만, 이런 구조는 실제 오래된 건물에서 종종 볼 수 있는데요.",
+      "media": {
+        "type": "image",
+        "src": "ep087/scene_002.jpg",
+        "fit": "cover",
+        "position": "center center"
+      },
+      "keywords": [
+        "old house architectural cutaway hidden corridor",
+        "historic mansion secret passage"
+      ]
+    },
+    {
+      "type": "story",
+      "title": "비밀 공간처럼 보이지만",
+      "narration": "처음 보면 누군가 몰래 드나들기 위해 만든 비밀 공간처럼 느껴집니다.",
+      "media": {
+        "type": "image",
+        "src": "ep087/scene_003.jpg",
+        "fit": "cover",
+        "position": "center center"
+      },
+      "keywords": [
+        "hidden door narrow staircase old house",
+        "secret room architecture"
+      ]
+    },
+    {
+      "type": "fact",
+      "title": "이유는 훨씬 현실적이었다",
+      "narration": "하지만 대부분은 훨씬 현실적인 이유에서 만들어졌습니다.",
+      "media": {
+        "type": "video",
+        "src": "ep087/scene_004.mp4",
+        "fit": "cover",
+        "position": "center center"
+      },
+      "keywords": [
+        "mansion servant passage",
+        "hidden service corridor old mansion"
+      ]
+    },
+    {
+      "type": "fact",
+      "title": "하인과 설비를 위한 숨은 동선",
+      "narration": "과거 큰 집이나 저택에서는 하인들이 손님 눈에 띄지 않고 이동할 수 있도록 별도의 통로를 두기도 했고, 방 사이의 단열이나 배관, 난방 구조를 숨기기 위해 빈 공간을 남겨두기도 했습니다.",
+      "media": {
+        "type": "image",
+        "src": "ep087/scene_005.jpg",
+        "fit": "cover",
+        "position": "center center"
+      },
+      "keywords": [
+        "mansion servant corridor cutaway",
+        "old house pipes heating wall structure"
+      ]
+    },
+    {
+      "type": "ending",
+      "title": "과거 생활방식이 남긴 흔적",
+      "narration": "어떤 집은 비상시 피하거나 물건을 보관하기 위한 작은 숨은 공간도 있었죠. 그러니까 벽 뒤의 통로는 미스터리라기보다, 당시 사람들의 생활방식과 집의 구조가 남긴 흔적인 셈입니다.",
+      "media": {
+        "type": "image",
+        "src": "ep087/scene_006.jpg",
+        "fit": "cover",
+        "position": "center center"
+      },
+      "keywords": [
+        "old house hidden storage cutaway",
+        "historic architecture hidden spaces"
+      ]
+    }
+  ]
+}

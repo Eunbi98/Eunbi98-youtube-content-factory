@@ -1,0 +1,144 @@
+name: Find video topics
+
+on:
+  workflow_dispatch:
+    inputs:
+      category:
+        description: "Topic category"
+        required: true
+        default: "all"
+        type: choice
+        options:
+          - all
+          - mystery
+          - science
+          - history
+          - space
+      source_mode:
+        description: "Topic source mode"
+        required: true
+        default: "archive"
+        type: choice
+        options:
+          - mixed
+          - trend
+          - archive
+      limit:
+        description: "Candidate count (1-20)"
+        required: true
+        default: "5"
+        type: string
+  push:
+    branches:
+      - feature/release-5-director-engine
+    paths:
+      - ".github/workflows/find-topics.yml"
+      - "projects/topic/**"
+
+permissions:
+  contents: read
+
+jobs:
+  find-topics:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Install topic finder dependencies
+        run: python -m pip install -r requirements.txt
+
+      - name: Resolve inputs
+        id: inputs
+        shell: bash
+        env:
+          REQUESTED_CATEGORY: ${{ inputs.category }}
+          REQUESTED_SOURCE_MODE: ${{ inputs.source_mode }}
+          REQUESTED_LIMIT: ${{ inputs.limit }}
+        run: |
+          set -euo pipefail
+
+          category="${REQUESTED_CATEGORY:-all}"
+          source_mode="${REQUESTED_SOURCE_MODE:-archive}"
+          limit="${REQUESTED_LIMIT:-5}"
+
+          if [[ ! "$category" =~ ^(all|mystery|science|history|space)$ ]]; then
+            echo "Invalid category: $category" >&2
+            exit 2
+          fi
+
+          if [[ ! "$source_mode" =~ ^(mixed|trend|archive)$ ]]; then
+            echo "Invalid source mode: $source_mode" >&2
+            exit 2
+          fi
+
+          if [[ ! "$limit" =~ ^[0-9]+$ ]] || (( limit < 1 || limit > 20 )); then
+            echo "Invalid limit: $limit" >&2
+            exit 2
+          fi
+
+          echo "category=$category" >> "$GITHUB_OUTPUT"
+          echo "source_mode=$source_mode" >> "$GITHUB_OUTPUT"
+          echo "limit=$limit" >> "$GITHUB_OUTPUT"
+          # 최종 후보 5개를 억지로 채우지 않습니다. 대신 최대 20개를 먼저
+          # 실제 조사해 자료와 이미지가 가장 풍부한 후보만 승격합니다.
+          pool_limit=$(( limit * 4 ))
+          if (( pool_limit > 20 )); then pool_limit=20; fi
+          echo "pool_limit=$pool_limit" >> "$GITHUB_OUTPUT"
+          echo "output=projects/output/topics/${category}-${GITHUB_RUN_ID}.json" >> "$GITHUB_OUTPUT"
+
+      - name: Run topic finder tests
+        run: >-
+          python -m unittest discover
+          -s tests
+          -p 'test_topic*.py'
+          -v
+
+      - name: Build broad production-safe topic pool
+        run: >-
+          python projects/topic/build_topics.py
+          --category "${{ steps.inputs.outputs.category }}"
+          --source-mode "${{ steps.inputs.outputs.source_mode }}"
+          --limit "${{ steps.inputs.outputs.pool_limit }}"
+          --rotation-index "${{ github.run_number }}"
+          --output "${{ steps.inputs.outputs.output }}"
+
+      - name: Collect sources and media before selecting topics
+        run: >-
+          python projects/topic/topic_preflight.py
+          --input "${{ steps.inputs.outputs.output }}"
+          --output "${{ steps.inputs.outputs.output }}"
+          --limit "${{ steps.inputs.outputs.limit }}"
+
+      - name: Add result summary
+        shell: bash
+        run: |
+          {
+            echo "## Auto Topic Finder"
+            echo
+            echo "- Category: ${{ steps.inputs.outputs.category }}"
+            echo "- Source mode: ${{ steps.inputs.outputs.source_mode }}"
+            echo "- Mode: $(jq -r '.mode' '${{ steps.inputs.outputs.output }}')"
+            echo "- Preflight checked: $(jq -r '.preflight.checked' '${{ steps.inputs.outputs.output }}')"
+            echo "- Displayed candidates: $(jq -r '.candidate_count' '${{ steps.inputs.outputs.output }}')"
+            echo "- Production-ready: $(jq -r '.preflight.accepted' '${{ steps.inputs.outputs.output }}')"
+            echo
+            jq -r '.candidates[] | "\(.rank). [\(.score)] \(.topic)"' \
+              "${{ steps.inputs.outputs.output }}"
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Upload topic candidates
+        uses: actions/upload-artifact@v4
+        with:
+          name: topic-candidates-${{ steps.inputs.outputs.category }}
+          path: ${{ steps.inputs.outputs.output }}
+          if-no-files-found: error
+          retention-days: 7

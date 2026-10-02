@@ -1,0 +1,173 @@
+from __future__ import annotations
+
+from pathlib import Path
+
+from build_timeline import build_ep008_story
+from factory_core import FactoryBuildResult, FactoryCore
+from timeline_schema import save_timeline
+
+
+class DirectorError(RuntimeError):
+    """Director Ã³¸® ½ÇÆÐ."""
+
+
+class Director:
+    def build(
+        self,
+        *,
+        episode_id: str,
+        output_path: Path,
+    ) -> FactoryBuildResult:
+        if episode_id != "ep008":
+            raise DirectorError(
+                "ÇöÀç Story »ý¼º±â´Â ep008¸¸ Áö¿øÇÕ´Ï´Ù. "
+                f"¿äÃ»: {episode_id}"
+            )
+
+        story = build_ep008_story()
+
+        if story.episode_id.lower() != episode_id:
+            raise DirectorError(
+                "Story episode_id°¡ ¿äÃ»°ª°ú ´Ù¸¨´Ï´Ù. "
+                f"Story: {story.episode_id}, ¿äÃ»: {episode_id}"
+            )
+
+        result = FactoryCore().build_with_result(
+            story
+        )
+
+        output_path.parent.mkdir(
+            parents=True,
+            exist_ok=True,
+        )
+
+        save_timeline(
+            result.timeline,
+            str(output_path),
+        )
+
+        if not output_path.exists():
+            raise DirectorError(
+                "timeline.json ÀúÀå¿¡ ½ÇÆÐÇß½À´Ï´Ù: "
+                f"{output_path}"
+            )
+
+        return result
+
+
+
+===== factory_core.py =====
+
+from __future__ import annotations
+
+from dataclasses import dataclass
+from typing import Optional
+
+from duration_planner import DurationPlanner
+from story_compiler import StoryCompiler
+from story_graph import Story
+from timeline_scheduler import TimelineScheduler
+from timeline_schema import Timeline
+
+
+@dataclass(frozen=True)
+class FactoryBuildResult:
+    """
+    Factory Core ë¹Œë“œ ê²°ê³¼?…ë‹ˆ??
+
+    timeline:
+        Remotion Renderer???„ë‹¬??ìµœì¢… Timeline
+
+    scene_count:
+        ?ì„±??Scene ??
+
+    total_duration:
+        ìµœì¢… Timeline ?„ì²´ ê¸¸ì´
+    """
+
+    timeline: Timeline
+    scene_count: int
+    total_duration: float
+
+
+class FactoryCore:
+    """
+    Storyë¥?ìµœì¢… Timeline?¼ë¡œ ë³€?˜í•˜??Factory Core ì§„ìž…?ìž…?ˆë‹¤.
+
+    ?¸ë? ì½”ë“œ?€ Plugin?€ DurationPlanner, TimelineScheduler,
+    StoryCompiler???´ë? ?¤í–‰ ?œì„œë¥????„ìš”ê°€ ?†ìŠµ?ˆë‹¤.
+
+    ?¬ìš© ??
+
+        timeline = FactoryCore().build(story)
+
+    ?´ë? ì²˜ë¦¬:
+
+        Story
+        -> DurationPlanner
+        -> TimelineScheduler
+        -> StoryCompiler
+        -> Timeline
+
+    FactoryCore???¥ë¥´ë¥??Œì? ?ŠìŠµ?ˆë‹¤.
+    ?¥ë¥´ë³?Story ?ì„± ì±…ìž„?€ Plugin???ˆìŠµ?ˆë‹¤.
+    """
+
+    def __init__(
+        self,
+        *,
+        duration_planner: Optional[
+            DurationPlanner
+        ] = None,
+        timeline_scheduler: Optional[
+            TimelineScheduler
+        ] = None,
+    ) -> None:
+        self._duration_planner = (
+            duration_planner
+        )
+
+        self._timeline_scheduler = (
+            timeline_scheduler
+            or TimelineScheduler()
+        )
+
+    def build(
+        self,
+        story: Story,
+    ) -> Timeline:
+        """
+        Storyë¥?ê²€ì¦í•˜ê³?ìµœì¢… Timeline???ì„±?©ë‹ˆ??
+        """
+
+        compiler = StoryCompiler(
+            duration_planner=(
+                self._duration_planner
+            ),
+            timeline_scheduler=(
+                self._timeline_scheduler
+            ),
+        )
+
+        return compiler.compile(story)
+
+    def build_with_result(
+        self,
+        story: Story,
+    ) -> FactoryBuildResult:
+        """
+        Timelineê³?ë¹Œë“œ ?”ì•½ ?•ë³´ë¥??¨ê»˜ ë°˜í™˜?©ë‹ˆ??
+        """
+
+        timeline = self.build(story)
+
+        return FactoryBuildResult(
+            timeline=timeline,
+            scene_count=len(
+                timeline.scenes
+            ),
+            total_duration=(
+                timeline.duration
+            ),
+        )
+

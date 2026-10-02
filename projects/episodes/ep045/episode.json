@@ -1,0 +1,76 @@
+{
+  "version": "1.0",
+  "episodeId": "ep045",
+  "channel": "science",
+  "title": "오로라는 왜 초록색일까?",
+  "voice": "ko-KR-SunHiNeural",
+  "mediaSource": "green aurora borealis night sky, colorful aurora red purple green, northern lights real photo",
+  "theme": {
+    "backgroundColor": "#000000",
+    "titleColor": "#7CFFB2",
+    "captionColor": "#FFFFFF",
+    "accentColor": "#7CFFB2"
+  },
+  "scenes": [
+    {
+      "type": "hook",
+      "title": "오로라는 왜 대부분 초록색일까?",
+      "narration": "오로라 사진을 보면 가장 많이 보이는 색은 초록색입니다. 그런데 하늘이 초록색으로 빛나는 데는 이유가 있습니다.",
+      "keywords": [
+        "green aurora borealis real photo",
+        "northern lights green sky",
+        "aurora over snowy landscape"
+      ]
+    },
+    {
+      "type": "answer",
+      "title": "정답은 산소",
+      "narration": "태양에서 날아온 입자가 지구 대기의 산소와 충돌하면 산소가 에너지를 받았다가 빛을 내놓습니다. 이때 가장 흔하게 보이는 빛이 초록색입니다.",
+      "keywords": [
+        "green aurora sky close up real photo",
+        "aurora oxygen atmosphere concept",
+        "northern lights green curtain"
+      ]
+    },
+    {
+      "type": "story",
+      "title": "빛의 색은 높이에 따라 달라진다",
+      "narration": "오로라의 색은 어떤 기체가 빛을 내는지, 그리고 대기의 어느 높이에서 충돌이 일어나는지에 따라 달라집니다.",
+      "keywords": [
+        "multicolor aurora red green purple real photo",
+        "aurora layers night sky",
+        "colorful northern lights landscape"
+      ]
+    },
+    {
+      "type": "fact",
+      "title": "초록색은 중간 높이의 산소",
+      "narration": "대략 100에서 200킬로미터 높이에서는 산소가 초록빛을 내기 쉬워 우리가 가장 익숙한 초록 오로라가 만들어집니다.",
+      "keywords": [
+        "bright green aurora ribbon real photo",
+        "green northern lights overhead",
+        "aurora green band sky"
+      ]
+    },
+    {
+      "type": "fact",
+      "title": "더 높으면 붉게 빛날 수도 있다",
+      "narration": "더 높은 곳의 산소는 붉은빛을 낼 수 있고, 질소는 파란색이나 분홍빛을 만들기도 합니다. 그래서 오로라는 한 가지 색만 있는 게 아닙니다.",
+      "keywords": [
+        "red aurora real photo",
+        "purple pink aurora night sky",
+        "multicolor northern lights real photo"
+      ]
+    },
+    {
+      "type": "ending",
+      "title": "오로라는 하늘의 거대한 네온사인",
+      "narration": "결국 오로라의 색은 우주 입자와 대기 기체가 만나 만든 빛입니다. 초록색이 가장 흔한 건 산소와 충돌이 일어나는 높이 때문입니다.",
+      "keywords": [
+        "green aurora wide landscape real photo",
+        "northern lights stars real photo",
+        "aurora over mountains night"
+      ]
+    }
+  ]
+}

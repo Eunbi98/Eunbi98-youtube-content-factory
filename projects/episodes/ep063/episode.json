@@ -1,0 +1,17 @@
+{
+  "version": "1.0",
+  "episodeId": "ep063",
+  "channel": "history",
+  "title": "30년 만에 공개된 고대 로마의 벽에 그린 도시",
+  "voice": "ko-KR-SunHiNeural",
+  "mediaSource": "ancient Rome Painted City fresco Great Mosaic Baths of Trajan",
+  "theme": {"backgroundColor":"#0D0B09","titleColor":"#E3C28F","captionColor":"#FFFFFF","accentColor":"#E3C28F"},
+  "scenes": [
+    {"type":"hook","title":"로마 벽에 거대한 도시가 그려져 있었다","narration":"콜로세움 근처 트라야누스 욕장에서 고대 로마 최대급 벽화와 모자이크가 처음으로 일반에 공개됐습니다.","keywords":["Painted City Rome fresco Baths of Trajan","Great Mosaic Rome archaeology","Trajan Baths fresco real photo"]},
+    {"type":"answer","title":"발견된 지 약 30년 만의 공개","narration":"이 작품들은 1990년대 발굴 과정에서 발견됐지만 보존과 복원 때문에 오랫동안 공개되지 못했습니다.","keywords":["Baths of Trajan excavation fresco","Rome archaeological restoration mosaic","ancient Roman fresco restoration"]},
+    {"type":"story","title":"벽에는 바다 도시 전체가 펼쳐졌다","narration":"벽화에는 성벽과 건물, 극장, 신전이 있는 해안 도시가 마치 위에서 내려다본 지도처럼 묘사돼 있습니다.","keywords":["Roman fresco maritime city","ancient Roman city wall painting","Roman city fresco buildings temples"]},
+    {"type":"fact","title":"모자이크 높이는 약 15미터","narration":"함께 공개된 거대한 모자이크는 높이가 약 15미터에 달해 고대 로마 장식 예술의 규모를 보여줍니다.","keywords":["Great Mosaic Rome 15 meter","Roman monumental mosaic","Trajan Baths mosaic"]},
+    {"type":"fact","title":"욕장은 목욕만 하는 곳이 아니었다","narration":"트라야누스 욕장에는 도서관 같은 공간도 있어 당시 공중목욕장이 문화와 사교의 중심지였음을 보여줍니다.","keywords":["Baths of Trajan ruins Rome","Roman baths library reconstruction","ancient Roman bath complex"]},
+    {"type":"ending","title":"2천 년 전 도시 풍경이 벽에서 살아났다","narration":"남아 있는 건물만으로는 알기 어려운 고대 로마의 도시 모습이 한 폭의 벽화와 모자이크 안에서 다시 드러난 겁니다.","keywords":["ancient Rome fresco panoramic","Roman mosaic archaeology Rome","Baths of Trajan sunset"]}
+  ]
+}

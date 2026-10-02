@@ -1,0 +1,76 @@
+{
+  "version": "1.0",
+  "episodeId": "ep050",
+  "channel": "science",
+  "title": "Fish Schools May Follow One Neighbor at a Time",
+  "voice": "en-US-JennyNeural",
+  "mediaSource": "glassfish school synchronized swimming, transparent fish schooling, fish behavior experiment virtual reality",
+  "theme": {
+    "backgroundColor": "#071018",
+    "titleColor": "#A8E6FF",
+    "captionColor": "#FFFFFF",
+    "accentColor": "#62D6FF"
+  },
+  "scenes": [
+    {
+      "type": "hook",
+      "title": "How do hundreds of fish turn together?",
+      "narration": "When hundreds of fish turn at once, it looks like the whole school is thinking together. But a recent study suggests the rule behind it may be surprisingly simple.",
+      "keywords": [
+        "glassfish school synchronized swimming underwater real photo",
+        "schooling fish turning together underwater",
+        "transparent fish school blue water"
+      ]
+    },
+    {
+      "type": "answer",
+      "title": "They may not track the whole group",
+      "narration": "Scientists often assumed fish align with the average direction of several nearby neighbors. In glassfish, researchers found that an individual may instead copy one nearby fish at a time.",
+      "keywords": [
+        "glassfish close up schooling fish",
+        "small transparent fish group swimming",
+        "fish school neighbor interaction"
+      ]
+    },
+    {
+      "type": "story",
+      "title": "One quick copy after another",
+      "narration": "When one fish finishes a turn, a brief window opens for another fish to match that movement. Mature glassfish react very quickly, creating a chain of coordinated turns through the group.",
+      "keywords": [
+        "fish school synchronized turn underwater",
+        "glassfish swimming formation close up",
+        "schooling fish rapid direction change"
+      ]
+    },
+    {
+      "type": "fact",
+      "title": "Virtual fish tested the idea",
+      "narration": "The team also placed real glassfish in a virtual reality setup with simulated fish. When the virtual fish changed direction, the real fish responded in the way the one-neighbor model predicted.",
+      "keywords": [
+        "fish behavior virtual reality experiment",
+        "laboratory fish tracking experiment screen",
+        "fish neuroscience behavior research aquarium"
+      ]
+    },
+    {
+      "type": "fact",
+      "title": "Simple rules can build a huge school",
+      "narration": "The key is that no central leader is required. A simple rule of rapidly responding to one neighbor can be enough to create the complex movement of an entire fish school.",
+      "keywords": [
+        "large fish school coordinated movement underwater",
+        "schooling fish swarm ocean cinematic",
+        "fish collective behavior underwater"
+      ]
+    },
+    {
+      "type": "ending",
+      "title": "Follow one fish, move as a crowd",
+      "narration": "A school may look like hundreds of animals making one decision at the same moment. In reality, that spectacular motion may emerge from many tiny one-to-one reactions happening in sequence.",
+      "keywords": [
+        "glassfish school underwater cinematic",
+        "school of fish synchronized swimming wide shot",
+        "transparent fish collective movement"
+      ]
+    }
+  ]
+}

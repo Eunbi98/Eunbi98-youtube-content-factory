@@ -1,0 +1,1073 @@
+﻿# Release 5 Patch 5-3 Source
+
+
+========================================
+FILE: projects\director\story_graph.py
+========================================
+
+from __future__ import annotations
+
+from dataclasses import dataclass, field
+from typing import Literal, Optional
+
+
+BeatType = Literal[
+    "hook",
+    "answer",
+    "story",
+    "fact",
+    "ending",
+]
+
+MediaType = Literal[
+    "image",
+    "video",
+    "color",
+]
+
+
+@dataclass(frozen=True)
+class StoryMedia:
+    type: MediaType
+    src: Optional[str] = None
+    fit: Literal["cover", "contain"] = "cover"
+    position: str = "center center"
+
+
+@dataclass(frozen=True)
+class Beat:
+    type: BeatType
+
+    title: str
+    narration: str
+    subtitle: str
+
+    duration: float
+
+    media: StoryMedia
+
+    keywords: list[str] = field(
+        default_factory=list,
+    )
+
+    background_color: str = "#111111"
+
+
+@dataclass(frozen=True)
+class Story:
+    episode_id: str
+    title: str
+
+    beats: list[Beat]
+
+    fps: int = 30
+    width: int = 1080
+    height: int = 1920
+
+    background_color: str = "#000000"
+    title_color: str = "#7CFFB2"
+    caption_color: str = "#FFFFFF"
+    accent_color: str = "#7CFFB2"
+
+    bgm: Optional[str] = None
+    voice: Optional[str] = None
+
+
+def Hook(
+    *,
+    title: str,
+    narration: str,
+    subtitle: str,
+    duration: float,
+    media: StoryMedia,
+    keywords: Optional[list[str]] = None,
+    background_color: str = "#14202B",
+) -> Beat:
+    return Beat(
+        type="hook",
+        title=title,
+        narration=narration,
+        subtitle=subtitle,
+        duration=duration,
+        media=media,
+        keywords=keywords or [],
+        background_color=background_color,
+    )
+
+
+def Answer(
+    *,
+    title: str,
+    narration: str,
+    subtitle: str,
+    duration: float,
+    media: StoryMedia,
+    keywords: Optional[list[str]] = None,
+    background_color: str = "#223748",
+) -> Beat:
+    return Beat(
+        type="answer",
+        title=title,
+        narration=narration,
+        subtitle=subtitle,
+        duration=duration,
+        media=media,
+        keywords=keywords or [],
+        background_color=background_color,
+    )
+
+
+def Narrative(
+    *,
+    title: str,
+    narration: str,
+    subtitle: str,
+    duration: float,
+    media: StoryMedia,
+    keywords: Optional[list[str]] = None,
+    background_color: str = "#314A5D",
+) -> Beat:
+    return Beat(
+        type="story",
+        title=title,
+        narration=narration,
+        subtitle=subtitle,
+        duration=duration,
+        media=media,
+        keywords=keywords or [],
+        background_color=background_color,
+    )
+
+
+def Fact(
+    *,
+    title: str,
+    narration: str,
+    subtitle: str,
+    duration: float,
+    media: StoryMedia,
+    keywords: Optional[list[str]] = None,
+    background_color: str = "#1C3040",
+) -> Beat:
+    return Beat(
+        type="fact",
+        title=title,
+        narration=narration,
+        subtitle=subtitle,
+        duration=duration,
+        media=media,
+        keywords=keywords or [],
+        background_color=background_color,
+    )
+
+
+def Ending(
+    *,
+    title: str,
+    narration: str,
+    subtitle: str,
+    duration: float,
+    media: StoryMedia,
+    keywords: Optional[list[str]] = None,
+    background_color: str = "#101820",
+) -> Beat:
+    return Beat(
+        type="ending",
+        title=title,
+        narration=narration,
+        subtitle=subtitle,
+        duration=duration,
+        media=media,
+        keywords=keywords or [],
+        background_color=background_color,
+    )
+
+========================================
+FILE: projects\director\story_compiler.py
+========================================
+
+from __future__ import annotations
+
+from timeline_schema import (
+    Media,
+    Scene,
+    Timeline,
+    TimelineTheme,
+)
+from story_graph import Beat, Story
+
+
+class StoryCompiler:
+    """
+    Story Graph瑜?Director媛 泥섎━?????덈뒗
+    Timeline Scene 援ъ“濡?蹂?섑빀?덈떎.
+
+    ?꾩옱 Patch?먯꽌???ㅼ쓬 媛믪쓣 ?먮룞 ?앹꽦?⑸땲??
+
+    - scene id
+    - scene start
+    - ?꾩껜 timeline duration
+    - StoryMedia ??Media 蹂??
+
+    cameraMotion, transition, overlay??
+    timeline_schema ?대? Director Rule Engine??
+    ?먮룞?쇰줈 寃곗젙?⑸땲??
+    """
+
+    def compile(self, story: Story) -> Timeline:
+        self._validate_story(story)
+
+        scenes: list[Scene] = []
+        current_start = 0.0
+
+        for index, beat in enumerate(
+            story.beats,
+            start=1,
+        ):
+            scene = self._compile_beat(
+                beat=beat,
+                scene_index=index,
+                start=current_start,
+            )
+
+            scenes.append(scene)
+
+            current_start += beat.duration
+
+        total_duration = round(
+            current_start,
+            3,
+        )
+
+        return Timeline(
+            version="5.2",
+            episode_id=story.episode_id,
+            title=story.title,
+            fps=story.fps,
+            width=story.width,
+            height=story.height,
+            duration=total_duration,
+            bgm=story.bgm,
+            voice=story.voice,
+            theme=TimelineTheme(
+                background_color=(
+                    story.background_color
+                ),
+                title_color=story.title_color,
+                caption_color=(
+                    story.caption_color
+                ),
+                accent_color=story.accent_color,
+            ),
+            scenes=scenes,
+        )
+
+    def _compile_beat(
+        self,
+        *,
+        beat: Beat,
+        scene_index: int,
+        start: float,
+    ) -> Scene:
+        scene_id = (
+            f"scene_{scene_index:03d}"
+        )
+
+        media = Media(
+            type=beat.media.type,
+            src=beat.media.src,
+            fit=beat.media.fit,
+            position=beat.media.position,
+        )
+
+        return Scene(
+            id=scene_id,
+            type=beat.type,
+            start=round(start, 3),
+            duration=round(
+                beat.duration,
+                3,
+            ),
+            title=beat.title.strip(),
+            narration=(
+                beat.narration.strip()
+            ),
+            subtitle=(
+                beat.subtitle.strip()
+            ),
+            media=media,
+            keywords=list(beat.keywords),
+            background_color=(
+                beat.background_color
+            ),
+        )
+
+    def _validate_story(
+        self,
+        story: Story,
+    ) -> None:
+        if not story.episode_id.strip():
+            raise ValueError(
+                "Story episode_id??"
+                "鍮꾩뼱 ?덉쓣 ???놁뒿?덈떎."
+            )
+
+        if not story.title.strip():
+            raise ValueError(
+                "Story title? "
+                "鍮꾩뼱 ?덉쓣 ???놁뒿?덈떎."
+            )
+
+        if not story.beats:
+            raise ValueError(
+                "Story?먮뒗 理쒖냼 ?섎굹 ?댁긽??"
+                "Beat媛 ?꾩슂?⑸땲??"
+            )
+
+        if story.fps <= 0:
+            raise ValueError(
+                "Story fps??1 ?댁긽?댁뼱???⑸땲??"
+            )
+
+        if (
+            story.width <= 0
+            or story.height <= 0
+        ):
+            raise ValueError(
+                "Story width? height??"
+                "1 ?댁긽?댁뼱???⑸땲??"
+            )
+
+        for index, beat in enumerate(
+            story.beats,
+            start=1,
+        ):
+            self._validate_beat(
+                beat=beat,
+                beat_index=index,
+            )
+
+    def _validate_beat(
+        self,
+        *,
+        beat: Beat,
+        beat_index: int,
+    ) -> None:
+        prefix = f"Beat {beat_index}"
+
+        if beat.duration <= 0:
+            raise ValueError(
+                f"{prefix}: duration? "
+                "0蹂대떎 而ㅼ빞 ?⑸땲??"
+            )
+
+        if not beat.title.strip():
+            raise ValueError(
+                f"{prefix}: title? "
+                "鍮꾩뼱 ?덉쓣 ???놁뒿?덈떎."
+            )
+
+        if not beat.narration.strip():
+            raise ValueError(
+                f"{prefix}: narration? "
+                "鍮꾩뼱 ?덉쓣 ???놁뒿?덈떎."
+            )
+
+        if not beat.subtitle.strip():
+            raise ValueError(
+                f"{prefix}: subtitle? "
+                "鍮꾩뼱 ?덉쓣 ???놁뒿?덈떎."
+            )
+
+        if (
+            beat.media.type
+            in {"image", "video"}
+            and not beat.media.src
+        ):
+            raise ValueError(
+                f"{prefix}: "
+                f"{beat.media.type} media?먮뒗 "
+                "src媛 ?꾩슂?⑸땲??"
+            )
+
+========================================
+FILE: projects\director\timeline_schema.py
+========================================
+
+from __future__ import annotations
+
+from dataclasses import dataclass
+from pathlib import Path
+from typing import Any, Literal, Optional
+import json
+
+from director_rules import (
+    CameraMotion,
+    OverlayType,
+    SceneType,
+    TransitionType,
+    direct_scene,
+)
+
+
+MediaType = Literal[
+    "image",
+    "video",
+    "color",
+]
+
+
+@dataclass
+class Media:
+    type: MediaType
+    src: Optional[str] = None
+    fit: Literal["cover", "contain"] = "cover"
+    position: str = "center center"
+
+    def to_remotion_dict(self) -> dict[str, Any]:
+        data: dict[str, Any] = {
+            "type": self.type,
+            "fit": self.fit,
+            "position": self.position,
+        }
+
+        if self.src:
+            # Remotion staticFile()?먯꽌??/濡??쒖옉?섏? ?딅뒗
+            # public ?대뜑 湲곗? ?곷?寃쎈줈瑜??ъ슜?⑸땲??
+            data["src"] = self.src.lstrip("/\\")
+
+        return data
+
+
+@dataclass
+class Scene:
+    id: str
+    type: SceneType
+    start: float
+    duration: float
+
+    title: str
+    narration: str
+    subtitle: str
+
+    media: Media
+    keywords: list[str]
+
+    background_color: str = "#111111"
+
+    # ?꾩슂???뚮쭔 ?щ엺??吏곸젒 媛믪쓣 ??뼱?????덉뒿?덈떎.
+    camera_motion: Optional[CameraMotion] = None
+    transition: Optional[TransitionType] = None
+    transition_duration: Optional[float] = None
+    overlay: Optional[OverlayType] = None
+    overlay_opacity: Optional[float] = None
+
+    def to_remotion_dict(
+        self,
+        *,
+        scene_index: int,
+        previous_motion: Optional[CameraMotion],
+    ) -> dict[str, Any]:
+        direction = direct_scene(
+            scene_type=self.type,
+            scene_index=scene_index,
+            previous_motion=previous_motion,
+        )
+
+        resolved_camera_motion = (
+            self.camera_motion
+            or direction.camera_motion
+        )
+
+        resolved_transition = (
+            self.transition
+            or direction.transition
+        )
+
+        resolved_transition_duration = (
+            self.transition_duration
+            if self.transition_duration is not None
+            else direction.transition_duration
+        )
+
+        resolved_overlay = (
+            self.overlay
+            or direction.overlay
+        )
+
+        resolved_overlay_opacity = (
+            self.overlay_opacity
+            if self.overlay_opacity is not None
+            else direction.overlay_opacity
+        )
+
+        return {
+            "id": self.id,
+            "start": round(self.start, 3),
+            "duration": round(self.duration, 3),
+            "title": self.title,
+            "caption": self.subtitle,
+            "backgroundColor": self.background_color,
+            "media": self.media.to_remotion_dict(),
+            "cameraMotion": resolved_camera_motion,
+            "transition": resolved_transition,
+            "transitionDuration": round(
+                resolved_transition_duration,
+                3,
+            ),
+            "overlay": resolved_overlay,
+            "overlayOpacity": round(
+                resolved_overlay_opacity,
+                3,
+            ),
+        }
+
+
+@dataclass
+class TimelineTheme:
+    background_color: str = "#000000"
+    title_color: str = "#7CFFB2"
+    caption_color: str = "#FFFFFF"
+    accent_color: str = "#7CFFB2"
+
+    def to_remotion_dict(self) -> dict[str, str]:
+        return {
+            "backgroundColor": self.background_color,
+            "titleColor": self.title_color,
+            "captionColor": self.caption_color,
+            "accentColor": self.accent_color,
+        }
+
+
+@dataclass
+class Timeline:
+    version: str
+    episode_id: str
+    title: str
+
+    fps: int
+    width: int
+    height: int
+
+    duration: float
+
+    bgm: Optional[str]
+    voice: Optional[str]
+
+    scenes: list[Scene]
+
+    theme: Optional[TimelineTheme] = None
+
+    def validate(self) -> None:
+        if not self.episode_id.strip():
+            raise ValueError(
+                "episode_id??鍮꾩뼱 ?덉쓣 ???놁뒿?덈떎."
+            )
+
+        if not self.title.strip():
+            raise ValueError(
+                "title? 鍮꾩뼱 ?덉쓣 ???놁뒿?덈떎."
+            )
+
+        if self.fps <= 0:
+            raise ValueError(
+                "fps??1 ?댁긽?댁뼱???⑸땲??"
+            )
+
+        if self.width <= 0 or self.height <= 0:
+            raise ValueError(
+                "width? height??1 ?댁긽?댁뼱???⑸땲??"
+            )
+
+        if not self.scenes:
+            raise ValueError(
+                "理쒖냼 ??媛??댁긽??scene???꾩슂?⑸땲??"
+            )
+
+        previous_end = 0.0
+
+        for index, scene in enumerate(self.scenes):
+            if scene.duration <= 0:
+                raise ValueError(
+                    f"{scene.id}: duration? "
+                    "0蹂대떎 而ㅼ빞 ?⑸땲??"
+                )
+
+            if scene.start < 0:
+                raise ValueError(
+                    f"{scene.id}: start??"
+                    "0 ?댁긽?댁뼱???⑸땲??"
+                )
+
+            if index > 0 and scene.start < previous_end:
+                raise ValueError(
+                    f"{scene.id}: ?댁쟾 ?λ㈃怨?"
+                    "?쒓컙??寃뱀묩?덈떎."
+                )
+
+            previous_end = (
+                scene.start
+                + scene.duration
+            )
+
+        if self.duration < previous_end:
+            raise ValueError(
+                "Timeline duration??留덉?留??λ㈃??"
+                "醫낅즺 ?쒓컙蹂대떎 吏㏃뒿?덈떎."
+            )
+
+    def to_remotion_dict(self) -> dict[str, Any]:
+        self.validate()
+
+        theme = self.theme or TimelineTheme()
+
+        rendered_scenes: list[dict[str, Any]] = []
+        previous_motion: Optional[CameraMotion] = None
+
+        for index, scene in enumerate(self.scenes):
+            rendered_scene = (
+                scene.to_remotion_dict(
+                    scene_index=index,
+                    previous_motion=previous_motion,
+                )
+            )
+
+            rendered_scenes.append(
+                rendered_scene
+            )
+
+            previous_motion = (
+                rendered_scene["cameraMotion"]
+            )
+
+        return {
+            "episodeId": self.episode_id.upper(),
+            "title": self.title,
+            "fps": self.fps,
+            "width": self.width,
+            "height": self.height,
+            "totalDuration": round(
+                self.duration,
+                3,
+            ),
+            "theme": theme.to_remotion_dict(),
+            "scenes": rendered_scenes,
+        }
+
+
+def save_timeline(
+    timeline: Timeline,
+    output_path: str | Path,
+) -> None:
+    path = Path(output_path)
+    path.parent.mkdir(
+        parents=True,
+        exist_ok=True,
+    )
+
+    data = timeline.to_remotion_dict()
+
+    with path.open(
+        "w",
+        encoding="utf-8",
+    ) as file:
+        json.dump(
+            data,
+            file,
+            ensure_ascii=False,
+            indent=2,
+        )
+        file.write("\n")
+
+========================================
+FILE: projects\director\build_timeline.py
+========================================
+
+from story_compiler import StoryCompiler
+from story_graph import (
+    Answer,
+    Ending,
+    Fact,
+    Hook,
+    Narrative,
+    Story,
+    StoryMedia,
+)
+from timeline_schema import (
+    Timeline,
+    save_timeline,
+)
+
+
+def build_ep008_story() -> Story:
+    return Story(
+        episode_id="ep008",
+        title="?щ씪吏??꾩떆??n?대뼸寃?諛쒓껄?좉퉴?",
+        fps=30,
+        width=1080,
+        height=1920,
+        background_color="#000000",
+        title_color="#7CFFB2",
+        caption_color="#FFFFFF",
+        accent_color="#7CFFB2",
+        beats=[
+            Hook(
+                title=(
+                    "?낆냽???꾩떆 ?꾩껜媛 "
+                    "?④꺼???덈떎硫?"
+                ),
+                narration=(
+                    "?섎갚 ???숈븞 ?꾨Т??紐곕옄??"
+                    "?꾩떆媛 ?낆냽?먯꽌 諛쒓껄?쒕떎硫?"
+                    "誘우쑝?쒓쿋?듬땲源?"
+                ),
+                subtitle=(
+                    "?낆냽???꾩떆 ?꾩껜媛\n"
+                    "?④꺼???덈떎硫?"
+                ),
+                duration=5,
+                media=StoryMedia(
+                    type="image",
+                    src=(
+                        "assets/ep008/"
+                        "scene_001.jpg"
+                    ),
+                ),
+                keywords=[
+                    "lost underground city",
+                    "ancient ruins mystery",
+                ],
+            ),
+            Answer(
+                title=(
+                    "?ㅼ젣濡??щ씪吏??꾩떆??"
+                    "怨꾩냽 諛쒓껄?⑸땲??
+                ),
+                narration=(
+                    "?щ쭑怨?諛由? ?꾨? ?꾩떆 ?꾨옒?먯꽌??"
+                    "?ㅻ옯?숈븞 ?딇엺 ?좎쟻??諛쒓껄?섍퀬 "
+                    "?덉뒿?덈떎."
+                ),
+                subtitle=(
+                    "?щ씪吏??꾩떆??吏湲덈룄\n"
+                    "諛쒓껄?섍퀬 ?덉뒿?덈떎"
+                ),
+                duration=7,
+                media=StoryMedia(
+                    type="image",
+                    src=(
+                        "assets/ep008/"
+                        "scene_002.jpg"
+                    ),
+                ),
+                keywords=[
+                    "archaeological discovery",
+                    "buried ancient city",
+                ],
+            ),
+            Narrative(
+                title=(
+                    "?숆낵 ?앸Ъ??紐⑤뱺 ?붿쟻??"
+                    "媛먯떠 踰꾨┰?덈떎"
+                ),
+                narration=(
+                    "?꾩떆媛 踰꾨젮吏????ㅻ옖 ?쒓컙??"
+                    "吏?섎㈃ 嫄대Ъ? 臾대꼫吏怨??숆낵 "
+                    "?앸Ъ??洹??꾨? ??뒿?덈떎."
+                ),
+                subtitle=(
+                    "?쒓컙???꾩떆???붿쟻??n"
+                    "?꾩쟾????뼱 踰꾨┰?덈떎"
+                ),
+                duration=7,
+                media=StoryMedia(
+                    type="image",
+                    src=(
+                        "assets/ep008/"
+                        "scene_003.jpg"
+                    ),
+                ),
+                keywords=[
+                    "ruins covered by jungle",
+                    "lost city landscape",
+                ],
+            ),
+            Fact(
+                title=(
+                    "?덉씠??????꾨옒源뚯? "
+                    "蹂????덉뒿?덈떎"
+                ),
+                narration=(
+                    "理쒓렐?먮뒗 ?쇱씠?ㅻ씪???덉씠? 湲곗닠濡?"
+                    "?몄갹?????꾨옒 ?④꺼吏?嫄대Ъ怨?"
+                    "?꾨줈???뺥깭源뚯? 李얠븘?낅땲??"
+                ),
+                subtitle=(
+                    "?덉씠?濡????꾨옒??n"
+                    "?꾩떆瑜?李얠븘?낅땲??
+                ),
+                duration=8,
+                media=StoryMedia(
+                    type="image",
+                    src=(
+                        "assets/ep008/"
+                        "scene_004.jpg"
+                    ),
+                ),
+                keywords=[
+                    "lidar archaeology",
+                    "jungle city scan",
+                ],
+            ),
+            Ending(
+                title=(
+                    "?꾩쭅 諛쒓껄?섏? ?딆? ?꾩떆媛 "
+                    "?⑥븘 ?덉쓣吏??紐⑤쫭?덈떎"
+                ),
+                narration=(
+                    "?곕━媛 嫄룸뒗 ???꾨옒?먮룄 ?꾩쭅 "
+                    "諛쒓껄?섏? ?딆? ??궗媛 ?⑥뼱 ?덉쓣吏 "
+                    "紐⑤쫭?덈떎."
+                ),
+                subtitle=(
+                    "?곕━ 諛쒕컩?먮룄 ?щ씪吏?n"
+                    "?꾩떆媛 ?덉쓣源뚯슂?"
+                ),
+                duration=6,
+                media=StoryMedia(
+                    type="image",
+                    src=(
+                        "assets/ep008/"
+                        "scene_005.jpg"
+                    ),
+                ),
+                keywords=[
+                    "hidden history",
+                    "undiscovered ancient city",
+                ],
+            ),
+        ],
+    )
+
+
+def build_ep008() -> Timeline:
+    story = build_ep008_story()
+
+    compiler = StoryCompiler()
+
+    return compiler.compile(story)
+
+
+if __name__ == "__main__":
+    timeline = build_ep008()
+
+    output_path = (
+        "projects/episodes/ep008/"
+        "timeline.json"
+    )
+
+    save_timeline(
+        timeline,
+        output_path,
+    )
+
+    print(
+        "EP008 Story Compiler ?ㅽ뻾 ?꾨즺"
+    )
+    print(
+        f"Scene ?? {len(timeline.scenes)}"
+    )
+    print(
+        f"?꾩껜 湲몄씠: {timeline.duration}珥?
+    )
+    print(
+        f"異쒕젰 寃쎈줈: {output_path}"
+    )
+
+========================================
+FILE: projects\director\director_rules.py
+========================================
+
+from __future__ import annotations
+
+from dataclasses import dataclass
+from typing import Literal, Optional
+
+
+SceneType = Literal[
+    "hook",
+    "answer",
+    "story",
+    "fact",
+    "ending",
+]
+
+CameraMotion = Literal[
+    "static",
+    "zoom_in",
+    "zoom_out",
+    "pan_left",
+    "pan_right",
+    "pan_up",
+    "pan_down",
+    "zoom_in_left",
+    "zoom_in_right",
+    "zoom_in_up",
+    "zoom_in_down",
+]
+
+TransitionType = Literal[
+    "cut",
+    "fade",
+    "slide_left",
+    "slide_right",
+    "zoom",
+]
+
+OverlayType = Literal[
+    "none",
+    "cinematic",
+    "vignette",
+    "dark",
+]
+
+
+@dataclass(frozen=True)
+class DirectionPreset:
+    camera_motion: CameraMotion
+    transition: TransitionType
+    transition_duration: float
+    overlay: OverlayType
+    overlay_opacity: float
+
+
+# 媛??λ㈃ ??븷??留욌뒗 湲곕낯 ?곗텧 洹쒖튃?낅땲??
+BASE_PRESETS: dict[SceneType, DirectionPreset] = {
+    "hook": DirectionPreset(
+        camera_motion="zoom_in",
+        transition="fade",
+        transition_duration=0.30,
+        overlay="cinematic",
+        overlay_opacity=1.0,
+    ),
+    "answer": DirectionPreset(
+        camera_motion="pan_right",
+        transition="cut",
+        transition_duration=0.20,
+        overlay="cinematic",
+        overlay_opacity=1.0,
+    ),
+    "story": DirectionPreset(
+        camera_motion="pan_left",
+        transition="fade",
+        transition_duration=0.30,
+        overlay="cinematic",
+        overlay_opacity=1.0,
+    ),
+    "fact": DirectionPreset(
+        camera_motion="zoom_in_right",
+        transition="slide_left",
+        transition_duration=0.30,
+        overlay="vignette",
+        overlay_opacity=1.0,
+    ),
+    "ending": DirectionPreset(
+        camera_motion="zoom_out",
+        transition="fade",
+        transition_duration=0.35,
+        overlay="dark",
+        overlay_opacity=1.0,
+    ),
+}
+
+
+def direct_scene(
+    *,
+    scene_type: SceneType,
+    scene_index: int,
+    previous_motion: Optional[CameraMotion] = None,
+) -> DirectionPreset:
+    """
+    ?λ㈃ ??븷怨????λ㈃???吏곸엫??李멸퀬???곗텧媛믪쓣 寃곗젙?⑸땲??
+
+    媛숈? cameraMotion??諛섎났??寃쎌슦 ?泥?紐⑥뀡?쇰줈 蹂寃쏀빐
+    ?곸긽 ?吏곸엫???⑥“濡쒖썙吏??寃껋쓣 諛⑹??⑸땲??
+    """
+
+    preset = BASE_PRESETS[scene_type]
+
+    camera_motion = preset.camera_motion
+    transition = preset.transition
+
+    if previous_motion == camera_motion:
+        camera_motion = _get_alternative_motion(
+            scene_type=scene_type,
+            scene_index=scene_index,
+            previous_motion=previous_motion,
+        )
+
+    # 泥??λ㈃? ???λ㈃???놁쑝誘濡?fade ?먮뒗 cut留??ъ슜?⑸땲??
+    if scene_index == 0:
+        transition = "fade"
+
+    return DirectionPreset(
+        camera_motion=camera_motion,
+        transition=transition,
+        transition_duration=preset.transition_duration,
+        overlay=preset.overlay,
+        overlay_opacity=preset.overlay_opacity,
+    )
+
+
+def _get_alternative_motion(
+    *,
+    scene_type: SceneType,
+    scene_index: int,
+    previous_motion: CameraMotion,
+) -> CameraMotion:
+    """
+    諛섎났?섎뒗 移대찓???吏곸엫???쇳븯湲??꾪븳 ?泥?洹쒖튃?낅땲??
+    """
+
+    alternatives: dict[SceneType, tuple[CameraMotion, ...]] = {
+        "hook": (
+            "zoom_in",
+            "zoom_in_left",
+            "zoom_in_right",
+        ),
+        "answer": (
+            "pan_right",
+            "pan_left",
+            "zoom_in_right",
+        ),
+        "story": (
+            "pan_left",
+            "pan_right",
+            "zoom_in_left",
+        ),
+        "fact": (
+            "zoom_in_right",
+            "zoom_in_left",
+            "pan_up",
+        ),
+        "ending": (
+            "zoom_out",
+            "static",
+            "pan_down",
+        ),
+    }
+
+    candidates = alternatives[scene_type]
+
+    valid_candidates = [
+        candidate
+        for candidate in candidates
+        if candidate != previous_motion
+    ]
+
+    if not valid_candidates:
+        return "static"
+
+    return valid_candidates[
+        scene_index % len(valid_candidates)
+    ]
