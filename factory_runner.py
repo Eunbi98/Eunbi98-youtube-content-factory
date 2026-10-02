@@ -119,6 +119,38 @@ def purge_stale_generated_files(episode_id: str) -> None:
                 print(f"[캐시 삭제] {file_path}")
 
 
+def stage_user_video_assets(episode_id: str) -> list[str]:
+    """Copy user-generated scene videos from episode/video into episode/assets.
+
+    FactoryCore reads source media from episode/assets. Keeping Muse or other
+    externally generated clips in episode/video makes them easy to manage while
+    this staging step gives them priority over automatic media collection.
+    """
+    episode_dir = ROOT_DIR / "projects" / "episodes" / episode_id
+    video_dir = episode_dir / "video"
+    assets_dir = episode_dir / "assets"
+
+    if not video_dir.exists():
+        return []
+
+    video_files = sorted(
+        path for path in video_dir.iterdir()
+        if path.is_file() and path.suffix.lower() in {".mp4", ".mov", ".webm"}
+    )
+    if not video_files:
+        return []
+
+    assets_dir.mkdir(parents=True, exist_ok=True)
+    staged: list[str] = []
+    for source in video_files:
+        target = assets_dir / source.name
+        shutil.copy2(source, target)
+        staged.append(source.name)
+        print(f"[사용자 영상 우선] {source} -> {target}")
+
+    return staged
+
+
 def _prepare_english_variant(base_episode_id: str) -> str:
     source_dir = ROOT_DIR / "projects" / "episodes" / base_episode_id
     english_spec = source_dir / "episode.en.json"
@@ -142,8 +174,6 @@ def _prepare_english_variant(base_episode_id: str) -> str:
     if not isinstance(spec_data, dict):
         raise ValueError("영어판 episode 파일의 최상위 값은 객체여야 합니다.")
 
-    # 원본 파일에는 base EP 번호를 써도 되고 내부 영어 EP 번호를 써도 됩니다.
-    # 실행 시에는 Remotion과 Director가 사용하는 숫자형 variant ID로 통일합니다.
     spec_data["episodeId"] = variant_id
     (variant_dir / "episode.json").write_text(
         json.dumps(spec_data, ensure_ascii=False, indent=2) + "\n",
@@ -202,6 +232,11 @@ def main() -> int:
     args = parse_args()
     try:
         base_episode_id = normalize_episode_id(args.episode)
+
+        # Stage locally generated Muse/source videos before preparing language
+        # variants so they are available to both Korean and English renders.
+        stage_user_video_assets(base_episode_id)
+
         episode_id = (
             _prepare_english_variant(base_episode_id)
             if args.lang == "en"
@@ -215,8 +250,10 @@ def main() -> int:
     if args.rebuild_timeline:
         purge_stale_generated_files(episode_id)
 
-    # rebuild가 작업 폴더의 생성 파일만 제거하므로 영어 스펙과
-    # 한국어판 assets 재사용 상태를 다시 보장합니다.
+    # purge does not remove episode/assets, but stage once more after rebuild so
+    # user-provided video always wins over any previously auto-collected asset.
+    stage_user_video_assets(base_episode_id)
+
     if args.lang == "en":
         try:
             episode_id = _prepare_english_variant(base_episode_id)
