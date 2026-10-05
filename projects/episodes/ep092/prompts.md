@@ -25,8 +25,8 @@ The approved explorer character enters a modern underground subway station and s
 
 File: scene_001.mp4
 
-## Scene 2 — 도시 지하 단면 발견
-Continue from the previous scene. The explorer reaches a landing and looks at the wall beside the escalator. The environment smoothly transforms into a cutaway view of the city underground while the explorer remains in the foreground. Show several underground layers: shallow utility pipes, sewers, building foundations, an older subway tunnel, and a newer deeper rail tunnel below them. Keep the layout plausible and easy to understand visually. The explorer points downward toward the deeper tunnel.
+## Scene 2 — 도시 지하 단면 발견 (revised)
+Continue naturally from the long escalator descent. The explorer reaches a lower landing and pauses beside a large glass-covered engineering display built into the station wall. Inside the display is a realistic physical cutaway model of the city underground, shown as stacked layers rather than a magical transformation. At the top are a street and building foundations. Below them are utility pipes and sewer lines. Deeper down is an older subway tunnel, and beneath that a newer tunnel running at a lower level. The explorer leans closer, studies the model, then points toward the deepest tunnel with a curious expression. Start with a medium shot of the explorer at the display, then slowly push the camera closer to the underground layers. Keep the model visually clear, physically believable, and simple enough to understand at a glance. Avoid floating infographic lines, glowing diagrams, labels, or text. End with the camera focused on the deepest tunnel layer so Scene 3 can continue from that idea.
 
 File: scene_002.mp4
 
