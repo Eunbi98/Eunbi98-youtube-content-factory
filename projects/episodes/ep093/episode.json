@@ -1,0 +1,58 @@
+{
+  "version": "1.0",
+  "episodeId": "ep093",
+  "channel": "urban-exploration",
+  "title": "지하철에서 불이 나면 연기는 어디로 갈까?",
+  "voice": "ko-KR-SunHiNeural",
+  "mediaSource": "subway station fire smoke control ventilation evacuation",
+  "theme": {
+    "backgroundColor": "#121416",
+    "titleColor": "#E8D9A9",
+    "captionColor": "#FFFFFF",
+    "accentColor": "#E8D9A9"
+  },
+  "scenes": [
+    {
+      "type": "hook",
+      "title": "지하철에서 연기가 나면 어디로 갈까?",
+      "narration": "지하철역에서 불이 나면 가장 무서운 건 불길보다 연기입니다. 그런데 지하 깊은 곳에서 생긴 연기는 대체 어디로 빠져나갈까요?",
+      "media": {"type":"video","src":"ep093/scene_001.mp4","fit":"cover","position":"center center"},
+      "keywords": ["subway station smoke emergency", "underground station fire ventilation"]
+    },
+    {
+      "type": "answer",
+      "title": "연기는 그냥 위로 두지 않는다",
+      "narration": "지하역에는 평소 환기용 설비뿐 아니라 화재 때 연기의 이동을 제어하기 위한 배기와 급기 시스템이 함께 설계됩니다.",
+      "media": {"type":"video","src":"ep093/scene_002.mp4","fit":"cover","position":"center center"},
+      "keywords": ["subway smoke exhaust fan", "metro ventilation shaft"]
+    },
+    {
+      "type": "story",
+      "title": "팬의 방향까지 상황에 따라 달라진다",
+      "narration": "터널에서는 화재 위치와 열차 위치, 대피 방향에 따라 어떤 팬을 켜고 어느 방향으로 공기를 움직일지가 달라질 수 있습니다.",
+      "media": {"type":"video","src":"ep093/scene_003.mp4","fit":"cover","position":"center center"},
+      "keywords": ["tunnel ventilation smoke direction", "subway emergency ventilation control"]
+    },
+    {
+      "type": "fact",
+      "title": "목표는 대피로를 연기에서 지키는 것",
+      "narration": "핵심은 연기를 무작정 없애는 게 아니라, 사람들이 빠져나가는 통로로 번지는 걸 최대한 늦추고 안전한 길을 확보하는 것입니다.",
+      "media": {"type":"video","src":"ep093/scene_004.mp4","fit":"cover","position":"center center"},
+      "keywords": ["smoke free evacuation route subway", "pressurized emergency stair metro"]
+    },
+    {
+      "type": "fact",
+      "title": "그래서 역 안에는 숨은 공기 길이 있다",
+      "narration": "플랫폼과 터널 주변에는 배기 덕트와 환기 샤프트, 비상계단 같은 설비가 숨어 있습니다. 평소에는 잘 보이지 않지만 사고 때 중요한 역할을 합니다.",
+      "media": {"type":"video","src":"ep093/scene_005.mp4","fit":"cover","position":"center center"},
+      "keywords": ["subway ventilation duct hidden", "station emergency stairs ventilation shaft"]
+    },
+    {
+      "type": "ending",
+      "title": "지하철역은 거대한 공기 흐름 장치이기도 하다",
+      "narration": "우리가 보는 승강장 뒤에는 사람의 동선만큼이나 복잡한 공기의 길이 있습니다. 다음에 지하철 환기구를 보게 된다면, 단순한 바람구멍으로만 보이진 않을 겁니다.",
+      "media": {"type":"video","src":"ep093/scene_006.mp4","fit":"cover","position":"center center"},
+      "keywords": ["metro station airflow cutaway", "subway ventilation system cinematic"]
+    }
+  ]
+}
