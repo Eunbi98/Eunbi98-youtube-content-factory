@@ -1,0 +1,58 @@
+{
+  "version": "1.0",
+  "episodeId": "ep094",
+  "channel": "urban-exploration",
+  "title": "지하철 승강장 끝에는 뭐가 있을까?",
+  "voice": "ko-KR-SunHiNeural",
+  "mediaSource": "subway platform end service tunnel hidden infrastructure",
+  "theme": {
+    "backgroundColor": "#121416",
+    "titleColor": "#E8D9A9",
+    "captionColor": "#FFFFFF",
+    "accentColor": "#E8D9A9"
+  },
+  "scenes": [
+    {
+      "type": "hook",
+      "title": "승강장 끝, 저 문 뒤에는 뭐가 있을까?",
+      "narration": "지하철 승강장 끝을 보면 승객은 들어갈 수 없는 문이나 어두운 통로가 보일 때가 있습니다. 저 뒤에는 대체 뭐가 있을까요?",
+      "media": {"type":"video","src":"ep094/scene_001.mp4","fit":"cover","position":"center center"},
+      "keywords": ["subway platform end restricted door", "urban explorer metro"]
+    },
+    {
+      "type": "answer",
+      "title": "대부분은 운행을 위한 공간이다",
+      "narration": "승강장 뒤쪽에는 선로로 이어지는 작업 통로와 직원 이동 공간, 각종 전기와 통신 설비가 연결되어 있습니다. 승객에게는 보이지 않지만 열차 운행에는 꼭 필요한 공간이죠.",
+      "media": {"type":"video","src":"ep094/scene_002.mp4","fit":"cover","position":"center center"},
+      "keywords": ["metro maintenance corridor", "subway electrical equipment room"]
+    },
+    {
+      "type": "story",
+      "title": "선로 옆에도 통로가 숨어 있다",
+      "narration": "터널 안에는 점검과 유지보수를 위한 좁은 통로와 피난 공간이 마련되기도 합니다. 평소에는 거의 보이지 않지만 문제가 생기면 중요한 역할을 합니다.",
+      "media": {"type":"video","src":"ep094/scene_003.mp4","fit":"cover","position":"center center"},
+      "keywords": ["subway tunnel walkway", "metro emergency walkway"]
+    },
+    {
+      "type": "fact",
+      "title": "역마다 구조는 다르다",
+      "narration": "모든 역의 승강장 끝이 같은 구조는 아닙니다. 역의 위치와 노선, 차량기지 연결 여부, 터널 배치에 따라 작업실이나 기계실, 연결 통로가 달라집니다.",
+      "media": {"type":"video","src":"ep094/scene_004.mp4","fit":"cover","position":"center center"},
+      "keywords": ["subway station back of house", "metro service rooms"]
+    },
+    {
+      "type": "fact",
+      "title": "보이지 않는 설비가 역을 움직인다",
+      "narration": "환기와 배수, 전력과 신호 같은 설비도 승객 공간 바깥에 숨어 있습니다. 우리가 보는 승강장은 거대한 지하 시설의 일부일 뿐입니다.",
+      "media": {"type":"video","src":"ep094/scene_005.mp4","fit":"cover","position":"center center"},
+      "keywords": ["subway ventilation equipment", "metro pump signal power room"]
+    },
+    {
+      "type": "ending",
+      "title": "벽 하나 뒤에도 또 다른 지하철이 있다",
+      "narration": "다음에 승강장 끝의 닫힌 문을 보게 된다면 기억해보세요. 그 뒤에는 사람들이 타는 지하철이 아니라, 지하철을 움직이게 하는 또 하나의 공간이 이어지고 있습니다.",
+      "media": {"type":"video","src":"ep094/scene_006.mp4","fit":"cover","position":"center center"},
+      "keywords": ["subway hidden infrastructure", "metro behind the scenes"]
+    }
+  ]
+}
