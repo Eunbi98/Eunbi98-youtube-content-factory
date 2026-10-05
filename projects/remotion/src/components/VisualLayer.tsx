@@ -80,6 +80,9 @@ export const VisualLayer: React.FC<
 
 	const visual = renderMedia();
 	const isVideo = media?.type === 'video';
+	const resolvedMotion =
+		scene.cameraMotion ??
+		(isVideo ? 'zoom_in' : 'static');
 
 	return (
 		<div
@@ -96,19 +99,12 @@ export const VisualLayer: React.FC<
 				zIndex: 10,
 			}}
 		>
-			{isVideo ? (
-				visual
-			) : (
-				<KenBurns
-					durationInFrames={durationInFrames}
-					motion={
-						scene.cameraMotion ??
-						'static'
-					}
-				>
-					{visual}
-				</KenBurns>
-			)}
+			<KenBurns
+				durationInFrames={durationInFrames}
+				motion={resolvedMotion}
+			>
+				{visual}
+			</KenBurns>
 		</div>
 	);
 };
