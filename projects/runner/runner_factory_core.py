@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import json
 import shutil
+import subprocess
 import sys
 import time
 from pathlib import Path
@@ -147,6 +148,8 @@ class FactoryCore:
             self._collect_missing_media()
 
             self._generate_tts()
+
+            self._adjust_video_playback_to_tts()
 
             self._validate_timeline()
 
@@ -854,6 +857,190 @@ class FactoryCore:
                 "Audio": result.output_dir,
             },
         )
+
+    @staticmethod
+    def _probe_video_duration(
+        video_path: Path,
+    ) -> float | None:
+        """Return video duration in seconds using ffprobe when available."""
+        try:
+            completed = subprocess.run(
+                [
+                    "ffprobe",
+                    "-v",
+                    "error",
+                    "-show_entries",
+                    "format=duration",
+                    "-of",
+                    "default=noprint_wrappers=1:nokey=1",
+                    str(video_path),
+                ],
+                capture_output=True,
+                text=True,
+                check=True,
+            )
+            duration = float(
+                completed.stdout.strip()
+            )
+        except (
+            OSError,
+            ValueError,
+            subprocess.CalledProcessError,
+        ):
+            return None
+
+        if duration <= 0:
+            return None
+
+        return duration
+
+    def _adjust_video_playback_to_tts(
+        self,
+    ) -> None:
+        """Slow source videos to better match each TTS-synced scene duration.
+
+        Policy:
+        - 0.75x to 1.0x: keep source ambience at 10%.
+        - 0.60x to <0.75x: lower source ambience to 5%.
+        - Never slow below 0.60x. Remaining time is covered by the existing
+          Ken Burns / zoom motion so the held final frame does not look static.
+        """
+        timeline_path = (
+            self._context
+            .paths
+            .source_timeline
+        )
+        assets_dir = (
+            self._context
+            .paths
+            .source_assets_dir
+        )
+
+        timeline_data = (
+            self._load_raw_timeline(
+                timeline_path
+            )
+        )
+        scenes = timeline_data.get("scenes")
+        if not isinstance(scenes, list):
+            return
+
+        changed = False
+
+        for raw_scene in scenes:
+            if not isinstance(raw_scene, dict):
+                continue
+
+            media = raw_scene.get("media")
+            if (
+                not isinstance(media, dict)
+                or media.get("type") != "video"
+            ):
+                continue
+
+            raw_src = media.get("src")
+            if not isinstance(raw_src, str):
+                continue
+
+            src = raw_src.strip().lstrip("/\\")
+            if not src:
+                continue
+
+            src_path = Path(src)
+            if (
+                src_path.parts
+                and src_path.parts[0].lower()
+                in {
+                    "assets",
+                    assets_dir.parent.name.lower(),
+                }
+            ):
+                src_path = Path(*src_path.parts[1:])
+
+            # Director media paths commonly look like ep097/scene_001.mp4,
+            # while source assets are stored as assets/scene_001.mp4.
+            if (
+                src_path.parts
+                and src_path.parts[0].lower()
+                == self._context.paths.episode_id.lower()
+            ):
+                src_path = Path(*src_path.parts[1:])
+
+            video_path = assets_dir / src_path
+            if not video_path.exists():
+                continue
+
+            source_duration = (
+                self._probe_video_duration(
+                    video_path
+                )
+            )
+            if source_duration is None:
+                continue
+
+            raw_duration = raw_scene.get("duration")
+            if not isinstance(
+                raw_duration,
+                (int, float),
+            ):
+                continue
+
+            scene_duration = float(raw_duration)
+            if scene_duration <= 0:
+                continue
+
+            if scene_duration <= source_duration:
+                playback_rate = 1.0
+            else:
+                playback_rate = max(
+                    0.6,
+                    min(
+                        1.0,
+                        source_duration
+                        / scene_duration,
+                    ),
+                )
+
+            source_volume = (
+                0.10
+                if playback_rate >= 0.75
+                else 0.05
+            )
+
+            media["playbackRate"] = round(
+                playback_rate,
+                4,
+            )
+            media["sourceDuration"] = round(
+                source_duration,
+                3,
+            )
+            media["sourceVolume"] = source_volume
+            changed = True
+
+            scene_id = str(
+                raw_scene.get("id")
+                or "scene"
+            )
+            print(
+                "[영상 길이 자동조정] "
+                f"{scene_id}: "
+                f"원본 {source_duration:.2f}초 / "
+                f"씬 {scene_duration:.2f}초 / "
+                f"{playback_rate:.2f}x / "
+                f"환경음 {int(source_volume * 100)}%"
+            )
+
+        if changed:
+            timeline_path.write_text(
+                json.dumps(
+                    timeline_data,
+                    ensure_ascii=False,
+                    indent=2,
+                )
+                + "\n",
+                encoding="utf-8",
+            )
 
     def _sync_audio_assets(
         self,
