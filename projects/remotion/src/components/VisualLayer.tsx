@@ -58,11 +58,21 @@ export const VisualLayer: React.FC<
 		}
 
 		if (media.type === 'video') {
+			const playbackRate = Math.min(
+				1,
+				Math.max(0.6, media.playbackRate ?? 1),
+			);
+			const sourceVolume = Math.min(
+				0.15,
+				Math.max(0, media.sourceVolume ?? 0.1),
+			);
+
 			return (
 				<OffthreadVideo
 					src={staticFile(media.src)}
 					style={mediaStyle}
-					volume={0.1}
+					playbackRate={playbackRate}
+					volume={sourceVolume}
 				/>
 			);
 		}
