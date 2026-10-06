@@ -1,0 +1,10 @@
+{
+  "version":"1.0","episodeId":"ep081","channel":"history","title":"700년 전 중국 여성의 코뼈에서 고대 형벌 흔적이 발견됐다","voice":"ko-KR-SunHiNeural","mediaSource":"medieval China skeleton nasal amputation CT Sanzhiyuan cemetery archaeology","theme":{"backgroundColor":"#120D0D","titleColor":"#DFC0A8","captionColor":"#FFFFFF","accentColor":"#DFC0A8"},"scenes":[
+    {"type":"hook","title":"700년 전 여성의 얼굴뼈에서 이상한 절단 흔적이 발견됐다","narration":"중국 허난성에서 발굴된 중세 여성의 두개골을 CT로 분석한 결과 코 주변 뼈가 의도적으로 잘린 것으로 보이는 흔적이 확인됐습니다.","keywords":["medieval China skeleton nasal amputation CT","Sanzhiyuan cemetery skull","ancient Chinese punishment archaeology"]},
+    {"type":"answer","title":"사고로 부러진 흔적과 달랐다","narration":"코뼈 일부와 내부의 섬세한 구조는 사라져 있었지만 주변 얼굴뼈와 앞니에는 큰 외상 흔적이 없어 단순 사고일 가능성이 낮았습니다.","keywords":["skull CT nasal bone archaeology","medieval skeleton facial injury","ancient skull CT scan"]},
+    {"type":"story","title":"고대 기록에는 코를 자르는 형벌이 등장한다","narration":"중국의 역사 기록에는 죄인의 얼굴에 평생 흔적을 남기기 위해 코를 절단하는 형벌이 여러 차례 언급돼 왔습니다.","keywords":["ancient Chinese punishment nose amputation","Chinese legal history punishment","medieval China penal history"]},
+    {"type":"fact","title":"하지만 실제 뼈 증거는 거의 없었다","narration":"문헌 기록은 있었지만 고고학적으로 코 절단 형벌을 보여주는 골격 증거는 지금까지 매우 드물었습니다.","keywords":["archaeological evidence punishment China","ancient skeleton punitive mutilation","medieval Chinese cemetery archaeology"]},
+    {"type":"fact","title":"연구진은 형벌 가능성을 가장 유력하게 봤다","narration":"연구자들은 손상 위치와 형태를 바탕으로 이 여성이 살아 있을 때 의도적인 비강 절단을 당했을 가능성이 가장 크다고 해석했습니다.","keywords":["nasal amputation CT reconstruction","punitive mutilation skeleton","medieval China woman skeleton"]},
+    {"type":"ending","title":"문헌 속 형벌이 실제 사람의 뼈에 남았을 수 있다","narration":"수백 년 동안 글로만 알려졌던 가혹한 형벌이 한 사람의 얼굴뼈에 직접적인 흔적으로 남아 있었을 가능성이 제기된 것입니다.","keywords":["medieval China archaeology skull","ancient punishment evidence skeleton","Sanzhiyuan cemetery reconstruction"]}
+  ]
+}

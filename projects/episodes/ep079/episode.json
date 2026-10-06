@@ -1,0 +1,10 @@
+{
+  "version":"1.0","episodeId":"ep079","channel":"animals","title":"집고양이인 줄 알았는데 100년 만의 새 야생 고양이였다","voice":"ko-KR-SunHiNeural","mediaSource":"Leopardus tilcayo Bolivia Yungas new wild cat species tiger cat","theme":{"backgroundColor":"#0B120D","titleColor":"#B7E0A5","captionColor":"#FFFFFF","accentColor":"#B7E0A5"},"scenes":[
+    {"type":"hook","title":"집에서 키우던 작은 고양이가 새 종이었다","narration":"볼리비아의 한 가족이 집고양이처럼 데려온 작은 고양이가 실제로는 과학에 새로 등록된 야생 고양이 종으로 밝혀졌습니다.","keywords":["Leopardus tilcayo Bolivia","tilcayo wild cat Yungas","new tiger cat species"]},
+    {"type":"answer","title":"이름은 틸카요","narration":"볼리비아 융가스 운무림에 사는 이 고양이는 Leopardus tilcayo라는 이름을 받았고 살아있는 야생 고양이 새 종이 100년 넘게 만에 공식 기술된 사례가 됐습니다.","keywords":["Leopardus tilcayo Yungas forest","tilcayo cat Bolivia sanctuary","Bolivia tiger cat"]},
+    {"type":"story","title":"평균 집고양이보다 더 작다","narration":"확인된 수컷은 몸길이가 약 46센티미터이고 몸무게는 약 1.4킬로그램으로 평균적인 집고양이보다 작습니다.","keywords":["small tilcayo cat size","Leopardus tilcayo close up","Bolivian wild cat spotted"]},
+    {"type":"fact","title":"DNA가 다른 고양이라는 사실을 보여줬다","narration":"연구진은 여러 지역의 타이거캣 유전체를 비교해 이 계통이 다른 종들과 뚜렷하게 갈라져 있음을 확인했습니다.","keywords":["tiger cat genetics South America","Leopardus genome study","wild cat DNA research"]},
+    {"type":"fact","title":"지금까지 확인된 범위도 매우 좁다","narration":"현재 이 종은 볼리비아 융가스 지역에서만 확인됐고 개체수와 행동, 정확한 분포도 아직 거의 알려지지 않았습니다.","keywords":["Bolivia Yungas cloud forest wildlife","tilcayo camera trap","Yungas biodiversity"]},
+    {"type":"ending","title":"가장 익숙한 동물인 고양이에도 아직 새 종이 남아 있었다","narration":"고양이는 세계에서 가장 잘 알려진 동물 중 하나지만 숲 속에는 아직 과학이 구분하지 못한 생명들이 남아 있었습니다.","keywords":["tilcayo wild cat forest","new feline species Bolivia","Yungas cloud forest cat"]}
+  ]
+}

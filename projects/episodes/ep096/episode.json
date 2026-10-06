@@ -1,0 +1,58 @@
+{
+  "version": "1.0",
+  "episodeId": "ep096",
+  "channel": "urban-exploration",
+  "title": "초고층 빌딩 꼭대기에 거대한 추가 매달린 이유",
+  "voice": "ko-KR-SunHiNeural",
+  "mediaSource": "skyscraper tuned mass damper building sway engineering",
+  "theme": {
+    "backgroundColor": "#121416",
+    "titleColor": "#E8D9A9",
+    "captionColor": "#FFFFFF",
+    "accentColor": "#E8D9A9"
+  },
+  "scenes": [
+    {
+      "type": "hook",
+      "title": "빌딩 꼭대기에 왜 거대한 추가 있을까?",
+      "narration": "초고층 빌딩 꼭대기 안쪽에는 수백 톤짜리 거대한 추가 매달려 있는 경우가 있습니다. 건물 안에 왜 이런 무거운 물체를 일부러 넣어둘까요?",
+      "media": {"type":"video","src":"ep096/scene_001.mp4","fit":"cover","position":"center center"},
+      "keywords": ["skyscraper giant pendulum", "tuned mass damper building"]
+    },
+    {
+      "type": "answer",
+      "title": "건물은 바람에 조금씩 흔들린다",
+      "narration": "높은 건물은 강한 바람을 받으면 아주 조금씩 좌우로 움직입니다. 구조적으로 안전하더라도 사람이 그 흔들림을 크게 느끼면 불편할 수 있습니다.",
+      "media": {"type":"video","src":"ep096/scene_002.mp4","fit":"cover","position":"center center"},
+      "keywords": ["skyscraper sway wind", "high rise building movement"]
+    },
+    {
+      "type": "story",
+      "title": "그래서 반대 방향으로 움직이는 무게를 넣는다",
+      "narration": "이때 거대한 추는 건물이 한쪽으로 움직일 때 반대쪽으로 움직이며 흔들림을 줄이는 데 도움을 줍니다. 이런 장치를 동조질량감쇠기라고 부릅니다.",
+      "media": {"type":"video","src":"ep096/scene_003.mp4","fit":"cover","position":"center center"},
+      "keywords": ["tuned mass damper opposite motion", "pendulum damper animation"]
+    },
+    {
+      "type": "fact",
+      "title": "핵심은 무조건 무거운 게 아니다",
+      "narration": "추의 무게와 움직임 특성은 건물이 흔들리는 주기에 맞춰 조정됩니다. 그래야 건물의 움직임과 효과적으로 맞물려 진동을 줄일 수 있습니다.",
+      "media": {"type":"video","src":"ep096/scene_004.mp4","fit":"cover","position":"center center"},
+      "keywords": ["tuned mass damper frequency", "skyscraper vibration engineering"]
+    },
+    {
+      "type": "fact",
+      "title": "모든 초고층 건물에 같은 방식이 쓰이진 않는다",
+      "narration": "건물의 높이와 형태, 구조 방식에 따라 감쇠 장치의 종류와 위치는 달라집니다. 거대한 추 대신 다른 형태의 댐퍼를 쓰는 건물도 있습니다.",
+      "media": {"type":"video","src":"ep096/scene_005.mp4","fit":"cover","position":"center center"},
+      "keywords": ["skyscraper damping system", "high rise structural damper"]
+    },
+    {
+      "type": "ending",
+      "title": "흔들리지 않는 게 아니라 덜 느끼게 만드는 것",
+      "narration": "초고층 빌딩은 완전히 움직이지 않도록 만드는 게 아니라, 필요한 범위 안에서 움직이면서도 사람이 불편하지 않도록 제어합니다. 꼭대기의 거대한 추는 그 흔들림을 다루는 장치인 셈이죠.",
+      "media": {"type":"video","src":"ep096/scene_006.mp4","fit":"cover","position":"center center"},
+      "keywords": ["skyscraper tuned mass damper cinematic", "building sway control"]
+    }
+  ]
+}

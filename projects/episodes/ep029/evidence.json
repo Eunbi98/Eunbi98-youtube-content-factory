@@ -1,0 +1,137 @@
+{
+  "topic": "양파를 썰면 왜 눈물이 날까?",
+  "items": [
+    {
+      "id": "evidence_a2d9408bf437",
+      "title": "Silencing Onion Lachrymatory Factor Synthase Causes a Significant Change in the Sulfur Secondary Metabolite Profile",
+      "claim": "양파의 lachrymatory factor synthase 유전자 활동을 억제하면 눈물 유발 물질의 생성이 최대 1,544배까지 감소하며, 실제로 눈물 자극이 크게 줄어든다.",
+      "source_name": "PLANT PHYSIOLOGY",
+      "source_url": "https://doi.org/10.1104/pp.108.123273",
+      "source_tier": "academic",
+      "evidence_type": "fact",
+      "published_at": "2008",
+      "keywords": [
+        "유전자",
+        "눈물 유발 물질",
+        "lachrymatory factor synthase",
+        "RNA interference",
+        "감소"
+      ],
+      "reliability_score": 0.95,
+      "interest_score": 0.85,
+      "visual_score": 0.45,
+      "total_score": 0.82
+    },
+    {
+      "id": "evidence_8de6e23e4f02",
+      "title": "Analysis of tear glucose concentration with electrospray ionization mass spectrometry",
+      "claim": "양파를 썰 때 생성되는 눈물의 포도당 농도는 평상시보다 높아질 수 있으며, 연구 결과 onion-induced tears에서 포도당 농도가 211~256μM로 측정되었다.",
+      "source_name": "Journal of the American Society for Mass Spectrometry",
+      "source_url": "https://doi.org/10.1016/j.jasms.2006.10.002",
+      "source_tier": "academic",
+      "evidence_type": "fact",
+      "published_at": "2006",
+      "keywords": [
+        "눈물",
+        "포도당 농도",
+        "양파",
+        "연구 결과"
+      ],
+      "reliability_score": 0.95,
+      "interest_score": 0.8,
+      "visual_score": 0.45,
+      "total_score": 0.805
+    },
+    {
+      "id": "evidence_579192d7381f",
+      "title": "Syn-Propanethial-S-oxide",
+      "claim": "양파를 썰면 눈물이 나는 이유는 syn-Propanethial S-oxide(티오프로파날 S-옥사이드)라는 휘발성 유기황 화합물이 방출되어 눈을 자극하기 때문이다.",
+      "source_name": "Wikipedia",
+      "source_url": "https://en.wikipedia.org/wiki/Syn-Propanethial-S-oxide",
+      "source_tier": "reference",
+      "evidence_type": "fact",
+      "published_at": null,
+      "keywords": [
+        "양파",
+        "눈물",
+        "syn-Propanethial S-oxide",
+        "휘발성",
+        "유기황",
+        "자극"
+      ],
+      "reliability_score": 0.8,
+      "interest_score": 0.8,
+      "visual_score": 0.45,
+      "total_score": 0.73
+    },
+    {
+      "id": "evidence_9326e4aadfcb",
+      "title": "Tears",
+      "claim": "양파를 썰 때 발생하는 눈물은 자극에 의해 분비되는 'reflex tears'로, 평소보다 최대 100배까지 분비량이 증가할 수 있다.",
+      "source_name": "Wikipedia",
+      "source_url": "https://en.wikipedia.org/wiki/Tears",
+      "source_tier": "reference",
+      "evidence_type": "fact",
+      "published_at": null,
+      "keywords": [
+        "눈물",
+        "reflex tears",
+        "분비량",
+        "자극",
+        "양파"
+      ],
+      "reliability_score": 0.8,
+      "interest_score": 0.8,
+      "visual_score": 0.45,
+      "total_score": 0.73
+    }
+  ],
+  "rejected_count": 0,
+  "duplicate_count": 0,
+  "status": "verified",
+  "summary": "양파를 썰면 눈물이 나는 것은 syn-Propanethial S-oxide라는 휘발성 유기황 화합물이 방출되어 눈을 자극하기 때문입니다. 이 물질의 생성은 양파 내 lachrymatory factor synthase 유전자에 의해 조절되며, 해당 유전자를 억제하면 눈물 유발 물질의 생성이 크게 줄어듭니다. 양파를 썰 때 분비되는 눈물은 자극에 의해 발생하는 'reflex tears'로, 분비량이 평소보다 최대 100배까지 증가할 수 있습니다. 또한, 연구에 따르면 양파로 유발된 눈물의 포도당 농도는 평상시보다 높게 나타납니다.",
+  "uncertainties": [
+    "양파를 썰 때 눈물이 나는 현상을 줄이는 구체적인 방법(예: 냉장 보관, 물에 담그기 등)에 대한 실험적 근거는 제공된 자료에서 직접적으로 확인되지 않음."
+  ],
+  "citations": [
+    {
+      "title": "Syn-Propanethial-S-oxide",
+      "url": "https://en.wikipedia.org/wiki/Syn-Propanethial-S-oxide"
+    },
+    {
+      "title": "Tears",
+      "url": "https://en.wikipedia.org/wiki/Tears"
+    },
+    {
+      "title": "Onion",
+      "url": "https://en.wikipedia.org/wiki/Onion"
+    },
+    {
+      "title": "Onion routing",
+      "url": "https://doi.org/10.1145/293411.293443"
+    },
+    {
+      "title": "Analysis of tear glucose concentration with electrospray ionization mass spectrometry",
+      "url": "https://doi.org/10.1016/j.jasms.2006.10.002"
+    },
+    {
+      "title": "Silencing Onion Lachrymatory Factor Synthase Causes a Significant Change in the Sulfur Secondary Metabolite Profile",
+      "url": "https://doi.org/10.1104/pp.108.123273"
+    },
+    {
+      "title": "Dynamics of the Tear Film",
+      "url": "https://doi.org/10.1146/annurev-fluid-120710-101042"
+    },
+    {
+      "title": "thiopropanal S-oxide | C3H6OS | CID 441491 - PubChem",
+      "url": "https://pubchem.ncbi.nlm.nih.gov/compound/441491"
+    },
+    {
+      "title": "CompTox Chemicals Dashboard",
+      "url": "https://comptox.epa.gov/dashboard/chemical/details/DTXSID50954029"
+    }
+  ],
+  "provider": "github_models_public_sources",
+  "model": "openai/gpt-4.1",
+  "verified_at": "2026-07-29T08:08:14.220048+00:00"
+}

@@ -1,0 +1,38 @@
+{
+  "episodeId": "ep016",
+  "license": "Public domain",
+  "credit": "Unknown author / Beinecke Rare Book & Manuscript Library, Yale University",
+  "reason": "GitHub Actions의 Wikimedia 429 제한을 피하고 검증된 공개 도메인 원본을 재사용함",
+  "scenes": [
+    {
+      "sceneId": "scene_001",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Voynich_Manuscript_(135).jpg",
+      "sha256": "87c66a63492fd1bb00d2a2db40ff44cb8983a098cd365e205321d43cfa36e40d"
+    },
+    {
+      "sceneId": "scene_002",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Voynich_Manuscript_(154).jpg",
+      "sha256": "924943bb5ed6a9131a7270d814e1447a5dff3e597089d1aef35493e69ee480cb"
+    },
+    {
+      "sceneId": "scene_003",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Voynich_Manuscript_(146).jpg",
+      "sha256": "36526af314bb84b16f865b13d1e84c7d1f9e1cf5ec2826d62ecfc337ff7b7309"
+    },
+    {
+      "sceneId": "scene_004",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Voynich_Manuscript_(104).jpg",
+      "sha256": "615b86161ee723ad7afb5e750907aff2bdd9d971ee82f5b5bb1e6f9f3717bf6c"
+    },
+    {
+      "sceneId": "scene_005",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Voynich_Manuscript_(32).jpg",
+      "sha256": "e8c188529b1ed804a75acac8c8e88b9304aa4ccbf448a41df23ee7a6e82dbb18"
+    },
+    {
+      "sceneId": "scene_006",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Voynich_Manuscript_(148).jpg",
+      "sha256": "2b4eefa603ace409b2a4ca5023655acb1204da7849df72f39061ae4495a9905a"
+    }
+  ]
+}

@@ -1,0 +1,70 @@
+{
+  "version": "1.0",
+  "episodeId": "ep033",
+  "channel": "science",
+  "title": "감자칩 봉지가 빵빵한 진짜 이유",
+  "voice": "ko-KR-SunHiNeural",
+  "mediaSource": "potato chips bag close up, opening potato chip bag, snack factory packaging line, nitrogen food packaging illustration, crispy potato chips close up",
+  "theme": {
+    "backgroundColor": "#000000",
+    "titleColor": "#7CFFB2",
+    "captionColor": "#FFFFFF",
+    "accentColor": "#7CFFB2"
+  },
+  "scenes": [
+    {
+      "type": "hook",
+      "title": "과자보다 공기가 더 많다?",
+      "narration": "감자칩 봉지를 열 때마다 과자보다 공기가 더 많은 것 같다고 느껴본 적 있나요? 사실 이 공간에는 이유가 있습니다.",
+      "keywords": [
+        "inflated potato chips bag close up",
+        "potato chip bag opening"
+      ]
+    },
+    {
+      "type": "answer",
+      "title": "공기 대신 질소",
+      "narration": "감자칩 봉지 안에는 보통 산소를 줄이고 질소를 채워 넣습니다.",
+      "keywords": [
+        "nitrogen flushed snack packaging",
+        "potato chips packaging factory"
+      ]
+    },
+    {
+      "type": "story",
+      "title": "바삭함을 지키는 역할",
+      "narration": "산소가 많으면 감자칩의 기름이 산화해 맛과 향이 변하기 쉽습니다. 질소는 이런 산화를 늦추는 데 도움을 줍니다.",
+      "keywords": [
+        "crispy potato chips close up",
+        "food oxidation illustration chips"
+      ]
+    },
+    {
+      "type": "fact",
+      "title": "부서짐도 줄여준다",
+      "narration": "봉지 안의 빈 공간은 운송 중 충격을 받아 감자칩이 산산이 부서지는 것도 줄여주는 완충 공간이 됩니다.",
+      "keywords": [
+        "potato chips bag transport boxes",
+        "potato chips unbroken inside bag"
+      ]
+    },
+    {
+      "type": "fact",
+      "title": "봉지가 큰 데는 이유가 있다",
+      "narration": "그래서 감자칩 봉지가 빵빵한 건 단순한 빈 공간이 아니라 신선함과 모양을 지키기 위한 포장 방식입니다.",
+      "keywords": [
+        "sealed potato chips bags supermarket",
+        "fresh potato chips packaging"
+      ]
+    },
+    {
+      "type": "ending",
+      "title": "질소가 지키는 감자칩",
+      "narration": "다음에 감자칩 봉지를 열 때는 안에 든 질소도 떠올려 보세요. 여러분은 봉지가 너무 크다고 생각한 적 있나요?",
+      "keywords": [
+        "opening chips bag eating chips",
+        "potato chips close up snack"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,217 @@
+{
+  "version": "6.5",
+  "episodeId": "EP010",
+  "title": "이 숲의 나무들은\n왜 모두 휘어 있을까?",
+  "fps": 30,
+  "width": 1080,
+  "height": 1920,
+  "totalDuration": 32.433,
+  "theme": {
+    "backgroundColor": "#000000",
+    "titleColor": "#7CFFB2",
+    "captionColor": "#FFFFFF",
+    "accentColor": "#7CFFB2"
+  },
+  "scenes": [
+    {
+      "id": "scene_001",
+      "start": 0.0,
+      "duration": 4.4,
+      "title": "왜 이 나무들은\n모두 휘어 있을까요?",
+      "narration": "왜 이 숲의 나무들은 모두 같은 방향으로 휘어 있을까요?",
+      "caption": "왜 이 숲의 나무들은 모두 같은 방향으로 휘어 있을까요?",
+      "backgroundColor": "#14202B",
+      "keywords": [
+        "Krzywy Las curved pine trees",
+        "crooked forest wide view",
+        "Krzywy Las curved pine trees wide view",
+        "Krzywy Las curved pine trees landscape",
+        "crooked forest wide view wide view",
+        "crooked forest wide view landscape",
+        "Krzywy Las curved pine trees close up",
+        "Krzywy Las curved pine trees detailed view"
+      ],
+      "media": {
+        "type": "image",
+        "fit": "cover",
+        "position": "center center",
+        "src": "assets/ep010/scene_001.jpg",
+        "keywords": [
+          "Krzywy Las curved pine trees",
+          "crooked forest wide view",
+          "Krzywy Las curved pine trees wide view",
+          "Krzywy Las curved pine trees landscape",
+          "crooked forest wide view wide view",
+          "crooked forest wide view landscape",
+          "Krzywy Las curved pine trees close up",
+          "Krzywy Las curved pine trees detailed view"
+        ]
+      },
+      "cameraMotion": "zoom_in",
+      "transition": "fade",
+      "transitionDuration": 0.3,
+      "overlay": "cinematic",
+      "overlayOpacity": 1.0
+    },
+    {
+      "id": "scene_002",
+      "start": 4.4,
+      "duration": 7.4,
+      "title": "폴란드의\n휘어진 숲",
+      "narration": "이곳은 폴란드의 휘어진 숲입니다. 약 사백 그루의 소나무가 비슷한 모양으로 휘어 있습니다.",
+      "caption": "이곳은 폴란드의 휘어진 숲입니다. 약 사백 그루의 소나무가 비슷한 모양으로 휘어 있습니다.",
+      "backgroundColor": "#223748",
+      "keywords": [
+        "curved pine trees Poland close up",
+        "Crooked Forest Gryfino Poland",
+        "curved pine trees Poland close up wide view",
+        "curved pine trees Poland close up landscape",
+        "Crooked Forest Gryfino Poland wide view",
+        "Crooked Forest Gryfino Poland landscape",
+        "curved pine trees Poland close up close up",
+        "curved pine trees Poland close up detailed view"
+      ],
+      "media": {
+        "type": "image",
+        "fit": "cover",
+        "position": "center center",
+        "src": "assets/ep010/scene_002.jpg",
+        "keywords": [
+          "curved pine trees Poland close up",
+          "Crooked Forest Gryfino Poland",
+          "curved pine trees Poland close up wide view",
+          "curved pine trees Poland close up landscape",
+          "Crooked Forest Gryfino Poland wide view",
+          "Crooked Forest Gryfino Poland landscape",
+          "curved pine trees Poland close up close up",
+          "curved pine trees Poland close up detailed view"
+        ]
+      },
+      "cameraMotion": "pan_right",
+      "transition": "cut",
+      "transitionDuration": 0.2,
+      "overlay": "cinematic",
+      "overlayOpacity": 1.0
+    },
+    {
+      "id": "scene_003",
+      "start": 11.8,
+      "duration": 7.033,
+      "title": "사람이 일부러\n구부렸을까?",
+      "narration": "가장 유명한 가설은 사람이 곡선 목재를 얻기 위해 어린 나무를 일부러 구부렸다는 것입니다.",
+      "caption": "가장 유명한 가설은 사람이 곡선 목재를 얻기 위해 어린 나무를 일부러 구부렸다는 것입니다.",
+      "backgroundColor": "#314A5D",
+      "keywords": [
+        "Crooked Forest bent tree trunks",
+        "curved pine trunk Poland",
+        "Crooked Forest bent tree trunks wide view",
+        "Crooked Forest bent tree trunks landscape",
+        "curved pine trunk Poland wide view",
+        "curved pine trunk Poland landscape",
+        "Crooked Forest bent tree trunks close up",
+        "Crooked Forest bent tree trunks detailed view"
+      ],
+      "media": {
+        "type": "image",
+        "fit": "cover",
+        "position": "center center",
+        "src": "assets/ep010/scene_003.jpg",
+        "keywords": [
+          "Crooked Forest bent tree trunks",
+          "curved pine trunk Poland",
+          "Crooked Forest bent tree trunks wide view",
+          "Crooked Forest bent tree trunks landscape",
+          "curved pine trunk Poland wide view",
+          "curved pine trunk Poland landscape",
+          "Crooked Forest bent tree trunks close up",
+          "Crooked Forest bent tree trunks detailed view"
+        ]
+      },
+      "cameraMotion": "pan_left",
+      "transition": "fade",
+      "transitionDuration": 0.3,
+      "overlay": "cinematic",
+      "overlayOpacity": 1.0
+    },
+    {
+      "id": "scene_004",
+      "start": 18.833,
+      "duration": 6.6,
+      "title": "다른 가설도 있지만\n증거는 없습니다",
+      "narration": "폭설과 강한 바람, 전쟁 당시 차량 때문이라는 주장도 있지만 확실한 증거는 없습니다.",
+      "caption": "폭설과 강한 바람, 전쟁 당시 차량 때문이라는 주장도 있지만 확실한 증거는 없습니다.",
+      "backgroundColor": "#1C3040",
+      "keywords": [
+        "Crooked Forest winter Poland",
+        "Krzywy Las forest landscape",
+        "Crooked Forest winter Poland wide view",
+        "Crooked Forest winter Poland landscape",
+        "Krzywy Las forest landscape wide view",
+        "Krzywy Las forest landscape landscape",
+        "Crooked Forest winter Poland close up",
+        "Crooked Forest winter Poland detailed view"
+      ],
+      "media": {
+        "type": "image",
+        "fit": "cover",
+        "position": "center center",
+        "src": "assets/ep010/scene_004.jpg",
+        "keywords": [
+          "Crooked Forest winter Poland",
+          "Krzywy Las forest landscape",
+          "Crooked Forest winter Poland wide view",
+          "Crooked Forest winter Poland landscape",
+          "Krzywy Las forest landscape wide view",
+          "Krzywy Las forest landscape landscape",
+          "Crooked Forest winter Poland close up",
+          "Crooked Forest winter Poland detailed view"
+        ]
+      },
+      "cameraMotion": "zoom_in_right",
+      "transition": "slide_left",
+      "transitionDuration": 0.3,
+      "overlay": "vignette",
+      "overlayOpacity": 1.0
+    },
+    {
+      "id": "scene_005",
+      "start": 25.433,
+      "duration": 7.0,
+      "title": "아직 풀리지 않은\n숲의 미스터리",
+      "narration": "정확한 원인은 아직 밝혀지지 않았습니다. 여러분은 사람이 만든 숲이라고 생각하시나요, 자연이 만든 현상이라고 생각하시나요?",
+      "caption": "정확한 원인은 아직 밝혀지지 않았습니다. 여러분은 사람이 만든 숲이라고 생각하시나요, 자연이 만든 현상이라고 생각하시나요?",
+      "backgroundColor": "#101820",
+      "keywords": [
+        "Crooked Forest Poland mysterious",
+        "Krzywy Las forest wide",
+        "Crooked Forest Poland mysterious wide view",
+        "Crooked Forest Poland mysterious landscape",
+        "Krzywy Las forest wide wide view",
+        "Krzywy Las forest wide landscape",
+        "Crooked Forest Poland mysterious close up",
+        "Crooked Forest Poland mysterious detailed view"
+      ],
+      "media": {
+        "type": "image",
+        "fit": "cover",
+        "position": "center center",
+        "src": "assets/ep010/scene_005.jpg",
+        "keywords": [
+          "Crooked Forest Poland mysterious",
+          "Krzywy Las forest wide",
+          "Crooked Forest Poland mysterious wide view",
+          "Crooked Forest Poland mysterious landscape",
+          "Krzywy Las forest wide wide view",
+          "Krzywy Las forest wide landscape",
+          "Crooked Forest Poland mysterious close up",
+          "Crooked Forest Poland mysterious detailed view"
+        ]
+      },
+      "cameraMotion": "zoom_out",
+      "transition": "fade",
+      "transitionDuration": 0.35,
+      "overlay": "dark",
+      "overlayOpacity": 1.0
+    }
+  ]
+}

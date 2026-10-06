@@ -1,0 +1,106 @@
+{
+  "version": "1.0",
+  "episodeId": "ep091",
+  "channel": "mystery",
+  "title": "일부 주민만 들었다는 정체불명의 저주파음, 타오스 험",
+  "voice": "ko-KR-SunHiNeural",
+  "mediaSource": "Taos Hum mystery New Mexico low frequency sound",
+  "theme": {
+    "backgroundColor": "#101114",
+    "titleColor": "#E7D7A3",
+    "captionColor": "#FFFFFF",
+    "accentColor": "#E7D7A3"
+  },
+  "scenes": [
+    {
+      "type": "hook",
+      "title": "도시 전체에 들리는데 아무도 원인을 못 찾았다",
+      "narration": "미국 뉴멕시코의 작은 도시 타오스. 1990년대 초부터 일부 주민들은 밤마다 멀리서 디젤 엔진이 도는 것 같은 낮은 소리를 들었다고 말했습니다.",
+      "media": {
+        "type": "video",
+        "src": "ep091/scene_001.mp4",
+        "fit": "cover",
+        "position": "center center"
+      },
+      "keywords": [
+        "Taos New Mexico night town",
+        "mysterious low frequency hum town"
+      ]
+    },
+    {
+      "type": "story",
+      "title": "문제는 모두에게 들리지 않았다는 것",
+      "narration": "이 소리는 이상하게도 모두에게 들리지 않았습니다. 연구진이 인터뷰한 사람들은 낮고 지속적인 윙윙거림을 묘사했지만, 바로 옆 사람은 아무것도 듣지 못하기도 했습니다.",
+      "media": {
+        "type": "video",
+        "src": "ep091/scene_002.mp4",
+        "fit": "cover",
+        "position": "center center"
+      },
+      "keywords": [
+        "person hearing mysterious hum at night",
+        "quiet bedroom low frequency sound"
+      ]
+    },
+    {
+      "type": "story",
+      "title": "과학자들이 직접 조사에 나섰다",
+      "narration": "1993년에는 대학과 국립연구소 연구자들까지 참여한 조사팀이 꾸려졌습니다. 신고자들이 느끼는 소리의 주파수를 맞춰보고, 초저주파까지 측정할 수 있는 장비도 설치했습니다.",
+      "media": {
+        "type": "video",
+        "src": "ep091/scene_003.mp4",
+        "fit": "cover",
+        "position": "center center"
+      },
+      "keywords": [
+        "1990s acoustic investigation equipment",
+        "scientists measuring low frequency sound"
+      ]
+    },
+    {
+      "type": "fact",
+      "title": "그런데 공통된 외부 소리는 잡히지 않았다",
+      "narration": "신고자들은 대략 30에서 80헤르츠 사이의 낮은 소리를 떠올렸지만, 조사 장비에서는 모두의 경험을 설명할 수 있는 하나의 공통 음원을 찾아내지 못했습니다.",
+      "media": {
+        "type": "video",
+        "src": "ep091/scene_004.mp4",
+        "fit": "cover",
+        "position": "center center"
+      },
+      "keywords": [
+        "low frequency spectrum analyzer 30 80 Hz",
+        "audio investigation no source found"
+      ]
+    },
+    {
+      "type": "fact",
+      "title": "공장도 군사시설도 확정 답은 아니었다",
+      "narration": "산업시설이나 군사 장비 같은 외부 원인부터, 이명이나 유난히 민감한 청각 같은 개인적 원인까지 여러 설명이 제시됐습니다. 하지만 타오스에서 하나의 원인으로 확정된 것은 없습니다.",
+      "media": {
+        "type": "video",
+        "src": "ep091/scene_005.mp4",
+        "fit": "cover",
+        "position": "center center"
+      },
+      "keywords": [
+        "industrial machinery at night distant",
+        "ear hearing low frequency concept"
+      ]
+    },
+    {
+      "type": "ending",
+      "title": "30년이 지나도 남아 있는 질문",
+      "narration": "실제로 외부에서 나는 소리였을까요, 아니면 일부 사람만 감지하는 청각 현상이었을까요. 타오스 험은 지금도 명확한 단일 원인이 확인되지 않은 채 대표적인 소리 미스터리로 남아 있습니다.",
+      "media": {
+        "type": "video",
+        "src": "ep091/scene_006.mp4",
+        "fit": "cover",
+        "position": "center center"
+      },
+      "keywords": [
+        "Taos New Mexico night landscape mystery",
+        "unexplained hum cinematic documentary"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,70 @@
+{
+  "version": "1.0",
+  "episodeId": "ep034",
+  "channel": "science",
+  "title": "왜 콜라는 얼리면 터질까?",
+  "voice": "ko-KR-SunHiNeural",
+  "mediaSource": "frozen soda can, cola can in freezer, carbonated drink bubbles, ice expansion close up, soda can bulging burst",
+  "theme": {
+    "backgroundColor": "#000000",
+    "titleColor": "#7CFFB2",
+    "captionColor": "#FFFFFF",
+    "accentColor": "#7CFFB2"
+  },
+  "scenes": [
+    {
+      "type": "hook",
+      "title": "냉동실의 콜라가 위험한 이유",
+      "narration": "콜라를 냉동실에 오래 넣어두면 캔이 부풀거나 터질 수 있습니다. 단순히 탄산 때문만은 아닙니다.",
+      "keywords": [
+        "frozen soda can freezer",
+        "cola can bulging frozen"
+      ]
+    },
+    {
+      "type": "answer",
+      "title": "얼면서 부피가 커진다",
+      "narration": "콜라의 대부분은 물입니다. 물은 얼음이 되면서 부피가 커져 캔 안쪽을 강하게 밀어냅니다.",
+      "keywords": [
+        "water freezing expansion ice",
+        "ice expansion close up"
+      ]
+    },
+    {
+      "type": "story",
+      "title": "밀폐된 캔에는 공간이 부족",
+      "narration": "하지만 캔은 완전히 밀폐되어 있어 늘어난 부피가 빠져나갈 공간이 거의 없습니다.",
+      "keywords": [
+        "sealed soda can macro",
+        "aluminum beverage can close up"
+      ]
+    },
+    {
+      "type": "fact",
+      "title": "탄산가스도 압력에 영향을 준다",
+      "narration": "여기에 콜라 속 이산화탄소와 얼지 않은 액체가 한쪽으로 밀리면서 내부 압력도 커질 수 있습니다.",
+      "keywords": [
+        "carbonated drink bubbles macro",
+        "carbon dioxide soda bubbles"
+      ]
+    },
+    {
+      "type": "fact",
+      "title": "결국 캔이 버티지 못한다",
+      "narration": "압력이 캔이 견딜 수 있는 수준을 넘으면 캔이 부풀고, 심하면 이음새가 벌어지거나 터지게 됩니다.",
+      "keywords": [
+        "burst soda can frozen",
+        "damaged aluminum soda can"
+      ]
+    },
+    {
+      "type": "ending",
+      "title": "냉동실에 탄산음료는 오래 두지 마세요",
+      "narration": "결국 콜라가 얼면서 부피가 커지고 밀폐된 캔 내부 압력이 높아지는 것이 핵심입니다. 탄산음료를 냉동실에 오래 두면 안 되는 이유, 이제 아시겠죠?",
+      "keywords": [
+        "cola can freezer warning",
+        "frozen carbonated drink can"
+      ]
+    }
+  ]
+}

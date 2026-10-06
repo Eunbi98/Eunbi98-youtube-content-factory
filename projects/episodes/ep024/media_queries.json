@@ -1,0 +1,426 @@
+{
+  "version": "2.0",
+  "episodeId": "ep024",
+  "timelinePath": "C:\\Users\\user\\Desktop\\Eunbi98-youtube-content-factory\\projects\\episodes\\ep024\\timeline.json",
+  "sceneCount": 5,
+  "scenes": [
+    {
+      "sceneId": "scene_001",
+      "title": "3000년이 지나도 먹을 수 있는 음식",
+      "narration": "3000년이 지나도 먹을 수 있는 음식이 있을까요",
+      "sourceKeywords": [
+        "golden honey macro",
+        "honey dripping slow motion",
+        "golden honey macro close up",
+        "golden honey macro wide view",
+        "golden honey macro landscape",
+        "honey dripping slow motion wide view",
+        "honey dripping slow motion landscape",
+        "golden honey macro detailed view"
+      ],
+      "entities": [
+        "golden honey macro honey dripping slow motion golden",
+        "honey macro wide view golden honey macro landscape",
+        "view honey dripping slow motion landscape golden honey"
+      ],
+      "primaryQuery": "honey dripping slow motion",
+      "queries": [
+        {
+          "query": "honey dripping slow motion",
+          "intent": "primary",
+          "priority": 1,
+          "mediaKind": "any"
+        },
+        {
+          "query": "golden honey macro",
+          "intent": "primary",
+          "priority": 2,
+          "mediaKind": "any"
+        },
+        {
+          "query": "honey dripping slow motion wide view",
+          "intent": "wide",
+          "priority": 3,
+          "mediaKind": "any"
+        },
+        {
+          "query": "golden honey macro close up",
+          "intent": "detail",
+          "priority": 4,
+          "mediaKind": "any"
+        },
+        {
+          "query": "golden honey macro wide view",
+          "intent": "wide",
+          "priority": 5,
+          "mediaKind": "any"
+        },
+        {
+          "query": "honey dripping slow motion landscape",
+          "intent": "wide",
+          "priority": 6,
+          "mediaKind": "any"
+        },
+        {
+          "query": "golden honey macro detailed view",
+          "intent": "detail",
+          "priority": 7,
+          "mediaKind": "any"
+        },
+        {
+          "query": "golden honey macro landscape",
+          "intent": "wide",
+          "priority": 8,
+          "mediaKind": "any"
+        },
+        {
+          "query": "honey dripping slow motion close up",
+          "intent": "detail",
+          "priority": 9,
+          "mediaKind": "any"
+        },
+        {
+          "query": "honey dripping slow motion detailed view",
+          "intent": "detail",
+          "priority": 10,
+          "mediaKind": "any"
+        }
+      ]
+    },
+    {
+      "sceneId": "scene_002",
+      "title": "정답은 꿀",
+      "narration": "놀랍게도 있습니다. 바로 꿀입니다.",
+      "sourceKeywords": [
+        "pouring honey",
+        "glass jar honey",
+        "pouring honey close up",
+        "pouring honey wide view",
+        "pouring honey landscape",
+        "glass jar honey wide view",
+        "glass jar honey landscape",
+        "pouring honey detailed view"
+      ],
+      "entities": [
+        "pouring honey glass jar honey pouring honey close",
+        "ing honey landscape glass jar honey wide view",
+        "oney detailed view"
+      ],
+      "primaryQuery": "glass jar honey",
+      "queries": [
+        {
+          "query": "glass jar honey",
+          "intent": "primary",
+          "priority": 1,
+          "mediaKind": "any"
+        },
+        {
+          "query": "pouring honey",
+          "intent": "primary",
+          "priority": 2,
+          "mediaKind": "any"
+        },
+        {
+          "query": "glass jar honey wide view",
+          "intent": "wide",
+          "priority": 3,
+          "mediaKind": "any"
+        },
+        {
+          "query": "pouring honey close up",
+          "intent": "detail",
+          "priority": 4,
+          "mediaKind": "any"
+        },
+        {
+          "query": "pouring honey wide view",
+          "intent": "wide",
+          "priority": 5,
+          "mediaKind": "any"
+        },
+        {
+          "query": "glass jar honey landscape",
+          "intent": "wide",
+          "priority": 6,
+          "mediaKind": "any"
+        },
+        {
+          "query": "pouring honey detailed view",
+          "intent": "detail",
+          "priority": 7,
+          "mediaKind": "any"
+        },
+        {
+          "query": "pouring honey landscape",
+          "intent": "wide",
+          "priority": 8,
+          "mediaKind": "any"
+        },
+        {
+          "query": "glass jar honey close up",
+          "intent": "detail",
+          "priority": 9,
+          "mediaKind": "any"
+        },
+        {
+          "query": "glass jar honey detailed view",
+          "intent": "detail",
+          "priority": 10,
+          "mediaKind": "any"
+        }
+      ]
+    },
+    {
+      "sceneId": "scene_003",
+      "title": "고대 이집트의 꿀",
+      "narration": "고대 이집트 무덤에서는 수천 년이 지난 꿀이 발견된 적도 있습니다.",
+      "sourceKeywords": [
+        "ancient egyptian tomb artifact",
+        "ancient egypt pottery jar",
+        "Egypt desert landscape",
+        "ancient egyptian tomb artifact wide view",
+        "ancient egyptian tomb artifact landscape",
+        "ancient egypt pottery jar wide view",
+        "ancient egypt pottery jar landscape",
+        "ancient egyptian tomb artifact close up"
+      ],
+      "entities": [
+        "이집트",
+        "ancient egyptian tomb artifact ancient egypt pottery jar",
+        "ncient egyptian tomb artifact wide view ancient egyptian",
+        "ancient egypt pottery jar wide view ancient egypt",
+        "gyptian tomb artifact close up"
+      ],
+      "primaryQuery": "ancient egyptian tomb artifact",
+      "queries": [
+        {
+          "query": "ancient egyptian tomb artifact",
+          "intent": "primary",
+          "priority": 1,
+          "mediaKind": "any"
+        },
+        {
+          "query": "ancient egypt pottery jar",
+          "intent": "primary",
+          "priority": 2,
+          "mediaKind": "any"
+        },
+        {
+          "query": "ancient egyptian tomb artifact wide view",
+          "intent": "wide",
+          "priority": 3,
+          "mediaKind": "any"
+        },
+        {
+          "query": "ancient egypt pottery jar wide view",
+          "intent": "wide",
+          "priority": 4,
+          "mediaKind": "any"
+        },
+        {
+          "query": "ancient egyptian tomb artifact close up",
+          "intent": "detail",
+          "priority": 5,
+          "mediaKind": "any"
+        },
+        {
+          "query": "ancient egyptian tomb artifact landscape",
+          "intent": "wide",
+          "priority": 6,
+          "mediaKind": "any"
+        },
+        {
+          "query": "ancient egypt pottery jar landscape",
+          "intent": "wide",
+          "priority": 7,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Egypt desert landscape",
+          "intent": "wide",
+          "priority": 8,
+          "mediaKind": "any"
+        },
+        {
+          "query": "ancient egyptian tomb artifact detailed view",
+          "intent": "detail",
+          "priority": 9,
+          "mediaKind": "any"
+        },
+        {
+          "query": "ancient egypt pottery jar close up",
+          "intent": "detail",
+          "priority": 10,
+          "mediaKind": "any"
+        }
+      ]
+    },
+    {
+      "sceneId": "scene_004",
+      "title": "왜 썩지 않을까",
+      "narration": "꿀은 수분이 매우 적고 산성이며 천연 항균 작용까지 있어 미생물이 번식하기 어렵습니다.",
+      "sourceKeywords": [
+        "bee honeycomb",
+        "honeycomb macro photography",
+        "bee honeycomb close up",
+        "bee honeycomb wide view",
+        "bee honeycomb landscape",
+        "honeycomb macro photography wide view",
+        "honeycomb macro photography landscape",
+        "bee honeycomb detailed view"
+      ],
+      "entities": [
+        "bee honeycomb honeycomb macro photography bee honeycomb close",
+        "de view bee honeycomb landscape honeycomb macro photography",
+        "acro photography landscape bee honeycomb detailed view"
+      ],
+      "primaryQuery": "honeycomb macro photography",
+      "queries": [
+        {
+          "query": "honeycomb macro photography",
+          "intent": "primary",
+          "priority": 1,
+          "mediaKind": "any"
+        },
+        {
+          "query": "bee honeycomb",
+          "intent": "primary",
+          "priority": 2,
+          "mediaKind": "any"
+        },
+        {
+          "query": "honeycomb macro photography wide view",
+          "intent": "wide",
+          "priority": 3,
+          "mediaKind": "any"
+        },
+        {
+          "query": "bee honeycomb close up",
+          "intent": "detail",
+          "priority": 4,
+          "mediaKind": "any"
+        },
+        {
+          "query": "bee honeycomb wide view",
+          "intent": "wide",
+          "priority": 5,
+          "mediaKind": "any"
+        },
+        {
+          "query": "honeycomb macro photography landscape",
+          "intent": "wide",
+          "priority": 6,
+          "mediaKind": "any"
+        },
+        {
+          "query": "bee honeycomb detailed view",
+          "intent": "detail",
+          "priority": 7,
+          "mediaKind": "any"
+        },
+        {
+          "query": "bee honeycomb landscape",
+          "intent": "wide",
+          "priority": 8,
+          "mediaKind": "any"
+        },
+        {
+          "query": "honeycomb macro photography close up",
+          "intent": "detail",
+          "priority": 9,
+          "mediaKind": "any"
+        },
+        {
+          "query": "honeycomb macro photography detailed view",
+          "intent": "detail",
+          "priority": 10,
+          "mediaKind": "any"
+        }
+      ]
+    },
+    {
+      "sceneId": "scene_005",
+      "title": "상하지 않는 음식",
+      "narration": "그래서 제대로 밀봉해 보관한 꿀은 매우 오랫동안 유지될 수 있습니다. 여러분은 알고 계셨나요",
+      "sourceKeywords": [
+        "sealed honey jar sunlight",
+        "natural honey jar table",
+        "sealed honey jar sunlight wide view",
+        "sealed honey jar sunlight landscape",
+        "natural honey jar table wide view",
+        "natural honey jar table landscape",
+        "sealed honey jar sunlight close up",
+        "sealed honey jar sunlight detailed view"
+      ],
+      "entities": [
+        "sealed honey jar sunlight natural honey jar table",
+        "view sealed honey jar sunlight landscape natural honey",
+        "honey jar table landscape sealed honey jar sunlight",
+        "unlight detailed view"
+      ],
+      "primaryQuery": "sealed honey jar sunlight",
+      "queries": [
+        {
+          "query": "sealed honey jar sunlight",
+          "intent": "primary",
+          "priority": 1,
+          "mediaKind": "any"
+        },
+        {
+          "query": "natural honey jar table",
+          "intent": "primary",
+          "priority": 2,
+          "mediaKind": "any"
+        },
+        {
+          "query": "sealed honey jar sunlight wide view",
+          "intent": "wide",
+          "priority": 3,
+          "mediaKind": "any"
+        },
+        {
+          "query": "natural honey jar table wide view",
+          "intent": "wide",
+          "priority": 4,
+          "mediaKind": "any"
+        },
+        {
+          "query": "sealed honey jar sunlight close up",
+          "intent": "detail",
+          "priority": 5,
+          "mediaKind": "any"
+        },
+        {
+          "query": "sealed honey jar sunlight detailed view",
+          "intent": "detail",
+          "priority": 6,
+          "mediaKind": "any"
+        },
+        {
+          "query": "sealed honey jar sunlight landscape",
+          "intent": "wide",
+          "priority": 7,
+          "mediaKind": "any"
+        },
+        {
+          "query": "natural honey jar table landscape",
+          "intent": "wide",
+          "priority": 8,
+          "mediaKind": "any"
+        },
+        {
+          "query": "natural honey jar table close up",
+          "intent": "detail",
+          "priority": 9,
+          "mediaKind": "any"
+        },
+        {
+          "query": "natural honey jar table detailed view",
+          "intent": "detail",
+          "priority": 10,
+          "mediaKind": "any"
+        }
+      ]
+    }
+  ]
+}

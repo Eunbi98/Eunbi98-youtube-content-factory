@@ -1,0 +1,428 @@
+{
+  "version": "2.0",
+  "episodeId": "ep013",
+  "timelinePath": "C:\\Users\\qkrdm\\OneDrive\\바탕 화면\\youtube-content-factory\\projects\\episodes\\ep013\\timeline.json",
+  "sceneCount": 5,
+  "scenes": [
+    {
+      "sceneId": "scene_001",
+      "title": "우주에도 설탕이 있습니다",
+      "narration": "과학자들이 우주에서 처음으로 진짜 당 분자를 발견했습니다.",
+      "sourceKeywords": [
+        "Milky Way galactic center",
+        "deep space stars",
+        "Milky Way galactic center wide view",
+        "Milky Way galactic center landscape",
+        "deep space stars wide view",
+        "deep space stars landscape",
+        "Milky Way galactic center close up",
+        "Milky Way galactic center detailed view"
+      ],
+      "entities": [
+        "우주",
+        "Milky Way galactic center deep space stars Milky",
+        "lky Way galactic center landscape deep space stars",
+        "dscape Milky Way galactic center close up Milky"
+      ],
+      "primaryQuery": "Milky Way galactic center",
+      "queries": [
+        {
+          "query": "Milky Way galactic center",
+          "intent": "primary",
+          "priority": 1,
+          "mediaKind": "any"
+        },
+        {
+          "query": "deep space stars",
+          "intent": "primary",
+          "priority": 2,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Milky Way galactic center wide view",
+          "intent": "wide",
+          "priority": 3,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Milky Way galactic center close up",
+          "intent": "detail",
+          "priority": 4,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Milky Way galactic center detailed view",
+          "intent": "detail",
+          "priority": 5,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Milky Way galactic center landscape",
+          "intent": "wide",
+          "priority": 6,
+          "mediaKind": "any"
+        },
+        {
+          "query": "deep space stars wide view",
+          "intent": "wide",
+          "priority": 7,
+          "mediaKind": "any"
+        },
+        {
+          "query": "deep space stars landscape",
+          "intent": "wide",
+          "priority": 8,
+          "mediaKind": "any"
+        },
+        {
+          "query": "deep space stars close up",
+          "intent": "detail",
+          "priority": 9,
+          "mediaKind": "any"
+        },
+        {
+          "query": "deep space stars detailed view",
+          "intent": "detail",
+          "priority": 10,
+          "mediaKind": "any"
+        }
+      ]
+    },
+    {
+      "sceneId": "scene_002",
+      "title": "이름은 에리트룰로스",
+      "narration": "이름은 에리트룰로스. 네 개의 탄소로 이루어진 당입니다.",
+      "sourceKeywords": [
+        "sugar molecule model",
+        "organic molecule space",
+        "sugar molecule model wide view",
+        "sugar molecule model landscape",
+        "organic molecule space wide view",
+        "organic molecule space landscape",
+        "sugar molecule model close up",
+        "sugar molecule model detailed view"
+      ],
+      "entities": [
+        "sugar molecule model organic molecule space sugar molecule",
+        "molecule model landscape organic molecule space wide view",
+        "landscape sugar molecule model close up sugar molecule"
+      ],
+      "primaryQuery": "sugar molecule model",
+      "queries": [
+        {
+          "query": "sugar molecule model",
+          "intent": "primary",
+          "priority": 1,
+          "mediaKind": "any"
+        },
+        {
+          "query": "organic molecule space",
+          "intent": "primary",
+          "priority": 2,
+          "mediaKind": "any"
+        },
+        {
+          "query": "sugar molecule model wide view",
+          "intent": "wide",
+          "priority": 3,
+          "mediaKind": "any"
+        },
+        {
+          "query": "organic molecule space wide view",
+          "intent": "wide",
+          "priority": 4,
+          "mediaKind": "any"
+        },
+        {
+          "query": "sugar molecule model close up",
+          "intent": "detail",
+          "priority": 5,
+          "mediaKind": "any"
+        },
+        {
+          "query": "sugar molecule model detailed view",
+          "intent": "detail",
+          "priority": 6,
+          "mediaKind": "any"
+        },
+        {
+          "query": "sugar molecule model landscape",
+          "intent": "wide",
+          "priority": 7,
+          "mediaKind": "any"
+        },
+        {
+          "query": "organic molecule space landscape",
+          "intent": "wide",
+          "priority": 8,
+          "mediaKind": "any"
+        },
+        {
+          "query": "organic molecule space close up",
+          "intent": "detail",
+          "priority": 9,
+          "mediaKind": "any"
+        },
+        {
+          "query": "organic molecule space detailed view",
+          "intent": "detail",
+          "priority": 10,
+          "mediaKind": "any"
+        }
+      ]
+    },
+    {
+      "sceneId": "scene_003",
+      "title": "지구에서 약 2만 7천 광년",
+      "narration": "지구에서 약 2만 7천 광년 떨어진 은하 중심부의 분자 구름에서 포착됐습니다.",
+      "sourceKeywords": [
+        "Milky Way center molecular cloud",
+        "galactic center dust cloud",
+        "Milky Way center molecular cloud wide view",
+        "Milky Way center molecular cloud landscape",
+        "galactic center dust cloud wide view",
+        "galactic center dust cloud landscape",
+        "Milky Way center molecular cloud close up",
+        "Milky Way center molecular cloud detailed view"
+      ],
+      "entities": [
+        "은하",
+        "Milky Way center molecular cloud galactic center dust",
+        "cular cloud wide view Milky Way center molecular",
+        "dust cloud wide view galactic center dust cloud",
+        "lar cloud close up Milky Way center molecular"
+      ],
+      "primaryQuery": "Milky Way center molecular cloud",
+      "queries": [
+        {
+          "query": "Milky Way center molecular cloud",
+          "intent": "primary",
+          "priority": 1,
+          "mediaKind": "any"
+        },
+        {
+          "query": "galactic center dust cloud",
+          "intent": "primary",
+          "priority": 2,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Milky Way center molecular cloud landscape",
+          "intent": "wide",
+          "priority": 3,
+          "mediaKind": "any"
+        },
+        {
+          "query": "galactic center dust cloud wide view",
+          "intent": "wide",
+          "priority": 4,
+          "mediaKind": "any"
+        },
+        {
+          "query": "galactic center dust cloud landscape",
+          "intent": "wide",
+          "priority": 5,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Milky Way center molecular cloud wide view",
+          "intent": "wide",
+          "priority": 6,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Milky Way center molecular cloud close up",
+          "intent": "detail",
+          "priority": 7,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Milky Way center molecular cloud detailed view",
+          "intent": "detail",
+          "priority": 8,
+          "mediaKind": "any"
+        },
+        {
+          "query": "galactic center dust cloud close up",
+          "intent": "detail",
+          "priority": 9,
+          "mediaKind": "any"
+        },
+        {
+          "query": "galactic center dust cloud detailed view",
+          "intent": "detail",
+          "priority": 10,
+          "mediaKind": "any"
+        }
+      ]
+    },
+    {
+      "sceneId": "scene_004",
+      "title": "망원경으로 냄새나 맛을 본 것은 아닙니다",
+      "narration": "전파망원경 두 대가 분자마다 다른 고유한 전파 신호를 찾아냈습니다.",
+      "sourceKeywords": [
+        "IRAM meter radio telescope",
+        "Yebes radio telescope",
+        "IRAM meter radio telescope wide view",
+        "IRAM meter radio telescope landscape",
+        "Yebes radio telescope wide view",
+        "Yebes radio telescope landscape",
+        "IRAM meter radio telescope close up",
+        "IRAM meter radio telescope detailed view"
+      ],
+      "entities": [
+        "IRAM meter radio telescope Yebes radio telescope IRAM",
+        "view IRAM meter radio telescope landscape Yebes radio",
+        "adio telescope landscape IRAM meter radio telescope close",
+        "escope detailed view"
+      ],
+      "primaryQuery": "IRAM meter radio telescope",
+      "queries": [
+        {
+          "query": "IRAM meter radio telescope",
+          "intent": "primary",
+          "priority": 1,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Yebes radio telescope",
+          "intent": "primary",
+          "priority": 2,
+          "mediaKind": "any"
+        },
+        {
+          "query": "IRAM meter radio telescope wide view",
+          "intent": "wide",
+          "priority": 3,
+          "mediaKind": "any"
+        },
+        {
+          "query": "IRAM meter radio telescope close up",
+          "intent": "detail",
+          "priority": 4,
+          "mediaKind": "any"
+        },
+        {
+          "query": "IRAM meter radio telescope detailed view",
+          "intent": "detail",
+          "priority": 5,
+          "mediaKind": "any"
+        },
+        {
+          "query": "IRAM meter radio telescope landscape",
+          "intent": "wide",
+          "priority": 6,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Yebes radio telescope wide view",
+          "intent": "wide",
+          "priority": 7,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Yebes radio telescope landscape",
+          "intent": "wide",
+          "priority": 8,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Yebes radio telescope close up",
+          "intent": "detail",
+          "priority": 9,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Yebes radio telescope detailed view",
+          "intent": "detail",
+          "priority": 10,
+          "mediaKind": "any"
+        }
+      ]
+    },
+    {
+      "sceneId": "scene_005",
+      "title": "생명의 재료는 우주에서 왔을까요",
+      "narration": "생명을 발견한 것은 아니지만 생명의 재료가 우주에서 만들어질 가능성은 커졌습니다. 여러분은 어떻게 생각하나요",
+      "sourceKeywords": [
+        "meteorite early Earth",
+        "origin life space",
+        "meteorite early Earth wide view",
+        "meteorite early Earth landscape",
+        "origin life space wide view",
+        "origin life space landscape",
+        "meteorite early Earth close up",
+        "meteorite early Earth detailed view"
+      ],
+      "entities": [
+        "우주",
+        "meteorite early Earth origin life space meteorite early",
+        "early Earth landscape origin life space wide view",
+        "eorite early Earth close up meteorite early Earth"
+      ],
+      "primaryQuery": "meteorite early Earth",
+      "queries": [
+        {
+          "query": "meteorite early Earth",
+          "intent": "primary",
+          "priority": 1,
+          "mediaKind": "any"
+        },
+        {
+          "query": "origin life space",
+          "intent": "primary",
+          "priority": 2,
+          "mediaKind": "any"
+        },
+        {
+          "query": "meteorite early Earth wide view",
+          "intent": "wide",
+          "priority": 3,
+          "mediaKind": "any"
+        },
+        {
+          "query": "origin life space wide view",
+          "intent": "wide",
+          "priority": 4,
+          "mediaKind": "any"
+        },
+        {
+          "query": "meteorite early Earth close up",
+          "intent": "detail",
+          "priority": 5,
+          "mediaKind": "any"
+        },
+        {
+          "query": "meteorite early Earth detailed view",
+          "intent": "detail",
+          "priority": 6,
+          "mediaKind": "any"
+        },
+        {
+          "query": "meteorite early Earth landscape",
+          "intent": "wide",
+          "priority": 7,
+          "mediaKind": "any"
+        },
+        {
+          "query": "origin life space landscape",
+          "intent": "wide",
+          "priority": 8,
+          "mediaKind": "any"
+        },
+        {
+          "query": "origin life space close up",
+          "intent": "detail",
+          "priority": 9,
+          "mediaKind": "any"
+        },
+        {
+          "query": "origin life space detailed view",
+          "intent": "detail",
+          "priority": 10,
+          "mediaKind": "any"
+        }
+      ]
+    }
+  ]
+}

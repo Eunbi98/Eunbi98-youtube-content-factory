@@ -1,0 +1,76 @@
+{
+  "version": "1.0",
+  "episodeId": "ep054",
+  "channel": "science",
+  "title": "A Single Signal May Be Our Best Hint of Dark Matter Yet",
+  "voice": "en-US-JennyNeural",
+  "mediaSource": "LUX-ZEPLIN detector underground laboratory South Dakota dark matter galaxy liquid xenon science experiment",
+  "theme": {
+    "backgroundColor": "#090B12",
+    "titleColor": "#9ED0FF",
+    "captionColor": "#FFFFFF",
+    "accentColor": "#9ED0FF"
+  },
+  "scenes": [
+    {
+      "type": "hook",
+      "title": "We may have caught dark matter",
+      "narration": "Dark matter appears to make up most of the matter in the universe, yet we have never detected it directly. Now one mysterious particle event has appeared in a detector deep underground.",
+      "keywords": [
+        "dark matter galaxy visualization",
+        "LUX ZEPLIN detector underground",
+        "Sanford Underground Research Facility science"
+      ]
+    },
+    {
+      "type": "answer",
+      "title": "One strange collision",
+      "narration": "Inside the LUX-ZEPLIN experiment, scientists recorded a faint flash of light together with a nuclear recoil in liquid xenon. Known background signals have not yet explained the event.",
+      "keywords": [
+        "liquid xenon detector dark matter",
+        "particle detector photomultiplier tubes",
+        "dark matter experiment laboratory"
+      ]
+    },
+    {
+      "type": "story",
+      "title": "Could it have been a WIMP?",
+      "narration": "The signal looks similar to what physicists expect if a WIMP, one of the leading dark matter candidates, collided with an atomic nucleus. If confirmed, it could be historic.",
+      "keywords": [
+        "WIMP dark matter illustration",
+        "particle collision visualization",
+        "dark matter physics experiment"
+      ]
+    },
+    {
+      "type": "fact",
+      "title": "But this is not a discovery yet",
+      "narration": "There is one major problem: only a single event has been seen. Physics requires extremely strong statistical evidence before scientists can call something a discovery.",
+      "keywords": [
+        "scientists analyzing particle data",
+        "physics data analysis laboratory",
+        "particle detector control room"
+      ]
+    },
+    {
+      "type": "fact",
+      "title": "Why is dark matter so hard to find?",
+      "narration": "Dark matter does not emit or reflect light. We infer that it exists from gravity, galaxy rotation and other effects, but we still do not know what it is actually made of.",
+      "keywords": [
+        "dark matter galaxy gravitational lensing",
+        "spiral galaxy dark matter halo",
+        "galaxy rotation dark matter visualization"
+      ]
+    },
+    {
+      "type": "ending",
+      "title": "Could one signal change physics?",
+      "narration": "Dark matter is thought to make up about 85 percent of all matter in the universe. If this event turns out to be real, one of modern physics' biggest mysteries could finally begin to unravel.",
+      "keywords": [
+        "dark matter universe visualization",
+        "LUX ZEPLIN detector science",
+        "deep underground physics laboratory"
+      ]
+    }
+  ]
+}

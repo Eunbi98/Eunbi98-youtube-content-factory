@@ -1,0 +1,58 @@
+{
+  "version": "1.0",
+  "renderRevision": 5,
+  "episodeId": "ep023",
+  "channel": "science",
+  "mediaSource": "wikimedia_commons",
+  "title": "바나나는 왜 냉장고에서\n더 빨리 검게 변할까",
+  "theme": {
+    "backgroundColor": "#080B10",
+    "titleColor": "#7CFFB2",
+    "captionColor": "#FFFFFF",
+    "accentColor": "#FFD54A"
+  },
+  "scenes": [
+    {
+      "type": "hook",
+      "title": "냉장고에 넣었더니\n더 빨리 검어집니다",
+      "narration": "바나나를 오래 보관하려고 냉장고에 넣었는데, 왜 껍질은 더 빨리 검게 변할까요?",
+      "keywords": ["black banana peel refrigerator", "ripe bananas brown spots"],
+      "evidenceIds": ["msu_extension", "banana_chilling_study"]
+    },
+    {
+      "type": "answer",
+      "title": "바나나는 추위에\n민감한 열대 과일입니다",
+      "narration": "바나나는 열대 과일이라 낮은 온도에 오래 노출되면 냉해를 입습니다.",
+      "keywords": ["banana tropical fruit bunch", "green yellow bananas ripening"],
+      "evidenceIds": ["msu_extension", "banana_chilling_study"]
+    },
+    {
+      "type": "story",
+      "title": "차가운 온도가\n껍질 세포를 손상시킵니다",
+      "narration": "차가운 온도는 껍질 세포막을 손상시키고, 세포 안에서 따로 있던 물질들이 서로 만나게 합니다.",
+      "keywords": ["banana peel close up brown", "banana skin macro"],
+      "evidenceIds": ["banana_chilling_study"]
+    },
+    {
+      "type": "fact",
+      "title": "산화 반응으로\n갈색 색소가 생깁니다",
+      "narration": "그러면 폴리페놀 산화효소가 작용해 갈색 색소가 빠르게 만들어지고 껍질이 검어집니다.",
+      "keywords": ["banana browning stages", "bananas green yellow brown stages"],
+      "evidenceIds": ["banana_chilling_study"]
+    },
+    {
+      "type": "fact",
+      "title": "하지만 속까지 바로\n상한 것은 아닙니다",
+      "narration": "그런데 껍질이 검어졌다고 과육까지 바로 상한 것은 아닙니다.",
+      "keywords": ["peeled ripe banana inside", "brown peel banana white fruit"],
+      "evidenceIds": ["harvard_nutrition"]
+    },
+    {
+      "type": "ending",
+      "title": "노랗게 익은 뒤에는\n냉장 보관도 가능합니다",
+      "narration": "노랗게 익은 뒤 냉장하면 껍질은 어두워져도 맛과 과육은 더 오래 유지될 수 있습니다.",
+      "keywords": ["ripe yellow bananas refrigerator storage", "banana bunch yellow brown"],
+      "evidenceIds": ["harvard_nutrition"]
+    }
+  ]
+}

@@ -1,143 +1,242 @@
-import React from 'react';
-import {Composition} from 'remotion';
+﻿import React from 'react';
+
+import {
+	CalculateMetadataFunction,
+	Composition,
+	staticFile,
+} from 'remotion';
 
 import {
 	EpisodeComposition,
 	type EpisodeCompositionProps,
 } from './compositions/EpisodeComposition';
 
-import type {EpisodeTimeline} from './types/timeline';
+import {
+	QuizComposition,
+	type QuizCompositionProps,
+} from './quiz/QuizComposition';
 
-    const ep005Timeline: EpisodeTimeline = {
-        episodeId: 'EP005',
+import type {
+	EpisodeTimeline,
+} from './types/timeline';
 
-        title: '“물고기 비”를\n들어본 적 있나요?',
+import {
+	validateTimeline,
+} from './utils/timeline';
 
-        fps: 30,
+const mysteryFallbackTimeline: EpisodeTimeline = {
+	episodeId: 'ep008',
+	title: 'Timeline Loading',
+	fps: 30,
 	width: 1080,
 	height: 1920,
-
-	totalDuration: 24,
-
+	totalDuration: 1,
 	theme: {
 		backgroundColor: '#000000',
+		titleColor: '#7CFFB2',
 		captionColor: '#FFFFFF',
-		accentColor: '#63E88F',
+		accentColor: '#7CFFB2',
 	},
-
 	scenes: [
 		{
-			id: 'scene_01',
-
+			id: 'scene_loading',
 			start: 0,
-			duration: 4,
-
+			duration: 1,
 			caption:
-				'하늘에서 물고기가\n떨어진다면 믿으시겠습니까?',
-
-			backgroundColor: '#14202B',
-
+				'Timeline loading...',
+			backgroundColor: '#000000',
 			media: {
-        	type: 'image',
-        	src: 'assets/ep005/scene_01.png',
-        	fit: 'cover',
-        	position: 'center center',
-},
-			cameraMotion: 'zoom_in',
+				type: 'color',
+			},
+			cameraMotion: 'static',
 			transition: 'fade',
 			transitionDuration: 0.3,
-
-			overlay: 'cinematic',
-		},
-
-		{
-			id: 'scene_02',
-
-			start: 4,
-			duration: 5,
-
-			caption:
-				'실제로 세계 곳곳에서\n물고기 비가 보고됐습니다.',
-
-			backgroundColor: '#223748',
-
-			media: {
-				type: 'color',
-			},
-
-			cameraMotion: 'pan_right',
-			transition: 'fade',
-			transitionDuration: 0.3,
-
-			overlay: 'vignette',
-		},
-
-		{
-			id: 'scene_03',
-
-			start: 9,
-			duration: 5,
-
-			caption:
-				'강한 회오리바람이\n물고기를 빨아 올린 뒤',
-
-			backgroundColor: '#314A5D',
-
-			media: {
-				type: 'color',
-			},
-
-			cameraMotion: 'zoom_in',
-			transition: 'slide_left',
-			transitionDuration: 0.3,
-
-			overlay: 'cinematic',
-		},
-
-		{
-			id: 'scene_04',
-
-			start: 14,
-			duration: 5,
-
-			caption:
-				'멀리 이동하다가\n비와 함께 떨어지는 겁니다.',
-
-			backgroundColor: '#1C3040',
-
-			media: {
-				type: 'color',
-			},
-
-			cameraMotion: 'pan_left',
-			transition: 'fade',
-			transitionDuration: 0.3,
-
-			overlay: 'cinematic',
-		},
-
-		{
-			id: 'scene_05',
-
-			start: 19,
-			duration: 5,
-
-			caption:
-				'물고기 비는 전설이 아니라\n실제로 가능한 현상입니다.',
-
-			backgroundColor: '#101820',
-
-			media: {
-				type: 'color',
-			},
-
-			cameraMotion: 'zoom_out',
-			transition: 'zoom',
-			transitionDuration: 0.3,
-
-			overlay: 'dark',
+			overlay: 'none',
 		},
 	],
+};
+
+const quizFallbackTimeline: EpisodeTimeline = {
+	version: '8.1',
+	episodeId: 'ep010',
+	channel: 'quiz',
+	title: 'Quiz Timeline Loading',
+	fps: 30,
+	width: 1080,
+	height: 1920,
+	totalDuration: 1,
+	theme: {
+		backgroundColor: '#6FB382',
+		titleColor: '#214F2A',
+		captionColor: '#214F2A',
+		accentColor: '#F6D25B',
+	},
+	scenes: [
+		{
+			id: 'quiz_loading',
+			sceneType: 'intro',
+			start: 0,
+			duration: 1,
+			title: '오늘의 퀴즈',
+			caption:
+				'Quiz Timeline loading...',
+			backgroundColor: '#6FB382',
+			media: {
+				type: 'color',
+			},
+			cameraMotion: 'static',
+			transition: 'fade',
+			transitionDuration: 0.3,
+			overlay: 'none',
+		},
+	],
+};
+
+const normalizeEpisodeId = (
+	rawEpisodeId: string | undefined,
+	fallbackEpisodeId: string,
+): string => {
+	const normalized = rawEpisodeId
+		?.trim()
+		.toLowerCase();
+
+	if (!normalized) {
+		return fallbackEpisodeId;
+	}
+
+	if (!/^ep\d{3,}$/.test(normalized)) {
+		throw new Error(
+			`Invalid episodeId: ${rawEpisodeId}`,
+		);
+	}
+
+	return normalized;
+};
+
+const loadTimeline = async (
+	episodeId: string,
+	abortSignal: AbortSignal,
+): Promise<EpisodeTimeline> => {
+	const timelinePath =
+		`${episodeId}/timeline.json`;
+
+	const response = await fetch(
+		staticFile(timelinePath),
+		{
+			signal: abortSignal,
+			cache: 'no-store',
+		},
+	);
+
+	if (!response.ok) {
+		throw new Error(
+			`Failed to load ${timelinePath}: ` +
+				`${response.status} ` +
+				`${response.statusText}`,
+		);
+	}
+
+	const rawTimeline: unknown =
+		await response.json();
+
+	const timeline =
+		validateTimeline(rawTimeline);
+
+	if (
+		timeline.episodeId
+			.trim()
+			.toLowerCase() !== episodeId
+	) {
+		throw new Error(
+			'Timeline episodeId mismatch: ' +
+				`expected ${episodeId}, ` +
+				`received ${timeline.episodeId}`,
+		);
+	}
+
+	return timeline;
+};
+
+const calculateEpisodeMetadata: CalculateMetadataFunction<
+	EpisodeCompositionProps
+> = async ({
+	props,
+	abortSignal,
+}) => {
+	const episodeId = normalizeEpisodeId(
+		props.episodeId,
+		'ep008',
+	);
+
+	const timeline = await loadTimeline(
+		episodeId,
+		abortSignal,
+	);
+
+	return {
+		durationInFrames: Math.max(
+			1,
+			Math.ceil(
+				timeline.totalDuration *
+					timeline.fps,
+			),
+		),
+
+		fps: timeline.fps,
+		width: timeline.width,
+		height: timeline.height,
+
+		props: {
+			episodeId,
+			timeline,
+		},
+	};
+};
+
+const calculateQuizMetadata: CalculateMetadataFunction<
+	QuizCompositionProps
+> = async ({
+	props,
+	abortSignal,
+}) => {
+	const episodeId = normalizeEpisodeId(
+		props.episodeId,
+		'ep010',
+	);
+
+	const timeline = await loadTimeline(
+		episodeId,
+		abortSignal,
+	);
+
+	if (
+		timeline.channel &&
+		timeline.channel !== 'quiz'
+	) {
+		throw new Error(
+			`QuizEpisode requires channel=quiz. ` +
+				`Received: ${timeline.channel}`,
+		);
+	}
+
+	return {
+		durationInFrames: Math.max(
+			1,
+			Math.ceil(
+				timeline.totalDuration *
+					timeline.fps,
+			),
+		),
+
+		fps: timeline.fps,
+		width: timeline.width,
+		height: timeline.height,
+
+		props: {
+			episodeId,
+			timeline,
+		},
+	};
 };
 
 const CompatibleEpisodeComposition =
@@ -145,23 +244,83 @@ const CompatibleEpisodeComposition =
 		EpisodeCompositionProps
 	>;
 
+const CompatibleQuizComposition =
+	QuizComposition as React.ComponentType<
+		QuizCompositionProps
+	>;
+
 export const RemotionRoot: React.FC = () => {
 	return (
-		<Composition
-			id="Episode"
-			component={
-				CompatibleEpisodeComposition
-			}
-			durationInFrames={
-				ep005Timeline.totalDuration *
-				ep005Timeline.fps
-			}
-			fps={ep005Timeline.fps}
-			width={ep005Timeline.width}
-			height={ep005Timeline.height}
-			defaultProps={{
-				timeline: ep005Timeline,
-			}}
-		/>
+		<>
+			<Composition
+				id="Episode"
+				component={
+					CompatibleEpisodeComposition
+				}
+				durationInFrames={
+					Math.max(
+						1,
+						Math.ceil(
+							mysteryFallbackTimeline
+								.totalDuration *
+								mysteryFallbackTimeline
+									.fps,
+						),
+					)
+				}
+				fps={
+					mysteryFallbackTimeline.fps
+				}
+				width={
+					mysteryFallbackTimeline.width
+				}
+				height={
+					mysteryFallbackTimeline.height
+				}
+				defaultProps={{
+					episodeId: 'ep008',
+					timeline:
+						mysteryFallbackTimeline,
+				}}
+				calculateMetadata={
+					calculateEpisodeMetadata
+				}
+			/>
+
+			<Composition
+				id="QuizEpisode"
+				component={
+					CompatibleQuizComposition
+				}
+				durationInFrames={
+					Math.max(
+						1,
+						Math.ceil(
+							quizFallbackTimeline
+								.totalDuration *
+								quizFallbackTimeline
+									.fps,
+						),
+					)
+				}
+				fps={
+					quizFallbackTimeline.fps
+				}
+				width={
+					quizFallbackTimeline.width
+				}
+				height={
+					quizFallbackTimeline.height
+				}
+				defaultProps={{
+					episodeId: 'ep010',
+					timeline:
+						quizFallbackTimeline,
+				}}
+				calculateMetadata={
+					calculateQuizMetadata
+				}
+			/>
+		</>
 	);
 };

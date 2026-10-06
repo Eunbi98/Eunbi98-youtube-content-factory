@@ -1,0 +1,76 @@
+{
+  "version": "1.0",
+  "episodeId": "ep052",
+  "channel": "science",
+  "title": "태국 산속에서 발견된 현실판 드래곤",
+  "voice": "ko-KR-SunHiNeural",
+  "mediaSource": "mountain horned dragon Thailand lizard close up, Acanthosaura syrax, spiny lizard rainforest",
+  "theme": {
+    "backgroundColor": "#0B0D0C",
+    "titleColor": "#D8E9A8",
+    "captionColor": "#FFFFFF",
+    "accentColor": "#D8E9A8"
+  },
+  "scenes": [
+    {
+      "type": "hook",
+      "title": "태국 산속에서 현실판 드래곤이 발견됐다",
+      "narration": "태국의 높은 산속 숲에서 목과 등에 뿔 같은 가시가 난 새로운 도마뱀 종이 발견됐습니다. 생김새 때문에 현실판 드래곤이라는 별명까지 붙었습니다.",
+      "keywords": [
+        "mountain horned dragon Thailand close up real photo",
+        "spiny lizard rainforest Thailand",
+        "horned lizard tropical forest macro"
+      ]
+    },
+    {
+      "type": "answer",
+      "title": "이름은 아칸토사우라 시락스",
+      "narration": "새 종의 학명은 아칸토사우라 시락스입니다. 연구진은 태국 서부 매웡 국립공원 고산지대에서 이 도마뱀을 확인했습니다.",
+      "keywords": [
+        "Acanthosaura syrax Thailand lizard",
+        "Mae Wong National Park lizard",
+        "mountain horned dragon real photo"
+      ]
+    },
+    {
+      "type": "story",
+      "title": "해발 1,300미터가 넘는 숲에서 살았다",
+      "narration": "이 도마뱀은 해발 약 천삼백 미터가 넘는 상록수림에서 발견됐습니다. 지금까지 알려진 분포 지역도 매우 좁아서 특정 고산 숲에만 사는 것으로 보입니다.",
+      "keywords": [
+        "Thailand mountain evergreen forest lizard",
+        "high elevation forest Thailand reptile",
+        "Acanthosaura forest branch close up"
+      ]
+    },
+    {
+      "type": "fact",
+      "title": "목과 등에 난 가시가 가장 큰 특징",
+      "narration": "마운틴 혼드 드래곤 무리는 목과 등을 따라 솟은 뾰족한 가시로 유명합니다. 이번 신종도 노란빛 몸과 뚜렷한 가시가 다른 종과 구분되는 특징입니다.",
+      "keywords": [
+        "mountain horned dragon spines close up",
+        "Acanthosaura lizard crest macro",
+        "spiny agamid lizard Thailand"
+      ]
+    },
+    {
+      "type": "fact",
+      "title": "이름도 진짜 드래곤에서 따왔다",
+      "narration": "연구진은 이 도마뱀에게 시락스라는 이름을 붙였습니다. 드라마 하우스 오브 더 드래곤에 등장하는 드래곤 시락스에서 이름을 가져온 겁니다.",
+      "keywords": [
+        "horned dragon lizard portrait",
+        "yellow mountain horned dragon close up",
+        "fantasy looking lizard real animal"
+      ]
+    },
+    {
+      "type": "ending",
+      "title": "작은 드래곤이 숲을 지킬 수도 있다",
+      "narration": "이 종은 매우 좁은 고산 숲에만 사는 것으로 보여 서식지 변화에 취약할 수 있습니다. 연구진은 이 작은 드래곤이 희귀한 산림을 보호하는 상징이 될 수 있다고 보고 있습니다.",
+      "keywords": [
+        "mountain horned dragon conservation Thailand",
+        "lizard rainforest conservation real photo",
+        "Thailand forest reptile cinematic close up"
+      ]
+    }
+  ]
+}

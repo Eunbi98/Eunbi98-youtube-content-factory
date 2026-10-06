@@ -1,0 +1,76 @@
+{
+  "version": "1.0",
+  "episodeId": "ep048",
+  "channel": "science",
+  "title": "Do Dogs Blink Back When Their Owners Blink?",
+  "voice": "en-US-JennyNeural",
+  "mediaSource": "dog blinking at owner close up, dog human eye contact, pet communication research, dog facial expression",
+  "theme": {
+    "backgroundColor": "#0C0C0C",
+    "titleColor": "#F2E8CF",
+    "captionColor": "#FFFFFF",
+    "accentColor": "#F2E8CF"
+  },
+  "scenes": [
+    {
+      "type": "hook",
+      "title": "What if your dog blinks back at you?",
+      "narration": "A new study found that dogs blink more often when they watch their owners blink. And researchers say it may be more than a simple reflex.",
+      "keywords": [
+        "dog blinking owner close up real photo",
+        "dog eye contact human face",
+        "pet dog facial expression close up"
+      ]
+    },
+    {
+      "type": "answer",
+      "title": "They reacted more to their owners",
+      "narration": "Researchers showed thirty-five dogs videos of their owners and of unfamiliar people. The dogs blinked more when they watched their own owners blinking.",
+      "keywords": [
+        "dog watching owner video experiment",
+        "dog behavior research human face video",
+        "pet cognition experiment dog screen"
+      ]
+    },
+    {
+      "type": "story",
+      "title": "Strangers did not trigger the same response",
+      "narration": "The interesting part is that the same increase did not appear when the dogs watched strangers blink. So they may not have been responding to eye movement alone.",
+      "keywords": [
+        "dog looking at stranger face",
+        "dog human interaction experiment",
+        "dog attentive face close up"
+      ]
+    },
+    {
+      "type": "fact",
+      "title": "Could blinking be a social signal?",
+      "narration": "Blinking normally protects the eyes. But researchers think that between dogs and humans it could also work as a subtle social signal linked to attention or familiarity.",
+      "keywords": [
+        "dog owner bonding eye contact",
+        "dog blinking communication close up",
+        "human dog social interaction face"
+      ]
+    },
+    {
+      "type": "fact",
+      "title": "It does not automatically mean love",
+      "narration": "That does not mean every blink is a sign of affection. The researchers say they still cannot confirm whether dogs are deliberately using blinking to communicate with us.",
+      "keywords": [
+        "dog calm eye contact owner",
+        "dog facial behavior research",
+        "dog blinking close up neutral"
+      ]
+    },
+    {
+      "type": "ending",
+      "title": "Dogs may notice our smallest signals",
+      "narration": "Dogs may be reading more than our voices and gestures. They could even notice something as small as a blink. Next time you make eye contact with your dog, try blinking slowly.",
+      "keywords": [
+        "dog owner eye contact warm close up",
+        "pet dog blinking at human",
+        "dog human bond cinematic close up"
+      ]
+    }
+  ]
+}

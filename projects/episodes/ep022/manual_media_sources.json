@@ -1,0 +1,43 @@
+{
+  "episodeId": "ep022",
+  "license": "Wikimedia Commons file-specific open licenses",
+  "credit": "Wikimedia Commons contributors",
+  "reason": "로마 12면체 실물의 형태와 다양한 소장 사례를 보여 주는 공개 라이선스 이미지를 직접 선정함",
+  "researchSources": [
+    "https://www.britishmuseum.org/collection/object/H_1924-0411-1",
+    "https://commons.wikimedia.org/wiki/Category:Roman_dodecahedron",
+    "https://finds.org.uk/database/artefacts/record/id/246648"
+  ],
+  "scenes": [
+    {
+      "sceneId": "scene_001",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Roman_dodecahedron.jpg",
+      "description": "프랑크푸르트 인근 로마 유적에서 발견된 청동 12면체"
+    },
+    {
+      "sceneId": "scene_002",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Bronze_dodecahedron.jpg",
+      "description": "크기가 다른 구멍과 꼭짓점 돌기가 잘 보이는 실물"
+    },
+    {
+      "sceneId": "scene_003",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:2018_Rheinisches_Landesmuseum_Bonn,_Dodekaeder_%26_Ikosaeder.jpg",
+      "description": "본 박물관에 전시된 여러 로마 다면체"
+    },
+    {
+      "sceneId": "scene_004",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Dodecahedron_Aventicum.jpg",
+      "description": "아벤티쿰에서 발견된 로마 12면체"
+    },
+    {
+      "sceneId": "scene_005",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Ancient_Roman_dodecahedron,_Gallo-Roman_Museum_of_Tongeren,_Belgium_(27543850102).jpg",
+      "description": "통에런 갈로로마 박물관 소장 12면체"
+    },
+    {
+      "sceneId": "scene_006",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Top_or_Topic_(CC,_Maastricht),_dodeca%C3%ABders_uit_Tongeren_en_Bassenge.jpg",
+      "description": "서로 다른 로마 12면체를 함께 보여 주는 전시"
+    }
+  ]
+}

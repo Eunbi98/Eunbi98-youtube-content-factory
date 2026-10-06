@@ -1,0 +1,17 @@
+{
+  "version": "1.0",
+  "episodeId": "ep062",
+  "channel": "science",
+  "title": "토성 남극에서 처음 발견된 10각형 대기 파동",
+  "voice": "ko-KR-SunHiNeural",
+  "mediaSource": "Saturn south pole decagon Hubble 2026 NASA atmosphere",
+  "theme": {"backgroundColor":"#090B12","titleColor":"#F3D6A6","captionColor":"#FFFFFF","accentColor":"#F3D6A6"},
+  "scenes": [
+    {"type":"hook","title":"토성 남극에 10각형이 생겼다","narration":"토성 북극에는 유명한 육각형 구름이 있습니다. 그런데 이번에는 남극에서 열 개의 변을 가진 거대한 대기 파동이 발견됐습니다.","keywords":["Saturn south pole decagon Hubble NASA","Saturn south pole atmosphere","Hubble Saturn 2026"]},
+    {"type":"answer","title":"허블이 수년간 변화를 추적했다","narration":"NASA 허블 우주망원경 관측을 이어 붙이자 2023년부터 희미하게 나타나던 구조가 점점 또렷한 십각형으로 변하는 모습이 확인됐습니다.","keywords":["Hubble Saturn multi year observations","Saturn atmosphere Hubble telescope","Saturn south pole NASA image"]},
+    {"type":"story","title":"한 층이 아니라 여러 대기층에 걸쳐 있었다","narration":"이 십각형 파동은 특정 구름 한 줄이 아니라 토성 남극의 여러 대기층을 가로질러 이어지는 것으로 관측됐습니다.","keywords":["Saturn atmospheric layers south pole","Saturn polar wave illustration","Saturn clouds NASA"]},
+    {"type":"fact","title":"북극 육각형과 닮았지만 다르다","narration":"토성 북극의 육각형도 제트기류와 대기파가 만든 것으로 보이지만 남극의 십각형은 모양과 진화 방식이 달라 새로운 현상일 가능성이 있습니다.","keywords":["Saturn north pole hexagon","Saturn hexagon versus decagon","Saturn polar jet NASA"]},
+    {"type":"fact","title":"왜 10각형인지는 아직 모른다","narration":"빠르게 흐르는 가스와 느린 가스가 만나 파동을 만들 수 있지만 정확히 왜 열 개의 변이 나타났는지는 추가 관측이 필요합니다.","keywords":["Saturn atmospheric wave simulation","gas giant jet stream illustration","Saturn polar vortex"]},
+    {"type":"ending","title":"토성은 아직도 새로운 얼굴을 보여준다","narration":"수십 년 동안 관측한 행성이지만 토성의 대기는 여전히 새로운 패턴을 만들어내고 있습니다. 다음에는 이 십각형이 얼마나 오래 유지되는지가 관건입니다.","keywords":["Saturn Hubble cinematic","Saturn rings south pole","Saturn NASA space"]}
+  ]
+}

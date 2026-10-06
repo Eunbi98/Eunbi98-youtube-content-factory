@@ -1,0 +1,91 @@
+{
+  "version": "1.0",
+  "episodeId": "ep088",
+  "channel": "story",
+  "title": "오래된 건물 창문이 벽돌로 막힌 진짜 이유",
+  "voice": "ko-KR-SunHiNeural",
+  "mediaSource": "bricked up window window tax old building architecture",
+  "theme": {
+    "backgroundColor": "#11100E",
+    "titleColor": "#F0C879",
+    "captionColor": "#FFFFFF",
+    "accentColor": "#F0C879"
+  },
+  "scenes": [
+    {
+      "type": "hook",
+      "title": "막혀 있는 창문",
+      "narration": "오래된 유럽 건물을 보다 보면 창문이 벽돌로 막혀 있는 집이 있습니다.",
+      "media": {
+        "type": "video",
+        "src": "ep088/scene_001.mp4",
+        "fit": "cover",
+        "position": "center center"
+      },
+      "keywords": [
+        "old european building blocked window",
+        "bricked up window facade"
+      ]
+    },
+    {
+      "type": "story",
+      "title": "이상한 공사 흔적처럼 보이지만",
+      "narration": "처음 보면 공사가 덜 끝났거나, 나중에 급하게 막아놓은 것처럼 보이는데요.",
+      "media": {
+        "type": "image",
+        "src": "ep088/scene_002.jpg",
+        "fit": "cover",
+        "position": "center center"
+      },
+      "keywords": [
+        "old building facade strange blocked window",
+        "historic architecture curiosity"
+      ]
+    },
+    {
+      "type": "fact",
+      "title": "세금 때문에 생긴 흔적",
+      "narration": "하지만 이런 흔적 중에는 실제로 세금 때문에 생긴 경우가 있었습니다. 과거 영국에서는 집에 있는 창문의 개수에 따라 세금을 매기는 창문세가 있었고,",
+      "media": {
+        "type": "video",
+        "src": "ep088/scene_003.mp4",
+        "fit": "cover",
+        "position": "center center"
+      },
+      "keywords": [
+        "window tax britain",
+        "workers bricking up windows"
+      ]
+    },
+    {
+      "type": "fact",
+      "title": "창문을 막아 세금을 줄였다",
+      "narration": "사람들은 세금을 줄이기 위해 멀쩡한 창문을 아예 벽돌로 막아버리기도 했습니다. 빛과 환기가 줄어드는 불편을 감수하면서도 세금을 아끼려 했던 거죠.",
+      "media": {
+        "type": "image",
+        "src": "ep088/scene_004.jpg",
+        "fit": "cover",
+        "position": "center center"
+      },
+      "keywords": [
+        "window tax explanation",
+        "blocked windows lower tax"
+      ]
+    },
+    {
+      "type": "ending",
+      "title": "건물에 남은 제도의 흔적",
+      "narration": "그래서 지금도 오래된 건물에 남아 있는 막힌 창문은, 당시 제도가 건물에 그대로 남긴 흔적이라고 볼 수 있습니다.",
+      "media": {
+        "type": "video",
+        "src": "ep088/scene_005.mp4",
+        "fit": "cover",
+        "position": "center center"
+      },
+      "keywords": [
+        "historic building blocked windows",
+        "architecture trace of old policy"
+      ]
+    }
+  ]
+}

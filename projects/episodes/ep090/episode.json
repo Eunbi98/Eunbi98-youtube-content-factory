@@ -1,0 +1,106 @@
+{
+  "version": "1.0",
+  "episodeId": "ep090",
+  "channel": "science",
+  "title": "양들이 다니던 들판에서 5억 6천만 년 전 생물이 발견됐다",
+  "voice": "ko-KR-SunHiNeural",
+  "mediaSource": "Charnia Ediacaran fossil Finnmark Norway 560 million years",
+  "theme": {
+    "backgroundColor": "#101314",
+    "titleColor": "#D7E6E8",
+    "captionColor": "#FFFFFF",
+    "accentColor": "#8FB5A6"
+  },
+  "scenes": [
+    {
+      "type": "hook",
+      "title": "양들이 다니던 들판에서 나온 5억 6천만 년 전 흔적",
+      "narration": "양들이 풀을 뜯는 평범한 들판에서, 무려 5억 6천만 년 전 생물의 흔적이 발견됐습니다.",
+      "media": {
+        "type": "video",
+        "src": "ep090/scene_001.mp4",
+        "fit": "cover",
+        "position": "center center"
+      },
+      "keywords": [
+        "Finnmark Norway sheep field fossil",
+        "Arctic Norway paleontology field"
+      ]
+    },
+    {
+      "type": "answer",
+      "title": "이 생물의 이름은 차르니아",
+      "narration": "연구진이 발견한 것은 차르니아라는 생물의 화석입니다. 약 5억 6천만 년 전 에디아카라기에 살았던 생물이죠.",
+      "media": {
+        "type": "video",
+        "src": "ep090/scene_002.mp4",
+        "fit": "cover",
+        "position": "center center"
+      },
+      "keywords": [
+        "Charnia fossil Norway",
+        "Ediacaran Charnia fossil"
+      ]
+    },
+    {
+      "type": "story",
+      "title": "식물처럼 보여도 식물은 아니다",
+      "narration": "생김새는 마치 양치식물 같지만 식물은 아니었습니다. 해저에 붙어 살던 아주 오래된 생명체였습니다.",
+      "media": {
+        "type": "video",
+        "src": "ep090/scene_003.mp4",
+        "fit": "cover",
+        "position": "center center"
+      },
+      "keywords": [
+        "Ediacaran seafloor Charnia reconstruction",
+        "rangeomorph Charnia life reconstruction"
+      ]
+    },
+    {
+      "type": "fact",
+      "title": "특별한 건 입체 보존",
+      "narration": "그런데 이번 발견이 특별한 이유가 있습니다. 이런 연한 몸의 생물은 보통 납작하게 남는데, 이 화석은 입체적인 형태까지 보존됐습니다.",
+      "media": {
+        "type": "video",
+        "src": "ep090/scene_004.mp4",
+        "fit": "cover",
+        "position": "center center"
+      },
+      "keywords": [
+        "3D Charnia fossil",
+        "Ediacaran fossil three dimensional preservation"
+      ]
+    },
+    {
+      "type": "fact",
+      "title": "퇴적물이 형태를 지켰다",
+      "narration": "연구진은 해저의 퇴적물이 차르니아를 빠르게 덮으면서, 내부까지 모래와 진흙이 채워져 이런 모습이 남은 것으로 보고 있습니다.",
+      "media": {
+        "type": "video",
+        "src": "ep090/scene_005.mp4",
+        "fit": "cover",
+        "position": "center center"
+      },
+      "keywords": [
+        "Ediacaran sediment burial Charnia",
+        "turbidity flow fossil preservation"
+      ]
+    },
+    {
+      "type": "ending",
+      "title": "공룡보다 훨씬 이전의 복잡한 생명",
+      "narration": "공룡보다도 5억 년 가까이 앞선 시대. 이 작은 화석은 복잡한 생명체가 이미 지구의 바다를 채우고 있었다는 흔적입니다.",
+      "media": {
+        "type": "video",
+        "src": "ep090/scene_006.mp4",
+        "fit": "cover",
+        "position": "center center"
+      },
+      "keywords": [
+        "Ediacaran ocean ecosystem",
+        "Charnia ancient seafloor reconstruction"
+      ]
+    }
+  ]
+}

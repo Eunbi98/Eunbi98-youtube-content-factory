@@ -1,0 +1,76 @@
+{
+  "version": "1.0",
+  "episodeId": "ep047",
+  "channel": "science",
+  "title": "멍청한 새가 아니었다? 도도새 두개골에서 발견된 반전",
+  "voice": "ko-KR-SunHiNeural",
+  "mediaSource": "dodo bird reconstruction, dodo skull museum specimen, CT scan dodo skull digital brain reconstruction, Mauritius dodo illustration",
+  "theme": {
+    "backgroundColor": "#0C100D",
+    "titleColor": "#D9E7C5",
+    "captionColor": "#FFFFFF",
+    "accentColor": "#D9E7C5"
+  },
+  "scenes": [
+    {
+      "type": "hook",
+      "title": "도도새는 정말 멍청했을까?",
+      "narration": "도도새는 오랫동안 멍청하고 둔한 새의 상징처럼 그려졌습니다. 그런데 최근 희귀한 도도새 두개골을 CT로 분석하자 전혀 다른 모습이 드러났습니다.",
+      "keywords": [
+        "dodo bird realistic reconstruction Mauritius",
+        "dodo bird museum model real photo",
+        "dodo skull museum specimen"
+      ]
+    },
+    {
+      "type": "answer",
+      "title": "뇌가 특별히 작지도 않았다",
+      "narration": "연구진은 도도새의 뇌 공간을 디지털로 복원해 다른 비둘기류와 비교했습니다. 그 결과 도도새의 뇌가 몸집에 비해 유난히 작았다는 증거는 나오지 않았습니다.",
+      "keywords": [
+        "dodo skull CT scan digital reconstruction",
+        "dodo brain endocast 3D reconstruction",
+        "scientist examining dodo skull CT"
+      ]
+    },
+    {
+      "type": "story",
+      "title": "오히려 냄새를 잘 맡았을 수 있다",
+      "narration": "특히 눈에 띈 건 후각과 관련된 특징입니다. 도도새는 오늘날의 많은 비둘기보다 냄새를 더 적극적으로 활용했을 가능성이 제시됐습니다.",
+      "keywords": [
+        "dodo bird foraging forest reconstruction",
+        "dodo bird close up beak realistic",
+        "Mauritius forest dodo reconstruction"
+      ]
+    },
+    {
+      "type": "fact",
+      "title": "낮에만 활동한 새도 아닐 수 있다",
+      "narration": "시각 정보를 처리하는 부분도 일반적인 비둘기와 달랐습니다. 연구진은 도도새가 낮뿐 아니라 새벽이나 해질 무렵, 어쩌면 어두운 시간에도 활동했을 가능성을 보고 있습니다.",
+      "keywords": [
+        "dodo bird dusk forest reconstruction",
+        "dodo Mauritius sunset realistic reconstruction",
+        "nocturnal bird vision comparison illustration"
+      ]
+    },
+    {
+      "type": "fact",
+      "title": "사라진 이유는 멍청해서가 아니었다",
+      "narration": "도도새는 포식자가 거의 없던 모리셔스에서 진화했습니다. 인간을 두려워하지 않았던 행동을 두고 멍청하다고 부르기 쉽지만, 그 환경에서는 오랫동안 살아남은 정상적인 적응이었습니다.",
+      "keywords": [
+        "dodo bird Mauritius historical illustration",
+        "dodo bird island forest reconstruction",
+        "Mauritius dodo habitat historical art"
+      ]
+    },
+    {
+      "type": "ending",
+      "title": "300년 넘은 오해가 바뀌고 있다",
+      "narration": "도도새가 사라진 지 300년이 넘었지만 두개골 속 흔적은 아직 이야기를 남기고 있습니다. 멍청한 멸종 동물이 아니라, 자신만의 감각으로 섬 환경에 적응했던 새였을 가능성이 커진 겁니다.",
+      "keywords": [
+        "dodo bird cinematic reconstruction Mauritius forest",
+        "dodo skull museum dramatic lighting",
+        "extinct dodo bird realistic portrait"
+      ]
+    }
+  ]
+}

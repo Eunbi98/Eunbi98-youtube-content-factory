@@ -1,10 +1,12 @@
 import React from 'react';
 import {
+	Easing,
 	interpolate,
 	useCurrentFrame,
 } from 'remotion';
 
 import type {CameraMotion} from '../types/timeline';
+import {motionPresets} from './motionPresets';
 
 type KenBurnsProps = {
 	children: React.ReactNode;
@@ -12,90 +14,18 @@ type KenBurnsProps = {
 	motion?: CameraMotion;
 };
 
-type MotionState = {
-	fromScale: number;
-	toScale: number;
-	fromX: number;
-	toX: number;
-	fromY: number;
-	toY: number;
-};
+const OVERSCAN_PERCENT = 2;
 
-const getMotionState = (
-	motion: CameraMotion,
-): MotionState => {
-	switch (motion) {
-		case 'zoom_in':
-			return {
-				fromScale: 1,
-				toScale: 1.1,
-				fromX: 0,
-				toX: 0,
-				fromY: 0,
-				toY: 0,
-			};
+const roundValue = (
+	value: number,
+	decimalPlaces: number,
+): number => {
+	const multiplier = 10 ** decimalPlaces;
 
-		case 'zoom_out':
-			return {
-				fromScale: 1.1,
-				toScale: 1,
-				fromX: 0,
-				toX: 0,
-				fromY: 0,
-				toY: 0,
-			};
-
-		case 'pan_left':
-			return {
-				fromScale: 1.08,
-				toScale: 1.08,
-				fromX: 4,
-				toX: -4,
-				fromY: 0,
-				toY: 0,
-			};
-
-		case 'pan_right':
-			return {
-				fromScale: 1.08,
-				toScale: 1.08,
-				fromX: -4,
-				toX: 4,
-				fromY: 0,
-				toY: 0,
-			};
-
-		case 'pan_up':
-			return {
-				fromScale: 1.08,
-				toScale: 1.08,
-				fromX: 0,
-				toX: 0,
-				fromY: 4,
-				toY: -4,
-			};
-
-		case 'pan_down':
-			return {
-				fromScale: 1.08,
-				toScale: 1.08,
-				fromX: 0,
-				toX: 0,
-				fromY: -4,
-				toY: 4,
-			};
-
-		case 'static':
-		default:
-			return {
-				fromScale: 1,
-				toScale: 1,
-				fromX: 0,
-				toX: 0,
-				fromY: 0,
-				toY: 0,
-			};
-	}
+	return (
+		Math.round(value * multiplier) /
+		multiplier
+	);
 };
 
 export const KenBurns: React.FC<
@@ -107,55 +37,98 @@ export const KenBurns: React.FC<
 }) => {
 	const frame = useCurrentFrame();
 
-	const state =
-		getMotionState(motion);
+	const preset =
+		motionPresets[motion] ??
+		motionPresets.static;
 
 	const endFrame = Math.max(
 		1,
 		durationInFrames - 1,
 	);
 
+	const interpolationOptions = {
+		extrapolateLeft: 'clamp' as const,
+		extrapolateRight: 'clamp' as const,
+		easing: Easing.inOut(
+			Easing.cubic,
+		),
+	};
+
+	const scaleRange =
+		preset.scale ?? [1, 1];
+
+	const xRange =
+		preset.x ?? [0, 0];
+
+	const yRange =
+		preset.y ?? [0, 0];
+
 	const scale = interpolate(
 		frame,
 		[0, endFrame],
-		[state.fromScale, state.toScale],
-		{
-			extrapolateLeft: 'clamp',
-			extrapolateRight: 'clamp',
-		},
+		scaleRange,
+		interpolationOptions,
 	);
 
 	const translateX = interpolate(
 		frame,
 		[0, endFrame],
-		[state.fromX, state.toX],
-		{
-			extrapolateLeft: 'clamp',
-			extrapolateRight: 'clamp',
-		},
+		xRange,
+		interpolationOptions,
 	);
 
 	const translateY = interpolate(
 		frame,
 		[0, endFrame],
-		[state.fromY, state.toY],
-		{
-			extrapolateLeft: 'clamp',
-			extrapolateRight: 'clamp',
-		},
+		yRange,
+		interpolationOptions,
 	);
+
+	const stableScale = roundValue(
+		scale,
+		4,
+	);
+
+	const stableTranslateX = roundValue(
+		translateX,
+		3,
+	);
+
+	const stableTranslateY = roundValue(
+		translateY,
+		3,
+	);
+
+	const transform = [
+		`scale(${stableScale})`,
+		`translate3d(${stableTranslateX}%, ${stableTranslateY}%, 0)`,
+	].join(' ');
 
 	return (
 		<div
 			style={{
 				position: 'absolute',
-				inset: '-3%',
-				transform: [
-					`translate3d(${translateX}%, ${translateY}%, 0)`,
-					`scale(${scale})`,
-				].join(' '),
-				transformOrigin: 'center center',
+
+				top: `-${OVERSCAN_PERCENT}%`,
+				right: `-${OVERSCAN_PERCENT}%`,
+				bottom: `-${OVERSCAN_PERCENT}%`,
+				left: `-${OVERSCAN_PERCENT}%`,
+
+				overflow: 'hidden',
+
+				transform,
+
+				transformOrigin:
+					preset.transformOrigin ??
+					'center center',
+
 				willChange: 'transform',
+
+				backfaceVisibility:
+					'hidden',
+
+				WebkitBackfaceVisibility:
+					'hidden',
 			}}
 		>
 			{children}

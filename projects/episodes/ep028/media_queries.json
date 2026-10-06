@@ -1,0 +1,827 @@
+{
+  "version": "2.0",
+  "episodeId": "ep028",
+  "timelinePath": "C:\\Users\\user\\Desktop\\Eunbi98-youtube-content-factory\\projects\\episodes\\ep028\\timeline.json",
+  "sceneCount": 9,
+  "scenes": [
+    {
+      "sceneId": "scene_001",
+      "title": "2천 년 된 콘크리트가 아직도 버티는 이유",
+      "narration": "2천 년 전에 만든 콘크리트가 지금도 무너지지 않고 남아 있습니다.",
+      "sourceKeywords": [
+        "Roman",
+        "Pantheon",
+        "ancient",
+        "concrete",
+        "dome",
+        "Rome",
+        "Roman wide view",
+        "Roman landscape",
+        "Pantheon wide view",
+        "Pantheon landscape",
+        "Roman close up",
+        "Roman detailed view",
+        "Pantheon close up",
+        "Pantheon detailed view"
+      ],
+      "entities": [
+        "Roman Pantheon ancient concrete dome Rome Roman wide",
+        "wide view Pantheon landscape Roman close up Roman",
+        "up Pantheon detailed view"
+      ],
+      "primaryQuery": "Roman",
+      "queries": [
+        {
+          "query": "Roman",
+          "intent": "primary",
+          "priority": 1,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Pantheon",
+          "intent": "primary",
+          "priority": 2,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Roman wide view",
+          "intent": "wide",
+          "priority": 3,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Pantheon wide view",
+          "intent": "wide",
+          "priority": 4,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Roman close up",
+          "intent": "detail",
+          "priority": 5,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Roman detailed view",
+          "intent": "detail",
+          "priority": 6,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Pantheon close up",
+          "intent": "detail",
+          "priority": 7,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Pantheon detailed view",
+          "intent": "detail",
+          "priority": 8,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Roman landscape",
+          "intent": "wide",
+          "priority": 9,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Pantheon landscape",
+          "intent": "wide",
+          "priority": 10,
+          "mediaKind": "any"
+        }
+      ]
+    },
+    {
+      "sceneId": "scene_002",
+      "title": "판테온과 항구를 만든 로마의 콘크리트",
+      "narration": "로마인들은 이 콘크리트로 판테온과 수로 항구와 방파제를 건설했습니다.",
+      "sourceKeywords": [
+        "ancient",
+        "Roman",
+        "aqueduct",
+        "harbor",
+        "concrete",
+        "ruins",
+        "Roman Empire archaeology",
+        "ancient Rome",
+        "Roman Empire archaeology wide view",
+        "Roman Empire archaeology landscape",
+        "ancient Rome wide view",
+        "ancient Rome landscape",
+        "Roman Empire archaeology close up",
+        "Roman Empire archaeology detailed view",
+        "ancient Rome close up",
+        "ancient Rome detailed view"
+      ],
+      "entities": [
+        "로마",
+        "ancient Roman aqueduct harbor concrete ruins Roman Empire",
+        "Roman Empire archaeology wide view Roman Empire archaeology",
+        "ome wide view ancient Rome landscape Roman Empire",
+        "re archaeology detailed view ancient Rome close up"
+      ],
+      "primaryQuery": "Roman Empire archaeology",
+      "queries": [
+        {
+          "query": "Roman Empire archaeology",
+          "intent": "primary",
+          "priority": 1,
+          "mediaKind": "any"
+        },
+        {
+          "query": "ancient Rome",
+          "intent": "primary",
+          "priority": 2,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Roman Empire archaeology wide view",
+          "intent": "wide",
+          "priority": 3,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Roman Empire archaeology close up",
+          "intent": "detail",
+          "priority": 4,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Roman Empire archaeology detailed view",
+          "intent": "detail",
+          "priority": 5,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Roman Empire archaeology landscape",
+          "intent": "wide",
+          "priority": 6,
+          "mediaKind": "any"
+        },
+        {
+          "query": "ancient Rome wide view",
+          "intent": "wide",
+          "priority": 7,
+          "mediaKind": "any"
+        },
+        {
+          "query": "ancient Rome close up",
+          "intent": "detail",
+          "priority": 8,
+          "mediaKind": "any"
+        },
+        {
+          "query": "ancient Rome detailed view",
+          "intent": "detail",
+          "priority": 9,
+          "mediaKind": "any"
+        },
+        {
+          "query": "ancient Rome landscape",
+          "intent": "wide",
+          "priority": 10,
+          "mediaKind": "any"
+        }
+      ]
+    },
+    {
+      "sceneId": "scene_003",
+      "title": "첫 번째 비밀은 화산재",
+      "narration": "오랫동안 가장 중요한 비밀은 석회와 화산재를 섞은 재료라고 알려졌습니다.",
+      "sourceKeywords": [
+        "Pozzuoli",
+        "volcanic",
+        "ash",
+        "Vesuvius",
+        "Italy",
+        "volcano eruption",
+        "active volcano",
+        "volcano eruption wide view",
+        "volcano eruption landscape",
+        "active volcano wide view",
+        "active volcano landscape",
+        "volcano eruption close up",
+        "volcano eruption detailed view",
+        "active volcano close up",
+        "active volcano detailed view"
+      ],
+      "entities": [
+        "화산",
+        "Pozzuoli volcanic ash Vesuvius Italy volcano eruption active",
+        "tion wide view volcano eruption landscape active volcano",
+        "landscape volcano eruption close up volcano eruption detailed",
+        "close up active volcano detailed view"
+      ],
+      "primaryQuery": "volcano eruption",
+      "queries": [
+        {
+          "query": "volcano eruption",
+          "intent": "primary",
+          "priority": 1,
+          "mediaKind": "any"
+        },
+        {
+          "query": "active volcano",
+          "intent": "primary",
+          "priority": 2,
+          "mediaKind": "any"
+        },
+        {
+          "query": "volcano eruption wide view",
+          "intent": "wide",
+          "priority": 3,
+          "mediaKind": "any"
+        },
+        {
+          "query": "active volcano wide view",
+          "intent": "wide",
+          "priority": 4,
+          "mediaKind": "any"
+        },
+        {
+          "query": "volcano eruption close up",
+          "intent": "detail",
+          "priority": 5,
+          "mediaKind": "any"
+        },
+        {
+          "query": "volcano eruption detailed view",
+          "intent": "detail",
+          "priority": 6,
+          "mediaKind": "any"
+        },
+        {
+          "query": "active volcano close up",
+          "intent": "detail",
+          "priority": 7,
+          "mediaKind": "any"
+        },
+        {
+          "query": "active volcano detailed view",
+          "intent": "detail",
+          "priority": 8,
+          "mediaKind": "any"
+        },
+        {
+          "query": "volcano eruption landscape",
+          "intent": "wide",
+          "priority": 9,
+          "mediaKind": "any"
+        },
+        {
+          "query": "active volcano landscape",
+          "intent": "wide",
+          "priority": 10,
+          "mediaKind": "any"
+        }
+      ]
+    },
+    {
+      "sceneId": "scene_004",
+      "title": "바닷물에 닿을수록 더 단단해졌다",
+      "narration": "특히 해양 콘크리트는 바닷물과 반응하며 안정적인 광물을 만들어 냈습니다.",
+      "sourceKeywords": [
+        "Roman",
+        "underwater",
+        "concrete",
+        "harbor",
+        "seawater",
+        "ruins",
+        "Roman wide view",
+        "Roman landscape",
+        "underwater wide view",
+        "underwater landscape",
+        "Roman close up",
+        "Roman detailed view",
+        "underwater close up",
+        "underwater detailed view"
+      ],
+      "entities": [
+        "Roman underwater concrete harbor seawater ruins Roman wide",
+        "nderwater wide view underwater landscape Roman close up",
+        "water close up underwater detailed view"
+      ],
+      "primaryQuery": "Roman",
+      "queries": [
+        {
+          "query": "Roman",
+          "intent": "primary",
+          "priority": 1,
+          "mediaKind": "any"
+        },
+        {
+          "query": "underwater",
+          "intent": "primary",
+          "priority": 2,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Roman wide view",
+          "intent": "wide",
+          "priority": 3,
+          "mediaKind": "any"
+        },
+        {
+          "query": "underwater wide view",
+          "intent": "wide",
+          "priority": 4,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Roman close up",
+          "intent": "detail",
+          "priority": 5,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Roman detailed view",
+          "intent": "detail",
+          "priority": 6,
+          "mediaKind": "any"
+        },
+        {
+          "query": "underwater close up",
+          "intent": "detail",
+          "priority": 7,
+          "mediaKind": "any"
+        },
+        {
+          "query": "underwater detailed view",
+          "intent": "detail",
+          "priority": 8,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Roman landscape",
+          "intent": "wide",
+          "priority": 9,
+          "mediaKind": "any"
+        },
+        {
+          "query": "underwater landscape",
+          "intent": "wide",
+          "priority": 10,
+          "mediaKind": "any"
+        }
+      ]
+    },
+    {
+      "sceneId": "scene_005",
+      "title": "하얀 석회 덩어리는 실수가 아니었다",
+      "narration": "그런데 연구진은 콘크리트 속 하얀 석회 덩어리가 단순한 제조 실수가 아니라는 사실을 발견했습니다.",
+      "sourceKeywords": [
+        "ancient",
+        "Roman",
+        "concrete",
+        "limestone",
+        "white",
+        "mineral",
+        "texture",
+        "ancient wide view",
+        "ancient landscape",
+        "Roman wide view",
+        "Roman landscape",
+        "ancient close up",
+        "ancient detailed view",
+        "Roman close up",
+        "Roman detailed view"
+      ],
+      "entities": [
+        "ancient Roman concrete limestone white mineral texture ancient",
+        "landscape Roman wide view Roman landscape ancient close",
+        "Roman close up Roman detailed view"
+      ],
+      "primaryQuery": "ancient",
+      "queries": [
+        {
+          "query": "ancient",
+          "intent": "primary",
+          "priority": 1,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Roman",
+          "intent": "primary",
+          "priority": 2,
+          "mediaKind": "any"
+        },
+        {
+          "query": "ancient wide view",
+          "intent": "wide",
+          "priority": 3,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Roman wide view",
+          "intent": "wide",
+          "priority": 4,
+          "mediaKind": "any"
+        },
+        {
+          "query": "ancient close up",
+          "intent": "detail",
+          "priority": 5,
+          "mediaKind": "any"
+        },
+        {
+          "query": "ancient detailed view",
+          "intent": "detail",
+          "priority": 6,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Roman close up",
+          "intent": "detail",
+          "priority": 7,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Roman detailed view",
+          "intent": "detail",
+          "priority": 8,
+          "mediaKind": "any"
+        },
+        {
+          "query": "ancient landscape",
+          "intent": "wide",
+          "priority": 9,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Roman landscape",
+          "intent": "wide",
+          "priority": 10,
+          "mediaKind": "any"
+        }
+      ]
+    },
+    {
+      "sceneId": "scene_006",
+      "title": "물이 들어오면 균열을 스스로 메운다",
+      "narration": "금이 생겨 물이 들어오면 석회 성분이 녹아 나와 새로운 광물로 굳으며 틈을 메웁니다.",
+      "sourceKeywords": [
+        "self",
+        "healing",
+        "concrete",
+        "crack",
+        "calcium",
+        "carbonate",
+        "self wide view",
+        "self landscape",
+        "healing wide view",
+        "healing landscape",
+        "self close up",
+        "self detailed view",
+        "healing close up",
+        "healing detailed view"
+      ],
+      "entities": [
+        "self healing concrete crack calcium carbonate self wide",
+        "ng wide view healing landscape self close up",
+        "healing detailed view"
+      ],
+      "primaryQuery": "self",
+      "queries": [
+        {
+          "query": "self",
+          "intent": "primary",
+          "priority": 1,
+          "mediaKind": "any"
+        },
+        {
+          "query": "healing",
+          "intent": "primary",
+          "priority": 2,
+          "mediaKind": "any"
+        },
+        {
+          "query": "self wide view",
+          "intent": "wide",
+          "priority": 3,
+          "mediaKind": "any"
+        },
+        {
+          "query": "healing wide view",
+          "intent": "wide",
+          "priority": 4,
+          "mediaKind": "any"
+        },
+        {
+          "query": "self close up",
+          "intent": "detail",
+          "priority": 5,
+          "mediaKind": "any"
+        },
+        {
+          "query": "self detailed view",
+          "intent": "detail",
+          "priority": 6,
+          "mediaKind": "any"
+        },
+        {
+          "query": "healing close up",
+          "intent": "detail",
+          "priority": 7,
+          "mediaKind": "any"
+        },
+        {
+          "query": "healing detailed view",
+          "intent": "detail",
+          "priority": 8,
+          "mediaKind": "any"
+        },
+        {
+          "query": "self landscape",
+          "intent": "wide",
+          "priority": 9,
+          "mediaKind": "any"
+        },
+        {
+          "query": "healing landscape",
+          "intent": "wide",
+          "priority": 10,
+          "mediaKind": "any"
+        }
+      ]
+    },
+    {
+      "sceneId": "scene_007",
+      "title": "2주 만에 균열이 다시 막혔다",
+      "narration": "실험에서는 로마 방식으로 만든 콘크리트의 균열이 약 2주 만에 막히는 모습도 확인됐습니다.",
+      "sourceKeywords": [
+        "concrete",
+        "laboratory",
+        "crack",
+        "healing",
+        "experiment",
+        "Roman Empire archaeology",
+        "ancient Rome",
+        "Roman Empire archaeology wide view",
+        "Roman Empire archaeology landscape",
+        "ancient Rome wide view",
+        "ancient Rome landscape",
+        "Roman Empire archaeology close up",
+        "Roman Empire archaeology detailed view",
+        "ancient Rome close up",
+        "ancient Rome detailed view"
+      ],
+      "entities": [
+        "로마",
+        "concrete laboratory crack healing experiment Roman Empire archaeology",
+        "Roman Empire archaeology wide view Roman Empire archaeology",
+        "ome wide view ancient Rome landscape Roman Empire",
+        "re archaeology detailed view ancient Rome close up"
+      ],
+      "primaryQuery": "Roman Empire archaeology",
+      "queries": [
+        {
+          "query": "Roman Empire archaeology",
+          "intent": "primary",
+          "priority": 1,
+          "mediaKind": "any"
+        },
+        {
+          "query": "ancient Rome",
+          "intent": "primary",
+          "priority": 2,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Roman Empire archaeology wide view",
+          "intent": "wide",
+          "priority": 3,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Roman Empire archaeology close up",
+          "intent": "detail",
+          "priority": 4,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Roman Empire archaeology detailed view",
+          "intent": "detail",
+          "priority": 5,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Roman Empire archaeology landscape",
+          "intent": "wide",
+          "priority": 6,
+          "mediaKind": "any"
+        },
+        {
+          "query": "ancient Rome wide view",
+          "intent": "wide",
+          "priority": 7,
+          "mediaKind": "any"
+        },
+        {
+          "query": "ancient Rome close up",
+          "intent": "detail",
+          "priority": 8,
+          "mediaKind": "any"
+        },
+        {
+          "query": "ancient Rome detailed view",
+          "intent": "detail",
+          "priority": 9,
+          "mediaKind": "any"
+        },
+        {
+          "query": "ancient Rome landscape",
+          "intent": "wide",
+          "priority": 10,
+          "mediaKind": "any"
+        }
+      ]
+    },
+    {
+      "sceneId": "scene_008",
+      "title": "비밀은 하나가 아닌 여러 반응의 조합",
+      "narration": "최근에는 화산재와 석회뿐 아니라 탄산화 작용도 긴 수명에 영향을 주었을 가능성이 연구되고 있습니다.",
+      "sourceKeywords": [
+        "ancient",
+        "Roman",
+        "concrete",
+        "scientific",
+        "analysis",
+        "laboratory",
+        "volcano eruption",
+        "active volcano",
+        "volcano eruption wide view",
+        "volcano eruption landscape",
+        "active volcano wide view",
+        "active volcano landscape",
+        "volcano eruption close up",
+        "volcano eruption detailed view",
+        "active volcano close up",
+        "active volcano detailed view"
+      ],
+      "entities": [
+        "화산",
+        "ancient Roman concrete scientific analysis laboratory volcano eruption",
+        "cano volcano eruption wide view volcano eruption landscape",
+        "ew active volcano landscape volcano eruption close up",
+        "iew active volcano close up active volcano detailed"
+      ],
+      "primaryQuery": "volcano eruption",
+      "queries": [
+        {
+          "query": "volcano eruption",
+          "intent": "primary",
+          "priority": 1,
+          "mediaKind": "any"
+        },
+        {
+          "query": "active volcano",
+          "intent": "primary",
+          "priority": 2,
+          "mediaKind": "any"
+        },
+        {
+          "query": "volcano eruption wide view",
+          "intent": "wide",
+          "priority": 3,
+          "mediaKind": "any"
+        },
+        {
+          "query": "active volcano wide view",
+          "intent": "wide",
+          "priority": 4,
+          "mediaKind": "any"
+        },
+        {
+          "query": "volcano eruption close up",
+          "intent": "detail",
+          "priority": 5,
+          "mediaKind": "any"
+        },
+        {
+          "query": "volcano eruption detailed view",
+          "intent": "detail",
+          "priority": 6,
+          "mediaKind": "any"
+        },
+        {
+          "query": "active volcano close up",
+          "intent": "detail",
+          "priority": 7,
+          "mediaKind": "any"
+        },
+        {
+          "query": "active volcano detailed view",
+          "intent": "detail",
+          "priority": 8,
+          "mediaKind": "any"
+        },
+        {
+          "query": "volcano eruption landscape",
+          "intent": "wide",
+          "priority": 9,
+          "mediaKind": "any"
+        },
+        {
+          "query": "active volcano landscape",
+          "intent": "wide",
+          "priority": 10,
+          "mediaKind": "any"
+        }
+      ]
+    },
+    {
+      "sceneId": "scene_009",
+      "title": "현대 콘크리트도 2천 년을 버틸 수 있을까",
+      "narration": "고대 로마의 기술은 더 오래가고 스스로 회복하는 현대 콘크리트의 단서가 되고 있습니다.",
+      "sourceKeywords": [
+        "modern",
+        "sustainable",
+        "concrete",
+        "architecture",
+        "future",
+        "Roman Empire archaeology",
+        "ancient Rome",
+        "Roman Empire archaeology wide view",
+        "Roman Empire archaeology landscape",
+        "ancient Rome wide view",
+        "ancient Rome landscape",
+        "Roman Empire archaeology close up",
+        "Roman Empire archaeology detailed view",
+        "ancient Rome close up",
+        "ancient Rome detailed view"
+      ],
+      "entities": [
+        "로마",
+        "modern sustainable concrete architecture future Roman Empire archaeology",
+        "Rome Roman Empire archaeology wide view Roman Empire",
+        "Rome wide view ancient Rome landscape Roman Empire",
+        "mpire archaeology detailed view ancient Rome close up"
+      ],
+      "primaryQuery": "Roman Empire archaeology",
+      "queries": [
+        {
+          "query": "Roman Empire archaeology",
+          "intent": "primary",
+          "priority": 1,
+          "mediaKind": "any"
+        },
+        {
+          "query": "ancient Rome",
+          "intent": "primary",
+          "priority": 2,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Roman Empire archaeology wide view",
+          "intent": "wide",
+          "priority": 3,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Roman Empire archaeology close up",
+          "intent": "detail",
+          "priority": 4,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Roman Empire archaeology detailed view",
+          "intent": "detail",
+          "priority": 5,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Roman Empire archaeology landscape",
+          "intent": "wide",
+          "priority": 6,
+          "mediaKind": "any"
+        },
+        {
+          "query": "ancient Rome wide view",
+          "intent": "wide",
+          "priority": 7,
+          "mediaKind": "any"
+        },
+        {
+          "query": "ancient Rome close up",
+          "intent": "detail",
+          "priority": 8,
+          "mediaKind": "any"
+        },
+        {
+          "query": "ancient Rome detailed view",
+          "intent": "detail",
+          "priority": 9,
+          "mediaKind": "any"
+        },
+        {
+          "query": "ancient Rome landscape",
+          "intent": "wide",
+          "priority": 10,
+          "mediaKind": "any"
+        }
+      ]
+    }
+  ]
+}

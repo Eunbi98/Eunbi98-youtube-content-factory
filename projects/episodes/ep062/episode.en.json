@@ -1,0 +1,17 @@
+{
+  "version": "1.0",
+  "episodeId": "ep062",
+  "channel": "science",
+  "title": "Saturn's South Pole Has a Giant Decagon",
+  "voice": "en-US-JennyNeural",
+  "mediaSource": "Saturn south pole decagon Hubble 2026 NASA atmosphere",
+  "theme": {"backgroundColor":"#090B12","titleColor":"#F3D6A6","captionColor":"#FFFFFF","accentColor":"#F3D6A6"},
+  "scenes": [
+    {"type":"hook","title":"Saturn has a new geometric mystery","narration":"Saturn is famous for the hexagon around its north pole. Now astronomers have found a giant ten-sided atmospheric wave around the south pole.","keywords":["Saturn south pole decagon Hubble NASA","Saturn south pole atmosphere","Hubble Saturn 2026"]},
+    {"type":"answer","title":"Hubble watched it emerge over years","narration":"By combining Hubble observations, researchers found subtle hints of the structure starting in 2023 before it developed into a much clearer decagon.","keywords":["Hubble Saturn multi year observations","Saturn atmosphere Hubble telescope","Saturn south pole NASA image"]},
+    {"type":"story","title":"It stretches through several atmospheric layers","narration":"The ten-sided wave is not just one cloud band. Observations suggest the pattern extends through multiple layers of Saturn's southern atmosphere.","keywords":["Saturn atmospheric layers south pole","Saturn polar wave illustration","Saturn clouds NASA"]},
+    {"type":"fact","title":"It resembles the northern hexagon but is different","narration":"Saturn's northern hexagon is also linked to atmospheric waves and jet streams, but the southern decagon appears to have a different shape and evolution.","keywords":["Saturn north pole hexagon","Saturn hexagon versus decagon","Saturn polar jet NASA"]},
+    {"type":"fact","title":"Scientists still do not know why it has ten sides","narration":"Fast and slow-moving gas can create large waves, but exactly why this pattern formed ten sides will require more observations.","keywords":["Saturn atmospheric wave simulation","gas giant jet stream illustration","Saturn polar vortex"]},
+    {"type":"ending","title":"Saturn is still changing before our eyes","narration":"Even after decades of observation, Saturn keeps producing new atmospheric patterns. Scientists now want to know how long this decagon will survive.","keywords":["Saturn Hubble cinematic","Saturn rings south pole","Saturn NASA space"]}
+  ]
+}

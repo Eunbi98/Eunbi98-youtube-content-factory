@@ -1,0 +1,54 @@
+{
+  "source_id": "nasa",
+  "facts": [
+    {
+      "id": "nasa_elementary_001",
+      "level": "elementary",
+      "category": "science",
+      "fact": "태양계에서 가장 큰 행성은 목성이다.",
+      "answer": "목성",
+      "explanation": "목성은 지름과 질량 모두 태양계 행성 가운데 가장 크다.",
+      "source_url": "https://science.nasa.gov/jupiter/",
+      "verified_at": "2026-07-14",
+      "evergreen": true,
+      "tags": ["jupiter", "planet", "space"]
+    },
+    {
+      "id": "nasa_middle_001",
+      "level": "middle",
+      "category": "science",
+      "fact": "화성의 붉은색은 표면의 철 성분이 산화된 물질과 관련이 있다.",
+      "answer": "산화철",
+      "explanation": "화성 토양의 산화철 성분이 빛을 반사해 행성이 붉게 보인다.",
+      "source_url": "https://science.nasa.gov/mars/",
+      "verified_at": "2026-07-14",
+      "evergreen": true,
+      "tags": ["mars", "iron oxide", "planet"]
+    },
+    {
+      "id": "nasa_high_001",
+      "level": "high",
+      "category": "science",
+      "fact": "별의 스펙트럼에서 파장이 긴 쪽으로 이동하는 현상은 적색편이라고 한다.",
+      "answer": "적색편이",
+      "explanation": "천체가 관측자에게서 멀어질 때 빛의 파장이 길어져 적색편이가 나타날 수 있다.",
+      "source_url": "https://science.nasa.gov/universe/",
+      "verified_at": "2026-07-14",
+      "evergreen": true,
+      "tags": ["redshift", "spectrum", "universe"]
+    },
+    {
+      "id": "nasa_current_001",
+      "level": "current",
+      "category": "current",
+      "fact": "NASA의 아르테미스 프로그램은 사람을 다시 달에 보내고 장기적인 달 탐사 기반을 구축하는 것을 목표로 한다.",
+      "answer": "아르테미스 프로그램",
+      "explanation": "아르테미스는 유인 달 탐사와 이후 화성 탐사를 위한 기술과 경험 축적을 추진하는 프로그램이다.",
+      "source_url": "https://www.nasa.gov/humans-in-space/artemis/",
+      "published_at": "2026-07-14",
+      "verified_at": "2026-07-14",
+      "evergreen": false,
+      "tags": ["artemis", "moon", "nasa"]
+    }
+  ]
+}

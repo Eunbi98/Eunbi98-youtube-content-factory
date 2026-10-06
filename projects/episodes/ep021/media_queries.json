@@ -1,0 +1,518 @@
+{
+  "version": "2.0",
+  "episodeId": "ep021",
+  "timelinePath": "/workspace/scratch/1c302ab6fdc2/factory/projects/episodes/ep021/timeline.json",
+  "sceneCount": 6,
+  "scenes": [
+    {
+      "sceneId": "scene_001",
+      "title": "2천 년 전에도 컴퓨터가 있었습니다",
+      "narration": "2천 년 전 고대 그리스에는 전기도 없이 천체의 움직임을 계산하는 기계가 있었습니다.",
+      "sourceKeywords": [
+        "Antikythera shipwreck sponge divers",
+        "Antikythera mechanism discovery",
+        "Antikythera shipwreck sponge divers wide view",
+        "Antikythera shipwreck sponge divers landscape",
+        "Antikythera mechanism discovery wide view",
+        "Antikythera mechanism discovery landscape",
+        "Antikythera shipwreck sponge divers close up",
+        "Antikythera shipwreck sponge divers detailed view"
+      ],
+      "entities": [
+        "Antikythera shipwreck sponge divers Antikythera mechanism discovery Antikythera",
+        "hipwreck sponge divers wide view Antikythera shipwreck sponge",
+        "tikythera mechanism discovery wide view Antikythera mechanism discovery",
+        "Antikythera shipwreck sponge divers close up Antikythera shipwreck",
+        "detailed view"
+      ],
+      "primaryQuery": "Antikythera shipwreck sponge divers",
+      "queries": [
+        {
+          "query": "Antikythera shipwreck sponge divers",
+          "intent": "primary",
+          "priority": 1,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Antikythera mechanism discovery",
+          "intent": "primary",
+          "priority": 2,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Antikythera shipwreck sponge divers wide view",
+          "intent": "wide",
+          "priority": 3,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Antikythera shipwreck sponge divers close up",
+          "intent": "detail",
+          "priority": 4,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Antikythera shipwreck sponge divers detailed view",
+          "intent": "detail",
+          "priority": 5,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Antikythera shipwreck sponge divers landscape",
+          "intent": "wide",
+          "priority": 6,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Antikythera mechanism discovery wide view",
+          "intent": "wide",
+          "priority": 7,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Antikythera mechanism discovery landscape",
+          "intent": "wide",
+          "priority": 8,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Antikythera mechanism discovery close up",
+          "intent": "detail",
+          "priority": 9,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Antikythera mechanism discovery detailed view",
+          "intent": "detail",
+          "priority": 10,
+          "mediaKind": "any"
+        }
+      ]
+    },
+    {
+      "sceneId": "scene_002",
+      "title": "난파선에서 나온 녹슨 금속 조각",
+      "narration": "1901년 안티키테라섬 앞바다 난파선에서 건져 올린 녹슨 청동 덩어리 속에서 톱니바퀴가 발견됐습니다.",
+      "sourceKeywords": [
+        "Antikythera mechanism fragment museum",
+        "Antikythera bronze gears",
+        "ocean aerial view",
+        "Antikythera mechanism fragment museum wide view",
+        "Antikythera mechanism fragment museum landscape",
+        "Antikythera bronze gears wide view",
+        "Antikythera bronze gears landscape",
+        "Antikythera mechanism fragment museum close up"
+      ],
+      "entities": [
+        "난파선",
+        "바다",
+        "Antikythera mechanism fragment museum Antikythera bronze gears ocean",
+        "Antikythera mechanism fragment museum wide view Antikythera mechanism",
+        "seum landscape Antikythera bronze gears wide view Antikythera",
+        "ape Antikythera mechanism fragment museum close up"
+      ],
+      "primaryQuery": "Antikythera mechanism fragment museum",
+      "queries": [
+        {
+          "query": "Antikythera mechanism fragment museum",
+          "intent": "primary",
+          "priority": 1,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Antikythera bronze gears",
+          "intent": "primary",
+          "priority": 2,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Antikythera mechanism fragment museum wide view",
+          "intent": "wide",
+          "priority": 3,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Antikythera mechanism fragment museum close up",
+          "intent": "detail",
+          "priority": 4,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Antikythera mechanism fragment museum landscape",
+          "intent": "wide",
+          "priority": 5,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Antikythera bronze gears wide view",
+          "intent": "wide",
+          "priority": 6,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Antikythera bronze gears landscape",
+          "intent": "wide",
+          "priority": 7,
+          "mediaKind": "any"
+        },
+        {
+          "query": "ocean aerial view",
+          "intent": "aerial",
+          "priority": 8,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Antikythera mechanism fragment museum detailed view",
+          "intent": "detail",
+          "priority": 9,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Antikythera bronze gears close up",
+          "intent": "detail",
+          "priority": 10,
+          "mediaKind": "any"
+        }
+      ]
+    },
+    {
+      "sceneId": "scene_003",
+      "title": "남은 건 3분의 1 그 안에 30개 기어",
+      "narration": "현재 남은 것은 82개 조각 원래 기계의 약 3분의 1뿐이지만 청동 기어 30개가 살아남았습니다.",
+      "sourceKeywords": [
+        "Antikythera mechanism gears reconstruction",
+        "Antikythera gears",
+        "Antikythera mechanism gears reconstruction wide view",
+        "Antikythera mechanism gears reconstruction landscape",
+        "Antikythera gears wide view",
+        "Antikythera gears landscape",
+        "Antikythera mechanism gears reconstruction close up",
+        "Antikythera mechanism gears reconstruction detailed view"
+      ],
+      "entities": [
+        "Antikythera mechanism gears reconstruction Antikythera gears Antikythera mechanis",
+        "gears reconstruction wide view Antikythera mechanism gears reconstruction",
+        "cape Antikythera gears wide view Antikythera gears landscape",
+        "gears reconstruction close up Antikythera mechanism gears reconstruction",
+        "ed view"
+      ],
+      "primaryQuery": "Antikythera mechanism gears reconstruction",
+      "queries": [
+        {
+          "query": "Antikythera mechanism gears reconstruction",
+          "intent": "primary",
+          "priority": 1,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Antikythera gears",
+          "intent": "primary",
+          "priority": 2,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Antikythera mechanism gears reconstruction wide view",
+          "intent": "wide",
+          "priority": 3,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Antikythera mechanism gears reconstruction close up",
+          "intent": "detail",
+          "priority": 4,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Antikythera mechanism gears reconstruction detailed view",
+          "intent": "detail",
+          "priority": 5,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Antikythera mechanism gears reconstruction landscape",
+          "intent": "wide",
+          "priority": 6,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Antikythera gears wide view",
+          "intent": "wide",
+          "priority": 7,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Antikythera gears landscape",
+          "intent": "wide",
+          "priority": 8,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Antikythera gears close up",
+          "intent": "detail",
+          "priority": 9,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Antikythera gears detailed view",
+          "intent": "detail",
+          "priority": 10,
+          "mediaKind": "any"
+        }
+      ]
+    },
+    {
+      "sceneId": "scene_004",
+      "title": "손잡이를 돌리면 하늘이 움직였습니다",
+      "narration": "손잡이를 돌리면 태양과 달 다섯 행성의 위치는 물론 일식과 월식 시기까지 표시할 수 있었습니다.",
+      "sourceKeywords": [
+        "Antikythera mechanism model front",
+        "Antikythera planetary display",
+        "lunar landscape",
+        "Antikythera mechanism model front wide view",
+        "Antikythera mechanism model front landscape",
+        "Antikythera planetary display wide view",
+        "Antikythera planetary display landscape",
+        "Antikythera mechanism model front close up"
+      ],
+      "entities": [
+        "달",
+        "Antikythera mechanism model front Antikythera planetary display lunar",
+        "ntikythera mechanism model front wide view Antikythera mechanism",
+        "scape Antikythera planetary display wide view Antikythera planetary",
+        "cape Antikythera mechanism model front close up"
+      ],
+      "primaryQuery": "Antikythera mechanism model front",
+      "queries": [
+        {
+          "query": "Antikythera mechanism model front",
+          "intent": "primary",
+          "priority": 1,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Antikythera planetary display",
+          "intent": "primary",
+          "priority": 2,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Antikythera mechanism model front wide view",
+          "intent": "wide",
+          "priority": 3,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Antikythera mechanism model front close up",
+          "intent": "detail",
+          "priority": 4,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Antikythera mechanism model front landscape",
+          "intent": "wide",
+          "priority": 5,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Antikythera planetary display wide view",
+          "intent": "wide",
+          "priority": 6,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Antikythera planetary display landscape",
+          "intent": "wide",
+          "priority": 7,
+          "mediaKind": "any"
+        },
+        {
+          "query": "lunar landscape",
+          "intent": "wide",
+          "priority": 8,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Antikythera mechanism model front detailed view",
+          "intent": "detail",
+          "priority": 9,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Antikythera planetary display close up",
+          "intent": "detail",
+          "priority": 10,
+          "mediaKind": "any"
+        }
+      ]
+    },
+    {
+      "sceneId": "scene_005",
+      "title": "엑스레이가 밝혀낸 고대의 설계도",
+      "narration": "연구진은 3차원 엑스레이로 부식된 내부와 숨은 글자를 읽어 기계의 작동 방식을 복원했습니다.",
+      "sourceKeywords": [
+        "Antikythera mechanism ray tomography",
+        "Antikythera rear dial eclipse",
+        "Antikythera mechanism ray tomography wide view",
+        "Antikythera mechanism ray tomography landscape",
+        "Antikythera rear dial eclipse wide view",
+        "Antikythera rear dial eclipse landscape",
+        "Antikythera mechanism ray tomography close up",
+        "Antikythera mechanism ray tomography detailed view"
+      ],
+      "entities": [
+        "Antikythera mechanism ray tomography Antikythera rear dial eclipse",
+        "chanism ray tomography wide view Antikythera mechanism ray",
+        "ntikythera rear dial eclipse wide view Antikythera rear",
+        "tikythera mechanism ray tomography close up Antikythera mechanism",
+        "detailed view"
+      ],
+      "primaryQuery": "Antikythera mechanism ray tomography",
+      "queries": [
+        {
+          "query": "Antikythera mechanism ray tomography",
+          "intent": "primary",
+          "priority": 1,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Antikythera rear dial eclipse",
+          "intent": "primary",
+          "priority": 2,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Antikythera mechanism ray tomography wide view",
+          "intent": "wide",
+          "priority": 3,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Antikythera rear dial eclipse wide view",
+          "intent": "wide",
+          "priority": 4,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Antikythera mechanism ray tomography close up",
+          "intent": "detail",
+          "priority": 5,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Antikythera mechanism ray tomography detailed view",
+          "intent": "detail",
+          "priority": 6,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Antikythera mechanism ray tomography landscape",
+          "intent": "wide",
+          "priority": 7,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Antikythera rear dial eclipse landscape",
+          "intent": "wide",
+          "priority": 8,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Antikythera rear dial eclipse close up",
+          "intent": "detail",
+          "priority": 9,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Antikythera rear dial eclipse detailed view",
+          "intent": "detail",
+          "priority": 10,
+          "mediaKind": "any"
+        }
+      ]
+    },
+    {
+      "sceneId": "scene_006",
+      "title": "하지만 제작자는 아직도 모릅니다",
+      "narration": "누가 이런 정밀한 기계를 만들었는지는 여전히 밝혀지지 않았습니다. 고대 기술은 어디까지 발전했던 걸까요",
+      "sourceKeywords": [
+        "Antikythera mechanism reconstruction",
+        "Antikythera island Greece",
+        "Antikythera mechanism reconstruction wide view",
+        "Antikythera mechanism reconstruction landscape",
+        "Antikythera island Greece wide view",
+        "Antikythera island Greece landscape",
+        "Antikythera mechanism reconstruction close up",
+        "Antikythera mechanism reconstruction detailed view"
+      ],
+      "entities": [
+        "Antikythera mechanism reconstruction Antikythera island Greece Antikythera mechan",
+        "ism reconstruction wide view Antikythera mechanism reconstruction landscape",
+        "ythera island Greece wide view Antikythera island Greece",
+        "chanism reconstruction close up Antikythera mechanism reconstruction detailed"
+      ],
+      "primaryQuery": "Antikythera mechanism reconstruction",
+      "queries": [
+        {
+          "query": "Antikythera mechanism reconstruction",
+          "intent": "primary",
+          "priority": 1,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Antikythera island Greece",
+          "intent": "primary",
+          "priority": 2,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Antikythera mechanism reconstruction wide view",
+          "intent": "wide",
+          "priority": 3,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Antikythera island Greece wide view",
+          "intent": "wide",
+          "priority": 4,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Antikythera mechanism reconstruction close up",
+          "intent": "detail",
+          "priority": 5,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Antikythera mechanism reconstruction detailed view",
+          "intent": "detail",
+          "priority": 6,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Antikythera mechanism reconstruction landscape",
+          "intent": "wide",
+          "priority": 7,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Antikythera island Greece landscape",
+          "intent": "wide",
+          "priority": 8,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Antikythera island Greece close up",
+          "intent": "detail",
+          "priority": 9,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Antikythera island Greece detailed view",
+          "intent": "detail",
+          "priority": 10,
+          "mediaKind": "any"
+        }
+      ]
+    }
+  ]
+}

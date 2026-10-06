@@ -1,0 +1,9 @@
+{
+  "version":"1.0","episodeId":"ep066","channel":"history","title":"600년 전 중국 의사의 수술 도구에서 검출된 독성 진통 성분","voice":"ko-KR-SunHiNeural","mediaSource":"Ming dynasty doctor Xia Quan medical instruments aconitum residue archaeology","theme":{"backgroundColor":"#11100C","titleColor":"#D9C79E","captionColor":"#FFFFFF","accentColor":"#D9C79E"},"scenes":[
+    {"type":"hook","title":"600년 전 수술 도구에서 독성 식물 성분이 나왔다","narration":"중국 명나라 의사의 무덤에서 나온 핀셋과 가위에서 독성이 강한 초오속 식물 성분이 검출됐습니다.","keywords":["Ming dynasty medical instruments archaeology","ancient Chinese scissors tweezers tomb","Xia Quan doctor tomb instruments"]},
+    {"type":"answer","title":"주인은 명나라 의사 하권이었다","narration":"이 도구들은 15세기 초 장쑤성에 묻힌 의사 하권의 무덤에서 발견됐습니다. 의료기구가 함께 부장된 드문 사례입니다.","keywords":["Ming dynasty doctor tomb Jiangsu","ancient Chinese physician archaeology","medical instruments Chinese tomb"]},
+    {"type":"story","title":"가위와 핀셋에 아코니툼 흔적","narration":"잔류물 분석에서는 독성이 강한 아코니툼, 즉 투구꽃 계열 식물에서 유래한 성분이 확인됐습니다.","keywords":["Aconitum monkshood plant","ancient medicine residue analysis","archaeology laboratory residue tools"]},
+    {"type":"fact","title":"고대 의학서에는 마취 용도가 기록돼 있다","narration":"중국 의학 기록에는 아코니툼 분말을 피부에 사용해 절개 전 통증을 줄였다는 내용이 남아 있습니다.","keywords":["ancient Chinese medical manuscript","traditional Chinese medicine Aconitum","Ming medicine illustration"]},
+    {"type":"fact","title":"실제 수술 사용을 보여주는 가장 이른 증거일 수 있다","narration":"문헌 기록은 있었지만 실제 의료 도구에서 성분이 검출된 것은 매우 드뭅니다. 연구진은 고대 수술 과정에 사용됐을 가능성을 제시했습니다.","keywords":["ancient surgery tools archaeology","medical residue analysis microscope","Chinese archaeology medicine"]},
+    {"type":"ending","title":"독과 약의 경계는 사용법에 달려 있었다","narration":"강한 독성을 가진 식물도 적절한 방식으로 쓰이면 치료와 통증 완화에 이용됐을 수 있습니다. 작은 도구가 600년 전 의료 현장을 보여준 겁니다.","keywords":["ancient Chinese medicine instruments","Ming dynasty medical archaeology","historical surgery tools"]}
+  ]}

@@ -1,0 +1,17 @@
+{
+  "version": "1.0",
+  "episodeId": "ep061",
+  "channel": "history",
+  "title": "고대 이집트 신전 옆에서 발견된 와인 생산 흔적",
+  "voice": "ko-KR-SunHiNeural",
+  "mediaSource": "Sekhmet Temple Memphis Egypt excavation wine press mud brick houses archaeology",
+  "theme": {"backgroundColor":"#0D0B08","titleColor":"#E7C98A","captionColor":"#FFFFFF","accentColor":"#E7C98A"},
+  "scenes": [
+    {"type":"hook","title":"고대 이집트 신전 옆에 와인 시설이 있었다?","narration":"고대 이집트 멤피스의 세크메트 신전 주변에서 주거지와 함께 와인을 만들었을 가능성이 있는 시설이 발견됐습니다.","keywords":["Sekhmet Temple Memphis excavation real photo","Mit Rahina archaeology Egypt","ancient Memphis archaeological site"]},
+    {"type":"answer","title":"진흙벽돌 집과 안뜰이 나왔다","narration":"이집트와 중국 공동 발굴팀은 신전 근처에서 여러 채의 진흙벽돌 주택과 안뜰로 이루어진 주거 구역을 확인했습니다.","keywords":["ancient Egyptian mud brick houses excavation","Memphis Egypt residential complex archaeology","Mit Rahina mud brick ruins"]},
+    {"type":"story","title":"액체를 모으는 석회암 구조도 있었다","narration":"근처에서는 위쪽 웅덩이에서 중앙 구멍을 통해 아래쪽으로 액체가 흐르도록 만든 석회암 구조가 발견됐습니다.","keywords":["ancient Egyptian wine press excavation","limestone wine press archaeology Egypt","ancient wine production structure"]},
+    {"type":"fact","title":"연구진은 와인 생산 시설로 보고 있다","narration":"구조와 배수 방식 때문에 연구진은 이 시설이 포도즙을 짜고 모으는 와인 생산용 압착 시설이었을 가능성을 제시했습니다.","keywords":["ancient Egyptian wine making reconstruction","wine press ancient Egypt","grape pressing archaeology"]},
+    {"type":"fact","title":"신전 주변에도 일상이 이어졌다","narration":"도자기와 부적, 작은 조각상, 기록 조각도 함께 나와 이곳이 종교 공간뿐 아니라 사람들이 생활하고 일하던 장소였음을 보여줍니다.","keywords":["Egyptian faience amulets excavation","ancient Egyptian pottery artifacts","Sekhmet temple artifacts archaeology"]},
+    {"type":"ending","title":"신전 옆에서 보이는 평범한 고대인의 하루","narration":"거대한 신전만 남은 것처럼 보이던 멤피스에서 집과 생산 시설이 다시 나타났습니다. 고대 도시의 일상은 신전 바로 옆에서도 계속되고 있었습니다.","keywords":["ancient Memphis ruins sunset","Sekhmet Temple archaeology Egypt","Memphis ancient city reconstruction"]}
+  ]
+}

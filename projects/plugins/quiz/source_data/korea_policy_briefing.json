@@ -1,0 +1,31 @@
+{
+  "source_id": "korea_policy_briefing",
+  "facts": [
+    {
+      "id": "policy_current_001",
+      "level": "current",
+      "category": "society",
+      "fact": "대한민국 정책브리핑은 정부 부처의 정책 뉴스와 보도자료를 통합해 제공하는 공식 정책 정보 서비스이다.",
+      "answer": "대한민국 정책브리핑",
+      "explanation": "각 부처의 최신 정책 발표를 확인할 때 원문 출처로 활용할 수 있다.",
+      "source_url": "https://www.korea.kr/",
+      "published_at": "2026-07-14",
+      "verified_at": "2026-07-14",
+      "evergreen": false,
+      "tags": ["policy", "government", "news"]
+    },
+    {
+      "id": "policy_current_002",
+      "level": "current",
+      "category": "current",
+      "fact": "최신 시사 퀴즈는 발표 날짜와 원문 출처를 함께 저장해야 이후 사실 변경 여부를 다시 검증할 수 있다.",
+      "answer": "발표 날짜와 원문 출처",
+      "explanation": "시사 정보는 시간이 지나며 바뀔 수 있으므로 제작 시점과 검증 시점을 기록하는 것이 중요하다.",
+      "source_url": "https://www.korea.kr/",
+      "published_at": "2026-07-14",
+      "verified_at": "2026-07-14",
+      "evergreen": false,
+      "tags": ["current affairs", "verification", "source"]
+    }
+  ]
+}

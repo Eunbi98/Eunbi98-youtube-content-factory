@@ -1,0 +1,58 @@
+{
+  "version": "1.0",
+  "episodeId": "ep092",
+  "channel": "urban-exploration",
+  "title": "어떤 지하철역은 왜 이렇게 깊을까?",
+  "voice": "ko-KR-SunHiNeural",
+  "mediaSource": "deep subway station city underground infrastructure",
+  "theme": {
+    "backgroundColor": "#121416",
+    "titleColor": "#E8D9A9",
+    "captionColor": "#FFFFFF",
+    "accentColor": "#E8D9A9"
+  },
+  "scenes": [
+    {
+      "type": "hook",
+      "title": "왜 어떤 역은 내려가도 끝이 없을까?",
+      "narration": "지하철을 타러 내려가는데, 에스컬레이터가 끝나도 또 계단이 나오는 역이 있습니다. 같은 지하철인데 왜 어떤 역은 유난히 깊을까요?",
+      "media": {"type":"video","src":"ep092/scene_001.mp4","fit":"cover","position":"center center"},
+      "keywords": ["deep subway station escalator", "urban explorer subway"]
+    },
+    {
+      "type": "answer",
+      "title": "도시의 지하는 이미 꽉 차 있다",
+      "narration": "도시 아래에는 기존 지하철과 상하수도, 각종 배관과 터널, 건물 기초가 이미 자리 잡고 있습니다. 새 노선은 이런 시설을 피해서 지나가야 할 때가 있습니다.",
+      "media": {"type":"video","src":"ep092/scene_002.mp4","fit":"cover","position":"center center"},
+      "keywords": ["underground city utilities cross section", "subway tunnel infrastructure"]
+    },
+    {
+      "type": "story",
+      "title": "피하다 보면 더 아래로 내려간다",
+      "narration": "위쪽 공간을 그대로 통과하기 어렵다면 터널은 더 깊은 층을 택할 수 있습니다. 지형이나 기존 구조물, 주변 건물에 미치는 영향도 함께 고려됩니다.",
+      "media": {"type":"video","src":"ep092/scene_003.mp4","fit":"cover","position":"center center"},
+      "keywords": ["deep bored subway tunnel", "city underground layers"]
+    },
+    {
+      "type": "fact",
+      "title": "깊이는 단순히 노선 나이로 정해지지 않는다",
+      "narration": "새 노선이라고 항상 깊은 것도, 오래된 노선이라고 항상 얕은 것도 아닙니다. 노선의 경로와 지반, 주변 구조물, 공사 방식에 따라 깊이는 달라집니다.",
+      "media": {"type":"video","src":"ep092/scene_004.mp4","fit":"cover","position":"center center"},
+      "keywords": ["subway engineering tunnel depth", "metro construction cross section"]
+    },
+    {
+      "type": "fact",
+      "title": "깊게 만들면 얻는 장점도 있다",
+      "narration": "일부 터널은 더 깊게 배치하면 지상 건물이나 주변 시설에 전달되는 진동과 공사 영향을 줄이는 데 도움이 되기도 합니다. 대신 승객 이동과 환기, 비상 대피는 더 복잡해집니다.",
+      "media": {"type":"video","src":"ep092/scene_005.mp4","fit":"cover","position":"center center"},
+      "keywords": ["deep metro tunnel vibration", "subway ventilation shaft"]
+    },
+    {
+      "type": "ending",
+      "title": "우리가 내려가는 건 도시의 시간층이다",
+      "narration": "결국 깊은 역은 단순히 땅을 많이 판 결과가 아닙니다. 이미 만들어진 도시를 피해 새 길을 넣은 흔적이죠. 다음에 긴 에스컬레이터를 타게 된다면, 그 위에 무엇이 겹쳐 있는지 떠올려보세요.",
+      "media": {"type":"video","src":"ep092/scene_006.mp4","fit":"cover","position":"center center"},
+      "keywords": ["subway platform deep underground", "urban explorer metro station"]
+    }
+  ]
+}

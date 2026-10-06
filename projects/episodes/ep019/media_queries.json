@@ -1,0 +1,515 @@
+{
+  "version": "2.0",
+  "episodeId": "ep019",
+  "timelinePath": "/home/runner/work/Eunbi98-youtube-content-factory/Eunbi98-youtube-content-factory/projects/episodes/ep019/timeline.json",
+  "sceneCount": 6,
+  "scenes": [
+    {
+      "sceneId": "scene_001",
+      "title": "공룡 멸종의 미스터리",
+      "narration": "공룡이 멸종한 그날 지구에는 무슨 일이 벌어졌을까요",
+      "sourceKeywords": [
+        "mysterious ancient site",
+        "beehive",
+        "beehive close up",
+        "mysterious ancient site wide view",
+        "mysterious ancient site landscape",
+        "beehive wide view",
+        "beehive landscape",
+        "mysterious ancient site close up"
+      ],
+      "entities": [
+        "공룡",
+        "미스터리",
+        "벌",
+        "mysterious ancient site beehive beehive close up mysterious",
+        "mysterious ancient site landscape beehive wide view beehive",
+        "ancient site close up"
+      ],
+      "primaryQuery": "mysterious ancient site",
+      "queries": [
+        {
+          "query": "mysterious ancient site",
+          "intent": "primary",
+          "priority": 1,
+          "mediaKind": "any"
+        },
+        {
+          "query": "beehive",
+          "intent": "primary",
+          "priority": 2,
+          "mediaKind": "any"
+        },
+        {
+          "query": "mysterious ancient site wide view",
+          "intent": "wide",
+          "priority": 3,
+          "mediaKind": "any"
+        },
+        {
+          "query": "mysterious ancient site close up",
+          "intent": "detail",
+          "priority": 4,
+          "mediaKind": "any"
+        },
+        {
+          "query": "mysterious ancient site landscape",
+          "intent": "wide",
+          "priority": 5,
+          "mediaKind": "any"
+        },
+        {
+          "query": "beehive close up",
+          "intent": "detail",
+          "priority": 6,
+          "mediaKind": "any"
+        },
+        {
+          "query": "beehive wide view",
+          "intent": "wide",
+          "priority": 7,
+          "mediaKind": "any"
+        },
+        {
+          "query": "beehive landscape",
+          "intent": "wide",
+          "priority": 8,
+          "mediaKind": "any"
+        },
+        {
+          "query": "mysterious ancient site detailed view",
+          "intent": "detail",
+          "priority": 9,
+          "mediaKind": "any"
+        },
+        {
+          "query": "beehive detailed view",
+          "intent": "detail",
+          "priority": 10,
+          "mediaKind": "any"
+        }
+      ]
+    },
+    {
+      "sceneId": "scene_002",
+      "title": "충돌이 멸종을 촉발했다",
+      "narration": "치크술루브 소행성 충돌이 대량 멸종을 촉발했다는 증거가 지질학적 기록과 환경 변화 모델에서 확인됩니다.",
+      "sourceKeywords": [
+        "NASA asteroid mission",
+        "Chicxulub impact",
+        "NASA asteroid mission wide view",
+        "NASA asteroid mission landscape",
+        "Chicxulub impact wide view",
+        "Chicxulub impact landscape",
+        "NASA asteroid mission close up",
+        "NASA asteroid mission detailed view"
+      ],
+      "entities": [
+        "소행성",
+        "NASA asteroid mission Chicxulub impact NASA asteroid mission",
+        "oid mission landscape Chicxulub impact wide view Chicxulub",
+        "asteroid mission close up NASA asteroid mission detailed"
+      ],
+      "primaryQuery": "NASA asteroid mission",
+      "queries": [
+        {
+          "query": "NASA asteroid mission",
+          "intent": "primary",
+          "priority": 1,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Chicxulub impact",
+          "intent": "primary",
+          "priority": 2,
+          "mediaKind": "any"
+        },
+        {
+          "query": "NASA asteroid mission wide view",
+          "intent": "wide",
+          "priority": 3,
+          "mediaKind": "any"
+        },
+        {
+          "query": "NASA asteroid mission close up",
+          "intent": "detail",
+          "priority": 4,
+          "mediaKind": "any"
+        },
+        {
+          "query": "NASA asteroid mission detailed view",
+          "intent": "detail",
+          "priority": 5,
+          "mediaKind": "any"
+        },
+        {
+          "query": "NASA asteroid mission landscape",
+          "intent": "wide",
+          "priority": 6,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Chicxulub impact wide view",
+          "intent": "wide",
+          "priority": 7,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Chicxulub impact landscape",
+          "intent": "wide",
+          "priority": 8,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Chicxulub impact close up",
+          "intent": "detail",
+          "priority": 9,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Chicxulub impact detailed view",
+          "intent": "detail",
+          "priority": 10,
+          "mediaKind": "any"
+        }
+      ]
+    },
+    {
+      "sceneId": "scene_003",
+      "title": "공룡 멸종의 순간",
+      "narration": "비조류 공룡은 대형 소행성 충돌과 대규모 화산 폭발 그리고 기온 변화가 겹친 시기에 멸종했습니다. 이 사건은 지질학적으로 일치하지만 정확한 인과관계는 아직 논란입니다.",
+      "sourceKeywords": [
+        "NASA asteroid mission",
+        "non-avian dinosaurs",
+        "NASA asteroid mission wide view",
+        "NASA asteroid mission landscape",
+        "non-avian dinosaurs wide view",
+        "non-avian dinosaurs landscape",
+        "NASA asteroid mission close up",
+        "NASA asteroid mission detailed view"
+      ],
+      "entities": [
+        "공룡",
+        "소행성",
+        "화산",
+        "NASA asteroid mission non-avian dinosaurs NASA asteroid mission",
+        "teroid mission landscape non-avian dinosaurs wide view non-avian",
+        "ape NASA asteroid mission close up NASA asteroid"
+      ],
+      "primaryQuery": "NASA asteroid mission",
+      "queries": [
+        {
+          "query": "NASA asteroid mission",
+          "intent": "primary",
+          "priority": 1,
+          "mediaKind": "any"
+        },
+        {
+          "query": "non-avian dinosaurs",
+          "intent": "primary",
+          "priority": 2,
+          "mediaKind": "any"
+        },
+        {
+          "query": "NASA asteroid mission wide view",
+          "intent": "wide",
+          "priority": 3,
+          "mediaKind": "any"
+        },
+        {
+          "query": "NASA asteroid mission close up",
+          "intent": "detail",
+          "priority": 4,
+          "mediaKind": "any"
+        },
+        {
+          "query": "NASA asteroid mission detailed view",
+          "intent": "detail",
+          "priority": 5,
+          "mediaKind": "any"
+        },
+        {
+          "query": "NASA asteroid mission landscape",
+          "intent": "wide",
+          "priority": 6,
+          "mediaKind": "any"
+        },
+        {
+          "query": "non-avian dinosaurs wide view",
+          "intent": "wide",
+          "priority": 7,
+          "mediaKind": "any"
+        },
+        {
+          "query": "non-avian dinosaurs landscape",
+          "intent": "wide",
+          "priority": 8,
+          "mediaKind": "any"
+        },
+        {
+          "query": "non-avian dinosaurs close up",
+          "intent": "detail",
+          "priority": 9,
+          "mediaKind": "any"
+        },
+        {
+          "query": "non-avian dinosaurs detailed view",
+          "intent": "detail",
+          "priority": 10,
+          "mediaKind": "any"
+        }
+      ]
+    },
+    {
+      "sceneId": "scene_004",
+      "title": "화산 폭발의 연결고리",
+      "narration": "치크술루브 충돌이 인도 데칸 트랩 화산 폭발을 촉발했을 가능성이 있으며 이 화산은 지구 역사상 가장 광범위한 용암 흐름을 남겼습니다.",
+      "sourceKeywords": [
+        "Chicxulub impact",
+        "Deccan Traps",
+        "Chicxulub impact wide view",
+        "Chicxulub impact landscape",
+        "Deccan Traps wide view",
+        "Deccan Traps landscape",
+        "Chicxulub impact close up",
+        "Chicxulub impact detailed view"
+      ],
+      "entities": [
+        "화산",
+        "Chicxulub impact Deccan Traps Chicxulub impact wide view",
+        "pe Deccan Traps wide view Deccan Traps landscape",
+        "lub impact detailed view"
+      ],
+      "primaryQuery": "Chicxulub impact",
+      "queries": [
+        {
+          "query": "Chicxulub impact",
+          "intent": "primary",
+          "priority": 1,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Deccan Traps",
+          "intent": "primary",
+          "priority": 2,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Chicxulub impact wide view",
+          "intent": "wide",
+          "priority": 3,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Deccan Traps wide view",
+          "intent": "wide",
+          "priority": 4,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Chicxulub impact close up",
+          "intent": "detail",
+          "priority": 5,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Chicxulub impact detailed view",
+          "intent": "detail",
+          "priority": 6,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Chicxulub impact landscape",
+          "intent": "wide",
+          "priority": 7,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Deccan Traps landscape",
+          "intent": "wide",
+          "priority": 8,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Deccan Traps close up",
+          "intent": "detail",
+          "priority": 9,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Deccan Traps detailed view",
+          "intent": "detail",
+          "priority": 10,
+          "mediaKind": "any"
+        }
+      ]
+    },
+    {
+      "sceneId": "scene_005",
+      "title": "시기 논란의 반전",
+      "narration": "하지만 일부 연구에서는 치크술루브 충돌이 멸종보다 약 30만 년 먼저 일어났다고 주장해 멸종의 직접 원인에 대한 논란이 계속되고 있습니다.",
+      "sourceKeywords": [
+        "Chicxulub impact",
+        "K-T boundary",
+        "Chicxulub impact wide view",
+        "Chicxulub impact landscape",
+        "K-T boundary wide view",
+        "K-T boundary landscape",
+        "Chicxulub impact close up",
+        "Chicxulub impact detailed view"
+      ],
+      "entities": [
+        "Chicxulub impact K-T boundary Chicxulub impact wide view",
+        "pe K-T boundary wide view K-T boundary landscape",
+        "lub impact detailed view"
+      ],
+      "primaryQuery": "Chicxulub impact",
+      "queries": [
+        {
+          "query": "Chicxulub impact",
+          "intent": "primary",
+          "priority": 1,
+          "mediaKind": "any"
+        },
+        {
+          "query": "K-T boundary",
+          "intent": "primary",
+          "priority": 2,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Chicxulub impact wide view",
+          "intent": "wide",
+          "priority": 3,
+          "mediaKind": "any"
+        },
+        {
+          "query": "K-T boundary wide view",
+          "intent": "wide",
+          "priority": 4,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Chicxulub impact close up",
+          "intent": "detail",
+          "priority": 5,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Chicxulub impact detailed view",
+          "intent": "detail",
+          "priority": 6,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Chicxulub impact landscape",
+          "intent": "wide",
+          "priority": 7,
+          "mediaKind": "any"
+        },
+        {
+          "query": "K-T boundary landscape",
+          "intent": "wide",
+          "priority": 8,
+          "mediaKind": "any"
+        },
+        {
+          "query": "K-T boundary close up",
+          "intent": "detail",
+          "priority": 9,
+          "mediaKind": "any"
+        },
+        {
+          "query": "K-T boundary detailed view",
+          "intent": "detail",
+          "priority": 10,
+          "mediaKind": "any"
+        }
+      ]
+    },
+    {
+      "sceneId": "scene_006",
+      "title": "진짜 원인은 무엇일까",
+      "narration": "공룡을 멸종시킨 진짜 원인은 무엇일까요 여러분은 어떻게 생각하시나요",
+      "sourceKeywords": [
+        "Chicxulub impact",
+        "extinction cause",
+        "Chicxulub impact wide view",
+        "Chicxulub impact landscape",
+        "extinction cause wide view",
+        "extinction cause landscape",
+        "Chicxulub impact close up",
+        "Chicxulub impact detailed view"
+      ],
+      "entities": [
+        "공룡",
+        "Chicxulub impact extinction cause Chicxulub impact wide view",
+        "dscape extinction cause wide view extinction cause landscape",
+        "se up Chicxulub impact detailed view"
+      ],
+      "primaryQuery": "Chicxulub impact",
+      "queries": [
+        {
+          "query": "Chicxulub impact",
+          "intent": "primary",
+          "priority": 1,
+          "mediaKind": "any"
+        },
+        {
+          "query": "extinction cause",
+          "intent": "primary",
+          "priority": 2,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Chicxulub impact wide view",
+          "intent": "wide",
+          "priority": 3,
+          "mediaKind": "any"
+        },
+        {
+          "query": "extinction cause wide view",
+          "intent": "wide",
+          "priority": 4,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Chicxulub impact close up",
+          "intent": "detail",
+          "priority": 5,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Chicxulub impact detailed view",
+          "intent": "detail",
+          "priority": 6,
+          "mediaKind": "any"
+        },
+        {
+          "query": "Chicxulub impact landscape",
+          "intent": "wide",
+          "priority": 7,
+          "mediaKind": "any"
+        },
+        {
+          "query": "extinction cause landscape",
+          "intent": "wide",
+          "priority": 8,
+          "mediaKind": "any"
+        },
+        {
+          "query": "extinction cause close up",
+          "intent": "detail",
+          "priority": 9,
+          "mediaKind": "any"
+        },
+        {
+          "query": "extinction cause detailed view",
+          "intent": "detail",
+          "priority": 10,
+          "mediaKind": "any"
+        }
+      ]
+    }
+  ]
+}

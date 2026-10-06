@@ -1,0 +1,76 @@
+{
+  "version": "1.0",
+  "episodeId": "ep035",
+  "channel": "science",
+  "title": "전자레인지 문에는 왜 철망이 있을까?",
+  "voice": "ko-KR-SunHiNeural",
+  "mediaSource": "microwave oven door mesh, microwave oven kitchen appliance, microwave radiation shielding, microwave oven window close up",
+  "theme": {
+    "backgroundColor": "#000000",
+    "titleColor": "#7CFFB2",
+    "captionColor": "#FFFFFF",
+    "accentColor": "#7CFFB2"
+  },
+  "scenes": [
+    {
+      "type": "hook",
+      "title": "문에 왜 철망이 있을까?",
+      "narration": "전자레인지 문을 자세히 보면 작은 구멍이 촘촘한 철망이 있습니다. 이 철망은 왜 필요한 걸까요?",
+      "keywords": [
+        "microwave oven door mesh close up",
+        "microwave oven window metal screen",
+        "microwave oven kitchen appliance"
+      ]
+    },
+    {
+      "type": "answer",
+      "title": "전자파를 밖으로 막는다",
+      "narration": "전자레인지는 음식 속 물 분자를 흔들어 열을 만드는 마이크로파를 사용합니다. 철망은 이 마이크로파가 밖으로 빠져나가는 것을 막습니다.",
+      "keywords": [
+        "microwave oven electromagnetic waves shielding",
+        "microwave oven radiation diagram",
+        "microwave oven door mesh shielding"
+      ]
+    },
+    {
+      "type": "fact",
+      "title": "구멍이 있어도 괜찮은 이유",
+      "narration": "철망의 구멍은 마이크로파의 파장보다 훨씬 작아서 전자파는 통과하기 어렵습니다.",
+      "keywords": [
+        "microwave oven door mesh holes close up",
+        "microwave oven metal screen tiny holes",
+        "microwave oven electromagnetic shielding mesh"
+      ]
+    },
+    {
+      "type": "story",
+      "title": "그런데 눈에는 보인다",
+      "narration": "반면 가시광선의 파장은 훨씬 짧기 때문에 작은 구멍 사이로 지나갈 수 있어 안쪽 음식은 볼 수 있습니다.",
+      "keywords": [
+        "microwave oven food visible through door",
+        "microwave oven window looking inside",
+        "microwave oven cooking food close up"
+      ]
+    },
+    {
+      "type": "fact",
+      "title": "금속망이 일종의 방패",
+      "narration": "즉 이 철망은 전자파에는 벽처럼 작동하면서 빛에는 창문처럼 작동하는 셈입니다.",
+      "keywords": [
+        "microwave oven metal mesh shield",
+        "microwave oven door safety screen",
+        "microwave oven window mesh close up"
+      ]
+    },
+    {
+      "type": "ending",
+      "title": "보이지만 새지 않게",
+      "narration": "전자레인지 문 철망은 안을 볼 수 있게 하면서 마이크로파는 밖으로 나오지 못하게 만든 안전장치입니다. 알고 계셨나요?",
+      "keywords": [
+        "microwave oven door mesh safety",
+        "microwave oven kitchen close up",
+        "microwave oven food behind window"
+      ]
+    }
+  ]
+}

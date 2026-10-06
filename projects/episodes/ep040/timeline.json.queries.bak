@@ -1,0 +1,258 @@
+{
+  "version": "6.5",
+  "episodeId": "EP040",
+  "title": "탄산음료는 왜 흔들면 넘칠까?",
+  "fps": 30,
+  "width": 1080,
+  "height": 1920,
+  "totalDuration": 44.167,
+  "theme": {
+    "backgroundColor": "#000000",
+    "titleColor": "#7CFFB2",
+    "captionColor": "#FFFFFF",
+    "accentColor": "#7CFFB2"
+  },
+  "scenes": [
+    {
+      "id": "scene_001",
+      "start": 0.0,
+      "duration": 6.0,
+      "title": "왜 흔들면 폭발하듯 넘칠까?",
+      "narration": "탄산음료를 세게 흔든 뒤 바로 열면 거품이 한꺼번에 솟구칩니다. 병 안의 압력이 갑자기 더 세져서일까요?",
+      "caption": "탄산음료를 세게 흔든 뒤 바로 열면 거품이 한꺼번에 솟구칩니다. 병 안의 압력이 갑자기 더 세져서일까요?",
+      "backgroundColor": "#14202B",
+      "keywords": [
+        "soda bottle fizz overflow",
+        "carbonated drink foam explosion",
+        "soda bottle fizz overflow close up",
+        "soda bottle fizz overflow wide view",
+        "soda bottle fizz overflow landscape",
+        "carbonated drink foam explosion wide view",
+        "carbonated drink foam explosion landscape",
+        "soda bottle fizz overflow detailed view"
+      ],
+      "media": {
+        "type": "image",
+        "fit": "cover",
+        "position": "center center",
+        "src": "ep040/scene_001.jpg",
+        "keywords": [
+          "soda bottle fizz overflow",
+          "carbonated drink foam explosion",
+          "soda bottle fizz overflow close up",
+          "soda bottle fizz overflow wide view",
+          "soda bottle fizz overflow landscape",
+          "carbonated drink foam explosion wide view",
+          "carbonated drink foam explosion landscape",
+          "soda bottle fizz overflow detailed view"
+        ]
+      },
+      "cameraMotion": "zoom_in",
+      "transition": "fade",
+      "transitionDuration": 0.3,
+      "overlay": "cinematic",
+      "overlayOpacity": 1.0
+    },
+    {
+      "id": "scene_002",
+      "start": 6.0,
+      "duration": 8.0,
+      "title": "핵심은 기포가 많아지는 것",
+      "narration": "흔들었다고 병 전체의 압력이 크게 늘어나는 것은 아닙니다. 대신 액체 안에 이산화탄소가 빠져나올 작은 기포들이 훨씬 많이 생깁니다.",
+      "caption": "흔들었다고 병 전체의 압력이 크게 늘어나는 것은 아닙니다. 대신 액체 안에 이산화탄소가 빠져나올 작은 기포들이 훨씬 많이 생깁니다.",
+      "backgroundColor": "#223748",
+      "keywords": [
+        "carbonated drink bubbles bottle",
+        "fizzy drink bubbles bottle",
+        "carbonated drink bubbles bottle close up",
+        "fizzy drink bubbles inside bottle",
+        "carbonated drink bubbles bottle wide view",
+        "carbonated drink bubbles bottle landscape",
+        "fizzy drink bubbles bottle wide view",
+        "fizzy drink bubbles bottle landscape"
+      ],
+      "media": {
+        "type": "image",
+        "fit": "cover",
+        "position": "center center",
+        "src": "ep040/scene_002.jpg",
+        "keywords": [
+          "carbonated drink bubbles bottle",
+          "fizzy drink bubbles bottle",
+          "carbonated drink bubbles bottle close up",
+          "fizzy drink bubbles inside bottle",
+          "carbonated drink bubbles bottle wide view",
+          "carbonated drink bubbles bottle landscape",
+          "fizzy drink bubbles bottle wide view",
+          "fizzy drink bubbles bottle landscape"
+        ]
+      },
+      "cameraMotion": "pan_right",
+      "transition": "cut",
+      "transitionDuration": 0.2,
+      "overlay": "cinematic",
+      "overlayOpacity": 1.0
+    },
+    {
+      "id": "scene_003",
+      "start": 14.0,
+      "duration": 7.167,
+      "title": "탄산은 압력 때문에 녹아 있다",
+      "narration": "탄산음료 안의 이산화탄소는 병이 닫힌 상태의 높은 압력 덕분에 액체 속에 많이 녹아 있습니다.",
+      "caption": "탄산음료 안의 이산화탄소는 병이 닫힌 상태의 높은 압력 덕분에 액체 속에 많이 녹아 있습니다.",
+      "backgroundColor": "#314A5D",
+      "keywords": [
+        "soda bottle kitchen",
+        "carbonated beverage bottle bubbles",
+        "soda bottle close up kitchen",
+        "soda bottle kitchen wide view",
+        "soda bottle kitchen landscape",
+        "carbonated beverage bottle bubbles wide view",
+        "carbonated beverage bottle bubbles landscape",
+        "soda bottle kitchen close up"
+      ],
+      "media": {
+        "type": "image",
+        "fit": "cover",
+        "position": "center center",
+        "src": "ep040/scene_003.jpg",
+        "keywords": [
+          "soda bottle kitchen",
+          "carbonated beverage bottle bubbles",
+          "soda bottle close up kitchen",
+          "soda bottle kitchen wide view",
+          "soda bottle kitchen landscape",
+          "carbonated beverage bottle bubbles wide view",
+          "carbonated beverage bottle bubbles landscape",
+          "soda bottle kitchen close up"
+        ]
+      },
+      "cameraMotion": "pan_left",
+      "transition": "fade",
+      "transitionDuration": 0.3,
+      "overlay": "cinematic",
+      "overlayOpacity": 1.0
+    },
+    {
+      "id": "scene_004",
+      "start": 21.167,
+      "duration": 8.0,
+      "title": "흔들면 기포 씨앗이 생긴다",
+      "narration": "병을 흔들면 액체와 공기가 섞이고 벽면 곳곳에 작은 기포가 생깁니다. 이 기포들은 이산화탄소가 빠져나오기 쉬운 출발점이 됩니다.",
+      "caption": "병을 흔들면 액체와 공기가 섞이고 벽면 곳곳에 작은 기포가 생깁니다. 이 기포들은 이산화탄소가 빠져나오기 쉬운 출발점이 됩니다.",
+      "backgroundColor": "#1C3040",
+      "keywords": [
+        "shaking soda bottle bubbles real photo",
+        "soda bottle foam bubbles",
+        "soda bottle foam bubbles inside",
+        "shaking soda bottle bubbles real photo wide view",
+        "shaking soda bottle bubbles real photo landscape",
+        "soda bottle foam bubbles wide view",
+        "soda bottle foam bubbles landscape",
+        "shaking soda bottle bubbles real photo close up"
+      ],
+      "media": {
+        "type": "image",
+        "fit": "cover",
+        "position": "center center",
+        "src": "ep040/scene_004.jpg",
+        "keywords": [
+          "shaking soda bottle bubbles real photo",
+          "soda bottle foam bubbles",
+          "soda bottle foam bubbles inside",
+          "shaking soda bottle bubbles real photo wide view",
+          "shaking soda bottle bubbles real photo landscape",
+          "soda bottle foam bubbles wide view",
+          "soda bottle foam bubbles landscape",
+          "shaking soda bottle bubbles real photo close up"
+        ]
+      },
+      "cameraMotion": "zoom_in_right",
+      "transition": "slide_left",
+      "transitionDuration": 0.3,
+      "overlay": "vignette",
+      "overlayOpacity": 1.0
+    },
+    {
+      "id": "scene_005",
+      "start": 29.167,
+      "duration": 8.0,
+      "title": "뚜껑을 열면 압력이 떨어진다",
+      "narration": "뚜껑을 여는 순간 병 안 압력이 급격히 낮아지면서 녹아 있던 이산화탄소가 수많은 기포로 빠르게 모여들고 거품이 커집니다.",
+      "caption": "뚜껑을 여는 순간 병 안 압력이 급격히 낮아지면서 녹아 있던 이산화탄소가 수많은 기포로 빠르게 모여들고 거품이 커집니다.",
+      "backgroundColor": "#1C3040",
+      "keywords": [
+        "opening soda bottle fizz",
+        "soda cap opening bubbles real photo",
+        "opening soda bottle fizz close up",
+        "opening soda bottle fizz wide view",
+        "opening soda bottle fizz landscape",
+        "soda cap opening bubbles real photo wide view",
+        "soda cap opening bubbles real photo landscape",
+        "opening soda bottle fizz detailed view"
+      ],
+      "media": {
+        "type": "image",
+        "fit": "cover",
+        "position": "center center",
+        "src": "ep040/scene_005.jpg",
+        "keywords": [
+          "opening soda bottle fizz",
+          "soda cap opening bubbles real photo",
+          "opening soda bottle fizz close up",
+          "opening soda bottle fizz wide view",
+          "opening soda bottle fizz landscape",
+          "soda cap opening bubbles real photo wide view",
+          "soda cap opening bubbles real photo landscape",
+          "opening soda bottle fizz detailed view"
+        ]
+      },
+      "cameraMotion": "zoom_in_left",
+      "transition": "slide_left",
+      "transitionDuration": 0.3,
+      "overlay": "vignette",
+      "overlayOpacity": 1.0
+    },
+    {
+      "id": "scene_006",
+      "start": 37.167,
+      "duration": 7.0,
+      "title": "넘치는 건 압력보다 기포 때문",
+      "narration": "결국 흔든 탄산음료가 넘치는 핵심은 압력이 더 세져서가 아니라, 이산화탄소가 빠져나올 기포가 많아졌기 때문입니다. 흔든 뒤 바로 열어본 적 있나요?",
+      "caption": "결국 흔든 탄산음료가 넘치는 핵심은 압력이 더 세져서가 아니라, 이산화탄소가 빠져나올 기포가 많아졌기 때문입니다. 흔든 뒤 바로 열어본 적 있나요?",
+      "backgroundColor": "#101820",
+      "keywords": [
+        "soda foam overflowing bottle real photo",
+        "fizzy drink spill",
+        "fizzy drink spill close up",
+        "soda foam overflowing bottle real photo wide view",
+        "soda foam overflowing bottle real photo landscape",
+        "fizzy drink spill wide view",
+        "fizzy drink spill landscape",
+        "soda foam overflowing bottle real photo close up"
+      ],
+      "media": {
+        "type": "image",
+        "fit": "cover",
+        "position": "center center",
+        "src": "ep040/scene_006.jpg",
+        "keywords": [
+          "soda foam overflowing bottle real photo",
+          "fizzy drink spill",
+          "fizzy drink spill close up",
+          "soda foam overflowing bottle real photo wide view",
+          "soda foam overflowing bottle real photo landscape",
+          "fizzy drink spill wide view",
+          "fizzy drink spill landscape",
+          "soda foam overflowing bottle real photo close up"
+        ]
+      },
+      "cameraMotion": "zoom_out",
+      "transition": "fade",
+      "transitionDuration": 0.35,
+      "overlay": "dark",
+      "overlayOpacity": 1.0
+    }
+  ],
+  "voice": "ko-KR-SunHiNeural"
+}

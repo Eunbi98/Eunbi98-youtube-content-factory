@@ -1,0 +1,1292 @@
+{
+  "version": "6.5",
+  "episodeId": "EP030",
+  "title": "고양이는 왜 상자에 집착할까?",
+  "fps": 30,
+  "width": 1080,
+  "height": 1920,
+  "totalDuration": 52.88,
+  "theme": {
+    "backgroundColor": "#222222",
+    "titleColor": "#7BFEB4",
+    "captionColor": "#FFFFFF",
+    "accentColor": "#FFB300"
+  },
+  "scenes": [
+    {
+      "id": "scene_001",
+      "start": 0.0,
+      "duration": 4.81,
+      "title": "고양이의 상자 사랑, 이유가 뭘까?",
+      "narration": "고양이는 왜 작은 상자만 보면 꼭 들어가려고 할까요?",
+      "caption": "고양이는 왜 작은 상자만 보면 꼭 들어가려고 할까요?",
+      "backgroundColor": "#14202B",
+      "keywords": [
+        "cat",
+        "box",
+        "cat wide view",
+        "cat landscape",
+        "box wide view",
+        "box landscape",
+        "cat close up",
+        "cat detailed view"
+      ],
+      "media": {
+        "type": "image",
+        "fit": "cover",
+        "position": "center center",
+        "src": "ep030/scene_001.jpg",
+        "keywords": [
+          "cat",
+          "box",
+          "cat wide view",
+          "cat landscape",
+          "box wide view",
+          "box landscape",
+          "cat close up",
+          "cat detailed view"
+        ]
+      },
+      "cameraMotion": "zoom_in",
+      "transition": "fade",
+      "transitionDuration": 0.3,
+      "overlay": "cinematic",
+      "overlayOpacity": 1.0,
+      "mediaSearch": {
+        "version": "2.0",
+        "primaryQuery": "cat",
+        "sourceKeywords": [
+          "cat",
+          "box",
+          "cat wide view",
+          "cat landscape",
+          "box wide view",
+          "box landscape",
+          "cat close up",
+          "cat detailed view"
+        ],
+        "entities": [
+          "cat box cat wide view cat landscape box",
+          "detailed view"
+        ],
+        "queries": [
+          {
+            "query": "cat",
+            "intent": "primary",
+            "priority": 1,
+            "mediaKind": "any"
+          },
+          {
+            "query": "box",
+            "intent": "primary",
+            "priority": 2,
+            "mediaKind": "any"
+          },
+          {
+            "query": "cat wide view",
+            "intent": "wide",
+            "priority": 3,
+            "mediaKind": "any"
+          },
+          {
+            "query": "box wide view",
+            "intent": "wide",
+            "priority": 4,
+            "mediaKind": "any"
+          },
+          {
+            "query": "cat close up",
+            "intent": "detail",
+            "priority": 5,
+            "mediaKind": "any"
+          },
+          {
+            "query": "cat detailed view",
+            "intent": "detail",
+            "priority": 6,
+            "mediaKind": "any"
+          },
+          {
+            "query": "cat landscape",
+            "intent": "wide",
+            "priority": 7,
+            "mediaKind": "any"
+          },
+          {
+            "query": "box landscape",
+            "intent": "wide",
+            "priority": 8,
+            "mediaKind": "any"
+          },
+          {
+            "query": "box close up",
+            "intent": "detail",
+            "priority": 9,
+            "mediaKind": "any"
+          },
+          {
+            "query": "box detailed view",
+            "intent": "detail",
+            "priority": 10,
+            "mediaKind": "any"
+          }
+        ]
+      },
+      "audioDuration": 4.66,
+      "audio": "ep030/audio/scene_001.mp3",
+      "timing": "ep030/audio/scene_001.timing.json",
+      "wordTimings": [
+        {
+          "text": "고양이는",
+          "offset": 0.1,
+          "duration": 0.688,
+          "end": 0.788
+        },
+        {
+          "text": "왜",
+          "offset": 0.8,
+          "duration": 0.275,
+          "end": 1.075
+        },
+        {
+          "text": "작은",
+          "offset": 1.087,
+          "duration": 0.3,
+          "end": 1.387
+        },
+        {
+          "text": "상자만",
+          "offset": 1.4,
+          "duration": 0.487,
+          "end": 1.887
+        },
+        {
+          "text": "보면",
+          "offset": 1.9,
+          "duration": 0.412,
+          "end": 2.312
+        },
+        {
+          "text": "꼭",
+          "offset": 2.325,
+          "duration": 0.287,
+          "end": 2.612
+        },
+        {
+          "text": "들어가려고",
+          "offset": 2.625,
+          "duration": 0.575,
+          "end": 3.2
+        },
+        {
+          "text": "할까요",
+          "offset": 3.212,
+          "duration": 0.575,
+          "end": 3.787
+        }
+      ],
+      "wordCount": 8
+    },
+    {
+      "id": "scene_002",
+      "start": 4.81,
+      "duration": 11.57,
+      "title": "고양이의 본능적 행동",
+      "narration": "정확한 이유는 아직 완전히 밝혀지지 않았지만, 고양이의 상자 사랑은 사냥 본능과 놀이 행동, 그리고 환경에 대한 탐색에서 비롯된다고 알려져 있습니다.",
+      "caption": "정확한 이유는 아직 완전히 밝혀지지 않았지만, 고양이의 상자 사랑은 사냥 본능과 놀이 행동, 그리고 환경에 대한 탐색에서 비롯된다고 알려져 있습니다.",
+      "backgroundColor": "#223748",
+      "keywords": [
+        "cat",
+        "box",
+        "cat wide view",
+        "cat landscape",
+        "box wide view",
+        "box landscape",
+        "cat close up",
+        "cat detailed view"
+      ],
+      "media": {
+        "type": "image",
+        "fit": "cover",
+        "position": "center center",
+        "src": "ep030/scene_002.jpg",
+        "keywords": [
+          "cat",
+          "box",
+          "cat wide view",
+          "cat landscape",
+          "box wide view",
+          "box landscape",
+          "cat close up",
+          "cat detailed view"
+        ]
+      },
+      "cameraMotion": "pan_right",
+      "transition": "cut",
+      "transitionDuration": 0.2,
+      "overlay": "cinematic",
+      "overlayOpacity": 1.0,
+      "mediaSearch": {
+        "version": "2.0",
+        "primaryQuery": "cat",
+        "sourceKeywords": [
+          "cat",
+          "box",
+          "cat wide view",
+          "cat landscape",
+          "box wide view",
+          "box landscape",
+          "cat close up",
+          "cat detailed view"
+        ],
+        "entities": [
+          "cat box cat wide view cat landscape box",
+          "detailed view"
+        ],
+        "queries": [
+          {
+            "query": "cat",
+            "intent": "primary",
+            "priority": 1,
+            "mediaKind": "any"
+          },
+          {
+            "query": "box",
+            "intent": "primary",
+            "priority": 2,
+            "mediaKind": "any"
+          },
+          {
+            "query": "cat wide view",
+            "intent": "wide",
+            "priority": 3,
+            "mediaKind": "any"
+          },
+          {
+            "query": "box wide view",
+            "intent": "wide",
+            "priority": 4,
+            "mediaKind": "any"
+          },
+          {
+            "query": "cat close up",
+            "intent": "detail",
+            "priority": 5,
+            "mediaKind": "any"
+          },
+          {
+            "query": "cat detailed view",
+            "intent": "detail",
+            "priority": 6,
+            "mediaKind": "any"
+          },
+          {
+            "query": "cat landscape",
+            "intent": "wide",
+            "priority": 7,
+            "mediaKind": "any"
+          },
+          {
+            "query": "box landscape",
+            "intent": "wide",
+            "priority": 8,
+            "mediaKind": "any"
+          },
+          {
+            "query": "box close up",
+            "intent": "detail",
+            "priority": 9,
+            "mediaKind": "any"
+          },
+          {
+            "query": "box detailed view",
+            "intent": "detail",
+            "priority": 10,
+            "mediaKind": "any"
+          }
+        ]
+      },
+      "audioDuration": 11.42,
+      "audio": "ep030/audio/scene_002.mp3",
+      "timing": "ep030/audio/scene_002.timing.json",
+      "wordTimings": [
+        {
+          "text": "정확한",
+          "offset": 0.1,
+          "duration": 0.5,
+          "end": 0.6
+        },
+        {
+          "text": "이유는",
+          "offset": 0.613,
+          "duration": 0.637,
+          "end": 1.25
+        },
+        {
+          "text": "아직",
+          "offset": 1.262,
+          "duration": 0.312,
+          "end": 1.574
+        },
+        {
+          "text": "완전히",
+          "offset": 1.587,
+          "duration": 0.438,
+          "end": 2.025
+        },
+        {
+          "text": "밝혀지지",
+          "offset": 2.038,
+          "duration": 0.575,
+          "end": 2.613
+        },
+        {
+          "text": "않았지만",
+          "offset": 2.625,
+          "duration": 0.688,
+          "end": 3.313
+        },
+        {
+          "text": "고양이의",
+          "offset": 3.55,
+          "duration": 0.525,
+          "end": 4.075
+        },
+        {
+          "text": "상자",
+          "offset": 4.088,
+          "duration": 0.338,
+          "end": 4.426
+        },
+        {
+          "text": "사랑은",
+          "offset": 4.438,
+          "duration": 0.525,
+          "end": 4.963
+        },
+        {
+          "text": "사냥",
+          "offset": 4.975,
+          "duration": 0.362,
+          "end": 5.337
+        },
+        {
+          "text": "본능과",
+          "offset": 5.35,
+          "duration": 0.475,
+          "end": 5.825
+        },
+        {
+          "text": "놀이",
+          "offset": 5.838,
+          "duration": 0.263,
+          "end": 6.101
+        },
+        {
+          "text": "행동",
+          "offset": 6.112,
+          "duration": 0.512,
+          "end": 6.624
+        },
+        {
+          "text": "그리고",
+          "offset": 6.875,
+          "duration": 0.388,
+          "end": 7.263
+        },
+        {
+          "text": "환경에",
+          "offset": 7.275,
+          "duration": 0.438,
+          "end": 7.713
+        },
+        {
+          "text": "대한",
+          "offset": 7.725,
+          "duration": 0.25,
+          "end": 7.975
+        },
+        {
+          "text": "탐색에서",
+          "offset": 7.987,
+          "duration": 0.625,
+          "end": 8.612
+        },
+        {
+          "text": "비롯된다고",
+          "offset": 8.625,
+          "duration": 0.787,
+          "end": 9.412
+        },
+        {
+          "text": "알려져",
+          "offset": 9.425,
+          "duration": 0.425,
+          "end": 9.85
+        },
+        {
+          "text": "있습니다",
+          "offset": 9.863,
+          "duration": 0.688,
+          "end": 10.551
+        }
+      ],
+      "wordCount": 20
+    },
+    {
+      "id": "scene_003",
+      "start": 16.38,
+      "duration": 12.63,
+      "title": "고양이마다 다른 상자 사랑",
+      "narration": "고양이마다 상자에 들어가는 행동에는 개인차가 있어요. 어떤 고양이는 놀이를 위해, 또 어떤 고양이는 새로운 환경을 탐색하려고 상자에 들어가기도 합니다.",
+      "caption": "고양이마다 상자에 들어가는 행동에는 개인차가 있어요. 어떤 고양이는 놀이를 위해, 또 어떤 고양이는 새로운 환경을 탐색하려고 상자에 들어가기도 합니다.",
+      "backgroundColor": "#314A5D",
+      "keywords": [
+        "individual difference",
+        "cat",
+        "individual difference wide view",
+        "individual difference landscape",
+        "cat wide view",
+        "cat landscape",
+        "individual difference close up",
+        "individual difference detailed view"
+      ],
+      "media": {
+        "type": "image",
+        "fit": "cover",
+        "position": "center center",
+        "src": "ep030/scene_003.jpg",
+        "keywords": [
+          "individual difference",
+          "cat",
+          "individual difference wide view",
+          "individual difference landscape",
+          "cat wide view",
+          "cat landscape",
+          "individual difference close up",
+          "individual difference detailed view"
+        ]
+      },
+      "cameraMotion": "pan_left",
+      "transition": "fade",
+      "transitionDuration": 0.3,
+      "overlay": "cinematic",
+      "overlayOpacity": 1.0,
+      "mediaSearch": {
+        "version": "2.0",
+        "primaryQuery": "individual difference",
+        "sourceKeywords": [
+          "individual difference",
+          "cat",
+          "individual difference wide view",
+          "individual difference landscape",
+          "cat wide view",
+          "cat landscape",
+          "individual difference close up",
+          "individual difference detailed view"
+        ],
+        "entities": [
+          "individual difference cat individual difference wide view individual",
+          "andscape cat wide view cat landscape individual difference",
+          "fference detailed view"
+        ],
+        "queries": [
+          {
+            "query": "individual difference",
+            "intent": "primary",
+            "priority": 1,
+            "mediaKind": "any"
+          },
+          {
+            "query": "cat",
+            "intent": "primary",
+            "priority": 2,
+            "mediaKind": "any"
+          },
+          {
+            "query": "individual difference wide view",
+            "intent": "wide",
+            "priority": 3,
+            "mediaKind": "any"
+          },
+          {
+            "query": "individual difference close up",
+            "intent": "detail",
+            "priority": 4,
+            "mediaKind": "any"
+          },
+          {
+            "query": "individual difference detailed view",
+            "intent": "detail",
+            "priority": 5,
+            "mediaKind": "any"
+          },
+          {
+            "query": "individual difference landscape",
+            "intent": "wide",
+            "priority": 6,
+            "mediaKind": "any"
+          },
+          {
+            "query": "cat wide view",
+            "intent": "wide",
+            "priority": 7,
+            "mediaKind": "any"
+          },
+          {
+            "query": "cat landscape",
+            "intent": "wide",
+            "priority": 8,
+            "mediaKind": "any"
+          },
+          {
+            "query": "cat close up",
+            "intent": "detail",
+            "priority": 9,
+            "mediaKind": "any"
+          },
+          {
+            "query": "cat detailed view",
+            "intent": "detail",
+            "priority": 10,
+            "mediaKind": "any"
+          }
+        ]
+      },
+      "audioDuration": 12.48,
+      "audio": "ep030/audio/scene_003.mp3",
+      "timing": "ep030/audio/scene_003.timing.json",
+      "wordTimings": [
+        {
+          "text": "고양이마다",
+          "offset": 0.1,
+          "duration": 0.662,
+          "end": 0.762
+        },
+        {
+          "text": "상자에",
+          "offset": 0.775,
+          "duration": 0.475,
+          "end": 1.25
+        },
+        {
+          "text": "들어가는",
+          "offset": 1.262,
+          "duration": 0.45,
+          "end": 1.712
+        },
+        {
+          "text": "행동에는",
+          "offset": 1.725,
+          "duration": 0.613,
+          "end": 2.338
+        },
+        {
+          "text": "개인차가",
+          "offset": 2.35,
+          "duration": 0.738,
+          "end": 3.088
+        },
+        {
+          "text": "있어요",
+          "offset": 3.1,
+          "duration": 0.588,
+          "end": 3.688
+        },
+        {
+          "text": "어떤",
+          "offset": 4.55,
+          "duration": 0.425,
+          "end": 4.975
+        },
+        {
+          "text": "고양이는",
+          "offset": 4.987,
+          "duration": 0.55,
+          "end": 5.537
+        },
+        {
+          "text": "놀이를",
+          "offset": 5.55,
+          "duration": 0.388,
+          "end": 5.938
+        },
+        {
+          "text": "위해",
+          "offset": 5.95,
+          "duration": 0.475,
+          "end": 6.425
+        },
+        {
+          "text": "또",
+          "offset": 6.725,
+          "duration": 0.2,
+          "end": 6.925
+        },
+        {
+          "text": "어떤",
+          "offset": 6.938,
+          "duration": 0.425,
+          "end": 7.363
+        },
+        {
+          "text": "고양이는",
+          "offset": 7.375,
+          "duration": 0.637,
+          "end": 8.012
+        },
+        {
+          "text": "새로운",
+          "offset": 8.025,
+          "duration": 0.438,
+          "end": 8.463
+        },
+        {
+          "text": "환경을",
+          "offset": 8.475,
+          "duration": 0.425,
+          "end": 8.9
+        },
+        {
+          "text": "탐색하려고",
+          "offset": 8.912,
+          "duration": 0.825,
+          "end": 9.737
+        },
+        {
+          "text": "상자에",
+          "offset": 9.75,
+          "duration": 0.662,
+          "end": 10.412
+        },
+        {
+          "text": "들어가기도",
+          "offset": 10.425,
+          "duration": 0.625,
+          "end": 11.05
+        },
+        {
+          "text": "합니다",
+          "offset": 11.062,
+          "duration": 0.537,
+          "end": 11.599
+        }
+      ],
+      "wordCount": 19
+    },
+    {
+      "id": "scene_004",
+      "start": 29.01,
+      "duration": 8.79,
+      "title": "과학적 해석: 놀이와 적응력",
+      "narration": "연구에 따르면, 고양이의 상자 행동은 놀이 공격성과 강한 적응력, 그리고 탐색 행동과 관련이 있습니다.",
+      "caption": "연구에 따르면, 고양이의 상자 행동은 놀이 공격성과 강한 적응력, 그리고 탐색 행동과 관련이 있습니다.",
+      "backgroundColor": "#1C3040",
+      "keywords": [
+        "play aggression",
+        "cat",
+        "play aggression wide view",
+        "play aggression landscape",
+        "cat wide view",
+        "cat landscape",
+        "play aggression close up",
+        "play aggression detailed view"
+      ],
+      "media": {
+        "type": "image",
+        "fit": "cover",
+        "position": "center center",
+        "src": "ep030/scene_004.jpg",
+        "keywords": [
+          "play aggression",
+          "cat",
+          "play aggression wide view",
+          "play aggression landscape",
+          "cat wide view",
+          "cat landscape",
+          "play aggression close up",
+          "play aggression detailed view"
+        ]
+      },
+      "cameraMotion": "zoom_in_right",
+      "transition": "slide_left",
+      "transitionDuration": 0.3,
+      "overlay": "vignette",
+      "overlayOpacity": 1.0,
+      "mediaSearch": {
+        "version": "2.0",
+        "primaryQuery": "play aggression",
+        "sourceKeywords": [
+          "play aggression",
+          "cat",
+          "play aggression wide view",
+          "play aggression landscape",
+          "cat wide view",
+          "cat landscape",
+          "play aggression close up",
+          "play aggression detailed view"
+        ],
+        "entities": [
+          "play aggression cat play aggression wide view play",
+          "view cat landscape play aggression close up play"
+        ],
+        "queries": [
+          {
+            "query": "play aggression",
+            "intent": "primary",
+            "priority": 1,
+            "mediaKind": "any"
+          },
+          {
+            "query": "cat",
+            "intent": "primary",
+            "priority": 2,
+            "mediaKind": "any"
+          },
+          {
+            "query": "play aggression wide view",
+            "intent": "wide",
+            "priority": 3,
+            "mediaKind": "any"
+          },
+          {
+            "query": "play aggression close up",
+            "intent": "detail",
+            "priority": 4,
+            "mediaKind": "any"
+          },
+          {
+            "query": "play aggression detailed view",
+            "intent": "detail",
+            "priority": 5,
+            "mediaKind": "any"
+          },
+          {
+            "query": "play aggression landscape",
+            "intent": "wide",
+            "priority": 6,
+            "mediaKind": "any"
+          },
+          {
+            "query": "cat wide view",
+            "intent": "wide",
+            "priority": 7,
+            "mediaKind": "any"
+          },
+          {
+            "query": "cat landscape",
+            "intent": "wide",
+            "priority": 8,
+            "mediaKind": "any"
+          },
+          {
+            "query": "cat close up",
+            "intent": "detail",
+            "priority": 9,
+            "mediaKind": "any"
+          },
+          {
+            "query": "cat detailed view",
+            "intent": "detail",
+            "priority": 10,
+            "mediaKind": "any"
+          }
+        ]
+      },
+      "audioDuration": 8.64,
+      "audio": "ep030/audio/scene_004.mp3",
+      "timing": "ep030/audio/scene_004.timing.json",
+      "wordTimings": [
+        {
+          "text": "연구에",
+          "offset": 0.1,
+          "duration": 0.5,
+          "end": 0.6
+        },
+        {
+          "text": "따르면",
+          "offset": 0.613,
+          "duration": 0.575,
+          "end": 1.188
+        },
+        {
+          "text": "고양이의",
+          "offset": 1.413,
+          "duration": 0.537,
+          "end": 1.95
+        },
+        {
+          "text": "상자",
+          "offset": 1.962,
+          "duration": 0.338,
+          "end": 2.3
+        },
+        {
+          "text": "행동은",
+          "offset": 2.312,
+          "duration": 0.475,
+          "end": 2.787
+        },
+        {
+          "text": "놀이",
+          "offset": 2.8,
+          "duration": 0.338,
+          "end": 3.138
+        },
+        {
+          "text": "공격성과",
+          "offset": 3.15,
+          "duration": 0.75,
+          "end": 3.9
+        },
+        {
+          "text": "강한",
+          "offset": 3.913,
+          "duration": 0.362,
+          "end": 4.275
+        },
+        {
+          "text": "적응력",
+          "offset": 4.287,
+          "duration": 0.6,
+          "end": 4.887
+        },
+        {
+          "text": "그리고",
+          "offset": 5.213,
+          "duration": 0.4,
+          "end": 5.613
+        },
+        {
+          "text": "탐색",
+          "offset": 5.625,
+          "duration": 0.438,
+          "end": 6.063
+        },
+        {
+          "text": "행동과",
+          "offset": 6.075,
+          "duration": 0.537,
+          "end": 6.612
+        },
+        {
+          "text": "관련이",
+          "offset": 6.625,
+          "duration": 0.487,
+          "end": 7.112
+        },
+        {
+          "text": "있습니다",
+          "offset": 7.125,
+          "duration": 0.65,
+          "end": 7.775
+        }
+      ],
+      "wordCount": 14
+    },
+    {
+      "id": "scene_005",
+      "start": 37.8,
+      "duration": 7.76,
+      "title": "여러 해석과 불확실성",
+      "narration": "안전감이나 체온 유지 외에도 다양한 해석이 존재하며, 정확한 원인은 아직 단정할 수 없습니다.",
+      "caption": "안전감이나 체온 유지 외에도 다양한 해석이 존재하며, 정확한 원인은 아직 단정할 수 없습니다.",
+      "backgroundColor": "#1C3040",
+      "keywords": [
+        "cat",
+        "safety",
+        "cat wide view",
+        "cat landscape",
+        "safety wide view",
+        "safety landscape",
+        "cat close up",
+        "cat detailed view"
+      ],
+      "media": {
+        "type": "image",
+        "fit": "cover",
+        "position": "center center",
+        "src": "ep030/scene_005.jpg",
+        "keywords": [
+          "cat",
+          "safety",
+          "cat wide view",
+          "cat landscape",
+          "safety wide view",
+          "safety landscape",
+          "cat close up",
+          "cat detailed view"
+        ]
+      },
+      "cameraMotion": "zoom_in_left",
+      "transition": "slide_left",
+      "transitionDuration": 0.3,
+      "overlay": "vignette",
+      "overlayOpacity": 1.0,
+      "mediaSearch": {
+        "version": "2.0",
+        "primaryQuery": "cat",
+        "sourceKeywords": [
+          "cat",
+          "safety",
+          "cat wide view",
+          "cat landscape",
+          "safety wide view",
+          "safety landscape",
+          "cat close up",
+          "cat detailed view"
+        ],
+        "entities": [
+          "cat safety cat wide view cat landscape safety",
+          "up cat detailed view"
+        ],
+        "queries": [
+          {
+            "query": "cat",
+            "intent": "primary",
+            "priority": 1,
+            "mediaKind": "any"
+          },
+          {
+            "query": "safety",
+            "intent": "primary",
+            "priority": 2,
+            "mediaKind": "any"
+          },
+          {
+            "query": "cat wide view",
+            "intent": "wide",
+            "priority": 3,
+            "mediaKind": "any"
+          },
+          {
+            "query": "safety wide view",
+            "intent": "wide",
+            "priority": 4,
+            "mediaKind": "any"
+          },
+          {
+            "query": "cat close up",
+            "intent": "detail",
+            "priority": 5,
+            "mediaKind": "any"
+          },
+          {
+            "query": "cat detailed view",
+            "intent": "detail",
+            "priority": 6,
+            "mediaKind": "any"
+          },
+          {
+            "query": "cat landscape",
+            "intent": "wide",
+            "priority": 7,
+            "mediaKind": "any"
+          },
+          {
+            "query": "safety landscape",
+            "intent": "wide",
+            "priority": 8,
+            "mediaKind": "any"
+          },
+          {
+            "query": "safety close up",
+            "intent": "detail",
+            "priority": 9,
+            "mediaKind": "any"
+          },
+          {
+            "query": "safety detailed view",
+            "intent": "detail",
+            "priority": 10,
+            "mediaKind": "any"
+          }
+        ]
+      },
+      "audioDuration": 7.61,
+      "audio": "ep030/audio/scene_005.mp3",
+      "timing": "ep030/audio/scene_005.timing.json",
+      "wordTimings": [
+        {
+          "text": "안전감이나",
+          "offset": 0.1,
+          "duration": 0.762,
+          "end": 0.862
+        },
+        {
+          "text": "체온",
+          "offset": 0.875,
+          "duration": 0.362,
+          "end": 1.237
+        },
+        {
+          "text": "유지",
+          "offset": 1.25,
+          "duration": 0.263,
+          "end": 1.513
+        },
+        {
+          "text": "외에도",
+          "offset": 1.525,
+          "duration": 0.45,
+          "end": 1.975
+        },
+        {
+          "text": "다양한",
+          "offset": 1.988,
+          "duration": 0.463,
+          "end": 2.451
+        },
+        {
+          "text": "해석이",
+          "offset": 2.462,
+          "duration": 0.388,
+          "end": 2.85
+        },
+        {
+          "text": "존재하며",
+          "offset": 2.862,
+          "duration": 0.762,
+          "end": 3.624
+        },
+        {
+          "text": "정확한",
+          "offset": 3.85,
+          "duration": 0.5,
+          "end": 4.35
+        },
+        {
+          "text": "원인은",
+          "offset": 4.362,
+          "duration": 0.688,
+          "end": 5.05
+        },
+        {
+          "text": "아직",
+          "offset": 5.062,
+          "duration": 0.3,
+          "end": 5.362
+        },
+        {
+          "text": "단정할",
+          "offset": 5.375,
+          "duration": 0.487,
+          "end": 5.862
+        },
+        {
+          "text": "수",
+          "offset": 5.875,
+          "duration": 0.138,
+          "end": 6.013
+        },
+        {
+          "text": "없습니다",
+          "offset": 6.025,
+          "duration": 0.7,
+          "end": 6.725
+        }
+      ],
+      "wordCount": 13
+    },
+    {
+      "id": "scene_006",
+      "start": 45.56,
+      "duration": 7.32,
+      "title": "여러분의 생각은?",
+      "narration": "여러분의 고양이는 상자에 들어가는 걸 좋아하나요? 왜 그런 행동을 한다고 생각하세요?",
+      "caption": "여러분의 고양이는 상자에 들어가는 걸 좋아하나요? 왜 그런 행동을 한다고 생각하세요?",
+      "backgroundColor": "#101820",
+      "keywords": [
+        "cat",
+        "box",
+        "cat wide view",
+        "cat landscape",
+        "box wide view",
+        "box landscape",
+        "cat close up",
+        "cat detailed view"
+      ],
+      "media": {
+        "type": "image",
+        "fit": "cover",
+        "position": "center center",
+        "src": "ep030/scene_006.jpg",
+        "keywords": [
+          "cat",
+          "box",
+          "cat wide view",
+          "cat landscape",
+          "box wide view",
+          "box landscape",
+          "cat close up",
+          "cat detailed view"
+        ]
+      },
+      "cameraMotion": "zoom_out",
+      "transition": "fade",
+      "transitionDuration": 0.35,
+      "overlay": "dark",
+      "overlayOpacity": 1.0,
+      "mediaSearch": {
+        "version": "2.0",
+        "primaryQuery": "cat",
+        "sourceKeywords": [
+          "cat",
+          "box",
+          "cat wide view",
+          "cat landscape",
+          "box wide view",
+          "box landscape",
+          "cat close up",
+          "cat detailed view"
+        ],
+        "entities": [
+          "cat box cat wide view cat landscape box",
+          "detailed view"
+        ],
+        "queries": [
+          {
+            "query": "cat",
+            "intent": "primary",
+            "priority": 1,
+            "mediaKind": "any"
+          },
+          {
+            "query": "box",
+            "intent": "primary",
+            "priority": 2,
+            "mediaKind": "any"
+          },
+          {
+            "query": "cat wide view",
+            "intent": "wide",
+            "priority": 3,
+            "mediaKind": "any"
+          },
+          {
+            "query": "box wide view",
+            "intent": "wide",
+            "priority": 4,
+            "mediaKind": "any"
+          },
+          {
+            "query": "cat close up",
+            "intent": "detail",
+            "priority": 5,
+            "mediaKind": "any"
+          },
+          {
+            "query": "cat detailed view",
+            "intent": "detail",
+            "priority": 6,
+            "mediaKind": "any"
+          },
+          {
+            "query": "cat landscape",
+            "intent": "wide",
+            "priority": 7,
+            "mediaKind": "any"
+          },
+          {
+            "query": "box landscape",
+            "intent": "wide",
+            "priority": 8,
+            "mediaKind": "any"
+          },
+          {
+            "query": "box close up",
+            "intent": "detail",
+            "priority": 9,
+            "mediaKind": "any"
+          },
+          {
+            "query": "box detailed view",
+            "intent": "detail",
+            "priority": 10,
+            "mediaKind": "any"
+          }
+        ]
+      },
+      "audioDuration": 7.32,
+      "audio": "ep030/audio/scene_006.mp3",
+      "timing": "ep030/audio/scene_006.timing.json",
+      "wordTimings": [
+        {
+          "text": "여러분의",
+          "offset": 0.1,
+          "duration": 0.512,
+          "end": 0.612
+        },
+        {
+          "text": "고양이는",
+          "offset": 0.625,
+          "duration": 0.6,
+          "end": 1.225
+        },
+        {
+          "text": "상자에",
+          "offset": 1.238,
+          "duration": 0.487,
+          "end": 1.725
+        },
+        {
+          "text": "들어가는",
+          "offset": 1.738,
+          "duration": 0.5,
+          "end": 2.238
+        },
+        {
+          "text": "걸",
+          "offset": 2.25,
+          "duration": 0.188,
+          "end": 2.438
+        },
+        {
+          "text": "좋아하나요",
+          "offset": 2.45,
+          "duration": 0.85,
+          "end": 3.3
+        },
+        {
+          "text": "왜",
+          "offset": 4.162,
+          "duration": 0.263,
+          "end": 4.425
+        },
+        {
+          "text": "그런",
+          "offset": 4.438,
+          "duration": 0.263,
+          "end": 4.701
+        },
+        {
+          "text": "행동을",
+          "offset": 4.713,
+          "duration": 0.438,
+          "end": 5.151
+        },
+        {
+          "text": "한다고",
+          "offset": 5.162,
+          "duration": 0.412,
+          "end": 5.574
+        },
+        {
+          "text": "생각하세요",
+          "offset": 5.588,
+          "duration": 0.85,
+          "end": 6.438
+        }
+      ],
+      "wordCount": 11
+    }
+  ],
+  "tts": {
+    "provider": "edge",
+    "sceneGapMs": 150,
+    "audioDirectory": "ep030/audio",
+    "synchronized": true,
+    "wordTiming": true,
+    "timingVersion": "1.0"
+  }
+}
