@@ -3,6 +3,9 @@ import {
 	AbsoluteFill,
 	OffthreadVideo,
 	staticFile,
+	useCurrentFrame,
+	interpolate,
+	Easing,
 } from 'remotion';
 
 import {KenBurns} from '../effects/KenBurns';
@@ -20,6 +23,7 @@ export const VisualLayer: React.FC<
 	scene,
 	durationInFrames,
 }) => {
+	const frame = useCurrentFrame();
 	const media = scene.media;
 
 	const mediaStyle: React.CSSProperties = {
@@ -58,7 +62,7 @@ export const VisualLayer: React.FC<
 				<OffthreadVideo
 					src={staticFile(media.src)}
 					style={mediaStyle}
-					volume={0}
+					volume={0.1}
 				/>
 			);
 		}
@@ -84,6 +88,19 @@ export const VisualLayer: React.FC<
 		scene.cameraMotion ??
 		(isVideo ? 'zoom_in' : 'static');
 
+	const videoScale = isVideo
+		? interpolate(
+			frame,
+			[0, Math.max(1, durationInFrames - 1)],
+			[1, 1.08],
+			{
+				extrapolateLeft: 'clamp',
+				extrapolateRight: 'clamp',
+				easing: Easing.inOut(Easing.cubic),
+			},
+		)
+		: 1;
+
 	return (
 		<div
 			style={{
@@ -99,12 +116,24 @@ export const VisualLayer: React.FC<
 				zIndex: 10,
 			}}
 		>
-			<KenBurns
-				durationInFrames={durationInFrames}
-				motion={resolvedMotion}
+			<div
+				style={{
+					position: 'absolute',
+					inset: 0,
+					transform: isVideo
+						? `scale(${videoScale})`
+						: undefined,
+					transformOrigin: 'center center',
+					willChange: isVideo ? 'transform' : undefined,
+				}}
 			>
-				{visual}
-			</KenBurns>
+				<KenBurns
+					durationInFrames={durationInFrames}
+					motion={resolvedMotion}
+				>
+					{visual}
+				</KenBurns>
+			</div>
 		</div>
 	);
 };
