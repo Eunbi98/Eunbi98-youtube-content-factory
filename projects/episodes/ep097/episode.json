@@ -1,0 +1,58 @@
+{
+  "version": "1.0",
+  "episodeId": "ep097",
+  "channel": "urban-exploration",
+  "title": "초고층 빌딩은 왜 일부러 흔들리게 만들까?",
+  "voice": "ko-KR-SunHiNeural",
+  "mediaSource": "skyscraper sway flexible structure wind engineering",
+  "theme": {
+    "backgroundColor": "#121416",
+    "titleColor": "#E8D9A9",
+    "captionColor": "#FFFFFF",
+    "accentColor": "#E8D9A9"
+  },
+  "scenes": [
+    {
+      "type": "hook",
+      "title": "초고층 빌딩은 왜 안 흔들리게 만들지 않을까?",
+      "narration": "높은 빌딩이 바람에 흔들린다는 말을 들으면 이상하게 느껴집니다. 더 튼튼하게 만들어서 아예 움직이지 않게 하면 되는 것 아닐까요?",
+      "media": {"type":"video","src":"ep097/scene_001.mp4","fit":"cover","position":"center center"},
+      "keywords": ["skyscraper sway in wind", "high rise flexible structure"]
+    },
+    {
+      "type": "answer",
+      "title": "완전히 딱딱한 구조가 항상 좋은 건 아니다",
+      "narration": "초고층 건물은 바람과 지진처럼 계속 변하는 힘을 받습니다. 이런 힘을 버티려면 무조건 딱딱하기보다 어느 정도 움직이며 힘을 흡수하는 구조가 필요합니다.",
+      "media": {"type":"video","src":"ep097/scene_002.mp4","fit":"cover","position":"center center"},
+      "keywords": ["flexible skyscraper structure", "building wind load movement"]
+    },
+    {
+      "type": "story",
+      "title": "높을수록 작은 움직임도 크게 느껴진다",
+      "narration": "건물이 높아질수록 꼭대기에서는 작은 각도의 움직임도 더 큰 거리로 나타날 수 있습니다. 그래서 구조의 안전뿐 아니라 사람이 느끼는 흔들림도 함께 고려합니다.",
+      "media": {"type":"video","src":"ep097/scene_003.mp4","fit":"cover","position":"center center"},
+      "keywords": ["skyscraper top sway distance", "high rise occupant comfort"]
+    },
+    {
+      "type": "fact",
+      "title": "바람은 한 방향으로만 밀지 않는다",
+      "narration": "빌딩 주변의 바람은 표면을 따라 흐르다가 소용돌이를 만들고, 그 힘이 반복되면 건물이 좌우로 흔들릴 수 있습니다. 그래서 건물 모양 자체도 바람을 분산하도록 설계됩니다.",
+      "media": {"type":"video","src":"ep097/scene_004.mp4","fit":"cover","position":"center center"},
+      "keywords": ["vortex shedding skyscraper", "aerodynamic skyscraper wind"]
+    },
+    {
+      "type": "fact",
+      "title": "흔들림은 구조와 장치로 함께 다룬다",
+      "narration": "기둥과 코어, 아웃리거 같은 구조가 건물을 지지하고, 필요하면 감쇠 장치가 진동을 줄입니다. 핵심은 움직임을 없애는 게 아니라 안전한 범위에서 제어하는 것입니다.",
+      "media": {"type":"video","src":"ep097/scene_005.mp4","fit":"cover","position":"center center"},
+      "keywords": ["skyscraper core outrigger structure", "building damping system"]
+    },
+    {
+      "type": "ending",
+      "title": "초고층 빌딩은 움직이면서 버틴다",
+      "narration": "결국 초고층 빌딩은 돌처럼 가만히 서 있는 구조물이 아닙니다. 바람의 힘을 받으며 아주 조금 움직이고, 그 움직임을 계산하고 제어하도록 설계된 거대한 구조물입니다.",
+      "media": {"type":"video","src":"ep097/scene_006.mp4","fit":"cover","position":"center center"},
+      "keywords": ["skyscraper controlled sway cinematic", "tall building engineering"]
+    }
+  ]
+}
