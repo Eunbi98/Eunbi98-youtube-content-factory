@@ -41,6 +41,22 @@ export type SceneMedia = {
 	src?: string;
 	fit?: 'cover' | 'contain';
 	position?: string;
+
+	/**
+	 * Source video playback speed calculated by the Factory after TTS sync.
+	 * 1 = normal speed. We clamp auto-slowdown to 0.6x.
+	 */
+	playbackRate?: number;
+
+	/**
+	 * Original source-video duration in seconds (diagnostic metadata).
+	 */
+	sourceDuration?: number;
+
+	/**
+	 * Low-level source audio volume used under the TTS track.
+	 */
+	sourceVolume?: number;
 };
 
 /**
