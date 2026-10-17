@@ -1,0 +1,106 @@
+{
+  "version": "1.0",
+  "episodeId": "ep107",
+  "channel": "urban-exploration",
+  "title": "밑동이 같은 방향으로 휘어진 숲",
+  "voice": "ko-KR-SunHiNeural",
+  "theme": {
+    "backgroundColor": "#121416",
+    "titleColor": "#E8D9A9",
+    "captionColor": "#FFFFFF",
+    "accentColor": "#E8D9A9"
+  },
+  "mediaSource": "Poland Crooked Forest Krzywy Las curved pine trees origin uncertain",
+  "scenes": [
+    {
+      "type": "hook",
+      "title": "밑동부터 휘어진 소나무",
+      "narration": "이 숲에는 밑동이 한쪽으로 휘어진 소나무들이 모여 있어요. 위쪽은 다시 곧게 자라 있고요.",
+      "media": {
+        "type": "video",
+        "src": "ep107/scene_001.mp4",
+        "fit": "cover",
+        "position": "center center"
+      },
+      "keywords": [
+        "Poland Crooked Forest Krzywy Las curved pine trees origin uncertain",
+        "밑동부터 휘어진 소나무"
+      ]
+    },
+    {
+      "type": "answer",
+      "title": "같은 숲의 다른 나무들",
+      "narration": "폴란드의 휘어진 숲인데, 주변에는 곧은 나무도 있어요. 그래서 유독 이 나무들이 더 눈에 띄죠.",
+      "media": {
+        "type": "video",
+        "src": "ep107/scene_002.mp4",
+        "fit": "cover",
+        "position": "center center"
+      },
+      "keywords": [
+        "Poland Crooked Forest Krzywy Las curved pine trees origin uncertain",
+        "같은 숲의 다른 나무들"
+      ]
+    },
+    {
+      "type": "story",
+      "title": "자라면서 남은 굽은 모양",
+      "narration": "어린 나무가 기울어진 뒤에도 위로 자라면, 밑동에 굽은 모양이 남을 수 있어요. 하지만 모양만으로 원인을 알 수는 없죠.",
+      "media": {
+        "type": "video",
+        "src": "ep107/scene_003.mp4",
+        "fit": "cover",
+        "position": "center center"
+      },
+      "keywords": [
+        "Poland Crooked Forest Krzywy Las curved pine trees origin uncertain",
+        "자라면서 남은 굽은 모양"
+      ]
+    },
+    {
+      "type": "fact",
+      "title": "사람이 휘게 했다는 가설",
+      "narration": "목재를 쓰려고 누군가 어린 나무를 휘게 했다는 가설도 있어요. 다만 그 작업이 확인된 기록은 충분하지 않아요.",
+      "media": {
+        "type": "video",
+        "src": "ep107/scene_004.mp4",
+        "fit": "cover",
+        "position": "center center"
+      },
+      "keywords": [
+        "Poland Crooked Forest Krzywy Las curved pine trees origin uncertain",
+        "사람이 휘게 했다는 가설"
+      ]
+    },
+    {
+      "type": "fact",
+      "title": "자연의 힘이었다는 가설",
+      "narration": "눈의 무게 같은 자연의 힘이 영향을 줬다는 설명도 나왔어요. 어느 쪽인지 확정하기는 어렵고요.",
+      "media": {
+        "type": "video",
+        "src": "ep107/scene_005.mp4",
+        "fit": "cover",
+        "position": "center center"
+      },
+      "keywords": [
+        "Poland Crooked Forest Krzywy Las curved pine trees origin uncertain",
+        "자연의 힘이었다는 가설"
+      ]
+    },
+    {
+      "type": "ending",
+      "title": "형태는 남았지만 과정은 없다",
+      "narration": "휘어진 모습은 지금도 볼 수 있어요. 하지만 그렇게 자란 과정을 확실히 알 수 없어, 숲의 수수께끼로 남은 거죠.",
+      "media": {
+        "type": "video",
+        "src": "ep107/scene_006.mp4",
+        "fit": "cover",
+        "position": "center center"
+      },
+      "keywords": [
+        "Poland Crooked Forest Krzywy Las curved pine trees origin uncertain",
+        "형태는 남았지만 과정은 없다"
+      ]
+    }
+  ]
+}

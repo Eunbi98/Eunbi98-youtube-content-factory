@@ -1,0 +1,106 @@
+{
+  "version": "1.0",
+  "episodeId": "ep108",
+  "channel": "urban-exploration",
+  "title": "얼어붙은 호수에 하얀 원들이 겹친 이유",
+  "voice": "ko-KR-SunHiNeural",
+  "theme": {
+    "backgroundColor": "#121416",
+    "titleColor": "#E8D9A9",
+    "captionColor": "#FFFFFF",
+    "accentColor": "#E8D9A9"
+  },
+  "mediaSource": "Abraham Lake Alberta frozen methane bubbles winter ice",
+  "scenes": [
+    {
+      "type": "hook",
+      "title": "얼음 안에 겹친 하얀 원",
+      "narration": "얼어붙은 호수 안에 하얀 원들이 층층이 겹쳐 있어요. 얼음 속에 무언가 갇힌 것처럼 보이죠.",
+      "media": {
+        "type": "video",
+        "src": "ep108/scene_001.mp4",
+        "fit": "cover",
+        "position": "center center"
+      },
+      "keywords": [
+        "Abraham Lake Alberta frozen methane bubbles winter ice",
+        "얼음 안에 겹친 하얀 원"
+      ]
+    },
+    {
+      "type": "answer",
+      "title": "기포가 붙잡힌 호수",
+      "narration": "캐나다 에이브러햄 호수에서 볼 수 있는 얼음 속 기포예요. 이곳의 기포에는 메탄가스가 들어 있어요.",
+      "media": {
+        "type": "video",
+        "src": "ep108/scene_002.mp4",
+        "fit": "cover",
+        "position": "center center"
+      },
+      "keywords": [
+        "Abraham Lake Alberta frozen methane bubbles winter ice",
+        "기포가 붙잡힌 호수"
+      ]
+    },
+    {
+      "type": "story",
+      "title": "가스가 시작되는 바닥",
+      "narration": "호수 바닥의 유기물이 미생물에 의해 분해되면 메탄이 생길 수 있어요. 그 가스가 기포가 되어 올라오는 거죠.",
+      "media": {
+        "type": "video",
+        "src": "ep108/scene_003.mp4",
+        "fit": "cover",
+        "position": "center center"
+      },
+      "keywords": [
+        "Abraham Lake Alberta frozen methane bubbles winter ice",
+        "가스가 시작되는 바닥"
+      ]
+    },
+    {
+      "type": "fact",
+      "title": "위에서 얼어붙는 물",
+      "narration": "겨울에는 물 위쪽부터 얼어붙어요. 올라온 기포가 얼음 아래에 모였다가, 얼음이 두꺼워지며 갇힐 수 있죠.",
+      "media": {
+        "type": "video",
+        "src": "ep108/scene_004.mp4",
+        "fit": "cover",
+        "position": "center center"
+      },
+      "keywords": [
+        "Abraham Lake Alberta frozen methane bubbles winter ice",
+        "위에서 얼어붙는 물"
+      ]
+    },
+    {
+      "type": "fact",
+      "title": "아래쪽에 새로 쌓이는 기포",
+      "narration": "아래에서 새 기포가 올라오고 물이 더 얼기를 반복하면, 서로 다른 깊이에 하얀 층들이 남아요.",
+      "media": {
+        "type": "video",
+        "src": "ep108/scene_005.mp4",
+        "fit": "cover",
+        "position": "center center"
+      },
+      "keywords": [
+        "Abraham Lake Alberta frozen methane bubbles winter ice",
+        "아래쪽에 새로 쌓이는 기포"
+      ]
+    },
+    {
+      "type": "ending",
+      "title": "얼음이 붙잡은 호수의 흔적",
+      "narration": "하얀 원은 얼음에 새겨진 그림이 아니었어요. 호수 바닥에서 올라온 가스를, 자라는 얼음이 붙잡아 둔 흔적이죠.",
+      "media": {
+        "type": "video",
+        "src": "ep108/scene_006.mp4",
+        "fit": "cover",
+        "position": "center center"
+      },
+      "keywords": [
+        "Abraham Lake Alberta frozen methane bubbles winter ice",
+        "얼음이 붙잡은 호수의 흔적"
+      ]
+    }
+  ]
+}
