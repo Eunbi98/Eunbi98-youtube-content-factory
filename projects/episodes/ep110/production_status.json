@@ -1,0 +1,18 @@
+{
+  "episodeId": "ep110",
+  "created_date": "2026-10-18",
+  "story_status": "confirmed",
+  "source_videos_received": 0,
+  "narration_files_generated": 0,
+  "final_render_completed": false,
+  "youtube_uploaded": false,
+  "drive_uploaded": false,
+  "character_scenes": [],
+  "voice_preference": "ko-KR-SunHiNeural",
+  "render_preferences": {
+    "preserve_source_colors": true,
+    "added_darkening_overlay": false,
+    "added_camera_zoom_pan": false
+  },
+  "status": "script, prompts and upload notes ready; waiting for source clips"
+}

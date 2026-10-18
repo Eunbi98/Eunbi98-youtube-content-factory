@@ -1,0 +1,106 @@
+{
+  "version": "1.0",
+  "episodeId": "ep112",
+  "channel": "urban-exploration",
+  "title": "동굴 천장을 채운 푸른 별의 정체",
+  "voice": "ko-KR-SunHiNeural",
+  "theme": {
+    "backgroundColor": "#121416",
+    "titleColor": "#E8D9A9",
+    "captionColor": "#FFFFFF",
+    "accentColor": "#E8D9A9"
+  },
+  "mediaSource": "Waitomo Arachnocampa luminosa glowworm larvae bioluminescence sticky silk prey",
+  "scenes": [
+    {
+      "type": "hook",
+      "title": "하늘이 아닌 곳의 별빛",
+      "narration": "어두운 동굴 천장에 푸른 별 같은 빛이 가득해요. 하늘도 아닌데, 빛이 한자리에 매달려 있죠.",
+      "media": {
+        "type": "video",
+        "src": "ep112/scene_001.mp4",
+        "fit": "cover",
+        "position": "center center"
+      },
+      "keywords": [
+        "Waitomo Arachnocampa luminosa glowworm larvae bioluminescence sticky silk prey",
+        "하늘이 아닌 곳의 별빛"
+      ]
+    },
+    {
+      "type": "answer",
+      "title": "빛을 내는 작은 유충",
+      "narration": "뉴질랜드 와이토모 동굴에서 볼 수 있는 글로웜이에요. 별처럼 보인 빛은 작은 곤충 유충이 내는 거죠.",
+      "media": {
+        "type": "video",
+        "src": "ep112/scene_002.mp4",
+        "fit": "cover",
+        "position": "center center"
+      },
+      "keywords": [
+        "Waitomo Arachnocampa luminosa glowworm larvae bioluminescence sticky silk prey",
+        "빛을 내는 작은 유충"
+      ]
+    },
+    {
+      "type": "story",
+      "title": "천장에서 내려오는 실",
+      "narration": "유충 아래에는 끈적한 가느다란 실들이 늘어져 있어요. 작은 방울들이 줄을 따라 붙어 있고요.",
+      "media": {
+        "type": "video",
+        "src": "ep112/scene_003.mp4",
+        "fit": "cover",
+        "position": "center center"
+      },
+      "keywords": [
+        "Waitomo Arachnocampa luminosa glowworm larvae bioluminescence sticky silk prey",
+        "천장에서 내려오는 실"
+      ]
+    },
+    {
+      "type": "fact",
+      "title": "빛을 향해 온 작은 먹이",
+      "narration": "빛을 향해 날아온 곤충이 이 실에 걸리면, 유충의 먹이가 될 수 있어요. 천장 아래에 놓인 작은 덫인 셈이죠.",
+      "media": {
+        "type": "video",
+        "src": "ep112/scene_004.mp4",
+        "fit": "cover",
+        "position": "center center"
+      },
+      "keywords": [
+        "Waitomo Arachnocampa luminosa glowworm larvae bioluminescence sticky silk prey",
+        "빛을 향해 온 작은 먹이"
+      ]
+    },
+    {
+      "type": "fact",
+      "title": "덫의 미끼가 되는 빛",
+      "narration": "빛은 유충 몸 끝의 발광 기관에서 나와요. 몸속 화학 반응으로 만든 빛이 덫의 미끼가 되는 거죠.",
+      "media": {
+        "type": "video",
+        "src": "ep112/scene_005.mp4",
+        "fit": "cover",
+        "position": "center center"
+      },
+      "keywords": [
+        "Waitomo Arachnocampa luminosa glowworm larvae bioluminescence sticky silk prey",
+        "덫의 미끼가 되는 빛"
+      ]
+    },
+    {
+      "type": "ending",
+      "title": "빛나는 생존 방식",
+      "narration": "동굴의 별빛은 예쁜 장식이 아니었어요. 어둠 속에서 먹이를 기다리는 유충들이 만들어 낸 빛이었던 거죠.",
+      "media": {
+        "type": "video",
+        "src": "ep112/scene_006.mp4",
+        "fit": "cover",
+        "position": "center center"
+      },
+      "keywords": [
+        "Waitomo Arachnocampa luminosa glowworm larvae bioluminescence sticky silk prey",
+        "빛나는 생존 방식"
+      ]
+    }
+  ]
+}

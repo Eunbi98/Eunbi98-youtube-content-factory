@@ -1,0 +1,106 @@
+{
+  "version": "1.0",
+  "episodeId": "ep111",
+  "channel": "urban-exploration",
+  "title": "사막에서 자라난 알록달록한 온천탑",
+  "voice": "ko-KR-SunHiNeural",
+  "theme": {
+    "backgroundColor": "#121416",
+    "titleColor": "#E8D9A9",
+    "captionColor": "#FFFFFF",
+    "accentColor": "#E8D9A9"
+  },
+  "mediaSource": "Fly Geyser Nevada geothermal well calcium carbonate thermophilic microorganisms",
+  "scenes": [
+    {
+      "type": "hook",
+      "title": "사막에 솟은 색색의 둔덕",
+      "narration": "사막에 알록달록한 탑이 솟아 있어요. 그 위에서는 뜨거운 물이 흘러나오고요.",
+      "media": {
+        "type": "video",
+        "src": "ep111/scene_001.mp4",
+        "fit": "cover",
+        "position": "center center"
+      },
+      "keywords": [
+        "Fly Geyser Nevada geothermal well calcium carbonate thermophilic microorganisms",
+        "사막에 솟은 색색의 둔덕"
+      ]
+    },
+    {
+      "type": "answer",
+      "title": "시작은 사람이 뚫은 우물",
+      "narration": "미국 네바다주의 플라이 가이저예요. 이 지형의 시작은 사람이 뚫은 우물과 관련이 있어요.",
+      "media": {
+        "type": "video",
+        "src": "ep111/scene_002.mp4",
+        "fit": "cover",
+        "position": "center center"
+      },
+      "keywords": [
+        "Fly Geyser Nevada geothermal well calcium carbonate thermophilic microorganisms",
+        "시작은 사람이 뚫은 우물"
+      ]
+    },
+    {
+      "type": "story",
+      "title": "뜨거운 물이 올라오는 통로",
+      "narration": "지하의 뜨거운 물이 시추 구멍을 통해 올라오면서, 물에 녹아 있던 성분도 함께 지표로 나왔어요.",
+      "media": {
+        "type": "video",
+        "src": "ep111/scene_003.mp4",
+        "fit": "cover",
+        "position": "center center"
+      },
+      "keywords": [
+        "Fly Geyser Nevada geothermal well calcium carbonate thermophilic microorganisms",
+        "뜨거운 물이 올라오는 통로"
+      ]
+    },
+    {
+      "type": "fact",
+      "title": "흐른 물이 지형을 쌓는다",
+      "narration": "물에서 탄산칼슘 같은 광물 성분이 쌓이면 돌처럼 굳어요. 그 과정이 반복되며 주변 지형이 점점 높아지는 거죠.",
+      "media": {
+        "type": "video",
+        "src": "ep111/scene_004.mp4",
+        "fit": "cover",
+        "position": "center center"
+      },
+      "keywords": [
+        "Fly Geyser Nevada geothermal well calcium carbonate thermophilic microorganisms",
+        "흐른 물이 지형을 쌓는다"
+      ]
+    },
+    {
+      "type": "fact",
+      "title": "표면에 더해지는 색",
+      "narration": "표면의 색 일부에는 뜨거운 환경에 사는 미생물도 영향을 줘요. 광물로 자란 둔덕에 색이 더해진 거예요.",
+      "media": {
+        "type": "video",
+        "src": "ep111/scene_005.mp4",
+        "fit": "cover",
+        "position": "center center"
+      },
+      "keywords": [
+        "Fly Geyser Nevada geothermal well calcium carbonate thermophilic microorganisms",
+        "표면에 더해지는 색"
+      ]
+    },
+    {
+      "type": "ending",
+      "title": "온천수가 만들어 온 조형물",
+      "narration": "사막의 탑은 누가 쌓은 조형물이 아니었어요. 우물에서 나온 온천수가 오랜 시간 쌓아 온 지형이었죠.",
+      "media": {
+        "type": "video",
+        "src": "ep111/scene_006.mp4",
+        "fit": "cover",
+        "position": "center center"
+      },
+      "keywords": [
+        "Fly Geyser Nevada geothermal well calcium carbonate thermophilic microorganisms",
+        "온천수가 만들어 온 조형물"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,106 @@
+{
+  "version": "1.0",
+  "episodeId": "ep110",
+  "channel": "urban-exploration",
+  "title": "번개가 유난히 자주 치는 호수",
+  "voice": "ko-KR-SunHiNeural",
+  "theme": {
+    "backgroundColor": "#121416",
+    "titleColor": "#E8D9A9",
+    "captionColor": "#FFFFFF",
+    "accentColor": "#E8D9A9"
+  },
+  "mediaSource": "Catatumbo lightning Lake Maracaibo Venezuela convection moisture terrain",
+  "scenes": [
+    {
+      "type": "hook",
+      "title": "같은 호수 위에 반복되는 섬광",
+      "narration": "이 호수 부근에서는 밤하늘에 번개가 거듭 나타나요. 한 번의 폭풍만을 말하는 게 아니에요.",
+      "media": {
+        "type": "video",
+        "src": "ep110/scene_001.mp4",
+        "fit": "cover",
+        "position": "center center"
+      },
+      "keywords": [
+        "Catatumbo lightning Lake Maracaibo Venezuela convection moisture terrain",
+        "같은 호수 위에 반복되는 섬광"
+      ]
+    },
+    {
+      "type": "answer",
+      "title": "뇌우가 잦은 마라카이보",
+      "narration": "베네수엘라 마라카이보 호수 주변의 카타툼보 번개예요. 이 일대에는 뇌우가 자주 만들어질 조건이 모여 있어요.",
+      "media": {
+        "type": "video",
+        "src": "ep110/scene_002.mp4",
+        "fit": "cover",
+        "position": "center center"
+      },
+      "keywords": [
+        "Catatumbo lightning Lake Maracaibo Venezuela convection moisture terrain",
+        "뇌우가 잦은 마라카이보"
+      ]
+    },
+    {
+      "type": "story",
+      "title": "따뜻하고 습한 공기",
+      "narration": "따뜻한 호수와 주변에서 수분을 머금은 공기가 올라와요. 번개구름을 만들 재료가 공급되는 셈이죠.",
+      "media": {
+        "type": "video",
+        "src": "ep110/scene_003.mp4",
+        "fit": "cover",
+        "position": "center center"
+      },
+      "keywords": [
+        "Catatumbo lightning Lake Maracaibo Venezuela convection moisture terrain",
+        "따뜻하고 습한 공기"
+      ]
+    },
+    {
+      "type": "fact",
+      "title": "지형과 바람이 만나는 곳",
+      "narration": "주변 산지와 바람의 흐름은 그 공기가 위로 오르게 도와요. 상승한 공기가 식으면 물방울이 생기며 구름이 커지죠.",
+      "media": {
+        "type": "video",
+        "src": "ep110/scene_004.mp4",
+        "fit": "cover",
+        "position": "center center"
+      },
+      "keywords": [
+        "Catatumbo lightning Lake Maracaibo Venezuela convection moisture terrain",
+        "지형과 바람이 만나는 곳"
+      ]
+    },
+    {
+      "type": "fact",
+      "title": "구름 안에서 나뉘는 전하",
+      "narration": "구름 안에서는 얼음 입자 등이 부딪치며 전하가 나뉘어요. 전하 차이가 커지면 번개로 이어질 수 있죠.",
+      "media": {
+        "type": "video",
+        "src": "ep110/scene_005.mp4",
+        "fit": "cover",
+        "position": "center center"
+      },
+      "keywords": [
+        "Catatumbo lightning Lake Maracaibo Venezuela convection moisture terrain",
+        "구름 안에서 나뉘는 전하"
+      ]
+    },
+    {
+      "type": "ending",
+      "title": "반복될 조건이 모인 하늘",
+      "narration": "호수 자체가 번개를 뿜는 건 아니었어요. 수분과 지형, 바람이 뇌우가 반복될 조건을 만든 거죠.",
+      "media": {
+        "type": "video",
+        "src": "ep110/scene_006.mp4",
+        "fit": "cover",
+        "position": "center center"
+      },
+      "keywords": [
+        "Catatumbo lightning Lake Maracaibo Venezuela convection moisture terrain",
+        "반복될 조건이 모인 하늘"
+      ]
+    }
+  ]
+}

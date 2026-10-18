@@ -1,0 +1,106 @@
+{
+  "version": "1.0",
+  "episodeId": "ep113",
+  "channel": "urban-exploration",
+  "title": "오르막을 올라가는 것처럼 보이는 길",
+  "voice": "ko-KR-SunHiNeural",
+  "theme": {
+    "backgroundColor": "#121416",
+    "titleColor": "#E8D9A9",
+    "captionColor": "#FFFFFF",
+    "accentColor": "#E8D9A9"
+  },
+  "mediaSource": "Jeju mysterious road gravity hill optical illusion slope horizon model",
+  "scenes": [
+    {
+      "type": "hook",
+      "title": "눈과 움직임이 다른 길",
+      "narration": "이 길에서는 차가 오르막으로 굴러가는 것처럼 보여요. 눈으로 보는 경사와 움직임이 엇갈리죠.",
+      "media": {
+        "type": "video",
+        "src": "ep113/scene_001.mp4",
+        "fit": "cover",
+        "position": "center center"
+      },
+      "keywords": [
+        "Jeju mysterious road gravity hill optical illusion slope horizon model",
+        "눈과 움직임이 다른 길"
+      ]
+    },
+    {
+      "type": "answer",
+      "title": "올라가는 것처럼 느끼는 경사",
+      "narration": "제주의 도깨비도로처럼 이런 착시로 알려진 곳들이 있어요. 차는 실제 내리막을 따라 움직이는 거예요.",
+      "media": {
+        "type": "video",
+        "src": "ep113/scene_002.mp4",
+        "fit": "cover",
+        "position": "center center"
+      },
+      "keywords": [
+        "Jeju mysterious road gravity hill optical illusion slope horizon model",
+        "올라가는 것처럼 느끼는 경사"
+      ]
+    },
+    {
+      "type": "story",
+      "title": "모형에서 확인하는 방향",
+      "narration": "기울기를 확인하면 눈으로 느낀 방향과 다를 수 있어요. 작은 공도 실제로 낮은 쪽으로 굴러가죠.",
+      "media": {
+        "type": "video",
+        "src": "ep113/scene_003.mp4",
+        "fit": "cover",
+        "position": "center center"
+      },
+      "keywords": [
+        "Jeju mysterious road gravity hill optical illusion slope horizon model",
+        "모형에서 확인하는 방향"
+      ]
+    },
+    {
+      "type": "fact",
+      "title": "기준을 헷갈리게 하는 풍경",
+      "narration": "주변 언덕과 비스듬한 나무, 가려진 수평선이 기준을 헷갈리게 해요. 주변 풍경을 보고 기울기를 판단하기 때문이죠.",
+      "media": {
+        "type": "video",
+        "src": "ep113/scene_004.mp4",
+        "fit": "cover",
+        "position": "center center"
+      },
+      "keywords": [
+        "Jeju mysterious road gravity hill optical illusion slope horizon model",
+        "기준을 헷갈리게 하는 풍경"
+      ]
+    },
+    {
+      "type": "fact",
+      "title": "옆에서 보면 드러나는 내리막",
+      "narration": "같은 길을 옆에서 보는 단순한 모형으로 바꾸면, 차가 내려가는 경사가 드러나요. 배경의 기준이 달라진 거죠.",
+      "media": {
+        "type": "video",
+        "src": "ep113/scene_005.mp4",
+        "fit": "cover",
+        "position": "center center"
+      },
+      "keywords": [
+        "Jeju mysterious road gravity hill optical illusion slope horizon model",
+        "옆에서 보면 드러나는 내리막"
+      ]
+    },
+    {
+      "type": "ending",
+      "title": "길보다 기준이 달랐다",
+      "narration": "차를 끌어올리는 신비한 힘은 없었어요. 길은 내리막인데, 우리 눈이 주변 풍경 때문에 반대로 느낀 거죠.",
+      "media": {
+        "type": "video",
+        "src": "ep113/scene_006.mp4",
+        "fit": "cover",
+        "position": "center center"
+      },
+      "keywords": [
+        "Jeju mysterious road gravity hill optical illusion slope horizon model",
+        "길보다 기준이 달랐다"
+      ]
+    }
+  ]
+}

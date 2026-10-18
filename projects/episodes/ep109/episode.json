@@ -1,0 +1,106 @@
+{
+  "version": "1.0",
+  "episodeId": "ep109",
+  "channel": "urban-exploration",
+  "title": "바다 한가운데 짙푸른 구멍이 생긴 이유",
+  "voice": "ko-KR-SunHiNeural",
+  "theme": {
+    "backgroundColor": "#121416",
+    "titleColor": "#E8D9A9",
+    "captionColor": "#FFFFFF",
+    "accentColor": "#E8D9A9"
+  },
+  "mediaSource": "Belize Great Blue Hole limestone cave sinkhole sea level",
+  "scenes": [
+    {
+      "type": "hook",
+      "title": "청록색 바다 안의 짙푸른 원",
+      "narration": "바다 한가운데, 짙푸른 구멍이 뚫린 것처럼 보이는 곳이 있어요. 주변 바다와 색부터 다르죠.",
+      "media": {
+        "type": "video",
+        "src": "ep109/scene_001.mp4",
+        "fit": "cover",
+        "position": "center center"
+      },
+      "keywords": [
+        "Belize Great Blue Hole limestone cave sinkhole sea level",
+        "청록색 바다 안의 짙푸른 원"
+      ]
+    },
+    {
+      "type": "answer",
+      "title": "색이 다른 이유는 깊이",
+      "narration": "벨리즈의 그레이트 블루홀이에요. 물이 빨려 들어가는 구멍이 아니라, 바닥이 깊게 내려간 지형이죠.",
+      "media": {
+        "type": "video",
+        "src": "ep109/scene_002.mp4",
+        "fit": "cover",
+        "position": "center center"
+      },
+      "keywords": [
+        "Belize Great Blue Hole limestone cave sinkhole sea level",
+        "색이 다른 이유는 깊이"
+      ]
+    },
+    {
+      "type": "story",
+      "title": "바다 아래 지형의 과거",
+      "narration": "바닷물이 차기 전, 이곳의 석회암에는 동굴이 발달했어요. 물이 바위 틈을 녹이며 공간을 넓힌 거죠.",
+      "media": {
+        "type": "video",
+        "src": "ep109/scene_003.mp4",
+        "fit": "cover",
+        "position": "center center"
+      },
+      "keywords": [
+        "Belize Great Blue Hole limestone cave sinkhole sea level",
+        "바다 아래 지형의 과거"
+      ]
+    },
+    {
+      "type": "fact",
+      "title": "천장이 무너지며 남는 공간",
+      "narration": "커진 동굴의 천장이 무너지면, 지표에 움푹 팬 구멍이 남을 수 있어요. 이런 지형을 싱크홀이라고 해요.",
+      "media": {
+        "type": "video",
+        "src": "ep109/scene_004.mp4",
+        "fit": "cover",
+        "position": "center center"
+      },
+      "keywords": [
+        "Belize Great Blue Hole limestone cave sinkhole sea level",
+        "천장이 무너지며 남는 공간"
+      ]
+    },
+    {
+      "type": "fact",
+      "title": "다시 바닷물에 잠긴 동굴",
+      "narration": "이후 해수면이 올라가면서 동굴 지형이 바닷물에 잠겼어요. 물속의 종유석도 과거의 동굴 환경을 보여주죠.",
+      "media": {
+        "type": "video",
+        "src": "ep109/scene_005.mp4",
+        "fit": "cover",
+        "position": "center center"
+      },
+      "keywords": [
+        "Belize Great Blue Hole limestone cave sinkhole sea level",
+        "다시 바닷물에 잠긴 동굴"
+      ]
+    },
+    {
+      "type": "ending",
+      "title": "바다에 남은 오래된 동굴",
+      "narration": "멀리서 보인 푸른 구멍은 바다가 뚫린 게 아니었어요. 오래된 동굴 지형이 바다 아래에 남아 있는 거죠.",
+      "media": {
+        "type": "video",
+        "src": "ep109/scene_006.mp4",
+        "fit": "cover",
+        "position": "center center"
+      },
+      "keywords": [
+        "Belize Great Blue Hole limestone cave sinkhole sea level",
+        "바다에 남은 오래된 동굴"
+      ]
+    }
+  ]
+}
